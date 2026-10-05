@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `f133aa1ddaab1604bf33f474ae452d6ac2a16070`.
+The inspected `main` head before this update is `d426b6329d7afd33575c9a3f43fb878674959fe0`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`ce423a228c82a3a4c4c72ecbbbd9a5050566d996`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce423a228c82a3a4c4c72ecbbbd9a5050566d996)
+[`73cb73896be110d0c83538da8b03f3ebcb902f1c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/73cb73896be110d0c83538da8b03f3ebcb902f1c)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,49 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: current eight/nine/fourteen-chart source ownership
+
+This review is fixed at1a715aa4; later73cb7389 coordinate-map work is observed
+but not reviewed here. The [matched dispatcher report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/docs/CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md)
+records eight current switch/reshape/restoration/patch owners aliased from
+one object graph, and external Rm source equality. The [Rh report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/docs/ACTUAL_RH_SOURCE_JOIN_2026_10_05.md)
+adds a ninth Rh_reference owner and dedicated external Rh proof; the
+[pre-pulse report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/docs/CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md)
+extends the SAME pre-pulse provider through five original O2/O3 charts to
+fourteen current downstream owners. Runtime receipt consumption owns new
+certification; legacy native false flags and source-only producer scope remain.
+
+Both pressure constructor/import paths bind CompliantPressureDatum('40',160)
+and compliant epsilon=.001*delta; legacy .01 construction is excluded.
+Common stage definitions, flatten source and order-independent normalized_jets
+prefix recurrence establish one analytic P0, not matching hashes/boxes alone.
+Order6 truncated to first six coefficients is tied to order5 as source
+functions before18 diagnostic enclosure comparisons. Physical P0+Mp paths,
+Pstar units, fixed normalization factors and D_y=x*D_x Stirling conversions
+are retained. Nine source identities imply135 external mixed rows, not135
+new independent fixtures.
+
+Five pre-pulse interface history identities and flat cutoff derivatives
+imply675 mixed4 rows; these also are not independent fixtures. After local
+Uz vanishes, cumulative m/k remain nonzero decaying histories. Exact positive
+mu and Tw retain original O3 slopes even if ordinary enclosures cannot resolve
+mu against1/2. The API requires explicit chart/local coordinate and returns
+directed source enclosures, not automatic physical-point or Cartesian values.
+Current_Rp_external_pulse_join_certified remains false at this fixed commit;
+canonical inlet/history/radius binding requires a separate source proof.
+Shared leading/remainder full admission, complete Cartesian assembly/points,
+global tensor/temporal-flat/volume/finite energy, actual n=1/time recursion
+and corrected full NS remain open. No scientific code or full proof audit ran.
+
+The [matched receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/experiments/root_st073/lei_ren_part1_paper_compliant_current_matched_source_dispatcher_check.json),
+[Rh receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/experiments/root_st073/lei_ren_part1_paper_compliant_actual_Rh_source_join_check.json)
+and [pre-pulse receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a715aa44a6770664887e800f3192f673c88289d/experiments/root_st073/lei_ren_part1_paper_compliant_current_pre_pulse_source_dispatcher_check.json)
+have335/343/347 bindings (347 distinct paths):1,022 exact Git-byte matches
+and three schedule_pressure.py matches after LF-to-CRLF conversion, with
+no unexplained mismatch. Report counts333/341/345 are stale. Replay
+currentmatcheddispatch/actualrhjoin/currentprepulse with current prerequisites
+and receipt checkout-byte convention; generic fixtures were not rerun here.
 
 ### 2026-10-05 review: current Rsh source join and local implicit feedback patch
 
@@ -3219,6 +3262,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [1a715aa4 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37324546649)
+ended failure:13 failed/423 passed; all13 identifiers match 5e0c17b6.
+Four smoke/slice jobs pass and full historical tests are skipped. Dispatcher
+source ownership is not complete Cartesian/global NS acceptance.
 
 The exact-head [5e0c17b6 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37316966269)
 ended failure:13 failed/423 passed; all13 identifiers match 1a79449b.
