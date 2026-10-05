@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `1f7666aae762365187f66f1dfb2bab3495e11d22`.
+The inspected `main` head before this update is `56cf195b5c53baf09b65561f7338c9414bb8a8c0`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`531b35eecdb0b4b35a857bb7db4117005a5692cb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/531b35eecdb0b4b35a857bb7db4117005a5692cb)
+[`142071744159b097bcccec3936519ec5c951adf3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/142071744159b097bcccec3936519ec5c951adf3)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,52 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: whole entrance physical interfaces and regional full-shear cone
+
+Fixed [14207174 physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/142071744159b097bcccec3936519ec5c951adf3/docs/PULSE_ENTRANCE_PHYSICAL_2026_10_04.md)
+records whole xi[0,.02]/Z[-1,1] meridional physical stress mixed3, completed
+tensor, diagonal/divergence and all three remainder components mixed2.
+The current inlet/main functional interfaces bind identical original radius,
+absolute-pressure datum, physical arguments and positive viscosity. Normalized
+pressure rows are restored before the B^2 shift; shifted absolute rows are
+not shifted again. Incoming radial histories and all nonlinear cross products
+remain. At inlet only local forcing and Ez are flat zero; Er/Etheta remain.
+Saved 114 Cartesian fixture comparisons check local formulas/units, not
+actual corrected NS accuracy or production point selection.
+
+The separate [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/142071744159b097bcccec3936519ec5c951adf3/docs/PULSE_ENTRANCE_CONE_2026_10_04.md)
+accepts continuous full-shear two-vector bounds over the whole entrance.
+Tiny angular memory uses the exact correlated identity
+Xp-1/(1-mu)=(h_w/u_w-1/(1-mu))*exp(-(1-mu)*Tw), followed by its
+entrance exponent. Actual power assignments and Tw parameter/getter routes
+are source-bound. Whole-Z q^-1 shape identities justify the Z-independent
+ratio; the Z=.5 packet only encloses that ratio and is not a sampled-profile
+whole-Z proof. Grouped original logs and entrance-specific monotonicity
+bounds retain all five theta/seven axial corrections and total stress ratio.
+No main-only endpoint bound is extrapolated to inlet and no history is zeroed.
+
+Current forward/future FTC and selected forward/backward energy equivalence,
+canonical moments/energy, pressure rows through axial5, radius and nu links
+are consumed. Equivalent energy representations are not added twice.
+The old physical receipt's cone=false remains historical; the new independent
+cone acceptance supersedes that regional pending state. Saved 27 cone fixtures
+are normalization/unit evidence separate from continuous actual-source bounds.
+Connected coverage starts at actual Rp, equivalently
+Rtail*exp(-13/mu-wait-Ts-102-Lrel), through the accepted tail; outer zero
+Gamma stress is separate. This is not whole-outer/completed-tensor/global
+admissibility. Next: actual Ra-to100 finite-width feedback/omitted terms,
+then compose the admitted signed R100-to110 switch with consistent leading
+data. Point selection, global temporal flatness/volume/finite energy,
+n=1/n-dependent recursion and corrected full NS remain open. No scientific
+code or complete proof audit was run.
+
+The [entrance physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/142071744159b097bcccec3936519ec5c951adf3/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_entrance_physical_C2_check.json)
+and [independent cone receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/142071744159b097bcccec3936519ec5c951adf3/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_entrance_cone_check.json)
+have445/457 bindings (457 distinct paths):900 exact pinned Git-byte matches,
+two schedule_pressure.py matches after LF-to-CRLF conversion, with no
+unexplained mismatch. Replay pulseentrancephysical/pulseentrancecone with
+current prerequisites and receipt checkout-byte convention.
 
 ### 2026-10-05 review: main/exit full-shear cone and entrance similarity only
 
@@ -3009,6 +3055,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [14207174 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37259392600)
+ended failure:13 failed/423 passed with the same13 identifiers as 531b35ee.
+Four smoke/slice jobs pass; full historical tests are skipped. Entrance
+regional acceptance does not resolve global tensor or corrected NS gates.
 
 The exact-head [531b35ee run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37256381244)
 ended failure:13 failed/423 passed, all13 identifiers unchanged from c31c0811.
