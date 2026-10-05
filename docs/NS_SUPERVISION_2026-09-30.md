@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `1a32680285881da9c365a8c12bc7d7e7a18d4ef4`.
+The inspected `main` head before this update is `64034d6e6ec365d4f38983af78a1c4f3f16e86ae`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`1c227002e32825d30867796c932a365f4a56891d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1c227002e32825d30867796c932a365f4a56891d)
+[`f19ee6e5af5ec4fad5d5b189827702a2bdf30827`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f19ee6e5af5ec4fad5d5b189827702a2bdf30827)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,48 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: actual switch mixed4 and long reshape to Rsh
+
+Intermediate [e031077e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e031077e)
+installed the actual finite-width inlet in original switch mixed4; fixed
+[f19ee6e5 reshape report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f19ee6e5af5ec4fad5d5b189827702a2bdf30827/docs/ACTUAL_LONG_RESHAPE_MIXED_C4_2026_10_05.md)
+continues that same source through original long reshape to Rsh.
+The [switch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f19ee6e5af5ec4fad5d5b189827702a2bdf30827/docs/ACTUAL_SWITCH_MIXED_C4_2026_10_05.md)
+records actual R100 functional mixed4 trace, phase1/R2/R110 joins and a
+bounded three-chart dispatcher, not replacement of the whole dispatcher or
+a complete Cartesian field API. Old generic inlet=false metadata remains
+historical; the separately traced actual R100 join is accepted.
+
+Current R110 velocity/raw Uz, all six own histories and canonical P0 now
+enter unchanged long-reshape controls/physical evaluate, with logR/Z mixed
+derivatives of TOTAL order at most four. Original A/T=400A, reference length,
+normalization, kernel bounds, pressure, exact F/V/chi definitions and width
+factors remain. Raw Uz is not pressure primitive 4C; centered E metadata
+does not substitute for Uz. Whole-Z/whole-reshape enclosures and exact
+two-sided R110 source rows are recorded, not endpoint interval overlap.
+Saved evidence includes 135 two-sided R110 mixed rows,480 velocity/pressure
+rows and600 primitive rows. Unchanged legacy kernel/primitive fixtures are
+hash-consumed, not newly independently rerun in this review.
+
+Actual reference/restoration and moment patch installation remain false.
+Operational centered E must use the same correlated j+epsilon*Psi and signed
+bridge/first-switch increments; broad independent V110/4Z subtraction or
+the old6*cap expression is insufficient. Actual Rsh-to-reference joins,
+restoration/patch, shared five-defect inputs, implicit Jacobian and nonlinear
+omitted terms must be recomputed before those gates can be accepted. Old
+five-moment certificates cannot certify the new history merely by reuse.
+Production point selection, completed global tensor/temporal-flat/volume/
+finite energy, n=1/n-dependent recursion and full corrected NS remain open.
+No scientific code or complete proof audit was run.
+
+The [current switch receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f19ee6e5af5ec4fad5d5b189827702a2bdf30827/experiments/root_st073/lei_ren_part1_paper_compliant_actual_switch_mixed_C4_check.json)
+and [reshape receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f19ee6e5af5ec4fad5d5b189827702a2bdf30827/experiments/root_st073/lei_ren_part1_paper_compliant_actual_long_reshape_mixed_C4_check.json)
+have311/315 input bindings (315 distinct paths):624 exact Git-byte matches
+and two schedule_pressure.py matches after LF-to-CRLF conversion, with no
+unexplained mismatch. The reshape report's313 count is stale relative to
+the current315-binding receipt. Replay actualswitchmixed/actualreshapemixed
+with current prerequisites and the receipt checkout-byte convention.
 
 ### 2026-10-05 review: actual finite-width six-history bridge/switch enclosure
 
@@ -3098,6 +3140,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [f19ee6e5 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37309680004)
+was checked at terminal failure, rather than inheriting an earlier count:
+actual log13 failed/423 passed; all13 identifiers match 1c227002.
+Four smoke/slice jobs pass and full historical tests are skipped.
 
 The exact-head [1c227002 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37264214568)
 ended failure:13 failed/423 passed; all13 identifiers match 14207174.
