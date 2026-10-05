@@ -1,3 +1,13 @@
+# Current checkpoint: actual R110-to-Rsh long reshape installed — 2026-10-05
+
+Read docs/ACTUAL_LONG_RESHAPE_MIXED_C4_2026_10_05.md. Current finite-width R110 velocity, six own moments and canonical P0 now feed the original long-reshape profiles and physical mixed4 methods. Original A/T, Cstar/Pstar, B normalization, reference length, source controls and exact signed axial graph are retained.
+
+Focused PASS:313 hashes;480 velocity/pressure and600 primitive rows;6 inlet,3 normalization and3 constant-V transport AST bindings;7 R110 trace groups;135 exact two-sided physical mixed rows;480 final source cap proofs. Generic kernel/physical fixtures are reused through unchanged hash-current receipts. Current Rsh reference-restoration flags remain false.
+
+NEXT: operational correlated E=j+epsilon*Psi+Ibridge+Ifirst, current reference/restoration provider and moment patch, then shared five-defect input/Jacobian/remainder recomputation. Exact production points, completed global tensor/flatness/physical-volume/energy, true n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open.
+
+---
+
 # Current checkpoint: actual switch mixed4 and R100 source join complete — 2026-10-05
 
 Read docs/ACTUAL_SWITCH_MIXED_C4_2026_10_05.md. Current finite-width R100 histories now drive the unchanged original first/second switch and R2-to-R110 postpower mixed4 algorithms. Actual own H/M/K/A/B/C, raw Uz, canonical P0 and the current exact axial source remain together; prescribed Dbar/Ebar still come from the known comparison histories.

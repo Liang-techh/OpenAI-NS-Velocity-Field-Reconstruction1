@@ -1,3 +1,25 @@
+# Active handoff: actual long reshape complete; centered E and restoration next — 2026-10-05
+
+Read docs/ACTUAL_LONG_RESHAPE_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualreshapemixed. This section supersedes older pending long-reshape source-interface/provider entries below.
+
+- [x] F39-reshape-source-interface: dedicated exact F/V/chi definition interface from original AST/current bindings; current signed Ibridge/Ifirst source graph retained without altering accepted R100 packets.
+- [x] F39-reshape-current-provider: actual R110 through original long profile/mixed4 to Rsh; same six histories/P0, original A/T/B normalization/reference length, current inlet source and135 exact R110 mixed rows.
+- [ ] F39-reference-centered-E: derive j+epsilon*Psi+current actual bridge increment+current first-switch increment before bounds. Preserve exact graph E=V110-4Z; no independent broad baseline subtraction and no old 6*cap defining formula. Retain C2 theorem bounds only as enclosures of this same function.
+- [ ] F39-reference-current-provider: inject current long reshape into original reference/restoration profiles and mixed4; retain actual parent, V=4Z+E*(1-sigma), all centered histories, E-squared tails, canonical P0 and -8/-7/-6/-5 offsets. Admit current Rsh/reference, Rz/restore and restore/postrestore source joins.
+- [ ] F39-patch-current-provider: current restored histories into actual moment patch/mixed4 on x in [1,e]; independently retain source defects, original bump integrals and derivative orders. Old receipts certify only the legacy provider.
+- [ ] F39-leading-input-recompute: all five shared defects, actual leading inputs, same implicit Jacobian and controlled nonlinear remainders, with only affected receipts refreshed.
+- [ ] F40-global-admissibility: independent completed full-tensor admission over every region/interface.
+- [ ] F40-global-flat-volume-energy: global temporal-flat remainder, physical-volume norms and required-domain energy.
+- [ ] F40-production-points: consistent exact source parameters and evaluable histories/fields; enclosures/caps are not values.
+- [ ] F40-recursion-n1: actual coupled n=1 recovery, common core interval/datum and independent moment repair.
+- [ ] F40-recursion-higher: correct n-dependent n>=2 recovery, separate repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family correction and averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: corrected Cartesian residual/energy and measured vortex widths/aspect/scale fits/cumulative winding.
+
+Acceptance:313 hashes,1080 mixed rows,12 current source/normalization/transport bindings,7 R110 trace groups,135 exact R110 two-sided rows and480 cap proofs. Current restoration/patch/implicit/global/point/recursion remain open.
+
+---
+
 # Active handoff: current actual switch mixed4 complete; downstream transfer next — 2026-10-05
 
 Read docs/ACTUAL_SWITCH_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualswitchmixed for this accepted increment. This section supersedes older pending switch mixed4 installation entries below. Root owns writes; useful bounded read-only reviews use GPT-5.6 Luna/max.
