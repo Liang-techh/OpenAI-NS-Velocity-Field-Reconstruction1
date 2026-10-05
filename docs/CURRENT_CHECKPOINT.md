@@ -1,3 +1,15 @@
+# Current checkpoint: whole entrance similarity source complete — 2026-10-04
+
+Read docs/PULSE_ENTRANCE_SIMILARITY_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has five raw moments/velocity/absolute pressure mixed4 and full meridional stress mixed3, with source-functional canonical inlet and xi=.02/main joins. The entire original main exporter arithmetic is unchanged; only the entrance coordinate guard/domain differ. Actual gp primitive/derivative providers, cutoff symmetry, flat endpoint and forward/future energy partition are explicitly source-bound.
+
+Incoming moments, radial velocity, signed angular memory and energy are nonzero histories and are preserved at xi=0. A directly anchored native forward energy chart is supplied alongside the selected backward chart, with raw energy moment4 and energy-only axial stress3. They are equivalent representations: do not sum the forward chart with the existing backward energy/loss sectors.
+
+Focused checker PASS:433 current hashes,121 source identities,25 AST bindings,1720 finite signed rows;174 independent original-integral/full-stress/velocity/moment/pressure/forward-energy comparisons at xi=0,.01,.02. All3 fixtures retain nonzero Ur, one inlet has nonzero cumulative histories,2 have nonzero axial input. Tolerance1e-40,maximum normalized positive enclosure miss1.585e-75. Bounded Luna/max read-only review accepted the source and unit transfers. Use --stage pulseentrancesimilarity.
+
+NEXT: entrance completed physical tensor/diagonal/divergence/full remainder and inlet/main physical joins; continuous full-shear entrance cone, preserving actual upstream datum/history. Then upstream finite-width feedback, completed global tensor admissibility, independent global flatness/volume/required-domain energy, exact production points, true n-dependent recursion and oscillatory correction. No global, recursion or corrected-residual flag is newly admitted.
+
+---
+
 # Current checkpoint: continuous main/exit full-shear cone complete — 2026-10-04
 
 Read docs/PULSE_MAIN_EXIT_CONE_2026_10_04.md. Main xi[.02,10], exit xi[10,11], Z[-1,1] now have continuous regional two-vector stress-cone coverage, composed through the exact xi11 physical interface and original production radii to the admitted gap/end/tail. All five theta and seven axial corrections, both finite-radius shear sectors, signed histories, absolute pressure and selected energy cancellation remain. Explicit actual source sums prove w=total Tz/total Ttheta before the error estimate.

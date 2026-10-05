@@ -1,3 +1,26 @@
+# Active handoff: whole entrance similarity source complete; physical layer next — 2026-10-04
+
+Read docs/PULSE_ENTRANCE_SIMILARITY_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseentrancesimilarity for this accepted increment. Root owns writes; reuse bounded read-only GPT-5.6 Luna/max review when helpful. All values remain defining-source enclosures, not selected production points.
+
+- [x] F39b7-pulse-entrance-source: Whole original xi[0,.02], five raw moments/velocity/absolute pressure mixed4 and full stress mixed3. Unchanged main exporter arithmetic, exact current C5 data, nonzero incoming histories, canonical analytic pressure and selected energy equation.
+- [x] F39b7-pulse-entrance-similarity-joins: Bind actual original gp primitive/derivative source, derivative recurrence, cutoff reflection and flat xi=.02 endpoint. Replay actual raw moment sums at xi=0 and same source/export at xi=.02. Retain nonzero incoming radial history; only local input/primitives are flat zero.
+- [x] F39b7-pulse-entrance-forward-energy: Native positive forward energy integral and ordinary rows4, raw moment4 and energy-only axial stress3. Exact incoming-energy anchor, actual forward/future quadrature integrands/endpoints, FTC partition and selected backward/forward identity.
+- [ ] F39b7-pulse-entrance-physical: Lift current full stress through mixed3 into the completed symmetric tensor and Ttheta_theta=r*partial_z(Tz), diagonal/divergence/error mixed2 and Cartesian sectors. Reuse admitted physical operator identities; retain every local/incoming radial material, mixed-history, axial and viscosity term in unchanged nu/lambda/time units.
+- [ ] F39b7-pulse-entrance-physical-joins: Source-functional O3 power/inlet and entrance/main physical joins through required stress3/velocity4/pressure4/error2. Bind actual production radius y=xi/mu, original Rp and identical log_tau/theta/nu arguments. Nonzero Ur and cumulative histories cannot be reset because local input is flat.
+- [ ] F39b7-pulse-entrance-cone: Whole entrance/Z full-shear correlated signs and directional margins. Use canonical inlet functions and suitable early ordinary-y/later-xi estimates; main xi>=.02 endpoint envelopes cannot cover xi=0. Choose the equivalent forward energy representation where useful; do not add it to backward energy/loss sectors. Compose the verified upstream and main physical interfaces.
+- [ ] F38-bridge-feedback: Actual Ra-to-R100 finite-width moment/quotient/radius feedback and omitted terms; compose accepted R100-to-R110 signed integrals and remaining implicit leading input.
+- [ ] F40-global-admissibility: Compose every region/interface and independently establish completed full-tensor admissibility. Regional two-vector flags are insufficient.
+- [ ] F40-global-flat-volume-energy: Independent global temporal-flat remainder and physical-volume norms, kinetic energy over the required physical spacetime domain.
+- [ ] F40-production-points: Select consistent exact source parameters and evaluable field calls; enclosures/caps are not defining values.
+- [ ] F40-recursion-n1: Actual coupled n=1 recovery on a common core interval, compatible datum and independent moment repair.
+- [ ] F40-recursion-higher: Correct n-dependent n>=2 recovery, independent repairs, finite-order remainder and smooth summation preserving exact divergence.
+- [ ] F40-oscillatory-correction: Mean/two-family corrections and independently measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: Independent corrected Cartesian residual and energy; measured vortex widths/aspect ratios/scale fits and cumulative particle winding.
+
+Acceptance:433 hashes,121 source identities,25 AST bindings,1720 finite rows;174 independent original startup-integral/source comparisons. Keep entrance physical/cone and all unimplemented global/recursion/correction flags false.
+
+---
+
 # Active handoff: continuous main/exit cone complete; entrance next — 2026-10-04
 
 Read docs/PULSE_MAIN_EXIT_CONE_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulsemainexitcone only for the accepted bounded increment. Root owns writes; reuse bounded read-only GPT-5.6 Luna/max review when helpful. Source enclosures are not selected production points.
@@ -5,7 +28,7 @@ Read docs/PULSE_MAIN_EXIT_CONE_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --st
 - [x] F39b7-pulse-main-exit-cone-source: Replay the original stress split; account for every baseline and all12 correction sectors exactly once; explicitly bind total w=Tz/Ttheta and both finite-radius shears. Preserve gp/ap/derivative and current implicit moment sources.
 - [x] F39b7-pulse-main-exit-cone-bounds: Whole main/exit and Z domains, exact two-IBP moment cancellation, signed falling-side derivative, AM-GM axial derivative control, correlated completed-square bounds and actual monotone source-log envelopes. Strict theta/dot/directional margins; no sampled proof or cap-selected field.
 - [x] F39b7-pulse-main-exit-cone-compose: Same-source xi11 completed physical join, exact production radii and accepted gap/end/tail consumed. Expose regional two-vector flags separately from completed tensor/global conditions.
-- [ ] F39b7-pulse-entrance-source: Implement original xi[0,.02] flat gp input and ordinary derivatives, all five cumulative moments, incoming angular/linear/energy histories, selected amplitude and canonical absolute pressure. Preserve actual inlet datum and source ODEs; avoid treating a flat endpoint as zero cumulative history.
+- [x] F39b7-pulse-entrance-source: Implement original xi[0,.02] flat gp input and ordinary derivatives, all five cumulative moments, incoming angular/linear/energy histories, selected amplitude and canonical absolute pressure. Preserve actual inlet datum and source ODEs; avoid treating a flat endpoint as zero cumulative history.
 - [ ] F39b7-pulse-entrance-physical: Full mixed velocity4/pressure4/stress3, completed symmetric tensor/diagonal/divergence/error2 and Cartesian units. Retain all radial material/viscous/history products. Prove original inlet/entrance/main functional joins, including nonzero endpoint histories, at identical physical arguments.
 - [ ] F39b7-pulse-entrance-cone: Continuous whole entrance and Z coverage with actual nonzero axial shear, source history/moment correlations and current canonical inlet. Derive strict theta/dot/directional margins, then compose upstream and main. Do not extrapolate the xi>=.02 log envelope into entrance.
 - [ ] F38-bridge-feedback: Actual Ra-to-R100 finite-width moment/quotient/radius feedback and omitted terms; compose accepted R100-to-R110 signed integrals and remaining implicit leading input.
@@ -32,7 +55,7 @@ Read docs/PULSE_MAIN_EXIT_PHYSICAL_2026_10_04.md and CURRENT_CHECKPOINT.md. Run 
 - [x] F39b7-pulse-main-exit-cone-source: Derive sigma=2Uz_y/((2+2mu)Utheta),kappa-2=2mu+(2+2mu)*sigma^2 and signed T dot S/cross-direction formulas from current whole-main/exit source. Bind actual gp and gp_xi/ap dependence, selected moment sources and full stress sectors.
 - [x] F39b7-pulse-main-exit-cone-bounds: Continuous whole Z[-1,1],main xi[.02,10],exit xi[10,11]. Retain gp/gp_xi/ap/moment correlations and selected energy cancellation. Derive strict source-functional signs and directional margins. Samples, tiny end-scale estimates and zero-shear gap estimates cannot establish the main/exit cone.
 - [x] F39b7-pulse-main-exit-cone-compose: Compose verified xi11 physical interface and actual radii to accepted gap/end/tail; retain any boundary-dependent estimates at xi10/11. Expose regional cone separately from completed full-tensor/global admissibility.
-- [ ] F39b7-pulse-entrance-source: Implement whole original entrance xi[0,.02],flat gp derivatives,incoming histories,five moments and same absolute pressure; preserve original inlet data and source ODEs.
+- [x] F39b7-pulse-entrance-source: Implement whole original entrance xi[0,.02],flat gp derivatives,incoming histories,five moments and same absolute pressure; preserve original inlet data and source ODEs.
 - [ ] F39b7-pulse-entrance-physical: Full stress3/pressure4/velocity4 and completed physical diagonal/divergence/error2; functional inlet/entrance/main joins in unchanged units.
 - [ ] F39b7-pulse-entrance-cone: Whole entrance continuous bounds with actual shear and same source histories; compose to upstream and current main.
 - [ ] F38-bridge-feedback: Actual Ra-to-R100 finite-width moment/quotient/radius feedback and omitted terms; compose accepted R100-to-R110 signed integrals and remaining implicit leading input.
