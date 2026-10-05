@@ -1,3 +1,13 @@
+# Current33 physical source coverage and three bridge joins complete - 2026-10-05
+
+Read [CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md](CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md). CurrentBridgePhysicalAssembly now composes all33 current source regions with the existing core and actual history. Nine bridge views add1,944 spatial4/time1 contributions; regular coverage is7,134 plus252 retained axis and216 retained gap contributions. Focused acceptance, fresh-coordinate acquisition and default checked runtime pass. Run --stage currentbridgephysical.
+
+The separate currentbridgejoins stage admits first/second, second/macro and R100/current-switch functional mixed4 joins from exact production sources and coordinates. Core/first remains open: analytic core enclosures and coefficientwise inlet atoms require a common nonlinear fixed-point and local stress-free ODE proof. Detailed next tasks start with original recurrence and pressure scaling, not repeated numerical overlap checks.
+
+All33 regional maps do not establish complete nonlinear points, uniform native pulse C4, global interface smoothness, stress/cone/flatness/required-domain energy or true temporal recursion. Earlier sections below retain historical scopes and counts.
+
+---
+
 # Current core/axis physical maps and actual bridge mixed4 admitted - 2026-10-05
 
 Read [CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md](CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md). CurrentCorePhysicalAssembly adds the exact nested analytic core and nonsingular axis mode to the checked heat chain:30 current Cartesian/time physical owners. New checks pass300 profile rows and1,008 physical contributions. There are6,486 regular contributions,252 supplemental axis contributions and216 retained gap contributions. Axis is a core mode, not another owner. Run --stage currentcorephysical.

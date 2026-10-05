@@ -1,3 +1,9 @@
+# Current executable queue - 2026-10-05 current33 maps and partial joins
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md. All33 current physical source regions and three non-core bridge functional mixed4 joins are admitted. Reuse these receipts and unchanged fixtures by hash. Next implement F53 leading axis/full radial recurrence scaling and pressure source binding, then true nonlinear fixed-point/tail provenance and the core/first original ODE join. Do not infer source equality from interval overlap. Mark completed tasks with precise scope, receipt and commit. Core/first, complete nonlinear points, uniform native pulse C4, heat stress companions, global tensor/flatness/required-domain energy and temporal recursion remain open.
+
+---
+
 # Current executable queue - 2026-10-05 core/bridge milestone
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md. Current core/axis physical ownership is30 and three-chart actual bridge mixed4 is separately admitted. Focused checks and checked runtime pass; prior29 physical evidence is retained by hash. Next execute the detailed F51 current bridge functional interfaces, then Cartesian/time mapping and composed33 physical receipt. Mark each completed task with precise scope, receipt and commit before proceeding. Actual nonlinear points, quantitative native full C4, current heat stress companions, global tensor/flatness/required-domain energy and real temporal recursion remain open. Reuse unchanged numerical operator fixtures instead of rerunning them.

@@ -1,3 +1,31 @@
+# Active handoff: current33 maps and three partial bridge joins - 2026-10-05
+
+Read CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md and the latest CURRENT_CHECKPOINT.md. This section supersedes prior F51 physical-map and three non-core interface tasks. Current33 physical source coverage is admitted; core/first and the full reconstruction layers remain open. Use changed-source checks only.
+
+Completed, with current_bridge_physical_assembly_check.json and current_bridge_functional_joins_check.json:
+
+- [x] F51-first-second-interface: exact original source prefixes, flat controls and common nonlinear histories, physical mixed4 pullback.
+- [x] F51-second-macro-interface: exact y=2hb, zero macro-inlet kernels, same own histories,15 graded mixed4 coordinate identities.
+- [x] F51-R100-current-switch-interface: current actual R100 trace and17 original control/source/coordinate identities.
+- [x] F51-current-bridge-physical-dispatch and original-radius-and-units: one checked current bridge instance with existing current30 owner, original factored physical conversion and pressure.
+- [x] F51-bridge-Cartesian-and-time-map and compose-current33-physical:9 whole-Z views,1,944 new contributions;7,134 regular plus252 axis and216 gap. Fresh Z/time/domain and default checked runtime pass.
+- [x] F51-update-dispatch-controller-and-handoff: currentbridgephysical/currentbridgejoins stages and this detailed queue are published with the owned milestone.
+- [ ] F51-core-first-interface and full-four-interface-receipt: three non-core joins are complete; core common nonlinear source/ODE proof remains open. Keep full-interface gate false.
+
+Next execute F53 core provenance and production equations:
+
+- [ ] F53-canonical-core-and-pressure-binding: compare exact analytic family, implicit source, datum, selected logCstar and Lambda/epsilon/delta/j/sigma/h/Gbar definitions. Bind actual production objects and equations, not only saved names.
+- [ ] F53-leading-axis-scaled-recurrence: symbolically replay production n0 advance_one/advance_scaled_one and original core axis equations. Verify A1=-(chi+epsilon beta)/4, Utilde1=epsilon Psi_rho0 and Ptilde1=epsilon^2 F0^2 under original definitions. Record source hashes and scope.
+- [ ] F53-full-finite-radial-scaling: prove every common pressure/swirl/cross term for independent formal axial jets and radial indices. Preserve original support/finite truncation assumptions; keep temporal recursion false.
+- [ ] F53-pressure-seed-and-primitive: exact P0_step=epsilon Pstar^2 P0_norm, epsilon Lambda=1; match 4C to original PD+PI without confusing raw axial V with pressure primitive.
+- [ ] F53-true-swirl-source-jet-admission: enclose true S_Z_taylor using selected F0_squared_Xh_norm_upper and original normalization. Tie finite rows, residual and nonlinear tail to the same analytic fixed point. A shared contraction record does not replace this obligation.
+- [ ] F53-core-first-production-ODE: specialize original controls and atom traces at phase0. Prove R D_over_R equals core recovery and hydro+pressure+swirl drive equals the original core axial ODE. Convert phase derivatives with exact hb factors through mixed4.
+- [ ] F53-admit-core-first-only-after-proof: extend the scoped functional receipt and checked runtime; preserve the three accepted joins and all other false gates. Push exact owned artifacts and mark complete with receipt and commit.
+
+Then resume complete nonlinear point histories, quantitative native pulse interfaces, current heat stress companions, required-domain energy/global stress/flat remainder and genuine n-dependent temporal recursion. Source coverage is not a percentage of this whole goal.
+
+---
+
 # Active handoff: current30 physical plus current three-chart actual bridge mixed4 - 2026-10-05
 
 Read CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md. This section supersedes the earlier F50 core/axis/source-ledger checkboxes, while preserving their historical text. The current three bridge source charts are admitted separately; no full33 physical, point, global or temporal completion is implied. Reuse unchanged receipts by hash and run only checks needed by a changed source/operator/interface.
