@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `d426b6329d7afd33575c9a3f43fb878674959fe0`.
+The inspected `main` head before this update is `39f07857ecff91041af8d3f4c369fed7b8f3ec83`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`73cb73896be110d0c83538da8b03f3ebcb902f1c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/73cb73896be110d0c83538da8b03f3ebcb902f1c)
+[`bd5e7abbd0b7af71e662583c7c2e92d6d544f323`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bd5e7abbd0b7af71e662583c7c2e92d6d544f323)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,53 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: Rp native source join,20 owners and14 physical maps
+
+The fixed [physical-map report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/docs/CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md)
+from73cb7389 admits only the14 current downstream owners: Cartesian spatial
+derivatives total-order4 and fixed-position time derivative1, using current
+dispatcher/core parameters and frozen physical normalization. Existing
+coordinate fixtures are consumed by hash, with30 saved finite patch mixed
+comparisons checking the radial-prefactor unit conversion. This does not
+transfer the historical33-chart admission, choose nonlinear point values,
+or solve the coupled n=1 coefficient equations.
+
+Intermediate fcb0e69b's [Rp report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/docs/ACTUAL_RP_SOURCE_JOIN_2026_10_05.md)
+binds actual terminal O3 histories to the LIVE native pulse inlet, with28
+stage-function/five canonical-unit identities and54 axial0..5 inlet identities.
+Common P0/Cstar/mu/Tw and original logRp remain source-bound; saved power
+samples are not defining sources. The135 Rp mixed rows follow source
+identities, not135 independent fixtures. Dedicated runtime acceptance
+supersedes old source Rp=false scope; the14-chart physical receipt retains
+its historical pending flag and is not extended by this source acceptance.
+
+The [bd5e7abb native-chain report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/docs/CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md)
+exposes all six pulse charts on ONE native object, extending14 to20 source
+owners. Explicit guards retain each original domain. Whole-Z reports include
+360 pulse mixed rows and60 supplemental gap overlap rows; overlap covers
+the exact reciprocal boundary without selecting or changing that endpoint
+and does not create a21st owner. Every call still requires explicit chart
+and local coordinate and returns source enclosures/formal scales.
+
+Source ownership20 is distinct from physical mapping14. The functional
+pulse certificate is narrower than uniform two-sided native mixed-C4:
+uniform_pulse_C4_chart_interface_certificate_available, full_pulse_C4_installed
+and quantitative_flat_velocity_interface_bound_ledger_available remain false.
+Whole pulse callability is not global C4, point-field selection, energy or
+complete Cartesian/interface certification. Full shared leading/nonlinear
+remainder admission, global tensor/flatness/volume/finite energy, actual
+n=1/n-dependent temporal recursion and corrected NS remain open. Current
+unlocalized source still has infinite whole-space energy at positive tau.
+No scientific code or complete proof audit was run.
+
+The [physical-map receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/experiments/root_st073/lei_ren_part1_paper_compliant_current_downstream_physical_assembly_check.json),
+[Rp receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/experiments/root_st073/lei_ren_part1_paper_compliant_actual_Rp_source_join_check.json)
+and [native-chain receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bd5e7abbd0b7af71e662583c7c2e92d6d544f323/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_pulse_source_dispatcher_check.json)
+have376/351/355 bindings (383 distinct paths):1,079 exact pinned Git-byte
+matches and three schedule_pressure.py matches after LF-to-CRLF conversion,
+with no unexplained mismatch. Replay currentphysicalmaps/actualrpjoin/
+currentpulsechain with current prerequisites and receipt checkout bytes.
 
 ### 2026-10-05 review: current eight/nine/fourteen-chart source ownership
 
@@ -3262,6 +3309,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [bd5e7abb run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37335232935)
+ended failure:13 failed/423 passed; all13 identifiers match 1a715aa4.
+Four smoke/slice jobs pass; full historical tests are skipped.20 source
+owners and14 physical maps are not complete global NS acceptance.
 
 The exact-head [1a715aa4 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37324546649)
 ended failure:13 failed/423 passed; all13 identifiers match 5e0c17b6.
