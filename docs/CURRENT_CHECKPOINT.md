@@ -1,3 +1,15 @@
+# Current checkpoint: continuous entrance full-shear cone complete — 2026-10-04
+
+Read docs/PULSE_ENTRANCE_CONE_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has continuous regional two-vector cone bounds, retaining all12 corrections and both finite-radius shears. The exact canonical inlet/main completed physical interfaces and admitted main/exit/gap/end/downstream tail are consumed. Regional coverage begins at actual Rp=Rtail*exp(-13/mu-wait-Ts-102-Lrel).
+
+Direct Xp-1/(1-mu) interval subtraction cannot resolve the original tiny inlet memory. The actual pure-power assignments prove Xp-1/r=(h_w/u_w-1/r)*exp(-r*Tw), retaining full history exp(-r*(Tw+xi/mu)). Whole-Z canonical q^-1 shapes identify the actual pre-Tw ratio as a source constant. Actual entrance0/.02 log envelopes and original gp<=.01/gp_xi<=1 bounds yield b*w<.020664,a-b*w>1.97933,directional bracket>1.95862. No source history is reset and no main endpoint envelope is extrapolated.
+
+Focused checker PASS:457 hashes,41 identities,7 power AST assignments,38 strict margins;27 independent original-startup/full-stress/memory/two-IBP/cone/unit comparisons at xi=0,.01,.02,nu=.01/.7. Tolerance1e-55,max normalized error2.450e-91. Existing entrance Cartesian receipt is consumed without rerun. Use --stage pulseentrancecone; CertifiedPulseEntrancePhysical preserves the current physical source.
+
+NEXT: actual upstream Ra-to-R100 finite-width feedback and omitted terms, then compose accepted R100-to-R110 signed integrals and consistent leading data. Completed full-tensor/global admissibility, global temporal-flat remainder/volume/required-domain energy, exact production points, actual n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open.
+
+---
+
 # Current checkpoint: whole entrance completed physical tensor complete — 2026-10-04
 
 Read docs/PULSE_ENTRANCE_PHYSICAL_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has physical meridional stress mixed3, completed symmetric tensor/diagonal/divergence and all three remainder components mixed2, including Cartesian sectors. The original inlet and xi=.02/main physical interfaces are source-functional. The production entrance radius takes y=xi/mu; both charts use logRp+xi/mu at the common physical position.
