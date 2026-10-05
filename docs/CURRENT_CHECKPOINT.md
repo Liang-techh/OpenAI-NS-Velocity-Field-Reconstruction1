@@ -1,3 +1,15 @@
+# Current checkpoint: continuous main/exit full-shear cone complete — 2026-10-04
+
+Read docs/PULSE_MAIN_EXIT_CONE_2026_10_04.md. Main xi[.02,10], exit xi[10,11], Z[-1,1] now have continuous regional two-vector stress-cone coverage, composed through the exact xi11 physical interface and original production radii to the admitted gap/end/tail. All five theta and seven axial corrections, both finite-radius shear sectors, signed histories, absolute pressure and selected energy cancellation remain. Explicit actual source sums prove w=total Tz/total Ttheta before the error estimate.
+
+Current bounds: b*w<.512; second cone expression<1.170<2; a-b*w>1.488; directional bracket>.830. Exact two-IBP original moment cancellation and signed gp derivative correlation provide continuous bounds, including the falling side; samples are not the proof.
+
+Focused checker PASS:445 current hashes,84 source/cone identities,13 AST bindings,43 strictly positive margins. Four independent nonzero-shear fixtures, two on the falling side, give44 original-integral/full-stress/unit comparisons and48 log-envelope checks; tolerance1e-60,max normalized error1.381e-99. Existing full Cartesian physical receipt consumed without rerun. Use --stage pulsemainexitcone. The read-only Luna/max review's total-ratio source-binding concern has been addressed explicitly.
+
+NEXT: entrance xi[0,.02] source/physical/full-shear cone and original inlet/main joins; upstream finite-width feedback. Completed full-tensor/global admissibility, global temporal flatness/volume/required-domain energy, exact production points, true n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain unimplemented.
+
+---
+
 # Current: original main/exit completed physical tensor — 2026-10-04
 
 Read docs/PULSE_MAIN_EXIT_PHYSICAL_2026_10_04.md. Whole original main xi[.02,10],exit xi[10,11],Z[-1,1] now has full physical stress mixed3, completed symmetric tensor/diagonal/divergence mixed2 and all three physical remainder components mixed2, with Cartesian tensor/divergence/error sectors. The admitted physical lift is reused with exact extra history logs. Local and incoming time/viscosity terms, all four radial convection products and both axial-radial products remain.

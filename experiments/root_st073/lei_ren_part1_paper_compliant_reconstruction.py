@@ -211,6 +211,7 @@ PULSEGAPPHYSICAL=('pulse_gap_physical_C2','pulse_gap_physical_C2_check')
 PULSEGAPCONE=('pulse_gap_cone','pulse_gap_cone_check')
 PULSEMAINEXITSIMILARITY=('pulse_main_exit_similarity_C4','pulse_main_exit_similarity_C4_check')
 PULSEMAINEXITPHYSICAL=('pulse_main_exit_physical_C2','pulse_main_exit_physical_C2_check')
+PULSEMAINEXITCONE=('pulse_main_exit_cone','pulse_main_exit_cone_check')
 FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
@@ -276,6 +277,7 @@ def stages(stage):
             'pulsegapcone':PULSEGAPCONE,
             'pulsemainexitsimilarity':PULSEMAINEXITSIMILARITY,
             'pulsemainexitphysical':PULSEMAINEXITPHYSICAL,
+            'pulsemainexitcone':PULSEMAINEXITCONE,
             'freshcore':FRESHCORE,
             'axisamplitude':AXISAMPLITUDE,
             'rootpeak':ROOTPEAK,
@@ -286,7 +288,7 @@ def stages(stage):
             'macrosignedleading':MACROSIGNEDLEADING,
             'firstswitchleading':FIRSTSWITCHLEADING,
             'switchintegrals':SWITCHINTEGRALS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+PULSEMAINEXITCONE+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -514,10 +516,12 @@ def run(stage='all',list_only=False):
         actual_whole_gap_nonzero_radial_history_and_remainder_preserved='pulse_gap_physical_C2_check' in completed,
         actual_original_main_exit_similarity_companion_constructed='pulse_main_exit_similarity_C4_check' in completed,
         actual_main_exit_full_axial_shear_and_forward_histories_retained='pulse_main_exit_similarity_C4_check' in completed,
-        actual_main_exit_physical_decomposition_constructed='pulse_main_exit_physical_C2_check' in completed,
-        actual_main_exit_three_component_remainder_mixed2_available='pulse_main_exit_physical_C2_check' in completed,
-        actual_main_exit_and_gap_completed_physical_interfaces_verified='pulse_main_exit_physical_C2_check' in completed,
-        actual_main_exit_cone_certified=False,
+        actual_main_exit_physical_decomposition_constructed='pulse_main_exit_physical_C2_check' in completed or 'pulse_main_exit_cone_check' in completed,
+        actual_main_exit_three_component_remainder_mixed2_available='pulse_main_exit_physical_C2_check' in completed or 'pulse_main_exit_cone_check' in completed,
+        actual_main_exit_and_gap_completed_physical_interfaces_verified='pulse_main_exit_physical_C2_check' in completed or 'pulse_main_exit_cone_check' in completed,
+        actual_main_exit_cone_certified='pulse_main_exit_cone_check' in completed,
+        actual_main_exit_full_axial_shear_kappa_verified='pulse_main_exit_cone_check' in completed,
+        actual_main_exit_gap_end_joined_tail_two_vector_cone_certified='pulse_main_exit_cone_check' in completed,
         actual_pulse_gap_cone_certified='pulse_gap_cone_check' in completed,
         actual_gap_zero_axial_shear_kappa_verified='pulse_gap_cone_check' in completed,
         actual_gap_end_joined_tail_two_vector_cone_certified='pulse_gap_cone_check' in completed,
@@ -574,7 +578,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','pulsemainexitcone','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
