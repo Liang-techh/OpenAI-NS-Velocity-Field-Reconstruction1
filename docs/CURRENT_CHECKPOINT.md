@@ -1,3 +1,11 @@
+# Current pulse terminal admitted into flatten - 2026-10-05
+
+Read [CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md](CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md). CurrentPulseFlattenSourceAssembly now exposes twenty-one profile source owners. The new flatten uses current native U/Hp/Pin/Xp/P0 and the same complete future-energy callable, retaining the original 100-unit ODEs and terminal source theorem. Three whole-Z flatten packets contain 180 mixed logR/Z source rows; a fresh unsaved Z exercises the current callable.
+
+Physical Cartesian/time ownership remains at twenty (a7196c28). Current flatten physical conversion and post-flatten source admission come next, alongside quantitative native pulse interfaces. Complete nonlinear points, global stress/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open. Run --stage currentpulseflatten.
+
+---
+
 # Current pulse Cartesian/time source maps complete — 2026-10-05
 
 Read [CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md](CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md). CurrentPulsePhysicalAssembly adds six current pulse charts and their supplemental gap overlap to the physical interface, retaining the earlier fourteen-chart report by its checked hash/registry. Twenty downstream source owners are callable in physical coordinates.

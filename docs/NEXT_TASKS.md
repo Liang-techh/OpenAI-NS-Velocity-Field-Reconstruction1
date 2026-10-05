@@ -1,3 +1,14 @@
+# Next: current flatten physical map and post-flatten source chain - 2026-10-05
+
+Read CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md; run --stage currentpulseflatten. The pulse terminal now supplies the new flatten owner directly. Twenty-one profile sources are callable; twenty physical Cartesian/time owners remain accepted.
+
+1. Install current flatten physical Cartesian/time conversion with actual Rv/Ev0/Pstar units and retained earlier evidence.
+2. Admit flatten exit into the following power source, then current angular/steep/waiting/heat owners with common histories and analytic pressure.
+3. Close quantitative native mixed4 interfaces and full leading/remainder/production points; complete global tensor/cone/flatness/required-domain energy.
+4. Implement true n-dependent temporal recursion and oscillatory correction after the background prerequisites.
+
+---
+
 # Next: native pulse interfaces and terminal transfer — 2026-10-05
 
 CurrentPulsePhysicalAssembly exposes twenty accepted downstream source owners in physical coordinates. Six pulse charts and their overlap are newly mapped; the fourteen-chart physical report is retained without regeneration. Read CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage currentpulsephysical.

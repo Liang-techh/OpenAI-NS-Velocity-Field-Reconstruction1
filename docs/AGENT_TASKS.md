@@ -1,3 +1,18 @@
+# Active handoff: current pulse-to-flatten source join complete - 2026-10-05
+
+Read CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage currentpulseflatten. Twenty-one profile source owners are accepted; physical Cartesian/time ownership remains twenty.
+
+- [x] F45-current-pulse-terminal-transfer: bind the same native terminal owner, original empty future supports, nonzero Xv, complete future energy/2, common P0 and FTC Mp; consume the canonical source theorem after actual object/AST bindings.
+- [x] F45-current-flatten-source-provider: retain original flatten ODEs and incoming functions, replace saved terminal/energy inputs with the current native defining objects/callable; whole-Z inlet/domain/exit source packets, 180 mixed4 rows and fresh unsaved-Z call.
+- [ ] F46-current-flatten-physical-map: extend the twenty-owner physical adapter to the new flatten provider with original Rv, full Ev0 factors and pressure Pstar squared; preserve exact factor correlations and earlier accepted evidence.
+- [ ] F46-current-postflatten-power: bind flatten t=100 to the following pure power provider, including angular/energy/pressure histories and formal amplitude/radius units; use exact sigma endpoint/source identities before quantitative bounds.
+- [ ] F46-current-postpulse-chain: extend consistent current ownership through angular, steep, waiting, exact heat collar/exterior; retain common pressure/future integral and admit each interface before physical expansion.
+- [ ] F45-native-quantitative-interface-bounds: uniform two-sided native mixed4 bounds remain open despite the accepted functional terminal join. Full pulse C4 stays false.
+- [ ] F45-full-leading-and-production: common full leading/remainder admission and nonlinear point histories, including core/axis/bridge physical ownership, remain open.
+- [ ] F45-global-stress-flatness-energy and F45-real-recursion-and-correction: actual global tensor/cone/flatness/required-domain energy, distinct n-dependent recovery/repairs/summation and realizable oscillatory correction remain open.
+
+---
+
 # Active handoff: current pulse physical source interface complete — 2026-10-05
 
 Read CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md and CURRENT_CHECKPOINT.md; run --stage currentpulsephysical. F44-current-pulse-physical-extension is complete in the twenty-owner regional source scope. The prior fourteen-chart maps are retained evidence, while only the six pulse charts and their overlap are newly generated.
