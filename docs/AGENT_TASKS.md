@@ -1,3 +1,22 @@
+# Active tasks after actual core operator (2026-10-05)
+
+Read CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md. This section supersedes the F54 source/operator/incidence/extraction items below. Keep later gates false until their own proofs pass.
+
+- [x] F54-actual-twenty-term-source: original gauge AST10+10 expressions are evaluated with current S units and common M/Pcal definitions.
+- [x] F54-term-to-majorant-incidence: exact expressions and all20 production coefficient formulas are paired; one outer epsilon/2, fixed multiplier and angular resolvent are bound. Supremum product and mixed derivative convolution proofs include both full split sums.
+- [x] F54-actual-correction-operator: callable Green inverses and T preserve zero correction axis; exact common pressure and its Z derivative are retained.
+- [x] F54-arbitrary-coefficient-extraction: production gauge identities plus all-order Taylor laws and prior whole-production AST scaling bind the recurrence.21 independently generated scalar rows agree exactly;24 Green identities pass. Receipt: current_core_nonlinear_operator_check.json.
+- [ ] F55-actual-Banach-map-admission: replay the existing20 positive coefficient/size/Lipschitz rows at original precision; bind actual selected source, pressure, tube, model norms and resolvent before claiming contraction for this callable map.
+- [ ] F55-parameter-and-domain-unification: check exact constant definitions, source intervals, whole real axis and overlapping complex disks; keep delta, core epsilon and pressure-datum epsilon distinct.
+- [ ] F55-common-coefficient-induction: establish unique formal radial coefficients of the admitted analytic solution; use source equations to show current finite recurrence enclosures contain those coefficients over admitted domains.
+- [ ] F55-common-nonlinear-tail: bind the same Banach solution norm tail plus Bessel model tail to normalized_jets and rooted-core consumers; do not infer equality from shared IDs or box overlap.
+- [ ] F55-common-receipt-and-runtime: admit finite_rows_and_tails_bound_to_same_nonlinear_fixed_point only after all prior obligations pass; exercise a fresh Z and enforce receipt hashes at checked loading.
+- [ ] F55-core-first-pressure-primitive: prove4C=PD+PI with the common source, then original phase0 atom controls and pressure/swirl/hydro drive.
+- [ ] F55-core-first-ODE-join: prove stress-free core recovery, radial Euler derivatives and exact hb phase pullbacks through mixed4. Extend the three-join receipt only after these identities pass.
+- [ ] F55-downstream-global-work: continue stress cone/lift, flat remainder, required-domain energy and true n-dependent temporal recursion. All full-point/global/temporal claims retain independent gates.
+
+Reuse unchanged upstream receipts. Preserve unrelated user files. Publish exact owned artifacts and record the commit when completing a task.
+
 # Active handoff: exact scaled S jets admitted - 2026-10-05
 
 Read CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md. This section supersedes the exact-S/Cauchy-consumer portions of F53 below. The new adapter uses current actual atom/amplitude/rebuild objects and leaves old seed rows/receipts intact.

@@ -1,3 +1,9 @@
+# Current checkpoint: actual core source operator (2026-10-05)
+
+Read [CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md](CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md). The currentcoreoperator stage now evaluates the production10+10 source terms, common pressure primitive, zero-axis Green inverses and finite radial extraction. Fresh current-source rows0..4 are generated.21 independent formal coefficients equal the original recurrence and24 Green identities pass. Full supremum-norm convolution proofs bind the mixed derivative constants and each source expression to its production majorant.
+
+Actual operator/radial extraction and norm-incidence gates are accepted. Actual-operator Banach admission, identification of the common finite/tail solution, core/first join, full points/global stress and temporal recursion remain open. This is radial core progress, not temporal recursion completion.
+
 # Actual scaled swirl source connected to current coefficient seeds - 2026-10-05
 
 Read [CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md](CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md). The currentcoreswirl stage admits exact S=epsilon_core^2 F0^2 and its ordinary Taylor jets into the unchanged original Cauchy seed boxes. It consumes the actual weighted transfer bound, selected Cstar surplus and same eta/2 radius in logarithmic form.121 original source rows, six symbolic relative-jet identities and27 independent moderate-source coefficients pass; default checked loading and fresh seed runtime pass. No amplitude is set to zero or to a cap.

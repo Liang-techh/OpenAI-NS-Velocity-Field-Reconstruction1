@@ -1,3 +1,7 @@
+# Scheduled queue: common core solution after actual operator (2026-10-05)
+
+Read docs/AGENT_TASKS.md and docs/CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md first. F54 actual production source, Green operator, term-to-majorant incidence and radial extraction are implemented. Execute F55 actual-map Banach admission, then common finite coefficient induction and nonlinear/model tail binding. Next recover core/first pressure primitive and original ODE join. Do not repeat unchanged upstream121 seed rows,33 physical reports or prior radial-scaling proofs. Preserve scoped gates; temporal recursion remains open. Mark completed tasks with source receipt and commit, and push owned artifacts.
+
 # Current executable queue - 2026-10-05 actual scaled swirl source
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md. Exact scaled S and its Cauchy jets are admitted into the unchanged current coefficient seeds, following radial scaling/leading-axis/pressure-seed proofs. Next execute F54 actual gauge10+10 nonlinear operator, term-to-majorant incidence and arbitrary coefficient extraction. Then prove common fixed-point/tail provenance and the core/first pressure/ODE join. Do not redo the121 rows or prior physical33 reports unless source changes. Keep full point/global/temporal gates false and mark completed tasks with precise source receipt and commit.
