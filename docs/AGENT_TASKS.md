@@ -1,5 +1,7 @@
 # Active tasks after actual core operator (2026-10-05)
 
+Implementation and scoped receipts: commit [48b0fdfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48b0fdfc).
+
 Read CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md. This section supersedes the F54 source/operator/incidence/extraction items below. Keep later gates false until their own proofs pass.
 
 - [x] F54-actual-twenty-term-source: original gauge AST10+10 expressions are evaluated with current S units and common M/Pcal definitions.

@@ -1,5 +1,7 @@
 # Scheduled queue: common core solution after actual operator (2026-10-05)
 
+Implementation and scoped receipts: commit [48b0fdfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48b0fdfc).
+
 Read docs/AGENT_TASKS.md and docs/CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md first. F54 actual production source, Green operator, term-to-majorant incidence and radial extraction are implemented. Execute F55 actual-map Banach admission, then common finite coefficient induction and nonlinear/model tail binding. Next recover core/first pressure primitive and original ODE join. Do not repeat unchanged upstream121 seed rows,33 physical reports or prior radial-scaling proofs. Preserve scoped gates; temporal recursion remains open. Mark completed tasks with source receipt and commit, and push owned artifacts.
 
 # Current executable queue - 2026-10-05 actual scaled swirl source

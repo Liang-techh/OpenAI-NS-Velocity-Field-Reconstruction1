@@ -1,5 +1,7 @@
 # Actual twenty-term core operator and radial extraction
 
+Implementation and scoped receipts: commit [48b0fdfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48b0fdfc).
+
 The normalized core now has a callable production source operator. It consumes the original gauge's ten angular and ten axial expressions, uses the current admitted swirl source, restores the common pressure integral, and generates finite radial coefficients. This advances the core solver; temporal scale recursion remains open.
 
 Run the scoped stage:
