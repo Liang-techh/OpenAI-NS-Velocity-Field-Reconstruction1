@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `e62cb305da9d53bbe1daf17ae8f989c3ce28ef93`.
+The inspected `main` head before this update is `0a69f95de84277fa550994000355f8065be4baff`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`48f646c0dcb088f84b905083d1ab34e2505f7d92`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48f646c0dcb088f84b905083d1ab34e2505f7d92)
+[`2b4aa11e2654d096effa94dce5ca308f909b4c1f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2b4aa11e2654d096effa94dce5ca308f909b4c1f)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,48 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: current waiting/collar/exact Gamma,29 owners
+
+Fixed [2b4aa11e heat report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2b4aa11e2654d096effa94dce5ca308f909b4c1f/docs/CURRENT_HEAT_CHAIN_2026_10_05.md)
+adds heat_collar/exterior to27 current source AND physical owners, now29.
+One current steep/outer/future graph supplies epsilon, wait, signed angular
+memory, flatten amplitude and absolute Ptail; original collar/exterior
+operators retain P0+Mp and pressure3 full-tail differences. Exact S=1/Rtail
+is never replaced by a cap, H=1 or a finite series. Both epsilon atoms and
+complete infinite Gamma tail remain. Current heat pressure/stress admission
+is a separate next gate; legacy heat/stress/cone receipts are not transferred.
+
+Current/admitted C4/C5 heat_future_jets and collar integrands are bound to
+the SAME exact Gamma source before differently partitioned numerical boxes
+are consumed. Full integral additivity/FTC and original shapes establish
+waiting-to-collar-to-exterior functional joins; box equality is not required
+or used as source identity. Angular memory defect is retained with its sign,
+not reset to zero. Source and physical runtime checks cover whole Z, collar,
+flat phi crossing and unbounded exterior. Spatial4/fixed-position time1
+bounds retain original radius, moving basis and frozen Ev0/Pstar^2 units.
+
+Exterior log-radius exponents are nonpositive: zero terms are skipped before
+infinite multiplication and negative terms have finite upper bounds at the
+lower radius. This derivative upper-bound coverage is NOT a kinetic-energy
+integral, nonlinear production point field or n=1 recursion. Saved120 finite
+synthetic mixed comparisons check units only; earlier fixtures are hash-reused.
+29-owner regular contributions total6,234 plus216 gap-overlap contributions.
+No scientific computation or independent complete proof audit was run.
+
+Next: current core/axis and three bridge physical owners, plus independent
+current heat pressure/stress companions. Uniform native pulse C4/quantitative
+interface bounds, full shared leading/nonlinear remainder and point admission,
+global tensor/cone/temporal flatness/volume/finite energy, actual n=1/time
+recursion and corrected full NS remain open. Unlocalized whole-space Gamma
+energy remains infinite; chart counts are not overall completion percentages.
+
+The [heat source receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2b4aa11e2654d096effa94dce5ca308f909b4c1f/experiments/root_st073/lei_ren_part1_paper_compliant_current_heat_source_check.json)
+and [physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2b4aa11e2654d096effa94dce5ca308f909b4c1f/experiments/root_st073/lei_ren_part1_paper_compliant_current_heat_physical_assembly_check.json)
+have511/533 bindings (533 distinct paths):1,042 exact pinned Git-byte matches
+and two schedule_pressure.py matches after LF-to-CRLF conversion, with no
+unexplained mismatch. Replay currentheat/currentheatphysical with current
+prerequisites and receipt checkout bytes; unchanged fixtures were not rerun.
 
 ### 2026-10-05 review: current power/angular and steep/waiting,27 owners
 
@@ -3415,6 +3457,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [2b4aa11e run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37377626157)
+ended failure:13 failed/423 passed; all13 identifiers match 48f646c0.
+Four smoke/slice jobs pass; full historical tests are skipped.29 derivative
+source owners are not required-domain energy or corrected NS acceptance.
 
 The exact-head [48f646c0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37355577296)
 ended failure:13 failed/423 passed; all13 identifiers match af7eb26d.
