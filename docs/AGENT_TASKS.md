@@ -1,5 +1,7 @@
 # Active tasks after common core admission (2026-10-05)
 
+Implementation and scoped receipts: commit [c4c1098b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4c1098b).
+
 Read CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md. This authoritative task list supersedes the older F55 common-solution checkboxes below. Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_core_common_fixed_point_check.json.
 
 - [x] F55-actual-Banach-map-admission: replay all 20 original positive rows and combined bounds; admit the same closed model-centered Xh ball and contraction.

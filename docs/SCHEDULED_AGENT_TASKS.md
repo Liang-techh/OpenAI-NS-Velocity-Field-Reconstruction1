@@ -1,5 +1,7 @@
 # Scheduled queue: core/first closure after common-core admission (2026-10-05)
 
+Implementation and scoped receipts: commit [c4c1098b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4c1098b).
+
 Read docs/AGENT_TASKS.md and docs/CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md first. F55 actual Banach/common coefficient/model/nonlinear and mixed pressure tail work is complete with current_core_common_fixed_point_check.json. Execute F56 owner binding, rho=4 pressure identity, phase0 controls, original core recovery and hb mixed4 pullback in that order; admit the fourth join only after those obligations pass. Then advance F57-F61 global/temporal/oscillatory work.
 
 Do not rerun unchanged 121 seed rows, 33 physical reports, earlier radial identities or the new common-core check unless a defining source changes. Historical false gates belong to their old receipt scopes. Mark completed tasks with precise receipts and commits and push owned changes. Genuine temporal recursion and complete point/global NS validation remain open.

@@ -1,5 +1,7 @@
 # Current core: common analytic solution and radial tails
 
+Implementation and scoped receipts: commit [c4c1098b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4c1098b).
+
 The original twenty-term core map now has a source-bound Banach admission. The finite production recurrence, Bessel model and nonlinear radial tails enclose the same unique analytic solution for each fixed original implicit source in the admitted domains. This is radial core progress. Time-dependent scale recursion, the core/first bridge join and global completion remain open.
 
 The scoped implementation is `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_common_fixed_point.py`, its producer JSON, and `_check.py` / `_check.json`. Historical receipts retain their original scope and false later gates.
