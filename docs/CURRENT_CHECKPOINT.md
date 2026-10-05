@@ -1,3 +1,17 @@
+# Current: whole original main/exit similarity source companion — 2026-10-04
+
+Read docs/PULSE_MAIN_EXIT_SIMILARITY_2026_10_04.md. Original main xi[.02,10] and exit xi[10,11],Z[-1,1] now retain all five raw cumulative moments mixed4, velocity mixed4, same absolute pressure mixed4 and full meridional stress mixed3. Full gp/Uz_y, local forcing and separate incoming linear histories, signed angular memory, local squared-energy integral, selected terminal loss and canonical pressure memory remain. Ordinary rows use d_logR=mu*d_xi.
+
+The uncapped positive-quadratic source callable restores exact incoming and end-energy exponential factors and implicit derivatives; scalar and Taylor modes guard the positive branch. Original gp/beta/Gram/full-row integral source recipes are AST-bound. Production C5 coefficients and the terminal datum are enclosures only; no box/root/cap is chosen as a field value. Production exact point parameter selection stays false. Correct angular normalization is Mtheta/(sqrt(2)*R^(3/2)*Utheta).
+
+Focused checker PASS: 429 current hashes, 37 source identities, 27 source AST bindings and 2025 finite signed rows (stress 750, velocity 300, five raw moments 825, absolute pressure 150). Three independent original-integral/full-stress fixtures give 169 checks, including two nonzero-shear cases. Normalized tolerance 1e-50, maximum positive enclosure miss 9.83375766025783602734756116449e-92. C5 positive-root implicit derivatives and invalid-branch rejection pass; this is formula/unit evidence, not corrected NS accuracy.
+
+Same-source xi10 coverage and the current source-functional xi11/gap certificate are consumed with axial derivatives through5 and common moment/energy/pressure histories. Use --stage pulsemainexitsimilarity. Independent unchanged quadrature is hash/precision/version-bound and reused; it is fixture data, not production parameters.
+
+NEXT: completed main/exit physical tensor/diagonal/divergence and full three-component remainder, preserving all local/incoming nonlinear cross products, then continuous main/exit cone with order-one axial shear and the xi11/gap physical join. Entrance and upstream finite-width feedback, global completed-tensor admissibility, global temporal flat/volume/required-domain energy, actual n-dependent recursion, oscillatory correction and corrected Cartesian residual/dynamics remain open.
+
+---
+
 # Current: continuous whole original inactive-gap cone — 2026-10-04
 
 Read docs/PULSE_GAP_CONE_2026_10_04.md. The complete original xi[11,13-4mu],d[4mu,2],Z[-1,1] gap now satisfies the regional two-vector cone and composes through the same completed physical end join to the admitted downstream tail. All four angular corrections and four axial sectors remain: signed memory, separate Mz/Mtheta_z histories, radial shear, unperturbed energy, absolute pressure memory, linear axial history and selected loss.
