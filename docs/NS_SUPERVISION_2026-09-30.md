@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `56cf195b5c53baf09b65561f7338c9414bb8a8c0`.
+The inspected `main` head before this update is `1a32680285881da9c365a8c12bc7d7e7a18d4ef4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`142071744159b097bcccec3936519ec5c951adf3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/142071744159b097bcccec3936519ec5c951adf3)
+[`1c227002e32825d30867796c932a365f4a56891d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1c227002e32825d30867796c932a365f4a56891d)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,49 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: actual finite-width six-history bridge/switch enclosure
+
+Fixed [1c227002 bridge report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/docs/ACTUAL_BRIDGE_INTEGRALS_2026_10_04.md)
+and [switch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/docs/ACTUAL_BRIDGE_SWITCH_2026_10_05.md)
+record actual Ra-to100 finite-width field and six own-history enclosures,
+then a source-functional R100-to110 companion through original controls and
+postpower. Microscopic Volterra kernels, signed macro feedback, nonlinear
+prefix and quadratic changes are retained. Actual R100 phi/raw Uz, six
+H/M/K/A/B/C histories, canonical P0 and axial jets feed the unchanged switch.
+This is functional enclosure composition, not selected production histories.
+The prescribed comparison remains the original shear direction, not an
+actual-stress feedback equation; raw Uz is distinct from V_pressure=4C.
+
+Two source corrections are essential. F0(Z)^2 must retain the full log
+range [-2logC-2Lambda*Gbar,-2logC]: Gbar bounds G(Z), and a lower endpoint
+alone cannot enclose the amplitude. Macro, first-switch and complete-switch
+signed receipts were refreshed for this correction. Comparison moments
+must retain axial6 BEFORE direction differentiation, yielding six axial5
+direction rows; the earlier truncate(5) discarded the highest row. Complete
+signed packets keep amplitude logs separately from enormous width logs.
+
+The new compose flag R100_R110_actual_feedback_composed=true supersedes
+the initial bridge companion's false flag for this transfer only. Existing
+mixed4 provider replacement is false; old mixed4/physical/cone certificates
+were not regenerated or rebound. Old acceptance cannot certify this new
+inlet. Actual R110-to-reshape/restoration propagation, shared five-defect
+functions, Jacobian and omitted-term recomputation remain open.
+Saved 33 bridge and six postpower integral fixtures check algebra/kernels
+at moderate parameters, not exact parameter selection or corrected NS.
+No scientific code or complete proof audit was run. Point histories,
+completed global tensor, temporal flatness/volume/finite energy, n=1 and
+n-dependent recursion/corrections plus full NS residual/dynamics remain open.
+
+The [bridge receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/experiments/root_st073/lei_ren_part1_paper_compliant_actual_bridge_integrals_check.json),
+[composition receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/experiments/root_st073/lei_ren_part1_paper_compliant_actual_bridge_switch_check.json),
+[macro signed receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/experiments/root_st073/lei_ren_part1_paper_compliant_macro_signed_integrals_check.json),
+[first-switch receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/experiments/root_st073/lei_ren_part1_paper_compliant_first_switch_leading_check.json)
+and [complete signed-switch receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1c227002e32825d30867796c932a365f4a56891d/experiments/root_st073/lei_ren_part1_paper_compliant_switch_signed_integrals_check.json)
+have298/307/5/8/302 bindings (311 distinct paths):917 exact Git-byte matches
+and three schedule_pressure.py matches after LF-to-CRLF conversion, with
+no unexplained mismatch. Replay actualbridgeintegrals/actualbridgeswitch
+and affected signed stages with current prerequisites and checkout bytes.
 
 ### 2026-10-05 review: whole entrance physical interfaces and regional full-shear cone
 
@@ -3055,6 +3098,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [1c227002 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37264214568)
+ended failure:13 failed/423 passed; all13 identifiers match 14207174.
+Four smoke/slice jobs pass; full historical tests are skipped. Companion
+bridge composition is not downstream implicit or global NS acceptance.
 
 The exact-head [14207174 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37259392600)
 ended failure:13 failed/423 passed with the same13 identifiers as 531b35ee.
