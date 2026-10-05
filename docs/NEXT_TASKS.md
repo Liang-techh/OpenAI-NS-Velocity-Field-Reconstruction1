@@ -1,3 +1,14 @@
+# Next: current flatten exit into outer power - 2026-10-05
+
+CurrentFlattenPhysicalAssembly exposes twenty-one downstream physical source owners. Read CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md; run --stage currentflattenphysical. Preserve the accepted current graph and retained earlier evidence.
+
+1. Rebind the following pure-power inlet to current flatten t=100, retaining five histories, future energy, pressure, amplitude and radius; consume exact endpoint/source identities before quantitative joins.
+2. Extend current source and physical ownership through angular/steep/waiting/heat with the common pressure and completed future integral.
+3. Close uniform native mixed4 interfaces, full leading/remainder and nonlinear production points; complete global tensor/cone/flatness/required-domain energy.
+4. Implement true n-dependent temporal recursion and oscillatory correction after the background gates.
+
+---
+
 # Next: current flatten physical map and post-flatten source chain - 2026-10-05
 
 Read CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md; run --stage currentpulseflatten. The pulse terminal now supplies the new flatten owner directly. Twenty-one profile sources are callable; twenty physical Cartesian/time owners remain accepted.

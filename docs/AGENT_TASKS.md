@@ -1,3 +1,17 @@
+# Active handoff: twenty-one current physical source owners - 2026-10-05
+
+Read CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md and CURRENT_CHECKPOINT.md; run --stage currentflattenphysical. Historical sections below preserve their earlier scopes.
+
+- [x] F46-current-flatten-physical-map: use the checked current flatten object for both provider and evaluation, original Rv radius and fixed Ev0/Pstar squared units, whole-Z inlet/domain/exit maps, Cartesian spatial4/time1, retained twenty-owner evidence and 60 independent full-field unit rows.
+- [ ] F46-current-postflatten-power: admit t=100 into following pure power with all five terminal histories, absolute P0+Mp, actual future source, original radius/log amplitude and exact sigma endpoint identities; then extend the physical adapter.
+- [ ] F46-current-postpulse-chain: extend angular, steep, waiting and exact heat owners with the same future integral/pressure and individually admitted source interfaces.
+- [ ] F45-native-quantitative-interface-bounds: uniform native two-sided mixed4 bounds/full pulse C4 remain open; current functional source joins do not close this gate.
+- [ ] F45-full-leading-and-production: complete common leading/nonlinear remainder admission and full nonlinear point histories, including core/axis/bridge physical ownership.
+- [ ] F45-global-stress-flatness-energy: complete the actual global tensor/cone, flat remainder and physical-volume/required-domain energy.
+- [ ] F45-real-recursion-and-correction: distinct n=1/n>=2 recovery equations/repairs, finite-order remainder/summation, then realizable mean/oscillatory stress cancellation and independently measured corrected residual/dynamics.
+
+---
+
 # Active handoff: current pulse-to-flatten source join complete - 2026-10-05
 
 Read CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage currentpulseflatten. Twenty-one profile source owners are accepted; physical Cartesian/time ownership remains twenty.

@@ -1,3 +1,13 @@
+# Current flatten physical source maps complete - 2026-10-05
+
+Read [CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md](CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md). CurrentFlattenPhysicalAssembly now exposes twenty-one downstream physical source owners. The current flatten provider supplies both its derivative grid and fixed Ev0 unit to the original Cartesian/time operators. The prior twenty-owner report/receipt is retained by hash, registry and datum without regeneration.
+
+Three new whole-Z flatten packets cover inlet, full t in [0,100] and exit: 35 Cartesian spatial multiindices through order four, all velocity/pressure components and first fixed-position time derivative, 648 source contributions. An independent 60-row full-field fixed-unit fixture passes. Run --stage currentflattenphysical.
+
+NEXT: current flatten-exit to outer-power source admission, then angular/steep/waiting/heat continuation. Complete nonlinear points, uniform/full native pulse C4, global stress/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open.
+
+---
+
 # Current pulse terminal admitted into flatten - 2026-10-05
 
 Read [CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md](CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md). CurrentPulseFlattenSourceAssembly now exposes twenty-one profile source owners. The new flatten uses current native U/Hp/Pin/Xp/P0 and the same complete future-energy callable, retaining the original 100-unit ODEs and terminal source theorem. Three whole-Z flatten packets contain 180 mixed logR/Z source rows; a fresh unsaved Z exercises the current callable.
