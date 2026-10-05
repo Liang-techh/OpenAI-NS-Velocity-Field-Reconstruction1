@@ -1,3 +1,21 @@
+# Active handoff: current native pulse chain has twenty source owners — 2026-10-05
+
+Read CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md; run --stage currentpulsechain. F43-current-pulse-chart-expansion and F43-current-pulse-whole-coverage below are superseded by this local source acceptance. Uniform native mixed-four interfaces remain a separate gate.
+
+- [x] F43-current-pulse-chart-expansion: six original chart methods reuse one native pulse object and checked current Rp data; twenty total current downstream owners.
+- [x] F43-current-pulse-whole-coverage: 360 whole-chart mixed-four rows and sixty same-owner gap overlap rows cover all original coordinate domains without replacing -1/mu; route subdomains are enforced.
+- [x] F44-current-native-pulse-source-receipt: external Rp receipt, original functional ODE/coordinate identities and own ownership receipt retained; global scope stays false.
+
+Next bounded tasks:
+
+- [ ] F44-current-pulse-physical-extension: create an explicit adapter for the twenty accepted owners; reuse original radius/normalized_sources/evaluate operators, the nested current core and current Rp data. Bind logRv=logRp+13/mu and all component amplitude/Pstar units. Preserve the existing fourteen-chart adapter.
+- [ ] F44-native-quantitative-interface-bounds: bind actual native endpoint algorithms and shared selected sources to the original functional ODE/coordinate identities, then establish two-sided total-order-four interface bounds. Do not promote callable ownership to uniform/full pulse C4 without this gate.
+- [ ] F44-postpulse-source-expansion: after appropriate external admission, extend the current pulse terminal five histories and pressure into flatten/angular/steep/waiting/heat using one consistent source graph. Avoid legacy providers silently standing in for current ownership.
+- [ ] F44-background-production-and-global: finish shared full leading/remainder admission, production point histories/fields and completed global stress/cone/flatness/physical-volume/required-domain energy.
+- [ ] F44-real-recursion-and-correction: implement n-dependent recovery, separate repairs and smooth summation, then realizable oscillatory quadratic stress cancellation and independently measured corrected residual/dynamics.
+
+---
+
 # Active handoff: current Rp native pulse entrance joined — 2026-10-05
 
 Read ACTUAL_RP_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualrpjoin on codex/st073-transition-next. Earlier pending F41/F42 Rp source-transfer tasks are superseded by this receipt in the native entrance scope.

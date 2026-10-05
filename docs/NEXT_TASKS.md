@@ -1,3 +1,16 @@
+# Next: current pulse Cartesian/time mapping — 2026-10-05
+
+The current downstream source registry has twenty owners: fourteen background charts and all six native pulse charts sharing one object. Read CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage currentpulsechain.
+
+1. Extend current physical ownership through the pulse charts using the existing Cartesian/time operators and actual Rp/Rv/amplitude units; preserve the accepted fourteen-chart adapter.
+2. Close quantitative native mixed-four interface bounds and admit current pulse-to-postpulse source transfer.
+3. Complete shared leading/remainder admission, production point fields and global stress/cone/flatness/required-domain energy.
+4. Implement true n-dependent temporal recursion, summation, oscillatory cancellation and corrected dynamics after the background gates.
+
+All six pulse charts are callable with whole-domain interval coverage. Uniform native pulse C4, complete production fields and temporal recursion remain open.
+
+---
+
 # Next: expand the current native pulse chain — 2026-10-05
 
 The current Rp external source join is complete in the native entrance scope. CurrentRpPulseSourceDispatcher has fifteen owners and reads live outer-buffer sources. Read ACTUAL_RP_SOURCE_JOIN_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage actualrpjoin.

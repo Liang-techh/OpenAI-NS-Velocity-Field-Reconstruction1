@@ -1,3 +1,13 @@
+# Current twenty-owner native pulse source chain — 2026-10-05
+
+Read [CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md](CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md). CurrentNativePulseSourceDispatcher now retains the fourteen background owners and exposes all six pulse charts through the same native object after consuming the accepted current Rp join. The original fifteen-owner source adapter and fourteen-chart physical adapter retain their earlier scopes.
+
+Focused acceptance checks whole original chart coverage, 360 native mixed-four rows plus sixty reciprocal-boundary overlap rows, original route subdomains and retained source-bound ODE/coordinate identities. Run --stage currentpulsechain. All native pulse charts are callable; uniform native mixed-four interface bounds and full pulse C4 remain open.
+
+NEXT: explicit current pulse Cartesian/time extension and quantitative native interface bounds, then full leading/remainder admission and production points. Completed global stress/cone/flatness/required-domain energy, true n-dependent temporal recursion and corrected dynamics remain open.
+
+---
+
 # Current Rp native pulse entrance joined — 2026-10-05
 
 Read [ACTUAL_RP_SOURCE_JOIN_2026_10_05.md](ACTUAL_RP_SOURCE_JOIN_2026_10_05.md). CurrentRpPulseSourceDispatcher now exposes fifteen current downstream owners, adding the original native pulse entrance to the accepted fourteen-chart background chain. Live outer-buffer sources, common analytic pressure/parameters/Cstar and exact Rp source units are bound; saved inlet samples are not source definitions.
