@@ -1,3 +1,22 @@
+# Active handoff: current Rp native pulse entrance joined — 2026-10-05
+
+Read ACTUAL_RP_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualrpjoin on codex/st073-transition-next. Earlier pending F41/F42 Rp source-transfer tasks are superseded by this receipt in the native entrance scope.
+
+- [x] F42-Rp-source-recipes: actual O2/O3 scalar assignments/kernels, 28 coefficient-function identities and live native H/P data path.
+- [x] F42-Rp-canonical-units: five canonical conversions, actual high/fifth-order selection/data publication and 54 inlet Taylor coefficients.
+- [x] F42-Rp-neighbor-and-radius: common analytic P0/parameters/Cstar, actual Rp formula, zero entrance correction jets and 135 exact mixed-four source relations.
+- [x] F40-current-Rp-pulse-join: native entrance owner fifteen, original whole entrance coverage and checked runtime receipt.
+
+Next bounded tasks:
+
+- [ ] F43-current-pulse-chart-expansion: extend CurrentRpPulseSourceDispatcher using its one native CompliantPulseMixedC4 object for pulse_main, pulse_exit, pulse_gap, pulse_gap_end and pulse_end. Bind original domains and consume the original functional internal interface certificate. Retain the fourteen background owners; expected source owner count is twenty.
+- [ ] F43-current-pulse-whole-coverage: generate complete total-order-four source packets over each original chart domain, including formal radii and normalization metadata. Preserve source exact zeros and acceptance ownership; do not select interval representatives as production histories.
+- [ ] F43-current-pulse-physical-extension: inject the expanded dispatcher into the original Cartesian spatial-four/fixed-position time-one operators with actual Rp/radius and amplitude units. Keep the accepted fourteen-chart adapter intact; regenerate only affected new reports/receipts.
+- [ ] F43-background-production-and-global: complete shared leading-source/nonlinear-remainder admission, production point fields and completed global stress/cone/flatness/physical-volume/required-domain energy.
+- [ ] F43-real-recursion-and-correction: implement separate n=1 and n>=2 recovery equations, independent repairs and smooth summation, then realizable oscillatory stress cancellation and corrected residual/measured dynamics. Current radial Taylor identities do not complete temporal recursion.
+
+---
+
 # Active handoff: current fourteen-chart physical maps complete — 2026-10-05
 
 Read CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage currentphysicalmaps. This completes current physical-provider injection and operator acceptance only within the fourteen accepted downstream charts; core/axis/bridge/pulse/heat ownership remains separate.

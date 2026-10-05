@@ -1,3 +1,16 @@
+# Next: expand the current native pulse chain — 2026-10-05
+
+The current Rp external source join is complete in the native entrance scope. CurrentRpPulseSourceDispatcher has fifteen owners and reads live outer-buffer sources. Read ACTUAL_RP_SOURCE_JOIN_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage actualrpjoin.
+
+1. Add the five remaining original pulse charts through the same native pulse object, original coordinate domains and accepted internal functional interfaces; reach twenty current source owners.
+2. Extend current Cartesian/time ownership explicitly through that pulse chain, preserving Rp/radius and full physical amplitude units.
+3. Complete shared leading/remainder admission, production point fields and global tensor/flatness/required-domain energy.
+4. Solve actual n-dependent temporal coefficient recursion, summation, oscillatory correction and corrected dynamics after their background gates.
+
+The previous fourteen-chart physical adapter remains accepted in its existing scope. Temporal recursion and complete core-to-heat production fields remain open.
+
+---
+
 # Next: bind the current Rp-to-pulse source join — 2026-10-05
 
 Fourteen current downstream charts now reach Rp and feed accepted Cartesian spatial4/fixed-position time1 source maps. Read CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md and the latest AGENT_TASKS.md section.

@@ -1,3 +1,13 @@
+# Current Rp native pulse entrance joined — 2026-10-05
+
+Read [ACTUAL_RP_SOURCE_JOIN_2026_10_05.md](ACTUAL_RP_SOURCE_JOIN_2026_10_05.md). CurrentRpPulseSourceDispatcher now exposes fifteen current downstream owners, adding the original native pulse entrance to the accepted fourteen-chart background chain. Live outer-buffer sources, common analytic pressure/parameters/Cstar and exact Rp source units are bound; saved inlet samples are not source definitions.
+
+Focused acceptance covers 28 coefficient-function identities, five canonical unit identities, 54 actual native inlet axial-five coefficients and 135 exact mixed-four velocity/pressure/primitive relations. Generated interval packets cover both Rp sides and the full original entrance range. Use --stage actualrpjoin. The checked runtime consumes its receipt before certifying this local join.
+
+NEXT: install the remaining five native pulse owners through the same object and internal functional interfaces, then explicitly extend the current physical adapter. The previous fourteen-chart adapter retains its existing scope. Full leading/remainder admission, production points, completed global tensor/flatness/required-domain energy, true n-dependent recursion and corrected dynamics remain open.
+
+---
+
 # Current fourteen-chart physical maps complete — 2026-10-05
 
 The accepted Rh-to-Rp chain now feeds CurrentDownstreamPhysicalAssembly. All fourteen downstream charts have ux/uy/uz/pressure Cartesian spatial derivatives through total order four and first physical-time derivatives at fixed position. The nested current core, same pre-pulse history/pressure object and selected Cstar source are retained. The adapter is limited to these fourteen charts.
