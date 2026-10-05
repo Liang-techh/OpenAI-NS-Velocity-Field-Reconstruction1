@@ -1,3 +1,15 @@
+# Current: continuous whole original inactive-gap cone — 2026-10-04
+
+Read docs/PULSE_GAP_CONE_2026_10_04.md. The complete original xi[11,13-4mu],d[4mu,2],Z[-1,1] gap now satisfies the regional two-vector cone and composes through the same completed physical end join to the admitted downstream tail. All four angular corrections and four axial sectors remain: signed memory, separate Mz/Mtheta_z histories, radial shear, unperturbed energy, absolute pressure memory, linear axial history and selected loss.
+
+Source products H,BD1,BD2,1/R,B,BQ,D1,BD0^2 are grouped before enclosure and bounded by exact monotone endpoint substitution. BQ reaches its maximum at the coupled d=4mu endpoint; the others at d=2. Native finite/logRp recipes are retained without giant-log subtraction. Zero Bh/Uz/Uz_y is proved only on the gap, so kappa-2=2mu; Ur and raw histories remain nonzero. Theta corrections each <=g_lower/64 and all axial sectors each <=theta_min*exp(-1000)/4 yield strict theta/dot/directional margins.
+
+Focused checker PASS:431 hashes,45 exact source/cone/radius identities,7 positive parameter margins,8 positive log margins and9 positive algebraic cone margins. Three independent original-full-stress/unit fixtures retain nonzero radial histories;41 formula/attained-envelope comparisons plus24 log-envelope comparisons, nu=.01/.7,tolerance1e-60,max absolute error5.3225e-110. Tiny physical margins are normalized before comparison; fixtures are not the source cone proof. Actual xi=11 radius extends regional coverage to Rtail*exp(-2/mu-wait-Ts-102-Lrel)<=R<Rtail*exp(3), Gamma zero beyond. Use --stage pulsegapcone; CertifiedPulseGapPhysical preserves the current physical evaluator.
+
+NEXT: actual full main/exit moment/pressure/stress/physical companions and continuous cone with order-one axial shear, then entrance and upstream joins. Do not reuse kappa-2=2mu where Uz_y is nonzero. Actual upstream finite-width bridge feedback, completed full-tensor/global admissibility, global temporal flat/physical-volume/required-domain energy, true n-dependent recursion, oscillatory correction and corrected Cartesian residual/dynamics remain open.
+
+---
+
 # Current: whole original inactive-gap completed physical tensor — 2026-10-04
 
 Read docs/PULSE_GAP_PHYSICAL_2026_10_04.md. The complete xi[11,13-4mu],d[4mu,2],Z[-1,1] gap now has completed symmetric physical stress mixed3, diagonal/divergence mixed2 and actual three-component remainder mixed2, with Cartesian tensor/divergence/remainder/decomposition sectors. It uses the current full five moments and same uncapped analytic pressure.

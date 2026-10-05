@@ -78,8 +78,8 @@ Run only the bounded new stage:
 
 `python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage pulsegapphysical`
 
-Next prove continuous whole-gap admissible cone bounds and compose the
-admitted end/tail. Main pulse, exit, entrance, upstream finite-width bridge
+The continuous whole-gap regional cone and end/tail composition are now
+admitted in docs/PULSE_GAP_CONE_2026_10_04.md. Main pulse, exit, entrance, upstream finite-width bridge
 feedback and completed global tensor admissibility remain. Global temporal
 flatness/physical-volume/required-domain energy, true n-dependent recursion,
 oscillatory stress correction and corrected Cartesian residual/dynamics
