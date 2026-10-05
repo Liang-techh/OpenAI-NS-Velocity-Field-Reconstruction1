@@ -1,3 +1,9 @@
+# Current executable queue - 2026-10-05 core source equations
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md. Current33 regional physical maps, three non-core joins, full production radial scaling and exact leading-axis A/Uz/pressure-seed equations are admitted. Next implement the exact scaled S source and same-tube transfer/Cauchy-weight consumer, finite residual/tail common fixed-point provenance and original core/first ODE join. Do not redo the36 formal identities unless their source changes. Radial scaling is not temporal recursion. Keep core/first, complete nonlinear points and global/temporal gates false until their own obligations pass, and mark completed work with exact receipt and commit.
+
+---
+
 # Current executable queue - 2026-10-05 current33 maps and partial joins
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md. All33 current physical source regions and three non-core bridge functional mixed4 joins are admitted. Reuse these receipts and unchanged fixtures by hash. Next implement F53 leading axis/full radial recurrence scaling and pressure source binding, then true nonlinear fixed-point/tail provenance and the core/first original ODE join. Do not infer source equality from interval overlap. Mark completed tasks with precise scope, receipt and commit. Core/first, complete nonlinear points, uniform native pulse C4, heat stress companions, global tensor/flatness/required-domain energy and temporal recursion remain open.

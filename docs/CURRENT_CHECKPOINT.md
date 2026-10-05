@@ -1,3 +1,11 @@
+# Core production recurrence and leading-axis equations connected - 2026-10-05
+
+Read [CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md](CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md). The new currentcorerecurrence stage proves whole-production radial scaling with13 arbitrary-n term families,36 independent formal Taylor identities, exact leading axis A/Uz equations and same-datum pressure seed units. The core scaling epsilon is explicitly distinguished from the pressure-datum epsilon. This is radial equation/source progress; temporal recursion remains false.
+
+Next bind the exact scaled swirl source and transfer/Cauchy weight to the existing S enclosure, then finite-row/tail common nonlinear provenance and original core/first ODE recovery. Core/first remains false. The33 physical source maps and three non-core joins were published at11a35cc9; complete nonlinear points and global stress/flatness/energy remain open.
+
+---
+
 # Current33 physical source coverage and three bridge joins complete - 2026-10-05
 
 Read [CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md](CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md). CurrentBridgePhysicalAssembly now composes all33 current source regions with the existing core and actual history. Nine bridge views add1,944 spatial4/time1 contributions; regular coverage is7,134 plus252 retained axis and216 retained gap contributions. Focused acceptance, fresh-coordinate acquisition and default checked runtime pass. Run --stage currentbridgephysical.

@@ -1,3 +1,20 @@
+# Active handoff: core production scaling equations proved - 2026-10-05
+
+Read CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md. This section supersedes the leading-axis/full-radial-scaling portions of F53 below. The original source equations are connected; exact S admission, finite-tail common fixed-point provenance and core/first remain open.
+
+- [x] F53-leading-axis-scaled-recurrence: production n0 replay gives exact Atilde1 and Utilde1 Z-functions, with original core AST bindings; no point representative selected.
+- [x] F53-full-finite-radial-scaling: entire production AST normalized by four derived RHS edits;13 all-n homogeneous term families plus36 executed formal Taylor scalar identities. Receipt: current_core_recurrence_source_check.json.
+- [x] F53-pressure-seed-units: same normalized_jets datum call and exact epsilon_core Pstar^2 scaling; distinguish epsilon_core from datum epsilon. Pressure primitive 4C/PD+PI is still open.
+- [ ] F53-canonical-source-extension: bind exact selected logCstar, same anchored G, original tube and source parameters into the next scaled-swirl admission. Current source IDs already match, but IDs alone do not establish nonlinear uniqueness.
+- [ ] F53-exact-S-and-Cauchy-consumer: use exact S=epsilon_core^2 F0^2. Connect S_bound to epsilon_core^2 transfer.F0_squared_Xh_norm_upper with the actual Cauchy weight. Require identical eta/2 radius and ordinary Taylor coefficient convention. Reject a changed weight if the old consumer no longer dominates it. Never substitute the cap or interval midpoint for S.
+- [ ] F53-finite-residual-and-tail-provenance: derive the finite recurrence residual and nonlinear tail within the same admitted fixed point used by normalized_jets. Prove the common analytic solution, not box overlap.
+- [ ] F53-pressure-primitive-and-core-first-ODE: match 4C to PD+PI, then original phase0 controls, core atoms, R D_over_R, hydro/pressure/swirl drive and hb derivative pullback through mixed4.
+- [ ] F53-core-first-receipt: extend the three-join receipt only after all common-source/tail obligations pass. Keep full nonlinear point/global/temporal gates false until separately admitted.
+
+Continue later layers from the existing queue after this dependency. Reuse accepted reports by hash and publish only owned files.
+
+---
+
 # Active handoff: current33 maps and three partial bridge joins - 2026-10-05
 
 Read CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md and the latest CURRENT_CHECKPOINT.md. This section supersedes prior F51 physical-map and three non-core interface tasks. Current33 physical source coverage is admitted; core/first and the full reconstruction layers remain open. Use changed-source checks only.
