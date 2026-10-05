@@ -1,3 +1,13 @@
+# Current checkpoint: external Rh reference joined — 2026-10-05
+
+Read docs/ACTUAL_RH_SOURCE_JOIN_2026_10_05.md. The current unique five-moment patch at x=e now joins pre_pulse.reference(offset=-5) with a shared analytic compliant .001 pressure function, first-six pressure source projection and exact physical units. CurrentRhReferenceDispatcher exposes nine checked source chart owners.
+
+Focused PASS:341 hashes/six pressure source coefficients/six q recurrence identities/18 actual order6->truncate5 enclosure coefficients/nine physical identities implying135 mixed rows/135 whole-reference rows. A fresh lazy call consumed the new Rh acceptance. Producer certification is false until the checker receipt is loaded; the native eight-chart Rh scope is preserved.
+
+NEXT: extend current ownership through the remaining pre-pulse charts/Rp history transfer, then current physical/Cartesian composition and shared full leading-input/remainder admission. Production points, completed global tensor/flatness/physical-volume/required-domain energy, true n-dependent recursion and corrected dynamics remain open.
+
+---
+
 # Current checkpoint: eight current source charts composed — 2026-10-05
 
 Read docs/CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md. The three switch charts, long reshape, three reference/restoration charts and actual patch now share one nested current object graph and current acceptance ownership. Canonical P0, six histories, actual V/E graph, original chart domains and derivative units remain together.

@@ -1,3 +1,17 @@
+# Next: current pre-pulse ownership and physical composition — 2026-10-05
+
+Current external Rh reference admission is complete. Read ACTUAL_RH_SOURCE_JOIN_2026_10_05.md and the newest AGENT_TASKS.md section. Use --stage actualrhjoin on codex/st073-transition-next.
+
+1. Extend current ownership to the remaining five original pre-pulse charts and establish retained five-history/P0 transfer through Rp.
+2. Complete the current Rp-to-pulse source join with exact functions and physical units.
+3. Inject current downstream providers into existing physical/Cartesian/time operators; preserve axis/core coverage boundaries and formal microswitch factors.
+4. Complete shared full leading-input/nonlinear remainder admission and recover production point fields.
+5. Complete global tensor/flatness/physical-volume/required-domain energy, true n-dependent recursion, oscillatory correction and corrected dynamics.
+
+The accepted ninth owner supplies source enclosures and a functional Rh join. It does not complete temporal scale recursion, production point history or full core-to-heat Cartesian assembly. Earlier pending F39-Rh tasks below are superseded by the new acceptance.
+
+---
+
 # Next: current Rh source join and physical assembly — 2026-10-05
 
 Eight current switch-to-patch charts and external Rm composition are accepted. Read CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md and the newest AGENT_TASKS.md section on codex/st073-transition-next.
