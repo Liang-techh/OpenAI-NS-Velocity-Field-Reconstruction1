@@ -1,3 +1,17 @@
+# Current: original main/exit completed physical tensor — 2026-10-04
+
+Read docs/PULSE_MAIN_EXIT_PHYSICAL_2026_10_04.md. Whole original main xi[.02,10],exit xi[10,11],Z[-1,1] now has full physical stress mixed3, completed symmetric tensor/diagonal/divergence mixed2 and all three physical remainder components mixed2, with Cartesian tensor/divergence/error sectors. The admitted physical lift is reused with exact extra history logs. Local and incoming time/viscosity terms, all four radial convection products and both axial-radial products remain.
+
+Actual xi11 gp jets are zero while local cumulative convolutions remain nonzero. Source-bound selected inverse/forward-integral identities join both full histories and the radial history square to the gap. Actual row algorithms identify velocity mixed4, stress3 and same energy/loss/absolute pressure4. Native pressure inputs and time, R/B/H/Q/D logs, physical pullback arguments and production xi11 radii agree. Er/Etheta are not reset; Ez is zero only at the flat local-input endpoint.
+
+Focused checker PASS: 437 current hashes, 189 source/operator/interface identities, 24 AST bindings, 1346 finite signed physical rows and 94 structural zero rows. Consume 28 admitted full physical operator identities. The independent nonzero-Uz Cartesian fixture at nu=.01/.7 gives 114 checks through stress3 and diagonal/divergence/error2, with all three errors nonzero. Tolerance 1.0e-55, maximum positive enclosure miss 2.19168267783394594220548535231e-89. This checks formulas/units, not corrected NS accuracy.
+
+Use --stage pulsemainexitphysical. This is a regional source decomposition and generic formula/unit evidence. Exact production point parameters, main/exit cone, completed global tensor admissibility, global flatness/volume/required-domain energy, actual n-dependent recursion, oscillatory correction and corrected NS accuracy remain false.
+
+NEXT: continuous main/exit cone with full order-one axial shear and correlated gp/ap/moment bounds; compose the xi11 physical interface to accepted gap/end/tail. Then entrance/upstream finite-width feedback and global gates, actual n-dependent recursion, oscillatory correction and corrected residual/measured dynamics.
+
+---
+
 # Current: whole original main/exit similarity source companion — 2026-10-04
 
 Read docs/PULSE_MAIN_EXIT_SIMILARITY_2026_10_04.md. Original main xi[.02,10] and exit xi[10,11],Z[-1,1] now retain all five raw cumulative moments mixed4, velocity mixed4, same absolute pressure mixed4 and full meridional stress mixed3. Full gp/Uz_y, local forcing and separate incoming linear histories, signed angular memory, local squared-energy integral, selected terminal loss and canonical pressure memory remain. Ordinary rows use d_logR=mu*d_xi.
