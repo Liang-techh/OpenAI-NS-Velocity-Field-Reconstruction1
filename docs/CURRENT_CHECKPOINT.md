@@ -1,3 +1,15 @@
+# Current power/angular source and physical chain complete - 2026-10-05
+
+Read [CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md](CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md). CurrentPowerAngularSourceAssembly and CurrentPowerAngularPhysicalAssembly add outer_power and outer_angular to the checked current flatten. Twenty-three downstream profile and physical source owners are now accepted.
+
+The actual current C4/C5 prefix future is pulse.fifth.fourth.energy.base; its typed Md40 source bridge, first-five angular/Gamma/future prefix, complete steep/waiting/infinite heat-tail/epsilon decomposition and current absolute pressure are retained. Twelve new production-expression identities precede reuse of the unchanged power/angular functional theorem. Source acceptance checks600 new mixed4 rows across original whole domains/endpoints and four support crossings; a fresh unsaved Z exercises live acquisition.
+
+Physical conversion checks1,296 new spatial4/fixed-position time1 source contributions and an independent120-row POST radius/fixed-unit fixture. Earlier21-owner physical evidence is retained unchanged. The23-owner regular contribution count is4,938, plus the retained216 supplemental gap contributions. Run --stage currentpowerangular or --stage currentpowerangularphysical.
+
+NEXT: current steep entry/power/exit, waiting and exact heat source/physical ownership. Complete nonlinear points, uniform/full native pulse C4, core/axis/bridge physical ownership, global stress/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open. Chart-owner counts are not an overall completion percentage.
+
+---
+
 # Current flatten physical source maps complete - 2026-10-05
 
 Read [CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md](CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md). CurrentFlattenPhysicalAssembly now exposes twenty-one downstream physical source owners. The current flatten provider supplies both its derivative grid and fixed Ev0 unit to the original Cartesian/time operators. The prior twenty-owner report/receipt is retained by hash, registry and datum without regeneration.

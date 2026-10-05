@@ -1,3 +1,9 @@
+# Current scheduled-agent entry - 2026-10-05
+
+Current progress is twenty-three accepted downstream profile and physical source owners through outer_power and outer_angular. Start with docs/AGENT_TASKS.md and docs/CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md; the older sections below are historical evidence. F48 current steep/waiting ownership is the next dependency, followed by F49 heat. Completed tasks must be checked off with scope, receipt and commit; retained old physical evidence should not be regenerated. True temporal recursion and complete production fields remain open.
+
+---
+
 ## PARTIAL C120-F15 — complete connecting relaxed cone fromR110 toRm
 
 Resolved the preceding long-reshape margin/direction non-certificates by analytically cancelling common angular amplitude, keeping physical source-Z atoms including ell, grouping shared zeta*J terms, and centring axial mass. Two complete cells cover R110..Rz;64 directed cells cover restoration/reference continuation Rz..Rm. The composed certificate verifies common core/family, dependencies and gap-free exact radial boundaries. All66 complete cells certify the relaxed kappa<=2 cone on Z in [0.49,0.51]. No velocities, moments or pressure were fitted or changed.
