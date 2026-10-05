@@ -1,3 +1,15 @@
+# Current checkpoint: whole entrance completed physical tensor complete — 2026-10-04
+
+Read docs/PULSE_ENTRANCE_PHYSICAL_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has physical meridional stress mixed3, completed symmetric tensor/diagonal/divergence and all three remainder components mixed2, including Cartesian sectors. The original inlet and xi=.02/main physical interfaces are source-functional. The production entrance radius takes y=xi/mu; both charts use logRp+xi/mu at the common physical position.
+
+The unchanged main/exit lift retains every local/incoming convection, time and viscosity term. Incoming histories and nonzero radial/angular inlet remainders remain; only the axial inlet remainder is structurally zero. Normalized pressure shape rows precede the B^2 shift, explicitly bound to original Pbase/Pmemory source assignments. The forward energy chart remains equivalent to backward energy/loss and is never added twice.
+
+Focused checker PASS:445 current hashes,90 source/interface identities,2 pressure AST bindings,1278 finite signed physical rows,162 structural zeros and28 admitted physical operator identities. A new independent original-startup fixture gives114 Cartesian time/convection/pressure/full-Laplacian/tensor-divergence comparisons at nu=.01/.7, through stress3 and diagonal/divergence/error2. Tolerance1e-55,max positive enclosure miss3.812e-94. Bounded read-only Luna/max review accepted fixture arithmetic, units, derivative order and unchanged operator reuse. Use --stage pulseentrancephysical.
+
+NEXT: continuous entrance full-shear cone with canonical inlet functions and actual histories, then upstream finite-width feedback. Completed full-tensor/global admissibility, global temporal flatness/volume/required-domain energy, exact production points, actual n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open. This is a regional source/formula admission, not a corrected NS solution.
+
+---
+
 # Current checkpoint: whole entrance similarity source complete — 2026-10-04
 
 Read docs/PULSE_ENTRANCE_SIMILARITY_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has five raw moments/velocity/absolute pressure mixed4 and full meridional stress mixed3, with source-functional canonical inlet and xi=.02/main joins. The entire original main exporter arithmetic is unchanged; only the entrance coordinate guard/domain differ. Actual gp primitive/derivative providers, cutoff symmetry, flat endpoint and forward/future energy partition are explicitly source-bound.
