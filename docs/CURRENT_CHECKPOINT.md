@@ -1,3 +1,13 @@
+# Current core/axis physical maps and actual bridge mixed4 admitted - 2026-10-05
+
+Read [CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md](CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md). CurrentCorePhysicalAssembly adds the exact nested analytic core and nonsingular axis mode to the checked heat chain:30 current Cartesian/time physical owners. New checks pass300 profile rows and1,008 physical contributions. There are6,486 regular contributions,252 supplemental axis contributions and216 retained gap contributions. Axis is a core mode, not another owner. Run --stage currentcorephysical.
+
+CurrentActualBridgeMixedC4 now directly acquires finite-width actual histories at coordinates on all three original bridge domains. A local AST replay changes only the three parent calls and retains every original derivative/ledger formula. Actual axial5 and independent comparison axial6 histories, nonlinear micro/macro feedback, pressure dressing and exact hb/amplitude factors are bound. Nine whole-Z domain/endpoint views pass1,215 mixed4 and final logR ledger rows; fresh unsaved-Z acquisition and default checked loading pass. Run --stage currentbridgemixed. The current graph's33 profile regions are covered across these separately admitted adapters; a composed33-region physical receipt has not yet passed.
+
+NEXT: F51 current bridge functional interfaces and Cartesian/time physical composition, then current heat pressure/stress companions. Complete nonlinear point [u,v,w,p], quantitative native pulse C4, global tensor/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open. These coverage counts do not measure the percentage of the whole reconstruction goal. See detailed tasks below and in AGENT_TASKS.md.
+
+---
+
 # Current heat collar and exact Gamma source/physical chain - 2026-10-05
 
 Read [CURRENT_HEAT_CHAIN_2026_10_05.md](CURRENT_HEAT_CHAIN_2026_10_05.md). CurrentHeatSourceAssembly and CurrentHeatPhysicalAssembly extend the current waiting chain to heat_collar and heat_exterior:29 downstream profile and physical source owners are accepted. Run --stage currentheat and --stage currentheatphysical.

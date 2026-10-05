@@ -1,3 +1,9 @@
+# Current executable queue - 2026-10-05 core/bridge milestone
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md. Current core/axis physical ownership is30 and three-chart actual bridge mixed4 is separately admitted. Focused checks and checked runtime pass; prior29 physical evidence is retained by hash. Next execute the detailed F51 current bridge functional interfaces, then Cartesian/time mapping and composed33 physical receipt. Mark each completed task with precise scope, receipt and commit before proceeding. Actual nonlinear points, quantitative native full C4, current heat stress companions, global tensor/flatness/required-domain energy and real temporal recursion remain open. Reuse unchanged numerical operator fixtures instead of rerunning them.
+
+---
+
 # Current scheduled-agent entry - 2026-10-05: exact Gamma tail reached
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_HEAT_CHAIN_2026_10_05.md. Current29 downstream profile and physical source owners through the entire heat exterior are accepted. Source/physical focused checks and default checked runtime pass; prior27 physical evidence is retained. Next execute the detailed F50 core/axis/bridge tasks, and then admit current heat pressure/stress companions separately. Mark completed tasks with exact scope, receipt and commit. Complete points, global tensor/flatness/required-domain energy and true temporal recursion remain open. Reuse unchanged receipts by hash rather than rerunning their old numerical fixtures.

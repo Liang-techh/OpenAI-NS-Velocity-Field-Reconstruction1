@@ -1,3 +1,42 @@
+# Active handoff: current30 physical plus current three-chart actual bridge mixed4 - 2026-10-05
+
+Read CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md. This section supersedes the earlier F50 core/axis/source-ledger checkboxes, while preserving their historical text. The current three bridge source charts are admitted separately; no full33 physical, point, global or temporal completion is implied. Reuse unchanged receipts by hash and run only checks needed by a changed source/operator/interface.
+
+Completed in this milestone:
+
+- [x] F50-current-core-provider-overlay: same dispatch.anchor.patch.core and its CoreContext.original finite-width analytic source. Original profiles, selected-Cstar nonlinear bounds, datum and full norm retained.
+- [x] F50-current-axis-mode and spatial-time-admission: rho[0,4], Z[-1,1], axis only core/rho0; original nonsingular map, requested log(tau),300 source rows and1,008 spatial/time contributions. Receipt: lei_ren_part1_paper_compliant_current_core_physical_assembly_check.json. Current physical owners30; no axis owner double-counting.
+- [x] F50-bridge-full-domain-source and ledger-adapter: one current history.upstream object; direct first/second/macro coordinate acquisition, actual axial5 and known comparison axial6, full uniform micro covers. Original derivative/ledger AST unchanged except three parent calls. Nine whole-Z views and1,215 mixed4/logR rows pass.
+- [x] F50-bridge-nonlinear-derivative-feedback: production micro and macro feedback recurrences, quadratic remainder and pressure dressing source-bound before admission; full source-factor cancellation retained. Receipt: lei_ren_part1_paper_compliant_current_actual_bridge_mixed_C4_check.json. This closes derivative enclosure feedback only; actual_point_moment_history_recovered stays false.
+
+Next execute F51 in this order:
+
+- [ ] F51-core-first-interface: inspect current bridge parent/source proof and original core stress-free recovery. Derive equality at first s0 of actual F,V,Q,P0+Mp and five primitives with all needed one-sided coordinate/Z derivatives. Bind same analytic fixed point, datum, original chi=1/alpha=1 and exact core inlet atoms; do not infer a functional join from overlap of separately computed intervals. Preserve nonsingular axis handling.
+- [ ] F51-first-second-interface: use original flat sigma endpoint jets and the same actual and known-comparison histories at s1. Express both sides in common logR/Z units, including exact hb factors before bounds. Preserve angular exponential and actual quadratic primitive feedback. Record exact identities and original source AST bindings.
+- [ ] F51-second-macro-interface: prove source y=2hb continuity, comparison alpha=0, chi=hb, frozen comparison values with complete moment history, original six moment ODEs and actual P0+Mp. Macro fraction labels coverage; it is not the derivative coordinate. Convert phase derivatives with hb^-k before comparing to logR derivatives.
+- [ ] F51-R100-current-switch-interface: compare CurrentActualBridgeMixedC4's labelled macro q1 actual packet with the same history.bridge R100 adapter and the current switch's exact phase0 trace. Retain all axial5 parent histories and match every physical mixed4 row using the original flat switch controls. Reuse prior R100 identities only after binding the new current source calls.
+- [ ] F51-bridge-interface-receipt: publish one narrowly scoped source-functional receipt for the four joins. Independent finite moderate-parameter fixtures can check changed conversions; old operator fixtures remain by hash. Keep actual point, global stress and temporal recursion gates false.
+- [ ] F51-current-bridge-physical-dispatch: add bridge_first/second/macro to the current30 overlay using one admitted CurrentActualBridgeMixedC4 instance constructed with the existing current core owner. Do not instantiate a second legacy core/bridge/history. Preserve current29 and current core registry/receipt/datum identities.
+- [ ] F51-bridge-original-radius-and-units: inherit global_physical_assembly radius/normalized_sources/evaluate. Verify consumption of final_factored_physical_row_ledgers, source_width_log, actual_parent_axial5_packet and original absolute pressure. Prove parameter/radius units before any interval bound; cap boxes are enclosures only.
+- [ ] F51-bridge-Cartesian-and-time-map: generate spatial multiindices through4 and first fixed-position time derivatives for all three domains and endpoints using the accepted source ledger. Reuse unchanged global Cartesian and tiny-width operator fixtures by hash; run a new focused fixture only for a changed coordinate/unit rule.
+- [ ] F51-compose-current33-physical: retain current30 evidence and add exactly three bridge owners, with axis still a core mode. Check whole-Z domains, fresh unsaved-Z calls and requested log(tau). Publish current33 scoped receipt and default checked runtime. Keep complete nonlinear point, quantitative native/full pulse C4 and global/temporal gates separate.
+- [ ] F51-update-dispatch-controller-and-handoff: expose current bridge physical stage, update CURRENT_CHECKPOINT.md and this checklist with actual counts/receipts/commit, push owned files to codex/st073-transition-next. Do not regenerate unrelated accepted numerical artifacts.
+
+Then continue the scientific dependencies:
+
+- [ ] F49-current-heat-pressure-stress-companions: inject checked current heat/pressure into heat_pressure_C4 and heat_stress_C4; bind the actual P0+Mp and constructor graph, replay source equations and publish separate current receipts. Legacy stress/cone acceptance cannot be copied to current owners.
+- [ ] F45-native-quantitative-interface-bounds: recover uniform two-sided native mixed4 and full pulse C4, distinct from source-functional joins and source ownership.
+- [ ] F52-actual-nonlinear-point-histories: recover actual implicit leading/remainder data and scalar point F,V,moments/pressure with controlled error; retain nontriviality and canonical forcing restrictions. Directed derivative enclosures or interval midpoints do not satisfy this task.
+- [ ] F52-current-physical-point-api: expose [u(x,y,z,t),v(x,y,z,t),w(x,y,z,t),p] over the required composed domain only after complete point histories are admitted; document uncertainty, exact divergence construction and interface handling.
+- [ ] F49-required-domain-energy: define the actual physical time/space domain and volume weights first. The unlocalized whole-space Gamma field has infinite energy; finite radial windows or derivative coverage cannot close finite-energy acceptance. Implement the prescribed divergence-preserving localization/domain if needed.
+- [ ] F45-global-stress-flatness: construct current global divergence-form tensor, quantitative cone margins and independently bounded flat remainder, with maximum/L2 values and time/space scale dependence.
+- [ ] F45-real-recursion: implement distinct n=1 and n>=2 recovery equations on one core interval with per-order moment repair, finite-order error and eventual smooth summation. Spatial source-region count and core radial Taylor recursion do not establish temporal recursion.
+- [ ] F45-oscillatory-correction-and-dynamics: realize mean/two-family oscillatory stress cancellation; independently validate corrected NS residual, physical energy, measured vortex scales, particle winding and velocity/vorticity growth. Do not use imposed similarity exponents as measured dynamics.
+
+When a task passes, mark it completed with its precise scope, receipt and commit. Keep this milestone's original source/physical receipts unchanged unless their defining inputs change. Antigravity is not a collaborator.
+
+---
+
 # Active handoff: current29 through complete heat exterior - 2026-10-05
 
 Read CURRENT_HEAT_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Current source/physical stages are --stage currentheat and --stage currentheatphysical. This active section supersedes older open F49 source/physical checkboxes below; their historical evidence is preserved. Reuse prior27 physical evidence by hash.
