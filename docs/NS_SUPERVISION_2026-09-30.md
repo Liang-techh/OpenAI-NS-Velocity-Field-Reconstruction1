@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `64034d6e6ec365d4f38983af78a1c4f3f16e86ae`.
+The inspected `main` head before this update is `e1bde799f0de8acd9bb2f8db0965d803bd279918`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`f19ee6e5af5ec4fad5d5b189827702a2bdf30827`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f19ee6e5af5ec4fad5d5b189827702a2bdf30827)
+[`1a79449b32245882210f10b88775f7899d6a88a2`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1a79449b32245882210f10b88775f7899d6a88a2)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,42 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: correlated actual E and unpatched reference/restoration Rm
+
+Fixed [1a79449b report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a79449b32245882210f10b88775f7899d6a88a2/docs/ACTUAL_REFERENCE_RESTORE_MIXED_C4_2026_10_05.md)
+records current actual histories through original reference, axial restoration
+and postrestoration to UNPATCHED Rm. Six centered histories, canonical P0,
+original offsets -8/-7/-6/-5 and mixed4 equations remain. Terminal Uz=4Z
+and its derivatives are recorded with30 current unpatched five-defect
+coefficients; this is not repaired five-defect closure.
+
+Operational E=j+epsilon*Psi(4,Z)+Ibridge+Ifirst now binds the SAME fresh
+degree24/axial6 recurrence packet and source_profile_jet used by the bridge.
+Exact initial4Z is removed only from Uz radial row0 BEFORE summation;
+higher radial rows stay unchanged. Source AST/seed bindings, not overlap
+of legacy normalized_jets and fresh intervals, establish this route.
+Current bridge deltaV and first-switch increment enclose the defining signed
+integrals; they are not chosen exact values. The outward increment C2 budget
+is checked before the original theorem envelope is intersected. Its tiny
+recorded bound is not an NS residual or selected field parameter.
+
+Current reference/restoration mixed4 is installed, but the current Rsh
+reshape-to-reference SOURCE-FUNCTIONAL mixed4 join remains explicitly false.
+Old native flags are not silently promoted. Saved720 velocity/pressure,
+900 primitive and270 two-sided restoration rows consume hash-current generic
+fixtures for unchanged algorithms, not newly rerun production-point tests.
+Current patch, shared leading five-defect inputs, Jacobian and nonlinear
+omitted terms remain to be recomputed; legacy certificates certify their
+legacy data route. Exact production points, global tensor/temporal-flat/
+volume/finite energy, n=1/n-dependent temporal recovery and corrected NS
+remain open. No scientific code or complete proof audit was run.
+
+The [current restoration receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1a79449b32245882210f10b88775f7899d6a88a2/experiments/root_st073/lei_ren_part1_paper_compliant_actual_reference_restore_mixed_C4_check.json)
+has319 input bindings:318 exact pinned Git-byte matches and one
+schedule_pressure.py match after LF-to-CRLF conversion, with no unexplained
+mismatch. The report's317 count is stale. Replay actualrestoremixed with
+current prerequisites and the receipt checkout-byte convention.
 
 ### 2026-10-05 review: actual switch mixed4 and long reshape to Rsh
 
@@ -3140,6 +3176,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [1a79449b run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37312509853)
+ended failure:13 failed/423 passed; all13 identifiers match f19ee6e5.
+Four smoke/slice jobs pass; full historical tests are skipped. Unpatched
+restoration does not establish repaired moments or corrected NS acceptance.
 
 The exact-head [f19ee6e5 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37309680004)
 was checked at terminal failure, rather than inheriting an earlier count:
