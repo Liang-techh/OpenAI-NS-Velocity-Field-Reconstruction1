@@ -1,3 +1,37 @@
+# Active handoff: current29 through complete heat exterior - 2026-10-05
+
+Read CURRENT_HEAT_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Current source/physical stages are --stage currentheat and --stage currentheatphysical. This active section supersedes older open F49 source/physical checkboxes below; their historical evidence is preserved. Reuse prior27 physical evidence by hash.
+
+- [x] F49-current-heat-live-constructor/source-definition: checked current waiting object, same actual C4/C5-prefix future, original Gamma functions, epsilon=.001*delta, exact inverse-radius source with caps only as enclosures, live preheat atoms and original fixed units.
+- [x] F49-waiting-collar/collar-exterior-functional-joins:14 new AST-bound identities for all three full Gamma integrands and H=E0/(1-epsilon)^2; retained331 canonical mixed4/axial5 identities. Actual nonzero angular defect and absolute Ptail/forward pressure are preserved.
+- [x] F49-current-heat-whole-domains/source-receipt: six whole-Z views, collar[0,3], phi crossing and entire exterior[3,infinity),360 mixed4 rows, axial5 histories, positive complete future energy, fresh unsaved Z. Receipt: lei_ren_part1_paper_compliant_current_heat_source_check.json.
+- [x] F49-current-heat-physical: accepted source29, retained27 physical evidence/registry/datum, original radius/fixed units/Cartesian/time operators,1,296 new contributions and120 independent finite full-field rows. Explicit nonpositive logR powers give finite uniform row uppers over the unbounded exterior. Receipt: lei_ren_part1_paper_compliant_current_heat_physical_assembly_check.json. Complete point/global/stress/energy/recursion gates remain false.
+
+Next implement F50 in dependency order:
+
+- [ ] F50-current-core-provider-overlay: use the exact nested current core object dispatch.anchor.patch.core, not a separate CompliantSourceDispatcher core constructor. Inspect current_downstream_physical_assembly.py and global_physical_assembly.py before adding a current dispatcher route. Prove same family/source/datum/parameter records and native context; preserve signed source uncertainty.
+- [ ] F50-current-axis-mode: expose axis only as chart=core, coordinate=0, axis=True on that same core provider. Reuse core_physical_field.py physical_map's nonsingular implementation without inverse radius. Keep core_inner_annulus_interfaces_certified and complete point/global gates false unless their independent current-source obligations are closed.
+- [ ] F50-current-core-spatial-time-admission: retain core_physical_field_check.json and old Cartesian/time fixtures as unchanged operator evidence only. Generate new current core/axis source-domain maps, requested log(tau) dependence and all original spatial4/time1 outputs; publish a separately scoped current receipt. Do not count axis as a second independent chart owner.
+- [ ] F50-bridge-full-domain-source: inspect actual_bridge_integrals.py, actual_bridge_switch.py and bridge_mixed_C4.py. All three labels bridge_first/second/macro must share one current provider. ActualR100BridgeAdapter.actual() is terminal-only; it cannot replace arbitrary-coordinate bridge calls. Propagate actual finite-width F/V and every primitive/moment/absolute-pressure history over the original domains with the prescribed comparison direction and current parameter/parent graph.
+- [ ] F50-bridge-nonlinear-feedback: close actual_bridge_mixed4_feedback_installed, actual_point_moment_history_recovered and R100_functional_join_to_existing_switch_installed in their actual source scope before claiming a full bridge lift. Bind the actual finite-width nonlinear histories, all relevant axial5 rows and mixed4 derivatives to source equations; avoid selecting interval midpoints or transferring old endpoint-only receipts.
+- [ ] F50-current-bridge-ledger-adapter: emit the mapper's original final_factored_physical_row_ledgers, source_width_log, actual_parent_axial5_packet and full physical mixed4 grids. The current actual bridge packet does not yet supply this schema. Preserve formally positive microscopic widths and their exact radius/amplitude correlations before applying bounds.
+- [ ] F50-current-bridge-functional-interfaces: prove core/first, first/second, second/macro and R100/switch joins with original one-sided/flat endpoint rules, complete histories and absolute pressure. Replay actual defining expressions before numeric diagnostics; R100 terminal equality alone does not establish whole-chart smoothness.
+- [ ] F50-current-bridge-physical-map: only after the new mixed4 source/ledger receipt, inherit original radius/normalized_sources/evaluate. Reuse bridge_mixed_C4_check.json and global_physical_assembly_check.json as unchanged operator evidence, including140 spatial/4 fixed-time and120 microscopic-scale rows. Generate only changed current bridge maps and a focused independent fixture if coordinate/unit rules change.
+- [ ] F50-compose-current33-source-bounds: retain current29 report/registry/datum and newly scoped core plus three bridge owners by hash. Separate source ownership from quantitative full pulse C4, complete nonlinear point values, global stress/cone and time recursion. Reject unsupported axis/coordinate requests rather than silently widening domains.
+
+Other open work:
+
+- [ ] F49-current-heat-pressure-stress-companions: inject the admitted current heat/pressure object into heat_pressure_C4 and heat_stress_C4 companions. Bind their constructor/data graph and retained P0+Mp before replaying stress identities. Publish separate current receipts; legacy heat-stress/cone certificates do not certify the new composition.
+- [ ] F49-required-domain-energy: establish the construction's actual time/space domain and physical volume weights before integration. The unlocalized whole-space Gamma field has infinite kinetic energy. Implement required localization/domain restrictions while preserving divergence/matching; a finite window or derivative-source map does not close this gate.
+- [ ] F45-native-quantitative-interface-bounds: uniform two-sided native mixed4 bounds and full pulse C4.
+- [ ] F45-full-leading-and-production: common nonlinear leading/remainder admission and complete [u,v,w,p] point histories with preserved uncertainty and all source interfaces.
+- [ ] F45-global-stress-flatness-energy: actual current divergence-form tensor/cone, separately measured flat remainder and required-domain energy with uncertainties and scaling.
+- [ ] F45-real-recursion-and-correction: distinct n=1/n>=2 recovery equations, per-order moment repairs, finite-order remainder and smooth summation; then mean/two-family oscillatory stress cancellation, independent corrected residual and measured vortex/particle dynamics.
+
+Mark each completed item with its exact scope, receipt and commit. Update the top checkpoint/handoff and push only owned files to codex/st073-transition-next. Do not rerun unchanged old fixtures merely to restate accepted evidence. Main next nonlinear blocker: the missing full-chart current finite-width bridge physical lift; the core/axis operator already exists.
+
+---
+
 # Active handoff: current27 profile and physical sources through waiting - 2026-10-05
 
 Read CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Source stage: --stage currentsteepwaiting. Physical stage: --stage currentsteepwaitingphysical (accepted). The prior23 physical report is retained; do not regenerate it.

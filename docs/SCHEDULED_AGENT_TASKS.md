@@ -1,3 +1,9 @@
+# Current scheduled-agent entry - 2026-10-05: exact Gamma tail reached
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_HEAT_CHAIN_2026_10_05.md. Current29 downstream profile and physical source owners through the entire heat exterior are accepted. Source/physical focused checks and default checked runtime pass; prior27 physical evidence is retained. Next execute the detailed F50 core/axis/bridge tasks, and then admit current heat pressure/stress companions separately. Mark completed tasks with exact scope, receipt and commit. Complete points, global tensor/flatness/required-domain energy and true temporal recursion remain open. Reuse unchanged receipts by hash rather than rerunning their old numerical fixtures.
+
+---
+
 # Current scheduled-agent entry - 2026-10-05: O7 waiting reached
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md. Current27 profile and physical sources through waiting are accepted. New O7 physical maps/default runtime pass; prior23 physical evidence is retained. F49 current waiting/collar/exact heat source and physical ownership comes next. Mark completed work with scope, receipt and commit. Complete points, global stress/flatness/required-domain energy and true temporal recursion remain open.

@@ -1,3 +1,15 @@
+# Current heat collar and exact Gamma source/physical chain - 2026-10-05
+
+Read [CURRENT_HEAT_CHAIN_2026_10_05.md](CURRENT_HEAT_CHAIN_2026_10_05.md). CurrentHeatSourceAssembly and CurrentHeatPhysicalAssembly extend the current waiting chain to heat_collar and heat_exterior:29 downstream profile and physical source owners are accepted. Run --stage currentheat and --stage currentheatphysical.
+
+The original Gamma/collar/forward-pressure algorithms now receive the checked current waiting object and actual C4/C5-prefix future. Fourteen new production-source identities bind all three Gamma integrands and current waiting H=E0/(1-epsilon)^2;331 unchanged canonical identities and existing Gamma/phi fixtures are retained by hash. Six whole-Z views cover the collar, flat phi crossing and entire[3,infinity) exterior, yielding360 new mixed4 source rows with positive complete future energy and preserved nonzero angular/absolute-pressure histories.
+
+Physical mapping adds1,296 Cartesian spatial4/fixed-position time1 contributions and120 independent finite radius/fixed-unit rows. Prior27 evidence is retained:6,234 regular contributions across29 owners plus216 supplemental gap contributions. The unbounded exterior enforces nonpositive exact logR exponents and finite uniform physical source-row upper bounds. Default checked runtime passes both heat charts and unbounded coverage.
+
+NEXT: F50 current core/axis and three bridge physical owners; F49 current heat pressure/stress companions remain separate. Complete nonlinear [u,v,w,p] point fields, quantitative native mixed4/full pulse C4, global tensor/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open. Owner counts are not an overall completion percentage. Unlocalized whole-space Gamma kinetic energy is infinite; derivative-source coverage does not close required-domain finite energy.
+
+---
+
 # Current steep/waiting source and physical chain complete - 2026-10-05
 
 Read [CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md](CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md). CurrentSteepWaitingSourceAssembly adds entry, power, exit and waiting after the same checked current angular object. Twenty-seven downstream profile sources are accepted. The physical extension is accepted as well:27 downstream physical owners,2,592 newly checked spatial4/time1 source contributions and240 independent finite O7 radius/fixed-unit rows. Prior23 physical evidence is retained, giving5,802 regular contributions plus216 supplemental gap contributions. Default checked runtime passes all four new charts; run --stage currentsteepwaitingphysical.
