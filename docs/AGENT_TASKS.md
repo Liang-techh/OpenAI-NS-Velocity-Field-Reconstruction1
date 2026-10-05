@@ -1,3 +1,23 @@
+# Active handoff: current pulse physical source interface complete — 2026-10-05
+
+Read CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md and CURRENT_CHECKPOINT.md; run --stage currentpulsephysical. F44-current-pulse-physical-extension is complete in the twenty-owner regional source scope. The prior fourteen-chart maps are retained evidence, while only the six pulse charts and their overlap are newly generated.
+
+- [x] F44-current-pulse-physical-extension: same current core/pre/native source graph, original Rp/Rv/radius and Cartesian/time operators; six added pulse maps, all 35 spatial multiindices and first fixed-position time derivative.
+- [x] F45-pulse-correlated-factor-conversion: preserve full native derivative grids and pressure Pstar²; analytically cancel shared giant radial/velocity factors before interval bounds, with 20 exact identities and 180 independent full-field mixed unit rows over three coordinate families.
+- [x] F45-pulse-physical-overlap: map the accepted same-owner gap overlap through a private coverage view, without widening public pulse_gap or adding a twenty-first owner.
+- [x] F45-pulse-physical-prior-evidence: retain the checked fourteen-chart source map/report by hash, same registry/datum and independent original coordinate/micro/patch fixtures; do not recompute those charts merely to repeat acceptance.
+
+Next bounded tasks:
+
+- [ ] F45-native-quantitative-interface-bounds: bind native endpoint algorithms and selected-source relations to the functional pulse certificate; prove two-sided mixed-four source compatibility with quantitative flat forcing/velocity bounds. Uniform/full pulse C4 stays false until this gate.
+- [ ] F45-current-pulse-terminal-transfer: identify all five terminal histories, common analytic pressure and Rp/Rv/amplitude units at s=0, then admit them into the current flatten source provider. Use actual empty future supports/selected identities, not zeroed incoming histories or overlapping endpoint boxes.
+- [ ] F45-current-postpulse-chain: after terminal admission, expand consistent current ownership through flatten, outer power/angular, steep transitions, waiting and exact heat collar/exterior, with retained pressure and actual source radii. Admit each interface before extending physical scope.
+- [ ] F45-full-leading-and-production: complete shared leading-source/nonlinear remainder admission and actual nonlinear point histories; provide executable [u(x,y,z,t),v(x,y,z,t),w(x,y,z,t)] across required layers, including core/axis/bridge ownership, not only interval upper bounds.
+- [ ] F45-global-stress-flatness-energy: complete the actual global tensor/cone, flat remainder and physical-volume/required-domain energy on the composed current source graph.
+- [ ] F45-real-recursion-and-correction: implement distinct n=1/n>=2 recovery equations, separate repairs, finite-order remainder and smooth summation; then realizable mean/oscillatory quadratic stress cancellation and independent corrected residual/dynamics.
+
+---
+
 # Active handoff: current native pulse chain has twenty source owners — 2026-10-05
 
 Read CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md; run --stage currentpulsechain. F43-current-pulse-chart-expansion and F43-current-pulse-whole-coverage below are superseded by this local source acceptance. Uniform native mixed-four interfaces remain a separate gate.
@@ -1162,7 +1182,7 @@ For each task completion record files/commit/check/domain/limits and mark [x]. P
 Read docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md. This header supersedes physical source-map TODOs below; it does not mark point reconstruction, stress or recursion complete. Current stage: globalphysical;107 ordered modules. Preserve SAME selected Cstar, analytic preheat pressure, exact integral sources, implicit moment-repair branch and positive formal scales. Use Luna/max for bounded work where useful; never spawn Astra children.
 
 - [x] Assemble all33 source charts in common physical factors, including native nonsingular core/axis.
-- [x] Apply all35 Cartesian spatial multiindices through total4, moving cylindrical basis and first time derivative at fixed physical position.
+- [x] Apply all 35 Cartesian spatial multiindices through total4, moving cylindrical basis and first time derivative at fixed physical position.
 - [x] Retain exact original logarithmic radii and positive microscopic hb source; do not sort rounded micro radii.
 - [x] Combine signed microscopic factors with hb^-k before final bounds; macro bridge uses already-logR rows without extra conversion.
 - [x] Restore distinct fixed-basepoint units without differentiating them twice, including actual patch Rm/current-R conversion.
@@ -1634,7 +1654,7 @@ Evidence: docs/PULSE_FLAT_COMPARISONS_AND_TWO_SIDED_C4_JOINS_2026_10_01.md. Run 
 
 # F38-D3c1g2 physical pulse map and functional interfaces handoff - 2026-10-01
 
-- [x] F38-D3c1g2a1b: Convert every complete O4 factored chart box into physical cylindrical component r/z derivative log bounds. Apply exact implicit lambda and beta scales, repeated radial lowering factors and axial coordinate derivatives through4. Preserve source Rp=110(Cstar Pstar)^10 exp(yd+1+Tw), separate huge log origins/inverse-mu/finite offsets, and never materialize exp(logCstar). All1080 source chart/derivative/time-sector bounds,180 independent physical implicit-coordinate derivatives and180 independent scale identities PASS.
+- [x] F38-D3c1g2a1b: Convert every complete O4 factored chart box into physical cylindrical component r/z derivative log bounds. Apply exact implicit lambda and beta scales, repeated radial lowering factors and axial coordinate derivatives through4. Preserve source Rp=110(Cstar Pstar)^10 exp(yd+1+Tw), separate huge log origins/inverse-mu/finite offsets, and never materialize exp(logCstar). All1080 source chart/derivative/time-sector bounds,180 independent physical implicit-coordinate derivatives and 180 independent scale identities PASS.
 - [x] F38-D3c1g2a2: Exact INTERNAL main/gap and gap/end identities use the actual selected two-row inverse and energy equation, true divided-difference weights, exact common/incoming source scales and Rp/Rv energy factor exp(-26). Prove coordinate substitution xi=13+mu*s, full future weights at s=-4, pressure/angular history and zero-length entrance values. Thirty-two source-bound identities including arbitrary axial functions through5 PASS. Caps are enclosures, never the exact source functions.
 
 F38-D3c1g2a as a whole remains PARTIAL: complete physical supremum log bounds and internal function equalities do not replace quantitative flat velocity comparisons and two-sided external high-order joins.

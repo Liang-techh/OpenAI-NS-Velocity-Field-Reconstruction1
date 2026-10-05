@@ -1,3 +1,16 @@
+# Next: native pulse interfaces and terminal transfer — 2026-10-05
+
+CurrentPulsePhysicalAssembly exposes twenty accepted downstream source owners in physical coordinates. Six pulse charts and their overlap are newly mapped; the fourteen-chart physical report is retained without regeneration. Read CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage currentpulsephysical.
+
+1. Close quantitative native two-sided mixed-four interface bounds while retaining selected source relations and flat support jets.
+2. Admit the current pulse terminal five histories/common pressure and Rp/Rv units into flatten, then extend consistent postpulse ownership toward exact heat exterior.
+3. Complete full leading/remainder admission, nonlinear production points and core/axis/bridge physical ownership; finish the actual global stress/cone/flatness/physical-volume/required-energy gates.
+4. Implement true n-dependent temporal recursion, smooth summation, oscillatory cancellation and independently measured corrected residual/dynamics after the background gates.
+
+Exact radial Taylor coefficients and physical coordinate maps remain distinct from temporal scale recursion. Complete point fields and uniform/full native pulse C4 remain open.
+
+---
+
 # Next: current pulse Cartesian/time mapping — 2026-10-05
 
 The current downstream source registry has twenty owners: fourteen background charts and all six native pulse charts sharing one object. Read CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md and the latest AGENT_TASKS.md section; run --stage currentpulsechain.

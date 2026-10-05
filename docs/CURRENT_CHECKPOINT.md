@@ -1,3 +1,13 @@
+# Current pulse Cartesian/time source maps complete — 2026-10-05
+
+Read [CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md](CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md). CurrentPulsePhysicalAssembly adds six current pulse charts and their supplemental gap overlap to the physical interface, retaining the earlier fourteen-chart report by its checked hash/registry. Twenty downstream source owners are callable in physical coordinates.
+
+New output covers 35 Cartesian spatial multiindices through order four, all velocity/pressure components and first fixed-position physical time derivatives. Shared giant radius/velocity factors are analytically combined before interval bounds. Twenty exact factor identities and an independent 180-row full-field unit fixture cover the three pulse coordinate families; a tiny-mu log fixture checks that cancellation stays tight.
+
+Run --stage currentpulsephysical. This is regional source-bound physical output, not complete production points. NEXT: quantitative native mixed-four interfaces and current pulse-terminal/postpulse five-history/pressure admission. Global stress/cone/flatness/required-domain energy, true n-dependent temporal recursion and corrected dynamics remain open.
+
+---
+
 # Current twenty-owner native pulse source chain — 2026-10-05
 
 Read [CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md](CURRENT_NATIVE_PULSE_SOURCE_CHAIN_2026_10_05.md). CurrentNativePulseSourceDispatcher now retains the fourteen background owners and exposes all six pulse charts through the same native object after consuming the accepted current Rp join. The original fifteen-owner source adapter and fourteen-chart physical adapter retain their earlier scopes.
