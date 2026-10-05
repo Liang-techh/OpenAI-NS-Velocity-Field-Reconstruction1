@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `0a69f95de84277fa550994000355f8065be4baff`.
+The inspected `main` head before this update is `8817690816cf002619dd276a137c123dadbc45d5`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`2b4aa11e2654d096effa94dce5ca308f909b4c1f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2b4aa11e2654d096effa94dce5ca308f909b4c1f)
+[`ed8a15b3f3ee6894417f6229bdfebebb9ee758df`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8a15b3f3ee6894417f6229bdfebebb9ee758df)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,55 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: all33 regional maps, three bridge joins and radial source scaling
+
+The [core/bridge report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/docs/CURRENT_CORE_BRIDGE_CHAIN_2026_10_05.md)
+and [33-map/interface report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/docs/CURRENT_PHYSICAL33_BRIDGE_JOINS_2026_10_05.md)
+record0c11a9fc/11a35cc9 current core plus three finite-width bridge owners,
+composing all33 regional spatial4/fixed-position time1 physical source maps.
+Axis is a nonsingular CORE MODE, not a34th region. Core rho[0,4]/Z[-1,1]
+and the bridge share the same nested analytic core. Actual histories/pressure
+remain distinct from axial6 prescribed-comparison inputs; positive width and
+amplitude factors remain formal until bounds. Regular contributions7,134,
+axis supplemental252 and gap supplemental216 are coverage counts, not point
+fields or full-goal completion percentages.
+
+Three subsequent functional mixed4 joins are accepted: first/second,
+second/macro and R100/switch. Core/first remains FALSE. Shared pointer,
+parameter labels, contraction records or overlapping boxes do not prove that
+analytic model-plus-correction and coefficientwise atoms enclose the SAME
+unique nonlinear solution. Later bridge joins cannot replace that missing
+entrance proof. Full interface smoothness is not implied by33 regional maps.
+
+The [ed8a15b3 radial proof](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/docs/CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md)
+binds original/scaled production ASTs,13 homogeneous term families and
+leading axis/pressure units.36 exact formal-jet checks at n0..3 are bounded
+executed-operator checks, distinct from the general radial scaling argument.
+Core epsilon*Lambda=1 is distinct from pressure-datum epsilon=.001*delta.
+Formal Ptilde1=Stilde does not admit the actual symmetric S_Z_taylor box as
+the exact swirl function. Exact scaled swirl source/analytic norm/Cauchy
+weight/radius, finite recurrence residuals and nonlinear tails of the SAME
+fixed point, pressure primitive4C=PD+PI and phase0 recovery still need
+admission before core/first join. RADIAL recursion is not n=1 or higher
+TEMPORAL coefficient recovery.
+
+Current heat pressure/stress, uniform quantitative native pulse C4, production
+points, full shared leading/remainder admission, completed global tensor/cone,
+independent temporal flatness/volume/finite-energy and actual time recursion
+remain open. Whole-space energy remains infinite. No scientific computation
+or independent complete proof audit was run; unchanged fixtures were hash-reused.
+
+The [core receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/experiments/root_st073/lei_ren_part1_paper_compliant_current_core_physical_assembly_check.json),
+[bridge mixed4 receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/experiments/root_st073/lei_ren_part1_paper_compliant_current_actual_bridge_mixed_C4_check.json),
+[33 physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/experiments/root_st073/lei_ren_part1_paper_compliant_current_bridge_physical_assembly_check.json),
+[partial joins receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/experiments/root_st073/lei_ren_part1_paper_compliant_current_bridge_functional_joins_check.json)
+and [radial recurrence receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ed8a15b3f3ee6894417f6229bdfebebb9ee758df/experiments/root_st073/lei_ren_part1_paper_compliant_current_core_recurrence_source_check.json)
+have537/541/545/543/543 bindings (547 distinct paths):2,704 exact Git-byte
+matches and five schedule_pressure.py matches after LF-to-CRLF conversion,
+with no unexplained mismatch. Replay currentcorephysical/currentbridgemixed/
+currentbridgephysical/currentbridgejoins/currentcorerecurrence with current
+prerequisites and receipt checkout bytes.
 
 ### 2026-10-05 review: current waiting/collar/exact Gamma,29 owners
 
@@ -3457,6 +3506,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [ed8a15b3 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37383540835)
+ended failure:13 failed/423 passed; all13 identifiers match 2b4aa11e.
+Four smoke/slice jobs pass; full historical tests are skipped.33 regional
+maps and radial scaling do not certify core inlet/global NS acceptance.
 
 The exact-head [2b4aa11e run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37377626157)
 ended failure:13 failed/423 passed; all13 identifiers match 48f646c0.
