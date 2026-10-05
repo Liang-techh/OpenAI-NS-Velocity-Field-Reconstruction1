@@ -1,3 +1,11 @@
+# Actual scaled swirl source connected to current coefficient seeds - 2026-10-05
+
+Read [CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md](CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md). The currentcoreswirl stage admits exact S=epsilon_core^2 F0^2 and its ordinary Taylor jets into the unchanged original Cauchy seed boxes. It consumes the actual weighted transfer bound, selected Cstar surplus and same eta/2 radius in logarithmic form.121 original source rows, six symbolic relative-jet identities and27 independent moderate-source coefficients pass; default checked loading and fresh seed runtime pass. No amplitude is set to zero or to a cap.
+
+Next bind the actual gauge10+10 nonlinear terms to the transfer majorants and coefficient recurrence, then establish one common fixed point and analytic tail before admitting core/first. Operator existence is not proved merely by the contraction_proved metadata. Complete nonlinear points and global/temporal layers remain open.
+
+---
+
 # Core production recurrence and leading-axis equations connected - 2026-10-05
 
 Read [CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md](CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md). The new currentcorerecurrence stage proves whole-production radial scaling with13 arbitrary-n term families,36 independent formal Taylor identities, exact leading axis A/Uz equations and same-datum pressure seed units. The core scaling epsilon is explicitly distinguished from the pressure-datum epsilon. This is radial equation/source progress; temporal recursion remains false.

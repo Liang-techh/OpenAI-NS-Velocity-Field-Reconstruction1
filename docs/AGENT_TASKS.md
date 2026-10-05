@@ -1,3 +1,21 @@
+# Active handoff: exact scaled S jets admitted - 2026-10-05
+
+Read CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md. This section supersedes the exact-S/Cauchy-consumer portions of F53 below. The new adapter uses current actual atom/amplitude/rebuild objects and leaves old seed rows/receipts intact.
+
+- [x] F53-exact-S-and-Cauchy-consumer: original anchored log amplitude, exact log S, actual transfer Cauchy weight, selected logCstar surplus and same eta/2 radius are bound. All-order Cauchy theorem plus121 original finite rows pass. Receipt: current_core_scaled_swirl_source_check.json.
+- [x] F53-relative-S-units: S_Z/S=2ell_phys=2ell_scaled/epsilon_core; six symbolic ordinary Bell-jet/factorial identities pass. Actual source logs retain positivity without exponentiation.
+- [x] F53-weight-change-and-runtime: weight5 moderate source gives27 independent coefficients; oversized weight fails dominance. Default checked constructor and new unsaved-Z original seed call pass.
+- [ ] F54-actual-twenty-term-source: AST-consume gauge_fixed_point_identity.theta_terms/z_terms and bind the actual10+10 expressions, source parameters and integral definitions. Physical F0^2 equals admitted scaled S/epsilon_core^2; do not confuse these units.
+- [ ] F54-term-to-majorant-incidence: match each production expression to transfer term coefficient, unknown degrees, fixed multiplier, radial/axial derivative operator and J1/J2/resolvent/one-half factors. Reject any omitted source factor, derivative, pressure or swirl term. Names and power counts alone are not proof.
+- [ ] F54-actual-correction-operator: define T using original Green inverses on the same normalized source state, M=rho^-1 int Psi and Pcal=F0^2 int Phi^2. Preserve the Bessel/linear models and correction-only axis data.
+- [ ] F54-arbitrary-coefficient-extraction: prove each radial order of the operator equation is exactly the production advance_one/advance_scaled_one recurrence with ordinary Taylor convolution/differentiation. Include W/H, physical ell, pressure_Z and S convolution.
+- [ ] F54-common-fixed-point-and-tail: apply same Xh ball, source/tube domains, size and Lipschitz bounds to the actual bound operator; use uniqueness and coefficient induction to connect both reconstruction algorithms and their analytic tails. Contraction metadata alone is insufficient.
+- [ ] F54-core-first-pressure-and-ODE: bind4C to PD+PI, actual phase0 atom traces/controls and original stress-free recovery/drive through mixed4. Admit the fourth bridge join only after these obligations pass.
+
+Keep core/first, complete nonlinear points, global stress/flatness/energy and temporal recursion false until separately proved. Publish exact owned artifacts and mark each completed task with receipt and commit; reuse unchanged accepted reports.
+
+---
+
 # Active handoff: core production scaling equations proved - 2026-10-05
 
 Read CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md. This section supersedes the leading-axis/full-radial-scaling portions of F53 below. The original source equations are connected; exact S admission, finite-tail common fixed-point provenance and core/first remain open.

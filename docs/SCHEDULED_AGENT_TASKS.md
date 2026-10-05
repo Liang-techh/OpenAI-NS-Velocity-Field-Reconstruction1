@@ -1,3 +1,9 @@
+# Current executable queue - 2026-10-05 actual scaled swirl source
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md. Exact scaled S and its Cauchy jets are admitted into the unchanged current coefficient seeds, following radial scaling/leading-axis/pressure-seed proofs. Next execute F54 actual gauge10+10 nonlinear operator, term-to-majorant incidence and arbitrary coefficient extraction. Then prove common fixed-point/tail provenance and the core/first pressure/ODE join. Do not redo the121 rows or prior physical33 reports unless source changes. Keep full point/global/temporal gates false and mark completed tasks with precise source receipt and commit.
+
+---
+
 # Current executable queue - 2026-10-05 core source equations
 
 Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_RADIAL_SOURCE_PROOF_2026_10_05.md. Current33 regional physical maps, three non-core joins, full production radial scaling and exact leading-axis A/Uz/pressure-seed equations are admitted. Next implement the exact scaled S source and same-tube transfer/Cauchy-weight consumer, finite residual/tail common fixed-point provenance and original core/first ODE join. Do not redo the36 formal identities unless their source changes. Radial scaling is not temporal recursion. Keep core/first, complete nonlinear points and global/temporal gates false until their own obligations pass, and mark completed work with exact receipt and commit.
