@@ -79,9 +79,9 @@ Run only the bounded new stage:
 
 `python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage pulsegapsimilarity`
 
-Next recover the full physical tensor, diagonal/divergence and actual
-three-component remainder on this unchanged whole gap; then prove its
-continuous admissible cone and compose the accepted end/tail. Main pulse,
+The full physical tensor, diagonal/divergence and actual three-component
+remainder are now admitted separately in docs/PULSE_GAP_PHYSICAL_2026_10_04.md.
+Next prove the continuous admissible cone and compose the accepted end/tail. Main pulse,
 exit, entrance and upstream finite-width bridge feedback remain. Completed
 global tensor admissibility, global temporal flatness/volume/energy,
 n-dependent recursion, oscillatory correction and corrected Cartesian

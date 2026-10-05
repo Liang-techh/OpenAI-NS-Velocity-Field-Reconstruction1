@@ -1,3 +1,15 @@
+# Current: whole original inactive-gap completed physical tensor — 2026-10-04
+
+Read docs/PULSE_GAP_PHYSICAL_2026_10_04.md. The complete xi[11,13-4mu],d[4mu,2],Z[-1,1] gap now has completed symmetric physical stress mixed3, diagonal/divergence mixed2 and actual three-component remainder mixed2, with Cartesian tensor/divergence/remainder/decomposition sectors. It uses the current full five moments and same uncapped analytic pressure.
+
+The radial history uses effective D1=D0*exp((.5-mu)*d/mu), with already differentiated ordinary source rows. Actual Ur_y=-Ur/2 proves the radial vector Laplacian zero. Radial time change, nonlinear transport and axial viscosity remain; Etheta=-nu*utheta_zz and Ez=0. Er is not set zero at the formal d=4mu/end s=-4 interface. Both linear and quadratic history factors and actual original end R/B/H source logs identify the completed physical join through the unchanged fixed-positive-nu/lambda/time/pressure units. Direct named native moment/energy/pressure/angular/support/axial-order and P0/FTC identities are consumed; actual production radius routes and both pullback argument lists are bound.
+
+Focused checker PASS:79 source/operator/interface identities,28 accepted full meridional operator identities consumed without rerun,427 current hashes,792 finite signed physical rows and24 exact axial zero rows. Four source packets include the whole gap and coupled exact right endpoint. An independent complete-beta Cartesian fixture at nu=.01/.7 supplies114 full time/convection/pressure/Laplacian/tensor-divergence comparisons through stress3 and diagonal/divergence/error2. Nonzero Er/Etheta retained; Ez zero. Tolerance1e-55,max positive enclosure miss3.143e-79. This checks formulas/units, not corrected NS accuracy. Use --stage pulsegapphysical.
+
+NEXT: continuous whole-gap cone with structurally zero axial shear and nonzero radial/moment histories, then composition to admitted end/tail. Main/exit/entrance full companions and cone, upstream finite-width bridge feedback, completed global tensor admissibility, global temporal flat/physical-volume/required-domain energy, true n-dependent recursion, oscillatory correction and corrected Cartesian residual/dynamics remain open.
+
+---
+
 # Current: whole original inactive-gap similarity companion — 2026-10-04
 
 Read docs/PULSE_GAP_SIMILARITY_2026_10_04.md. The complete inactive gap xi[11,13-4mu],d=13-xi in[4mu,2],Z[-1,1] now retains all five raw cumulative moments mixed4, actual velocity mixed4, full meridional stress mixed3 and the same absolute pressure mixed4. Main-scale gap xi[11,12] and end-scale gap s[-1/mu,-4] are one source. Axial input is zero; radial velocity, nonzero raw linear moments, signed angular memory, selected energy loss and analytic pressure datum remain.
