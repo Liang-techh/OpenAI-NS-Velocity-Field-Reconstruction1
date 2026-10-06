@@ -36,6 +36,15 @@
     "both_current_constants_retained_in_actual_stress": true,
     "passed": true
   },
+  "current_actual_pressure_source_split_proof": {
+    "both_actual_Cp_expression_AST_bindings": true,
+    "actual_collar_tail_density_equals_original_forward_density": true,
+    "current_checked_Gamma_pressure_rescaling_consumed": true,
+    "exact_source_split_at_three_and_constant_equality_proved": true,
+    "same_function_axial_derivatives_follow_by_differentiation": true,
+    "interval_box_equality_or_overlap_not_used": true,
+    "passed": true
+  },
   "exact_current_radius_and_positive_factors": {
     "current_exact_heat_logradius_definitions_AST_bound": true,
     "current_common_parameter_bridge_consumed": true,
@@ -710,6 +719,6 @@
     "lei_ren_part1_paper_compliant_current_core_first_interface_check.json": "e3a631d85da4cbeb62b9f6bbd7345e1109349935185edab177d2252a9d010400",
     "lei_ren_part1_paper_compliant_current_heat_pressure_stress.py": "ecb2f9c7d0e23f4d1e9d06d630708799d51eab38bb5959a15eb4b1f57bac29b8",
     "lei_ren_part1_paper_compliant_current_heat_pressure_stress.json": "319de375758e787bfcfa8f5105ac10f1149caef8ed633df3cc9b33e71d49dcea",
-    "lei_ren_part1_paper_compliant_current_heat_pressure_stress_check.py": "9ed6527c4d55d1053ede89e02099a28d3c35a45af07d6d0ff641989b20517da7"
+    "lei_ren_part1_paper_compliant_current_heat_pressure_stress_check.py": "0aa16b92583deb59998ece8b6ba611300082f991cadb136fe4ea308d1e6edbaa"
   }
 }

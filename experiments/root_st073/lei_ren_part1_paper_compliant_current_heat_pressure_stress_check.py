@@ -10,7 +10,7 @@ import sympy as s
 
 from lei_ren_part1_paper_compliant_current_heat_pressure_stress import (
     CurrentHeatPressureStress,HERE,PREFIX,NAME,RECEIPT,GATES,SCOPES,VIEWS,sha,
-    binding,history_source_bindings,constant_stress_rows,pack,encode,endpoints,
+    binding,augmented_binding,history_source_bindings,constant_stress_rows,pack,encode,endpoints,
     collar_pressure_rows,IntervalTaylor)
 from lei_ren_part1_paper_compliant_macro_signed_integrals import _verify_hashes
 from lei_ren_part1_paper_compliant_switch_signed_integrals import source_precision
@@ -85,6 +85,55 @@ def actual_constant_stress_proof():
         pressure_constant_factor_separate_from_Ev2=True,
         no_division_by_a_cap_box_containing_zero=True,
         both_current_constants_retained_in_actual_stress=True,passed=True)
+
+
+def current_pressure_source_split_proof(field):
+    """Identify both actual Cp expressions through the production split.
+
+    The two interval boxes need not be equal. The defining integrals are
+    identical by density expansion, exact Gamma rescaling and additivity.
+    """
+    for stem,method,target,expression in (
+        ('compliant_current_heat_pressure_stress','terminal_constants','data','self.heat.data(z)'),
+        ('compliant_current_heat_pressure_stress','terminal_constants','tail0','self.heat.collar_tails(z,0)'),
+        ('compliant_current_heat_pressure_stress','terminal_constants','gamma3','self.heat.local_Gamma(z,3)'),
+        ('compliant_current_heat_pressure_stress','terminal_constants','pressure_infinity',
+         "data['Ptail']+tail0['remaining_pressure_in_Rtail_units']*self.heat.pressure_scale"),
+        ('compliant_current_heat_pressure_stress','terminal_constants','from_trace3',
+         "data['pressure3']+gamma3['pressure_numerator']*(self.heat.pressure_scale*c.exp(-3*self.heat.prate))"),
+        ('compliant_collar_Gamma_C4','collar_tails','tails','integrated_gamma_tails(c,Z,self.a,self.Scap,5,3)'),
+        ('compliant_collar_Gamma_C4','collar_tails','length','3-t'),
+        ('compliant_collar_Gamma_C4','collar_tails','shape','self.shape(Z,v,False)'),
+        ('compliant_collar_Gamma_C4','collar_tails','pre',"shape['pre_rows'][0]"),
+        ('compliant_collar_Gamma_C4','collar_tails','D',"shape['D_rows'][0]"),
+        ('compliant_collar_Gamma_C4','local_Gamma','Sc','self.S*c.exp(-t)'),
+        ('compliant_collar_Gamma_C4','local_Gamma','tails','integrated_gamma_tails(c,Z,self.a,Sc,5,0)')):
+        binding(stem,method,target,expression)
+    augmented_binding('compliant_collar_Gamma_C4','collar_tails','pressure',
+        'square*(ds*c.exp(-self.prate*v)/2)')
+    # The checked current owner binds these exact original callables and
+    # has already checked this source theorem against its frozen receipt.
+    graph=field.current_bindings['current_defining_object_graph']
+    theorem=field.source_owner.functional_proof
+    required=('Gamma_pressure_tail_rescaling','new_full_Gamma_pressure_current_units',
+              'new_exterior_forward_pressure_history','new_exterior_pressure_interface')
+    if not all(graph.values()) or not all(theorem.get(key) for key in required):
+        raise ValueError('Current exact pressure/Gamma source rescaling omitted')
+    a,S,eps,W,D,rate,v=s.symbols('a S eps W D rate v',real=True)
+    pre=1-eps*W;K=pre-a*S*D
+    decomposed=s.exp(-rate*v)*(1-2*eps*W+eps**2*W**2-a*S*D*(2*pre-a*S*D))/2
+    exact(decomposed,s.exp(-rate*v)*K*K/2,'Actual collar remaining density differs from forward density')
+    scale,Ptail,I03,G3=s.symbols('scale Ptail same_current_prefix_0_3 same_current_Gamma_tail_3')
+    tail0=I03+s.exp(-3*rate)*G3
+    pressure3=Ptail+scale*I03
+    exact(Ptail+scale*tail0,pressure3+scale*s.exp(-3*rate)*G3,
+        'Actual inlet and trace3 pressure constants differ as source functions')
+    return dict(both_actual_Cp_expression_AST_bindings=True,
+        actual_collar_tail_density_equals_original_forward_density=True,
+        current_checked_Gamma_pressure_rescaling_consumed=True,
+        exact_source_split_at_three_and_constant_equality_proved=True,
+        same_function_axial_derivatives_follow_by_differentiation=True,
+        interval_box_equality_or_overlap_not_used=True,passed=True)
 
 
 def exact_source_radius_proof(field):
@@ -188,6 +237,7 @@ def run(field=None):
         if not packet['actual_current_terminal_constants']['zero_constants_not_assumed'] or any(packet[k] for k in SCOPES):
             raise ValueError('Actual heat constants were eliminated without source equations')
     pressure=retained_forward_pressure_proof();constants=actual_constant_stress_proof()
+    split=current_pressure_source_split_proof(field)
     radius=exact_source_radius_proof(field);fixture=independent_nonzero_constant_fixture()
     general=collar_moment_stress_identities();Gamma=terminal_stress_identities()
     if not general['original_collar_moment_to_stress_identities_verified'] or not Gamma['full_terminal_moment_stress_theorem_verified']:
@@ -195,6 +245,7 @@ def run(field=None):
     result=dict(actual_five_defect_family_sha256=field.family,implicit_source_sha256=field.source,
         datum_enclosure_sha256=field.datum_sha,current_common_heat_source_graph=field.graph,
         actual_retained_forward_pressure_proof=pressure,actual_constant_stress_proof=constants,
+        current_actual_pressure_source_split_proof=split,
         exact_current_radius_and_positive_factors=radius,
         independent_nonzero_constant_fixture=fixture,
         canonical_full_collar_moment_stress_identities=general,

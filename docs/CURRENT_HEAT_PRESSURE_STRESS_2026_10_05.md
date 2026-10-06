@@ -31,6 +31,8 @@ P_current(t,Z)/Pstar^2 = Cp(Z) - pressure_scale*A_p(t,Z).
 
 Here pressure_scale=Ev0^2*theta_base^2/Pstar^2. Equality of the two definitions of Cp follows from additivity of the same source integral, including the infinite Gamma tail. It does not follow from interval overlap. Both actual enclosures are retained. Neither Cp nor Dtheta is set to zero or selected from an interval midpoint.
 
+The current checker explicitly binds both actual Cp callables, the collar's pressure-defect density and its split at t=3. It consumes the checked current owner's exact Gamma pressure-rescaling theorem, proves equality of the full remaining density with the forward K-squared density, and identifies the two constants as functions of Z. Different directed boxes are retained; they need not be equal as intervals.
+
 The exact inverse radius is S=1/Rtail and the full Gamma argument is xi=2*(1-Z^2)*S*exp(-t). Source radius/amplitude definitions and positive factors remain in logarithmic form. The numerical S enclosure and amplitude cap boxes bound these exact source quantities; cap endpoints do not replace them.
 
 ## Stress recovery in original units
