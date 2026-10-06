@@ -9,17 +9,37 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `8817690816cf002619dd276a137c123dadbc45d5`.
-Its September 22 pause snapshot remains a historical stop-state. The newest
-observed research head is
-[`ed8a15b3f3ee6894417f6229bdfebebb9ee758df`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8a15b3f3ee6894417f6229bdfebebb9ee758df)
-on `codex/st073-transition-next`, observed October 5. This branch contains the
+The inspected `main` head before this update is `206bef5d4eb8fa301ae5661b08a840666b602ca9`.
+Its September 22 pause snapshot remains a historical stop-state. The newest observed research head is
+[`ebc68c43d3bcb3edd40f3248006ca334b510f7c0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ebc68c43d3bcb3edd40f3248006ca334b510f7c0)
+on `codex/st073-transition-next`, observed October 6. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-06 review: common nonlinear core, four joins and current heat constants
+
+At fixed [904d2399](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/904d23999682086f7b8587ce3e3efe36da7ad618), the [scaled swirl source](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/904d23999682086f7b8587ce3e3efe36da7ad618/docs/CURRENT_CORE_SCALED_SWIRL_SOURCE_2026_10_05.md) binds the actual source, weighted Xh supremum norm, positive surplus and Cauchy radius; caps are not defining functions. The [twenty-term operator](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/904d23999682086f7b8587ce3e3efe36da7ad618/docs/CURRENT_CORE_NONLINEAR_OPERATOR_2026_10_05.md) retains ten angular and ten axial terms, full Green operators and the extra axial row. The [common fixed-point report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/904d23999682086f7b8587ce3e3efe36da7ad618/docs/CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md) records a closed unit correction ball and Lipschitz bound below 1/2, binding finite recurrence, model and nonlinear mixed radial tails to the SAME analytic solution. Original pressure value tails remain axial-order-zero; complete Phi convolution supplies new mixed pressure tails. This is scoped analytic inclusion, not a selected point field or temporal solve.
+
+The [core/first report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/904d23999682086f7b8587ce3e3efe36da7ad618/docs/CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md) now records accepted core/first and all four bridge interfaces. Degree24/depth6 common-core acquisition binds the same six moment functions, pressure and phase-zero atoms; source equations, exact pullbacks and linear-ODE uniqueness recover mixed4 interfaces. The 135 packet rows are coverage rows, not independent fixtures. Earlier false gates remain historical at their own commits.
+
+**Pressure correction:** the previous shorthand `4C=PD+PI` was wrong. The relation is `PI_core(4,Z)=4*C_dressed(Z)`, with PD the separate axis datum:
+`Pphys=Pstar^2*PD+epsilon_core*F0base^2*PI_core=Pstar^2*PD+Ra*F0base^2*C_dressed`.
+Retain the same functions and their axial derivatives, not independently overlapping boxes.
+
+The [current heat report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/904d23999682086f7b8587ce3e3efe36da7ad618/docs/CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md) recovers pressure mixed4, collar factored leading-similarity stress mixed3 and exterior factored stress mixed4. The latest Cp split binds the same full remaining density and Gamma rescaling, retaining distinct directed enclosures. It does **not** eliminate `Dtheta=(1-epsilon)*Xtail_current-A_future_current(0)` or `Cp=Ptail+pressure_scale*Ap(0)`. A nonzero interval does not prove an exact nonzero constant; containing zero does not prove cancellation. Pressure-offset stress has radial power +1/2, so bounded coefficients are not uniform-R stress bounds. Leading-similarity components are not the complete physical NS tensor. Constant elimination and current exterior-zero-stress gates remain FALSE; older T=0 receipts cannot transfer.
+
+Next establish the same actual repair source, weights, propagated tail identities and pressure baseline. If the functions differ, rebuild repair for the current source before proving cancellation; no posthoc zeroing. The subsequent 40fbde93/ebc68c43 completion below supersedes this K_y5-open gate. Uniform pulse C4, shared leading/remainder admission, global tensor/cone, independent flatness, point assembly, physical-volume residuals and genuine temporal recursion remain open. Whole-space energy remains infinite. This review runs no scientific calculations or complete proof audit. New `.gitattributes` preserves receipt-bound bytes, including CRLF; historical LF/CRLF observations below keep their original scope.
+
+Subsequent [ebc68c43 collar report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ebc68c43d3bcb3edd40f3248006ca334b510f7c0/docs/CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md) records original shape radial5, actual collar stress mixed4 and the functional collar/Gamma actual stress mixed4 join as accepted. Full positive Gamma derivatives extend through10, with no finite tail replacement. Six views contain270 factored stress rows/216 K coefficients; saved fixtures report144 shape rows and45 direct physical-stress rows. Both constants remain. This is leading-similarity recovery, not complete physical residual closure. Replay entry is `--stage currentcollarstress`; [scoped check receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ebc68c43d3bcb3edd40f3248006ca334b510f7c0/experiments/root_st073/lei_ren_part1_paper_compliant_current_collar_stress_mixed_C4_check.json). Next is the exact native Xv repair wrapper and live log-suppression containment; the old uniform contraction box alone is not an exact source definition. Angular and pressure terminal closure remain separate obligations.
+
+Five current check receipts (scaled swirl/operator/common fixed point/core-first/heat pressure-stress) have 547/553/557/562/566 bindings: 2,785 exact Git-byte SHA256 matches across 566 distinct paths, with no normalization or mismatch. This checks source binding, not mathematical correctness.
+
+Research [tests run 37396463851](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37396463851) at ebc68c43 finished **13 failed / 423 passed**, with the same thirteen route/governance/accounting failure identifiers as the preceding review. Four import/slice jobs passed; the full-history matrix was skipped. Research failure remains separate from main documentation checks; scientific code and CI are unchanged by this update.
+
 
 ### 2026-10-05 review: all33 regional maps, three bridge joins and radial source scaling
 
@@ -49,7 +69,7 @@ Core epsilon*Lambda=1 is distinct from pressure-datum epsilon=.001*delta.
 Formal Ptilde1=Stilde does not admit the actual symmetric S_Z_taylor box as
 the exact swirl function. Exact scaled swirl source/analytic norm/Cauchy
 weight/radius, finite recurrence residuals and nonlinear tails of the SAME
-fixed point, pressure primitive4C=PD+PI and phase0 recovery still need
+fixed point, pressure primitive and phase0 recovery still need
 admission before core/first join. RADIAL recursion is not n=1 or higher
 TEMPORAL coefficient recovery.
 
