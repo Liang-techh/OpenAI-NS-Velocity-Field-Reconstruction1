@@ -1,3 +1,5 @@
+The later whole current main/exit milestone is now complete; see [CURRENT_PULSE_MAIN_EXIT_CONE_2026_10_06.md](CURRENT_PULSE_MAIN_EXIT_CONE_2026_10_06.md). The original-cone/pulse-end implementation below remains the source prerequisite.
+
 # Original cone map and whole current pulse-end signed cone
 
 Implementation and scoped original-cone/current pulse-end receipt: commit [fde7e10e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fde7e10ef112f4dbe915e896186c656dab2e922d).

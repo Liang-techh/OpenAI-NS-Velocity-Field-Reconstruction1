@@ -1,6 +1,6 @@
 # Whole current main and exit signed two-vector cone
 
-Implementation commit: pending the scoped source/hash audit and push.
+Implementation and scoped whole current main/exit cone receipt: commit [dea75a8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dea75a8efa3d8e38d07fdf78e093c0510d36b3af).
 
 ## Constructed result
 
@@ -51,6 +51,8 @@ Use the common `experiments/root_st073/lei_ren_part1_paper_compliant_` prefix:
 - `current_pulse_main_exit_cone.json`: exact proof, current source composition, all directed bounds and input hashes.
 - `current_pulse_main_exit_cone_check.py` / `_check.json`: 79 exact kernel/sector/shear/algebra identities, 12 current grouped-log identities and 43 strictly positive directed whole-domain bounds; rejects missing signed sectors, foreign source and an amplitude outside the theorem's range.
 - `current_pulse_main_exit_cone_views.json.gz`: both complete unpruned current whole views. Read with `json.loads(gzip.decompress(path.read_bytes()))`. The receipt binds its SHA256.
+
+Read-only review (GPT-5.6 Luna / max) found no material blocker. The source/hash audit passed for all 780 dependency files in both the working tree and Git index. The focused controller and checked per-region API also passed.
 
 Focused controller stage: `currentmainexitcone`. Reuse the existing checked warm source graph; do not restart old producers. Controller gates inherit the 33 regions / 32 adjacent / 14 internal full tensor cover and 14 / 8 primitive atlas. Only the new whole-main/whole-exit/IBP-reduction gates are added. Per-view whole-main and whole-exit flags are scoped to the matching region; inherited pulse-end admission stays separately nested.
 

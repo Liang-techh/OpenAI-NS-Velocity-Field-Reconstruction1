@@ -1,3 +1,26 @@
+# Current handoff: whole current main/exit signed cone (2026-10-06)
+
+Implementation and scoped whole current main/exit cone receipt: commit [dea75a8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dea75a8efa3d8e38d07fdf78e093c0510d36b3af).
+
+The entire current pulse main xi[.02,10] and exit xi[10,11], all Z[-1,1], now satisfy the strict original two-vector cone. The conservative dimensionless directional bracket is >0.830919. Together with the previous whole pulse-end result, three current pulse regions have continuous source-function cone proofs. All 15 signed stress sectors per main/exit region and the full diagonal/divergence/Cartesian/E records remain attached.
+
+The construction keeps the actual shear correlation b=-Bhat+2mu*(Bhat_xi-Bhat), applies two exact integrations by parts to the original full kernel, and uses current selected amplitude/incoming/future/end-loss/absolute-pressure sources. Historical admissions are not promoted to the current field. Broad direct interval margins stay stored as inconclusive diagnostics; the new admission comes from the correlated analytic bound.
+
+Read [CURRENT_PULSE_MAIN_EXIT_CONE_2026_10_06.md](CURRENT_PULSE_MAIN_EXIT_CONE_2026_10_06.md). Focused stage: `currentmainexitcone`; API: `CurrentPulseMainExitCone(cone=checked_current_original_cone)`. Producer and receipt use the `lei_ren_part1_paper_compliant_current_pulse_main_exit_cone` prefix; both complete whole views are retained in `_views.json.gz`. Global T/E graph remains 33 / 32 / 14, primitive atlas 14 / 8.
+
+- [x] F57C-cone1a: original variable/sign/scale map, signed cone and covariance/linear algebra.
+- [x] F57C-cone1b-tail: whole current pulse-end strict signed cone.
+- [x] F57C-cone1b-main: whole current main/exit strict signed cone, exact kernel and current-history reduction.
+- [ ] **Next F57C-cone1b-gap:** same-source gap/reciprocal-gap shear and full-domain cone, exact D1/D2 weights and source boundary attachments.
+- [ ] F57C-cone1b-downstream/upstream: remaining regional shear/cone adapters, stress-free limits, uniform edge directions and actual inner shear/moment repair where needed.
+- [ ] F57C-cone1c: actual two homogeneous pulse families, covariance integrals, uniform positive amplitudes, flat edge weights/smooth extension and signed linear correction.
+- [ ] Actual n=1 / n>=2 coefficient recovery/moment repair, cancellation/absorption of the nonflat leading origin E, completed flatness and smooth sum.
+- [ ] Converged physical u/v/w/p, corrected Cartesian NS residual, energy and measured scale recursion/winding.
+
+The full long-term goal remains active. Global completed tensor/cone/wave, corrected NS/energy/flatness/genuine coefficient-recursion gates remain false. Reuse the admitted warm graph. Earlier checkpoint sections below are historical.
+
+---
+
 # Current handoff: original cone map and whole current pulse-end signed cone (2026-10-06)
 
 Implementation and scoped original-cone/current pulse-end receipt: commit [fde7e10e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fde7e10ef112f4dbe915e896186c656dab2e922d).
