@@ -1,5 +1,7 @@
 # Current angular local stress and error differences (2026-10-06)
 
+Implementation and scoped local stress/error receipt: commit [d7477882](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7477882583af4799795d8a1974c8b1310dcda1a).
+
 The four current angular support edges now have local stress3 and axial-viscosity error2 difference bounds, complementing the four previously checked pulse support differences. The current source inventory remains fourteen adjacent and eight internal traces. Both support families now have local stress/error difference companions. Quantitative common interface bounds and the prescribed complete current physical stress/remainder remain next work; global cone/lift/NS, independent temporal flat remainder, prescribed-domain energy, resolved fields and genuine n-dependent recursion remain open.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_support_differences.py`, matching `_check.py`, producer `.json` and scoped `_check.json`. Focused stage: `currentangulardifferences`. Construct `CurrentAngularSupportDifferences(support=checked_current_angular_support)` to reuse the admitted current graph; call `interface(edge,h,Z,log_tau,viscosity)` for a fresh local bound. Producer and checker share one field. Do not rebuild historical deep constructors.
@@ -33,6 +35,8 @@ The original physical stress and viscosity maps consume those coefficient bounds
 - Forty original stress mixed3 superposition identities and six original axial-viscosity mixed2 superposition identities retain arbitrary nonzero reference A/E/P/K functions.
 - Current full-moment transport, original paper stress units and exact current KR source identities are recomputed; changed steep length or waiting normalization are rejected on isolated clones.
 - Fresh Z=.631, log(tau)=-2.7, nu=.8 physical difference view and checked receipt loading pass. Controller preserves one shared field and scoped gates; global/temporal gates remain false.
+
+Exact working/Git-index source and receipt audit passes for all 640 dependency files.
 
 ## Next executable work
 
