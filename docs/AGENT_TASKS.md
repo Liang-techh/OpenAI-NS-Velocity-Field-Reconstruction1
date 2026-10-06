@@ -1,5 +1,7 @@
 # Active tasks after full current collar stress mixed4 (2026-10-05)
 
+Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).
+
 Read CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md and CURRENT_CHECKPOINT.md. The missing K_y5, collar stress mixed4 and actual collar/Gamma stress mixed4 join are complete in leading similarity scope. Updated F57B checkboxes below separate these completions from exact current repair-source/terminal-constant work. F57A native quantitative interfaces and all later global/physical/energy/temporal layers remain open.
 
 ---

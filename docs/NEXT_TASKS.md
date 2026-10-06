@@ -1,5 +1,7 @@
 # Next: exact native repair branch and terminal closure (2026-10-05)
 
+Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).
+
 Read CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md and updated F57B tasks in AGENT_TASKS.md. Current collar K radial5, stress mixed4 and actual collar/Gamma stress mixed4 traces are now admitted with both constants retained. Run --stage currentcollarstress.
 
 1. Build a current exact-source repair wrapper with Xv=1/(1-mu)+(Xp-1/(1-mu))*exp(-13*(1-mu)/mu); bind both native/candidate Xp ratios to the same buffer source and prove live log-suppression containment.

@@ -1,5 +1,7 @@
 # Current full collar stress mixed4 and its Gamma interface
 
+Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).
+
 F57B now recovers the actual current heat-collar stress through mixed total order four. The missing viscous-shear derivative is supplied by the original full shape through radial order five. The actual collar/Gamma stress interface is identified functionally through mixed4, including the two retained terminal constants. Stress-free exterior, physical NS closure, global admissibility and temporal recursion remain open.
 
 ```powershell
