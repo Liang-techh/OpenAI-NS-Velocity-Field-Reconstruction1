@@ -1,5 +1,7 @@
 # Current handoff: twenty-one actual tensor regions, twenty joins and four internal traces (2026-10-06)
 
+Implementation and scoped actual Rh-reference/O2 full-tensor/four-join receipt: commit [5ecc15d3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ecc15d3077a0aaf9af6970ace88c7ab34458484).
+
 The actual Rh reference extension and O2 slope/axial turnoff/buffer now have full physical background tensors and all three remainder components. Four completed tensor source-function attachments connect them to checked O3 and full Gamma. The admitted chain has twenty-one actual regions, twenty adjacent joins and four internal end-support tensor traces. Ordinary logR cutoff jets, full five histories, analytic pressure, axial transport and positive tails remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 Read [CURRENT_O2_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_O2_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_O2_background_tensor_check.json`; stage `currento2tensor`. Reuse `CurrentO2BackgroundTensor(o3_tensor=checked_current_O3_tensor)` and its same physical/pre/selected/future/pressure graph. Full unpruned data use `.json.gz`. Repaired-core/Rh tensor coverage, global/temporal/point acceptance remain open.

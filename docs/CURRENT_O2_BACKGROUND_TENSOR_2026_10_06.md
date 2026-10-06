@@ -1,5 +1,7 @@
 # Current actual Rh-reference and O2 tensors (2026-10-06)
 
+Implementation and scoped actual Rh-reference/O2 full-tensor/four-join receipt: commit [5ecc15d3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ecc15d3077a0aaf9af6970ace88c7ab34458484).
+
 The actual Rh reference extension and O2 slope, axial turnoff and eleven-unit buffer now have complete physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Four source-function tensor attachments connect them through the checked O3 transition to full Gamma. The admitted chain has **21 actual regions, 20 adjacent tensor joins and 4 internal end-support tensor traces**. The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal.
 
 This is regional leading-background construction. Repaired-core tensor coverage and the actual patch/Rh completed tensor attachment, axis regularity, four angular internal tensor traces, global cone/lift/NS, independent temporal flatness, prescribed-domain kinetic energy, resolved u,v,w,p and actual n-dependent recursion remain open. Regional counts are not an overall completion percentage.
