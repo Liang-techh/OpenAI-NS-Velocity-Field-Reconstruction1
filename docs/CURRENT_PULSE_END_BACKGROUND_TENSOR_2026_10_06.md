@@ -1,5 +1,7 @@
 # Current pulse-end tensor and five tensor traces (2026-10-06)
 
+Implementation and scoped pulse-end tensor/five-trace receipt: commit [97ceb07e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/97ceb07e520c610fd18b7ce2949fe1c4aac27efd).
+
 The current pulse-end has a completed physical background stress tensor, its divergence, all three physical remainder components and the Cartesian momentum decomposition. It attaches to flatten at the original end endpoint, and the four exact internal end-support edges now have actual common tensor traces. The current tensor chain has **10 regions, 9 adjacent joins and 4 internal traces**. This completes F57C5a-pulse-end, F57C5b-end-flatten and F57C5b-pulse-end-support in the declared source-enclosure scope.
 
 The separate current22 velocity/absolute-pressure atlas remains 14 adjacent / 8 internal source traces. Full-domain cone admission, independent temporal remainder bounds, prescribed-domain total energy, resolved point values and n-dependent temporal recursion remain open. The full-unbounded Gamma exterior retains its previously established regional physical NS identity.
