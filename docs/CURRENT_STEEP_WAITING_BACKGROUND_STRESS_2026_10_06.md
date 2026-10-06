@@ -1,5 +1,7 @@
 # Current O7 power/exit/waiting tensors and three joins (2026-10-06)
 
+Implementation and scoped O7 tensor/join receipt: commit [77b671d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b671d09eff6e218d21b8e519baf06d02000bf7).
+
 The actual current steep-power, steep-exit and waiting regions now have full-moment stress mixed3, symmetric completed physical tensors, physical divergence/remainder mixed2 and the regional identity `residual=-div(T_B)+E_B`. Their entry-power, power-exit and exit-waiting completed-tensor joins use source-function identities and common physical contribution bounds. Together with the admitted angular and entry tensors, this gives five actual tensor regions and four adjacent completed-tensor joins. The velocity/absolute-pressure trace inventory remains separate: 14 adjacent and 8 internal.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_waiting_background_stress.py`, matching `_check.py`, producer `.json` and scoped `_check.json`. Focused controller stage: `currentsteepstress`. Reuse the checked [current entry tensor owner](CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md); it retains the same checked angular/physical/selected/future/pressure graph. The full reconstruction goal remains active.
