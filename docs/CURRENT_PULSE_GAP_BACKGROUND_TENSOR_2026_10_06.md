@@ -1,5 +1,7 @@
 # Current gap/gap-end tensors and two tensor joins (2026-10-06)
 
+Implementation and scoped gap/gap-end tensor/two-join receipt: commit [1b2965bb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b2965bb5a3b4b5d3477994ce9df5069a481b2e6).
+
 Both original inactive-gap charts now have current actual completed physical stress, divergence, all three remainder components and Cartesian momentum decomposition. The reciprocal gap/gap-end and finite gap-end/end attachments have actual common tensor function traces. This completes F57C5a-pulse-gap-gapend and F57C5b-gap-coordinate/gap-end for the declared source-enclosure scope. The admitted chain has **12 actual regions, 11 adjacent joins and 4 internal end-support tensor traces**.
 
 The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal. Full Gamma retains its previously established regional exact NS identity. Global cone/lift/NS, independent temporal flatness, prescribed-domain total energy, resolved point values and actual n-dependent temporal recursion remain open.

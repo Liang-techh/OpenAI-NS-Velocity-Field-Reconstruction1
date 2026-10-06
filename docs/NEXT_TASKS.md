@@ -1,5 +1,7 @@
 # Current handoff: twelve actual tensor regions, eleven joins and four internal traces (2026-10-06)
 
+Implementation and scoped gap/gap-end tensor/two-join receipt: commit [1b2965bb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b2965bb5a3b4b5d3477994ce9df5069a481b2e6).
+
 Current gap and gap-end now have actual completed physical background tensors, all three remainder components and two source-function tensor joins. They extend the checked end/flatten/angular-to-Gamma chain to twelve actual regions, eleven adjacent joins and four internal end-support tensor traces. Selected controls, five full histories, native forward X and current complete absolute pressure are retained. The separate current22 velocity/absolute-pressure atlas remains 14 adjacent / 8 internal; the full Gamma exterior retains its regional exact physical NS identity.
 
 Read [CURRENT_PULSE_GAP_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_PULSE_GAP_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_gap_background_tensor_check.json`; focused stage `currentpulsegaptensor`. Reuse `CurrentPulseGapBackgroundTensor(end_tensor=checked_current_pulse_end_tensor)`. Gap xi[11,12] and gap-end phase[0,1] retain ordinary logR derivatives. Both exact reciprocal/finite endpoints are reduced before enclosure. These are source enclosures, not resolved point values or global/temporal completion.
