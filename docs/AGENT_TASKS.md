@@ -1,16 +1,14 @@
-# Current handoff: twenty-five actual tensor regions, twenty-four joins and ten internal traces (2026-10-06)
+# Current handoff: twenty-six actual tensor regions, twenty-five joins and ten internal traces (2026-10-06)
 
-Implementation and scoped actual reference/restore/Rm tensor receipt: commit [273f72d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/273f72d0f83e640273fb5f73f2e82ae407520818).
+The whole actual variable long-reshape region now has a full physical background tensor and all three remainder components. Its completed Rsh source attachment connects through inner reference/restore/actual patch/Rh to full Gamma. Admitted inventory: 26 actual regions, 25 adjacent tensor joins and 10 internal tensor traces. Original variable B/T/cutoff/Bell terms, positive kernels, actual R110 histories, same V110/E and analytic P0 remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
-The current actual inner-reference/axial-restoration/restore-buffer regions now have full physical background tensors and all three remainder components. Three completed tensor source attachments connect them through the actual patch/Rh chain to full Gamma. The admitted inventory has 25 actual regions, 24 adjacent tensor joins and 10 internal tensor traces. Current correlated E, six centered/five raw histories, analytic P0, original cutoff jets, energy cross terms and positive amplitude sources remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
+Read [CURRENT_RESHAPE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_RESHAPE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_reshape_background_tensor_check.json`; stage `currentreshapetensor`. Reuse `CurrentReshapeBackgroundTensor(restore_tensor=checked_current_restore_tensor)` and the exact same nested switch/long/restore/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.
 
-Read [CURRENT_RESTORE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_RESTORE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_restore_background_tensor_check.json`; stage `currentrestoretensor`. Reuse `CurrentRestoreBackgroundTensor(patch_tensor=checked_current_actual_patch_tensor)` and its same nested restore/long/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.
-
-- [x] Actual patch/Rh/O2/O3 and angular through full Gamma tensors, previous 21 adjacent joins and ten internal traces.
-- [x] F57C5a-inner-reference/restore: three current actual full tensors, 141 exact adapter identities.
-- [x] F57C5b-reference-restore/restore-buffer/patch-inlet: three full completed tensor joins, 71 common functions each.
-- [ ] **Next: F57C5a-reshape / F57C5b-Rsh.** Get the same `current_restore.restore.long_mixed`. Build whole actual long-reshape tensor with variable log-amplitude derivatives, exact T/cutoff/kernel/history/P0 sources and full current raw units. Prove reshape phase1 / inner-reference phase0 completed tensor identity using the accepted current Rsh source theorem. Export whole/endpoints/nonconstant fresh sectors, focused pair/receipt/controller; commit/push.
-- [ ] F57C5a-switch/bridge/core, F57C5b-R110 and F57C4e-axis: upstream full tensors, every attachment and physical-axis limits from the same fixed-point source.
+- [x] Actual reference/restore/patch/Rh/O2/O3 and angular through full Gamma tensors; previous 24 adjacent joins and ten internal traces.
+- [x] F57C5a-reshape: whole current actual variable long-reshape full tensor, 141 exact unit identities, six views with 2088 physical contributions.
+- [x] F57C5b-Rsh: full completed tensor source attachment, 71 common functions and original nine-field/135 mixed4 source identity.
+- [ ] **Next: F57C5a-switch-power / F57C5b-R110.** Get the same `current_reshape.reshape.switch_mixed`. Build actual switch_power full tensor retaining exact R2/R110 histories/pressure/source radii; prove its R110 endpoint / reshape phase0 completed tensor identity. Export whole/endpoints/nonconstant fresh sectors, focused pair/receipt/controller; commit/push.
+- [ ] F57C5a-switch-first/second/bridge/core, F57C4e-axis: cancel original width factors before caps, construct all upstream tensors/attachments and nonsingular physical-axis limits.
 - [ ] F57C5b-angular-internal/F57C6a-global: four angular internal tensor traces and complete prescribed chart/interface/axis coverage.
 - [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, admissible cone/lift and prescribed-domain kinetic energy.
 - [ ] F58/F59/F60/F61: actual n-dependent recovery/repairs/summation, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/winding.
