@@ -1,5 +1,7 @@
 # Current handoff: fourteen actual tensor regions, thirteen joins and four internal traces (2026-10-06)
 
+Implementation and scoped main/exit tensor/two-join receipt: commit [e81a4afe](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e81a4afea08e5712ed770201f43f92211204dd54).
+
 Current main and exit now have actual completed physical background tensors, all three remainder components and both main-exit and exit-gap tensor function joins. They extend the checked gap/end/flatten/angular-to-Gamma chain to fourteen actual regions, thirteen adjacent joins and four internal end-support tensor traces. The current C5 selected forcing, full incoming histories, forward integrals, complete energy and reduced absolute pressure remain in the construction. The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal.
 
 Read [CURRENT_PULSE_MAIN_EXIT_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_PULSE_MAIN_EXIT_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_main_exit_background_tensor_check.json`; focused stage `currentmainexittensor`. Reuse `CurrentPulseMainExitBackgroundTensor(gap_tensor=checked_current_gap_tensor)`. Complete producer data are stored as `.json.gz`, with no rows removed. These are source enclosures, not resolved point values or global/temporal completion.

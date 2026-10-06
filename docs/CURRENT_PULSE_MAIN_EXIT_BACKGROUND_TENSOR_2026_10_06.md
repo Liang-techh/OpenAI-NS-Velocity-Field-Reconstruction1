@@ -1,5 +1,7 @@
 # Current main/exit tensors and two tensor joins (2026-10-06)
 
+Implementation and scoped main/exit tensor/two-join receipt: commit [e81a4afe](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e81a4afea08e5712ed770201f43f92211204dd54).
+
 The original main and exit charts now have current actual completed physical stress, divergence, all three remainder components and Cartesian momentum decomposition. The main-exit and exit-gap attachments have actual common tensor function traces. This completes F57C5a-pulse-main-exit and F57C5b-main-exit-gap for the declared source-enclosure scope. The admitted chain has **14 actual regions, 13 adjacent joins and 4 internal end-support tensor traces**.
 
 The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal. Full Gamma retains its regional exact NS identity. Global cone/lift/NS, independent temporal flatness, prescribed-domain total energy, resolved point values and actual n-dependent temporal recursion remain open.
