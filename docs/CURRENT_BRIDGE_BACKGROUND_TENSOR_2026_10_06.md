@@ -1,5 +1,7 @@
 # Current actual three bridge tensors and phase1/smoothing/R100 attachments (2026-10-06)
 
+Latest continuation: [positive-radius core full T/E and completed core/first trace](CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md) completes core5/6/7 and core9; positive-radius core11/12 publication passes. Current inventory33 positive-radius regions/32 adjacent/10 internal. Physical axis/core-axis10, global/energy/time/points and actual n-dependent recursion remain open; older counts below describe this earlier source milestone.
+
 Latest continuation: [six actual interior core moments](CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md) now provide rho4/axial6/Euler4, separate P0/increment and Q axial5. Core1/2/3/4/8 below are complete at source level; full core tensor/core-first tensor attachment/axis tensor remain next. Counts stay32/31/10.
 
 Implementation and scoped three-bridge tensor receipt: commit [a81fa013](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a81fa0135b92392842928bafccd431420cd44e81).

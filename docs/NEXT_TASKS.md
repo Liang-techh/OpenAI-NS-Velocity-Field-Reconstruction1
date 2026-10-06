@@ -1,3 +1,21 @@
+# Current handoff: positive-radius core full T/E and completed core/first attachment (2026-10-06)
+
+The same nonlinear fixed point now supplies the full core stress/completion/divergence and all three NS remainder components on **0<rho<=4**. Original integrated equations cancel the total core stress; all eleven original signed sectors and all six remainder sectors remain recorded. Completed tensor inventory: **33 positive-radius regions/32 adjacent/10 internal traces**, primitive atlas14/8.
+
+Read [CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_background_tensor_check.json`; focused stage `currentcoretensor`. Reuse `CurrentCoreBackgroundTensor(interior=checked_current_core_interior_moments)` and the same bridge/common/first source graph. This section is current; older snapshots below are historical.
+
+- [x] F57C5a-core5/6/7: original full core raw stress, exact total cancellation and nonzero full physical remainder.
+- [x] F57C5b-core9: completed core/first source-function tensor and remainder attachment,71 common contributions.
+- [x] F57C5a-core11/12-positive: positive-radius API and five full views/555 physical rows with scoped receipt/controller.
+- [ ] **Next F57C4e-axis10:** derive nonsingular Cartesian stress/remainder and mixed2 limits from the same original source; cancel apparent inverse-radius terms before bounds. The current cylindrical chart continues to reject rho0.
+- [ ] Complete four angular internal full tensor joins, global coverage/cone/lift and independently bounded time-flat remainder.
+- [ ] Recover resolved same-source u/v/w/p and required-domain finite energy.
+- [ ] Actual n=1/n>=2 coefficient equations, per-order moment repairs and smooth sum; then both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.
+
+The detailed axis and later tasks are in the linked file. Reuse checked prerequisites, construct the next layer, preserve complete evidence, mark only completed scope done and commit/push. Do not promote positive-radius regional completion to full-axis/global/recursion completion. The long-term goal remains active.
+
+---
+
 # Current handoff: six interior core moments and rho4/axial6/Euler4 source data (2026-10-06)
 
 Implementation and scoped six-core-moment receipt: commit [ed871352](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8713520931a5da2a26400d854299f35bed77dc).

@@ -1,5 +1,7 @@
 # Six actual interior core moments, normalized axis and Euler derivatives (2026-10-06)
 
+Latest continuation: [positive-radius core full T/E and completed core/first trace](CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md) completes core5/6/7 and core9; positive-radius core11/12 publication passes. Current inventory33 positive-radius regions/32 adjacent/10 internal. Physical axis/core-axis10, global/energy/time/points and actual n-dependent recursion remain open; older counts below describe this earlier source milestone.
+
 Implementation and scoped six-core-moment receipt: commit [ed871352](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8713520931a5da2a26400d854299f35bed77dc).
 
 The same admitted nonlinear fixed point now supplies all six cumulative core moment functions throughout rho in[0,4], with ordinary radial derivatives through4, ordinary axial derivatives through6 and ordinary logR derivatives through4. The analytic pressure base, dressed centrifugal increment and radial recovery Q are retained separately. This completes the missing interior source inputs for the next full core tensor construction.
@@ -68,9 +70,9 @@ Q=(2Z*Uz-(1-delta)*Z*M-(1-Z^2)*M_Z)/(1-delta*Z^2). Q's ordinary axial5 rows cons
 - [x] F57C5a-core3: original physical normalizations and exact rho4 inlet shape identification.
 - [x] F57C5a-core4: analytic P0 separate from C; relative F0/F0-squared axial6, ordinary dressed pressure increment and Q axial5.
 - [x] F57C5a-core8: exact rho-to-ordinary-logR Euler/Stirling conversion through4.
-- [ ] **Next F57C5a-core5/core6: full original core stress source.** Consume this checked adapter and the same CurrentCoreFirstInterface common owner. Bind original radial core ODEs/pressure FTC/axis initial data to the actual unique fixed point. Replay current_core_first_interface_check.original_core_equation_bindings and integrated_core_equations_proof on the actual interior functions. Derive the full source stress rows through mixed4; do not set them to zero because the moment gate is green.
-- [ ] F57C5a-core7: retain the original nonzero radial time/advection/viscosity remainder and theta/z axial viscosity. Reuse full raw/physical operators with core units and R=epsilon*rho, preserving all original amplitudes/Pstar factors once.
-- [ ] F57C5b-core9: convert core ordinary y rows to the original phase0 bridge units and identify full completed tensor/remainder functions at Ra. Prior source inlet identification does not complete this tensor seam.
+- [x] **Completed F57C5a-core5/core6: full original core stress source.** Consume this checked adapter and the same CurrentCoreFirstInterface common owner. Bind original radial core ODEs/pressure FTC/axis initial data to the actual unique fixed point. Replay current_core_first_interface_check.original_core_equation_bindings and integrated_core_equations_proof on the actual interior functions. Derive the full source stress rows through mixed4; do not set them to zero because the moment gate is green.
+- [x] F57C5a-core7: retain the original nonzero radial time/advection/viscosity remainder and theta/z axial viscosity. Reuse full raw/physical operators with core units and R=epsilon*rho, preserving all original amplitudes/Pstar factors once.
+- [x] F57C5b-core9: convert core ordinary y rows to the original phase0 bridge units and identify full completed tensor/remainder functions at Ra. Prior source inlet identification does not complete this tensor seam.
 - [ ] F57C4e-core-axis10: take nonsingular physical stress/remainder limits using the admitted normalized shapes and valuations; existing axis velocity/pressure and moment-axis data are prerequisites.
 - [ ] F57C5a-core11/core12: whole positive-radius core full tensor, inlet/axis/fresh sectors, source-bound producer/checker/controller, then mark the actual region and tensor attachment complete.
 - [ ] Four angular internal full tensor joins and prescribed global chart/interface/axis coverage.
