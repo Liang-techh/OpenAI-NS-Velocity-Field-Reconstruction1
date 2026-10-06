@@ -1,5 +1,7 @@
 # Full33 native modified velocity and absolute-pressure dispatch
 
+Successor: [CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md](CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md) completes actual physical coordinate function queries in commit [2665ebf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2665ebf47e7006b546dbc9f82f536c4830f55a2b). Global velocity interfaces and resolved point coefficients remain open.
+
 Implementation and source receipts: commit [587e1c1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/587e1c1e4dd58aaff8973e358c9ae07449c5de8f).
 
 ## Constructed result

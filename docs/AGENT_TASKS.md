@@ -1,22 +1,21 @@
-# Current handoff: full33 native velocity/absolute-pressure routing (2026-10-06)
+# Current handoff: physical Cartesian velocity/absolute-pressure queries (2026-10-06)
 
-Implementation and source receipts: commit [587e1c1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/587e1c1e4dd58aaff8973e358c9ae07449c5de8f).
+Implementation and source receipts: commit [2665ebf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2665ebf47e7006b546dbc9f82f536c4830f55a2b).
 
-**CONT4a–d/CONT4e1 are implemented:** all33 native velocity/absolute-pressure function routes, compact repair/original power q and phase continuation, typed core/axis, entrance/gap coordinate bridges and the full unbounded Gamma exterior. Same implicit controls, analytic P0 and original geometry/derivative units are retained. Twelve affected mixed4 velocity interfaces remain consumed.
+**CONT4e2 / LOC1–6 are implemented:** CurrentModifiedPhysicalVelocity connects actual Cartesian/log-radius/source-correlated queries to the same checked all-point locator and full33 native velocity/pressure graph. It retains every candidate/source piece, actual lambda, positive constant viscosity, native core/axis and nonzero finite Gamma heat velocity.
 
-Read [CURRENT_MODIFIED_VELOCITY_PRESSURE_DISPATCH_2026_10_06.md](CURRENT_MODIFIED_VELOCITY_PRESSURE_DISPATCH_2026_10_06.md) for API, coordinate equations, exact scope and detailed next tasks. Focused stage: currentmodifiedvelocitypressuredispatch.
+Read [CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md](CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md) for API, exact scope and detailed next tasks. Focused stage: currentmodifiedphysicalvelocity.
 
-Evidence: 55 new routing/function identities,33 native+6 coverage views,7 fresh adapter queries,120 original power ordinary-row comparisons, checked API/controller/compilation and 888 working/index hashes. Read-only source review: **GPT-5.6 Luna / max**.
+Evidence: 177 new coordinate/viscosity/source bindings, five complete physical queries plus one fresh log-radius axis query, checked constructor/API/controller/compilation and 894 working/index hashes. Original native/full33 proofs are consumed. Configured read-only next-stage scanner: **GPT-5.6 Luna / max**; its inventory is not a proof of this physical stage.
 
 - [x] Independent implicit repair, own moments/pressure/radial source, signed tensor/remainder and full33 tensor dispatch.
-- [x] Twelve affected source and spatial4/time1 velocity/pressure interfaces; analytic pressure/full Gamma heat inheritance.
-- [x] Full33 native velocity/absolute-pressure routing with original power endpoint, reciprocal gap cover, core/axis and full exterior bounds.
-- [ ] **Next LOC1–6:** integrate actual physical inverse-locator outputs into velocity/pressure queries with correlated coordinates and alternative source pieces.
-- [ ] **Next CONT4f1–7:** compose all global adjacent/internal velocity/pressure mixed4 interfaces and axis regularity before global smooth-velocity admission.
-- [ ] Finite-N errors, common N/whole modified O2/O3 cones, own physical energy and remaining original/global cones.
+- [x] Twelve affected mixed4 velocity/pressure interfaces and analytic pressure/full Gamma heat inheritance.
+- [x] Full33 native velocity/absolute-pressure routing and actual physical coordinate integration with lambda/nu derivative bounds.
+- [ ] **Next CONT4f1–7:** compose all global adjacent/internal velocity/pressure function interfaces and axis regularity.
+- [ ] Finite-N errors, one common N/whole modified O2/O3 cones, own physical kinetic energy and remaining original/global cones.
 - [ ] True n-dependent recursion, oscillatory/mean corrections, resolved u/v/w and full corrected NS/energy/dynamics.
 
-Native factored enclosures do not resolve global point coefficients. Global velocity interfaces/locator integration, total energy/common N/cones/recursion/NS remain open. N=10^12 remains repair-only. Tensor33/32/14, atlas14/8 and original cone15+zero exterior/17 open counts are unchanged. Preserve unrelated files; earlier sections are historical.
+Function enclosures do not resolve point coefficients. Global velocity interfaces, total energy/common N/cones/recursion/NS remain open. N=10^12 remains repair-only. Tensor33/32/14, atlas14/8 and original cone15+zero exterior/17 open counts are unchanged. Preserve unrelated files; earlier sections are historical.
 
 ---
 
