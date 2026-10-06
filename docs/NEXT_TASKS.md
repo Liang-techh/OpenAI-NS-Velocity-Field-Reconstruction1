@@ -1,22 +1,23 @@
-# Current handoff: modified33 tensor dispatch and original power continuation (2026-10-06)
+# Current handoff: twelve affected modified tensor source interfaces (2026-10-06)
 
-Implementation and source receipts: commit [1cb80e2c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cb80e2c15c1f6a0aee93613e2b925356655fb02).
+Implementation and source receipts: commit [bdc78553](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bdc78553a2abcd673db2cda037424aa382383886).
 
-The actual repaired background now has **33 native physical tensor routes**: changed O2 buffer/O3 slope/O3 power use the new checked source, while the other 30 use the same original registry. The five actual history differences vanish after all compact supports by the same implicit source equation and homogeneous transport. The original power continuation therefore reaches its true phase=1 endpoint with incoming histories, original pressure and radial terms intact.
+**Twelve affected callable tensor interfaces are now installed.** JOIN1–3 connect original O2 axial exit to modified buffer, buffer to O3, slope to quiet power, modulation start/end, six exact repair edges and implicit q2 exit. They retain own logR4/Z5 source rows, full signed physical stress3/divergence2/remainder2 and Cartesian traces, with71 common component groups per interface. Higher spatial4/time1 and heat dependencies remain open.
 
-Read [CURRENT_MODIFIED_TENSOR_DISPATCH_2026_10_06.md](CURRENT_MODIFIED_TENSOR_DISPATCH_2026_10_06.md) for APIs, partition semantics and detailed tasks. Stage `currentmodifieddispatch`; APIs `.native(region,Z,coordinate,...)` and `.power_offset(Z,q,...)`.
+Read [CURRENT_MODIFIED_TENSOR_INTERFACES_2026_10_06.md](CURRENT_MODIFIED_TENSOR_INTERFACES_2026_10_06.md) for exact endpoint definitions, APIs, evidence and detailed tasks. Stage `currentmodifiedinterfaces`; API `.interface(name,Z,log_tau,theta,viscosity)`; named `.endpoint_source(name,Z,side)` for repair and modulation-end germs.
 
-Independent q boxes use guaranteed Tw_lower and split at2. Native phase boxes use exact q=Tw*phase and a verified coverage cut satisfying Tw_upper*cut<2 and Tw_lower*cut>1.9; phase1 reaches actual Tw. Returned pieces are alternative source charts, never summed fields. Ordinary logR derivatives are unchanged. Evidence: 37 new source/transport/dispatch identities, 94 consumed repaired-history identities, complete views, same-source exit/incoming checks, focused controller/checked API/compilation, 858 working/index hashes. Read-only reviewer: **GPT-5.6 Luna / max**.
+The edge selector is now proved equal to original continuous partial integrals from both sides by actual density AST, same full weights, exact integral additivity and finite residual-strip bounds. D/cross physical indices remain0/2. Fixed-cell enclosure widths are not interpreted as function limits. Flat local velocities never zero cumulative five histories, absolute P0+Cp pressure or positive kinetic source. Evidence: 354 new identities, 94 consumed repaired-history identities, full views, checked/fresh API, focused controller/compilation and 864 working/index hashes. Read-only reviewer: **GPT-5.6 Luna / max**.
 
-- [x] REPAIR1–8/9a and TENSOR1/TENSOR2/TENSOR4a–c: exact implicit repair, own histories/pressure/radial, signed stress/remainder and completed local physical tensor.
-- [x] CONT1–3/REPAIR9b: actual source closure beyond compact supports, exact original power continuation through true endpoint, q2/phase partitions and full affected native dispatch.
-- [ ] **Next JOIN1–3:** taper entrance, O2-to-O3, slope-to-power and support edge functional source/tensor interfaces.
-- [ ] JOIN4–5: required physical derivative orders, exit and downstream pressure/heat same-function joins.
-- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware actual derivatives and signed stress bounds; one finite common N; independent whole modified O2 taper and closed O3 cone.
-- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy, including radial/axial/cross terms.
-- [ ] Remaining inner cones/global admissibility; true n-dependent coefficient recursion/independent repairs/flat sum; actual oscillatory families/mean/quadratic cancellation; resolved physical u/v/w and independent corrected NS/energy/dynamics.
+- [x] REPAIR1–8/9a and TENSOR1/TENSOR2/TENSOR4a–c: actual exact implicit repair, own histories/pressure/radial, full signed columns and completed local physical tensor.
+- [x] CONT1–3/REPAIR9b: exact original open-power continuation, actual phase1 endpoint, q2/phase partitions and complete modified33 native dispatch.
+- [x] JOIN1–3, at retained tensor orders: original buffer inlet, O2/O3 and slope/power, modulation and six repair support edges, exact exit; all own cumulative source retained.
+- [ ] **Next JOIN4:** required physical derivative dependency inventory, higher actual source rows and quantified compact-time interface norms; velocity/stress/remainder orders recorded separately.
+- [ ] **Next JOIN5:** compose exact continuation with unchanged downstream moment/pressure providers and original analytic preheat datum/heat exterior source. No pressure fitting or copied heat receipt.
+- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware finite-N derivative/stress estimates, one common N, whole modified O2/O3 signed margins.
+- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy with all radial/axial/Pstar/cross terms.
+- [ ] Remaining original inner cones/global admissibility, true n-dependent coefficient recursion/independent repairs/flat sum, actual oscillatory families/mean/quadratic stress cancellation, resolved u/v/w and independent full corrected NS/energy/dynamics.
 
-Callable full native dispatch does not certify modified interface orders or global admissibility. Original 15 strict nonzero whole regions plus separate zero exterior/17 open regions, tensor inventory33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve exact source correlations, original pressure and unrelated files. The full goal remains active; earlier sections below are historical.
+Global modified physical/higher-order/heat interface and cone gates remain false. Original cone count15+separate zero exterior/17 open, original tensor33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve same original geometry, P0, source correlations and unrelated files. The full goal remains active; earlier sections below are historical.
 
 ---
 
