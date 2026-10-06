@@ -1,5 +1,7 @@
 # Original cone map and whole current pulse-end signed cone
 
+Implementation and scoped original-cone/current pulse-end receipt: commit [fde7e10e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fde7e10ef112f4dbe915e896186c656dab2e922d).
+
 This milestone continues the source-bound global physical T/E cover; it does not complete the Navier--Stokes reconstruction.
 
 ## Implemented result
