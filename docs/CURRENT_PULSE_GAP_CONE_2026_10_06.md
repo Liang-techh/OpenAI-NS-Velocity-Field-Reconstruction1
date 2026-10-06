@@ -1,6 +1,6 @@
 # Whole current gap and reciprocal gap-end signed cone
 
-Implementation commit: pending scoped source/hash audit and push.
+Implementation and scoped whole current gap/gap-end cone receipt: commit [b592adf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b592adf478cfa4adc63011a30f3c80693e91ad3f).
 
 ## Constructed result
 
@@ -44,6 +44,8 @@ Use the `experiments/root_st073/lei_ren_part1_paper_compliant_` prefix:
 - `current_pulse_gap_cone.py`: producer and `CurrentPulseGapCone(maincone=checked_current_main_exit_cone)`. Both complete whole views are obtained directly from its checked registry. `native(...)` scopes gap and gap-end flags separately; other regions retain nested inherited admissions.
 - `current_pulse_gap_cone.json` / `_check.json`: exact source composition, 33 positive directed bounds and checked input hashes. The checker rejects foreign source, wrong D2 selection, nonzero axial source and omitted pressure memory.
 - `current_pulse_gap_cone_views.json.gz`: deterministic gzip containing both full unpruned signed whole views. Read with `json.loads(gzip.decompress(path.read_bytes()))`; its hash is bound by the receipt.
+
+Working/index source hashes passed for all 787 dependency files. The focused controller and checked per-region API passed after the pressure-rate correction.
 
 Focused controller stage: `currentgapcone`. Reuse the checked warm graph. The unchanged source inventory is 33 regions / 32 adjacent / 14 internal tensor traces and primitive atlas 14 / 8. Existing current complete source theorems supply exit-gap, gap-coordinate and gap-end attachments, including the same full beta-square defining integrals and cell-partition additivity. This cone adds sign bounds to that same graph; it does not recompute or replace the matching data.
 

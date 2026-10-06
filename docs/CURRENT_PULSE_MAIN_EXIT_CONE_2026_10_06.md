@@ -1,3 +1,5 @@
+The later whole current gap/gap-end milestone is complete; see [CURRENT_PULSE_GAP_CONE_2026_10_06.md](CURRENT_PULSE_GAP_CONE_2026_10_06.md). The main/exit construction below remains the checked source prerequisite.
+
 # Whole current main and exit signed two-vector cone
 
 Implementation and scoped whole current main/exit cone receipt: commit [dea75a8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dea75a8efa3d8e38d07fdf78e093c0510d36b3af).

@@ -1,3 +1,26 @@
+# Current handoff: five consecutive pulse regions with whole current signed cone (2026-10-06)
+
+Implementation and scoped whole current gap/gap-end cone receipt: commit [b592adf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b592adf478cfa4adc63011a30f3c80693e91ad3f).
+
+Current pulse gap xi[11,12] and reciprocal gap-end phase[0,1], all Z[-1,1], now satisfy the strict original two-vector cone. Together with main, exit and pulse-end, five consecutive current pulse regions have continuous source-function cone proofs on the same selected graph. All nine signed gap sectors, real D0/D1/D2 factors, full beta weights, absolute pressure, nonzero radial velocity and full remainder/tensor records remain.
+
+Actual gap axial velocity/shear is structurally zero; cumulative axial stress/history is retained. Pressure memory decreases with distance and reaches its maximum at4mu. The signed derivative and its positive decay magnitude are stored separately after the Luna/max review correction. Historical cone admissions are not promoted to the current source; caps never become defining field values.
+
+Read [CURRENT_PULSE_GAP_CONE_2026_10_06.md](CURRENT_PULSE_GAP_CONE_2026_10_06.md). Focused stage: `currentgapcone`; API: `CurrentPulseGapCone(maincone=checked_current_main_exit_cone)`. Producer/receipt use the `lei_ren_part1_paper_compliant_current_pulse_gap_cone` prefix, with both complete whole views retained in `_views.json.gz`. Graph inventory remains 33 regions / 32 adjacent / 14 internal tensor traces and primitive atlas 14 / 8.
+
+- [x] F57C-cone1a: original variables, signs, physical scaling and cone/covariance algebra.
+- [x] F57C-cone1b-main/tail: whole current main, exit and pulse-end cones.
+- [x] F57C-cone1b-gap: whole current gap and reciprocal gap-end cones, actual shear/history/log reduction and inherited source attachments.
+- [ ] **Next F57C-cone1b-flatten:** whole current flatten/outer-power shear and cone, actual pressure/energy and both current joins.
+- [ ] F57C-cone1b-angular/tail: current angular correction with four support traces, steep/waiting/heat regions, stress-free exterior and uniform edge direction.
+- [ ] F57C-cone1b-entrance/inner: remaining upstream current signed cone, original shear-loop and independent five-moment repair where required.
+- [ ] F57C-cone1c: actual two homogeneous pulse families, covariance integrals/finite errors, uniform positive amplitudes, flat edge weights/smooth extension and signed linear lift/mean correction.
+- [ ] Actual n=1 / n>=2 recovery/moment repair, cancellation or absorption of nonflat leading origin E, completed flatness and smooth sum; resolved fields, corrected NS/energy and measured recursion/winding.
+
+Global completed tensor/cone/wave, corrected NS/energy/flatness/genuine coefficient-recursion gates remain false. Keep the full long-term goal active and reuse the warm graph. Earlier checkpoint sections are historical.
+
+---
+
 # Current handoff: whole current main/exit signed cone (2026-10-06)
 
 Implementation and scoped whole current main/exit cone receipt: commit [dea75a8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dea75a8efa3d8e38d07fdf78e093c0510d36b3af).
