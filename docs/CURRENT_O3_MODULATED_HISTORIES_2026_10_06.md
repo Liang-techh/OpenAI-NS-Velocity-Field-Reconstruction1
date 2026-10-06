@@ -1,5 +1,7 @@
 # Current O3 modified cumulative histories, pressure and radial recovery
 
+Current successor: [CURRENT_O3_INDEPENDENT_REPAIR_2026_10_06.md](CURRENT_O3_INDEPENDENT_REPAIR_2026_10_06.md), commit [cb6b09cd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cb6b09cda6bbc05e3746969a457b3344ac8b2cd2). Independent supports/new inverse, complete nonlinear map and unique actual source implicit controls are now constructed. Partial repaired-history installation, exit closure connection and common cone N remain open. Earlier statuses below describe the history-source milestone.
+
 Implementation and actual source receipts: commit [e6e06575](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e6e0657567e776fb609f0f1d42e5296566d8b821).
 
 ## Constructed result
