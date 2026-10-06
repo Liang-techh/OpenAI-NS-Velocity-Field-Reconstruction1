@@ -1,23 +1,21 @@
-# Current handoff: restored modified source inherits analytic pressure and full heat tail (2026-10-06)
+# Current handoff: own modified velocity/absolute-pressure spatial4/time1 packet (2026-10-06)
 
-Implementation and source receipts: commit [d581169d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d581169d6b9a6a1ba28366a5f0b7ae543da13657).
+Implementation and source receipts: commit [d7b7b3be](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7b7b3beda26b430ad4ffbea99d4dead3703aa50).
 
-**JOIN5 is now installed as a checked runtime layer.** Actual same-root compact repair closure and original whole-Z power phase1 inlet theorem compose with15 unchanged downstream native providers and15 source trace routes. The original analytic P0/native14-stage raw pressure integral, unique waiting root, five terminal histories and full unbounded Gamma exterior are inherited without a fitted pressure or radial cutoff.
+**MIX1–4/local MIX6a are now installed.** Callable own O2 buffer/O3 slope/quiet repaired power packets retain P0+old Cp+own Cp, signed radial Pstar0/1 and units, and apply unchanged Cartesian spatial4/fixed-x time1 maps. Each query covers 35 Cartesian multiindices, 216 physical groups and 75 signed ordinary mixed4 source rows. Outputs enclose actual functions; resolved point coefficients remain open.
 
-Read [CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md](CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md) for source-function lineage, APIs, proof scope and detailed MIX/BOUND/common-N tasks. Stage `currentmodifiedheat`; APIs `.downstream`, `.trace`, `.pressure_datum`, `.unbounded_exterior`.
+Read [CURRENT_MODIFIED_VELOCITY_PRESSURE_2026_10_06.md](CURRENT_MODIFIED_VELOCITY_PRESSURE_2026_10_06.md) for equations, API, scope and detailed next tasks. Focused stage currentmodifiedvelocitypressure; physical(region,Z,coordinate,log_tau,theta) supports three local regions.
 
-The actual native Ptail/P3 complete pressure FTC key and original forward-density/publication callables are explicitly consumed. Upstream/downstream datum copies represent one analytic defining function. All65 exterior physical tensor/divergence/remainder/momentum rows remain exactly zero by regional heat identities; positive energy and nonzero velocity persist. Evidence: 54 new source identities, 37 consumed transport and 354 consumed interface identities, full downstream views/analytic datum/unbounded exterior, fresh checked API/controller/compilation and 870 working/index hashes. Read-only source reviewer: **GPT-5.6 Luna / max**.
+Evidence: 126 new source/operator identities, 25 absolute-pressure identities and 81 consumed original variable-velocity identities; six whole-Z/compact-time views, fresh 75 signed rows, checked API/controller/compilation, 876 working/index hashes. Read-only reviewer: **GPT-5.6 Luna / max**. Original analytic P0/full unbounded heat inheritance remain valid.
 
-- [x] REPAIR and TENSOR1/2/4: actual unique implicit repair, own histories/pressure/radial, full signed tensor/remainder and physical completion.
-- [x] CONT1–3 and JOIN1–3: complete modified33 native dispatch, true original phase1 continuation, twelve affected retained-order source/tensor interfaces and exact partial FTC edges.
-- [x] JOIN5/5a–c: actual downstream source inheritance, analytic preheat pressure compatibility and full unbounded regional heat source carried through new runtime wrapper.
-- [x] JOIN4a, scoped source inventory: required physical velocity/pressure mixed4 and fixed-x time1 inputs identified; tensor stress3/remainder2 cannot substitute for this packet.
-- [ ] **Next MIX1–6 / JOIN4:** own UT/UZ/UR/P ordinary mixed4 adapter, absolute P0+Cp proof and signed source modes, exact radius/unit logs, original Cartesian spatial4/fixed-x time1 operators, twelve affected common interface bounds and checked runtime receipt.
-- [ ] BOUND1–3/COMMONN/CONE: actual phase-aware finite-N derivative and signed stress errors, one common N, whole modified O2/O3 positive margins.
-- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy, with radial/axial/Pstar/cross terms.
-- [ ] Remaining original inner cones/global admissibility, true n-dependent coefficient recursion/independent repairs/flat sum, actual oscillatory families/mean/quadratic cancellation, resolved u/v/w and independent full corrected NS/energy/dynamics.
+- [x] REPAIR/TENSOR/CONT/JOIN1–3: own implicit repair, moments/pressure/radial, signed tensor/remainder, full 33 tensor dispatch and twelve retained-order source/tensor joins.
+- [x] JOIN5/5a–c: downstream source inheritance, analytic preheat compatibility and full unbounded regional heat source.
+- [x] JOIN4b/MIX1–4/local MIX6a: actual mixed4 velocity/absolute-pressure packet, original radius/units, physical spatial4/time1 maps and runtime receipt.
+- [ ] **Next MIX5a–d/MIX6b:** twelve actual two-germ velocity/pressure physical interfaces, complete mixed4 function equality and 216 common groups per seam, then interface receipt/controller.
+- [ ] CONT4/full 33 velocity routing, phase-aware finite-N derivative/stress bounds, common N and whole modified O2/O3 cones.
+- [ ] Own total physical kinetic energy, remaining original cones/global admissibility, true n-dependent recursion, oscillatory/mean corrections, resolved u/v/w and full corrected NS/energy/dynamics.
 
-Full modified physical higher-order interfaces/global admissibility remain false. Regional exact heat identity is not global corrected NS. Original cone15+separate zero exterior/17 open, tensor33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve same original geometry, P0, actual controls and unrelated files. The full goal remains active; earlier sections are historical.
+Full physical interface/global/recursion/NS gates remain false. Regional heat remains regional. Original cone 15+separate zero exterior/17 open, tensor 33/32/14 and atlas 14/8 remain separate. N=10^12 remains repair-only. Preserve the original graph/unrelated files; earlier sections are historical.
 
 ---
 
