@@ -1,3 +1,5 @@
+Historical global physical T/E cover milestone. Continuation: [CURRENT_ORIGINAL_CONE_2026_10_06.md](CURRENT_ORIGINAL_CONE_2026_10_06.md); the original cone map and whole current pulse-end signed two-vector cone are now available. Actual global covariance waves and genuine coefficient recovery remain open.
+
 # Current source-bound global physical tensor cover (2026-10-06)
 
 Implementation and scoped independent global physical T/E cover receipt: commit [a4898929](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a4898929aa4158348dc228d8dd6de74cacc6e3fb).

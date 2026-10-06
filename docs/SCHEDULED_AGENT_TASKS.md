@@ -1,3 +1,24 @@
+# Current handoff: original cone map and whole current pulse-end signed cone (2026-10-06)
+
+The original-cone milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+
+The original OpenAI / Lei--Ren variable and scale map is now executable. The current complete signed pulse-end two-vector stress satisfies the strict cone throughout s[-4,0], Z[-1,1], with every sector and nonzero axial shear retained. Four fresh main/exit/end boxes also pass; the entire main/exit domains and remaining regions are still open.
+
+Two numerical improvements made this possible: cancel common source powers before enclosing, then scale exponential caps by the actual coefficient and mu; rewrite the exact equilibrium coefficient using Z^2 before intersecting its original enclosure. No interval midpoint or absolute stress envelope is used as a field value.
+
+Read [CURRENT_ORIGINAL_CONE_2026_10_06.md](CURRENT_ORIGINAL_CONE_2026_10_06.md). Focused stage: `currentoriginalcone`; API: `CurrentOriginalCone(cover=checked_global_tensor_cover)`. Complete five-view data are stored as deterministic gzip; the compact receipt records their hashes and statuses. Global T/E inventory remains 33 / 32 / 14, primitive atlas 14 / 8.
+
+- [x] F57C-cone1a: original equations, signs, physical normalization, strict cone, positive covariance inverse and signed linear amplitude algebra mapped to the current source.
+- [x] F57C-cone1b-tail: whole current pulse-end signed two-vector cone; coefficient-relative exponential enclosures and source-positive equilibrium rewrite.
+- [ ] **Next F57C-cone1b-main:** whole main/exit source margins, followed by remaining source shear adapters and actual inner shear repair if required.
+- [ ] F57C-cone1c: actual homogeneous pulses and covariance columns, uniform positive amplitude solve, edge weights/smooth extension and signed linear correction.
+- [ ] Actual n=1 / n>=2 coefficient recovery and moment repair, cancellation/absorption of the nonflat leading origin E, then completed flatness and smooth sum.
+- [ ] Resolved u/v/w/p, prescribed-domain energy, both oscillatory families/mean corrections, corrected NS and measured dynamics.
+
+Reference matrix algebra is not the actual pulse lift. Completed full tensor/global cone, physical point convergence, NS/energy/flatness/genuine temporal recursion gates remain false. Earlier handoffs below are historical. Reuse the warm graph; continue construction.
+
+---
+
 # Current handoff: independent source-bound global physical T/E cover (2026-10-06)
 
 Implementation and scoped independent global physical T/E cover receipt: commit [a4898929](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a4898929aa4158348dc228d8dd6de74cacc6e3fb).
