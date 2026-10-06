@@ -1,25 +1,24 @@
-# Current handoff: O3 finite-frequency profiles; five-moment restoration next (2026-10-06)
+# Current handoff: modified five histories, pressure and radial recovery (2026-10-06)
 
-Implementation and source receipts: commit [43320b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43320b19d5681b115c7c552f8ce1755caa6145d8).
+Implementation and own modified-source receipts: commit [e6e06575](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e6e0657567e776fb609f0f1d42e5296566d8b821).
 
-The actual whole O3 variable transition now has continuous direction and positive stress on offset[0,1], Z[-1,1], retaining all eleven signed sectors, variable ordinary logU jets, full energy, functional absolute pressure and remainder. Original strict shear remains zero at the nonzero-stress offset0, so its closed cone is still open.
+The finite-N O2/O3 modulation now has **its own five cumulative histories, shared-axis absolute pressure and radial velocity recovered from its own M**. Source functions retain the original incoming histories, extra Pstar sectors, full axial shapes and ordinary logR rows. Signed range integration uses the actual N*log(R/Rd) phase; frequency-uniform O(1/N) bounds and axial derivatives are available. These are enclosures, not resolved points or cycle samples. N=10^12 remains a formula example, not an admitted sufficient frequency.
 
-A current-source mean-preserving periodic shear loop and **actual local finite-N velocity profiles** now cross the O2/O3 seam. The support is t=log(R/Rd) in(-2,1/2), with chi=1 on[-1,1/4]; it is flat at O2_buffer9 and O3_offset1/2. E_N and U_N, their logR/Z rows and all five signed increment densities are callable with the actual phase N*t and exact Pstar factors. The sample N=10^12 exercises the formula; it is not a certified sufficient frequency. Modified cumulative histories, pressure, radial velocity, repair, common N and completed cone remain uninstalled.
+The axial modulation creates strictly nonzero kinetic mass. When profiles return after t=1/2, the five defects and an X-constant Z-dependent pressure correction persist. They have not been reset. **Next: independent two-axial/three-swirl bump repair in quiet power q[1,2], then common N and modified cones.**
 
-Read [CURRENT_O3_SHEAR_MODULATION_2026_10_06.md](CURRENT_O3_SHEAR_MODULATION_2026_10_06.md) for exact formulas, API and MOD1–MOD11 tasks. Focused original-source controller stage: `currento3transitiondirection`. Candidate API: `CurrentO3FiniteFrequencyProfiles(checked_current_transition_direction).profile(region,Z,coordinate,N)`, on `O2_buffer` or `O3_slope_mu`. The candidate must use its own changed five moments and common-axis pressure.
+Read [CURRENT_O3_MODULATED_HISTORIES_2026_10_06.md](CURRENT_O3_MODULATED_HISTORIES_2026_10_06.md) for formulas, units, API and detailed tasks. Focused stage: `currento3modulatedhistories`. API: `CurrentO3ModulatedHistories(candidate=checked_local_profiles,N=10**12,cells=8).history(region,Z,coordinate)`. Quiet power coordinate is local log offset q, not normalized phase; map phase=q/Tw and t=1+q.
 
-Evidence: 39 exact variable/loop identities, 23 positive directed bounds, 17 exact finite-N/coordinate/moment identities, actual source seam and flat profile edges. Producer/checkers, focused controller, checked native original API and inherited power/zero exterior, finite-N chain-rule consistency and compilation passed. Working/index source audit matched 823 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
+Evidence: 34 exact source/transport/unit/pressure/radial identities; producer/checker, receipt-backed constructor, source seam, zero pre-support increments, positive kinetic floor and changed/persistent pressure; focused controller/native API and compilation passed. Working/index source audit matched 829 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
 
-Original checked counts stay **15 strict nonzero whole regions plus separate exact zero exterior; 17 whole regions open**. Inventory33/32/14 and primitive atlas14/8 stay fixed. These are regional counts, not full-project completion percentages. Original-source receipts do not automatically admit a changed source.
+Original regional counts remain **15 strict nonzero whole regions plus separate exact zero exterior; 17 original whole regions open**. Inventory33/32/14 and primitive atlas14/8 are unchanged. These counts do not admit the modified source and are not overall project percentages.
 
-- [x] F57C-cone1b-O3-power: actual whole-domain correlated power cone with full pressure/energy.
-- [x] F57C-cone1b-O3-direction: full variable direction, positive theta and exact nonzero zero-shear endpoint diagnosis.
-- [x] F57C-O3-local-profiles: mean-preserving periodic target, supported actual E_N/U_N jets and all five increment density sources.
-- [ ] **Next MOD1–MOD3:** integrate five signed increments with high-frequency bounds and axial derivatives; recover the same-axis pressure. Do not reuse original histories.
-- [ ] MOD4–MOD6: fix the quiet-power repair interval, rebuild current two/three bump matrices with actual mu, solve independent functional five-moment repair. The old fixed repair matrix has another source.
-- [ ] MOD7–MOD11: choose one finite uniform N from actual error/repair/cone constants; recover radial velocity; prove affected source/tensor joins, O2 taper and actual modified closed O3 cone.
+- [x] Original O3 power cone, variable direction and target periodic loop/local finite-N profiles.
+- [x] MOD1–MOD3: own cumulative five-history source functions, frequency-uniform axial O(1/N) bounds and same-axis changed pressure.
+- [x] MOD8 source recovery: own-moment radial velocity with the original incoming source and correct Pstar sectors.
+- [ ] **Next MOD4–MOD6:** fix separate quiet-power supports; rebuild the two/three bump matrix with actual positive mu and correlated near-collision determinant; solve the full functional linear/quadratic repair and prove exit closure.
+- [ ] MOD7/MOD9–MOD11: common finite N, all affected source/tensor joins, O2 taper and actual modified closed O3 cone.
 - [ ] Remaining inner/O2 cones and smooth global admissible tensor/lift.
-- [ ] Actual n=1/n>=2 coefficient recursion, independent per-order moments, removal of nonflat leading origin remainder, finite-order bounds and smooth sum.
+- [ ] Actual n=1/n>=2 coefficient recursion, independent per-order moments, nonflat leading-origin removal, finite-order bounds and smooth sum.
 - [ ] Two actual oscillatory velocity families, mean correction, covariance/error bounds and averaged quadratic stress cancellation.
 - [ ] Resolved physical u/v/w, independent corrected Cartesian NS, finite energy and measured scale recursion, core widths/aspect ratios, vorticity and material winding.
 
