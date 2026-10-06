@@ -1,3 +1,17 @@
+# Next: close current pressure terminal (2026-10-05)
+
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.
+
+1. Bind common analytic axis datum and native Mp/P0 to the flatten absolute-pressure primitive.
+2. Substitute the original second quadratic moment equation into the new corrected PR/PS/PQ/PT/Ptail source history, with all pressure units and half factors retained.
+3. Identify the same full collar/Gamma pressure future and epsilon atoms; prove whole-Z Cp=0 and issue a dedicated receipt.
+4. Consume both zero-constant receipts for a separate current full stress-free-exterior identity.
+5. Complete selected/future C4/C5 physical graph installation, quantitative native interfaces, physical stress/residual composition, production points/global cone/flatness/required-domain energy and genuine temporal recursion.
+
+Dtheta is complete only in the new source-bound heat view. Cp and full stress remain retained; radial/axial Taylor differentiation is not temporal scale recursion. This section supersedes older angular-open queues below.
+
+---
+
 # Next: current terminal closure after exact repair branch (2026-10-05)
 
 Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).

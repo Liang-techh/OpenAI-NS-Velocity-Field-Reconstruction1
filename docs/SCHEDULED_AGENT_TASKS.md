@@ -1,3 +1,13 @@
+# Current executable queue: pressure terminal after angular closure (2026-10-05)
+
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.
+
+Whole-Z Dtheta=0 is admitted in the new exact-repair heat runtime view. Do not repeat the completed angular proof or regenerate earlier core/33-chart reports. Start with the detailed latest AGENT_TASKS.md pressure tasks: common analytic datum to native Mp/P0/flatten, second quadratic repair equation to PR/PS/PQ/PT/Ptail, then the same full collar/Gamma future and epsilon atoms. Prove Cp=0 from exact source equations; a post-propagation pressure patch is forbidden.
+
+Issue a separate pressure receipt, then a full zero-exterior-stress receipt. Keep selected/future C4/C5 physical installation, quantitative native interfaces, global stress/flatness/required-energy and true temporal recursion separate. Read existing [x] items before selecting work; mark completed scope with receipt and commit and push owned files.
+
+---
+
 # Current executable queue: current terminal equations after exact branch (2026-10-05)
 
 Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).

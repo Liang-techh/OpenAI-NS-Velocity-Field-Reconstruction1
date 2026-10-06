@@ -1,3 +1,13 @@
+# Current checkpoint: current angular terminal closed (2026-10-05)
+
+The new exact-repair heat view proves whole-Z Dtheta=0 and consumes the rebound branch at runtime. The raw prescribed waiting root is kept distinct from corrected XT; the nonzero axis heat repair is retained. Four views recover 60 angular stress mixed4 rows and 24 angular axial5 coefficients. The canonical Gamma angular exterior stress is zero. Cp is recomputed from the same new forward history and full future and remains retained.
+
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.
+
+Next close the original current absolute-pressure terminal equation, then issue a separate full stress-free-exterior receipt. Full selected/future C4/C5 physical graph installation, quantitative native interfaces, global stress/flatness/required-domain energy and genuine temporal recursion remain open. This scoped angular completion supersedes older Dtheta-open queues below; it does not certify all physical chart owners.
+
+---
+
 # Current checkpoint: exact native angular/pressure repair branch (2026-10-05)
 
 Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).
