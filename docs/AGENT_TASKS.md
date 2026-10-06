@@ -1,5 +1,7 @@
 # Current handoff: twenty-five actual tensor regions, twenty-four joins and ten internal traces (2026-10-06)
 
+Implementation and scoped actual reference/restore/Rm tensor receipt: commit [273f72d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/273f72d0f83e640273fb5f73f2e82ae407520818).
+
 The current actual inner-reference/axial-restoration/restore-buffer regions now have full physical background tensors and all three remainder components. Three completed tensor source attachments connect them through the actual patch/Rh chain to full Gamma. The admitted inventory has 25 actual regions, 24 adjacent tensor joins and 10 internal tensor traces. Current correlated E, six centered/five raw histories, analytic P0, original cutoff jets, energy cross terms and positive amplitude sources remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 Read [CURRENT_RESTORE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_RESTORE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_restore_background_tensor_check.json`; stage `currentrestoretensor`. Reuse `CurrentRestoreBackgroundTensor(patch_tensor=checked_current_actual_patch_tensor)` and its same nested restore/long/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.

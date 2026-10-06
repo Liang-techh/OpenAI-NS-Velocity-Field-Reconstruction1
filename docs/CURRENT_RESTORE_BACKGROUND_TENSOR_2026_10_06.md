@@ -1,5 +1,7 @@
 # Current actual reference and restoration tensors (2026-10-06)
 
+Implementation and scoped actual reference/restore/Rm tensor receipt: commit [273f72d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/273f72d0f83e640273fb5f73f2e82ae407520818).
+
 The actual inner reference, axial restoration and restore buffer now have full physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Three source-function tensor attachments connect them through the checked actual five-moment patch/Rh/O2 chain to full Gamma. The chain has **25 actual regions, 24 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 This is regional leading-background construction. Full actual long-reshape/core/bridge/switch tensors and the Rsh tensor attachment, physical axis and four angular internal tensor traces remain. Global cone/lift/NS, independent temporal flatness, prescribed-domain kinetic energy, resolved u,v,w,p and genuine n-dependent recursion remain open. Regional counts are not an overall completion percentage.
