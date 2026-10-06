@@ -1,3 +1,20 @@
+# Current handoff: nonsingular Cartesian axis and full core T/E (2026-10-06)
+
+The same nonlinear core now supplies full background stress/divergence and all six original remainder sectors on **rho[0,4], Z[-1,1]**, including the physical axis. Exact source identities cancel inverse-radius terms before bounds; nonzero transverse derivatives and the nonzero axial remainder remain. Tensor inventory: **33 regions/32 adjacent/10 internal traces**, primitive atlas14/8.
+
+Read [CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_axis_background_tensor_check.json`; focused stage `currentcoreaxis`. Reuse `CurrentCoreAxisBackgroundTensor(core_tensor=checked_current_core_background_tensor)`. The original cylindrical core chart still rejects rho0. This is the current handoff; older snapshots below are historical.
+
+- [x] F57C4e-core-axis10 / axis1-7: nonsingular Cartesian axis T/E, same nonlinear source/tails, true original mixed2 rows and full original physical-factor pullback.
+- [x] F57C5a-core11/12-axis: seven full views/1,820 physical rows, independent receipt and focused controller; full-core source gate admitted.
+- [ ] **Next F57C-angular-full1:** complete the four angular internal whole tensor/remainder joins; detailed source/trace/receipt subtasks are in the linked file.
+- [ ] Global chart/seam cover, admissible cone/lift and independent terminal-time remainder.
+- [ ] Resolved same-source physical u/v/w/p and required-domain finite energy.
+- [ ] Actual n=1/n>=2 coefficient equations and per-order moment repair/smooth sum; both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.
+
+Construct the next layer from checked prerequisites, preserve full evidence, mark only achieved scope done and commit/push. Full core spatial admission does not complete global tensor/NS/energy or actual scale recursion. The long-term goal remains active.
+
+---
+
 # Current handoff: positive-radius core full T/E and completed core/first attachment (2026-10-06)
 
 Implementation and scoped positive-radius core tensor receipt: commit [c5d29db8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5d29db8d318b0259e95cd2e9c910ba279b7a08a).
@@ -9,7 +26,7 @@ Read [CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_BACKGROUND_TENS
 - [x] F57C5a-core5/6/7: original full core raw stress, exact total cancellation and nonzero full physical remainder.
 - [x] F57C5b-core9: completed core/first source-function tensor and remainder attachment,71 common contributions.
 - [x] F57C5a-core11/12-positive: positive-radius API and five full views/555 physical rows with scoped receipt/controller.
-- [ ] **Next F57C4e-axis10:** derive nonsingular Cartesian stress/remainder and mixed2 limits from the same original source; cancel apparent inverse-radius terms before bounds. The current cylindrical chart continues to reject rho0.
+- [x] **Completed F57C4e-axis10:** derive nonsingular Cartesian stress/remainder and mixed2 limits from the same original source; cancel apparent inverse-radius terms before bounds. The current cylindrical chart continues to reject rho0.
 - [ ] Complete four angular internal full tensor joins, global coverage/cone/lift and independently bounded time-flat remainder.
 - [ ] Recover resolved same-source u/v/w/p and required-domain finite energy.
 - [ ] Actual n=1/n>=2 coefficient equations, per-order moment repairs and smooth sum; then both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.

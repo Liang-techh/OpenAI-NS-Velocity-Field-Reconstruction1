@@ -1,5 +1,7 @@
 # Positive-radius core full T/E and completed core/first trace (2026-10-06)
 
+Latest continuation: [nonsingular Cartesian core axis T/E](CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md) completes axis1-7 and the full-core axis gate. Inventory33/32/10 remains unchanged. Next: four angular internal full tensor traces, global/cone/time/energy/points and actual n-dependent recursion. Axis-open statements below describe this earlier positive-radius checkpoint.
+
 Implementation and scoped positive-radius core tensor receipt: commit [c5d29db8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5d29db8d318b0259e95cd2e9c910ba279b7a08a).
 
 The same admitted nonlinear fixed point now supplies the full physical core background stress, its completed tensor/divergence and all three NS remainder components on **0<rho<=4**. The original integrated equations cancel the **total** leading core stress exactly. Every original signed sector is kept in a separate ledger; the nonzero remainder is retained.
@@ -59,13 +61,13 @@ The same CurrentCoreFirstInterface common owner, true rho4 atom normalizations, 
 
 ## Immediate axis tasks: F57C4e-core-axis10
 
-- [ ] axis1: use the same checked CurrentCoreBackgroundTensor and its interior/common owner. Pin the family, selected source, datum, epsilon, delta and all original callables. Create a separate nonsingular axis adapter; retain rejection of rho0 in the current cylindrical chart.
-- [ ] axis2: derive the original radial time/viscosity/nonlinear and axial-viscosity expressions after Ur=sqrt(R/2)*Q. Cancel apparent inverse-R terms symbolically before taking bounds; do not plug rho0 into the current inverse-radius lift.
-- [ ] axis3: recover Phi, Uz, Q and all needed radial/axial derivatives at rho0 from the unchanged infinite fixed-point rebuild. Include density/model/correction/product tails. Use the normalized moment-axis identities only for their actual primitive source contributions.
-- [ ] axis4: construct Cartesian E_x,E_y,E_z directly from smooth transverse-coordinate source expressions, retaining parity and nonzero transverse derivatives. A zero cylindrical radial/swirl value on the axis does not imply all Cartesian derivatives vanish.
-- [ ] axis5: compute full Cartesian stress/completion/divergence and remainder through mixed order2 on the axis. Justify the continuous extension of zero total core stress from the exact source equations; preserve the separate signed-sector ledger.
-- [ ] axis6: prove equality of the nonsingular axis formulas and the current positive-radius formulas on rho>0 with arbitrary source jets. Check a near-axis sector and fresh axial/time/nu requests without treating small-radius samples as a limit proof.
-- [ ] axis7: publish an independent producer/checker and a focused controller stage. Admit axis/full-core gates only after these source proofs and full derivative/tail checks pass. Do not add another radial region to33 merely for a coordinate extension.
+- [x] axis1: use the same checked CurrentCoreBackgroundTensor and its interior/common owner. Pin the family, selected source, datum, epsilon, delta and all original callables. Create a separate nonsingular axis adapter; retain rejection of rho0 in the current cylindrical chart.
+- [x] axis2: derive the original radial time/viscosity/nonlinear and axial-viscosity expressions after Ur=sqrt(R/2)*Q. Cancel apparent inverse-R terms symbolically before taking bounds; do not plug rho0 into the current inverse-radius lift.
+- [x] axis3: recover Phi, Uz, Q and all needed radial/axial derivatives at rho0 from the unchanged infinite fixed-point rebuild. Include density/model/correction/product tails. Use the normalized moment-axis identities only for their actual primitive source contributions.
+- [x] axis4: construct Cartesian E_x,E_y,E_z directly from smooth transverse-coordinate source expressions, retaining parity and nonzero transverse derivatives. A zero cylindrical radial/swirl value on the axis does not imply all Cartesian derivatives vanish.
+- [x] axis5: compute full Cartesian stress/completion/divergence and remainder through mixed order2 on the axis. Justify the continuous extension of zero total core stress from the exact source equations; preserve the separate signed-sector ledger.
+- [x] axis6: prove equality of the nonsingular axis formulas and the current positive-radius formulas on rho>0 with arbitrary source jets. Check a near-axis sector and fresh axial/time/nu requests without treating small-radius samples as a limit proof.
+- [x] axis7: publish an independent producer/checker and a focused controller stage. Admit axis/full-core gates only after these source proofs and full derivative/tail checks pass. Do not add another radial region to33 merely for a coordinate extension.
 
 ## Remaining ordered work
 
