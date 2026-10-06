@@ -1,22 +1,22 @@
-# Current handoff: local modified physical completed tensor (2026-10-06)
+# Current handoff: modified33 tensor dispatch and original power continuation (2026-10-06)
 
-Implementation and source receipts: commit [9c93fc3c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9c93fc3c7103eab7eac55452d3f3852572bbb9d4).
+Implementation and source receipts: commit [1cb80e2c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cb80e2c15c1f6a0aee93613e2b925356655fb02).
 
-The repaired O2/O3/quiet-power source now exports its **completed physical cylindrical/Cartesian stress tensor, divergence, full three-component remainder and -div(T)+E decomposition**. All15 signed stress sectors,8 diagonal sectors and11 remainder sectors use the actual own histories/pressure and original geometry. Ttheta_theta=r*d_z(Trz) cancels radial tensor divergence; own m_y=Vhat-m proves local velocity incompressibility. Exact q=2 completed physical sources match the independent original field through retained orders.
+The actual repaired background now has **33 native physical tensor routes**: changed O2 buffer/O3 slope/O3 power use the new checked source, while the other 30 use the same original registry. The five actual history differences vanish after all compact supports by the same implicit source equation and homogeneous transport. The original power continuation therefore reaches its true phase=1 endpoint with incoming histories, original pressure and radial terms intact.
 
-Read [CURRENT_MODIFIED_PRE_PHYSICAL_TENSOR_2026_10_06.md](CURRENT_MODIFIED_PRE_PHYSICAL_TENSOR_2026_10_06.md) for acceptance scope and detailed actionable tasks. Stage `currentmodifiedprephysicaltensor`; API `CurrentModifiedPrePhysicalTensor(...).tensor(region,Z,coordinate,log_tau,theta,viscosity)`.
+Read [CURRENT_MODIFIED_TENSOR_DISPATCH_2026_10_06.md](CURRENT_MODIFIED_TENSOR_DISPATCH_2026_10_06.md) for APIs, partition semantics and detailed tasks. Stage `currentmodifieddispatch`; APIs `.native(region,Z,coordinate,...)` and `.power_offset(Z,q,...)`.
 
-Evidence: 35 new exact source/radius/packet/divergence identities, 28 consumed original full physical identities, full-Z/whole-region views, functional exit/source comparison, checked fresh query, focused controller and compilation; 852 working/index dependency hashes. Read-only reviewer **GPT-5.6 Luna / max** confirmed consistency; original-param/logPstar provenance checks were added.
+Independent q boxes use guaranteed Tw_lower and split at2. Native phase boxes use exact q=Tw*phase and a verified coverage cut satisfying Tw_upper*cut<2 and Tw_lower*cut>1.9; phase1 reaches actual Tw. Returned pieces are alternative source charts, never summed fields. Ordinary logR derivatives are unchanged. Evidence: 37 new source/transport/dispatch identities, 94 consumed repaired-history identities, complete views, same-source exit/incoming checks, focused controller/checked API/compilation, 858 working/index hashes. Read-only reviewer: **GPT-5.6 Luna / max**.
 
-- [x] REPAIR1–8/REPAIR9a and TENSOR1/TENSOR2: exact implicit repair, own source/history exit and all signed stress/remainder sectors.
-- [x] TENSOR4a–c: actual physical packet, remainder-only original lift adaptation, diagonal/divergence/Cartesian tensor and local source-bound incompressibility.
-- [ ] **Next CONT1–3:** checked exact original continuation for q>2 through actual Tw, seam handling and complete affected modified source/physical dispatch.
-- [ ] JOIN1–5: taper/transition/support/physical spatial4-time1 exit and downstream pressure/heat joins.
-- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware derivatives and full stress estimates, one finite common N, independent whole O2 taper and closed modified O3 cone.
-- [ ] TENSOR3: actual total physical kinetic density/integrals and finite energy, including radial/axial/cross terms.
-- [ ] Remaining inner cones/global admissibility; true coefficient recursion/independent per-order repairs/flat sum; actual oscillatory families/mean/quadratic cancellation; resolved physical u/v/w and independent full corrected NS/energy/dynamics.
+- [x] REPAIR1–8/9a and TENSOR1/TENSOR2/TENSOR4a–c: exact implicit repair, own histories/pressure/radial, signed stress/remainder and completed local physical tensor.
+- [x] CONT1–3/REPAIR9b: actual source closure beyond compact supports, exact original power continuation through true endpoint, q2/phase partitions and full affected native dispatch.
+- [ ] **Next JOIN1–3:** taper entrance, O2-to-O3, slope-to-power and support edge functional source/tensor interfaces.
+- [ ] JOIN4–5: required physical derivative orders, exit and downstream pressure/heat same-function joins.
+- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware actual derivatives and signed stress bounds; one finite common N; independent whole modified O2 taper and closed O3 cone.
+- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy, including radial/axial/cross terms.
+- [ ] Remaining inner cones/global admissibility; true n-dependent coefficient recursion/independent repairs/flat sum; actual oscillatory families/mean/quadratic cancellation; resolved physical u/v/w and independent corrected NS/energy/dynamics.
 
-Local source enclosures are not resolved physical point values or whole modified admissibility. N=10^12 remains repair-only (threshold27,303,666). Original15 strict nonzero whole regions plus separate exact zero exterior/17 original open regions, inventory33/32/14 and primitive atlas14/8 are unchanged and do not count modified admissions. Preserve actual q/Tw radius correlation and own pressure. Reuse the checked live graph and preserve unrelated files. The full long-term goal remains active; earlier sections below are historical.
+Callable full native dispatch does not certify modified interface orders or global admissibility. Original 15 strict nonzero whole regions plus separate zero exterior/17 open regions, tensor inventory33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve exact source correlations, original pressure and unrelated files. The full goal remains active; earlier sections below are historical.
 
 ---
 
