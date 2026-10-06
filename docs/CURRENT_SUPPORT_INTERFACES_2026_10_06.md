@@ -1,5 +1,7 @@
 # Current fourteen adjacent and eight internal support source traces (2026-10-06)
 
+Implementation and scoped support receipts: commit [bac4df4e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bac4df4ed85948d6c769f16c99f16926bc57208e).
+
 Four current pulse-end support transfers and four current outer-angular support transfers are now implemented and checked. Together with the previous fourteen adjacent traces, the current inventory has source-function identification at all fourteen adjacent joins and all eight internal beta edges. This is an interface milestone, not a percentage of the full reconstruction or temporal scale recursion.
 
 The four pulse edges also have current local stress3/error2 flat difference bounds. The four angular edges currently have source-function mixed4 and original physical spatial4/fixed-position time1 trace transfer; their full local stress/error difference bounds are still a next task. Quantitative all-interface acceptance, global tensor/cone/NS, independent flat remainder, resolved point fields, prescribed-domain kinetic energy and actual n-dependent temporal recursion remain open.
@@ -36,7 +38,7 @@ A private angular AST replay substitutes only the proven exact beta jets and exa
 - Angular: 240 current primitive mixed4 identities and 240 current velocity/absolute-pressure mixed4 identities at the four exact edges; all five weighted kernels and the defining normalization bridge are consumed.
 - Angular: 480 native consistency rows and 1,728 original physical contributions across whole-Z and fresh Z=.577, log(tau)=-2.4, theta=.7 views.
 - Three wrong current pulse sources and three wrong angular sources are rejected on isolated clones. Current live owners remain unchanged.
-- Both focused controller stages pass shared-field, order, count, syntax and open-global-scope checks. Source/receipt working and Git-index hashes are audited before commit.
+- Both focused controller stages pass shared-field, order, count, syntax and open-global-scope checks. Exact working/Git-index source and receipt audit passes for all 636 dependency files.
 - Read-only review uses GPT-5.6 Luna / max. It identified the normalization provenance gap; the implemented defining-source bridge closes that gap.
 
 ## Executable next tasks

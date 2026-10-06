@@ -1,5 +1,7 @@
 # Current handoff: fourteen adjacent and eight internal source traces (2026-10-06)
 
+Implementation and scoped support receipts: commit [bac4df4e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bac4df4ed85948d6c769f16c99f16926bc57208e).
+
 All four current pulse-end and all four current angular beta-support traces are now implemented and checked. The current inventory has 14/14 adjacent and 8/8 internal source-function traces. Pulse edges also have local stress3/error2 flat difference bounds. Full angular local stress/error difference bounds, quantitative all-interface acceptance, current global tensor/cone/NS, resolved points, independent flat remainder, prescribed-domain kinetic energy and actual n-dependent temporal recursion remain open.
 
 Read [CURRENT_SUPPORT_INTERFACES_2026_10_06.md](CURRENT_SUPPORT_INTERFACES_2026_10_06.md) for source recipes, runnable stages and detailed next tasks. Receipts: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_support_interfaces_check.json` and `lei_ren_part1_paper_compliant_current_angular_support_interfaces_check.json`. Focused stages: `currentpulsesupport`, `currentangularsupport`; reuse their checked current graph. The normalization publication/read/repair chain is source-bound, and complete angular pressure/energy histories and quadratic D/F terms are retained.
