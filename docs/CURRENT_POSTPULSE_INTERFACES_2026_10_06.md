@@ -1,5 +1,7 @@
 # Current eight postpulse interface transfer (2026-10-06)
 
+Implementation and scoped eight-interface receipt: commit [5b1abc72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b1abc7202bd19634a8a2b369ac58da956def0be).
+
 The checked current complete-energy graph now identifies all eight postpulse adjacent mixed4 traces and their original Cartesian spatial4/fixed-position time1 traces. Together with the current end/flatten trace, nine of the fourteen inventoried adjacent interfaces have current source-function identification. This fraction measures this interface inventory only, not overall reconstruction progress. Five earlier pulse interfaces and eight internal beta-support transfers remain open. Quantitative all-interface admission, global tensor/cone, resolved points, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain separate.
 
 ## Source and callable stage

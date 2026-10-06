@@ -1,5 +1,7 @@
 # Current tasks: remaining five pulse seams and eight support edges (2026-10-06)
 
+Implementation and scoped eight-interface receipt: commit [5b1abc72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b1abc7202bd19634a8a2b369ac58da956def0be).
+
 The actual current complete-energy graph now identifies eight postpulse ordinary mixed4 interfaces and their original physical spatial4/fixed-position time1 traces. Together with end/flatten, nine of fourteen inventoried adjacent traces are source-identified. Five earlier pulse seams and eight internal beta-support transfers remain open. All-interface quantitative admission, resolved points, full tensor/cone/NS, independent flat remainder, prescribed-domain energy and genuine temporal recursion remain separate.
 
 Read [CURRENT_POSTPULSE_INTERFACES_2026_10_06.md](CURRENT_POSTPULSE_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_postpulse_interfaces_check.json`; stage `currentpostinterfaces`. Evidence: 480 current primitive mixed4 source identities, 720 native consistency rows and 3,456 two-sided physical contributions; four wrong-source substitutions rejected. The current complete energy is substituted into arbitrary-function theorems before differentiating. Production phase derivatives convert to ordinary logR derivatives with inverse powers of Lrel-4, Ts and wait.
