@@ -1,3 +1,15 @@
+# Current checkpoint: common core and fourth bridge interface (2026-10-05)
+
+Read [CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md](CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md). F56 closes the common-core/first functional mixed4 join and retains the three earlier joins. The exact physical-to-scaled atom conversion gives42 identities, the original integrated core equations recover the full drive, and all15 positive-width coordinate identities pass. A fresh original Z=.359 packet retains135 first-boundary mixed4 rows; checked source loading passes.
+
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_core_first_interface_check.json. Run --stage currentcorefirst. The two new scoped gates are current_core_bridge_functional_mixed4_join_certified and all_current_bridge_functional_interfaces_certified.
+
+Correct pressure units are PI_core(4)=4*C_dressed, with PD separate; P_phys=Pstar^2*PD+Ra*F0base^2*C_dressed. This corrects the older task shorthand 4C=PD+PI. The new section supersedes older open F56/core-first entries below, while frozen receipts retain their historical scope.
+
+Next execute F57 quantitative native pulse C4 and current heat pressure/stress companions from AGENT_TASKS.md, then production points/global stress/flatness/required-domain energy and genuine n-dependent temporal recursion. Full point/global NS and temporal completion remain false.
+
+---
+
 # Current checkpoint: common analytic core solution (2026-10-05)
 
 Implementation and scoped receipts: commit [c4c1098b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4c1098b).

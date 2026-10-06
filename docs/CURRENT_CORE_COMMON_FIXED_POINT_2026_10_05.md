@@ -38,10 +38,10 @@ These are source-bound analytic existence and inclusion arguments, supported by 
 ## Next work: F56 core/first closure
 
 1. Consume the checked common-core adapter in a new core/first proof without modifying historical receipts. Bind actual current bridge/atoms/amplitude/rebuild objects to the same exact source.
-2. Identify the common pressure primitive at rho=4: prove the original `4C=PD+PI` atom identity in the actual scaled units. Include physical P0, core epsilon, F0 squared, and all requested axial derivatives. Caps are enclosure inputs, never defining values.
+2. Identify the common pressure primitive at rho=4: prove `PI_core=4*C_dressed`, with PD retained separately. Physical pressure is `Pstar^2*PD+epsilon_core*F0base^2*PI_core=Pstar^2*PD+Ra*F0base^2*C_dressed`. Include all requested axial derivatives. Caps are enclosure inputs, never defining values. This corrects the previous `4C=PD+PI` shorthand; F56 completion is recorded in CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md.
 3. Bind the first chart's phase-zero atom traces and all controls to the original core boundary functions. Differentiate the same functions, rather than comparing overlapping boxes.
 4. Derive the original stress-free core radial recovery, swirl/pressure drive and radial Euler equations from the common operator. Preserve ordinary Taylor factorials, affine U0 and M's radial averaging.
-5. Apply the exact hb phase/physical-radius pullback through mixed total order 4, including derivatives of hb. Verify the same source functions at core exit and first inlet.
+5. Apply the exact hb phase/physical-radius pullback through mixed total order 4. hb is the original global norm choice, so its axial derivatives vanish. Verify the same source functions at core exit and first inlet.
 6. Only after these identities pass, extend the three-join receipt and admit core/first and all-four bridge interfaces. Exercise one fresh Z with checked source hashes.
 7. Continue native quantitative C4/heat companions, global admissible stress lift, flat remainder and the prescribed-domain energy argument. Then implement genuine n-dependent temporal recursion and oscillatory correction/full residual. Radial coefficient recursion does not close that temporal gate.
 

@@ -1,3 +1,16 @@
+# Next: quantitative native pulse C4 and current heat companions - 2026-10-05
+
+F56 common-core/first and all-four bridge functional mixed4 joins are complete. Read CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md and the authoritative detailed F57A/F57B queue at the top of AGENT_TASKS.md. Receipt: current_core_first_interface_check.json; focused stage: currentcorefirst.
+
+1. Close every current native pulse interface with exact source identities, coordinate pullbacks and whole-Z quantitative mixed4 bounds.
+2. Connect current waiting/collar/exterior pressure, angular memory, Gamma future integrals and stress companions to the same current source.
+3. Complete production point evaluation and global stress/cone/flatness/required-domain energy on the prescribed localized domain.
+4. Implement genuine n-dependent temporal recovery and moment repair, then oscillatory stress cancellation and full corrected NS diagnostics.
+
+Preserve accepted upstream receipts by hash and mark completions with exact scope/receipt/commit. Time-scale recursion remains open.
+
+---
+
 # Next: current flatten exit into outer power - 2026-10-05
 
 CurrentFlattenPhysicalAssembly exposes twenty-one downstream physical source owners. Read CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md; run --stage currentflattenphysical. Preserve the accepted current graph and retained earlier evidence.

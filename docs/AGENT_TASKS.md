@@ -1,3 +1,69 @@
+# Active tasks after fourth bridge interface closure (2026-10-05)
+
+Read CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md and CURRENT_CHECKPOINT.md first. F56 is complete in its scoped functional mixed4 sense. Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_core_first_interface_check.json. This section supersedes older open core/first checkboxes and the incorrect historical 4C=PD+PI shorthand below. Correct units are PI_core=4*C_dressed, with PD separate.
+
+- [x] F56-core-first-owner-binding: common nonlinear solution, selected amplitude, original core, actual atom rebuild, comparison and bridge use the same source/datum; seven graph checks pass.
+- [x] F56-scaled-physical-atom-conversion: R=epsilon*rho and F=F0(Z)*Phi connect all six physical primitives to actual atom normalizations;42 exact density/axial identities through order6 pass. Original Lambda/epsilon definitions and same current parameter receipt are retained.
+- [x] F56-core-first-pressure-primitive: PI_core(4)=4*C_dressed; P_phys=Pstar^2*PD+Ra*F0base^2*C_dressed. Seven axial product identities and seven independent finite-atom coefficients pass.
+- [x] F56-phase0-traces-and-controls: original zero increments, atom inlet, alpha=1, flat chi=1 and original full three-scale controls are bound to the actual source.
+- [x] F56-core-first-ODE-recovery: differentiating both integrated identities recovers the full original angular/axial equations; axis regularity sets constants to zero. Original scalar and nested direction formulas agree.
+- [x] F56-hb-pullback-mixed4: hb is a global norm choice with zero axial derivatives; all15 exact coordinate identities pass. Source ODE uniqueness and derivative induction connect velocity, pressure and primitive jets.
+- [x] F56-fourth-join-receipt: core/first and all-four-current-bridge gates admitted; older three-join evidence retained by hash. Fresh Z=.359 original packet contains135 mixed4 rows and checked loading succeeds.
+- [x] F56-controller-and-handoff: currentcorefirst reuses one adapter for producer/checker; later global/point/energy/temporal gates remain false.
+
+Execute F57A and F57B as independent bounded production tasks. Use the common current family, pressure datum and selected amplitude throughout. Keep ownership to new adapters/checkers; do not modify frozen upstream modules just to make receipts pass.
+
+### F57A: quantitative native pulse mixed4 interfaces
+
+- [ ] F57A-owner-binding: consume CurrentNativePulseSourceDispatcher and its checked twenty-owner source receipt plus current pulse physical mapping. Assert all six pulse providers are the same native CompliantPulseMixedC4 object and retain source/datum/amplitude identity.
+- [ ] F57A-domain-contract: retain entrance t in[0,.02/mu], main xi in[.02,10], exit xi in[10,11], gap xi in[11,12], gap-end s in[-1/mu,-4], end s in[-4,0]. Preserve the admitted reciprocal-endpoint overlap coverage without enlarging the defining exact domain.
+- [ ] F57A-coordinate-pullbacks: derive original t,xi,s to logR transformations, all mu powers and mixed axial derivatives through total4. mu is the common parameter, never an independently selected endpoint.
+- [ ] F57A-entrance-main: bind exact source/prefix values and flat support jets at xi=.02; compare functions in the common logR coordinate before bounding all15 derivative rows.
+- [ ] F57A-main-exit: bind the xi=10 native branch relation, selected coefficients and every retained velocity/pressure and primitive history. Complete two-sided mixed4 equality and quantitative bounds.
+- [ ] F57A-exit-gap: bind the xi=11 source relation, full future energy and absolute pressure history. Preserve any nonzero angular memory.
+- [ ] F57A-gap-gap-end: use xi=13+mu*s at the exact reciprocal endpoint, with the accepted same-object overlap; do not claim equality from intersecting boxes.
+- [ ] F57A-gap-end-end: prove source/control identities at s=-4, including supported flat derivatives and moment/energy histories.
+- [ ] F57A-end-flatten: consume the existing current pulse terminal/flatten source receipt at s=0 and the original100-unit flatten definition; close the native quantitative mixed4 interface separately from source ownership.
+- [ ] F57A-bound-ledger: publish whole-Z two-sided bounds for four velocity/pressure grids and five primitive grids on each interface, with ordinary derivative conventions and physical prefactors in logs.
+- [ ] F57A-independent-checker: test source identities, coefficient product rules and exact coordinate derivatives independently; retain original operator fixtures by hash. Reject missing pressure/future-energy/amplitude terms.
+- [ ] F57A-checked-runtime: evaluate an unsaved interior Z and legal native coordinates with checked hashes; admit only the uniform native pulse C4 and interface-ledger gates actually proved.
+- [ ] F57A-controller-and-docs: add a focused producer/checker stage that shares one current source object. Record each completed interface with receipt, scope and commit, then push owned files.
+
+### F57B: current heat pressure and stress companions
+
+- [ ] F57B-current-owner-binding: consume checked CurrentHeatSourceAssembly/CurrentHeatPhysicalAssembly; retain the current waiting/collar/exterior provider, original S=1/Rtail, source datum and selected amplitude. Legacy companion receipts are formula evidence, not current graph admission.
+- [ ] F57B-pressure-forward-history: connect current steep.waiting(Z,1) Ptail to the actual collar forward_pressure integral, pressure at t=3 and the full exterior tail difference. Bind the retained functions and integration limits, not symbolic placeholders or a forced -A_p value.
+- [ ] F57B-Gamma-source: use the canonical admitted H_delta integral and exact xi=2*(1-Z^2)*S*exp(-t). S_cap, H=1 or finite S-series cannot define the current exterior.
+- [ ] F57B-angular-and-energy-memory: retain the actual Xtail*(1-epsilon)-heat0.angular_numerator, complete future energy and both distinct epsilon atoms. Do not reset angular memory to zero.
+- [ ] F57B-original-stress-equations: bind heat_stress_equations, heat_terminal_stress_identities and heat_stress_C4 formulas to the current pressure/velocity histories. Recover stress components and their ordinary derivatives with original units.
+- [ ] F57B-collar-companion-bounds: produce whole-Z/whole-collar mixed4 bounds including both flat endpoints and the phi support crossing. Preserve absolute Pstar^2 and all radius/amplitude factors.
+- [ ] F57B-exterior-companion-bounds: retain the complete unbounded Gamma domain and prove tail convergence or log-power bounds for each required derivative; no finite radial cutoff may replace the exterior.
+- [ ] F57B-current-stress-free-exterior: identify the exact current exterior residual/stress relation from the same source functions. Keep any cone claim independent until its sign and margin bounds pass.
+- [ ] F57B-checked-companion-adapter: publish a focused source/companion receipt and fresh current runtime. Admit heat companion and local exterior gates separately; leave global tensor, full residual, energy and temporal gates false.
+
+### F57C-F61: remaining reconstruction layers
+
+- [ ] F57C-common-leading-point-evaluator: connect core, actual finite-width bridges, five-moment repair, pulse and heat functions into one callable source; use the common analytic solution with controlled tails, never interval midpoints as defining coefficients.
+- [ ] F57C-physical-u-v-w-p: expose similarity and physical (x,y,z,t) evaluation with exact cylindrical/Cartesian units, nonsingular axis handling and source-domain checks. Keep derivative enclosures distinguishable from production point values.
+- [ ] F57C-source-and-point-receipt: prove the actual point functions satisfy their defining ODEs/constraints and use the admitted source family; document truncation error separately from a full NS residual.
+- [ ] F58-global-domain-composition: assemble all chart/interface obligations on the prescribed original domain; four bridge interfaces alone do not certify all inner/outer joins.
+- [ ] F58-actual-stress-lift: construct the actual divergence-form tensor from the background momentum residual and retain the independent remainder.
+- [ ] F58-admissible-cone: certify signed cone margins across core exit, matching region, pulse/end, flatten, angular/steep/waiting and heat collar/exterior with common units.
+- [ ] F59-flat-remainder: derive high-order/flat decay for E_B independently of the stress bound, including chart joins and approach to terminal time.
+- [ ] F59-required-domain-energy: implement the paper's prescribed localization/domain and energy functional. The unlocalized whole-space Gamma field has infinite energy; it cannot be certified finite by a derivative ledger or finite plotting window.
+- [ ] F60-temporal-order1: implement the actual n=1 recovery equations, time-scale parameters and independent moment repair from the admitted background.
+- [ ] F60-temporal-higher-orders: implement the correct n>=2 equations and cross-scale matching, preserving a common core definition interval and pressure datum at every order.
+- [ ] F60-divergence-preserving-truncation: truncate streamfunction/vector potential first, then take curl; bound finite-order errors independently.
+- [ ] F60-smooth-summation: prove the recursive series/remainder bounds and diagnose true inter-scale recurrence. Radial coefficients and coordinate shrinkage are not this temporal layer.
+- [ ] F61-two-family-oscillatory-pulses: construct mean corrections and both pulse families with original phase/amplitude/support relations.
+- [ ] F61-averaged-quadratic-cancellation: show their averaged momentum flux realizes and cancels the admitted background stress; quantify uncancelled terms and the new remainder.
+- [ ] F61-full-forced-NS-residual: independently evaluate full Cartesian divergence and momentum residual, L-infinity and volume L2 errors, forcing regularity and terminal-time behavior after correction.
+- [ ] F61-dynamics-diagnostics: measure radial/axial widths, aspect ratio, swirl/vorticity growth, material-line winding and scale exponents over multiple times from the corrected physical field.
+
+For every completion, mark the exact item [x], name its receipt and commit, and push only owned artifacts. Preserve historical receipts and unrelated user changes. Run changed-source checks; do not repeatedly regenerate accepted seed rows or old regional reports. Overall temporal/global completion stays false until its own obligations pass.
+
+---
+
 # Active tasks after common core admission (2026-10-05)
 
 Implementation and scoped receipts: commit [c4c1098b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4c1098b).
