@@ -38,6 +38,8 @@ The original physical stress and viscosity maps consume those coefficient bounds
 
 Exact working/Git-index source and receipt audit passes for all 640 dependency files.
 
+Read-only review by GPT-5.6 Luna / max found no remaining material normalization or physical-scale gap within this local scope. B/Qtheta carry one exact KR log and Qz carries two, including the required B*KR factor in axial viscosity. The numerical S cap remains a directed enclosure of the exact inverse radius; it is not an exact field value. Quantitative/global/NS/temporal gates remain open.
+
 ## Next executable work
 
 - [x] F57C4c current angular local input/moment differences: retain current signed coefficients, both beta powers, exact KR/KR^2, full boundary histories and ordinary mixed derivatives.
