@@ -1,5 +1,7 @@
 # Current tasks after complete current physical source installation (2026-10-05)
 
+Implementation and scoped receipt: commit [99df04aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99df04aa836ba0845776116e1e504eb795d96647).
+
 The complete current selected pulse, postpulse energy and exact repair now feed one callable physical source graph across all 33 charts: fifteen replaced pulse/postpulse providers and eighteen retained common core/incoming/bridge sources. Original Cartesian spatial4 and fixed-position time1 maps, correlated pulse factors and absolute pressure units are preserved. This is source-function and signed-bound admission; resolved physical point values, quantitative interfaces, global tensor/cone, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain open.
 
 Read [CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md](CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_complete_physical_assembly_check.json`. Focused stage: `currentcompletephysical`. Evidence: all six pulse and nine postpulse full coordinate boxes; 17 replayed maps and 3,672 source contributions (2,520 signed terms, 1,152 exact-zero contributions); five old/unchecked substitutions rejected; unbounded exterior finite log bounds; checked loading and fresh unsaved Z=.631, main=1.13/exterior=4.71 at log(tau)=-3.17, theta=.53. One field is shared by producer/checker. Read-only reviewer metadata: GPT-5.6 Luna / max; restricted scope accepted.

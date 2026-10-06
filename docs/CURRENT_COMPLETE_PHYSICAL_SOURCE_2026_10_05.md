@@ -1,5 +1,7 @@
 # Current complete physical source installation (2026-10-05)
 
+Implementation and scoped receipt: commit [99df04aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99df04aa836ba0845776116e1e504eb795d96647).
+
 The checked current complete future, selected pulse, energy history and full similarity exterior now feed one callable physical source graph across all 33 charts. Fifteen pulse/postpulse providers are replaced; eighteen common core/incoming/bridge providers retain their checked defining functions. The original Cartesian spatial derivatives through order four and first time derivative at fixed physical position operate on these providers. This is admission of source functions and signed factored bounds. Resolved production point values, quantitative interfaces, global stress cone/lift, flat remainder, prescribed-domain energy, corrected NS and genuine temporal recursion remain open.
 
 ## Entry points
