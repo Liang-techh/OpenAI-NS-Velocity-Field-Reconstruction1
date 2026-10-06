@@ -1,5 +1,7 @@
 # Current handoff: thirty-two actual tensor regions, thirty-one joins and ten internal traces (2026-10-06)
 
+Implementation and scoped three-bridge tensor receipt: commit [a81fa013](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a81fa0135b92392842928bafccd431420cd44e81).
+
 Three original bridge charts now have complete physical background tensors and all three remainder components. The phase1, smoothing/macro and R100 attachments connect them through microscopic switches/power/R110/reshape/reference/restore/patch to full Gamma. Inventory: **32 actual regions, 31 adjacent tensor joins, 10 internal traces**. Separate velocity/absolute-pressure atlas: 14 adjacent/8 internal.
 
 Read [CURRENT_BRIDGE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_BRIDGE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_bridge_background_tensor_check.json`; stage `currentbridgetensor`. Reuse `CurrentBridgeBackgroundTensor(micro_tensor=checked_current_micro_tensor)` and the same native bridge/core/physical/pressure graph. Full unpruned data are stored in one index and three deterministic gzip chart shards.

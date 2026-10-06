@@ -1,5 +1,7 @@
 # Current actual three bridge tensors and phase1/smoothing/R100 attachments (2026-10-06)
 
+Implementation and scoped three-bridge tensor receipt: commit [a81fa013](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a81fa0135b92392842928bafccd431420cd44e81).
+
 The three original bridge charts now have complete physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Three completed source attachments connect them to the checked microscopic-switch/power/R110/reshape/reference/restore/patch chain through full Gamma. Admitted inventory: **32 actual regions, 31 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas: 14 adjacent/8 internal. Regional coverage is not overall completion or n-dependent temporal recursion.
 
 ## Executable sources and current owner
