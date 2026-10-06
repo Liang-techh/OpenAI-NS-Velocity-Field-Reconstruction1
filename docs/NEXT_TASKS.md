@@ -1,6 +1,6 @@
 # Current handoff: original cone map and whole current pulse-end signed cone (2026-10-06)
 
-The original-cone milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+Implementation and scoped original-cone/current pulse-end receipt: commit [fde7e10e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fde7e10ef112f4dbe915e896186c656dab2e922d).
 
 The original OpenAI / Lei--Ren variable and scale map is now executable. The current complete signed pulse-end two-vector stress satisfies the strict cone throughout s[-4,0], Z[-1,1], with every sector and nonzero axial shear retained. Four fresh main/exit/end boxes also pass; the entire main/exit domains and remaining regions are still open.
 
