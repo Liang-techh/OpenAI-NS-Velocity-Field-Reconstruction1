@@ -1,3 +1,20 @@
+# Next: full current exterior and branch installation (2026-10-05)
+
+Implementation and scoped receipt: commit [146fe1b1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/146fe1b1).
+
+Read CURRENT_PRESSURE_TERMINAL_CLOSURE_2026_10_05.md. Original CompliantPressureDatum now has a source-bound exact fourteen-stage integral witness, independently extracted native pressure densities, and the exact uncorrected axis waiting chain including flatten. Their function identity proves P0=-native_raw_total; the admitted second-quadratic/full-Gamma balance then gives current Cp=0. Dtheta was already closed. Interval masses, numerical integral outputs and old Cp boxes remain enclosures/diagnostics, never selected values.
+
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_pressure_terminal_closure_check.json. Focused stage: currentpressureterminal. Evidence: 123 source identities, 84 independent density fixture rows, seven unilateral mutations rejected, 60 pressure mixed4 rows, 72 source-zero axial coefficients, checked loading and fresh Z=.709 acquisition. Working and staged source hashes match across 591 dependencies. This scope is the restricted current heat view; full exterior, all physical owners, global cone/flatness/required-domain energy and temporal recursion remain false.
+
+1. Bind every current exterior stress history to the canonical full-Gamma theorem, then issue a separate full exterior receipt. If the energy/selected history is still old, install its current source first; two zero constants alone are insufficient.
+2. Complete common future C4/C5 and selected ap/c1/c2 ownership; update dependent physical owners and caches consistently.
+3. Complete native mixed4 interfaces, production points, physical stress/residual composition, global cone, independent flat remainder and energy on the prescribed domain.
+4. Implement true n=1/n>=2 temporal recursion with per-order repairs and divergence-preserving cutoffs, then oscillatory stress correction and independent full NS/dynamics diagnostics.
+
+Preserve the accepted angular/pressure terminal results and read the latest detailed AGENT_TASKS.md checkboxes. Spatial derivatives do not complete temporal recursion. The project goal remains active.
+
+---
+
 # Next: original analytic pressure datum to native raw operator (2026-10-05)
 
 Implementation and scoped receipts: commit [99c32046](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99c32046).
