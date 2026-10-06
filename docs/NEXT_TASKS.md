@@ -1,20 +1,22 @@
-# Current handoff: common 22-interface physical bounds (2026-10-06)
+# Current handoff: actual angular background tensor (2026-10-06)
 
-Implementation and scoped common source/compact-time receipt: commit [2ecf9213](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ecf92137d23d477881720d73e661e42b20e5681).
+The original angular region now has current full A/E/P/K stress mixed3, its prescribed symmetric physical tensor completion and the regional decomposition residual=-div(T_B)+E_B, with divergence/remainder mixed2. F57C5a-angular, F57C5b-angular-completion and F57C6a-angular are complete. Seven whole-domain/boundary/support/fresh-parameter calculations check 455 factored physical contribution rows (434 nonzero), 45 original full-moment normalization identities and 40 original stress baseline/homogeneity identities. These are directed enclosures with exact source factors, not resolved physical point values.
 
-The 14 affected adjacent joins and 8 internal support edges now compose under one checked current selected/future/analytic-pressure graph. Actual velocity/absolute-pressure Cartesian spatial4 and fixed-position time1 upper bounds cover all angles, whole source Z and requested finite compact log(tau) sectors. F57C3 and the affected trace/sector tasks in F57C4 are complete. Prescribed actual completed background stress and its physical residual/remainder decomposition are next. Other retained 33-chart joins, global tensor/cone/NS/remainder/energy/points and n-dependent temporal recursion remain open.
+Read [CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md](CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_background_stress_check.json`; focused stage `currentangularstress`. Reuse `CurrentAngularBackgroundStress(atlas=checked_current_interface_atlas)`. The same complete future, analytic P0/Pin and nonzero cumulative histories remain; full pressure is restored through the replayed current Cp=0 chain without dividing amplitude caps. Read-only reviewer: GPT-5.6 Luna / max.
 
-Read [CURRENT_INTERFACE_ATLAS_2026_10_06.md](CURRENT_INTERFACE_ATLAS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_interface_atlas_check.json`; focused stage `currentinterfaceatlas`. Reuse `CurrentInterfaceAtlas(differences=checked_current_angular_differences)` and call `bounds(interface,log_tau,Z)`. Four pulse support endpoints now also bound the actual nonzero full field, separately from zero local differences. Finite physical traces have R>0, |Z|<1, tau>0; Z=+/-1 are limiting/infinite-space source sectors.
+The previous [current22 interface atlas](CURRENT_INTERFACE_ATLAS_2026_10_06.md) remains admitted: 14 affected adjacent / 8 internal velocity-pressure source traces and their all-angle/whole-source-Z/finite-compact-time bounds. Actual tensor joins, other regional tensors, full33 quantitative interfaces, axis attachment, global cone/lift/NS/temporal remainder/energy/points and n-dependent recursion remain open.
 
-- [x] F57C3: common source composition of 14 adjacent / 8 internal checked interfaces, one owner and analytic pressure history.
-- [x] F57C4a-traces/F57C4b-traces: actual velocity/absolute-pressure common physical spatial4/time1 bounds at all 22 affected interfaces.
-- [x] F57C4e-affected-sectors: explicit all-angle/whole-source-Z/compact-positive-time coverage; 4,752 contribution bounds and 3,168 four-field totals, plus a fresh sector.
-- [ ] F57C4e-remaining-joins: admit any other retained/core/incoming chart boundaries and axis attachment; keep the complete 33-chart quantitative gate false until covered.
-- [ ] F57C5a,b/F57C6a,b: construct and join prescribed actual completed T_B, establish physical residual=-div(T_B)+E_B and independent global remainder bounds.
-- [ ] F57D/E/F: resolved source-defined velocity/pressure API, current cone/lift/temporal flatness and required-domain kinetic energy.
-- [ ] F58/F59/F60/F61: true n-dependent equations/per-order repair/remainder, oscillatory/mean corrections, corrected NS and measured dynamics.
+- [x] F57C3/F57C4 affected-traces: one current22 source atlas and actual common velocity/absolute-pressure spatial4/time1 bounds.
+- [x] F57C5a-angular/F57C5b-angular-completion/F57C6a-angular: full current angular stress, completed physical tensor and regional remainder decomposition.
+- [ ] **Next: F57C5a-postpulse-entry** — recover the current steep-entry full A/E/P/K stress using the same angular terminal functions and original transition kernels; then prove/bound the actual angular-entry completed-tensor join. Reuse checked owners instead of rebuilding historical quadratures.
+- [ ] F57C5a-postpulse-rest: attach flatten/power/steep/waiting/collar full stress to current histories; retain source coordinates, nonzero energy/pressure and the full Gamma exterior theorem.
+- [ ] F57C5a-pulse: actual entrance/main/exit/gap/end tensor from five current histories, selected C1/C2, m_actual cross terms, complete future/2 and Pin/P0; no old snapshots or local-difference substitution.
+- [ ] F57C5b-joins/F57C6a-global: compose actual tensor joins and physical decompositions in every chart and all eight support edges.
+- [ ] F57C4e-remaining-joins: other retained/core/incoming boundaries and independent axis attachment before complete33 quantitative admission.
+- [ ] F57C6b/F57D/E/F: independent global temporal remainder, resolved nonzero u,v,w,p API, current cone/lift and prescribed-domain kinetic energy.
+- [ ] F58/F59/F60/F61: genuine n-dependent equations/per-order repair/summation, both oscillatory families/mean corrections, corrected NS and measured dynamics.
 
-Implement one bounded next tensor task, save source-bound evidence, commit/push and mark it done. Avoid reconstructing historical quadratures. A compact-time derivative bound does not prove a temporal-flat remainder, stress cone or completed NS solution. This section supersedes earlier combined-source/common affected velocity-pressure bounds-open entries below; the full goal remains active.
+Implement one bounded next construction, save source-bound evidence, commit/push and mark its scoped task done. This section supersedes older statements that actual angular full stress and regional completion/decomposition are open; it does not close their global versions. The long-term goal stays active.
 
 ---
 

@@ -1,5 +1,7 @@
 # Current common interface atlas (2026-10-06)
 
+Current continuation: [actual angular background stress](CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md) completes F57C5a-angular and the regional angular tensor/remainder tasks. Other actual tensors, joins and global obligations below remain open.
+
 Implementation and scoped common source/compact-time receipt: commit [2ecf9213](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ecf92137d23d477881720d73e661e42b20e5681).
 
 The fourteen affected adjacent joins and eight internal support edges now compose under one checked current selected/future/analytic-pressure graph. Their actual velocity and absolute-pressure traces have common Cartesian spatial4 and fixed-position time1 upper bounds over all angles, whole source Z and requested finite compact log(tau) sectors. This completes F57C3 and the affected velocity/pressure sector tasks in F57C4. The next construction is the prescribed actual completed background stress tensor and its physical residual/remainder decomposition.
@@ -52,7 +54,7 @@ Exact working/Git-index source and receipt audit passes for all 644 dependency f
 - [x] F57C4b-traces: common actual internal velocity/absolute-pressure bounds at all 8 support edges, retaining both local stress/error companions separately.
 - [x] F57C4e-affected-sectors: declare all-angle/whole-source-Z/compact-positive-time coverage and limiting/uncovered sectors. This does not set the complete 33-chart quantitative-interface gate.
 - [ ] F57C4e-remaining-joins: enumerate and admit any still-uncovered retained/core/incoming chart boundaries in the complete 33-chart domain. Keep the current22 atlas as the affected-interface component; report axis attachment independently.
-- [ ] F57C5a-angular: instantiate actual current angular A/E/P/K full histories in the original `angular_stress_C3` / `collar_stress_C3` operators. Carry exact KR and KR^2 units; current terminal data must come from the current selected complete future. The local actual-reference tensor is not the actual tensor.
+- [x] F57C5a-angular: instantiate actual current angular A/E/P/K full histories in the original `angular_stress_C3` / `collar_stress_C3` operators. Carry exact KR and KR^2 units; current terminal data must come from the current selected complete future. The local actual-reference tensor is not the actual tensor.
 - [ ] F57C5a-pulse: instantiate actual current pulse entrance/main/exit/gap/end stress from five cumulative histories and source-defined derivatives. Retain m_actual cross terms, selected C1/C2, complete future/2, original Pin/P0 and positive log scales; no old control/history snapshots or cap division.
 - [ ] F57C5a-postpulse: attach actual flatten/power/steep/waiting/collar stress operators to the current energy/history owners; preserve current phase-to-logR conversion and full terminal energy/pressure. Reuse the accepted exact similarity exterior theorem within its scope.
 - [ ] F57C5b-completion: construct Trtheta, Trz and required diagonal tensor completion with original signs, radius/scale factors and the absolute-pressure convention.
