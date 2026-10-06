@@ -1,5 +1,7 @@
 # Current handoff: six interior core moments and rho4/axial6/Euler4 source data (2026-10-06)
 
+Implementation and scoped six-core-moment receipt: commit [ed871352](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8713520931a5da2a26400d854299f35bed77dc).
+
 The same nonlinear fixed point now supplies all six variable-radius core moments, nonsingular normalized axis shapes, original P0 plus dressed pressure increment, and Q with axial5 derived from the mean's axial6. Full nonlinear/product tails and ordinary logR4 conversion are retained. This is new construction input for the core full tensor; tensor inventory stays **32 regions/31 adjacent/10 internal**, primitive atlas14/8.
 
 Read [CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md](CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_interior_moments_check.json`; focused stage `currentcoremoments`. Reuse `CurrentCoreInteriorMoments(bridge_tensor=checked_current_bridge_tensor, common=warm_checked_common)`. Six complete source views and5,556 rows passed targeted producer/checker/controller.

@@ -1,5 +1,7 @@
 # Six actual interior core moments, normalized axis and Euler derivatives (2026-10-06)
 
+Implementation and scoped six-core-moment receipt: commit [ed871352](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ed8713520931a5da2a26400d854299f35bed77dc).
+
 The same admitted nonlinear fixed point now supplies all six cumulative core moment functions throughout rho in[0,4], with ordinary radial derivatives through4, ordinary axial derivatives through6 and ordinary logR derivatives through4. The analytic pressure base, dressed centrifugal increment and radial recovery Q are retained separately. This completes the missing interior source inputs for the next full core tensor construction.
 
 The completed tensor inventory stays **32 regions, 31 adjacent and 10 internal traces**; the primitive velocity/pressure atlas stays14/8. No new full tensor region is counted for this source adapter. Core full tensor, completed core/bridge tensor attachment, physical-axis tensor/remainder, global cone/flatness/energy/points and actual n-dependent recursion remain open.
