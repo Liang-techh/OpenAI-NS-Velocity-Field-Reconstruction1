@@ -1,5 +1,7 @@
 # Scheduled queue: native pulse C4 and current heat companions (2026-10-05)
 
+Implementation and scoped receipts: commit [1cf6edc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cf6edc7).
+
 Start with docs/AGENT_TASKS.md and docs/CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md. F56 core/first and all-four-current-bridge mixed4 joins are admitted in current_core_first_interface_check.json; currentcorefirst is the focused stage. Reuse the common-core and three earlier join receipts by hash. Correct pressure is PI_core=4*C_dressed with PD separate.
 
 Execute the detailed independent F57A native pulse interface tasks and F57B current heat pressure/stress companion tasks. Retain the current family, datum, amplitude, full pressure and future-energy histories and exact coordinate/physical units. Then implement production points, global stress/flatness/required-domain energy and genuine temporal recursion. Mark each exact completed item [x] with receipt and commit, and push owned files.

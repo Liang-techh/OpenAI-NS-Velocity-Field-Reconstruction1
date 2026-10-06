@@ -1,5 +1,7 @@
 # Common core and all four bridge interfaces
 
+Implementation and scoped receipts: commit [1cf6edc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cf6edc7).
+
 F56 closes the current common-core to first-bridge functional join through mixed total order four. The earlier first/second, second/macro and R100/switch joins are retained. This removes the missing inner bridge dependency; global stress, full nonlinear point evaluation and genuine temporal recursion remain open.
 
 Run the focused stage:
@@ -74,6 +76,8 @@ All15 coordinate identities pass. The existing smooth Cartesian/time maps act on
 ## Evidence and admitted scope
 
 The producer acquires a fresh Z=.359 common packet and the original first-inlet runtime. It retains135 physical velocity/pressure and primitive mixed4 rows, all amplitude/radius logs and original controls. The checker verifies this packet,42 atom scaling identities, integrated core recovery, correct pressure units and exact coordinate identities. Checked adapter loading succeeds with the source graph and all input hashes enforced.
+
+Git attributes preserve exact bytes of receipt-bound paper modules, JSON artifacts and package sources across operating systems. The original schedule_pressure.py bytes are retained, including their accepted CRLF endings; its formulas are unchanged. All562 hashes in the new receipt match the published Git blobs, so checkout conversion cannot invalidate this evidence chain.
 
 The new receipt admits `current_core_bridge_functional_mixed4_join_certified` and `all_current_bridge_functional_interfaces_certified`. The three older non-core joins and the common-core admission remain accepted in their own scopes. This is an executable algebra and source-bound analytic argument, not a Lean formalization.
 

@@ -1,0 +1,4 @@
+# Admission receipts hash exact source bytes; preserve them on every host.
+experiments/root_st073/lei_ren_part1_paper_*.py -text
+experiments/root_st073/lei_ren_part1_paper_*.json -text
+src/openai_ns_reconstruction/*.py -text

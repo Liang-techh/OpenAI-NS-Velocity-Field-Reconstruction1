@@ -1,5 +1,7 @@
 # Active tasks after fourth bridge interface closure (2026-10-05)
 
+Implementation and scoped receipts: commit [1cf6edc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cf6edc7).
+
 Read CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md and CURRENT_CHECKPOINT.md first. F56 is complete in its scoped functional mixed4 sense. Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_core_first_interface_check.json. This section supersedes older open core/first checkboxes and the incorrect historical 4C=PD+PI shorthand below. Correct units are PI_core=4*C_dressed, with PD separate.
 
 - [x] F56-core-first-owner-binding: common nonlinear solution, selected amplitude, original core, actual atom rebuild, comparison and bridge use the same source/datum; seven graph checks pass.
