@@ -1,5 +1,7 @@
 # Current handoff: seventeen actual tensor regions, sixteen joins and four internal traces (2026-10-06)
 
+Implementation and scoped whole variable O3 transition tensor/power-join receipt: commit [b7fa407a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7fa407a0acae14be5154fa5f052ad9ab29e87f2).
+
 The whole actual variable-amplitude O3 slope-mu transition now has full physical stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Its offset1 boundary attaches to checked actual O3 power phase0. The admitted chain has seventeen actual regions, sixteen adjacent tensor joins and four internal end-support tensor traces. Full variable source jets, five inherited moments and actual analytic pressure remain. The separate velocity/pressure atlas remains 14 adjacent / 8 internal.
 
 Read [CURRENT_O3_TRANSITION_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_O3_TRANSITION_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_O3_transition_background_tensor_check.json`; focused stage `currento3transitiontensor`. Reuse `CurrentO3TransitionBackgroundTensor(entrance_incoming_tensor=checked_current_entrance_incoming_tensor)`. Complete data use `.json.gz`; raw pre operator supports full variable source jets. Global/temporal/point acceptance remains false.
