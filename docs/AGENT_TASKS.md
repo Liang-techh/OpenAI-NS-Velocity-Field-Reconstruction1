@@ -1,23 +1,23 @@
-# Current handoff: twelve affected modified tensor source interfaces (2026-10-06)
+# Current handoff: restored modified source inherits analytic pressure and full heat tail (2026-10-06)
 
-Implementation and source receipts: commit [bdc78553](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bdc78553a2abcd673db2cda037424aa382383886).
+Implementation and source receipts: commit [d581169d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d581169d6b9a6a1ba28366a5f0b7ae543da13657).
 
-**Twelve affected callable tensor interfaces are now installed.** JOIN1–3 connect original O2 axial exit to modified buffer, buffer to O3, slope to quiet power, modulation start/end, six exact repair edges and implicit q2 exit. They retain own logR4/Z5 source rows, full signed physical stress3/divergence2/remainder2 and Cartesian traces, with71 common component groups per interface. Higher spatial4/time1 and heat dependencies remain open.
+**JOIN5 is now installed as a checked runtime layer.** Actual same-root compact repair closure and original whole-Z power phase1 inlet theorem compose with15 unchanged downstream native providers and15 source trace routes. The original analytic P0/native14-stage raw pressure integral, unique waiting root, five terminal histories and full unbounded Gamma exterior are inherited without a fitted pressure or radial cutoff.
 
-Read [CURRENT_MODIFIED_TENSOR_INTERFACES_2026_10_06.md](CURRENT_MODIFIED_TENSOR_INTERFACES_2026_10_06.md) for exact endpoint definitions, APIs, evidence and detailed tasks. Stage `currentmodifiedinterfaces`; API `.interface(name,Z,log_tau,theta,viscosity)`; named `.endpoint_source(name,Z,side)` for repair and modulation-end germs.
+Read [CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md](CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md) for source-function lineage, APIs, proof scope and detailed MIX/BOUND/common-N tasks. Stage `currentmodifiedheat`; APIs `.downstream`, `.trace`, `.pressure_datum`, `.unbounded_exterior`.
 
-The edge selector is now proved equal to original continuous partial integrals from both sides by actual density AST, same full weights, exact integral additivity and finite residual-strip bounds. D/cross physical indices remain0/2. Fixed-cell enclosure widths are not interpreted as function limits. Flat local velocities never zero cumulative five histories, absolute P0+Cp pressure or positive kinetic source. Evidence: 354 new identities, 94 consumed repaired-history identities, full views, checked/fresh API, focused controller/compilation and 864 working/index hashes. Read-only reviewer: **GPT-5.6 Luna / max**.
+The actual native Ptail/P3 complete pressure FTC key and original forward-density/publication callables are explicitly consumed. Upstream/downstream datum copies represent one analytic defining function. All65 exterior physical tensor/divergence/remainder/momentum rows remain exactly zero by regional heat identities; positive energy and nonzero velocity persist. Evidence: 54 new source identities, 37 consumed transport and 354 consumed interface identities, full downstream views/analytic datum/unbounded exterior, fresh checked API/controller/compilation and 870 working/index hashes. Read-only source reviewer: **GPT-5.6 Luna / max**.
 
-- [x] REPAIR1–8/9a and TENSOR1/TENSOR2/TENSOR4a–c: actual exact implicit repair, own histories/pressure/radial, full signed columns and completed local physical tensor.
-- [x] CONT1–3/REPAIR9b: exact original open-power continuation, actual phase1 endpoint, q2/phase partitions and complete modified33 native dispatch.
-- [x] JOIN1–3, at retained tensor orders: original buffer inlet, O2/O3 and slope/power, modulation and six repair support edges, exact exit; all own cumulative source retained.
-- [ ] **Next JOIN4:** required physical derivative dependency inventory, higher actual source rows and quantified compact-time interface norms; velocity/stress/remainder orders recorded separately.
-- [ ] **Next JOIN5:** compose exact continuation with unchanged downstream moment/pressure providers and original analytic preheat datum/heat exterior source. No pressure fitting or copied heat receipt.
-- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware finite-N derivative/stress estimates, one common N, whole modified O2/O3 signed margins.
-- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy with all radial/axial/Pstar/cross terms.
-- [ ] Remaining original inner cones/global admissibility, true n-dependent coefficient recursion/independent repairs/flat sum, actual oscillatory families/mean/quadratic stress cancellation, resolved u/v/w and independent full corrected NS/energy/dynamics.
+- [x] REPAIR and TENSOR1/2/4: actual unique implicit repair, own histories/pressure/radial, full signed tensor/remainder and physical completion.
+- [x] CONT1–3 and JOIN1–3: complete modified33 native dispatch, true original phase1 continuation, twelve affected retained-order source/tensor interfaces and exact partial FTC edges.
+- [x] JOIN5/5a–c: actual downstream source inheritance, analytic preheat pressure compatibility and full unbounded regional heat source carried through new runtime wrapper.
+- [x] JOIN4a, scoped source inventory: required physical velocity/pressure mixed4 and fixed-x time1 inputs identified; tensor stress3/remainder2 cannot substitute for this packet.
+- [ ] **Next MIX1–6 / JOIN4:** own UT/UZ/UR/P ordinary mixed4 adapter, absolute P0+Cp proof and signed source modes, exact radius/unit logs, original Cartesian spatial4/fixed-x time1 operators, twelve affected common interface bounds and checked runtime receipt.
+- [ ] BOUND1–3/COMMONN/CONE: actual phase-aware finite-N derivative and signed stress errors, one common N, whole modified O2/O3 positive margins.
+- [ ] TENSOR3: actual physical total kinetic density/integrals and finite energy, with radial/axial/Pstar/cross terms.
+- [ ] Remaining original inner cones/global admissibility, true n-dependent coefficient recursion/independent repairs/flat sum, actual oscillatory families/mean/quadratic cancellation, resolved u/v/w and independent full corrected NS/energy/dynamics.
 
-Global modified physical/higher-order/heat interface and cone gates remain false. Original cone count15+separate zero exterior/17 open, original tensor33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve same original geometry, P0, source correlations and unrelated files. The full goal remains active; earlier sections below are historical.
+Full modified physical higher-order interfaces/global admissibility remain false. Regional exact heat identity is not global corrected NS. Original cone15+separate zero exterior/17 open, tensor33/32/14 and primitive atlas14/8 remain separate. N=10^12 remains repair-only. Preserve same original geometry, P0, actual controls and unrelated files. The full goal remains active; earlier sections are historical.
 
 ---
 

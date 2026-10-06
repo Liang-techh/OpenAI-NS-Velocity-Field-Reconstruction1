@@ -1,5 +1,7 @@
 # Current affected modified tensor interfaces and partial FTC endpoints
 
+Current successor: [CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md](CURRENT_MODIFIED_HEAT_INHERITANCE_2026_10_06.md), commit [d581169d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d581169d6b9a6a1ba28366a5f0b7ae543da13657). JOIN5 restored-source downstream history/analytic pressure/full unbounded heat inheritance is installed. Next JOIN4/MIX source packet and physical spatial4/fixed-x time1 interfaces, then actual bounds/common N/cones/energy. Earlier statuses below describe the affected tensor-interface milestone.
+
 Implementation and source receipts: commit [bdc78553](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bdc78553a2abcd673db2cda037424aa382383886).
 
 ## Constructed result
