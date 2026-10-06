@@ -1,5 +1,7 @@
 # Nonsingular Cartesian core axis T/E (2026-10-06)
 
+Implementation and scoped whole-core axis receipt: commit [9111227b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9111227b00224077468f1b5112a3f23f533c162a).
+
 The same admitted nonlinear core now supplies the full background stress and all six original NS remainder sectors on **rho[0,4], Z[-1,1]**, including the physical axis. The new Cartesian adapter cancels apparent inverse-radius terms before taking source bounds. It keeps nonzero transverse derivatives and the nonzero axial remainder on the axis.
 
 The completed tensor inventory remains **33 regions, 32 adjacent traces, 10 internal traces**; the primitive atlas remains14/8. The axis is a coordinate extension of the existing core region. This is a spatial source-bound milestone at finite requested log tau and positive viscosity. Global cone/lift, independent terminal-time flatness, required-domain energy, resolved u/v/w/p and actual n-dependent recursion remain open.

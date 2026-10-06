@@ -1,5 +1,7 @@
 # Current handoff: nonsingular Cartesian axis and full core T/E (2026-10-06)
 
+Implementation and scoped whole-core axis receipt: commit [9111227b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9111227b00224077468f1b5112a3f23f533c162a).
+
 The same nonlinear core now supplies full background stress/divergence and all six original remainder sectors on **rho[0,4], Z[-1,1]**, including the physical axis. Exact source identities cancel inverse-radius terms before bounds; nonzero transverse derivatives and the nonzero axial remainder remain. Tensor inventory: **33 regions/32 adjacent/10 internal traces**, primitive atlas14/8.
 
 Read [CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_axis_background_tensor_check.json`; focused stage `currentcoreaxis`. Reuse `CurrentCoreAxisBackgroundTensor(core_tensor=checked_current_core_background_tensor)`. The original cylindrical core chart still rejects rho0. This is the current handoff; older snapshots below are historical.
