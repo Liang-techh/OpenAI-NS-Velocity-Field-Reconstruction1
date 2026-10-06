@@ -1,5 +1,7 @@
 # Current O3 own repaired histories, pressure, radial source and functional exit
 
+Current successor: [CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md](CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md), commit [db84cfa3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db84cfa3d1c17e5667bf403fac0307a3c691cac8). TENSOR1/TENSOR2 signed modified paper stress15/remainder11 sectors are now installed. Next TENSOR4 packages the physical/completed diagonal/divergence tensor from those columns; TENSOR3 physical total kinetic energy is a separate branch and must not be confused with profile Mztheta. Earlier statuses below describe the repaired-field milestone.
+
 Implementation and source receipts: commit [90a587ac](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90a587ac45de1a450af738c00b831543996c6d27).
 
 ## Constructed result and scope

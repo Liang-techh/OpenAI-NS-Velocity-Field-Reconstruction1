@@ -1,26 +1,24 @@
-# Current handoff: own repaired O3 field and functional five-moment exit (2026-10-06)
+# Current handoff: modified O2/O3 signed stress and source remainder (2026-10-06)
 
-Implementation and actual-source receipts: commit [90a587ac](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90a587ac45de1a450af738c00b831543996c6d27).
+Implementation and actual source receipts: commit [db84cfa3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db84cfa3d1c17e5667bf403fac0307a3c691cac8).
 
-The independent quiet-power repair now has callable ordinary logR4/axial5 bump rows, continuous partial primitives, **own repaired five cumulative histories, same-axis pressure and radial velocity from repaired M**. At q=2 the five history, velocity, pressure and radial increments vanish as functions of all Z[-1,1] through retained derivatives. The actual parent inlet defects, homogeneous post-support transports and same exact implicit control vector are source-bound; no chosen defects or midpoint coefficients are used. Nonzero kinetic source remains.
+The actual repaired O2/O3/quiet-power source now has **full signed theta/axial paper columns through ordinary logR3 and all three source-remainder components through logR2**, using its own five histories and same-axis pressure. All15 stress sectors (theta7/axial8) and11 remainder sectors (radial9/theta1/axial1) retain physical Uz=Pstar*Vhat, m/k and radial powers0/1, and nonlinear powers0/1/2 with both ordered cross terms. At q=2 their common retained source rows equal the original field for all Z[-1,1]. Extra split-sector axial coefficients remain stored.
 
-Read [CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md](CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md) for exact formulas, gates and detailed next tasks. Stage: `currento3repairedhistories`. API: `CurrentO3RepairedHistories(repair=checked_independent_repair).history(region,Z,coordinate)`. The quiet-power API ends at q=2; open continuation/full modified dispatcher still needs installation.
+Read [CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md](CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md) for formulas, accepted gates and detailed next tasks. Stage: `currentmodifiedprestress`. API: `CurrentModifiedPreStress(source=checked_repaired_histories).stress(region,Z,coordinate)`.
 
-Evidence: 94 source-bound symbolic identities/guards; producer/checker, full-Z exact exit/support views, checked constructor/API, focused controller and compilation. Working/index audit matched 840 dependency files. Read-only reviewer metadata: **GPT-5.6 Luna / max**; source-binding gap corrected before publication.
+Evidence: 81 new signed source identities and 20 consumed full variable original-paper stress identities; whole/full-Z views, actual exit/source comparison, fresh checked API, producer/receipt, focused controller and compilation. Working/index hashes matched 846 dependency files. Read-only reviewer model/effort: **GPT-5.6 Luna / max**.
 
-Original counts stay **15 strict nonzero whole regions plus separate exact zero exterior;17 original whole regions open**. Inventory33/32/14 and primitive atlas14/8 stay unchanged and do not admit the modified field. Actual N=10^12 meets repair-only threshold27,303,666; common cone N is open.
+This is local signed-column/remainder construction; completed diagonal/physical tensor/divergence packaging, open q>2 continuation, physical/heat joins, common cone N, O2 taper and modified closed O3 cone remain open. Original15 strict nonzero regions plus separate exact zero exterior/17 original open regions, inventory33/32/14 and primitive atlas14/8 do not admit the modified field. Actual N=10^12 meets repair-only threshold27,303,666.
 
-- [x] REPAIR1–4: independent supports, new correlated inverse, complete nonlinear map and unique actual-source implicit controls.
-- [x] REPAIR5–8: actual bump jets, continuous partial weights, own five repaired histories, pressure and radial source.
-- [x] REPAIR9a: exact local q=2 functional five-moment/velocity/pressure/radial exit.
-- [ ] **Next TENSOR1/TENSOR2:** rebuild full signed modified stress and remainder with all Pstar sectors/cross terms on this actual source.
-- [ ] TENSOR3/TENSOR4: own complete energy and diagonal/radial tensor/divergence completion.
-- [ ] TENSOR5–7/REPAIR9b: open continuation/full modified physical dispatch, completed tensor/physical/heat joins and phase-aware derivative estimates.
-- [ ] REPAIR10/11: one finite common N, independent O2 taper and whole modified closed O3 cone.
-- [ ] Remaining inner cones and smooth global admissible tensor/lift; genuine n-dependent coefficient recursion, per-order repair and smooth sum.
-- [ ] Two actual oscillatory families, mean correction and quadratic stress cancellation; resolved physical u/v/w and independent corrected Cartesian NS/finite energy; measured scale recursion/core widths/vorticity/material winding.
+- [x] REPAIR1–8 and REPAIR9a: independent implicit repair, actual source jets/partial five histories/pressure/radial and functional q=2 exit.
+- [x] TENSOR1/TENSOR2: full signed modified paper columns/remainder with every physical source mode and cross term.
+- [ ] **Next TENSOR4a–c:** package exact radius/Pstar logs and source mixed rows; adapt only the physical mapper's remainder input; construct diagonal/divergence/Cartesian tensor from the actual modified columns.
+- [ ] TENSOR3: actual physical kinetic density/integrals and finite-energy/tail bounds, with all radial/axial/cross terms. This is independent of diagonal completion; profile Mztheta is not total kinetic energy.
+- [ ] TENSOR5–7/REPAIR9b: open continuation/full modified dispatch, physical/tensor/heat joins and phase-aware derivative bounds.
+- [ ] REPAIR10/11: common finite N, independent O2 taper and closed modified O3 cone.
+- [ ] Remaining inner cones/global admissible lift; true n-dependent coefficient recovery/per-order repair/flat smooth sum; two real oscillatory families with mean/quadratic cancellation; resolved physical u/v/w and independent corrected NS/energy/dynamics.
 
-Keep the full original long-term goal active. Reuse the live checked source graph when available on this host; session IDs are host-local. Avoid a cold all-stage rebuild and preserve unrelated dirty files. Earlier sections below are historical.
+The diagonal is `Ttheta_theta=r*d_z(Trz)` using the original completed-radius factor; it is not reconstructed from total kinetic energy. Keep the full long-term goal active. Reuse the checked live graph when available on this host, avoid cold all-stage rebuilds and preserve unrelated files. Earlier sections below are historical.
 
 ---
 
