@@ -1,8 +1,10 @@
 # Four angular internal full tensor joins and leading time obstruction (2026-10-06)
 
+Latest continuation: [one-graph native full tensor registry](CURRENT_TENSOR_REGISTRY_2026_10_06.md) completes global-cover1a/b and 1c/d-native. Physical-coordinate locator/global cover, cone/lift and real coefficient recovery remain open. The 14 supports do not count the axis extension.
+
 Implementation and scoped four full angular tensor joins/leading time obstruction: commit [56c52c8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56c52c8ea77bba68dafb52cdd7eb2b98d0ccd3a2).
 
-All four exact angular support boundaries now have source-identified common **full background stress/divergence/remainder** traces. The same checked core-axis graph supplies the existing angular, pressure, energy, selected coefficient and weighted history owners. The full tensor inventory is **33 regions, 32 adjacent traces and 14 internal traces**, including the core axis. The separate primitive velocity/pressure atlas remains14/8.
+All four exact angular support boundaries now have source-identified common **full background stress/divergence/remainder** traces. The same checked core-axis graph supplies the existing angular, pressure, energy, selected coefficient and weighted history owners. The full tensor inventory is **33 regions, 32 adjacent traces and 14 internal traces**. These are six patch + four pulse-end + four angular supports; the core axis is a separate analytic extension of the existing region. The separate primitive velocity/pressure atlas remains14/8.
 
 The present fixed leading family's E is provably nonflat at the physical origin. This identifies a concrete term the later recursive construction must cancel or absorb. Regional coverage and source interfaces do not complete global admissibility, terminal forcing, finite energy, point evaluation or actual coefficient recursion.
 
@@ -74,8 +76,8 @@ This conclusion is limited to the present fixed leading family and its current T
 
 ## Next tasks: global cover, then actual coefficient recovery
 
-- [ ] F57C-global-cover1a: extract the33 current tensor region names and exact provider domains from the checked owner graph. Build a registry mapping each region to its original callable, native coordinate, Z domain and radius source. Reuse the existing graph; do not construct an unrelated core/history/datum.
-- [ ] F57C-global-cover1b: map all32 adjacent and14 internal completed tensor traces to their source-identity receipt and exact coordinate pair. Keep the primitive14/8 atlas as a separate object. Internal supports share a region; they are not new charts.
+- [x] F57C-global-cover1a: extract the33 current tensor region names and exact provider domains from the checked owner graph. Build a registry mapping each region to its original callable, native coordinate, Z domain and radius source. Reuse the existing graph; do not construct an unrelated core/history/datum.
+- [x] F57C-global-cover1b: map all32 adjacent and14 internal completed tensor traces to their source-identity receipt and exact coordinate pair. Keep the primitive14/8 atlas as a separate object. Internal supports share a region; they are not new charts.
 - [ ] F57C-global-cover1c: route rho0 through CurrentCoreAxisBackgroundTensor, positive core through its original chart/Cartesian source, and all later native regions through their full tensor APIs. Handle reciprocal pulse-gap, support edges, bridge/micro-switch scalings and full Gamma exterior explicitly.
 - [ ] F57C-global-cover1d: define common stress/divergence/remainder component layouts and exact factor records. Preserve original signed sector splits even when aggregating components, and preserve pressure/energy/history provenance.
 - [ ] F57C-global-cover1e: expose a regional/native source dispatcher and a physical-coordinate mapping with the exact implicit lambda relation and constant nu pullback. State whether each return is a source enclosure or a resolved point value. Do not substitute interval representatives as numerical fields.

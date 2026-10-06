@@ -1,14 +1,29 @@
+# Current handoff: one-graph native full tensor registry (2026-10-06)
+
+All 33 full tensor regions and all 32 adjacent / 14 internal support trace routes now share one checked nonlinear-core/axis/pressure/history graph. The 14 support traces are six patch + four pulse-end + four angular; the axis is a separate Cartesian extension of the existing core. Primitive atlas: 14 adjacent / 8 internal.
+
+Read [CURRENT_TENSOR_REGISTRY_2026_10_06.md](CURRENT_TENSOR_REGISTRY_2026_10_06.md). Data/receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_tensor_registry.json` and `_check.json`. Focused stage: `currenttensorregistry`; warm API: `CurrentTensorRegistry(background=checked_current_angular_internal_background_tensor)`. Earlier snapshots below are historical.
+
+- [x] F57C-global-cover1a/b and 1c/d-native: explicit native provider/domain/pullback records, individual 46-trace evidence/endpoint recipes, complete full tensor/source sectors, exact axis and unbounded Gamma APIs.
+- [ ] **Next F57C-global-cover1e/f:** actual implicit physical-coordinate locator and independent global physical cover on finite positive times. Native callable coverage does not yet provide this certificate or resolved point values.
+- [ ] Original admissible cone/lift, then genuine n=1/n>=2 coefficient recovery and moment repair. The present leading origin E is nonflat; cancel or absorb its leading term before completed-remainder flatness.
+- [ ] Convergent physical u/v/w/p, prescribed-domain energy, coefficient smooth sum, both oscillatory families/mean corrections, corrected NS and measured dynamics.
+
+Reuse the admitted graph and construct the next layer. Global cone/NS/energy/resolved points/flat completed remainder/temporal recursion remain open. The long-term goal stays active.
+
+---
+
 # Current handoff: full angular internal tensor joins and leading time obstruction (2026-10-06)
 
 Implementation and scoped four full angular tensor joins/leading time obstruction: commit [56c52c8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56c52c8ea77bba68dafb52cdd7eb2b98d0ccd3a2).
 
-Four exact angular support boundaries now have common full stress/divergence/remainder traces from the same checked core-axis/pressure/history graph. Tensor inventory: **33 regions/32 adjacent/14 internal traces**, including the axis. The primitive velocity/pressure atlas remains14/8.
+Four exact angular support boundaries now have common full stress/divergence/remainder traces from the same checked core-axis/pressure/history graph. Tensor inventory: **33 regions/32 adjacent/14 internal traces**. The axis is a separate analytic extension of the same core. The primitive velocity/pressure atlas remains14/8.
 
 Read [CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_internal_background_tensor_check.json`; focused stage `currentangularinternaltensor`. Warm API: `CurrentAngularInternalBackgroundTensor(core_axis=checked_current_core_axis_background_tensor)`. This is the current handoff; earlier snapshots below are historical.
 
 - [x] F57C-angular-full1a/b/c/d: exact source reductions,60 complete two-sided moment and71 full physical component identities, eight complete views/520 physical rows/568 common groups, scoped receipt/controller.
 - [x] Leading temporal audit: the unchanged core-origin axial E coefficient is strictly positive and scales as tau^((-3+delta)/2), with negative exponent. This leading E cannot itself be terminal-time flat.
-- [ ] **Next F57C-global-cover1:** one-graph registry/dispatch of all33 regions,32 adjacent and14 internal completed traces, with exact axis routing and factor/component conventions.
+- [x] **Native registry completed; physical cover still open F57C-global-cover1:** one-graph registry/dispatch of all33 regions,32 adjacent and14 internal completed traces, with exact axis routing and factor/component conventions.
 - [ ] Original admissible cone/lift, then actual n=1/n>=2 coefficient recovery and per-order moment repair. Cancel or absorb the leading temporal terms before trying to certify flatness of the completed remainder.
 - [ ] Resolved same-source physical u/v/w/p, prescribed-domain finite energy, smooth coefficient sum, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.
 
