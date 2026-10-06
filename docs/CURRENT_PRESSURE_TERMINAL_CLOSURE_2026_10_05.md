@@ -2,7 +2,7 @@
 
 The prescribed original analytic preheat datum is identified with the negative complete native raw pressure integral. Together with the admitted second-quadratic/full-Gamma pressure balance, this proves current Cp=0 as a function of Z in [-1,1], through axial order five. This closes the pressure terminal in the restricted current heat view; all physical charts and the full exterior stress still require separate source installation/admission.
 
-Implementation commit: [146fe1b1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/146fe1b1).
+Implementation commit: [ef4e2711](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ef4e2711).
 
 ## Exact functions and directed enclosures
 
@@ -15,6 +15,8 @@ The datum's immutable source definition remains unchanged. `CompliantPressureDat
 ## Raw waiting, amplitude and convergence
 
 The exact axis chain starts at X(0)=5/8 and passes through the live buffer/pulse sources and the complete flatten. At Z=0 its flatten exit is `2*(Xv + integral_0^100 2^(-sigma(v/100))*exp(r*v)dv)*exp(-100*r)`. This is axis-only. The following XR, XS and XT are uncorrected and determine the unique original raw waiting root. Corrected XT never enters this equation. The older coarse waiting box is bound to the same equation, rather than identified by overlapping endpoints.
+
+The pressure witness explicitly consumes the checked angular source proof's `old_J_weight_is_same_exact_measure`, `current_J_same_integrand` and shared-function assertion. Thus its exact Jc is tied to native `collar_preheat_integral` and full-Gamma `atoms['JW']` on [0,3]; the constructor call alone is not used as this proof. Read-only final review used GPT-5.6 Luna / max and found no further material blocker within this pressure-only scope after this link.
 
 The actual amplitude identity is `exp(2*logBase)=exp(2*logEv)*theta_base^2=forward['pressure_scale']`, with the original Pstar units and both half factors retained. Infinite-tail domination uses monotonic J and the actual negative remainder `-mu*(Jd-Jrel)-(Jrel-Jq)-delta*Jq/2`, the guarded raw collar bracket in [0,1], and the exact tail amplitude. A complete holomorphic-strip majorant justifies integral differentiation through axial order five. Integrating an unrelated envelope alone is not used as a proof.
 

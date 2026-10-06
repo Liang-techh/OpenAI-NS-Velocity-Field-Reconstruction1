@@ -1,6 +1,6 @@
 # Current checkpoint: original current pressure terminal closed (2026-10-05)
 
-Implementation and scoped receipt: commit [146fe1b1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/146fe1b1).
+Implementation and scoped receipt: commit [ef4e2711](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ef4e2711).
 
 Read CURRENT_PRESSURE_TERMINAL_CLOSURE_2026_10_05.md. Original CompliantPressureDatum now has a source-bound exact fourteen-stage integral witness, independently extracted native pressure densities, and the exact uncorrected axis waiting chain including flatten. Their function identity proves P0=-native_raw_total; the admitted second-quadratic/full-Gamma balance then gives current Cp=0. Dtheta was already closed. Interval masses, numerical integral outputs and old Cp boxes remain enclosures/diagnostics, never selected values.
 
