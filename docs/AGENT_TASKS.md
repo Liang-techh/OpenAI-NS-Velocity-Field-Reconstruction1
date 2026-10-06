@@ -1,6 +1,6 @@
 # Current handoff: independent source-bound global physical T/E cover (2026-10-06)
 
-The independent global physical tensor-cover milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+Implementation and scoped independent global physical T/E cover receipt: commit [a4898929](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a4898929aa4158348dc228d8dd6de74cacc6e3fb).
 
 For every finite physical point at positive time-to-terminal and finite positive constant viscosity, the fixed admitted source has a unique finite implicit axial scale and is covered by the original 33 strictly ordered radial charts, the separate analytic core axis, and unbounded exact Gamma. All 32 adjacent / 14 support trace routes remain bound; primitive atlas is 14 / 8.
 

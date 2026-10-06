@@ -1,5 +1,7 @@
 # Current source-bound global physical tensor cover (2026-10-06)
 
+Implementation and scoped independent global physical T/E cover receipt: commit [a4898929](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a4898929aa4158348dc228d8dd6de74cacc6e3fb).
+
 ## Result
 
 The same checked background T/E graph now has an **independent global physical chart cover**: for every finite physical position, positive time-to-terminal tau and finite positive constant viscosity nu, each fixed admitted construction source has a finite implicit scale and belongs to its original radial atlas, including the Cartesian axis and unbounded exact Gamma exterior.
