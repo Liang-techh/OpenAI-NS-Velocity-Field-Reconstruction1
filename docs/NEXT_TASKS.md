@@ -1,3 +1,22 @@
+# Next: five current pulse seam functions (2026-10-06)
+
+The actual current complete-energy graph now identifies eight postpulse ordinary mixed4 interfaces and their original physical spatial4/fixed-position time1 traces. Together with end/flatten, nine of fourteen inventoried adjacent traces are source-identified. Five earlier pulse seams and eight internal beta-support transfers remain open. All-interface quantitative admission, resolved points, full tensor/cone/NS, independent flat remainder, prescribed-domain energy and genuine temporal recursion remain separate.
+
+Read [CURRENT_POSTPULSE_INTERFACES_2026_10_06.md](CURRENT_POSTPULSE_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_postpulse_interfaces_check.json`; stage `currentpostinterfaces`. Evidence: 480 current primitive mixed4 source identities, 720 native consistency rows and 3,456 two-sided physical contributions; four wrong-source substitutions rejected. The current complete energy is substituted into arbitrary-function theorems before differentiating. Production phase derivatives convert to ordinary logR derivatives with inverse powers of Lrel-4, Ts and wait.
+
+- [x] F57C2-postpulse-current-mixed4-transfer: flatten/power, power/angular, angular/steep entry, three steep joins, waiting/collar and collar/Gamma; current source histories, flat jets, units and original physical traces identified.
+- [x] F57C1/F57C2-end-flatten: retain the fourteen-seam/eight-support ledger and previous current end/flatten source trace.
+- [ ] F57C2-P1/P2/P3/P4/P5: actual current entrance/main, main/exit, exit/gap, reciprocal gap-coordinate and gap-end/end traces. Bind exact endpoint functions and five primitive histories before mixed4/physical consistency.
+- [ ] F57C2-B1/B2: four actual pulse-end beta edges plus four outer-angular beta edges; flat forcing jets and complete cumulative history transfer.
+- [ ] F57C3/F57C4: combined fourteen-plus-eight source receipt and quantitative common physical bounds with exact positive scales and admitted sectors.
+- [ ] F57C5/F57C6: prescribed physical stress and residual=-div(T_B)+E_B with independent remainder bounds.
+- [ ] F57D/F57E/F57F: resolved nonzero physical points, global cone/lift and flatness, prescribed-domain kinetic energy.
+- [ ] F58/F59/F60/F61: genuine n-dependent temporal recovery, two-family correction, independent corrected NS and measured dynamics.
+
+Work on the five current pulse seams next using the checked current owners. The detailed executable tasks and completion evidence are in the new handoff. This section supersedes older postpulse-current-open entries below; later gates remain false and the long-term goal stays active.
+
+---
+
 # Next: current postpulse mixed4 interfaces (2026-10-06)
 
 Implementation and restricted interface receipt: commit [0ad461dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0ad461dccea540ce206c82f4c1d19269ce5986d7).
