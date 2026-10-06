@@ -1,24 +1,21 @@
-# Current handoff: fourteen actual tensor regions, thirteen joins and four internal traces (2026-10-06)
+# Current handoff: sixteen actual tensor regions, fifteen joins and four internal traces (2026-10-06)
 
-Implementation and scoped main/exit tensor/two-join receipt: commit [e81a4afe](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e81a4afea08e5712ed770201f43f92211204dd54).
+Whole actual O3 power and pulse entrance now have full physical background tensors, three remainder components and both incoming-entrance / entrance-main tensor attachments. They extend the current main-to-Gamma chain to sixteen actual regions, fifteen adjacent joins and four internal end-support tensor traces. Actual pre five moments, analytic pressure, C5 selected histories, complete energy, nonzero incoming histories and all cross/square terms remain. The separate velocity/pressure atlas remains 14 adjacent / 8 internal.
 
-Current main and exit now have actual completed physical background tensors, all three remainder components and both main-exit and exit-gap tensor function joins. They extend the checked gap/end/flatten/angular-to-Gamma chain to fourteen actual regions, thirteen adjacent joins and four internal end-support tensor traces. The current C5 selected forcing, full incoming histories, forward integrals, complete energy and reduced absolute pressure remain in the construction. The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal.
+Read [CURRENT_PULSE_ENTRANCE_INCOMING_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_PULSE_ENTRANCE_INCOMING_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_entrance_incoming_background_tensor_check.json`; focused stage `currententranceincomingtensor`. Reuse `CurrentPulseEntranceIncomingBackgroundTensor(main_tensor=checked_current_main_exit_tensor)`. Complete producer data are in `.json.gz`. These remain source enclosures; global/temporal/point acceptance is false.
 
-Read [CURRENT_PULSE_MAIN_EXIT_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_PULSE_MAIN_EXIT_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_main_exit_background_tensor_check.json`; focused stage `currentmainexittensor`. Reuse `CurrentPulseMainExitBackgroundTensor(gap_tensor=checked_current_gap_tensor)`. Complete producer data are stored as `.json.gz`, with no rows removed. These are source enclosures, not resolved point values or global/temporal completion.
+- [x] Current velocity/absolute-pressure spatial4/time1 atlas: 14 adjacent / 8 internal traces.
+- [x] Actual angular/entry/O7/collar/exterior tensors, regional joins and full Gamma NS identity.
+- [x] Actual flatten/outer-power/end/gap/main/exit tensors, attachments and four internal end-support tensor traces.
+- [x] F57C5a-entrance/O3-power and F57C5b-incoming-entrance-main: two actual tensors and two full tensor function attachments.
+- [ ] **Next: F57C5a-O3-slope-mu / slope-mu-power.** Use live `physical.pre.slope_mu`, original sigma log-amplitude derivatives, five inherited histories and actual analytic pressure over [0,1]. Construct the completed full physical tensor/decomposition and attachment to checked actual O3 power phase 0. Keep nonzero boundary histories; prove function identity before common bounds. Save focused producer/checker/controller/receipt and commit/push.
+- [ ] F57C5a-O2: actual buffer [0,11], axial turnoff [0,1], slope transition [0,1] and Rh-reference tensors; keep original derivative coordinates, cutoff, kernels/tails and all transport terms. Connect every adjacent tensor function.
+- [ ] F57C5a-core-retained/F57C4e-axis: same fixed-point core, bridge/reshape/restore/patch sectors, actual Rh attachment and axis regularity.
+- [ ] F57C5b-angular-internal/F57C6a-global: four actual angular internal tensor traces and full remaining chart/interface coverage.
+- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, admissible cone/lift and prescribed-domain energy.
+- [ ] F58/F59/F60/F61: actual n-dependent recovery and repairs/summation, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/winding.
 
-- [x] F57C3/F57C4 affected-traces: common current22 velocity/absolute-pressure spatial4/time1 atlas.
-- [x] F57C5a-angular/entry/O7/collar/exterior and regional F57C5b/F57C6a: seven actual tensors, six joins and full Gamma regional NS identity.
-- [x] F57C5a-postpulse-flatten-outerpower/F57C5b-two-joins: full flatten/power tensors, current variable K and both actual tensor joins.
-- [x] F57C5a-pulse-end/F57C5b-end-flatten/pulse-end-support: full end tensor, attachment and four exact internal tensor traces.
-- [x] F57C5a-pulse-gap-gapend/F57C5b-gap-coordinate/gap-end: full gap/gap-end tensors and both actual tensor function joins.
-- [x] F57C5a-pulse-main-exit/F57C5b-main-exit-gap: both actual full tensors, all local/incoming/cross/square terms and two completed tensor function joins.
-- [ ] **Next: F57C5a-pulse-entrance/F57C5b-incoming-entrance-main.** Reuse this checked main/exit owner and identical current selected pulse. Adapt original `pulse_entrance_similarity_C4` and `pulse_entrance_physical_C2` to current C5 forcing, incoming five moments, complete energy and the same closed pressure. Preserve the original near-inlet coordinate, gp extension, cutoff/forward history, and exact ordinary radial derivative conversion. Construct full entrance stress3/divergence2/remainder2, completed diagonal and Cartesian decomposition. Prove actual incoming-entrance and entrance-main tensor function joins with their nonzero boundary histories before making bounds. Cover the entire original domain and fresh compact sectors; reject old/foreign/unchecked inputs. Save focused producer/checker/receipt and controller stage; commit/push and mark this exact scope done.
-- [ ] F57C5a-core-retained/F57C4e-axis: common fixed-point core, bridge/incoming tensors, retained/first traces and physical axis regularity.
-- [ ] F57C5b-angular-internal/F57C6a-global: four actual angular support tensor traces and all remaining charts/interfaces before global physical decomposition.
-- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, admissible cone/lift and prescribed-domain kinetic energy.
-- [ ] F58/F59/F60/F61: actual n-dependent recovery equations, per-order repairs/summation, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/winding.
-
-Advance the next coupled construction on the checked graph. Rebuild prerequisites only when defining inputs change. Save source evidence, update the top handoffs and commit/push each completed scope. Fourteen regional tensors/thirteen joins/four internal traces do not close global NS or temporal scale recursion. Those acceptance gates remain false; the long-term goal stays active.
+Complete the next coupled construction and mark only its finished scope done. Reuse unchanged checked prerequisites, preserve source evidence, update handoffs and commit/push. Regional tensor counts do not establish global NS or temporal scale recursion. The long-term goal stays active.
 
 ---
 

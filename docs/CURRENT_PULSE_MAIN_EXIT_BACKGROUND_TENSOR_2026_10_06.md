@@ -1,5 +1,7 @@
 # Current main/exit tensors and two tensor joins (2026-10-06)
 
+Current continuation: [whole actual O3 power and entrance tensors](CURRENT_PULSE_ENTRANCE_INCOMING_BACKGROUND_TENSOR_2026_10_06.md) completes the next entrance and two-attachment tasks below. The chain now has sixteen actual regions, fifteen adjacent joins and four internal traces. Next is actual O3 slope-mu / remaining O2 construction. Global and temporal gates remain open.
+
 Implementation and scoped main/exit tensor/two-join receipt: commit [e81a4afe](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e81a4afea08e5712ed770201f43f92211204dd54).
 
 The original main and exit charts now have current actual completed physical stress, divergence, all three remainder components and Cartesian momentum decomposition. The main-exit and exit-gap attachments have actual common tensor function traces. This completes F57C5a-pulse-main-exit and F57C5b-main-exit-gap for the declared source-enclosure scope. The admitted chain has **14 actual regions, 13 adjacent joins and 4 internal end-support tensor traces**.
@@ -75,8 +77,8 @@ The source domain is R>0, |Z|<1, tau>0 and constant nu>0 on finite compact logta
 
 - [x] F57C5a-pulse-main-exit: current full main/exit physical tensors, complete selected and incoming C5 source, all cross/square terms and positive omitted tails.
 - [x] F57C5b-main-exit-gap: both actual tensor function joins and fresh common component bounds.
-- [ ] **Next: F57C5a-pulse-entrance.** Reuse this checked owner. Adapt `pulse_entrance_similarity_C4` and `pulse_entrance_physical_C2` to current selected gp extension, incoming five moments, complete energy and absolute pressure. Keep original near-inlet coordinates and derivative conversion. Construct full stress3/divergence2/remainder2, completed diagonal and Cartesian decomposition over the whole entrance domain, with fresh sectors.
-- [ ] F57C5b-incoming-entrance-main: source-bind exact endpoint forcing, full nonzero incoming histories, current pressure and units. Prove both full tensor function attachments before forming common bounds. Reject foreign and unchecked inputs. Save focused producer/checker/receipt and controller; commit/push and mark only these scopes done.
+- [x] **F57C5a-pulse-entrance.** Reuse this checked owner. Adapt `pulse_entrance_similarity_C4` and `pulse_entrance_physical_C2` to current selected gp extension, incoming five moments, complete energy and absolute pressure. Keep original near-inlet coordinates and derivative conversion. Construct full stress3/divergence2/remainder2, completed diagonal and Cartesian decomposition over the whole entrance domain, with fresh sectors.
+- [x] F57C5b-incoming-entrance-main: source-bind exact endpoint forcing, full nonzero incoming histories, current pressure and units. Prove both full tensor function attachments before forming common bounds. Reject foreign and unchecked inputs. Save focused producer/checker/receipt and controller; commit/push and mark only these scopes done.
 - [ ] F57C5a-core-retained: actual common fixed-point core, bridge and incoming tensors with current analytic preheat pressure; retained/first boundary functions. Enumerate every required chart before global composition.
 - [ ] F57C4e-axis: physical axis regularity and limiting tensor/remainder bounds for the same core.
 - [ ] F57C5b-angular-internal: four actual angular support tensor traces preserving inherited A/E/P, using the checked angular owner and existing endpoint/local-difference theorem.
