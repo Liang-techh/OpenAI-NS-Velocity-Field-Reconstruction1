@@ -1,3 +1,24 @@
+# Current handoff: 14 nonzero cone regions plus exact zero exterior (2026-10-06)
+
+Implementation and scoped current entrance cone receipt: commit [5cf6b3fd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5cf6b3fdc6679c716003faf9c7eb7165e0203aea).
+
+The actual pulse entrance now satisfies the original strict two-vector cone throughout xi[0,.02], all Z[-1,1], including xi=0. Its conservative dimensionless directional bracket is greater than 1.9586218. Fourteen nonzero regions have current continuous source-function cone bounds; heat t=3 and the unbounded Gamma exterior remain an exact zero case. Eighteen upstream registry regions still have no current whole-domain cone admission.
+
+The construction retains all 15 signed sectors, actual incoming moments/energy/absolute pressure, full local/incoming/radial velocity and cross terms, both incoming/entrance and entrance/main function joins. Pre-Tw angular memory is factored before subtracting nearly equal final enclosures. The typed common Tw/mu definition and actual pre-power phase1 U source are bound; separate parameter objects need not have the same pointer. Forward/backward energy is one function.
+
+Read [CURRENT_PULSE_ENTRANCE_CONE_2026_10_06.md](CURRENT_PULSE_ENTRANCE_CONE_2026_10_06.md) for formulas and executable tasks. Focused stage: `currententrancecone`; API: `CurrentPulseEntranceCone(tailcone=checked_current_angular_tail_cone)`. The registry owner is `owners['incoming']`, not `owners['entrance']`. Producer/receipt use the `lei_ren_part1_paper_compliant_current_pulse_entrance_cone` prefix, with complete signed views in `_views.json.gz`. New identities: 14; consumed current incoming production identities: 112; strict directed bounds: 43. A further current O3 theta correlation construction is available in current_O3_theta_correlation.py/.json: 12 exact identities retain incoming M/K, the initial Xpre and exp(-t)*expm1(mu*t) before enclosure; O3 cone gates remain false. Producer/checker, scoped controller, checked endpoint/interior API and inherited main/zero-exterior scope passed. Working/index audit matched 806 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
+
+- [x] F57C-cone1b-main/tail/gap/flatten/angular: thirteen preceding strict nonzero regions, source joins and exact zero heat exterior.
+- [x] F57C-cone1b-entrance-1/2: whole current entrance, exact pre-Tw source memory, actual incoming histories/shear/pressure and both function joins.
+- [ ] **Next F57C-cone1b-O3:** whole actual O3 power and variable slope-to-mu transition. Correlate the COMPLETE theta inertial numerator, including incoming M/K transport, with the source X and exp(mu*t)-1; a standalone memory gap is insufficient. Keep full pressure/energy and ordinary log-radius derivatives.
+- [ ] F57C-cone1b-O2/inner/global: Rh/O2, patch/restore/reshape/switch/bridge/core; original shear loop, finite uniform N and independent five-moment repair where needed, then completed smooth global admissible stress/lift.
+- [ ] F57C-cone1c: two actual homogeneous oscillatory pulse families, covariance/finite errors, positive amplitudes and flat edge weights, signed lift/mean correction and averaged quadratic cancellation.
+- [ ] Genuine n=1/n>=2 coefficient recovery/moment repair, cancellation of nonflat leading origin E, finite-order estimates and smooth sum; resolved u/v/w, corrected Cartesian NS/energy and measured scale recursion/material winding.
+
+Global completed tensor/cone/lift/waves, temporal flatness, corrected NS/energy and genuine coefficient recursion remain open. Source inventory remains 33 regions / 32 adjacent / 14 internal tensor traces, primitive atlas 14 / 8. Keep the full long-term goal active and reuse the warm checked graph on branch `codex/st073-transition-next`. Earlier sections are historical.
+
+---
+
 # Current handoff: 13 nonzero cone regions plus exact zero exterior (2026-10-06)
 
 Implementation and scoped current angular/tail cone receipt: commit [f1006805](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f10068057aa0870ec6c98f2c10b110a95881043b).

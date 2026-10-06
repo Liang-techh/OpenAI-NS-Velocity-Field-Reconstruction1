@@ -1,6 +1,6 @@
 # Current whole pulse entrance cone
 
-Implementation commit: pending pin after the source/receipt commit.
+Implementation and scoped current entrance cone receipt: commit [5cf6b3fd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5cf6b3fdc6679c716003faf9c7eb7165e0203aea).
 
 ## Constructed result
 
@@ -62,6 +62,30 @@ Producer/checker, focused controller, fresh checked entrance API at xi=0/interio
 Inventory remains 33 tensor regions / 32 adjacent / 14 internal tensor traces, primitive atlas 14 / 8. The registry alias for entrance/incoming is **`registry.owners['incoming']`**; there is no `owners['entrance']` alias.
 
 ## Next executable tasks
+
+### New O3 construction available before the next cone bound
+
+`current_O3_theta_correlation.py` and its `.json` now provide an exact source-functional reduction of the COMPLETE order-zero O3 power theta stress. The actual `pulse_coefficients` AST and current `actual_power` inputs/normalizations are replayed; 12 symbolic identities passed. This adds a construction, without admitting the O3 cone.
+
+Let U0, M0, K0, Xpre be the actual scalar/raw canonical coefficients at O3 power phase0, t=Tw*phase, C=1/(1+Z^2), L=1-delta*Z^2, r=1-mu, b=(1-delta)/2 and k=1-delta/2. Define
+
+`A=k*C+2*b*Z^2*C^2`,
+
+`N=((2*delta*Z^2-1)*C+2*(1-Z^2)*Z^2*C^2)/L`.
+
+After dividing by the common positive `nu*lambda^(-2-delta)*sqrt(R/2)*B`, the full inertial theta numerator is
+
+`Theta=(A*X(t)-C)/L + C*M0*exp(-t) + N*(K0/U0)*exp(-r*t)`.
+
+The different radial-shear mode remains `-2*(1+mu)*C/R`. Incoming meridional transport has B power 2, so cancellation of the common B leaves ONE B factor. The actual normalized moment inputs are `raw_m/(Pstar*u)` and `raw_k/(Pstar*u^2)`; the latter is not `raw_k/(Pstar*u)^2`. Raw M/K constants and normalized moment hats must not be interchanged.
+
+With `Eq=(A/r-C)/L`, `Theta0=(A*Xpre-C)/L+C*M0+N*K0/U0`, and `D=A*(Xpre-1/r)/L+N*K0/U0`, the same exact source function is
+
+`Theta(t)=Eq+(Theta0-Eq)*exp(-t)+D*exp(-t)*expm1(mu*t)`.
+
+This keeps the M/K-memory correlation and the small expm1 drift before interval widening. At Z=0 it reduces to `k*X(t)-1+M0*exp(-t)-(K0/U0)*exp(-r*t)`. The zero-mu/delta O2 axial identity `K/U=M+4*(X-1)` gives `3*(1-X)`, illustrating why the memory sign alone is insufficient; that O2 relation is not asserted for the later O3 phase without its transition correction. Xpre is the initial source, not the final pulse-inlet Xp.
+
+Next work is a uniform positive bound for Theta0 and the correlated drift, retaining the separate inverse-R shear and full axial energy/pressure. The new record explicitly keeps both O3 cone gates false. It proves order-zero theta algebra only; its unused zero axial slots are not current pressure, energy or remainder values.
 
 Use branch `codex/st073-transition-next`. Read this latest checkpoint first and retain unrelated dirty experimental files. Reuse the warm checked source graph when available. Check only affected dependencies after a change. A regional cone result must not promote global or temporal completion gates.
 

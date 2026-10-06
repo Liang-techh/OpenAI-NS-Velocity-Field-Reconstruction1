@@ -1,5 +1,7 @@
 # Current angular and heat-tail cone
 
+Current successor: [CURRENT_PULSE_ENTRANCE_CONE_2026_10_06.md](CURRENT_PULSE_ENTRANCE_CONE_2026_10_06.md), commit [5cf6b3fd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5cf6b3fdc6679c716003faf9c7eb7165e0203aea). Entrance tasks below are complete; use the latest task list for O3/O2 and inner cones. The actual entrance registry alias is owners['incoming'].
+
 Implementation and scoped current angular/tail cone receipt: commit [f1006805](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f10068057aa0870ec6c98f2c10b110a95881043b).
 
 ## Constructed result
