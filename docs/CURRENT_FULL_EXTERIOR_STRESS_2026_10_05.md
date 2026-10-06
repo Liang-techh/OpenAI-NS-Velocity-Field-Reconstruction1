@@ -2,7 +2,7 @@
 
 The checked current complete future/selection now feeds every native postpulse source owner. Its actual normalized energy and zero meridional histories reach the full infinite Gamma exterior. Combined with the previously checked current angular and original pressure identities, this identifies both original similarity exterior stress components as exactly zero for Z in [-1,1] and log(R/Rtail)>=3, including the collar exit. This is a restricted source and similarity-stress result; complete physical installation, global tensor/cone, physical NS, flat remainder, prescribed-domain kinetic energy and temporal recursion remain open.
 
-Implementation commit: pending synchronization pin.
+Implementation and scoped receipts: commit [3e6694d2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6694d2).
 
 ## Callable modules and receipts
 

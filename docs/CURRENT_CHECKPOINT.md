@@ -1,6 +1,6 @@
 # Current checkpoint: postpulse energy and full similarity exterior stress (2026-10-05)
 
-Implementation commit: pending synchronization pin.
+Implementation and scoped receipts: commit [3e6694d2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6694d2).
 
 The current complete future/selection now owns the native flatten, power/angular, steep/waiting, collar and full Gamma energy history. Actual velocity-density Jacobians, the selected full-future/2 initial value and zero meridional transport are source-bound. With current Dtheta=0 and original Cp=0, both full similarity exterior stress components are exactly zero on Z in [-1,1], log(R/Rtail)>=3. Positive energy and the original datum/forward packet are retained. Complete physical installation, global cone/tensor, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain open.
 
