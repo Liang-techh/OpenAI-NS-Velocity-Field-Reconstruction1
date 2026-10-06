@@ -1,5 +1,7 @@
 # Current actual steep-entry tensor and angular-entry join (2026-10-06)
 
+Current continuation: [actual power/exit/waiting tensors and three joins](CURRENT_STEEP_WAITING_BACKGROUND_STRESS_2026_10_06.md) completes the next power and exit/waiting construction and joins below. Five actual tensor regions and four adjacent tensor joins are now available; the next task is current collar tensor plus waiting-collar join. Global and temporal obligations remain open.
+
 Implementation and scoped steep-entry tensor/join receipt: commit [c9e8cce6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c9e8cce6898b22d29e739abfce4270b512bc121f).
 
 The original current steep-entry region now has full A/E/P/K stress mixed3, its symmetric completed physical tensor and the regional decomposition `residual=-div(T_B)+E_B`, including physical divergence/remainder mixed2. The actual current angular and entry tensors also have their first function-level completed-tensor join and 65 common physical contribution bounds. This completes F57C5a-postpulse-entry, its regional F57C5b/F57C6a tasks, and F57C5b-angular-entry-join. It does not close the global versions of those tasks.
@@ -56,9 +58,9 @@ Exact working/Git-index source and receipt hashes pass for all 652 dependencies.
 - [x] F57C5a-postpulse-entry: current complete-moment entry stress using original sigma/J and analytic pressure.
 - [x] F57C5b-entry-completion/F57C6a-entry: actual regional completed physical tensor and residual/remainder decomposition.
 - [x] F57C5b-angular-entry-join: current source-function tensor join and common physical bounds.
-- [ ] F57C5a-postpulse-power: recover current steep-power full moments and actual tensor from the same complete history. Use the original source t=Ts*phase, distinguish phase derivatives from ordinary logR derivatives, and keep attenuated amplitude units in exact source logs. Preserve the native 1/4 half-energy floor and absolute pressure.
-- [ ] F57C5b-entry-power-join: instantiate full-moment and completed tensor equality at entry t=1 / power phase=0, with the same actual XS/PS, full energy and radius. Bound stress3/divergence2/diagonal2/remainder2 without using interval overlap.
-- [ ] F57C5a-postpulse-exit-waiting: recover actual steep-exit and waiting tensors from the current power/exit/heat histories, including original sigma derivatives, current Ts/wait and complete Gamma future. Then admit power-exit and exit-waiting tensor joins.
+- [x] F57C5a-postpulse-power: recover current steep-power full moments and actual tensor from the same complete history. Use the original source t=Ts*phase, distinguish phase derivatives from ordinary logR derivatives, and keep attenuated amplitude units in exact source logs. Preserve the native 1/4 half-energy floor and absolute pressure.
+- [x] F57C5b-entry-power-join: instantiate full-moment and completed tensor equality at entry t=1 / power phase=0, with the same actual XS/PS, full energy and radius. Bound stress3/divergence2/diagonal2/remainder2 without using interval overlap.
+- [x] F57C5a-postpulse-exit-waiting: recover actual steep-exit and waiting tensors from the current power/exit/heat histories, including original sigma derivatives, current Ts/wait and complete Gamma future. Then admit power-exit and exit-waiting tensor joins.
 - [ ] F57C5a-postpulse-flatten-power-collar: attach current flatten/outer-power/heat-collar full stress to the same owner, with the complete actual exterior zero-stress theorem. Keep nonzero moments, original pressure and source phase Jacobians.
 - [ ] F57C5a-pulse: actual entrance/main/exit/gap/end tensor from five histories, selected C1/C2, meridional cross terms, complete future/2 and Pin/P0; local support differences are not actual tensor values.
 - [ ] F57C5b/F57C6a-global: finish all actual tensor interfaces and compose every chart's physical decomposition; count actual tensor joins separately from the current22 velocity-pressure atlas.
