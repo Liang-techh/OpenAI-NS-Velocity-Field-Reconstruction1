@@ -1,5 +1,7 @@
 # Current flatten/power tensors and two joins (2026-10-06)
 
+Current continuation: [actual pulse-end tensor and five tensor traces](CURRENT_PULSE_END_BACKGROUND_TENSOR_2026_10_06.md) completes the end tensor, end-flatten attachment and four internal end-support tensor tasks below. Ten actual tensor regions, nine adjacent joins and four internal traces are now available. Next is the actual gap-end/gap tensor construction. Global and temporal obligations remain open.
+
 Implementation and scoped flatten/power tensor/join receipt: commit [c5327243](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5327243b5ebd82338f65ac454b6ebf541384851).
 
 The actual current flatten and outer-power tensors now attach to the checked angular-entry-O7-collar-Gamma tensor chain. Nine actual tensor regions and eight adjacent completed-tensor joins are available. This completes F57C5a-postpulse-flatten-outerpower and F57C5b-flatten-power/power-angular for the declared source-enclosure scope.
@@ -88,8 +90,8 @@ Actual tensor inventory: flatten, outer_power, outer_angular, steep_entry, steep
 
 - [x] F57C5a-postpulse-flatten-outerpower: both actual full tensors, current histories, common KR units, variable flatten K and ordinary derivatives.
 - [x] F57C5b-flatten-power/power-angular: two actual tensor joins, 130 common rows plus fresh sectors.
-- [ ] **Next: F57C5a-pulse-end / F57C5b-end-flatten.** Reuse this checked owner and `physical.history.pulse`; construct the actual end tensor from full five histories and the selected axial amplitudes. Reuse original end stress/physical operators with current units. Do not replace the tensor by previously available local differences. Supply whole end-domain and fresh compact sectors, actual nonzero rows and a source-function end-flatten join to the new flatten t=0 tensor. Save producer/checker/receipt and add a focused stage.
-- [ ] F57C5b-pulse-end-support: identify actual tensor one-sided traces at each of the four end-support edges, retaining the shared incoming/full quadratic histories. Compose existing flat local differences only after their actual common boundary tensor has been identified. Record each edge separately.
+- [x] **F57C5a-pulse-end / F57C5b-end-flatten.** Reuse this checked owner and `physical.history.pulse`; construct the actual end tensor from full five histories and the selected axial amplitudes. Reuse original end stress/physical operators with current units. Do not replace the tensor by previously available local differences. Supply whole end-domain and fresh compact sectors, actual nonzero rows and a source-function end-flatten join to the new flatten t=0 tensor. Save producer/checker/receipt and add a focused stage.
+- [x] F57C5b-pulse-end-support: identify actual tensor one-sided traces at each of the four end-support edges, retaining the shared incoming/full quadratic histories. Compose existing flat local differences only after their actual common boundary tensor has been identified. Record each edge separately.
 - [ ] F57C5a-pulse-main-exit: actual main/exit tensors on the current selected-amplitude graph; correct reciprocal radial coordinates, five moments, pressure, and their completed tensor interface.
 - [ ] F57C5a-pulse-gap-gapend: actual gap and gap-end tensors; preserve inherited nonzero histories and current pressure. Join exit-gap and gap-end/end with original radius/ordinary derivative conversion.
 - [ ] F57C5a-pulse-entrance/incoming: actual entrance tensor and incoming attachment; preserve source exponential factors and all retained boundary data. Record common completed tensor traces rather than only velocity/pressure continuity.
