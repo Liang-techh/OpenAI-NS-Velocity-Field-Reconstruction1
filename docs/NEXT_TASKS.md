@@ -1,3 +1,29 @@
+# Next: complete current physical installation and native joins (2026-10-05)
+
+Implementation commit: pending synchronization pin.
+
+The current complete future/selection now owns the native flatten, power/angular, steep/waiting, collar and full Gamma energy history. Actual velocity-density Jacobians, the selected full-future/2 initial value and zero meridional transport are source-bound. With current Dtheta=0 and original Cp=0, both full similarity exterior stress components are exactly zero on Z in [-1,1], log(R/Rtail)>=3. Positive energy and the original datum/forward packet are retained. Complete physical installation, global cone/tensor, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain open.
+
+Read [CURRENT_FULL_EXTERIOR_STRESS_2026_10_05.md](CURRENT_FULL_EXTERIOR_STRESS_2026_10_05.md). Receipts: `experiments/root_st073/lei_ren_part1_paper_compliant_current_postpulse_energy_history_check.json` and `lei_ren_part1_paper_compliant_current_full_exterior_stress_check.json`. Focused stages: `currentenergyhistory`, `currentfullstress`. Evidence: 66 energy C5 and 660 native mixed4 rows; 120 full stress mixed4 zero rows and 60 stable pressure rows; checked loading/fresh Z=.517, t=6.23; read-only review GPT-5.6 Luna / max accepted the restricted scope.
+
+Completed:
+
+- [x] F57B-current-postpulse-energy-history: actual complete integral units, radial Jacobians, stage factors/joins, selected initial value and zero meridional FTC/ODE source bindings.
+- [x] F57B-current-full-zero-exterior-stress: all five current histories, canonical full-Gamma theorem and positive factors; dedicated checked similarity-exterior receipt. This is not whole-physical or global admission.
+
+First unresolved work:
+
+- [ ] F57B1-current-owner-inventory: enumerate old selected/future/fifth callbacks and caches in native physical dispatch/assemblies; preserve incoming core/annuli and exact logs. Deliver an owner manifest.
+- [ ] F57B2-current-physical-installation: install one checked complete selected/postpulse graph into affected native physical chart providers and rebuild their caches. Consume aggregate current hashes; reject old/current mixtures.
+- [ ] F57B3-current-Cartesian-time-map: bind the new graph to actual physical u/v/w/p and fixed-position time derivatives, including moving basis; obtain fresh nontrivial points.
+- [ ] F57C-current-quantitative-interfaces-and-residual: rebuild affected native joins and physical tensor/remainder with exact source identities before numerical consistency checks.
+- [ ] F57D/F57E/F57F: global cone/lift, independently bounded flat remainder and prescribed-domain physical energy.
+- [ ] F58/F59/F60/F61: genuine n-dependent temporal recovery, oscillatory correction, independent full NS validation and measured contraction/elongation/winding.
+
+Use the detailed executable steps and acceptance conditions in the linked handoff. Work on the first unresolved dependency, mark completion with receipt/commit, and push. Keep the long-term goal active; spatial C5 is not time recursion. Older queue entries below are historical and superseded where they conflict with this section.
+
+---
+
 # Next: current energy-history transfer and full exterior stress (2026-10-05)
 
 Implementation and scoped receipt: commit [e57aa5e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e57aa5e0).
