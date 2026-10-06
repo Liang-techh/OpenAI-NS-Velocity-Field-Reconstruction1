@@ -1,21 +1,19 @@
-# Current handoff: twenty-seven actual tensor regions, twenty-six joins and ten internal traces (2026-10-06)
+# Current handoff: twenty-nine actual tensor regions, twenty-eight joins and ten internal traces (2026-10-06)
 
-Implementation and scoped actual R2/R110 power tensor receipt: commit [bcb5e7e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bcb5e7e01883a918442dd8790bb693047fbc0384).
+Both original microscopic switches now have complete physical background tensors and all three remainder components. New phase1 controls and135 exact R2 mixed4 source identities establish completed phase1/R2 attachments to power/R110/reshape/Rsh/reference/restore/patch/Rh through full Gamma. Inventory:29 actual regions,28 adjacent tensor joins,10 internal traces. Width, amplitude, signed actual axial drive, comparison own moments, six actual histories and analytic P0 remain. Separate velocity/absolute-pressure atlas:14 adjacent/8 internal.
 
-The whole actual original R2-to-R110 power region now has a full physical background tensor and all three remainder components. A new exact postpower/post/inlet source-function proof identifies its completed R110 attachment to long reshape, then through Rsh/reference/restore/patch/Rh to full Gamma. Admitted inventory: 27 actual regions, 26 adjacent tensor joins and 10 internal tensor traces. Original positive hb/R2/radius trees, six current histories, V110/F0 and analytic P0 remain. Separate velocity/absolute-pressure atlas:14 adjacent/8 internal.
+Read [CURRENT_MICROSWITCH_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_MICROSWITCH_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_microswitch_background_tensor_check.json`; stage `currentmicroswitchtensor`. Reuse `CurrentMicroswitchBackgroundTensor(power_tensor=checked_current_switch_power_tensor)`; retain the same native bridge/switch/core/physical/pre/selected/future/pressure graph. Complete unpruned data use `.json.gz`. Regional coverage does not establish global NS or temporal coefficient recursion.
 
-Read [CURRENT_SWITCH_POWER_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_SWITCH_POWER_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_switch_power_background_tensor_check.json`; stage `currentswitchpowertensor`. Reuse `CurrentSwitchPowerBackgroundTensor(reshape_tensor=checked_current_reshape_tensor)` and the same nested switch/long/restore/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.
-
-- [x] Actual whole long reshape/Rsh/reference/restore/patch/Rh/O2/O3 and angular through full Gamma tensors; previous25 adjacent joins and ten internal traces.
-- [x] F57C5a-switch-power: whole current actual R2..R110 full tensor, original output-only source-local adapter, six views/2088 physical contributions.
-- [x] F57C5b-R110: same six-moment/geometry/F0/P0 source proof, nine physical identities/135 mixed4 rows and 71 common completed tensor functions.
-- [ ] **Next: F57C5a-switch-first/second + F57C5b-phase1/R2.** Reuse `current_switch_power.switch`: evaluate(Z,phase,'first') on[0,1], evaluate(Z,phase,'second') on[1,2]. Preserve un-resolved original FactoredJet source rows, cancel/combine exact hb^-k and amplitude/pressure factors before caps, recover raw full stress/remainder tensors and both source-function completed traces. Export whole/endpoints/fresh sectors, focused pair/receipt/controller; commit/push.
-- [ ] F57C5a-bridge/core,F57C5b-R100,F57C4e-axis: all upstream full tensors/attachments and nonsingular physical-axis limits from the same source.
-- [ ] F57C5b-angular-internal/F57C6a-global: four angular internal tensor traces and prescribed complete chart/interface/axis coverage.
-- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, admissible cone/lift and prescribed-domain kinetic energy.
+- [x] Actual whole R2..R110 power/R110/long reshape/Rsh/reference/restore/patch/Rh/O2/O3 and angular through full Gamma tensors; previous26 adjacent/10 internal traces.
+- [x] F57C5a-switch-first/second: both original whole micro-switch full tensors; exact source phase-to-y/raw-unit141 identities; full signed sectors and twelve views.
+- [x] F57C5b-phase1/R2: original control identities, complete135-row R2 source replay and both71-function completed tensor joins.
+- [ ] **Next: F57C5a-bridge-first/second/macro + F57C5b-bridge/R100.** Obtain the same live `CurrentActualBridgeMixedC4` from `current_micro.physical.dispatch.provider('bridge_first')`. Preserve unresolved original source rows and its axial-six/radial-coordinate algebra; micro hb^-j and macro conversion must remain distinct. Construct full raw stress/remainder tensors on bridge_first[0,1],bridge_second[1,2],bridge_macro[0,1], then identify their three completed source attachments through R100 to switch_first. See detailed source/task instructions in the new checkpoint. Export whole/endpoints/fresh evidence and focused pair/controller; commit/push.
+- [ ] F57C5a-core/F57C4e-axis: complete fixed-point core tensor, core/bridge source attachment and nonsingular physical-axis limits.
+- [ ] F57C5b-angular-internal/F57C6a-global: four angular support full tensor joins and prescribed global chart/interface/axis coverage.
+- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, global admissible cone/lift and required-domain kinetic energy.
 - [ ] F58/F59/F60/F61: actual n-dependent recovery/repairs/summation, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/winding.
 
-Construct the next actual regions and boundaries. Reuse checked prerequisites, preserve source evidence, update handoffs and commit/push. Regional counts do not establish global NS or temporal scale recursion. The long-term goal stays active.
+Construct the next actual regions and boundaries. Reuse checked prerequisites, preserve source evidence, mark only completed scope done, update handoffs and commit/push. The long-term goal stays active.
 
 ---
 
