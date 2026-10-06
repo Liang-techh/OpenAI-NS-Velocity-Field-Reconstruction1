@@ -1,5 +1,7 @@
 # Current physical interface transfer (2026-10-06)
 
+Implementation and restricted interface receipt: commit [0ad461dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0ad461dccea540ce206c82f4c1d19269ce5986d7).
+
 The complete current 33-chart source now has an executable ledger for fourteen adjacent chart interfaces and eight interior beta-support boundaries. The current selected pulse end and flatten inlet are identified as the same velocity, absolute pressure and five-history trace. Their ordinary mixed derivatives through order four and the original Cartesian spatial4/fixed-position time1 trace agree structurally at R=Rv. This is one current interface, not admission of all interfaces, full physical tensor/NS, production point values or temporal recursion.
 
 ## Callable source and receipt

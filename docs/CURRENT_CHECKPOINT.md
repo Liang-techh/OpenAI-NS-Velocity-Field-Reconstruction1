@@ -1,5 +1,7 @@
 # Current checkpoint: current end/flatten physical trace (2026-10-06)
 
+Implementation and restricted interface receipt: commit [0ad461dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0ad461dccea540ce206c82f4c1d19269ce5986d7).
+
 The checked current 33-chart source now has fourteen adjacent-interface entries and eight internal beta-support boundary entries. The actual current end→flatten velocity/absolute-pressure mixed4 trace and original physical spatial4/fixed-position time1 trace are identified. Complete future/2, original P0/Pin, positive logarithmic units and empty-support meridional histories are retained. Thirteen adjacent current mixed4 trace admissions and all eight internal full-field support transfers remain open, as do quantitative all-interface, production points, tensor/cone, NS, flat remainder, physical energy and genuine temporal recursion.
 
 Read [CURRENT_PHYSICAL_INTERFACES_2026_10_06.md](CURRENT_PHYSICAL_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_physical_interfaces_check.json`; stage `currentinterfaces`. Evidence: 60 native source identities, 155 arbitrary-function endpoint identities, 120 native consistency rows, 864 two-sided physical contributions; three wrong-source substitutions rejected; checked loading/fresh Z=.527. Raw pulse UT already excludes the common radial exponential; division by U alone is correct. Exact pressure log sources precede cap-enclosure diagnostics. Reviewer: GPT-5.6 Luna / max, restricted scope accepted.
