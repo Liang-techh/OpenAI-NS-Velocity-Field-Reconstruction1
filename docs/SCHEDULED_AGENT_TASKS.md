@@ -1,5 +1,7 @@
 # Current executable queue: current heat constants and collar mixed4 (2026-10-05)
 
+Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).
+
 Start with docs/AGENT_TASKS.md and docs/CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md. F57B pressure mixed4, collar stress mixed3 and actual exterior stress mixed4 are accepted in their stated scopes. Producer/checker: current_heat_pressure_stress.py/_check.py and matching receipts; focused stage: currentheatstress. Preserve existing receipts by hash.
 
 Priority: identify actual current native Xp/Xv with the repair initial source, identify future/ angular4 repair functions and weights, then replay the current angular terminal history. Independently close current Ptail plus the full pressure future against the original common axis datum. Extend K_y5 before claiming collar stress mixed4. Never set the retained constants to zero to make a report pass. F57A native quantitative joins and the later point/global/flatness/required-energy/temporal/oscillatory layers remain open. Mark only proved scopes complete and push owned artifacts.

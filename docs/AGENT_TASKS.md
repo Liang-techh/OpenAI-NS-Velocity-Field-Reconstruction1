@@ -1,5 +1,7 @@
 # Active tasks after current heat pressure/stress recovery (2026-10-05)
 
+Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).
+
 F57B is partially complete. Read CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md and CURRENT_CHECKPOINT.md first. Current absolute pressure mixed4, collar actual stress mixed3 and exterior actual stress mixed4 are admitted with both terminal constants retained. Follow the updated F57B checkboxes below: next close current native/repair input functions, current terminal equations and collar K_y5. F57A quantitative native interfaces can proceed independently. Global stress/energy/flatness, complete points and genuine temporal recursion remain open.
 
 ---

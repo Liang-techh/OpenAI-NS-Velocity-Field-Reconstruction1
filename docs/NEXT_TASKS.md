@@ -1,5 +1,7 @@
 # Next: current source constants, collar mixed4 and native pulse joins (2026-10-05)
 
+Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).
+
 Read CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md and the updated F57B tasks in AGENT_TASKS.md. The current heat pressure/stress companion is admitted through pressure4, collar stress3 and exterior stress4, retaining the actual two constants. Run --stage currentheatstress. All four common-core/bridge joins remain accepted.
 
 1. Bind current native Xp/Xv to the repair initial source and identify the two repair constructors' functions/weights; rebuild from the actual inlet if they differ.

@@ -1,5 +1,7 @@
 # Current heat pressure and actual stress with retained constants
 
+Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).
+
 F57B now has a current-source pressure/stress companion. It acquires the checked common core and all four bridge joins, then uses that graph's waiting, collar and full Gamma exterior. The producer and independent checker pass; checked loading and a fresh current-source coordinate are checked separately. This is partial F57B completion: current exterior stress is recovered, but has not been proved zero.
 
 Run the focused stage:
