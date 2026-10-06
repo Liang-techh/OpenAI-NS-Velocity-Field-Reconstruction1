@@ -1,5 +1,7 @@
 # Five-moment interface audit and the shear-loop route
 
+Current-source successor: [CURRENT_O3_SHEAR_MODULATION_2026_10_06.md](CURRENT_O3_SHEAR_MODULATION_2026_10_06.md), commit [43320b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43320b19d5681b115c7c552f8ce1755caa6145d8). The historical remote analog screens below concern different inputs and stay rejected. The current actual-source direction/periodic target loop and local finite-N profiles are now constructed; independent five-moment restoration and complete modified cone remain open.
+
 The [OpenAI Navier–Stokes paper](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf), Section 4.2 and Appendix C, separates two operations that our first remote patch had conflated. Equation (4.15) tracks **five** cumulative radial quantities:
 
 | Name | Integral from the axis to `X` |

@@ -1,5 +1,7 @@
 # Current whole O3 power cone
 
+Current successor: [CURRENT_O3_SHEAR_MODULATION_2026_10_06.md](CURRENT_O3_SHEAR_MODULATION_2026_10_06.md), commit [43320b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43320b19d5681b115c7c552f8ce1755caa6145d8). Original O3 power remains proved. Variable direction, target shear loop and local finite-N E/U profiles are now constructed; changed five moments/pressure, uniform N and complete modified cone remain open.
+
 Implementation and scoped current O3 power cone receipt: commit [3e9a4064](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e9a406471b694431f3f8d0fabd62f07691e6ce1).
 
 ## Constructed result

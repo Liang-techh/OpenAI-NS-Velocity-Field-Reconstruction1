@@ -1,24 +1,29 @@
-# Current handoff: 15 nonzero cone regions plus exact zero exterior (2026-10-06)
+# Current handoff: O3 finite-frequency profiles; five-moment restoration next (2026-10-06)
 
-Implementation and scoped O3 power receipt: commit [3e9a4064](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e9a406471b694431f3f8d0fabd62f07691e6ce1).
+Implementation and source receipts: commit [43320b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43320b19d5681b115c7c552f8ce1755caa6145d8).
 
-The actual whole O3 power now satisfies the original strict two-vector cone on phase[0,1], all Z[-1,1], including both endpoints and Z=0. The conservative directional expression is below 5.076e-435; the directional bracket exceeds 1.999999. Fifteen current nonzero regions have continuous source-function proofs. The exact zero heat edge and unbounded exterior remain separate. Seventeen registry regions have no current whole-domain cone admission. These counts are regional cone coverage, not a percentage of the full project.
+The actual whole O3 variable transition now has continuous direction and positive stress on offset[0,1], Z[-1,1], retaining all eleven signed sectors, variable ordinary logU jets, full energy, functional absolute pressure and remainder. Original strict shear remains zero at the nonzero-stress offset0, so its closed cone is still open.
 
-The proof uses the actual correlated O2/O3 history: X0=1-D+mu*V and K0/U0=M0*exp(mu/2)-4D, with the same nonnegative transition integral. It retains all ten original O3 signed sectors, full energy, signed absolute pressure, incoming radial velocity and complete tensor/remainder views. Full pressure is composed backwards from the same current Rv datum and actual phase1 inlet; Pv_Z is retained. Axial velocity and five axial sectors vanish by source/operator identities. Independent history boxes are not subtracted to infer the tiny deficit.
+A current-source mean-preserving periodic shear loop and **actual local finite-N velocity profiles** now cross the O2/O3 seam. The support is t=log(R/Rd) in(-2,1/2), with chi=1 on[-1,1/4]; it is flat at O2_buffer9 and O3_offset1/2. E_N and U_N, their logR/Z rows and all five signed increment densities are callable with the actual phase N*t and exact Pstar factors. The sample N=10^12 exercises the formula; it is not a certified sufficient frequency. Modified cumulative histories, pressure, radial velocity, repair, common N and completed cone remain uninstalled.
 
-Read [CURRENT_O3_POWER_CONE_2026_10_06.md](CURRENT_O3_POWER_CONE_2026_10_06.md) for the formulas and detailed executable tasks. Focused stage: `currento3powercone`; API: `CurrentO3PowerCone(entrancecone=checked_current_entrance_cone)`. Actual owner: `registry.owners['incoming']`; variable transition owner: `registry.owners['o3']`. Prefix: `lei_ren_part1_paper_compliant_current_O3_power_cone`, with complete source views in `_views.json.gz`.
+Read [CURRENT_O3_SHEAR_MODULATION_2026_10_06.md](CURRENT_O3_SHEAR_MODULATION_2026_10_06.md) for exact formulas, API and MOD1–MOD11 tasks. Focused original-source controller stage: `currento3transitiondirection`. Candidate API: `CurrentO3FiniteFrequencyProfiles(checked_current_transition_direction).profile(region,Z,coordinate,N)`, on `O2_buffer` or `O3_slope_mu`. The candidate must use its own changed five moments and common-axis pressure.
 
-Evidence: 50 new original identities, 12 full-theta identities, 24 canonical whole-Z identities, 3 actual correlation/pressure endpoint identities, 112 consumed production identities and 25 positive directed bounds. Producer/checker, scoped controller, checked endpoint/interior API, inherited entrance/zero exterior and compilation passed. Working/index source audit matched 813 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
+Evidence: 39 exact variable/loop identities, 23 positive directed bounds, 17 exact finite-N/coordinate/moment identities, actual source seam and flat profile edges. Producer/checkers, focused controller, checked native original API and inherited power/zero exterior, finite-N chain-rule consistency and compilation passed. Working/index source audit matched 823 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
 
-- [x] F57C-cone1b downstream: end, main/exit, gap/gap-end, flatten/power, angular/entry/steep power/exit/waiting, heat collar and whole entrance; exact zero exterior separate.
-- [x] F57C-cone1b-O3-power: continuous actual power cone, full M/K/X and energy/pressure, both source joins, checked regional API/controller.
-- [ ] **Next F57C-cone1b-O3-transition:** continuous variable slope_mu offset[0,1], same positive kernels and correlated histories, variable logU derivatives, actual full stress/shear/energy/pressure. Power endpoint admission is insufficient for this chart.
-- [ ] F57C-cone1b-O2/inner/global: Rh/O2, patch/restore/reshape/switch/bridge/core and axis; original shear loop, finite uniform N and independent moment repair where required; smooth completed global admissible tensor/lift.
-- [ ] F57C-cone1c: two actual oscillatory velocity families, mean correction, positive amplitudes/flat edges, covariance and finite-error bounds, then averaged quadratic stress cancellation.
-- [ ] Actual n=1/n>=2 coefficient recovery, independent five-moment repair, removal of nonflat leading origin remainder, finite-order bounds and smooth sum.
-- [ ] Resolved physical u/v/w, corrected independent Cartesian NS and finite energy, measured scale recursion, core-width/aspect exponents, vorticity and material winding.
+Original checked counts stay **15 strict nonzero whole regions plus separate exact zero exterior; 17 whole regions open**. Inventory33/32/14 and primitive atlas14/8 stay fixed. These are regional counts, not full-project completion percentages. Original-source receipts do not automatically admit a changed source.
 
-Global tensor/cone/lift, actual waves, n-dependent recursion, temporal flatness and corrected NS/energy remain open. Inventory stays 33 regions / 32 adjacent / 14 internal tensor traces, primitive atlas 14 / 8. Keep the full long-term goal active, preserve unrelated dirty files and reuse the warm checked graph on `codex/st073-transition-next`. Earlier sections below are historical.
+- [x] F57C-cone1b-O3-power: actual whole-domain correlated power cone with full pressure/energy.
+- [x] F57C-cone1b-O3-direction: full variable direction, positive theta and exact nonzero zero-shear endpoint diagnosis.
+- [x] F57C-O3-local-profiles: mean-preserving periodic target, supported actual E_N/U_N jets and all five increment density sources.
+- [ ] **Next MOD1–MOD3:** integrate five signed increments with high-frequency bounds and axial derivatives; recover the same-axis pressure. Do not reuse original histories.
+- [ ] MOD4–MOD6: fix the quiet-power repair interval, rebuild current two/three bump matrices with actual mu, solve independent functional five-moment repair. The old fixed repair matrix has another source.
+- [ ] MOD7–MOD11: choose one finite uniform N from actual error/repair/cone constants; recover radial velocity; prove affected source/tensor joins, O2 taper and actual modified closed O3 cone.
+- [ ] Remaining inner/O2 cones and smooth global admissible tensor/lift.
+- [ ] Actual n=1/n>=2 coefficient recursion, independent per-order moments, removal of nonflat leading origin remainder, finite-order bounds and smooth sum.
+- [ ] Two actual oscillatory velocity families, mean correction, covariance/error bounds and averaged quadratic stress cancellation.
+- [ ] Resolved physical u/v/w, independent corrected Cartesian NS, finite energy and measured scale recursion, core widths/aspect ratios, vorticity and material winding.
+
+Keep the full original long-term goal active. Reuse warm session64009 and checked graph on `codex/st073-transition-next`; avoid cold all-stage rebuilds. Preserve unrelated dirty files. Earlier sections below are historical.
 
 ---
 
