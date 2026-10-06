@@ -1,3 +1,5 @@
+Historical correlated source-radius milestone. Continuation: [CURRENT_GLOBAL_TENSOR_COVER_2026_10_06.md](CURRENT_GLOBAL_TENSOR_COVER_2026_10_06.md); independent source-bound global physical T/E coverage now exists. Original cone/lift and actual coefficient recursion remain open.
+
 # Current correlated source radius tensor locator (2026-10-06)
 
 Implementation and scoped correlated source radius / exact boundary selector receipt: commit [138363dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/138363dcf699e65f12b67c075d374aa7f55e90e0).

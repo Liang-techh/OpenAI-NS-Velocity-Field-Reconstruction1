@@ -1,3 +1,23 @@
+# Current handoff: independent source-bound global physical T/E cover (2026-10-06)
+
+The independent global physical tensor-cover milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+
+For every finite physical point at positive time-to-terminal and finite positive constant viscosity, the fixed admitted source has a unique finite implicit axial scale and is covered by the original 33 strictly ordered radial charts, the separate analytic core axis, and unbounded exact Gamma. All 32 adjacent / 14 support trace routes remain bound; primitive atlas is 14 / 8.
+
+This is a source-function cover with conservative candidate unions. An absolute outer radius still retains 25 candidates; unique region/seam selection, converged u/v/w/p, admissible cone/lift, corrected NS, energy, flatness and genuine coefficient recursion remain open. The nonflat leading origin E term is still a construction target.
+
+Read [CURRENT_GLOBAL_TENSOR_COVER_2026_10_06.md](CURRENT_GLOBAL_TENSOR_COVER_2026_10_06.md). Producer/receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_global_tensor_cover.json` and `_check.json`. Focused stage: `currentglobalcover`; warm API: `CurrentGlobalTensorCover(field=checked_correlated_tensor_locator)`. Earlier handoffs below are historical.
+
+- [x] F57C-global-cover1f: independent global axial/radial cover, actual positive/finite source hypotheses, exact shared-width provenance, complete T/E source union, axis/Gamma special paths and replayed source locations.
+- [ ] **Next F57C-cone1a:** recover the original stress cone/lift from the supplied paper versions with exact page/equation references; map each inequality and physical normalization to this same signed graph.
+- [ ] F57C-cone1b: source-correlated cone margins and original lift across all regions; distinguish failed/inconclusive signs from admission and repair the actual construction.
+- [ ] Actual n=1 and distinct n>=2 recovery/moment repair, leading origin E cancellation/absorption, then finite-order estimates and completed flatness/smooth sum.
+- [ ] Converged physical u/v/w/p, prescribed-domain energy, both oscillatory families/mean corrections, corrected NS and measured dynamics.
+
+The source-bound global tensor cover gate is now admitted. It does not admit cone/point/NS/energy/flatness/recursion. Reuse the warm graph; keep the full long-term goal active.
+
+---
+
 # Current handoff: exact correlated source radius inverses and 46 boundary selectors (2026-10-06)
 
 Implementation and scoped correlated source radius / exact boundary selector receipt: commit [138363dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/138363dcf699e65f12b67c075d374aa7f55e90e0).
