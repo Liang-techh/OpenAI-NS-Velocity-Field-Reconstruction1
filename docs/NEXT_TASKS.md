@@ -1,3 +1,22 @@
+# Current handoff: thirty-two actual tensor regions, thirty-one joins and ten internal traces (2026-10-06)
+
+Three original bridge charts now have complete physical background tensors and all three remainder components. The phase1, smoothing/macro and R100 attachments connect them through microscopic switches/power/R110/reshape/reference/restore/patch to full Gamma. Inventory: **32 actual regions, 31 adjacent tensor joins, 10 internal traces**. Separate velocity/absolute-pressure atlas: 14 adjacent/8 internal.
+
+Read [CURRENT_BRIDGE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_BRIDGE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_bridge_background_tensor_check.json`; stage `currentbridgetensor`. Reuse `CurrentBridgeBackgroundTensor(micro_tensor=checked_current_micro_tensor)` and the same native bridge/core/physical/pressure graph. Full unpruned data are stored in one index and three deterministic gzip chart shards.
+
+- [x] F57C5a-bridge-first/second/macro: full actual tensors, eighteen complete source views, 64,167 physical contributions; microscopic hb^-j and original macro ordinary-y units retained.
+- [x] F57C5b-bridge phase1/smoothing/R100: consumed original current functional joins plus 270 full generator identities; three completed 71-function tensor attachments. Unit/ODE proof has 282 identities.
+- [x] Keep all previous regions and joins through full Gamma; focused checker/controller passed on the same checked graph.
+- [ ] **Next: F57C5a-core/F57C5b-core-inlet.** Reuse the admitted fixed point and six interior integral functions in `core_integral_atoms.py`; bind full stress-free source ODE identities, nonzero remainder, rho-to-y Stirling conversion and exact `CurrentCoreFirstInterface` phase-zero attachment. The detailed checkpoint splits this into twelve concrete tasks.
+- [ ] F57C4e-axis: nonsingular same-source tensor/remainder limits; current axis velocity/pressure receipt is insufficient.
+- [ ] F57C5b-angular-internal/F57C6a-global: four angular full tensor support joins and all prescribed global chart/interface/axis coverage.
+- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u/v/w/p, global admissible cone/lift and required-domain kinetic energy.
+- [ ] F58/F59/F60/F61: actual n-dependent recovery/repairs/summation, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/winding.
+
+Construct the core and its source attachment next. Reuse receipts instead of repeating the historical pipeline. Counts measure regional coverage; global NS and n-dependent recursion remain open. Mark only evidenced scope done, update handoffs and commit/push. The long-term goal stays active.
+
+---
+
 # Current handoff: twenty-nine actual tensor regions, twenty-eight joins and ten internal traces (2026-10-06)
 
 Implementation and scoped actual microscopic-switch/phase1/R2 tensor receipt: commit [3b5eac73](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3b5eac732abfa4eb5d67e1652d28a75542a6a9cd).
