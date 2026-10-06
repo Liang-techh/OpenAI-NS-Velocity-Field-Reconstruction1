@@ -1,5 +1,8 @@
 # Current eight postpulse interface transfer (2026-10-06)
 
+Update: all five current pulse adjacent tasks P1-P5 below are now complete. The current adjacent-source ledger is 14/14. See [CURRENT_PULSE_INTERFACES_2026_10_06.md](CURRENT_PULSE_INTERFACES_2026_10_06.md) for the checked evidence and eight separate support-edge tasks. Earlier 9/14 descriptions in this milestone are historical; global quantitative and temporal gates remain open.
+
+
 Implementation and scoped eight-interface receipt: commit [5b1abc72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b1abc7202bd19634a8a2b369ac58da956def0be).
 
 The checked current complete-energy graph now identifies all eight postpulse adjacent mixed4 traces and their original Cartesian spatial4/fixed-position time1 traces. Together with the current end/flatten trace, nine of the fourteen inventoried adjacent interfaces have current source-function identification. This fraction measures this interface inventory only, not overall reconstruction progress. Five earlier pulse interfaces and eight internal beta-support transfers remain open. Quantitative all-interface admission, global tensor/cone, resolved points, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain separate.
@@ -44,11 +47,11 @@ Production phase recipes and radius branches are AST-bound. `D_phase=J*D_y`, so 
 
 Work on the five current pulse seams next. Reuse the existing checked source graph; derive defining-function identities before consistency bounds. Mark a task complete only with its current source-bound receipt and pushed commit.
 
-- [ ] F57C2-P1 entrance/main: evaluate the actual common selected pulse at t=.02/mu and xi=.02; bind original entrance and main formulas, five boundary histories, absolute P0/Pin and positive units. Convert d_xi to d_y using mu and establish every ordinary mixed index j+n<=4.
-- [ ] F57C2-P2 main/exit: bind both routes to the same actual main callable at xi=10, with the same selected amplitude and caches. Prove the common endpoint functions and recovery recurrences; retain native-to-physical factors.
-- [ ] F57C2-P3 exit/gap: bind xi=11 in both current providers, accumulated forcing histories and original pressure integral. Identify all five primitives before deriving velocity/absolute-pressure mixed4 rows.
-- [ ] F57C2-P4 gap coordinate: use exact xi=12, s=-1/mu and xi=13+mu*s. Keep reciprocal source identities distinct from the legal rounded coordinate/overlap cover. Rebase native velocity factors with the exact positive source unit and derive ordinary y jets.
-- [ ] F57C2-P5 gap-end/end: bind the actual current s=-4 boundary with empty first end-beta support and matching inherited primitive histories. Prove endpoint source equality and ODE derivative transfer; do not reuse an old frozen pulse certificate as current admission.
+- [x] F57C2-P1 entrance/main: evaluate the actual common selected pulse at t=.02/mu and xi=.02; bind original entrance and main formulas, five boundary histories, absolute P0/Pin and positive units. Convert d_xi to d_y using mu and establish every ordinary mixed index j+n<=4.
+- [x] F57C2-P2 main/exit: bind both routes to the same actual main callable at xi=10, with the same selected amplitude and caches. Prove the common endpoint functions and recovery recurrences; retain native-to-physical factors.
+- [x] F57C2-P3 exit/gap: bind xi=11 in both current providers, accumulated forcing histories and original pressure integral. Identify all five primitives before deriving velocity/absolute-pressure mixed4 rows.
+- [x] F57C2-P4 gap coordinate: use exact xi=12, s=-1/mu and xi=13+mu*s. Keep reciprocal source identities distinct from the legal rounded coordinate/overlap cover. Rebase native velocity factors with the exact positive source unit and derive ordinary y jets.
+- [x] F57C2-P5 gap-end/end: bind the actual current s=-4 boundary with empty first end-beta support and matching inherited primitive histories. Prove endpoint source equality and ODE derivative transfer; do not reuse an old frozen pulse certificate as current admission.
 - [ ] F57C2-B1 pulse end support edges: treat s=-3 +/- 3/20 and s=-1 +/- 3/20 separately. Bind beta flat jets, actual selected coefficient functions and continuous past/future integrals. Derive full current native field traces and then physical bounds.
 - [ ] F57C2-B2 outer angular support edges: the same four exact beta edges, with actual current angular C5 coefficients, signed angular/pressure history and complete future energy. Preserve the full quadratic energy terms; verify no interval cap defines a field value.
 - [ ] F57C3 combine all fourteen adjacent current source traces and eight support transfers into one checked ledger. Reject stale owner, datum, amplitude, coordinate and unit substitutions. Keep every exact source boundary separate from numerical coverage endpoints.

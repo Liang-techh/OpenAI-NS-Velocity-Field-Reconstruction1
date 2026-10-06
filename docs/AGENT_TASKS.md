@@ -1,3 +1,26 @@
+# Current tasks: eight support transfers and global stress (2026-10-06)
+
+All five current pulse adjacent mixed4 traces and their original physical spatial4/fixed-position time1 traces are now source-identified. Together with nine previous traces, all fourteen entries in the adjacent-interface inventory are complete at the defining-function level. Eight internal beta-support transfers and quantitative all-interface admission remain open. Resolved point fields, full tensor/cone/NS, independent flat remainder, prescribed-domain kinetic energy and genuine n-dependent temporal recursion remain separate.
+
+Read [CURRENT_PULSE_INTERFACES_2026_10_06.md](CURRENT_PULSE_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_interfaces_check.json`; stage `currentpulseinterfaces`. Evidence: 375 five-primitive and 300 velocity/absolute-pressure mixed4 identities, 750 native consistency rows and 2,160 two-sided physical contributions; four wrong-source substitutions rejected. The exact reciprocal endpoint is reduced to D=1, xi=12 before directed enclosure; rounded coverage stays separate. Native packets are reused by the unchanged physical operator to avoid duplicate integrals.
+
+- [x] F57C2-P1 entrance/main: exact t=.02/mu, xi=.02, shared current source and ordinary y coordinate chain.
+- [x] F57C2-P2 main/exit: same actual callable at xi=10, current selected energy/functions and physical units.
+- [x] F57C2-P3 exit/gap: selected inverse/energy equation, five histories and flat forcing at xi=11.
+- [x] F57C2-P4 reciprocal gap coordinate: exact s=-1/mu, xi=12, D=1 source kernel; public guards and rounded coverage retained separately.
+- [x] F57C2-P5 gap-end/end: s=-4 full future weights, current coefficients, positive end scale/baseline and inherited histories.
+- [x] F57C2-postpulse/end-flatten: retain all nine previous checked source traces; combined adjacent count 14/14.
+- [ ] F57C2-B1a/B1b/B1c/B1d: four current pulse-end support edges; source-bound one-sided weighted-integral limits and full inherited histories, then mixed4/physical transfer.
+- [ ] F57C2-B2a/B2b/B2c/B2d: four current outer-angular support edges; exact FTC theorem with A/B/D/E/F signed modes and quadratic terms, then full current X/energy/P and physical trace transfer.
+- [ ] F57C3/F57C4: combined fourteen-plus-eight source receipt, then common quantitative physical bounds with exact positive scales and covered sectors.
+- [ ] F57C5/F57C6: prescribed current physical stress and residual=-div(T_B)+E_B with independent remainder bounds.
+- [ ] F57D/F57E/F57F: source-defined nonzero physical points, global cone/lift/flatness and prescribed-domain kinetic energy.
+- [ ] F58/F59/F60/F61: n-dependent temporal recovery, both oscillatory families, independent corrected NS and measured dynamics.
+
+Next work is the eight internal support edges. The detailed handoff splits them into eight bounded tasks, with source recipes and completion obligations. This section supersedes older pulse-adjacent-open and 9/14 entries below. The long-term goal remains active; this interface fraction is not overall progress or temporal recursion.
+
+---
+
 # Current tasks: remaining five pulse seams and eight support edges (2026-10-06)
 
 Implementation and scoped eight-interface receipt: commit [5b1abc72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b1abc7202bd19634a8a2b369ac58da956def0be).
