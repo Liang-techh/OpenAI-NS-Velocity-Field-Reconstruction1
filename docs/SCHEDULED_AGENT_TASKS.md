@@ -1,24 +1,22 @@
-# Current handoff: actual angular background tensor (2026-10-06)
+# Current handoff: steep-entry tensor and first actual tensor join (2026-10-06)
 
-Implementation and scoped actual-angular tensor receipt: commit [f02a1a0b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f02a1a0bc5b3da409b63edae2a1380eb2cf5a98f).
+Current angular and steep-entry regions now have actual full-moment background stresses, symmetric physical tensor completion and regional residual=-div(T_B)+E_B. The first actual completed-tensor interface, angular-entry, is function-identified and has 65 common physical contribution bounds. F57C5a-postpulse-entry, F57C5b-entry-completion/F57C6a-entry and F57C5b-angular-entry-join are complete. The current22 velocity/absolute-pressure trace inventory remains 14 adjacent / 8 internal; actual completed-tensor adjacent joins are counted separately: one.
 
-The original angular region now has current full A/E/P/K stress mixed3, its prescribed symmetric physical tensor completion and the regional decomposition residual=-div(T_B)+E_B, with divergence/remainder mixed2. F57C5a-angular, F57C5b-angular-completion and F57C6a-angular are complete. Seven whole-domain/boundary/support/fresh-parameter calculations check 455 factored physical contribution rows (434 nonzero), 45 original full-moment normalization identities and 40 original stress baseline/homogeneity identities. These are directed enclosures with exact source factors, not resolved physical point values.
+Read [CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md](CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_entry_background_stress_check.json`; focused stage `currententrystress`. Reuse `CurrentSteepEntryBackgroundStress(angular=checked_current_angular_tensor)`. Five entry views check 325 physical tensor/divergence/remainder rows (310 nonzero enclosures); 45 full-moment identities and 45 A=KX/correlated-operator identities retain original pressure and complete nonzero histories. A fresh sector checks another 65 common tensor-interface bounds. These are directed source enclosures with exact log scales, not resolved physical point values.
 
-Read [CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md](CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_background_stress_check.json`; focused stage `currentangularstress`. Reuse `CurrentAngularBackgroundStress(atlas=checked_current_interface_atlas)`. The same complete future, analytic P0/Pin and nonzero cumulative histories remain; full pressure is restored through the replayed current Cp=0 chain without dividing amplitude caps. Read-only reviewer: GPT-5.6 Luna / max.
-
-The previous [current22 interface atlas](CURRENT_INTERFACE_ATLAS_2026_10_06.md) remains admitted: 14 affected adjacent / 8 internal velocity-pressure source traces and their all-angle/whole-source-Z/finite-compact-time bounds. Actual tensor joins, other regional tensors, full33 quantitative interfaces, axis attachment, global cone/lift/NS/temporal remainder/energy/points and n-dependent recursion remain open.
-
-- [x] F57C3/F57C4 affected-traces: one current22 source atlas and actual common velocity/absolute-pressure spatial4/time1 bounds.
-- [x] F57C5a-angular/F57C5b-angular-completion/F57C6a-angular: full current angular stress, completed physical tensor and regional remainder decomposition.
-- [ ] **Next: F57C5a-postpulse-entry** — recover the current steep-entry full A/E/P/K stress using the same angular terminal functions and original transition kernels; then prove/bound the actual angular-entry completed-tensor join. Reuse checked owners instead of rebuilding historical quadratures.
-- [ ] F57C5a-postpulse-rest: attach flatten/power/steep/waiting/collar full stress to current histories; retain source coordinates, nonzero energy/pressure and the full Gamma exterior theorem.
-- [ ] F57C5a-pulse: actual entrance/main/exit/gap/end tensor from five current histories, selected C1/C2, m_actual cross terms, complete future/2 and Pin/P0; no old snapshots or local-difference substitution.
-- [ ] F57C5b-joins/F57C6a-global: compose actual tensor joins and physical decompositions in every chart and all eight support edges.
-- [ ] F57C4e-remaining-joins: other retained/core/incoming boundaries and independent axis attachment before complete33 quantitative admission.
-- [ ] F57C6b/F57D/E/F: independent global temporal remainder, resolved nonzero u,v,w,p API, current cone/lift and prescribed-domain kinetic energy.
+- [x] F57C3/F57C4 affected-traces: one current22 source atlas and common actual velocity/absolute-pressure spatial4/time1 bounds.
+- [x] F57C5a-angular/F57C5b-angular/F57C6a-angular: current full angular tensor and regional decomposition.
+- [x] F57C5a-postpulse-entry/F57C5b-entry/F57C6a-entry: complete current entry moment stress and regional tensor/decomposition.
+- [x] F57C5b-angular-entry-join: source-function actual completed-tensor interface and common physical bounds.
+- [ ] **Next: F57C5a-postpulse-power and F57C5b-entry-power-join** — use the original t=Ts*phase and current XS/PS/full energy to recover steep-power actual stress, keep attenuated amplitude factors in source logs, then prove/bound its completed-tensor join with entry t=1. Reuse the checked graph.
+- [ ] F57C5a-postpulse-exit-waiting: current full steep-exit/waiting tensor and power-exit/exit-waiting tensor joins, preserving original sigma and complete Gamma future.
+- [ ] F57C5a-postpulse-flatten-power-collar: actual current flatten/outer-power/collar tensor, source Jacobians and exact full exterior theorem.
+- [ ] F57C5a-pulse: actual entrance/main/exit/gap/end tensor from five histories, selected C1/C2, meridional cross terms, complete future/2 and original Pin/P0.
+- [ ] F57C5b/F57C6a-global: every actual tensor join and physical decomposition, including all eight support edges; keep velocity-pressure and tensor inventories distinct.
+- [ ] F57C4e-remaining/F57C6b/F57D/E/F: other retained/core/incoming boundaries and axis, independent global temporal remainder, resolved u,v,w,p, current cone/lift and prescribed-domain kinetic energy.
 - [ ] F58/F59/F60/F61: genuine n-dependent equations/per-order repair/summation, both oscillatory families/mean corrections, corrected NS and measured dynamics.
 
-Implement one bounded next construction, save source-bound evidence, commit/push and mark its scoped task done. This section supersedes older statements that actual angular full stress and regional completion/decomposition are open; it does not close their global versions. The long-term goal stays active.
+Implement the next coupled construction and tensor join, save current source evidence, commit/push and mark the scoped task done. This handoff supersedes older entries that the current steep-entry tensor and angular-entry tensor join are open. Global tensor/cone/NS/remainder/energy/points and actual n-dependent temporal recursion remain open; the full goal stays active.
 
 ---
 

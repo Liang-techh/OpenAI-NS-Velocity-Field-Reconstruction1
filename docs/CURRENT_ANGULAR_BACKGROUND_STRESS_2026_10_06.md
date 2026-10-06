@@ -1,5 +1,7 @@
 # Current actual angular background stress (2026-10-06)
 
+Current continuation: [actual steep-entry tensor and angular-entry join](CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md) completes F57C5a-postpulse-entry and its regional completion/decomposition, plus the first actual completed-tensor interface. Other charts and global tasks below remain open.
+
 Implementation and scoped actual-angular tensor receipt: commit [f02a1a0b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f02a1a0bc5b3da409b63edae2a1380eb2cf5a98f).
 
 The original angular region now has the actual current full-moment background stress, its prescribed symmetric tensor completion and the regional physical decomposition `residual = -div(T_B) + E_B`. This completes F57C5a-angular, F57C5b-angular-completion and F57C6a-angular. These outputs are source-bound directed enclosures with exact positive logarithmic factors. They are not resolved coefficient points or global tensor/cone/flatness/NS certificates.
@@ -56,7 +58,7 @@ Exact working/Git-index source and receipt hashes pass for all 648 dependencies.
 - [x] F57C5a-angular: actual full A/E/P/K stress, exact KR/KR^2 units, current source pressure and complete future.
 - [x] F57C5b-angular-completion: actual regional symmetric tensor and physical mixed derivative bounds.
 - [x] F57C6a-angular: regional source-bound residual=-div(T_B)+E_B with the original axial-viscosity sign.
-- [ ] F57C5a-postpulse-entry: build the current steep-entry full stress from the same angular terminal functions. Replay the original transition kernels and preserve exact normalization; prove the angular/entry tensor join on functions before quantitative bounds.
+- [x] F57C5a-postpulse-entry: build the current steep-entry full stress from the same angular terminal functions. Replay the original transition kernels and preserve exact normalization; prove the angular/entry tensor join on functions before quantitative bounds.
 - [ ] F57C5a-postpulse-rest: build current steep-power/exit/waiting/collar and flatten/power full stresses from the checked history owner, preserving nonzero E/P and source phase Jacobians. Reuse the exact full Gamma exterior stress-zero theorem within its existing scope.
 - [ ] F57C5a-pulse: recover actual entrance/main/exit/gap/end stress from the five cumulative histories and selected C1/C2, including m_actual cross terms, complete future/2, Pin/P0 and positive source logs. Do not substitute the checked local difference for the actual tensor.
 - [ ] F57C5b-joins: prove actual completed tensor joins throughout these chart chains and all eight support edges. Bound common traces over the declared physical sectors; the current22 velocity/pressure atlas is a prerequisite, not a tensor-join certificate.
