@@ -1,5 +1,7 @@
 # Current actual microscopic-switch tensors and phase1/R2 attachments (2026-10-06)
 
+Implementation and scoped actual microscopic-switch/phase1/R2 tensor receipt: commit [3b5eac73](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3b5eac732abfa4eb5d67e1652d28a75542a6a9cd).
+
 Both original microscopic switches now have complete physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. The completed phase1 and R2 source attachments connect to the checked power/R110/reshape/Rsh/reference/restore/patch/Rh chain through full Gamma. Admitted inventory: **29 actual regions, 28 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas:14 adjacent/8 internal. These counts measure regional background coverage, not overall completion or temporal recursion.
 
 ## Executable sources and current owner

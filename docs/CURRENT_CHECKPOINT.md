@@ -1,5 +1,7 @@
 # Current handoff: twenty-nine actual tensor regions, twenty-eight joins and ten internal traces (2026-10-06)
 
+Implementation and scoped actual microscopic-switch/phase1/R2 tensor receipt: commit [3b5eac73](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3b5eac732abfa4eb5d67e1652d28a75542a6a9cd).
+
 Both original microscopic switches now have complete physical background tensors and all three remainder components. New phase1 controls and135 exact R2 mixed4 source identities establish completed phase1/R2 attachments to power/R110/reshape/Rsh/reference/restore/patch/Rh through full Gamma. Inventory:29 actual regions,28 adjacent tensor joins,10 internal traces. Width, amplitude, signed actual axial drive, comparison own moments, six actual histories and analytic P0 remain. Separate velocity/absolute-pressure atlas:14 adjacent/8 internal.
 
 Read [CURRENT_MICROSWITCH_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_MICROSWITCH_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_microswitch_background_tensor_check.json`; stage `currentmicroswitchtensor`. Reuse `CurrentMicroswitchBackgroundTensor(power_tensor=checked_current_switch_power_tensor)`; retain the same native bridge/switch/core/physical/pre/selected/future/pressure graph. Complete unpruned data use `.json.gz`. Regional coverage does not establish global NS or temporal coefficient recursion.
