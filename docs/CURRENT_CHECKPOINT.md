@@ -1,21 +1,22 @@
-# Current handoff: twelve actual velocity/absolute-pressure spatial4/time1 interfaces (2026-10-06)
+# Current handoff: full33 native velocity/absolute-pressure routing (2026-10-06)
 
-Implementation and source receipts: commit [670dc8be](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/670dc8becd518df68c0e787d71d5346ebfbe0a37).
+Implementation and source receipts: commit [587e1c1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/587e1c1e4dd58aaff8973e358c9ae07449c5de8f).
 
-**MIX5a–d/MIX6b and JOIN4/4c are installed for all twelve affected interfaces.** Both actual source germs feed the signed four-label mixed4 packet and unchanged Cartesian spatial4/fixed-x time1 operators. Each seam has 35 spatial multiindices and 216 common physical contribution groups. Original P0, cumulative moments/Cp, signed original/own units, exact radius and implicit controls remain linked.
+**CONT4a–d/CONT4e1 are implemented:** all33 native velocity/absolute-pressure function routes, compact repair/original power q and phase continuation, typed core/axis, entrance/gap coordinate bridges and the full unbounded Gamma exterior. Same implicit controls, analytic P0 and original geometry/derivative units are retained. Twelve affected mixed4 velocity interfaces remain consumed.
 
-Read [CURRENT_MODIFIED_VELOCITY_PRESSURE_INTERFACES_2026_10_06.md](CURRENT_MODIFIED_VELOCITY_PRESSURE_INTERFACES_2026_10_06.md) for source equations, API, scope and detailed next tasks. Focused stage currentmodifiedvelocitypressureinterfaces; interface(name,Z,log_tau,theta) covers precisely twelve names.
+Read [CURRENT_MODIFIED_VELOCITY_PRESSURE_DISPATCH_2026_10_06.md](CURRENT_MODIFIED_VELOCITY_PRESSURE_DISPATCH_2026_10_06.md) for API, coordinate equations, exact scope and detailed next tasks. Focused stage: currentmodifiedvelocitypressuredispatch.
 
-Evidence: 854 new identities including 720 actual two-packet function comparisons; twelve whole-Z/compact-time two-sided views, four fresh boundary queries, checked API/controller/compilation and 882 working/index hashes. Source equality precedes bounds and retains nonzero cumulative memory at flat profile edges. Read-only review: **GPT-5.6 Luna / max**.
+Evidence: 55 new routing/function identities,33 native+6 coverage views,7 fresh adapter queries,120 original power ordinary-row comparisons, checked API/controller/compilation and 888 working/index hashes. Read-only source review: **GPT-5.6 Luna / max**.
 
-- [x] Own implicit repair/moments/pressure/radial, signed tensor/remainder, full33 tensor dispatch, twelve stress3/divergence2/remainder2 source interfaces and inherited analytic pressure/full unbounded heat graph.
-- [x] Actual own velocity/absolute-pressure mixed4 packet and physical spatial4/time1 maps (MIX1–4/MIX6a).
-- [x] Twelve affected velocity/pressure spatial4/time1 source-function and common-bound interfaces (MIX5a–d/MIX6b/JOIN4/4c).
-- [ ] **Next CONT4a–f:** full33 velocity/absolute-pressure adapters and runtime routing, complete power q/phase continuation, inherited heat velocity, physical locator and global interface composition.
-- [ ] Phase-aware finite-N errors, common N and whole modified O2/O3 cones; own physical kinetic energy and remaining original/global cones.
+- [x] Independent implicit repair, own moments/pressure/radial source, signed tensor/remainder and full33 tensor dispatch.
+- [x] Twelve affected source and spatial4/time1 velocity/pressure interfaces; analytic pressure/full Gamma heat inheritance.
+- [x] Full33 native velocity/absolute-pressure routing with original power endpoint, reciprocal gap cover, core/axis and full exterior bounds.
+- [ ] **Next LOC1–6:** integrate actual physical inverse-locator outputs into velocity/pressure queries with correlated coordinates and alternative source pieces.
+- [ ] **Next CONT4f1–7:** compose all global adjacent/internal velocity/pressure mixed4 interfaces and axis regularity before global smooth-velocity admission.
+- [ ] Finite-N errors, common N/whole modified O2/O3 cones, own physical energy and remaining original/global cones.
 - [ ] True n-dependent recursion, oscillatory/mean corrections, resolved u/v/w and full corrected NS/energy/dynamics.
 
-The promoted spatial4/time1 interface gate covers twelve changed interfaces. Full33 velocity/global velocity interfaces, common N/energy/cones/recursion/NS remain open. Original cone 15+separate zero exterior/17 open, tensor 33/32/14 and atlas 14/8 remain separate. N=10^12 remains repair-only. Preserve unrelated files; earlier sections are historical.
+Native factored enclosures do not resolve global point coefficients. Global velocity interfaces/locator integration, total energy/common N/cones/recursion/NS remain open. N=10^12 remains repair-only. Tensor33/32/14, atlas14/8 and original cone15+zero exterior/17 open counts are unchanged. Preserve unrelated files; earlier sections are historical.
 
 ---
 
