@@ -1,5 +1,7 @@
 # Current handoff: one-graph native full tensor registry (2026-10-06)
 
+Implementation and scoped one-graph native tensor registry receipt: commit [cad58441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cad58441fbe661b08695f6bfbdee0a3d6fc93fcf).
+
 All 33 full tensor regions and all 32 adjacent / 14 internal support trace routes now share one checked nonlinear-core/axis/pressure/history graph. The 14 support traces are six patch + four pulse-end + four angular; the axis is a separate Cartesian extension of the existing core. Primitive atlas: 14 adjacent / 8 internal.
 
 Read [CURRENT_TENSOR_REGISTRY_2026_10_06.md](CURRENT_TENSOR_REGISTRY_2026_10_06.md). Data/receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_tensor_registry.json` and `_check.json`. Focused stage: `currenttensorregistry`; warm API: `CurrentTensorRegistry(background=checked_current_angular_internal_background_tensor)`. Earlier snapshots below are historical.

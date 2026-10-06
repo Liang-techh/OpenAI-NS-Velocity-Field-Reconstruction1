@@ -1,5 +1,7 @@
 # One-graph native full tensor registry (2026-10-06)
 
+Implementation and scoped one-graph native tensor registry receipt: commit [cad58441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cad58441fbe661b08695f6bfbdee0a3d6fc93fcf).
+
 All **33 existing full tensor regions**, **32 adjacent traces** and **14 internal support traces** now have one source-bound callable registry. It reuses the checked nonlinear core/axis/angular/pressure/energy/history graph through the complete Gamma exterior. Every native view and its original signed contributions remain available.
 
 The 14 support traces are exactly six patch, four pulse-end and four outer-angular boundaries. The core axis is a separate Cartesian analytic extension of the same region; it adds no region or counted support boundary. The primitive velocity/pressure atlas remains 14 adjacent / 8 internal.
