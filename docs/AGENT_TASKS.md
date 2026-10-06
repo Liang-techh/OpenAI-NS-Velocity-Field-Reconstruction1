@@ -1,3 +1,24 @@
+# Current handoff: 13 nonzero cone regions plus exact zero exterior (2026-10-06)
+
+Implementation and scoped current angular/tail cone receipt: commit [f1006805](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f10068057aa0870ec6c98f2c10b110a95881043b).
+
+Six additional current nonzero regions now satisfy the original strict two-vector cone: angular s[-4,0], steep entry/power/exit/waiting phase[0,1], and heat collar t[0,3). Together with the preceding seven regions, 13 have continuous current source-function cone proofs. Heat t=3 and the full unbounded Gamma exterior have exact zero tensor/divergence/remainder/momentum and are excluded from strict inequalities. The other 19 registry regions remain open.
+
+The construction retains actual A/E/P/K, selected signed controls, full nonzero energy and absolute pressure, K_Z, seven adjacent joins and four angular support traces. The angular estimate consumes current Hf>0 and nonnegative partial-A/complement integrals. Waiting uses the same current heat endpoint and actual O7/collar/waiting stress AST identities. Heat sigmoid and flat subdomains have separate bounds; no uniform positive unscaled theta floor is claimed on the whole collar. Spatial heat edge direction is uniform, but global temporal flatness is open.
+
+Read [CURRENT_ANGULAR_TAIL_CONE_2026_10_06.md](CURRENT_ANGULAR_TAIL_CONE_2026_10_06.md) for formulas and executable task details. Focused stage: `currentangulartailcone`; API: `CurrentAngularTailCone(flattencone=checked_current_flatten_power_cone)`. Producer/receipt use the `lei_ren_part1_paper_compliant_current_angular_tail_cone` prefix; all seven complete source views are in `_views.json.gz`. Generic/current identities: 76/79; strict directed bounds: 46. Scoped controller/API, zero-edge exclusions and a query crossing the two heat proofs passed. Working/index hashes matched 799 files. Read-only reviewer: GPT-5.6 Luna/max.
+
+- [x] F57C-cone1b-main/tail/gap/flatten: seven preceding current whole-domain cones and full source joins.
+- [x] F57C-cone1b-angular/tail: actual controls and partial-A source bound, four support traces, steep/waiting/heat cones, current full endpoint operator identities, exact zero exterior and uniform heat edge direction.
+- [ ] **Next F57C-cone1b-entrance/O3/O2:** original incoming moments, actual shear correlation, full pressure, variable slopes and whole-domain cone on current source. See detailed tasks in the linked document.
+- [ ] F57C-cone1b-inner/global: patch/restore/reshape/switch/bridge/core, original periodic shear loop, finite uniform N and independent five-moment repair where needed; then a smooth completed global admissible lift.
+- [ ] F57C-cone1c: two actual homogeneous oscillatory pulse families, covariance integrals/finite errors, positive amplitudes and flat edge weights, signed lift/mean correction and averaged quadratic cancellation.
+- [ ] Genuine n=1/n>=2 coefficient recovery and independent moment repair, cancellation of nonflat leading origin E, finite-order estimates and smooth sum; then resolved u/v/w, corrected NS/energy and measured scale recursion/material winding.
+
+Global completed tensor/cone/lift/waves, temporal flatness, corrected NS/energy and genuine coefficient-recursion gates remain false. Source inventory remains 33 regions / 32 adjacent / 14 internal tensor traces, primitive atlas 14 / 8. Keep the long-term goal active and use the current branch `codex/st073-transition-next`. Earlier checkpoint sections are historical.
+
+---
+
 # Current handoff: seven consecutive regions with whole current signed cone (2026-10-06)
 
 Implementation and scoped whole current flatten/power cone receipt: commit [caa9f74f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa9f74f851391267adb0ffaacfdf98f30e5a8d0).

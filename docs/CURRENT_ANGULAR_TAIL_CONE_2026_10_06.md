@@ -1,6 +1,6 @@
 # Current angular and heat-tail cone
 
-Implementation commit: pending pin after the source/receipt commit.
+Implementation and scoped current angular/tail cone receipt: commit [f1006805](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f10068057aa0870ec6c98f2c10b110a95881043b).
 
 ## Constructed result
 
