@@ -1,3 +1,27 @@
+# Current handoff: 15 nonzero cone regions plus exact zero exterior (2026-10-06)
+
+Implementation and scoped O3 power receipt: commit [3e9a4064](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e9a406471b694431f3f8d0fabd62f07691e6ce1).
+
+The actual whole O3 power now satisfies the original strict two-vector cone on phase[0,1], all Z[-1,1], including both endpoints and Z=0. The conservative directional expression is below 5.076e-435; the directional bracket exceeds 1.999999. Fifteen current nonzero regions have continuous source-function proofs. The exact zero heat edge and unbounded exterior remain separate. Seventeen registry regions have no current whole-domain cone admission. These counts are regional cone coverage, not a percentage of the full project.
+
+The proof uses the actual correlated O2/O3 history: X0=1-D+mu*V and K0/U0=M0*exp(mu/2)-4D, with the same nonnegative transition integral. It retains all ten original O3 signed sectors, full energy, signed absolute pressure, incoming radial velocity and complete tensor/remainder views. Full pressure is composed backwards from the same current Rv datum and actual phase1 inlet; Pv_Z is retained. Axial velocity and five axial sectors vanish by source/operator identities. Independent history boxes are not subtracted to infer the tiny deficit.
+
+Read [CURRENT_O3_POWER_CONE_2026_10_06.md](CURRENT_O3_POWER_CONE_2026_10_06.md) for the formulas and detailed executable tasks. Focused stage: `currento3powercone`; API: `CurrentO3PowerCone(entrancecone=checked_current_entrance_cone)`. Actual owner: `registry.owners['incoming']`; variable transition owner: `registry.owners['o3']`. Prefix: `lei_ren_part1_paper_compliant_current_O3_power_cone`, with complete source views in `_views.json.gz`.
+
+Evidence: 50 new original identities, 12 full-theta identities, 24 canonical whole-Z identities, 3 actual correlation/pressure endpoint identities, 112 consumed production identities and 25 positive directed bounds. Producer/checker, scoped controller, checked endpoint/interior API, inherited entrance/zero exterior and compilation passed. Working/index source audit matched 813 dependency files. Read-only reviewer: GPT-5.6 Luna / max.
+
+- [x] F57C-cone1b downstream: end, main/exit, gap/gap-end, flatten/power, angular/entry/steep power/exit/waiting, heat collar and whole entrance; exact zero exterior separate.
+- [x] F57C-cone1b-O3-power: continuous actual power cone, full M/K/X and energy/pressure, both source joins, checked regional API/controller.
+- [ ] **Next F57C-cone1b-O3-transition:** continuous variable slope_mu offset[0,1], same positive kernels and correlated histories, variable logU derivatives, actual full stress/shear/energy/pressure. Power endpoint admission is insufficient for this chart.
+- [ ] F57C-cone1b-O2/inner/global: Rh/O2, patch/restore/reshape/switch/bridge/core and axis; original shear loop, finite uniform N and independent moment repair where required; smooth completed global admissible tensor/lift.
+- [ ] F57C-cone1c: two actual oscillatory velocity families, mean correction, positive amplitudes/flat edges, covariance and finite-error bounds, then averaged quadratic stress cancellation.
+- [ ] Actual n=1/n>=2 coefficient recovery, independent five-moment repair, removal of nonflat leading origin remainder, finite-order bounds and smooth sum.
+- [ ] Resolved physical u/v/w, corrected independent Cartesian NS and finite energy, measured scale recursion, core-width/aspect exponents, vorticity and material winding.
+
+Global tensor/cone/lift, actual waves, n-dependent recursion, temporal flatness and corrected NS/energy remain open. Inventory stays 33 regions / 32 adjacent / 14 internal tensor traces, primitive atlas 14 / 8. Keep the full long-term goal active, preserve unrelated dirty files and reuse the warm checked graph on `codex/st073-transition-next`. Earlier sections below are historical.
+
+---
+
 # Current handoff: 14 nonzero cone regions plus exact zero exterior (2026-10-06)
 
 Implementation and scoped current entrance cone receipt: commit [5cf6b3fd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5cf6b3fdc6679c716003faf9c7eb7165e0203aea).
