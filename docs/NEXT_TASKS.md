@@ -1,3 +1,19 @@
+# Next: original analytic pressure datum to native raw operator (2026-10-05)
+
+Read CURRENT_PRESSURE_BALANCE_RAW_OPERATOR_2026_10_05.md. The pressure quadratic/Gamma loss balance and explicit native flatten/14-stage raw pressure generator are admitted. Focused stages: currentpressurebalance and currentrawpressure. Receipts: experiments/root_st073/lei_ren_part1_paper_compliant_current_pressure_terminal_balance_check.json and current_raw_preheat_pressure_operator_check.json.
+
+Cp is retained. The remaining prerequisite is FUNCTION identification of the original implicit CompliantPressureDatum with the negative complete current native raw pressure integral, including early stages, F_flat(Z), exact logs and the unique raw waiting root. Similar schemas, matching hashes and overlapping enclosures cannot prove that identity. The current angular closure is already admitted; preserve it.
+
+1. Bind the implicit original raw generator and the current native generator as the same function: exact parameters, offsets, cutoff, unique raw waiting root and pressure density.
+2. Identify early native cumulative Mp, the explicit F_flat callable, all postflatten atoms and infinite tail; justify axial5 differentiation and even parity.
+3. Prove original P0=-native_raw_total. Combine it with the admitted second-quadratic/full-Gamma balance and native forward primitive identity for whole-Z Cp=0; issue a dedicated current pressure-zero receipt.
+4. Combine both zero constants with canonical Gamma stress cancellation for a separate current full stress-free-exterior receipt.
+5. Finish selected/future C4/C5 physical graph installation, quantitative native interfaces, physical stress/residual composition, points/global cone/flatness/required-domain energy, genuine temporal recursion and oscillatory correction.
+
+Pressure balance and the raw generator are complete in their scoped views. Original datum identity and Cp=0 remain unproved. Spatial Taylor differentiation is not temporal scale recursion.
+
+---
+
 # Next: close current pressure terminal (2026-10-05)
 
 Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).

@@ -1,3 +1,15 @@
+# Current executable queue: original pressure-datum function identity (2026-10-05)
+
+Read CURRENT_PRESSURE_BALANCE_RAW_OPERATOR_2026_10_05.md. The pressure quadratic/Gamma loss balance and explicit native flatten/14-stage raw pressure generator are admitted. Focused stages: currentpressurebalance and currentrawpressure. Receipts: experiments/root_st073/lei_ren_part1_paper_compliant_current_pressure_terminal_balance_check.json and current_raw_preheat_pressure_operator_check.json.
+
+Cp is retained. The remaining prerequisite is FUNCTION identification of the original implicit CompliantPressureDatum with the negative complete current native raw pressure integral, including early stages, F_flat(Z), exact logs and the unique raw waiting root. Similar schemas, matching hashes and overlapping enclosures cannot prove that identity. The current angular closure is already admitted; preserve it.
+
+Start with the latest detailed AGENT_TASKS.md section. Do not repeat angular closure, second quadratic/Gamma pressure balance or explicit flatten callable. Prove common original/raw pressure generator and early/native cumulative prefix, identify F_flat and postflatten/tail integrals, then compose a whole-Z integral-operator identity for the original analytic P0. Only then prove Cp=0 and issue current pressure-terminal and full stress-free-exterior receipts.
+
+Keep exact positive factors/logs attached to function definitions and directed enclosures. Keep full future/selected C4/C5 physical installation, quantitative native interfaces, global stress/flatness/required-domain energy and true n-dependent temporal recursion separate. Preserve accepted evidence, mark completed scope with receipt/commit, and push owned changes.
+
+---
+
 # Current executable queue: pressure terminal after angular closure (2026-10-05)
 
 Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).

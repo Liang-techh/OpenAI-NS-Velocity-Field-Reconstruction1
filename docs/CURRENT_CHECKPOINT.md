@@ -1,3 +1,15 @@
+# Current checkpoint: pressure balance and native raw integral (2026-10-05)
+
+Read CURRENT_PRESSURE_BALANCE_RAW_OPERATOR_2026_10_05.md. The pressure quadratic/Gamma loss balance and explicit native flatten/14-stage raw pressure generator are admitted. Focused stages: currentpressurebalance and currentrawpressure. Receipts: experiments/root_st073/lei_ren_part1_paper_compliant_current_pressure_terminal_balance_check.json and current_raw_preheat_pressure_operator_check.json.
+
+Cp is retained. The remaining prerequisite is FUNCTION identification of the original implicit CompliantPressureDatum with the negative complete current native raw pressure integral, including early stages, F_flat(Z), exact logs and the unique raw waiting root. Similar schemas, matching hashes and overlapping enclosures cannot prove that identity. The current angular closure is already admitted; preserve it.
+
+Two new adapters retain every pressure stage and axial5 coefficient. The second original quadratic equation gives pastP=sH in actual Erel2/Pstar2 units; it cancels the same full Gamma pressure loss. Native cumulative pressure and the explicit raw operator satisfy P0+native_raw_total=current_Ptail-Erel2*pastP+pressure_scale*pre. Twelve independent flatten coefficients and three signed bump integrals pass; both checked loaders and fresh Z=.619 acquisition pass.
+
+This completes the pressure-balance and explicit-integral prerequisites, not Cp=0. Next prove the original analytic datum identity, then issue separate current pressure-zero and full stress-free-exterior receipts. Full selected/future C4/C5 physical graph installation, quantitative interfaces, global stress/flatness/required-domain energy and genuine temporal recursion remain open. This section supersedes older queues that leave the pressure quadratic/full-future balance or flatten callable unstarted.
+
+---
+
 # Current checkpoint: current angular terminal closed (2026-10-05)
 
 Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).
