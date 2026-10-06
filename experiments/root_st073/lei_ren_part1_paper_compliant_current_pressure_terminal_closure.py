@@ -388,6 +388,15 @@ def original_pressure_function_identification(balance,raw,witness=None):
     if not balance.acceptance_loaded or not raw.acceptance_loaded or balance.angular is not raw.angular:
         raise ValueError('Checked current pressure prerequisites must share one angular source graph')
     exact=raw.exact;native_datum=exact.flatten.inlet.datum;repair_datum=exact.repair.angular.initial.datum
+    # Explicitly consume the checked measure identity: native collarJ and
+    # full-Gamma JW both integrate exp(kv)*(1-sigma+sigma*phi) on[0,3].
+    # The collarJ constructor assignment alone cannot identify this integral.
+    angular_proof=balance.angular.proof
+    waiting_measure={name:angular_proof['identities'].get(name) is True for name in
+        ('old_J_weight_is_same_exact_measure','current_J_same_integrand')}
+    waiting_measure['same_exact_preheat_collarJ_and_current_JW_function']=angular_proof.get(
+        'same_exact_preheat_collarJ_and_current_JW_function') is True
+    if not all(waiting_measure.values()):raise ValueError('Checked native collarJ/current JW exact measure identity required')
     common=pressure_defining_function_proof(native_datum,repair_datum)
     parameter=exact.parameter_bridge
     if not parameter['passed'] or not all(exact.graph.values()):raise ValueError('Common original/native parameter function bridge required')
@@ -572,6 +581,7 @@ def original_pressure_function_identification(balance,raw,witness=None):
         integral_function_independent_of_interval_m2_m0_and_flatten_boxes=True,
         original_function_witness_class=ExactOriginalPreheatPressureOperator.__name__,
         common_original_datum_projection=common,common_exact_parameter_function_bridge=parameter,
+        accepted_current_collar_waiting_measure_function_proof=waiting_measure,
         same_reference_down_to_zero_and_native_cumulative_FTC=True,
         same_native_Rp_amplitude_function_and_positive_log_factors=True,
         same_original_cutoff_primitive_and_stage_offsets=True,

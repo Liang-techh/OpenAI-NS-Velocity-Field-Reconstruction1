@@ -504,6 +504,11 @@
         "lei_ren_part1_paper_compliant_pressure_source.py": "43c981f44d14946cc0a634bdbc8311e47cb5f7456850127f8f7ae00c0dc36722"
       }
     },
+    "accepted_current_collar_waiting_measure_function_proof": {
+      "old_J_weight_is_same_exact_measure": true,
+      "current_J_same_integrand": true,
+      "same_exact_preheat_collarJ_and_current_JW_function": true
+    },
     "same_reference_down_to_zero_and_native_cumulative_FTC": true,
     "same_native_Rp_amplitude_function_and_positive_log_factors": true,
     "same_original_cutoff_primitive_and_stage_offsets": true,
@@ -1154,8 +1159,8 @@
     "lei_ren_part1_paper_compliant_current_raw_preheat_pressure_operator.json": "7cd75c2723d70a0a1305db93edd04aa1b50873439d745cca7e222904d1a7ef46",
     "lei_ren_part1_paper_compliant_current_raw_preheat_pressure_operator_check.py": "aa8868bea7092c7271b76a349bfc7a3b645f46372049da2db9c3f3f95ee800ab",
     "lei_ren_part1_paper_compliant_current_raw_preheat_pressure_operator_check.json": "55501c9f762353b4b879348a71eb61191d74fef49dc9e529430c8d51f771f8e1",
-    "lei_ren_part1_paper_compliant_current_pressure_terminal_closure.py": "cb99051f656a4dce996c841474b5f4df88aad6a8112e7f33418cf44686300ec0",
-    "lei_ren_part1_paper_compliant_current_pressure_terminal_closure.json": "2dca43c0ba69911ff933c92796d5b4eeec8add1e5f3c6f57688ca157613cff97",
+    "lei_ren_part1_paper_compliant_current_pressure_terminal_closure.py": "d35a06bc6855de72e48261ef29796bbadd9add9263b31f71560586150e530563",
+    "lei_ren_part1_paper_compliant_current_pressure_terminal_closure.json": "a467cafe057f3ee2530982762768e7afd385646b73bdc0981edb0f4055c9f42a",
     "lei_ren_part1_paper_compliant_current_pressure_terminal_closure_check.py": "4c117e4ba06efd26cdf655cfb2d457e818c275c274ac723ebc1316a7880152e7"
   },
   "current_implicit_datum_to_native_raw_pressure_operator_identified": true,
