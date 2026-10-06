@@ -1,5 +1,7 @@
 # Current handoff: sixteen actual tensor regions, fifteen joins and four internal traces (2026-10-06)
 
+Implementation and scoped whole O3 power/entrance tensor/two-join receipt: commit [291d04db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/291d04dbb83fa8310eb111db2d5392de1c95487f).
+
 Whole actual O3 power and pulse entrance now have full physical background tensors, three remainder components and both incoming-entrance / entrance-main tensor attachments. They extend the current main-to-Gamma chain to sixteen actual regions, fifteen adjacent joins and four internal end-support tensor traces. Actual pre five moments, analytic pressure, C5 selected histories, complete energy, nonzero incoming histories and all cross/square terms remain. The separate velocity/pressure atlas remains 14 adjacent / 8 internal.
 
 Read [CURRENT_PULSE_ENTRANCE_INCOMING_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_PULSE_ENTRANCE_INCOMING_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_entrance_incoming_background_tensor_check.json`; focused stage `currententranceincomingtensor`. Reuse `CurrentPulseEntranceIncomingBackgroundTensor(main_tensor=checked_current_main_exit_tensor)`. Complete producer data are in `.json.gz`. These remain source enclosures; global/temporal/point acceptance is false.

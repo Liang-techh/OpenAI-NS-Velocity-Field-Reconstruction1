@@ -1,5 +1,7 @@
 # Current whole O3 power and entrance tensors (2026-10-06)
 
+Implementation and scoped whole O3 power/entrance tensor/two-join receipt: commit [291d04db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/291d04dbb83fa8310eb111db2d5392de1c95487f).
+
 The current actual O3 power buffer and pulse entrance now have full physical background stress, divergence, all three remainder components and Cartesian momentum decomposition. The incoming-to-entrance and entrance-to-main attachments use common tensor source functions before directed bounds. This extends the admitted chain to **16 actual regions, 15 adjacent tensor joins and 4 internal end-support tensor traces**. The separate velocity/absolute-pressure atlas remains 14 adjacent / 8 internal.
 
 Global cone/lift/NS, independent temporal flatness, prescribed-domain total energy, resolved point values, axis regularity and actual n-dependent temporal recursion remain open. Full Gamma retains its regional exact NS identity.
