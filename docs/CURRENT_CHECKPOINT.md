@@ -1,5 +1,7 @@
 # Current handoff: twenty-two actual tensor regions, twenty-one joins and ten internal traces (2026-10-06)
 
+Implementation and scoped actual implicit patch/Rh/six-support tensor receipt: commit [5e2fc812](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e2fc812e1c742ec9dd19bd1a20bf650be04d94a).
+
 The current actual implicit five-moment patch now has full physical background tensors and all three remainder components on x[1,e]. Its actual patch/Rh completed tensor attachment and six compact-support internal tensor traces are source-identified. The admitted chain has 22 actual regions, 21 adjacent tensor joins and 10 internal tensor traces. Same implicit coefficients, full partial histories, analytic P0, energy cross terms and radial remainder remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 Read [CURRENT_ACTUAL_PATCH_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_ACTUAL_PATCH_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_actual_patch_background_tensor_check.json`; stage `currentpatchtensor`. Reuse `CurrentActualPatchBackgroundTensor(o2_tensor=checked_current_O2_tensor)` and its same current native patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Upstream core/axis/global/temporal/point acceptance remains open.

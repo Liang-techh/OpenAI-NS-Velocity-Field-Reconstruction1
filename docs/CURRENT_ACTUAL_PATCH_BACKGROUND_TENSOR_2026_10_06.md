@@ -1,5 +1,7 @@
 # Current actual five-moment patch tensor (2026-10-06)
 
+Implementation and scoped actual implicit patch/Rh/six-support tensor receipt: commit [5e2fc812](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e2fc812e1c742ec9dd19bd1a20bf650be04d94a).
+
 The actual current implicit five-moment patch now has full physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition on x=R/Rm in [1,e]. Its actual x=e / Rh offset=-5 attachment and six internal compact-support tensor traces are source-identified. The chain now has **22 actual regions, 21 adjacent tensor joins and 10 internal tensor traces**. The separately admitted velocity/absolute-pressure atlas remains 14 adjacent / 8 internal.
 
 This is regional leading-background construction. Upstream core/bridge/switch/reshape/restore tensors, patch inlet attachment, physical axis and four angular internal tensor traces remain. Global cone/lift/NS, independent temporal flatness, prescribed-domain kinetic energy, resolved u,v,w,p and actual n-dependent recursion remain open. Counts are a regional inventory, not an overall completion percentage.
