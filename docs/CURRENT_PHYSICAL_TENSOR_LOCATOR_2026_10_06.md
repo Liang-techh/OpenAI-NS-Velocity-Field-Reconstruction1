@@ -1,3 +1,5 @@
+Historical actual-coordinate/inverse-candidate milestone. Continuation: [CURRENT_CORRELATED_TENSOR_LOCATOR_2026_10_06.md](CURRENT_CORRELATED_TENSOR_LOCATOR_2026_10_06.md); exact source-family radius inverses and 46 source boundary selectors now exist. Independent global physical cover remains open.
+
 # Actual implicit physical coordinates and original radius inverses (2026-10-06)
 
 Implementation and scoped actual physical coordinate/radius inverse candidate receipt: commit [95ca039d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/95ca039db83139964205bcef785728fe8b30079b).

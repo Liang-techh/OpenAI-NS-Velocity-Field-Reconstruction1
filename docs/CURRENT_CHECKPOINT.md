@@ -1,3 +1,23 @@
+# Current handoff: exact correlated source radius inverses and 46 boundary selectors (2026-10-06)
+
+The correlated source-radius milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+
+All 33 independently specified source interior locations now resolve their original region when shared radius anchors and local offsets are retained exactly. All 32 adjacent / 14 internal support source radii select their admitted complete T/E trace route; 64 nonzero microscopic boundary nudges preserve the correct side. Full graph counts remain 33 / 32 / 14; primitive atlas remains 14 / 8; axis is separate.
+
+Requests are source-dependent physical point families, not one fixed absolute coordinate or resolved u/v/w/p. The old absolute-coordinate enclosure still retains 25 possible outer regions in the comparison case. Actual implicit lambda and real log(tau) remain bound to the checked original graph.
+
+Read [CURRENT_CORRELATED_TENSOR_LOCATOR_2026_10_06.md](CURRENT_CORRELATED_TENSOR_LOCATOR_2026_10_06.md). Producer/receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_correlated_tensor_locator.json` and `_check.json`. Focused stage: `currentcorrelatedlocator`; warm API: `CurrentCorrelatedTensorLocator(locator=checked_actual_physical_locator)`. Earlier handoffs below are historical.
+
+- [x] F57C-global-cover1e-2b/c: exact shared radius anchors, positive exp(logh) provenance and all 33 correlated inverse candidates; complete T/E and crossing unions.
+- [x] F57C-global-cover1e-2d, source-family scope: all 46 exact original boundary source selectors and real common trace routing. General fixed-coordinate seam certification stays open.
+- [ ] **Next F57C-global-cover1f:** independent finite-positive-time global physical cover using the unique actual implicit scale, original source radius ordering/positive slopes, exact axis and unbounded Gamma. Publish a separate proof/receipt; do not use successful locator samples as the cover proof.
+- [ ] Original admissible cone/lift on this same signed graph, actual n=1 and distinct n>=2 recovery/moment repair, leading origin E cancellation/absorption, then completed flatness and smooth sum.
+- [ ] Converged physical u/v/w/p and prescribed-domain energy; both oscillatory families/mean corrections; corrected NS and measured dynamics.
+
+Only correlated source radius inverse / exact source boundary selector gates are new. Full physical cover, cone/lift, resolved points, NS/energy/flatness/temporal recursion remain open. Reuse the admitted graph; keep the full long-term goal active.
+
+---
+
 # Current handoff: actual implicit physical coordinates and original radius inverse candidates (2026-10-06)
 
 Implementation and scoped actual physical coordinate/radius inverse candidate receipt: commit [95ca039d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/95ca039db83139964205bcef785728fe8b30079b).
