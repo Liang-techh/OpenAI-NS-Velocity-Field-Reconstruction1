@@ -1,5 +1,7 @@
 # Current actual three bridge tensors and phase1/smoothing/R100 attachments (2026-10-06)
 
+Latest continuation: [six actual interior core moments](CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md) now provide rho4/axial6/Euler4, separate P0/increment and Q axial5. Core1/2/3/4/8 below are complete at source level; full core tensor/core-first tensor attachment/axis tensor remain next. Counts stay32/31/10.
+
 Implementation and scoped three-bridge tensor receipt: commit [a81fa013](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a81fa0135b92392842928bafccd431420cd44e81).
 
 The three original bridge charts now have complete physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Three completed source attachments connect them to the checked microscopic-switch/power/R110/reshape/reference/restore/patch chain through full Gamma. Admitted inventory: **32 actual regions, 31 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas: 14 adjacent/8 internal. Regional coverage is not overall completion or n-dependent temporal recursion.
@@ -57,14 +59,14 @@ Physical scope remains R>0, |Z|<1, tau>0, constant nu>0 and finite compact logta
 
 The read-only core scan found an implementable source route. `CurrentCorePhysicalAssembly.core` already owns the same nonlinear fixed point and exposes Q/F/V/PD/PI Cartesian source grids; it still lacks the full interior six-moment/tensor API.
 
-- [ ] F57C5a-core1: obtain `current_bridge.physical.dispatch.provider('core')` / the existing `CurrentCorePhysicalAssembly.core`; assert object/source/datum identity with the bridge. Consume the admitted `current_core_common_fixed_point_check.json` rather than selecting a new interval representative.
-- [ ] F57C5a-core2: expose the original six interior integral functions from `core_integral_atoms.py`: I_V, I_V2, I_RF, I_RFV, I_RF2, I_F2, with variable endpoint and axial derivatives from the same fixed-point source. Bounds must not replace their defining functions.
-- [ ] F57C5a-core3: normalize those exact functions to the original mtheta/mz/mtheta_z/mztheta_A/mztheta_B/mp source units. At Ra=4*epsilon_core, bind H/M/K/A/B/C to `finite_atom_coefficients` used by the existing bridge inlet.
-- [ ] F57C5a-core4: retain the same `CompliantPressureDatum.normalized_jets` analytic P0 plus the current pressure increment. Keep P0 distinct from cumulative moment C; use the original core pressure normalization exactly once.
+- [x] F57C5a-core1: obtain `current_bridge.physical.dispatch.provider('core')` / the existing `CurrentCorePhysicalAssembly.core`; assert object/source/datum identity with the bridge. Consume the admitted `current_core_common_fixed_point_check.json` rather than selecting a new interval representative.
+- [x] F57C5a-core2: expose the original six interior integral functions from `core_integral_atoms.py`: I_V, I_V2, I_RF, I_RFV, I_RF2, I_F2, with variable endpoint and axial derivatives from the same fixed-point source. Bounds must not replace their defining functions.
+- [x] F57C5a-core3: normalize those exact functions to the original mtheta/mz/mtheta_z/mztheta_A/mztheta_B/mp source units. At Ra=4*epsilon_core, bind H/M/K/A/B/C to `finite_atom_coefficients` used by the existing bridge inlet.
+- [x] F57C5a-core4: retain the same `CompliantPressureDatum.normalized_jets` analytic P0 plus the current pressure increment. Keep P0 distinct from cumulative moment C; use the original core pressure normalization exactly once.
 - [ ] F57C5a-core5: bind the original radial ODE, pressure derivative and axis initial conditions coefficientwise to this fixed point. Reuse `current_core_first_interface_check.original_core_equation_bindings()` and `integrated_core_equations_proof()` as exact programs, not as a green flag standing in for new source rows.
 - [ ] F57C5a-core6: replay full original raw stress formulas. Integrated ODE/FTC identities can establish stress-free core rows only after matching the actual interior functions through mixed order four. Do not publish zero stress directly from existing velocity/pressure receipts.
 - [ ] F57C5a-core7: retain the nonzero radial advection/time/viscosity remainder and theta/z axial-viscosity terms. Use core units Utheta=sqrt(2R)*F0*Phi, Uz=V and Ur=sqrt(R/2)*Q; no pulse mu-rate shifts.
-- [ ] F57C5a-core8: bind `D_y=R*d_R=rho*d_rho` and the Stirling expansion for y derivatives of rho jets. This is distinct from `D_s^k=hb^k D_y^k` at the first microscopic bridge.
+- [x] F57C5a-core8: bind `D_y=R*d_R=rho*d_rho` and the Stirling expansion for y derivatives of rho jets. This is distinct from `D_s^k=hb^k D_y^k` at the first microscopic bridge.
 - [ ] F57C5b-core9: consume `CurrentCoreFirstInterface.boundary()` and exact phase-zero bridge source identity, including zero original bridge history increment, matching P0 and the six inlet moments. Complete common tensor/remainder attachment to bridge_first0.
 - [ ] F57C4e-core-axis10: derive analytic axis valuations I_V/I_V2/I_F2=O(R), I_RF/I_RFV/I_RF2=O(R^2), then take nonsingular tensor/remainder limits. Existing axis velocity/pressure regularity is a prerequisite, not axis tensor admission. Never evaluate singular cylindrical expressions directly at R=0.
 - [ ] F57C5a-core11: publish whole compact core sectors, inlet/axis views and nonconstant fresh sectors, with full signed rows and explicit unresolved/axis scopes.

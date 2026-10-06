@@ -1,3 +1,21 @@
+# Current handoff: six interior core moments and rho4/axial6/Euler4 source data (2026-10-06)
+
+The same nonlinear fixed point now supplies all six variable-radius core moments, nonsingular normalized axis shapes, original P0 plus dressed pressure increment, and Q with axial5 derived from the mean's axial6. Full nonlinear/product tails and ordinary logR4 conversion are retained. This is new construction input for the core full tensor; tensor inventory stays **32 regions/31 adjacent/10 internal**, primitive atlas14/8.
+
+Read [CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md](CURRENT_CORE_INTERIOR_MOMENTS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_interior_moments_check.json`; focused stage `currentcoremoments`. Reuse `CurrentCoreInteriorMoments(bridge_tensor=checked_current_bridge_tensor, common=warm_checked_common)`. Six complete source views and5,556 rows passed targeted producer/checker/controller.
+
+- [x] F57C5a-core1/2/3/4/8: same fixed point, six full interior functions/tails, exact rho4 normalization, P0/increment/Q source and Euler/Stirling conversion.
+- [x] Retain previous three-bridge/full downstream tensor inventory32/31/10 and current source atlas14/8.
+- [ ] **Next F57C5a-core5/6/7:** replay original source ODE/FTC stress identities and full raw stress/remainder operators over these interior functions. Retain nonzero remainder and exact physical source units; no zero-stress declaration from a green moment gate.
+- [ ] F57C5b-core9/F57C4e-axis10: completed core/bridge tensor attachment and nonsingular physical-axis tensor/remainder limits.
+- [ ] F57C5a-core11/12: whole core/inlet/axis/fresh full tensor sectors and a focused source-bound receipt/controller.
+- [ ] Four angular full support joins, global completed tensor/cone/lift, independent time flatness, resolved fields and required-domain energy.
+- [ ] Actual n-dependent recovery/repairs/summation, both oscillatory families/mean corrections, corrected NS and measured dynamics.
+
+Build the next core tensor and attachment, reuse checked prerequisites, preserve full evidence, mark only completed scope done and commit/push. The long-term goal remains active.
+
+---
+
 # Current handoff: thirty-two actual tensor regions, thirty-one joins and ten internal traces (2026-10-06)
 
 Implementation and scoped three-bridge tensor receipt: commit [a81fa013](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a81fa0135b92392842928bafccd431420cd44e81).
