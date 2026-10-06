@@ -1,5 +1,7 @@
 # Current tasks: eight support transfers and global stress (2026-10-06)
 
+Implementation and scoped five-pulse receipt: commit [687f3030](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/687f303033037113e0a6a574fba1143a5678f669).
+
 All five current pulse adjacent mixed4 traces and their original physical spatial4/fixed-position time1 traces are now source-identified. Together with nine previous traces, all fourteen entries in the adjacent-interface inventory are complete at the defining-function level. Eight internal beta-support transfers and quantitative all-interface admission remain open. Resolved point fields, full tensor/cone/NS, independent flat remainder, prescribed-domain kinetic energy and genuine n-dependent temporal recursion remain separate.
 
 Read [CURRENT_PULSE_INTERFACES_2026_10_06.md](CURRENT_PULSE_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_interfaces_check.json`; stage `currentpulseinterfaces`. Evidence: 375 five-primitive and 300 velocity/absolute-pressure mixed4 identities, 750 native consistency rows and 2,160 two-sided physical contributions; four wrong-source substitutions rejected. The exact reciprocal endpoint is reduced to D=1, xi=12 before directed enclosure; rounded coverage stays separate. Native packets are reused by the unchanged physical operator to avoid duplicate integrals.

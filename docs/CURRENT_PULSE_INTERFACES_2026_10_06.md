@@ -1,5 +1,7 @@
 # Current pulse seams and fourteen adjacent source traces (2026-10-06)
 
+Implementation and scoped five-pulse receipt: commit [687f3030](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/687f303033037113e0a6a574fba1143a5678f669).
+
 All five current pulse adjacent joins now have source-function mixed4 identification and transfer through the original physical Cartesian spatial4/fixed-position time1 operators. Together with the nine previously checked traces, all fourteen entries in the current adjacent-interface inventory are source-identified. This is completion of this inventory, not a percentage of the full reconstruction. Eight internal beta-support transfers and quantitative all-interface admission remain open. Full tensor/cone/NS, resolved point fields, independent flat remainder, prescribed-domain kinetic energy and genuine n-dependent temporal recursion remain separate.
 
 ## Current implementation
