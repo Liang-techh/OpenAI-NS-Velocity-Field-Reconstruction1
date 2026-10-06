@@ -1,5 +1,7 @@
 # Current handoff: twenty-six actual tensor regions, twenty-five joins and ten internal traces (2026-10-06)
 
+Implementation and scoped actual variable long-reshape/Rsh tensor receipt: commit [a73908e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a73908e14082baf849059514d4aa04a246635a9c).
+
 The whole actual variable long-reshape region now has a full physical background tensor and all three remainder components. Its completed Rsh source attachment connects through inner reference/restore/actual patch/Rh to full Gamma. Admitted inventory: 26 actual regions, 25 adjacent tensor joins and 10 internal tensor traces. Original variable B/T/cutoff/Bell terms, positive kernels, actual R110 histories, same V110/E and analytic P0 remain. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 Read [CURRENT_RESHAPE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_RESHAPE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_reshape_background_tensor_check.json`; stage `currentreshapetensor`. Reuse `CurrentReshapeBackgroundTensor(restore_tensor=checked_current_restore_tensor)` and the exact same nested switch/long/restore/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.

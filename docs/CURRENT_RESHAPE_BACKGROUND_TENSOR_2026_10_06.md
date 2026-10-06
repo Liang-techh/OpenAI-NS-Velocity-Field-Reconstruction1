@@ -1,5 +1,7 @@
 # Current actual variable long-reshape tensor and Rsh attachment (2026-10-06)
 
+Implementation and scoped actual variable long-reshape/Rsh tensor receipt: commit [a73908e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a73908e14082baf849059514d4aa04a246635a9c).
+
 The whole actual long-reshape region now has full physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Its exact completed Rsh attachment connects to the checked inner-reference/restore/patch/Rh chain through full Gamma. The admitted chain has **26 actual regions, 25 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 This is leading-background regional construction. Actual core/bridge/switch full tensors, R110 and other upstream attachments, physical-axis limits and four angular internal tensor traces remain. Global admissible cone/lift/NS, independent temporal flatness, prescribed-domain kinetic energy, resolved u,v,w,p and genuine n-dependent coefficient recursion remain open. Regional counts do not measure overall completion.
