@@ -1,5 +1,7 @@
 # Current pressure balance and native raw integral (2026-10-05)
 
+Implementation and scoped receipts: commit [99c32046](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99c32046).
+
 The current exact-repair heat view now proves that the original two supported angular bumps add exactly the pressure removed by the full Gamma heat correction. A second adapter exposes the native flatten pressure integral as an axial5 callable, retains all fourteen raw pressure stages, and identifies its cumulative forward primitive. The original analytic axis pressure P0 is preserved throughout. Its identification with the negative of this complete raw integral is still open, so Cp is retained and no pressure-zero or full stress-free exterior gate is admitted.
 
 Read this page and the latest section of AGENT_TASKS.md before selecting new work. Preserve the accepted angular closure and upstream core/bridge/heat receipts.

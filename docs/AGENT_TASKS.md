@@ -1,5 +1,7 @@
 # Current tasks: identify original pressure datum after native balance (2026-10-05)
 
+Implementation and scoped receipts: commit [99c32046](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99c32046).
+
 Read CURRENT_PRESSURE_BALANCE_RAW_OPERATOR_2026_10_05.md. The pressure quadratic/Gamma loss balance and explicit native flatten/14-stage raw pressure generator are admitted. Focused stages: currentpressurebalance and currentrawpressure. Receipts: experiments/root_st073/lei_ren_part1_paper_compliant_current_pressure_terminal_balance_check.json and current_raw_preheat_pressure_operator_check.json.
 
 Cp is retained. The remaining prerequisite is FUNCTION identification of the original implicit CompliantPressureDatum with the negative complete current native raw pressure integral, including early stages, F_flat(Z), exact logs and the unique raw waiting root. Similar schemas, matching hashes and overlapping enclosures cannot prove that identity. The current angular closure is already admitted; preserve it.
