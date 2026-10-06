@@ -1,5 +1,7 @@
 # Current actual angular background stress (2026-10-06)
 
+Implementation and scoped actual-angular tensor receipt: commit [f02a1a0b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f02a1a0bc5b3da409b63edae2a1380eb2cf5a98f).
+
 The original angular region now has the actual current full-moment background stress, its prescribed symmetric tensor completion and the regional physical decomposition `residual = -div(T_B) + E_B`. This completes F57C5a-angular, F57C5b-angular-completion and F57C6a-angular. These outputs are source-bound directed enclosures with exact positive logarithmic factors. They are not resolved coefficient points or global tensor/cone/flatness/NS certificates.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_background_stress.py`, matching `_check.py`, producer `.json` and scoped `_check.json`. Focused controller stage: `currentangularstress`. It consumes the checked current22 interface atlas; all 14 affected adjacent and 8 internal velocity/absolute-pressure source traces remain admitted.

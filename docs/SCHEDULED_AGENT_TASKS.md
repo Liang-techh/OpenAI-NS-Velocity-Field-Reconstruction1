@@ -1,5 +1,7 @@
 # Current handoff: actual angular background tensor (2026-10-06)
 
+Implementation and scoped actual-angular tensor receipt: commit [f02a1a0b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f02a1a0bc5b3da409b63edae2a1380eb2cf5a98f).
+
 The original angular region now has current full A/E/P/K stress mixed3, its prescribed symmetric physical tensor completion and the regional decomposition residual=-div(T_B)+E_B, with divergence/remainder mixed2. F57C5a-angular, F57C5b-angular-completion and F57C6a-angular are complete. Seven whole-domain/boundary/support/fresh-parameter calculations check 455 factored physical contribution rows (434 nonzero), 45 original full-moment normalization identities and 40 original stress baseline/homogeneity identities. These are directed enclosures with exact source factors, not resolved physical point values.
 
 Read [CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md](CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_background_stress_check.json`; focused stage `currentangularstress`. Reuse `CurrentAngularBackgroundStress(atlas=checked_current_interface_atlas)`. The same complete future, analytic P0/Pin and nonzero cumulative histories remain; full pressure is restored through the replayed current Cp=0 chain without dividing amplitude caps. Read-only reviewer: GPT-5.6 Luna / max.
