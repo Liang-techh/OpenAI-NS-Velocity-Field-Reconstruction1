@@ -1,5 +1,7 @@
 # Current checkpoint: current angular terminal closed (2026-10-05)
 
+Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).
+
 The new exact-repair heat view proves whole-Z Dtheta=0 and consumes the rebound branch at runtime. The raw prescribed waiting root is kept distinct from corrected XT; the nonzero axis heat repair is retained. Four views recover 60 angular stress mixed4 rows and 24 angular axial5 coefficients. The canonical Gamma angular exterior stress is zero. Cp is recomputed from the same new forward history and full future and remains retained.
 
 Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.

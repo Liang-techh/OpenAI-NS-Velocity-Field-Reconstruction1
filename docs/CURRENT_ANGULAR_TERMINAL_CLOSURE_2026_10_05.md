@@ -1,5 +1,7 @@
 # Current angular terminal closure (2026-10-05)
 
+Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).
+
 The current exact-repair heat view now closes the angular terminal constant as a function on the whole axial domain. Its runtime directly consumes the new repair coefficients, prescribed waiting root and radius source. The absolute-pressure constant Cp is recomputed from the same forward history and full future, and remains retained. Full physical graph installation and temporal scale recursion are separate work.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure.py`.

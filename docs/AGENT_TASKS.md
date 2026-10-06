@@ -1,5 +1,7 @@
 # Active tasks after current angular terminal closure (2026-10-05)
 
+Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).
+
 Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.
 
 - [x] F57B-current-angular-runtime-view: direct exact.angular5 coefficients and exact.repair weights feed XR/XS/XQ/XT/Xtail. Recomputed W/logone, theta factors and exact-radius source feed the restricted original heat shape/full-future view. No stale companion.evaluate or outer.angular is used. This is scoped to the new heat terminal/stress view.

@@ -1,5 +1,7 @@
 # Next: close current pressure terminal (2026-10-05)
 
+Implementation and scoped receipts: commit [661cad1e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/661cad1e).
+
 Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_terminal_closure_check.json. Focused stage: currentangularterminal. Read CURRENT_ANGULAR_TERMINAL_CLOSURE_2026_10_05.md.
 
 1. Bind common analytic axis datum and native Mp/P0 to the flatten absolute-pressure primitive.
