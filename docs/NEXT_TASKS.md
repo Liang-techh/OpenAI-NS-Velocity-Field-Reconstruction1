@@ -1,3 +1,19 @@
+# Current handoff: full angular internal tensor joins and leading time obstruction (2026-10-06)
+
+Four exact angular support boundaries now have common full stress/divergence/remainder traces from the same checked core-axis/pressure/history graph. Tensor inventory: **33 regions/32 adjacent/14 internal traces**, including the axis. The primitive velocity/pressure atlas remains14/8.
+
+Read [CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_internal_background_tensor_check.json`; focused stage `currentangularinternaltensor`. Warm API: `CurrentAngularInternalBackgroundTensor(core_axis=checked_current_core_axis_background_tensor)`. This is the current handoff; earlier snapshots below are historical.
+
+- [x] F57C-angular-full1a/b/c/d: exact source reductions,60 complete two-sided moment and71 full physical component identities, eight complete views/520 physical rows/568 common groups, scoped receipt/controller.
+- [x] Leading temporal audit: the unchanged core-origin axial E coefficient is strictly positive and scales as tau^((-3+delta)/2), with negative exponent. This leading E cannot itself be terminal-time flat.
+- [ ] **Next F57C-global-cover1:** one-graph registry/dispatch of all33 regions,32 adjacent and14 internal completed traces, with exact axis routing and factor/component conventions.
+- [ ] Original admissible cone/lift, then actual n=1/n>=2 coefficient recovery and per-order moment repair. Cancel or absorb the leading temporal terms before trying to certify flatness of the completed remainder.
+- [ ] Resolved same-source physical u/v/w/p, prescribed-domain finite energy, smooth coefficient sum, both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.
+
+Reuse checked prerequisites and construct the next layer; do not rerun old producers, substitute interval midpoints or promote source coverage to global NS/energy/actual scale-recursion completion. The long-term goal remains active.
+
+---
+
 # Current handoff: nonsingular Cartesian axis and full core T/E (2026-10-06)
 
 Implementation and scoped whole-core axis receipt: commit [9111227b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9111227b00224077468f1b5112a3f23f533c162a).
@@ -8,7 +24,7 @@ Read [CURRENT_CORE_AXIS_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_AXIS_BACKG
 
 - [x] F57C4e-core-axis10 / axis1-7: nonsingular Cartesian axis T/E, same nonlinear source/tails, true original mixed2 rows and full original physical-factor pullback.
 - [x] F57C5a-core11/12-axis: seven full views/1,820 physical rows, independent receipt and focused controller; full-core source gate admitted.
-- [ ] **Next F57C-angular-full1:** complete the four angular internal whole tensor/remainder joins; detailed source/trace/receipt subtasks are in the linked file.
+- [x] **Completed F57C-angular-full1:** complete the four angular internal whole tensor/remainder joins; detailed source/trace/receipt subtasks are in the linked file.
 - [ ] Global chart/seam cover, admissible cone/lift and independent terminal-time remainder.
 - [ ] Resolved same-source physical u/v/w/p and required-domain finite energy.
 - [ ] Actual n=1/n>=2 coefficient equations and per-order moment repair/smooth sum; both oscillatory families/mean corrections, corrected NS and measured contraction/slenderness/material winding.

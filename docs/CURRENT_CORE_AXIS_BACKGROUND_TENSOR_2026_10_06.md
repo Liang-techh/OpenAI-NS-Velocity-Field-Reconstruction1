@@ -1,5 +1,7 @@
 # Nonsingular Cartesian core axis T/E (2026-10-06)
 
+Latest continuation: [four full angular internal tensor joins and leading temporal obstruction](CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md) completes angular-full1a/b/c/d and raises the full internal count to14;33regions/32adjacent stay unchanged. The unchanged leading E is nonflat at the origin; prioritize global cover/cone and true coefficient recovery before completed-remainder flatness. Older counts and next-task statements below are historical.
+
 Implementation and scoped whole-core axis receipt: commit [9111227b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9111227b00224077468f1b5112a3f23f533c162a).
 
 The same admitted nonlinear core now supplies the full background stress and all six original NS remainder sectors on **rho[0,4], Z[-1,1]**, including the physical axis. The new Cartesian adapter cancels apparent inverse-radius terms before taking source bounds. It keeps nonzero transverse derivatives and the nonzero axial remainder on the axis.
@@ -73,10 +75,10 @@ Only the **total** original stress is zero, by the separately admitted integrate
 
 ## Next construction tasks
 
-- [ ] F57C-angular-full1a: identify the four unfinished angular internal seams and their exact native support coordinates. Reuse the checked CurrentAngularBackgroundStress and complete source graph. Map each seam to an existing source-function/flat-support proof; do not promote local difference bounds to a full tensor identity.
-- [ ] F57C-angular-full1b: establish whole-source Phi/velocity, all five cumulative histories, full energy and absolute pressure equality across each seam with the actual original signed memory/amplitude. Prove the derivatives required for stress3 and remainder2 from the true programs.
-- [ ] F57C-angular-full1c: run the unchanged full tensor, divergence, completion and remainder operators on those same source jets, then create canonical common completed-trace bounds for all components. Use exact function identity before forming triangle bounds.
-- [ ] F57C-angular-full1d: independent four-seam producer/checker, fresh axial/time/viscosity requests, complete source hashes and focused controller. Update only the proved full tensor support count; keep the primitive atlas14/8 separate.
+- [x] F57C-angular-full1a: identify the four unfinished angular internal seams and their exact native support coordinates. Reuse the checked CurrentAngularBackgroundStress and complete source graph. Map each seam to an existing source-function/flat-support proof; do not promote local difference bounds to a full tensor identity.
+- [x] F57C-angular-full1b: establish whole-source Phi/velocity, all five cumulative histories, full energy and absolute pressure equality across each seam with the actual original signed memory/amplitude. Prove the derivatives required for stress3 and remainder2 from the true programs.
+- [x] F57C-angular-full1c: run the unchanged full tensor, divergence, completion and remainder operators on those same source jets, then create canonical common completed-trace bounds for all components. Use exact function identity before forming triangle bounds.
+- [x] F57C-angular-full1d: independent four-seam producer/checker, fresh axial/time/viscosity requests, complete source hashes and focused controller. Update only the proved full tensor support count; keep the primitive atlas14/8 separate.
 - [ ] F57C-global-cover1: one-family/source/datum dispatch of all regional tensor APIs and the core axis, with a complete chart/adjacent/internal seam table and no coordinate gap. Retain compact-time scope explicitly.
 - [ ] F57C-cone1: original admissible stress-cone margins and lift on every required region, using full signed stress and exact amplitude factors. Zero core or exterior stress does not certify other regions.
 - [ ] F57C-flat-time1: independent time-dependent remainder/derivative estimates and the claimed terminal flat decay, separate from these spatial source bounds.
