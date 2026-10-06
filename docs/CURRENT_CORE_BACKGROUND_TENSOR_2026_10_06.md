@@ -1,5 +1,7 @@
 # Positive-radius core full T/E and completed core/first trace (2026-10-06)
 
+Implementation and scoped positive-radius core tensor receipt: commit [c5d29db8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5d29db8d318b0259e95cd2e9c910ba279b7a08a).
+
 The same admitted nonlinear fixed point now supplies the full physical core background stress, its completed tensor/divergence and all three NS remainder components on **0<rho<=4**. The original integrated equations cancel the **total** leading core stress exactly. Every original signed sector is kept in a separate ledger; the nonzero remainder is retained.
 
 The completed tensor inventory is **33 positive-radius regions, 32 adjacent traces and 10 internal traces**. The separate primitive velocity/pressure atlas stays14/8. This milestone excludes the physical axis, global admissibility, independently bounded time-flat remainder, required-domain energy, resolved point fields and actual n-dependent coefficient recursion. Older status snapshots below the current handoff are historical.

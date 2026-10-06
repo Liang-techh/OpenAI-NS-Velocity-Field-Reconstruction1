@@ -1,5 +1,7 @@
 # Current handoff: positive-radius core full T/E and completed core/first attachment (2026-10-06)
 
+Implementation and scoped positive-radius core tensor receipt: commit [c5d29db8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5d29db8d318b0259e95cd2e9c910ba279b7a08a).
+
 The same nonlinear fixed point now supplies the full core stress/completion/divergence and all three NS remainder components on **0<rho<=4**. Original integrated equations cancel the total core stress; all eleven original signed sectors and all six remainder sectors remain recorded. Completed tensor inventory: **33 positive-radius regions/32 adjacent/10 internal traces**, primitive atlas14/8.
 
 Read [CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_CORE_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_core_background_tensor_check.json`; focused stage `currentcoretensor`. Reuse `CurrentCoreBackgroundTensor(interior=checked_current_core_interior_moments)` and the same bridge/common/first source graph. This section is current; older snapshots below are historical.
