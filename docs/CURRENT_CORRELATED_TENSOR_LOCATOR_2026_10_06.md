@@ -1,5 +1,7 @@
 # Current correlated source radius tensor locator (2026-10-06)
 
+Implementation and scoped correlated source radius / exact boundary selector receipt: commit [138363dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/138363dcf699e65f12b67c075d374aa7f55e90e0).
+
 ## Result and scope
 
 The admitted full background T/E graph now accepts an exact original radius anchor plus a signed local offset. Common logRref/logRp/logRv terms are cancelled symbolically before interval inversion. This distinguishes source locations which were mixed into a union of 25 regions when represented by one absolute radius interval. All 33 independently specified interior source targets select their expected region; all 32 adjacent and 14 internal support radii select their original complete tensor trace route.

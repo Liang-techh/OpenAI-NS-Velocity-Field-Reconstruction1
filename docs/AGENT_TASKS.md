@@ -1,6 +1,6 @@
 # Current handoff: exact correlated source radius inverses and 46 boundary selectors (2026-10-06)
 
-The correlated source-radius milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+Implementation and scoped correlated source radius / exact boundary selector receipt: commit [138363dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/138363dcf699e65f12b67c075d374aa7f55e90e0).
 
 All 33 independently specified source interior locations now resolve their original region when shared radius anchors and local offsets are retained exactly. All 32 adjacent / 14 internal support source radii select their admitted complete T/E trace route; 64 nonzero microscopic boundary nudges preserve the correct side. Full graph counts remain 33 / 32 / 14; primitive atlas remains 14 / 8; axis is separate.
 
