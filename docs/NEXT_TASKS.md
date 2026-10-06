@@ -1,3 +1,23 @@
+# Next: current postpulse mixed4 interfaces (2026-10-06)
+
+The checked current 33-chart source now has fourteen adjacent-interface entries and eight internal beta-support boundary entries. The actual current end→flatten velocity/absolute-pressure mixed4 trace and original physical spatial4/fixed-position time1 trace are identified. Complete future/2, original P0/Pin, positive logarithmic units and empty-support meridional histories are retained. Thirteen adjacent current mixed4 trace admissions and all eight internal full-field support transfers remain open, as do quantitative all-interface, production points, tensor/cone, NS, flat remainder, physical energy and genuine temporal recursion.
+
+Read [CURRENT_PHYSICAL_INTERFACES_2026_10_06.md](CURRENT_PHYSICAL_INTERFACES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_physical_interfaces_check.json`; stage `currentinterfaces`. Evidence: 60 native source identities, 155 arbitrary-function endpoint identities, 120 native consistency rows, 864 two-sided physical contributions; three wrong-source substitutions rejected; checked loading/fresh Z=.527. Raw pulse UT already excludes the common radial exponential; division by U alone is correct. Exact pressure log sources precede cap-enclosure diagnostics. Reviewer: GPT-5.6 Luna / max, restricted scope accepted.
+
+- [x] F57C1-adjacent-and-support-ledger: 14 exact adjacent boundaries/coordinate conversions/owners and 8 interior support edges.
+- [x] F57C2-end-flatten-current-source-transfer: actual selected/complete-history terminal binding, canonical endpoint proof and 60 native mixed4 identities.
+- [x] F57C2-end-flatten-physical-trace: same Rv, units, Cartesian/moving-basis and fixed-position time operators; finite two-sided trace bounds at positive time sectors.
+- [ ] F57C2-postpulse-current-mixed4-transfer: flatten/power, power/angular, angular/steep, three steep joins, waiting/collar and collar/Gamma; bind actual boundary histories and ODE/flat-cutoff jets before numeric consistency.
+- [ ] F57C2-remaining-pulse-and-support-transfer: five earlier pulse joins and 8 beta edges, exact reciprocal coordinates and selected forcing histories.
+- [ ] F57C3/F57C4-quantitative-all-interface-ledger: two-sided physical mixed4 bounds with exact positive scales; no old/frozen trace relabeling.
+- [ ] F57C5/F57C6-physical-tensor/residual: prescribed full stress/remainder and residual=-div(T_B)+E_B.
+- [ ] F57D/F57E/F57F: resolved nonzero physical points, global cone/lift, independent flat remainder and prescribed-domain kinetic energy.
+- [ ] F58/F59/F60/F61: true n-dependent temporal recovery, oscillatory correction, independent corrected NS and measured dynamics.
+
+Work on current postpulse mixed4 transfer next, reuse current owner objects and only affected checks, record receipt/commit and push. These entries supersede older adjacent-inventory and end/flatten-current-open entries below; later gates stay separate and the long-term goal stays active.
+
+---
+
 # Next: current quantitative interfaces and physical stress (2026-10-05)
 
 Implementation and scoped receipt: commit [99df04aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99df04aa836ba0845776116e1e504eb795d96647).
