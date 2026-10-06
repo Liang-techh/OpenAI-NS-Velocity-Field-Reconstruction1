@@ -1,5 +1,7 @@
 # Current handoff: twenty-seven actual tensor regions, twenty-six joins and ten internal traces (2026-10-06)
 
+Implementation and scoped actual R2/R110 power tensor receipt: commit [bcb5e7e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bcb5e7e01883a918442dd8790bb693047fbc0384).
+
 The whole actual original R2-to-R110 power region now has a full physical background tensor and all three remainder components. A new exact postpower/post/inlet source-function proof identifies its completed R110 attachment to long reshape, then through Rsh/reference/restore/patch/Rh to full Gamma. Admitted inventory: 27 actual regions, 26 adjacent tensor joins and 10 internal tensor traces. Original positive hb/R2/radius trees, six current histories, V110/F0 and analytic P0 remain. Separate velocity/absolute-pressure atlas:14 adjacent/8 internal.
 
 Read [CURRENT_SWITCH_POWER_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_SWITCH_POWER_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_switch_power_background_tensor_check.json`; stage `currentswitchpowertensor`. Reuse `CurrentSwitchPowerBackgroundTensor(reshape_tensor=checked_current_reshape_tensor)` and the same nested switch/long/restore/patch/physical/pre/selected/future/pressure graph. Complete data use `.json.gz`. Core/axis/global/temporal/point acceptance remains open.

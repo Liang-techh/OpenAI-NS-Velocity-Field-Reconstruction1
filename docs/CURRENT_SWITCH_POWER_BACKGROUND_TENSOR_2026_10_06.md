@@ -1,5 +1,7 @@
 # Current actual R2-to-R110 power tensor and R110 attachment (2026-10-06)
 
+Implementation and scoped actual R2/R110 power tensor receipt: commit [bcb5e7e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bcb5e7e01883a918442dd8790bb693047fbc0384).
+
 The whole actual power region from original R2 to R110 now has full physical background stress, divergence, completed diagonal, all three remainder components and Cartesian momentum decomposition. Its completed R110 source attachment connects to the checked long-reshape/Rsh/reference/restore/patch/Rh chain through full Gamma. Admitted inventory: **27 actual regions, 26 adjacent tensor joins and 10 internal tensor traces**. Separate velocity/absolute-pressure atlas: 14 adjacent / 8 internal.
 
 This is leading-background regional construction. Actual microscopic switches/core/bridge full tensors, R2/phase1/R100 and other upstream attachments, physical-axis limits and four angular internal tensor traces remain. Global admissible cone/lift/NS, independent temporal flatness, prescribed-domain kinetic energy, resolved u,v,w,p and genuine n-dependent coefficient recursion remain open. Counts are not an overall completion percentage.
