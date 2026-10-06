@@ -1,24 +1,22 @@
-# Current handoff: modified O2/O3 signed stress and source remainder (2026-10-06)
+# Current handoff: local modified physical completed tensor (2026-10-06)
 
-Implementation and actual source receipts: commit [db84cfa3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db84cfa3d1c17e5667bf403fac0307a3c691cac8).
+Implementation and source receipts: commit [9c93fc3c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9c93fc3c7103eab7eac55452d3f3852572bbb9d4).
 
-The actual repaired O2/O3/quiet-power source now has **full signed theta/axial paper columns through ordinary logR3 and all three source-remainder components through logR2**, using its own five histories and same-axis pressure. All15 stress sectors (theta7/axial8) and11 remainder sectors (radial9/theta1/axial1) retain physical Uz=Pstar*Vhat, m/k and radial powers0/1, and nonlinear powers0/1/2 with both ordered cross terms. At q=2 their common retained source rows equal the original field for all Z[-1,1]. Extra split-sector axial coefficients remain stored.
+The repaired O2/O3/quiet-power source now exports its **completed physical cylindrical/Cartesian stress tensor, divergence, full three-component remainder and -div(T)+E decomposition**. All15 signed stress sectors,8 diagonal sectors and11 remainder sectors use the actual own histories/pressure and original geometry. Ttheta_theta=r*d_z(Trz) cancels radial tensor divergence; own m_y=Vhat-m proves local velocity incompressibility. Exact q=2 completed physical sources match the independent original field through retained orders.
 
-Read [CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md](CURRENT_MODIFIED_PRE_STRESS_2026_10_06.md) for formulas, accepted gates and detailed next tasks. Stage: `currentmodifiedprestress`. API: `CurrentModifiedPreStress(source=checked_repaired_histories).stress(region,Z,coordinate)`.
+Read [CURRENT_MODIFIED_PRE_PHYSICAL_TENSOR_2026_10_06.md](CURRENT_MODIFIED_PRE_PHYSICAL_TENSOR_2026_10_06.md) for acceptance scope and detailed actionable tasks. Stage `currentmodifiedprephysicaltensor`; API `CurrentModifiedPrePhysicalTensor(...).tensor(region,Z,coordinate,log_tau,theta,viscosity)`.
 
-Evidence: 81 new signed source identities and 20 consumed full variable original-paper stress identities; whole/full-Z views, actual exit/source comparison, fresh checked API, producer/receipt, focused controller and compilation. Working/index hashes matched 846 dependency files. Read-only reviewer model/effort: **GPT-5.6 Luna / max**.
+Evidence: 35 new exact source/radius/packet/divergence identities, 28 consumed original full physical identities, full-Z/whole-region views, functional exit/source comparison, checked fresh query, focused controller and compilation; 852 working/index dependency hashes. Read-only reviewer **GPT-5.6 Luna / max** confirmed consistency; original-param/logPstar provenance checks were added.
 
-This is local signed-column/remainder construction; completed diagonal/physical tensor/divergence packaging, open q>2 continuation, physical/heat joins, common cone N, O2 taper and modified closed O3 cone remain open. Original15 strict nonzero regions plus separate exact zero exterior/17 original open regions, inventory33/32/14 and primitive atlas14/8 do not admit the modified field. Actual N=10^12 meets repair-only threshold27,303,666.
+- [x] REPAIR1–8/REPAIR9a and TENSOR1/TENSOR2: exact implicit repair, own source/history exit and all signed stress/remainder sectors.
+- [x] TENSOR4a–c: actual physical packet, remainder-only original lift adaptation, diagonal/divergence/Cartesian tensor and local source-bound incompressibility.
+- [ ] **Next CONT1–3:** checked exact original continuation for q>2 through actual Tw, seam handling and complete affected modified source/physical dispatch.
+- [ ] JOIN1–5: taper/transition/support/physical spatial4-time1 exit and downstream pressure/heat joins.
+- [ ] BOUND1–2/COMMONN/CONE1–2: phase-aware derivatives and full stress estimates, one finite common N, independent whole O2 taper and closed modified O3 cone.
+- [ ] TENSOR3: actual total physical kinetic density/integrals and finite energy, including radial/axial/cross terms.
+- [ ] Remaining inner cones/global admissibility; true coefficient recursion/independent per-order repairs/flat sum; actual oscillatory families/mean/quadratic cancellation; resolved physical u/v/w and independent full corrected NS/energy/dynamics.
 
-- [x] REPAIR1–8 and REPAIR9a: independent implicit repair, actual source jets/partial five histories/pressure/radial and functional q=2 exit.
-- [x] TENSOR1/TENSOR2: full signed modified paper columns/remainder with every physical source mode and cross term.
-- [ ] **Next TENSOR4a–c:** package exact radius/Pstar logs and source mixed rows; adapt only the physical mapper's remainder input; construct diagonal/divergence/Cartesian tensor from the actual modified columns.
-- [ ] TENSOR3: actual physical kinetic density/integrals and finite-energy/tail bounds, with all radial/axial/cross terms. This is independent of diagonal completion; profile Mztheta is not total kinetic energy.
-- [ ] TENSOR5–7/REPAIR9b: open continuation/full modified dispatch, physical/tensor/heat joins and phase-aware derivative bounds.
-- [ ] REPAIR10/11: common finite N, independent O2 taper and closed modified O3 cone.
-- [ ] Remaining inner cones/global admissible lift; true n-dependent coefficient recovery/per-order repair/flat smooth sum; two real oscillatory families with mean/quadratic cancellation; resolved physical u/v/w and independent corrected NS/energy/dynamics.
-
-The diagonal is `Ttheta_theta=r*d_z(Trz)` using the original completed-radius factor; it is not reconstructed from total kinetic energy. Keep the full long-term goal active. Reuse the checked live graph when available on this host, avoid cold all-stage rebuilds and preserve unrelated files. Earlier sections below are historical.
+Local source enclosures are not resolved physical point values or whole modified admissibility. N=10^12 remains repair-only (threshold27,303,666). Original15 strict nonzero whole regions plus separate exact zero exterior/17 original open regions, inventory33/32/14 and primitive atlas14/8 are unchanged and do not count modified admissions. Preserve actual q/Tw radius correlation and own pressure. Reuse the checked live graph and preserve unrelated files. The full long-term goal remains active; earlier sections below are historical.
 
 ---
 
