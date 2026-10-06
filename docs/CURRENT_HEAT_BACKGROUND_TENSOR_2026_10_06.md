@@ -1,5 +1,7 @@
 # Current collar/exterior tensors and heat attachment (2026-10-06)
 
+Implementation and scoped heat tensor/join receipt: commit [d04f7cda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d04f7cda9efcbfbdb2158e5247c512ee7f677dc1).
+
 The actual current heat collar and exact Gamma exterior now have completed physical tensors, stress mixed3 and physical divergence/remainder mixed2. Waiting-collar and collar-exterior are source-function completed-tensor joins with common physical bounds. The complete current chain now has seven actual tensor regions and six adjacent tensor joins. The separate velocity/absolute-pressure trace atlas remains 14 adjacent and 8 internal.
 
 The full Gamma exterior additionally has a source-exact regional physical Navier–Stokes identity: its stress tensor, divergence, axial-viscosity remainder and all momentum components vanish as functions. Velocity, full energy and absolute pressure remain nonzero. This covers every original finite exterior offset t>=3 and its infinity limit, without a radial cutoff. It does not certify the remaining background, the axis, global admissibility/energy/flatness or temporal coefficient recursion.
