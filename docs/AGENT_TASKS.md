@@ -1,3 +1,21 @@
+# Current handoff: angular local stress/error differences (2026-10-06)
+
+The four angular internal support edges now have current local stress3/axial-viscosity error2 difference bounds and original physical logarithmic maps. Together with pulse support differences, both internal support families have local stress/error companions; source inventory remains 14 adjacent/8 internal. Quantitative common interface bounds and prescribed actual current tensor/remainder are next. Global cone/lift/NS, independent temporal flatness, prescribed-domain energy, resolved points and n-dependent recursion remain open.
+
+Read [CURRENT_ANGULAR_SUPPORT_DIFFERENCES_2026_10_06.md](CURRENT_ANGULAR_SUPPORT_DIFFERENCES_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_support_differences_check.json`; focused stage `currentangulardifferences`. Reuse the checked current eight-support owner. Exact KR/KR^2 stay in source logs; current signed/quadratic inputs and nonzero boundary histories are preserved.
+
+- [x] F57C4c: normalized current deltaK/deltaQ and same-boundary A/E/P differences, exact current KR source, all four edges.
+- [x] F57C4d: original stress3 and axial-viscosity error2 difference operators, positive-time/viscosity physical log bounds and source-endpoint flatness.
+- [x] Retain 14/14 adjacent and 8/8 internal source traces and the previous pulse support local differences.
+- [ ] F57C3/F57C4a,b,e: scoped source composition, common quantitative physical interface bounds, declared sectors/axis limits and uncovered ranges.
+- [ ] F57C5a,b/F57C6a,b: prescribed actual current completed tensor, physical residual=-div(T_B)+E_B and independent global remainder bounds.
+- [ ] F57D/E/F: resolved source-defined velocity/pressure API, cone/lift/temporal flatness and required-domain physical kinetic energy.
+- [ ] F58/F59/F60/F61: actual n-dependent recursion and per-order repair/remainder, oscillatory/mean corrections, corrected NS and measured dynamics.
+
+Complete one bounded next task, save source-bound evidence, commit/push and mark its task done. Avoid rebuilding the historical pipeline. Local differences that vanish as distance-to-support goes to zero do not prove an actual zero stress or temporal-flat remainder. This section supersedes older entries that angular local stress/error transfer is open; the full goal stays active.
+
+---
+
 # Current handoff: fourteen adjacent and eight internal source traces (2026-10-06)
 
 Implementation and scoped support receipts: commit [bac4df4e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bac4df4ed85948d6c769f16c99f16926bc57208e).

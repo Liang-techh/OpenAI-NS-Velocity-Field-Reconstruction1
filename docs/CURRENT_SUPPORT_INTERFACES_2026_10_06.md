@@ -1,5 +1,7 @@
 # Current fourteen adjacent and eight internal support source traces (2026-10-06)
 
+Current update: F57C4c/d are complete in [CURRENT_ANGULAR_SUPPORT_DIFFERENCES_2026_10_06.md](CURRENT_ANGULAR_SUPPORT_DIFFERENCES_2026_10_06.md); that handoff supersedes angular-local-difference-open text below. Quantitative/global/time gates remain open.
+
 Implementation and scoped support receipts: commit [bac4df4e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bac4df4ed85948d6c769f16c99f16926bc57208e).
 
 Four current pulse-end support transfers and four current outer-angular support transfers are now implemented and checked. Together with the previous fourteen adjacent traces, the current inventory has source-function identification at all fourteen adjacent joins and all eight internal beta edges. This is an interface milestone, not a percentage of the full reconstruction or temporal scale recursion.
@@ -56,8 +58,8 @@ Complete one bounded task, save source-bound evidence, commit/push, then mark it
 - [ ] F57C3 combined scoped source receipt: compose the checked fourteen adjacent and eight internal source receipts under one current selected/future/pressure graph. Publish source hashes, exact radius/coordinate relations and per-interface obligations. Reject a substituted selected/angular owner, pressure datum, current future, fixed units or exact edge source. Keep quantitative admission separate.
 - [ ] F57C4a adjacent common physical bounds: expose common spatial4/fixed-position time1 bounds at all fourteen exact joins; preserve log factors, lambda exponents and moving-basis operators. Declare covered Z/time/angle domains.
 - [ ] F57C4b internal common physical bounds: combine current pulse difference and angular source packets into the eight-edge ledger. Distinguish trace equality, local difference bounds and global quantitative ranges.
-- [ ] F57C4c angular local differences: derive actual-reference theta/X/energy/P differences from the same boundary histories, all five weighted integrals and F denominators. Bound derivatives while preserving quadratic D/F terms and background derivatives; do not reuse axial pulse coefficients.
-- [ ] F57C4d angular stress/error: instantiate the original angular stress and physical remainder operators on F57C4c; produce stress3/error2 one-sided bounds for all four edges with current signed controls and absolute pressure.
+- [x] F57C4c angular local differences: derive actual-reference theta/X/energy/P differences from the same boundary histories, all five weighted integrals and F denominators. Bound derivatives while preserving quadratic D/F terms and background derivatives; do not reuse axial pulse coefficients.
+- [x] F57C4d angular stress/error: instantiate the original angular stress and physical remainder operators on F57C4c; produce stress3/error2 one-sided bounds for all four edges with current signed controls and absolute pressure.
 - [ ] F57C4e quantitative admission: combine adjacent and internal common bounds with explicit sectors, axis limits and exact positive scale factors. Admit only the ranges whose bounds are proved; document every uncovered sector.
 - [ ] F57C5a current chart stress: recover prescribed T_B from current five cumulative histories and physical derivatives in all required charts. Start from current exterior stress and original regional operators; inventory current versus frozen providers explicitly.
 - [ ] F57C5b stress interfaces: join the prescribed tensor across adjacent/support edges using the completed ledger. Preserve absolute pressure, trace/gauge conventions and any shear terms.
