@@ -1,6 +1,6 @@
 # Whole current flatten and outer-power signed cone
 
-Implementation commit: pending pin after the source/receipt commit.
+Implementation and scoped whole current flatten/power cone receipt: commit [caa9f74f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa9f74f851391267adb0ffaacfdf98f30e5a8d0).
 
 ## Constructed result
 
@@ -60,7 +60,7 @@ Use prefix `experiments/root_st073/lei_ren_part1_paper_compliant_`:
 - `current_flatten_power_cone_views.json.gz`: deterministic gzip with both complete unpruned source views. Decode with `json.loads(gzip.decompress(path.read_bytes()))`.
 - Focused controller stage: `currentflattenpowercone`. Reuse the warm graph; avoid cold reconstruction and inherited producer reruns when the source is unchanged.
 
-Producer, checker, focused controller, checked regional API and inherited scope passed. Read-only GPT-5.6 Luna/max review identified the explicit A=K*X binding; it is now bound to the actual full-row AST and its flatten W identity. Input hashes are audited against working files and Git index before publication. Graph inventory remains 33 regions / 32 adjacent / 14 internal tensor traces, with primitive atlas 14 / 8.
+Producer, checker, focused controller, checked regional API and inherited scope passed. Read-only GPT-5.6 Luna/max review identified the explicit A=K*X binding; it is now bound to the actual full-row AST and its flatten W identity. Input hashes matched all793 dependency files in both the working tree and Git index before publication. Graph inventory remains 33 regions / 32 adjacent / 14 internal tensor traces, with primitive atlas 14 / 8.
 
 ## Next executable tasks
 

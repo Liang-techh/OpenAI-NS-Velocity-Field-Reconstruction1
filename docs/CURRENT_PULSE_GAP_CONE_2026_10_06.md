@@ -1,5 +1,7 @@
 # Whole current gap and reciprocal gap-end signed cone
 
+Current successor: [CURRENT_FLATTEN_POWER_CONE_2026_10_06.md](CURRENT_FLATTEN_POWER_CONE_2026_10_06.md), commit [caa9f74f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa9f74f851391267adb0ffaacfdf98f30e5a8d0). F57C-cone1b-flatten is now complete; the next work is current angular/tail cones.
+
 Implementation and scoped whole current gap/gap-end cone receipt: commit [b592adf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b592adf478cfa4adc63011a30f3c80693e91ad3f).
 
 ## Constructed result

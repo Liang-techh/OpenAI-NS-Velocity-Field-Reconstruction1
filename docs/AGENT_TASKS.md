@@ -1,3 +1,22 @@
+# Current handoff: seven consecutive regions with whole current signed cone (2026-10-06)
+
+Implementation and scoped whole current flatten/power cone receipt: commit [caa9f74f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa9f74f851391267adb0ffaacfdf98f30e5a8d0).
+
+Whole current flatten offset[0,100] and outer-power phase[0,1], all Z[-1,1], now satisfy the strict original two-vector cone. Together with main, exit, gap, gap-end and pulse-end, seven consecutive regions have source-function cone proofs on the same checked graph. Full forward X, variable K_Z, complete remaining energy and absolute pressure remain, with current end/flatten, flatten/power and power/angular tensor joins.
+
+Read [CURRENT_FLATTEN_POWER_CONE_2026_10_06.md](CURRENT_FLATTEN_POWER_CONE_2026_10_06.md) for formulas, source bounds and executable next tasks. Focused stage: `currentflattenpowercone`; API: `CurrentFlattenPowerCone(gapcone=checked_current_gap_cone)`. Producer/receipt use the `lei_ren_part1_paper_compliant_current_flatten_power_cone` prefix; both complete views are in `_views.json.gz`. Generic/current identities:26/12; strict directed bounds:32. Working/index hashes matched793 dependency files; scoped controller/API passed. Read-only reviewer: GPT-5.6 Luna/max.
+
+- [x] F57C-cone1b-main/tail/gap: whole current main, exit, gap, reciprocal gap-end and pulse-end cones.
+- [x] F57C-cone1b-flatten: signed exact pulse memory, correlated flatten/power inertial lower, actual source shear, current full pressure/energy and all three source joins.
+- [ ] **Next F57C-cone1b-angular/tail:** actual selected angular controls, four support traces, steep/waiting/heat cones, stress-free exterior and uniform edge direction.
+- [ ] F57C-cone1b-entrance/inner: remaining upstream current cones, shear loop and independent moment repair where required.
+- [ ] F57C-cone1c: actual two homogeneous pulse families, finite-error covariance and positive amplitudes, flat edge weights, signed lift/mean correction and averaged quadratic cancellation.
+- [ ] Genuine n=1/n>=2 coefficient recovery/moment repair, cancellation of nonflat leading origin E, finite-order estimates/smooth sum, resolved u/v/w, corrected NS/energy and measured scale recursion/material winding.
+
+The other26 registry regions and global completed tensor/cone/lift/waves remain open. Completed flatness, corrected NS/energy and genuine temporal recursion gates are false. Source inventory remains33 regions/32 adjacent/14 internal tensor traces, primitive atlas14/8. Keep the long-term goal active and reuse the warm source graph. Earlier checkpoint sections are historical.
+
+---
+
 # Current handoff: five consecutive pulse regions with whole current signed cone (2026-10-06)
 
 Implementation and scoped whole current gap/gap-end cone receipt: commit [b592adf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b592adf478cfa4adc63011a30f3c80693e91ad3f).
