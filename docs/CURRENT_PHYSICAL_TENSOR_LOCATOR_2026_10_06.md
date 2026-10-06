@@ -1,5 +1,7 @@
 # Actual implicit physical coordinates and original radius inverses (2026-10-06)
 
+Implementation and scoped actual physical coordinate/radius inverse candidate receipt: commit [95ca039d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/95ca039db83139964205bcef785728fe8b30079b).
+
 The checked 33-region full tensor graph now has a physical Cartesian entrance and a logarithmic radius entrance. The new layer solves the actual implicit similarity scale, evaluates every original regional radius inverse as a directed candidate enclosure, and connects those candidates to the complete original T/E views. It keeps the actual time parameter and all signed source sectors.
 
 This completes F57C-global-cover1e-1 and the candidate-formula part of 1e-2. It does not complete exact physical seam selection, correlated outer-radius location, global physical cover, converged u/v/w/p, admissible stress/lift, coefficient recursion, completed flatness, energy or corrected NS. No percentage of the full reconstruction is inferred from the coordinate milestone.

@@ -1,6 +1,6 @@
 # Current handoff: actual implicit physical coordinates and original radius inverse candidates (2026-10-06)
 
-The actual physical coordinate/inverse candidate milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+Implementation and scoped actual physical coordinate/radius inverse candidate receipt: commit [95ca039d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/95ca039db83139964205bcef785728fe8b30079b).
 
 The checked 33-region/32-adjacent/14-support full tensor graph now accepts physical Cartesian coordinates and log radius. The actual lambda is solved separately from sqrt(tau), with real log(tau) retained; complete signed T/E views are returned for every possible source region. Primitive atlas remains 14 adjacent / 8 internal. Axis is a separate same-core analytic extension.
 
