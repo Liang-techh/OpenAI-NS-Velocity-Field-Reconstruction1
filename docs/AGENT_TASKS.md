@@ -1,5 +1,7 @@
 # Active tasks after current exact repair branch (2026-10-05)
 
+Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).
+
 Read CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md and CURRENT_CHECKPOINT.md first. The two F57B native-inlet/function-bridge items below are complete with current_exact_repair_branch_check.json; focused stage: currentexactrepair. The current unique angular C5 and complete future C1 adapter uses the exact native affine terminal, recomputed waiting/radius/amplitude and shared original beta weights. Preserve accepted upstream evidence.
 
 - [ ] F57B-current-branch-physical-source-identification: identify every existing native selected/future function with the new exact branch by source equations and common-ball uniqueness, or build a new owner if the path differs. Do not merely point a C5 future method at a new angular provider while retaining an old C4 future prefix. Bind both orders and selected ap/c1/c2 consistently; clear affected caches.

@@ -1,5 +1,7 @@
 # Current native angular/pressure repair branch (2026-10-05)
 
+Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).
+
 The current native affine pulse terminal now supplies one source-bound angular/pressure repair. Waiting, heat radius/amplitude and future-energy factors are replayed from that input. The derivative and future paths share this unique branch. This closes the two F57B input/function-bridge tasks; physical chart installation and actual terminal-constant elimination remain separate work.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_exact_repair_branch.py`.

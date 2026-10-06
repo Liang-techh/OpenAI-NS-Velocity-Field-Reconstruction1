@@ -1,5 +1,7 @@
 # Next: current terminal closure after exact repair branch (2026-10-05)
 
+Implementation and scoped receipts: commit [05a5c541](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05a5c541).
+
 Read CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md and the latest AGENT_TASKS.md section. Native affine Xv, waiting/radius/amplitude replay and one unique angular C5/future C1 branch are now admitted. Run --stage currentexactrepair; receipt: current_exact_repair_branch_check.json.
 
 1. Identify the native selected/future physical graph with the current exact branch, preserving consistent C4/C5 energy prefixes and selected coefficients.
