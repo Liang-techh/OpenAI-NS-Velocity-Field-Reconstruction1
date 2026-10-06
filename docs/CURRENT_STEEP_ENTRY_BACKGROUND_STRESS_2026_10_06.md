@@ -1,5 +1,7 @@
 # Current actual steep-entry tensor and angular-entry join (2026-10-06)
 
+Implementation and scoped steep-entry tensor/join receipt: commit [c9e8cce6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c9e8cce6898b22d29e739abfce4270b512bc121f).
+
 The original current steep-entry region now has full A/E/P/K stress mixed3, its symmetric completed physical tensor and the regional decomposition `residual=-div(T_B)+E_B`, including physical divergence/remainder mixed2. The actual current angular and entry tensors also have their first function-level completed-tensor join and 65 common physical contribution bounds. This completes F57C5a-postpulse-entry, its regional F57C5b/F57C6a tasks, and F57C5b-angular-entry-join. It does not close the global versions of those tasks.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_entry_background_stress.py`, matching `_check.py`, producer `.json` and scoped `_check.json`. Focused controller stage: `currententrystress`. It consumes the checked [actual angular background tensor](CURRENT_ANGULAR_BACKGROUND_STRESS_2026_10_06.md), whose owner contains the checked [current22 velocity/pressure atlas](CURRENT_INTERFACE_ATLAS_2026_10_06.md). Inventory remains 14 affected adjacent / 8 internal velocity-pressure traces; the actual completed-tensor adjacent-join count is now one.

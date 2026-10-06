@@ -1,5 +1,7 @@
 # Current handoff: steep-entry tensor and first actual tensor join (2026-10-06)
 
+Implementation and scoped steep-entry tensor/join receipt: commit [c9e8cce6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c9e8cce6898b22d29e739abfce4270b512bc121f).
+
 Current angular and steep-entry regions now have actual full-moment background stresses, symmetric physical tensor completion and regional residual=-div(T_B)+E_B. The first actual completed-tensor interface, angular-entry, is function-identified and has 65 common physical contribution bounds. F57C5a-postpulse-entry, F57C5b-entry-completion/F57C6a-entry and F57C5b-angular-entry-join are complete. The current22 velocity/absolute-pressure trace inventory remains 14 adjacent / 8 internal; actual completed-tensor adjacent joins are counted separately: one.
 
 Read [CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md](CURRENT_STEEP_ENTRY_BACKGROUND_STRESS_2026_10_06.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_entry_background_stress_check.json`; focused stage `currententrystress`. Reuse `CurrentSteepEntryBackgroundStress(angular=checked_current_angular_tensor)`. Five entry views check 325 physical tensor/divergence/remainder rows (310 nonzero enclosures); 45 full-moment identities and 45 A=KX/correlated-operator identities retain original pressure and complete nonzero histories. A fresh sector checks another 65 common tensor-interface bounds. These are directed source enclosures with exact log scales, not resolved physical point values.
