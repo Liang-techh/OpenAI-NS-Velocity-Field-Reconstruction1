@@ -1,5 +1,7 @@
 # Current flatten/power tensors and two joins (2026-10-06)
 
+Implementation and scoped flatten/power tensor/join receipt: commit [c5327243](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5327243b5ebd82338f65ac454b6ebf541384851).
+
 The actual current flatten and outer-power tensors now attach to the checked angular-entry-O7-collar-Gamma tensor chain. Nine actual tensor regions and eight adjacent completed-tensor joins are available. This completes F57C5a-postpulse-flatten-outerpower and F57C5b-flatten-power/power-angular for the declared source-enclosure scope.
 
 These are completed physical tensor, divergence, remainder and momentum-decomposition maps of the original current background. They retain the complete nonzero histories. They are not resolved point values, cone admission, global NS completion or temporal coefficient recursion.

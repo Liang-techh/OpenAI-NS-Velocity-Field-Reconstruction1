@@ -1,5 +1,7 @@
 # Current handoff: nine actual tensor regions and eight joins (2026-10-06)
 
+Implementation and scoped flatten/power tensor/join receipt: commit [c5327243](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c5327243b5ebd82338f65ac454b6ebf541384851).
+
 Current flatten and outer-power now have actual completed physical tensors, ordinary stress3/divergence2/remainder2 and two source-function joins into the admitted angular-to-Gamma chain. Nine actual tensor regions and eight adjacent tensor joins are available. Flatten retains its variable axial K; all complete energy/pressure histories and native forward X are preserved. The separate current22 velocity/absolute-pressure inventory remains 14 adjacent / 8 internal; the full Gamma exterior retains its regional exact physical NS identity.
 
 Read [CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_flatten_power_background_tensor_check.json`; focused stage `currentflattenpowertensor`. Reuse `CurrentFlattenPowerBackgroundTensor(heat_tensor=checked_current_heat_tensor)`. Eight views check 520 physical contributions (496 nonzero enclosures); both joins have 65 common rows plus fresh sectors. Ninety full-moment normalization and 120 current primitive seam identities bind the original source functions and common KR units. These are source enclosures, not resolved point field values.
