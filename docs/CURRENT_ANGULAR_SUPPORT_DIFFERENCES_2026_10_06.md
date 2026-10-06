@@ -1,5 +1,7 @@
 # Current angular local stress and error differences (2026-10-06)
 
+Current update: common 22 source composition and actual velocity/pressure compact-time trace bounds are complete in [CURRENT_INTERFACE_ATLAS_2026_10_06.md](CURRENT_INTERFACE_ATLAS_2026_10_06.md). This supersedes common affected trace-bound-open text below; actual completed tensor and remaining/global/time gates stay open.
+
 Implementation and scoped local stress/error receipt: commit [d7477882](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7477882583af4799795d8a1974c8b1310dcda1a).
 
 The four current angular support edges now have local stress3 and axial-viscosity error2 difference bounds, complementing the four previously checked pulse support differences. The current source inventory remains fourteen adjacent and eight internal traces. Both support families now have local stress/error difference companions. Quantitative common interface bounds and the prescribed complete current physical stress/remainder remain next work; global cone/lift/NS, independent temporal flat remainder, prescribed-domain energy, resolved fields and genuine n-dependent recursion remain open.
@@ -44,7 +46,7 @@ Read-only review by GPT-5.6 Luna / max found no remaining material normalization
 
 - [x] F57C4c current angular local input/moment differences: retain current signed coefficients, both beta powers, exact KR/KR^2, full boundary histories and ordinary mixed derivatives.
 - [x] F57C4d current angular stress/error differences: original stress3/axial-viscosity error2 operators and physical logarithmic maps over all four support edges.
-- [ ] F57C3 combine the checked fourteen adjacent/eight internal source receipts under one current selected/future/pressure graph; publish a scoped receipt with exact source and coordinate obligations.
+- [x] F57C3 combine the checked fourteen adjacent/eight internal source receipts under one current selected/future/pressure graph; publish a scoped receipt with exact source and coordinate obligations.
 - [ ] F57C4a common adjacent physical bounds: transfer spatial4/fixed-position time1 bounds at all fourteen exact joins, retaining shared radius, current units, lambda powers and declared Z/time/angle sectors.
 - [ ] F57C4b common internal physical bounds: compose pulse and angular source/difference companions for eight internal edges; distinguish velocity/pressure trace equality, stress/error difference bounds and quantitative sector admission.
 - [ ] F57C4e quantitative interface admission: assemble common bounds over covered sectors and axis limits; record every uncovered sector instead of setting a blanket global gate.

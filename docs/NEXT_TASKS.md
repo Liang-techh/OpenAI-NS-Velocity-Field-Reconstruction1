@@ -1,3 +1,21 @@
+# Current handoff: common 22-interface physical bounds (2026-10-06)
+
+The 14 affected adjacent joins and 8 internal support edges now compose under one checked current selected/future/analytic-pressure graph. Actual velocity/absolute-pressure Cartesian spatial4 and fixed-position time1 upper bounds cover all angles, whole source Z and requested finite compact log(tau) sectors. F57C3 and the affected trace/sector tasks in F57C4 are complete. Prescribed actual completed background stress and its physical residual/remainder decomposition are next. Other retained 33-chart joins, global tensor/cone/NS/remainder/energy/points and n-dependent temporal recursion remain open.
+
+Read [CURRENT_INTERFACE_ATLAS_2026_10_06.md](CURRENT_INTERFACE_ATLAS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_interface_atlas_check.json`; focused stage `currentinterfaceatlas`. Reuse `CurrentInterfaceAtlas(differences=checked_current_angular_differences)` and call `bounds(interface,log_tau,Z)`. Four pulse support endpoints now also bound the actual nonzero full field, separately from zero local differences. Finite physical traces have R>0, |Z|<1, tau>0; Z=+/-1 are limiting/infinite-space source sectors.
+
+- [x] F57C3: common source composition of 14 adjacent / 8 internal checked interfaces, one owner and analytic pressure history.
+- [x] F57C4a-traces/F57C4b-traces: actual velocity/absolute-pressure common physical spatial4/time1 bounds at all 22 affected interfaces.
+- [x] F57C4e-affected-sectors: explicit all-angle/whole-source-Z/compact-positive-time coverage; 4,752 contribution bounds and 3,168 four-field totals, plus a fresh sector.
+- [ ] F57C4e-remaining-joins: admit any other retained/core/incoming chart boundaries and axis attachment; keep the complete 33-chart quantitative gate false until covered.
+- [ ] F57C5a,b/F57C6a,b: construct and join prescribed actual completed T_B, establish physical residual=-div(T_B)+E_B and independent global remainder bounds.
+- [ ] F57D/E/F: resolved source-defined velocity/pressure API, current cone/lift/temporal flatness and required-domain kinetic energy.
+- [ ] F58/F59/F60/F61: true n-dependent equations/per-order repair/remainder, oscillatory/mean corrections, corrected NS and measured dynamics.
+
+Implement one bounded next tensor task, save source-bound evidence, commit/push and mark it done. Avoid reconstructing historical quadratures. A compact-time derivative bound does not prove a temporal-flat remainder, stress cone or completed NS solution. This section supersedes earlier combined-source/common affected velocity-pressure bounds-open entries below; the full goal remains active.
+
+---
+
 # Current handoff: angular local stress/error differences (2026-10-06)
 
 Implementation and scoped local stress/error receipt: commit [d7477882](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7477882583af4799795d8a1974c8b1310dcda1a).
