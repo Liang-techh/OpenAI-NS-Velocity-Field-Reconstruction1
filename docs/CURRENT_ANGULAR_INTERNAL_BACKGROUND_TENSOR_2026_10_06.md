@@ -1,5 +1,7 @@
 # Four angular internal full tensor joins and leading time obstruction (2026-10-06)
 
+Implementation and scoped four full angular tensor joins/leading time obstruction: commit [56c52c8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56c52c8ea77bba68dafb52cdd7eb2b98d0ccd3a2).
+
 All four exact angular support boundaries now have source-identified common **full background stress/divergence/remainder** traces. The same checked core-axis graph supplies the existing angular, pressure, energy, selected coefficient and weighted history owners. The full tensor inventory is **33 regions, 32 adjacent traces and 14 internal traces**, including the core axis. The separate primitive velocity/pressure atlas remains14/8.
 
 The present fixed leading family's E is provably nonflat at the physical origin. This identifies a concrete term the later recursive construction must cancel or absorb. Regional coverage and source interfaces do not complete global admissibility, terminal forcing, finite energy, point evaluation or actual coefficient recursion.

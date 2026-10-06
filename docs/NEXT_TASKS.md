@@ -1,5 +1,7 @@
 # Current handoff: full angular internal tensor joins and leading time obstruction (2026-10-06)
 
+Implementation and scoped four full angular tensor joins/leading time obstruction: commit [56c52c8e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56c52c8ea77bba68dafb52cdd7eb2b98d0ccd3a2).
+
 Four exact angular support boundaries now have common full stress/divergence/remainder traces from the same checked core-axis/pressure/history graph. Tensor inventory: **33 regions/32 adjacent/14 internal traces**, including the axis. The primitive velocity/pressure atlas remains14/8.
 
 Read [CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_ANGULAR_INTERNAL_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_angular_internal_background_tensor_check.json`; focused stage `currentangularinternaltensor`. Warm API: `CurrentAngularInternalBackgroundTensor(core_axis=checked_current_core_axis_background_tensor)`. This is the current handoff; earlier snapshots below are historical.
