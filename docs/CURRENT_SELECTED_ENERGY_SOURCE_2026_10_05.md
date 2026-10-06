@@ -1,5 +1,7 @@
 # Current complete future and selected pulse source (2026-10-05)
 
+Implementation and scoped receipt: commit [e57aa5e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e57aa5e0).
+
 The current exact angular/pressure repair now owns complete future swirl energy through axial order five and the positive selected `ap(Z), c1(Z), c2(Z)` branch through the same order. A restricted native pulse view consumes these functions in its actual velocity, five-moment and mixed-derivative calls. This closes the missing complete-future/selection source dependency after current pressure terminal closure; it does not complete full exterior stress, every physical source owner or temporal recursion.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_selected_energy_source.py`.

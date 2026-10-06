@@ -1,3 +1,21 @@
+# Current checkpoint: complete current future and selected pulse (2026-10-05)
+
+Implementation and scoped receipt: commit [e57aa5e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e57aa5e0).
+
+The checked current exact repair now owns complete future C4/C5, selected ap/c1/c2 C5 and a restricted native pulse mixed4 view. Its new source chain retains all signed angular changes, epsilon/Gamma future atoms, incoming functions and formal positive end factors. Frozen graph/caches are preserved; current outputs are recomputed. This supersedes older queues that leave complete future/selection ownership unstarted. All downstream physical owners, full exterior stress, global cone, flat remainder, prescribed-domain energy and temporal recursion remain open.
+
+Read [CURRENT_SELECTED_ENERGY_SOURCE_2026_10_05.md](CURRENT_SELECTED_ENERGY_SOURCE_2026_10_05.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_selected_energy_source_check.json`; stage `currentselectedenergy`. Evidence: 50 source bindings, 24 future C5 coefficients, 72 selected C5 coefficients, 72 equation coefficients and 240 pulse mixed4 rows. Four stale-owner/cache mutations rejected; independent C4/C5 fixtures and fresh checked Z=.613/end=-.83 passed. Working/staged hashes agree across 595 dependencies. Read-only reviewer: `gpt-5.6-luna / max`, no material restricted-scope blocker.
+
+1. Transport the new terminal positive full-future/2 through every post-pulse energy history, retaining original units and exact nonzero factors.
+2. Bind all current angular/pressure/energy/meridional histories to the full-Gamma stress theorem and issue a separate full-exterior receipt.
+3. Install consistent complete fifth/selected/future callbacks in downstream native physical owners, clear affected caches and rebuild quantitative interfaces/stress/residual outputs. Consume aggregate current hashes and the checked defining-parameter bridge.
+4. Complete global cone, independently bounded flat remainder and energy on the prescribed domain, then genuine n-dependent temporal recursion and oscillatory/full NS/dynamics work.
+
+Keep the long-term goal active. Do not rerun accepted core/33-chart reports by default or infer time recursion from spatial C5.
+
+---
+
+
 # Current checkpoint: original current pressure terminal closed (2026-10-05)
 
 Implementation and scoped receipt: commit [ef4e2711](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ef4e2711).

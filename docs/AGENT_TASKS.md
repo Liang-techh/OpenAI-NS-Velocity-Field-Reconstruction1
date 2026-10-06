@@ -1,3 +1,33 @@
+# Current tasks after complete current future/selection ownership (2026-10-05)
+
+Implementation and scoped receipt: commit [e57aa5e0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e57aa5e0).
+
+The checked current exact repair now owns complete future C4/C5, selected ap/c1/c2 C5 and a restricted native pulse mixed4 view. Its new source chain retains all signed angular changes, epsilon/Gamma future atoms, incoming functions and formal positive end factors. Frozen graph/caches are preserved; current outputs are recomputed. This supersedes older queues that leave complete future/selection ownership unstarted. All downstream physical owners, full exterior stress, global cone, flat remainder, prescribed-domain energy and temporal recursion remain open.
+
+Read [CURRENT_SELECTED_ENERGY_SOURCE_2026_10_05.md](CURRENT_SELECTED_ENERGY_SOURCE_2026_10_05.md). Scoped receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_selected_energy_source_check.json`; stage `currentselectedenergy`. Evidence: 50 source bindings, 24 future C5 coefficients, 72 selected C5 coefficients, 72 equation coefficients and 240 pulse mixed4 rows. Four stale-owner/cache mutations rejected; independent C4/C5 fixtures and fresh checked Z=.613/end=-.83 passed. Working/staged hashes agree across 595 dependencies. Read-only reviewer: `gpt-5.6-luna / max`, no material restricted-scope blocker.
+
+- [x] F57B-current-future-energy-C4-prefix: original complete integral C4 replayed on the current exact repair, with current C1 intersection, parameter identity and matching Taylor contexts. Receipt: current_selected_energy_source_check.json.
+- [x] F57B-current-future-energy-C5-prefix: original fifth complete energy equation extends the newly recomputed current C4 prefix; complete Gamma tail and signed corrections retained. Same receipt.
+- [x] F57B-current-selected-ap-c1-c2: current full future drives the original positive quadratic and both native linear moment rows through C5. All selected caches are new; no frozen output relabeling. Same receipt.
+- [x] F57B-current-selected-restricted-pulse: main/gap/end methods consume the new complete fifth/selection provider and restore terminal zero meridional histories with positive full-future/2 energy. 240 pulse mixed4 rows; restricted scope only.
+- [ ] F57B-current-postpulse-energy-history: transport the newly selected terminal full-future/2 through flatten, postflatten power, supported angular corrections, steep transitions, waiting, collar and exact heat. Bind each actual remaining-energy function, original radial units and factor one half. Preserve nonzero formal S/Gamma deficit; numerical zero overlap does not establish identity.
+- [ ] F57B-current-full-zero-exterior-stress: bind current angular, pressure, energy and meridional histories to the canonical full-Gamma stress identities and original positive stress prefactors. Verify both full exterior components through required mixed order for t>=3, including collar exit. Separate receipt and checked loader required; do not reuse old full-stress history admission.
+- [ ] F57B-current-physical-source-owner-installation: replace old complete fifth/selection/future callbacks consistently in native pulse, flatten, angular, steep/waiting, heat and physical assembly. Enumerate affected owners and clear each affected cache. Keep native incoming core/annulus functions and exact log scales; restricted pulse availability is not every physical owner installed.
+- [ ] F57A-current-quantitative-native-joins: reconstruct affected pulse entrance/main-exit/gap/end/flatten and outer joins at mixed spatial order four, after physical-prefactor and coordinate conversions. Retain tiny positive scales/widths and five cumulative histories.
+- [ ] F57C-current-physical-stress-residual: compose actual physical stress/remainder from the installed graph; retain viscosity, lambda, moving cylindrical basis and fixed-position time derivatives. Compare source identities and independent residual measurements separately.
+- [ ] F57D-current-production-points-and-cone: acquire resolved nontrivial u/v/w/p points and independent tensor cone margins across all core/annulus/pulse/flatten/steep/waiting/collar supports. Scalar local signs cannot certify the global cone.
+- [ ] F57E-current-independent-flat-remainder: bound each physical-time remainder contribution, support and spatial/time derivative with its terminal scaling. High-order spatial Taylor remainder is not flat time behavior.
+- [ ] F57F-current-prescribed-domain-energy: integrate installed-field kinetic energy with exact physical volume weights on the paper's prescribed spacetime/support domain, including tails and terminal-time integrability. Do not use unlocalized whole-space Gamma energy or only core energy.
+- [ ] F58-current-temporal-recursion-n1: implement the actual n=1 recovery equations on the common core interval, own moment repair and divergence-preserving cutoff; expose coefficients, forcing and interfaces.
+- [ ] F59-current-temporal-recursion-ng2: implement n-dependent recovery for n>=2 with previous-order terms and independent repairs, finite truncation bounds and smooth summation. Spatial C5 is not time recursion.
+- [ ] F60-current-oscillatory-stress-correction: after stress admission, construct both oscillatory pulse families/mean corrections and independently measure averaged quadratic momentum-flux cancellation.
+- [ ] F61-current-full-corrected-NS-dynamics: assemble corrected 3D u/v/w(x,y,z,t), regular forcing and independent Cartesian residuals; measure radial contraction, relative axial elongation, amplitude/vorticity growth and actual material-line winding.
+
+Work on the first unresolved dependency. Claim bounded ownership, preserve frozen receipts/unrelated files, issue scoped checks, mark completed with receipt/commit and push. All-physical and temporal gates remain separate. This section supersedes older future/selection-open entries below.
+
+---
+
+
 # Current tasks after original pressure terminal closure (2026-10-05)
 
 Implementation and scoped receipt: commit [ef4e2711](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ef4e2711).
