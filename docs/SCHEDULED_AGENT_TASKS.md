@@ -1,3 +1,11 @@
+# Current executable queue: current terminal equations after exact branch (2026-10-05)
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md. Native Xv*, its log containment, correlated waiting/radius/amplitude replay, shared weights and unique current angular C5/future C1 branch are admitted. Focused stage: currentexactrepair; receipt: current_exact_repair_branch_check.json. Preserve the accepted core/bridge/heat/collar reports rather than regenerating them.
+
+Next bind native selected/future physical paths consistently to the new exact branch, then replay actual XR->XS->XQ->XT->Xtail and the common absolute-pressure history. Prove current Dtheta=0 and Cp=0 from the original repair/terminal equations, retaining full Gamma future and exact S. Issue dedicated scoped receipts before claiming stress-free exterior. Quantitative native mixed4 interfaces and point/global/flatness/required-energy/temporal/oscillatory layers remain separate. Mark completions and push owned artifacts.
+
+---
+
 # Current executable queue: exact native repair source after collar mixed4 (2026-10-05)
 
 Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).

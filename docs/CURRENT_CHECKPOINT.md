@@ -1,3 +1,11 @@
+# Current checkpoint: exact native angular/pressure repair branch (2026-10-05)
+
+Read [CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md](CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md). Native affine Xv now enters one current source-bound repair. Waiting, radius/amplitude and future factors are replayed; both angular C4/C5 and complete future C1 use the same unique branch. Four views provide48 angular C5 rows and8 energy C1 rows;12 independent nontrivial-Xv preheat rows pass. Focused stage: currentexactrepair. Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_exact_repair_branch_check.json.
+
+F57B current-native-repair-inlet and current-repair-function-bridge are complete in this source-bound scope. Existing physical charts have not been replaced; actual Dtheta/Cp are still retained. Next bind selected/native physical paths to the unique branch and close current angular and absolute-pressure terminal equations, then stress-free exterior and quantitative native interfaces. Global stress/flatness/required-domain energy, complete points and true temporal recursion remain open. This supersedes the earlier exact-source-wrapper-open queue below.
+
+---
+
 # Current checkpoint: full current collar stress mixed4 (2026-10-05)
 
 Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).

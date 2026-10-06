@@ -1,3 +1,17 @@
+# Next: current terminal closure after exact repair branch (2026-10-05)
+
+Read CURRENT_EXACT_REPAIR_BRANCH_2026_10_05.md and the latest AGENT_TASKS.md section. Native affine Xv, waiting/radius/amplitude replay and one unique angular C5/future C1 branch are now admitted. Run --stage currentexactrepair; receipt: current_exact_repair_branch_check.json.
+
+1. Identify the native selected/future physical graph with the current exact branch, preserving consistent C4/C5 energy prefixes and selected coefficients.
+2. Replay actual current angular terminal history and prove Dtheta=0 from the exact repair equation, prescribed waiting root and common full Gamma future.
+3. Transport the original common absolute pressure and prove Cp=0 from the original quadratic equation. Issue dedicated current terminal and stress-free-exterior receipts.
+4. Complete quantitative native interfaces, physical stress/residual identity, production points, global stress/cone, independent flatness and prescribed-domain energy.
+5. Implement genuine n-dependent temporal recursion and oscillatory correction after their background dependencies.
+
+Both actual terminal constants stay in the current physical stress until their separate proofs pass. The completed input-wrapper tasks supersede the first two open items in the older queue below.
+
+---
+
 # Next: exact native repair branch and terminal closure (2026-10-05)
 
 Implementation and scoped receipts: commit [40fbde93](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40fbde93).
