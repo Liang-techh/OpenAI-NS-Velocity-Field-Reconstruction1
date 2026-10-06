@@ -260,6 +260,7 @@ CURRENTEXACTREPAIR=('current_exact_repair_branch','current_exact_repair_branch_c
 CURRENTANGULARTERMINAL=('current_angular_terminal_closure','current_angular_terminal_closure_check')
 CURRENTPRESSUREBALANCE=('current_pressure_terminal_balance','current_pressure_terminal_balance_check')
 CURRENTRAWPRESSURE=('current_raw_preheat_pressure_operator','current_raw_preheat_pressure_operator_check')
+CURRENTPRESSURETERMINAL=('current_pressure_terminal_closure','current_pressure_terminal_closure_check')
 FIRSTSWITCHLEADING=('first_switch_leading','first_switch_leading_check')
 SWITCHINTEGRALS=FIRSTSWITCHLEADING+('switch_signed_integrals','switch_signed_integrals_check')
 
@@ -366,9 +367,10 @@ def stages(stage):
             'currentangularterminal':CURRENTANGULARTERMINAL,
             'currentpressurebalance':CURRENTPRESSUREBALANCE,
             'currentrawpressure':CURRENTRAWPRESSURE,
+            'currentpressureterminal':CURRENTPRESSURETERMINAL,
             'firstswitchleading':FIRSTSWITCHLEADING,
             'switchintegrals':SWITCHINTEGRALS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+PULSEMAINEXITCONE+PULSEENTRANCESIMILARITY+PULSEENTRANCEPHYSICAL+PULSEENTRANCECONE+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+ACTUALBRIDGEINTEGRALS+SWITCHINTEGRALS+ACTUALBRIDGESWITCH+ACTUALSWITCHMIXED+ACTUALRESHAPEMIXED+ACTUALRESTOREMIXED+ACTUALRSHJOIN+ACTUALFEEDBACKPATCH+CURRENTMATCHEDDISPATCH+ACTUALRHJOIN+CURRENTPREPULSE+CURRENTPHYSICALMAPS+ACTUALRPJOIN+CURRENTNATIVEPULSE+CURRENTPULSEPHYSICAL+CURRENTPULSEFLATTEN+CURRENTFLATTENPHYSICAL+CURRENTPOWERANGULAR+CURRENTPOWERANGULARPHYSICAL+CURRENTSTEEPWAITING+CURRENTSTEEPWAITINGPHYSICAL+CURRENTHEAT+CURRENTHEATPHYSICAL+CURRENTCOREPHYSICAL+CURRENTBRIDGEMIXED+CURRENTBRIDGEPHYSICAL+CURRENTBRIDGEJOINS+CURRENTCORERECURRENCE+CURRENTCORESWIRLSOURCE+CURRENTCOREOPERATOR+CURRENTCOREFIXEDPOINT+CURRENTCOREFIRST+CURRENTHEATSTRESS+CURRENTCOLLARSTRESS+CURRENTEXACTREPAIR+CURRENTANGULARTERMINAL+CURRENTPRESSUREBALANCE+CURRENTRAWPRESSURE}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+PULSEMAINEXITCONE+PULSEENTRANCESIMILARITY+PULSEENTRANCEPHYSICAL+PULSEENTRANCECONE+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+ACTUALBRIDGEINTEGRALS+SWITCHINTEGRALS+ACTUALBRIDGESWITCH+ACTUALSWITCHMIXED+ACTUALRESHAPEMIXED+ACTUALRESTOREMIXED+ACTUALRSHJOIN+ACTUALFEEDBACKPATCH+CURRENTMATCHEDDISPATCH+ACTUALRHJOIN+CURRENTPREPULSE+CURRENTPHYSICALMAPS+ACTUALRPJOIN+CURRENTNATIVEPULSE+CURRENTPULSEPHYSICAL+CURRENTPULSEFLATTEN+CURRENTFLATTENPHYSICAL+CURRENTPOWERANGULAR+CURRENTPOWERANGULARPHYSICAL+CURRENTSTEEPWAITING+CURRENTSTEEPWAITINGPHYSICAL+CURRENTHEAT+CURRENTHEATPHYSICAL+CURRENTCOREPHYSICAL+CURRENTBRIDGEMIXED+CURRENTBRIDGEPHYSICAL+CURRENTBRIDGEJOINS+CURRENTCORERECURRENCE+CURRENTCORESWIRLSOURCE+CURRENTCOREOPERATOR+CURRENTCOREFIXEDPOINT+CURRENTCOREFIRST+CURRENTHEATSTRESS+CURRENTCOLLARSTRESS+CURRENTEXACTREPAIR+CURRENTANGULARTERMINAL+CURRENTPRESSUREBALANCE+CURRENTRAWPRESSURE+CURRENTPRESSURETERMINAL}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -386,6 +388,7 @@ def run(stage='all',list_only=False):
     shared_current_angular_terminal=None
     shared_current_pressure_balance=None
     shared_current_raw_pressure=None
+    shared_current_pressure_terminal=None
     for name in selected:
         print('Build compliant stage:',name,flush=True)
         module=importlib.import_module(PREFIX+name)
@@ -434,6 +437,11 @@ def run(stage='all',list_only=False):
             module.run(field=shared_current_raw_pressure)
         elif name=='current_raw_preheat_pressure_operator_check':
             module.run(field=shared_current_raw_pressure)
+        elif name=='current_pressure_terminal_closure':
+            shared_current_pressure_terminal=module.CurrentPressureTerminalClosure(require_checked=False)
+            module.run(field=shared_current_pressure_terminal)
+        elif name=='current_pressure_terminal_closure_check':
+            module.run(field=shared_current_pressure_terminal)
         else:
             module.run()
         completed.append(name)
@@ -775,11 +783,13 @@ def run(stage='all',list_only=False):
         current_native_flatten_pressure_integral_callable_reified='current_raw_preheat_pressure_operator_check' in completed,
         current_raw_preheat_pressure_14_stage_operator_available='current_raw_preheat_pressure_operator_check' in completed,
         current_raw_pressure_operator_native_forward_primitive_identified='current_raw_preheat_pressure_operator_check' in completed,
-        current_implicit_datum_to_native_raw_pressure_operator_identified=False,
-        current_heat_pressure_terminal_constant_eliminated=False,
+        current_implicit_datum_to_native_raw_pressure_operator_identified='current_pressure_terminal_closure_check' in completed,
+        current_heat_pressure_terminal_constant_eliminated='current_pressure_terminal_closure_check' in completed,
+        current_heat_pressure_stress_mixed4_after_terminal_closure_recovered='current_pressure_terminal_closure_check' in completed,
+        current_pressure_terminal_scope='Original source-bound exact fourteen-stage integral and raw axis waiting root identify prescribed analytic P0; current Cp=0 and pressure/stress mixed4 in the restricted heat view; full exterior/physical/global/temporal admission remains separate',
         current_angular_terminal_scope='Actual current angular branch, raw-reference prescribed waiting root and corrected XR/XS/XQ/XT/Xtail source identity close Dtheta through axial5; collar/Gamma angular stress mixed4 recovered; Cp and physical/global/temporal obligations remain open',
         current_exact_repair_scope='Native affine Xv, correlated waiting/radius/amplitude replay and one unique current angular/pressure branch; angular C5 and complete future energy C1; existing physical chart installation and actual terminal-zero proofs remain open',
-        current_heat_terminal_constants_eliminated=False,
+        current_heat_terminal_constants_eliminated='current_pressure_terminal_closure_check' in completed,
         current_heat_stress_scope='Current common graph, pressure mixed4, collar stress mixed3 or mixed4 as separately gated, and exterior stress mixed4; full collar K radial5 and collar/Gamma actual stress join separately gated; both terminal constants retained; zero exterior stress, full tensor/cone and physical residual remain open',
         current_core_radial_production_scaling_certified=any(k in completed for k in ('current_core_recurrence_source','current_core_scaled_swirl_source_check')),
         current_core_leading_axis_A_U_source_equations_certified=any(k in completed for k in ('current_core_recurrence_source','current_core_scaled_swirl_source_check')),
@@ -803,14 +813,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Original implicit analytic P0 to current native fourteen-stage raw pressure operator function identity -> current Cp zero and full stress-free exterior -> full selected/future physical installation and quantitative native joins -> points/global stress/flat remainder/required-domain energy -> genuine n-dependent recursion and oscillatory correction/measured dynamics')
+        next_dependency='Current angular and pressure terminal receipts -> separate full stress-free exterior -> full selected/future physical installation and quantitative native joins -> points/global stress/flat remainder/required-domain energy -> genuine n-dependent recursion and oscillatory correction/measured dynamics')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','pulsemainexitcone','pulseentrancesimilarity','pulseentrancephysical','pulseentrancecone','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','actualbridgeintegrals','actualbridgeswitch','actualswitchmixed','actualreshapemixed','actualrestoremixed','actualrshjoin','actualfeedbackpatch','currentmatcheddispatch','actualrhjoin','currentprepulse','currentphysicalmaps','actualrpjoin','currentpulsechain','currentpulsephysical','currentpulseflatten','currentflattenphysical','currentpowerangular','currentpowerangularphysical','currentsteepwaiting','currentsteepwaitingphysical','currentheat','currentheatphysical','currentcorephysical','currentbridgemixed','currentbridgephysical','currentbridgejoins','currentcorerecurrence','currentcoreswirl','currentcoreoperator','currentcorefixedpoint','currentcorefirst','currentheatstress','currentcollarstress','currentexactrepair','currentangularterminal','currentpressurebalance','currentrawpressure','firstswitchleading','switchintegrals','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','pulsemainexitcone','pulseentrancesimilarity','pulseentrancephysical','pulseentrancecone','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','actualbridgeintegrals','actualbridgeswitch','actualswitchmixed','actualreshapemixed','actualrestoremixed','actualrshjoin','actualfeedbackpatch','currentmatcheddispatch','actualrhjoin','currentprepulse','currentphysicalmaps','actualrpjoin','currentpulsechain','currentpulsephysical','currentpulseflatten','currentflattenphysical','currentpowerangular','currentpowerangularphysical','currentsteepwaiting','currentsteepwaitingphysical','currentheat','currentheatphysical','currentcorephysical','currentbridgemixed','currentbridgephysical','currentbridgejoins','currentcorerecurrence','currentcoreswirl','currentcoreoperator','currentcorefixedpoint','currentcorefirst','currentheatstress','currentcollarstress','currentexactrepair','currentangularterminal','currentpressurebalance','currentrawpressure','currentpressureterminal','firstswitchleading','switchintegrals','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
