@@ -1,5 +1,7 @@
 # Current common interface atlas (2026-10-06)
 
+Implementation and scoped common source/compact-time receipt: commit [2ecf9213](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ecf92137d23d477881720d73e661e42b20e5681).
+
 The fourteen affected adjacent joins and eight internal support edges now compose under one checked current selected/future/analytic-pressure graph. Their actual velocity and absolute-pressure traces have common Cartesian spatial4 and fixed-position time1 upper bounds over all angles, whole source Z and requested finite compact log(tau) sectors. This completes F57C3 and the affected velocity/pressure sector tasks in F57C4. The next construction is the prescribed actual completed background stress tensor and its physical residual/remainder decomposition.
 
 Implementation: `experiments/root_st073/lei_ren_part1_paper_compliant_current_interface_atlas.py`, matching `_check.py`, producer `.json` and scoped `_check.json`. Focused controller stage: `currentinterfaceatlas`. The existing fourteen adjacent and eight internal source receipts, both local stress/error companions, exact KR/KR^2 logs, nonzero cumulative histories and analytic pressure datum are retained. Complete quantitative admission for every join of the 33 charts, actual tensor/cone/NS/remainder, resolved points, required-domain energy and n-dependent temporal recursion remain open.

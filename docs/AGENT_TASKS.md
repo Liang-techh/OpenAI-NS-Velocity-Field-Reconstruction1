@@ -1,5 +1,7 @@
 # Current handoff: common 22-interface physical bounds (2026-10-06)
 
+Implementation and scoped common source/compact-time receipt: commit [2ecf9213](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ecf92137d23d477881720d73e661e42b20e5681).
+
 The 14 affected adjacent joins and 8 internal support edges now compose under one checked current selected/future/analytic-pressure graph. Actual velocity/absolute-pressure Cartesian spatial4 and fixed-position time1 upper bounds cover all angles, whole source Z and requested finite compact log(tau) sectors. F57C3 and the affected trace/sector tasks in F57C4 are complete. Prescribed actual completed background stress and its physical residual/remainder decomposition are next. Other retained 33-chart joins, global tensor/cone/NS/remainder/energy/points and n-dependent temporal recursion remain open.
 
 Read [CURRENT_INTERFACE_ATLAS_2026_10_06.md](CURRENT_INTERFACE_ATLAS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_interface_atlas_check.json`; focused stage `currentinterfaceatlas`. Reuse `CurrentInterfaceAtlas(differences=checked_current_angular_differences)` and call `bounds(interface,log_tau,Z)`. Four pulse support endpoints now also bound the actual nonzero full field, separately from zero local differences. Finite physical traces have R>0, |Z|<1, tau>0; Z=+/-1 are limiting/infinite-space source sectors.
