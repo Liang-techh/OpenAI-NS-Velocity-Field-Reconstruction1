@@ -1,3 +1,5 @@
+Historical native-registry milestone. Continuation: [CURRENT_PHYSICAL_TENSOR_LOCATOR_2026_10_06.md](CURRENT_PHYSICAL_TENSOR_LOCATOR_2026_10_06.md); actual implicit coordinates and original radius inverse candidates now exist, while exact physical seam/global cover remain open.
+
 # One-graph native full tensor registry (2026-10-06)
 
 Implementation and scoped one-graph native tensor registry receipt: commit [cad58441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cad58441fbe661b08695f6bfbdee0a3d6fc93fcf).

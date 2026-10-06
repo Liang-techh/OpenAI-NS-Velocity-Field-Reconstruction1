@@ -1,3 +1,22 @@
+# Current handoff: actual implicit physical coordinates and original radius inverse candidates (2026-10-06)
+
+The actual physical coordinate/inverse candidate milestone is implemented locally with a scoped passing receipt. This paragraph will be pinned to the implementation commit after publication.
+
+The checked 33-region/32-adjacent/14-support full tensor graph now accepts physical Cartesian coordinates and log radius. The actual lambda is solved separately from sqrt(tau), with real log(tau) retained; complete signed T/E views are returned for every possible source region. Primitive atlas remains 14 adjacent / 8 internal. Axis is a separate same-core analytic extension.
+
+Read [CURRENT_PHYSICAL_TENSOR_LOCATOR_2026_10_06.md](CURRENT_PHYSICAL_TENSOR_LOCATOR_2026_10_06.md). Data/receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_physical_tensor_locator.json` and `_check.json`. Focused stage: `currentphysicallocator`; warm API: `CurrentPhysicalTensorLocator(registry=checked_current_tensor_registry)`. Earlier snapshots below are historical.
+
+- [x] F57C-global-cover1e-1: actual implicit lambda/constant-viscosity map, directed finite physical coordinates, true time and finite-point Z relation.
+- [x] F57C-global-cover1e-2a: all 33 original radius inverse candidate formulas with source guards, exact axis and full T/E candidate union; 32 symbolic source radius joins.
+- [ ] **Next F57C-global-cover1e-2b/c:** keep exact shared radius anchors and local offsets correlated, then resolve the currently ambiguous outer coordinates. Absolute outer log radii currently overlap 25 candidate regions; selecting a midpoint or discarding candidates is not a solution.
+- [ ] F57C-global-cover1e-2d / 1f: exact physical boundary selection through the admitted 32 adjacent / 14 support traces, then independent global physical cover on finite positive times.
+- [ ] Original admissible cone/lift, actual n=1 and distinct n>=2 coefficient recovery/moment repair, then completed flatness/smooth sum. Cancel or absorb the certified nonflat leading origin E term.
+- [ ] Convergent u/v/w/p, prescribed-domain energy, both oscillatory families/mean corrections, corrected NS and measured dynamics.
+
+Actual implicit-map and 33 radius-inverse candidate gates are true. Exact physical seam/global cover, cone/lift, resolved points, full NS/energy/flatness/temporal recursion remain open. Reuse the admitted graph; the long-term goal stays active.
+
+---
+
 # Current handoff: one-graph native full tensor registry (2026-10-06)
 
 Implementation and scoped one-graph native tensor registry receipt: commit [cad58441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cad58441fbe661b08695f6bfbdee0a3d6fc93fcf).
