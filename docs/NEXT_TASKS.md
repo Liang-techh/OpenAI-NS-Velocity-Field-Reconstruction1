@@ -1,3 +1,14 @@
+# Next: exact native repair branch and terminal closure (2026-10-05)
+
+Read CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md and updated F57B tasks in AGENT_TASKS.md. Current collar K radial5, stress mixed4 and actual collar/Gamma stress mixed4 traces are now admitted with both constants retained. Run --stage currentcollarstress.
+
+1. Build a current exact-source repair wrapper with Xv=1/(1-mu)+(Xp-1/(1-mu))*exp(-13*(1-mu)/mu); bind both native/candidate Xp ratios to the same buffer source and prove live log-suppression containment.
+2. Bind the original preheat function, waiting/heat factors, weight functions and quadratic equations with that exact Xv parameter. Invoke uniform contraction/uniqueness; preserve valid legacy enclosures without treating caps as values.
+3. Replay current angular terminal propagation and common pressure terminal equation; close quantitative native pulse interfaces separately.
+4. Complete production points, global stress/cone, independent flat remainder and prescribed-domain energy; then genuine n-dependent recursion, oscillatory correction and corrected NS diagnostics.
+
+---
+
 # Next: current source constants, collar mixed4 and native pulse joins (2026-10-05)
 
 Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).

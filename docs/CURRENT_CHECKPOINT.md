@@ -1,3 +1,11 @@
+# Current checkpoint: full current collar stress mixed4 (2026-10-05)
+
+Read [CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md](CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md). Original sigma/phi/full-Gamma derivatives now supply K radial5. Current collar actual stress mixed4 and the collar/Gamma actual stress functional mixed4 join are admitted. Six views contain270 factored stress rows and216 K coefficients;144 independent shape rows and45 original physical-stress rows pass. Run --stage currentcollarstress; receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_collar_stress_mixed_C4_check.json.
+
+Dtheta and Cp remain in the actual stress. The next dependency is a current exact-source repair wrapper carrying native Xv into both repair paths. The old uniform contraction covers this value, but its suppression box is not an exact function definition. Close current angular/pressure terminal equations and quantitative native pulse interfaces afterward. Zero exterior stress, complete points, global stress/flatness/required-domain energy and genuine temporal recursion remain open. This supersedes the earlier collar mixed3/K5-open scope below.
+
+---
+
 # Current checkpoint: actual current heat pressure and stress (2026-10-05)
 
 Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).

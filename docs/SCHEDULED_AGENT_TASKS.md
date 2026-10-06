@@ -1,3 +1,11 @@
+# Current executable queue: exact native repair source after collar mixed4 (2026-10-05)
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_COLLAR_STRESS_MIXED4_2026_10_05.md. Current pressure4, collar stress4, exterior stress4 and the actual collar/Gamma stress mixed4 join are admitted, retaining both constants. Focused stage: currentcollarstress. Do not regenerate accepted upstream reports.
+
+Implement the exact native Xv source wrapper and its live log-suppression containment, identify the two repair paths' bump weights and original coefficient equations, and use the accepted uniform contraction to bind the unique current-source branch. Then replay current angular terminal history and close current absolute pressure. Never equate interval boxes or zero Dtheta/Cp after propagation. Native quantitative interfaces, points/global/flatness/required-energy/temporal/oscillatory layers remain open. Mark only checked scopes complete and push owned artifacts.
+
+---
+
 # Current executable queue: current heat constants and collar mixed4 (2026-10-05)
 
 Implementation and scoped receipts: commit [fc383401](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fc383401).
