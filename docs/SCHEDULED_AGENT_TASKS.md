@@ -1,5 +1,7 @@
 # Current handoff: five actual tensor regions and four joins (2026-10-06)
 
+Implementation and scoped O7 tensor/join receipt: commit [77b671d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b671d09eff6e218d21b8e519baf06d02000bf7).
+
 Current steep-power, steep-exit and waiting now have complete-moment stress mixed3, symmetric physical tensor completion and regional residual=-div(T_B)+E_B. Entry-power, power-exit and exit-waiting completed-tensor joins are function-identified and physically bounded. Together with angular/entry, five actual tensor regions and four adjacent tensor joins are available. This completes F57C5a-postpulse-power, F57C5a-postpulse-exit-waiting and their three scoped F57C5b joins. The separate current22 velocity/absolute-pressure trace inventory remains 14 adjacent / 8 internal.
 
 Read [CURRENT_STEEP_WAITING_BACKGROUND_STRESS_2026_10_06.md](CURRENT_STEEP_WAITING_BACKGROUND_STRESS_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_waiting_background_stress_check.json`; focused stage `currentsteepstress`. Reuse `CurrentSteepWaitingBackgroundStress(entry=checked_current_entry_tensor)`. Twelve views check 780 physical tensor/divergence/remainder rows (694 nonzero enclosures); 90 original mixed4 normalization identities and 180 current primitive seam identities retain the same nonzero energy/pressure histories. Each new interface has 65 common bounds and a fresh compact sector. Exact KR/KR^2 remain in source units/logs; pressure uses stable original remaining integrals. These are source enclosures, not resolved physical point values.
@@ -88,8 +90,6 @@ Next work is the eight internal support edges. The detailed handoff splits them 
 ---
 
 # Current executable queue: current pulse interface transfer (2026-10-06)
-
-Implementation and scoped O7 tensor/join receipt: commit [77b671d0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b671d09eff6e218d21b8e519baf06d02000bf7).
 
 Implementation and scoped eight-interface receipt: commit [5b1abc72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b1abc7202bd19634a8a2b369ac58da956def0be).
 
