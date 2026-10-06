@@ -1,3 +1,31 @@
+# Current checkpoint: complete current 33-chart physical source (2026-10-05)
+
+The complete current selected pulse, postpulse energy and exact repair now feed one callable physical source graph across all 33 charts: fifteen replaced pulse/postpulse providers and eighteen retained common core/incoming/bridge sources. Original Cartesian spatial4 and fixed-position time1 maps, correlated pulse factors and absolute pressure units are preserved. This is source-function and signed-bound admission; resolved physical point values, quantitative interfaces, global tensor/cone, NS, flat remainder, prescribed-domain energy and genuine temporal recursion remain open.
+
+Read [CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md](CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_complete_physical_assembly_check.json`. Focused stage: `currentcompletephysical`. Evidence: all six pulse and nine postpulse full coordinate boxes; 17 replayed maps and 3,672 source contributions (2,520 signed terms, 1,152 exact-zero contributions); five old/unchecked substitutions rejected; unbounded exterior finite log bounds; checked loading and fresh unsaved Z=.631, main=1.13/exterior=4.71 at log(tau)=-3.17, theta=.53. One field is shared by producer/checker. Read-only reviewer metadata: GPT-5.6 Luna / max; restricted scope accepted.
+
+Completed:
+
+- [x] F57B1-current-owner-inventory: explicit 33-owner registry and 15 changed / 18 retained provider/alias/cache partition.
+- [x] F57B2-current-physical-installation: same checked complete selected/energy/exterior graph in every current callable physical provider; frozen ancestors remain provenance.
+- [x] F57B3a-current-Cartesian-time-source-map: original source-bound spatial4/time1 maps applied to full changed chart boxes and fresh calls. This does not finish resolved production point acquisition.
+- [x] F57B-current-full-energy/exterior: accepted current complete normalized history and source-bound zero full similarity exterior stresses from the preceding milestone.
+
+First unresolved work:
+
+- [ ] F57C1-current-interface-ledger: actual source calls, exact boundaries, coordinate conversions, units, orders and all five histories; pulse entrance/main/exit/gap/gap-end/end and every affected postpulse join.
+- [ ] F57C2-current-functional-interface-transfer: source identities on the actual selected equations and complete history; exact endpoints distinct from numeric coverage boxes.
+- [ ] F57C3/F57C4-current-quantitative-joins: independent two-sided mixed4 physical velocity/pressure bounds for pulse and postpulse joins. Preserve positive scales and absolute datum.
+- [ ] F57C5/F57C6-current-physical-tensor/residual: full prescribed stress/remainder and actual physical residual=-div(T_B)+E_B, with viscosity, basis, units and fixed-position time.
+- [ ] F57B3b/F57D1-resolved-point-API: nontrivial deterministic u/v/w/p and controlled errors from the same defining sources; interval centers/caps and saved reports are not production values.
+- [ ] F57D2-global-cone/lift, F57E-independent-flat-remainder and F57F-prescribed-domain-physical-energy.
+- [ ] F58-n1 / F59-ng2: genuine n-dependent temporal recovery, separate repairs, truncation and smooth summation.
+- [ ] F60/F61: both oscillatory pulse families, averaged quadratic stress cancellation, corrected full NS and measured contraction/elongation/winding.
+
+Use the fourteen detailed executable tasks in the handoff, work on the first unresolved dependency, and mark completion with receipt and implementation commit. Preserve accepted core/unchanged sources and unrelated working files; run the affected checks only. The long-term goal stays active. These entries supersede older physical-installation-open entries below.
+
+---
+
 # Current checkpoint: postpulse energy and full similarity exterior stress (2026-10-05)
 
 Implementation and scoped receipts: commit [3e6694d2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6694d2).

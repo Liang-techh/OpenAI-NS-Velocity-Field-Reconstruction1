@@ -1,5 +1,7 @@
 # Current postpulse energy and full similarity exterior stress (2026-10-05)
 
+Subsequent status: the current complete graph is now installed in all 33 callable physical source charts with original spatial4/time1 maps. See [CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md](CURRENT_COMPLETE_PHYSICAL_SOURCE_2026_10_05.md) for its separate scoped receipt and current interface/tensor queue. The evidence and open gates below describe the pinned earlier milestone.
+
 The checked current complete future/selection now feeds every native postpulse source owner. Its actual normalized energy and zero meridional histories reach the full infinite Gamma exterior. Combined with the previously checked current angular and original pressure identities, this identifies both original similarity exterior stress components as exactly zero for Z in [-1,1] and log(R/Rtail)>=3, including the collar exit. This is a restricted source and similarity-stress result; complete physical installation, global tensor/cone, physical NS, flat remainder, prescribed-domain kinetic energy and temporal recursion remain open.
 
 Implementation and scoped receipts: commit [3e6694d2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6694d2).
