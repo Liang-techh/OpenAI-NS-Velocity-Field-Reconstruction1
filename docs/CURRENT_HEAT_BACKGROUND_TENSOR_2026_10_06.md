@@ -1,5 +1,7 @@
 # Current collar/exterior tensors and heat attachment (2026-10-06)
 
+Current continuation: [actual flatten/power tensors and two joins](CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md) completes the next flatten/outer-power construction below. Nine actual tensor regions and eight adjacent tensor joins are available. Next is actual pulse-end tensor construction and its end-flatten attachment. Global and temporal obligations remain open.
+
 Implementation and scoped heat tensor/join receipt: commit [d04f7cda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d04f7cda9efcbfbdb2158e5247c512ee7f677dc1).
 
 The actual current heat collar and exact Gamma exterior now have completed physical tensors, stress mixed3 and physical divergence/remainder mixed2. Waiting-collar and collar-exterior are source-function completed-tensor joins with common physical bounds. The complete current chain now has seven actual tensor regions and six adjacent tensor joins. The separate velocity/absolute-pressure trace atlas remains 14 adjacent and 8 internal.
@@ -69,7 +71,7 @@ Read-only review metadata: GPT-5.6 Luna / max. Scoped review passes with no mate
 - [x] F57C5b-waiting-collar-join: common source units, actual shape/pressure/energy identity and completed-tensor bounds.
 - [x] F57C5a-postpulse-exterior: current full Gamma physical tensor, divergence/remainder and exact regional NS identity on the original unbounded exterior.
 - [x] F57C5b-collar-exterior-join: source-exact zero completed-tensor/physical-remainder attachment.
-- [ ] **Next: F57C5a-postpulse-flatten-outerpower and F57C5b-flatten-power/power-angular joins.** Reuse this checked owner. Bind the current flatten and outer-power A/E/P/K and source units to the same complete future/pressure graph. Start from the original source t[0,100] and y=(Lrel-4)*phase, with ordinary logR derivatives and endpoint sigma/beta recipes. Compute stable original full stresses before enclosure; retain complete energy, nonzero X/P0/Pin and source amplitudes. Build both actual physical tensors and their completed joins to the already admitted angular tensor; bound stress3/divergence2/diagonal2/remainder2. Save a scoped receipt and do not rebuild old terminal owners.
+- [x] **F57C5a-postpulse-flatten-outerpower and F57C5b-flatten-power/power-angular joins.** Completed in [the current flatten/power tensor layer](CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md): same complete energy/pressure graph, variable flatten K, ordinary stress3/divergence2/diagonal2/remainder2, actual physical tensors and both source-function joins. Nine regions/eight tensor joins are available; global and temporal scope stays open.
 - [ ] F57C5a-pulse-end: current actual end tensor from all five complete histories and selected amplitudes, including meridional cross terms. Connect end-flatten and all four internal end support edges; local differences are not actual tensor values.
 - [ ] F57C5a-pulse-main/gap/entrance: actual entrance/main/exit/gap/gap-end tensors, reciprocal coordinates, original Pin/P0 and complete future/2. Connect all adjacent pulse tensor joins to end and the retained incoming chain.
 - [ ] F57C5a-core-retained/F57C4e-axis: common fixed-point core and original incoming/bridge tensors, axis regularity, first core/bridge traces and all remaining retained boundaries.

@@ -1,24 +1,21 @@
-# Current handoff: seven actual tensor regions and six joins (2026-10-06)
+# Current handoff: nine actual tensor regions and eight joins (2026-10-06)
 
-Implementation and scoped heat tensor/join receipt: commit [d04f7cda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d04f7cda9efcbfbdb2158e5247c512ee7f677dc1).
+Current flatten and outer-power now have actual completed physical tensors, ordinary stress3/divergence2/remainder2 and two source-function joins into the admitted angular-to-Gamma chain. Nine actual tensor regions and eight adjacent tensor joins are available. Flatten retains its variable axial K; all complete energy/pressure histories and native forward X are preserved. The separate current22 velocity/absolute-pressure inventory remains 14 adjacent / 8 internal; the full Gamma exterior retains its regional exact physical NS identity.
 
-Current heat collar and exact Gamma exterior now have actual completed physical tensors, stress3 and divergence/remainder2. Waiting-collar and collar-exterior are source-function tensor joins with common physical bounds. Together with angular/entry/O7, seven actual tensor regions and six adjacent tensor joins are available. The full original Gamma exterior additionally has exact regional physical NS/remainder identity, preserving nonzero velocity/pressure/energy. The separate current22 velocity/absolute-pressure inventory remains 14 adjacent / 8 internal.
-
-Read [CURRENT_HEAT_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_HEAT_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_heat_background_tensor_check.json`; focused stage `currentheattensor`. Reuse `CurrentHeatBackgroundTensor(o7=checked_current_O7_tensor)`. Eight views check 520 physical contributions (238 nonzero enclosures); both joins have 65 common rows plus fresh sectors. A separate source-function theorem covers 65 zero tensor/divergence/remainder rows on the full unbounded exterior. Forty-five normalization and 120 current primitive seam identities retain the exact KR units, stable small-defect stress, original pressure and complete nonzero histories. These are source enclosures, not resolved point field values.
+Read [CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md](CURRENT_FLATTEN_POWER_BACKGROUND_TENSOR_2026_10_06.md). Receipt: `experiments/root_st073/lei_ren_part1_paper_compliant_current_flatten_power_background_tensor_check.json`; focused stage `currentflattenpowertensor`. Reuse `CurrentFlattenPowerBackgroundTensor(heat_tensor=checked_current_heat_tensor)`. Eight views check 520 physical contributions (496 nonzero enclosures); both joins have 65 common rows plus fresh sectors. Ninety full-moment normalization and 120 current primitive seam identities bind the original source functions and common KR units. These are source enclosures, not resolved point field values.
 
 - [x] F57C3/F57C4 affected-traces: common current22 velocity/absolute-pressure spatial4/time1 atlas.
-- [x] F57C5a-angular/entry/O7 and regional F57C5b/F57C6a: five actual tensors and their four completed-tensor joins.
-- [x] F57C5a-postpulse-collar/F57C5b-waiting-collar-join: full actual collar tensor, common KR units, complete pressure/energy and waiting attachment.
-- [x] F57C5a-postpulse-exterior/F57C5b-collar-exterior-join: full current Gamma physical tensor and exact unbounded regional NS/remainder identity, plus source-exact collar attachment.
-- [ ] **Next: F57C5a-postpulse-flatten-outerpower and F57C5b-flatten-power/power-angular joins** — recover current flatten t[0,100] and outer-power y=(Lrel-4)*phase full stress/tensors in this same graph. Keep ordinary logR derivatives, nonzero X/P0/Pin, complete future and source amplitudes; use stable original expressions before enclosure. Identify and bound their completed tensor joins into the already admitted angular tensor. Save the scoped source receipt and commit/push.
-- [ ] F57C5a-pulse-end: actual end tensor from five full histories/selected amplitudes, end-flatten tensor join and all four internal end-support edges; local differences are not actual tensor values.
-- [ ] F57C5a-pulse-main/gap/entrance: actual entrance/main/exit/gap/gap-end tensors, reciprocal coordinates, all adjacent pulse tensor joins and retained incoming attachment.
-- [ ] F57C5a-core-retained/F57C4e-axis: common fixed-point core/incoming/bridge tensors, first traces, remaining retained boundaries and axis regularity.
-- [ ] F57C5b/F57C6a-global: every actual tensor chart/interface and physical decomposition, including angular support edges; keep tensor and velocity-pressure inventories distinct.
-- [ ] F57C6b/F57D/E/F: independent global temporal remainder, resolved u,v,w,p, current admissible cone/lift and prescribed-domain kinetic energy.
+- [x] F57C5a-angular/entry/O7/collar/exterior and regional F57C5b/F57C6a: seven actual tensors, six joins, full Gamma regional NS identity.
+- [x] F57C5a-postpulse-flatten-outerpower: actual full flatten/power tensors, current variable K, full moments and positive remaining quadratic sources.
+- [x] F57C5b-flatten-power/power-angular: actual tensor function joins with common directed physical bounds.
+- [ ] **Next: F57C5a-pulse-end / F57C5b-end-flatten** — actual end tensor from five full histories/current selected axial amplitudes and end-flatten completed-tensor join. Then all four actual internal end-support tensor traces. Existing local differences are not actual tensor values. Reuse this checked graph, original end stress/physical operators, complete absolute pressure and exact current source units. Save scoped receipt, add a focused stage, commit/push and mark only this task done.
+- [ ] F57C5a-pulse-main/gap/entrance: actual entrance/main/exit/gap/gap-end tensors, reciprocal coordinates, adjacent tensor joins and retained incoming attachment.
+- [ ] F57C5a-core-retained/F57C4e-axis: common fixed-point core/incoming/bridge tensors, first traces, retained boundaries and physical axis regularity.
+- [ ] F57C5b-angular-internal/F57C6a-global: actual angular support boundary tensors, all completed tensor charts/interfaces and physical decomposition; keep tensor and velocity-pressure inventories distinct.
+- [ ] F57C6b/F57D/E/F: independent temporal remainder, resolved u,v,w,p, current admissible cone/lift and prescribed-domain kinetic energy.
 - [ ] F58/F59/F60/F61: genuine n-dependent temporal equations/per-order repairs/summation, both oscillatory families/mean corrections, global corrected NS and measured contraction/slenderness/winding.
 
-Implement the next coupled construction and joins; save source evidence, mark its exact tasks done and commit/push. Regional exact exterior heat flow and spatial moment recurrences do not close global NS or temporal scale recursion. The full goal stays active; global cone/lift/remainder/energy/points and actual n-dependent recursion remain open.
+Implement the next coupled construction; save source evidence and update these handoffs with the committed result. Nine regional tensors/eight joins and the exact Gamma exterior do not close global NS or temporal scale recursion. The full goal stays active; global cone/lift/remainder/energy/points and actual n-dependent recursion remain open.
 
 ---
 
