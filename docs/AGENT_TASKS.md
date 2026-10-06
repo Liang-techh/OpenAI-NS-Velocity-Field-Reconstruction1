@@ -1,28 +1,26 @@
-# Current handoff: independent five-bump implicit repair; field installation next (2026-10-06)
+# Current handoff: own repaired O3 field and functional five-moment exit (2026-10-06)
 
-Implementation and source-bound repair receipts: commit [cb6b09cd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cb6b09cda6bbc05e3746969a457b3344ac8b2cd2).
+Implementation and actual-source receipts: commit [90a587ac](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90a587ac45de1a450af738c00b831543996c6d27).
 
-The actual modulated O2/O3 field now has **new fixed quiet-power two-axial/three-swirl bumps, the full linear/quadratic five-moment map, and a unique exact implicit constant repair vector**. Both nearly coinciding axial rows and their true source defects use the same correlated divided difference. Common original A(Z) normalization cancels C/C^2 and Pstar factors, making controls constant in Z. All overlapping cross and kinetic/swirl-square terms remain.
+The independent quiet-power repair now has callable ordinary logR4/axial5 bump rows, continuous partial primitives, **own repaired five cumulative histories, same-axis pressure and radial velocity from repaired M**. At q=2 the five history, velocity, pressure and radial increments vanish as functions of all Z[-1,1] through retained derivatives. The actual parent inlet defects, homogeneous post-support transports and same exact implicit control vector are source-bound; no chosen defects or midpoint coefficients are used. Nonzero kinetic source remains.
 
-Actual N=10^12 satisfies the repair-only sufficient threshold27,303,666, with contraction upper below1.366e-5. This does not admit a common cone frequency. All five terminal increments cancel by the defining exact map, but **callable repaired partial histories, pressure/radial recovery and exit joins still need installation**. Interval control boxes enclose the unique source-defined vector; do not use midpoints as new fields.
+Read [CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md](CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md) for exact formulas, gates and detailed next tasks. Stage: `currento3repairedhistories`. API: `CurrentO3RepairedHistories(repair=checked_independent_repair).history(region,Z,coordinate)`. The quiet-power API ends at q=2; open continuation/full modified dispatcher still needs installation.
 
-Read [CURRENT_O3_INDEPENDENT_REPAIR_2026_10_06.md](CURRENT_O3_INDEPENDENT_REPAIR_2026_10_06.md) for source bindings, exact map, units and REPAIR1–REPAIR11 tasks. Focused stage: `currento3independentrepair`. API: `CurrentO3IndependentRepair(histories=checked_modified_histories).coefficients()`. Repair coordinates are q in[1,2], x=exp(q-1), R0=Rw*exp(1); log-x centers1/5,1/2,4/5 and radius1/40.
+Evidence: 94 source-bound symbolic identities/guards; producer/checker, full-Z exact exit/support views, checked constructor/API, focused controller and compilation. Working/index audit matched 840 dependency files. Read-only reviewer metadata: **GPT-5.6 Luna / max**; source-binding gap corrected before publication.
 
-Evidence: 39 exact source/normalization/physical/scaled-map identities and25 inverse identity enclosures; strict repair-only inclusion/contraction; producer/checker, checked constructor/API, focused controller and compilation passed. Working/index audit matched 834 dependency files. Read-only GPT-5.6 Luna/max review; both source-binding gaps corrected before publication.
+Original counts stay **15 strict nonzero whole regions plus separate exact zero exterior;17 original whole regions open**. Inventory33/32/14 and primitive atlas14/8 stay unchanged and do not admit the modified field. Actual N=10^12 meets repair-only threshold27,303,666; common cone N is open.
 
-Original counts stay **15 strict nonzero whole regions plus separate exact zero exterior;17 original whole regions open**. Inventory33/32/14 and primitive atlas14/8 are unchanged. These do not admit the modified source or measure full-project progress.
+- [x] REPAIR1–4: independent supports, new correlated inverse, complete nonlinear map and unique actual-source implicit controls.
+- [x] REPAIR5–8: actual bump jets, continuous partial weights, own five repaired histories, pressure and radial source.
+- [x] REPAIR9a: exact local q=2 functional five-moment/velocity/pressure/radial exit.
+- [ ] **Next TENSOR1/TENSOR2:** rebuild full signed modified stress and remainder with all Pstar sectors/cross terms on this actual source.
+- [ ] TENSOR3/TENSOR4: own complete energy and diagonal/radial tensor/divergence completion.
+- [ ] TENSOR5–7/REPAIR9b: open continuation/full modified physical dispatch, completed tensor/physical/heat joins and phase-aware derivative estimates.
+- [ ] REPAIR10/11: one finite common N, independent O2 taper and whole modified closed O3 cone.
+- [ ] Remaining inner cones and smooth global admissible tensor/lift; genuine n-dependent coefficient recursion, per-order repair and smooth sum.
+- [ ] Two actual oscillatory families, mean correction and quadratic stress cancellation; resolved physical u/v/w and independent corrected Cartesian NS/finite energy; measured scale recursion/core widths/vorticity/material winding.
 
-- [x] Local finite-N profiles and own cumulative five histories, same-axis pressure and radial recovery from own M; frequency-uniform axial O(1/N) bounds.
-- [x] MOD4–MOD6a: independent supports, correlated new inverse and complete nonlinear five-moment repair map.
-- [x] MOD6b implicit solution: unique source-defined constant vector with strict actual-N repair-only contraction.
-- [ ] **Next REPAIR5–REPAIR9:** actual bump jets and partial primitives; install own repaired five histories, pressure/radial source; connect exact terminal closure and flat exits to inherited downstream source/tensor/heat exterior.
-- [ ] Common finite N, affected source/tensor joins, O2 taper and actual modified closed O3 cone.
-- [ ] Remaining inner/O2 cones and smooth global admissible tensor/lift.
-- [ ] Actual n=1/n>=2 coefficient recursion, independent per-order moments, nonflat leading-origin removal, finite-order bounds and smooth sum.
-- [ ] Two actual oscillatory families, mean correction, covariance/error bounds and averaged quadratic stress cancellation.
-- [ ] Resolved physical u/v/w, independent corrected Cartesian NS, finite energy and measured scale recursion, core widths/aspect ratios, vorticity and material winding.
-
-Keep the full original long-term goal active. Reuse warm session64009 and checked graph on `codex/st073-transition-next`; avoid cold all-stage rebuilds. Preserve unrelated dirty files. Earlier sections below are historical.
+Keep the full original long-term goal active. Reuse the live checked source graph when available on this host; session IDs are host-local. Avoid a cold all-stage rebuild and preserve unrelated dirty files. Earlier sections below are historical.
 
 ---
 

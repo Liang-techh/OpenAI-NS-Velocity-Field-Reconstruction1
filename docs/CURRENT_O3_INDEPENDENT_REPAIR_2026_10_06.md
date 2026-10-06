@@ -1,5 +1,7 @@
 # Current O3 independent source-correlated five-moment implicit repair
 
+Current successor: [CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md](CURRENT_O3_REPAIRED_HISTORIES_2026_10_06.md), commit [90a587ac](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90a587ac45de1a450af738c00b831543996c6d27). REPAIR5–8 and the local functional five-moment/velocity/pressure/radial q=2 exit (REPAIR9a) are now installed. Complete modified tensor, open continuation/physical dispatch/heat joins (REPAIR9b), common cone N and modified O2/O3 cones remain open. Earlier statuses below describe the implicit-map milestone.
+
 Implementation and actual source receipts: commit [cb6b09cd](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cb6b09cda6bbc05e3746969a457b3344ac8b2cd2).
 
 ## Constructed result
