@@ -1,3 +1,22 @@
+# Current handoff: fourteen adjacent and eight internal source traces (2026-10-06)
+
+All four current pulse-end and all four current angular beta-support traces are now implemented and checked. The current inventory has 14/14 adjacent and 8/8 internal source-function traces. Pulse edges also have local stress3/error2 flat difference bounds. Full angular local stress/error difference bounds, quantitative all-interface acceptance, current global tensor/cone/NS, resolved points, independent flat remainder, prescribed-domain kinetic energy and actual n-dependent temporal recursion remain open.
+
+Read [CURRENT_SUPPORT_INTERFACES_2026_10_06.md](CURRENT_SUPPORT_INTERFACES_2026_10_06.md) for source recipes, runnable stages and detailed next tasks. Receipts: `experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_support_interfaces_check.json` and `lei_ren_part1_paper_compliant_current_angular_support_interfaces_check.json`. Focused stages: `currentpulsesupport`, `currentangularsupport`; reuse their checked current graph. The normalization publication/read/repair chain is source-bound, and complete angular pressure/energy histories and quadratic D/F terms are retained.
+
+- [x] F57C2-B1a/B1b/B1c/B1d: all four current pulse-end support limits, current coefficients/histories, mixed4/physical transfer and local stress3/error2 flat differences.
+- [x] F57C2-B2a/B2b/B2c/B2d: all four exact current angular support limits, five weighted kernels, complete X/absolute-P/future histories, mixed4 and original physical trace transfer.
+- [x] Retain all fourteen current adjacent joins; combined inventory has fourteen adjacent and eight internal source traces.
+- [ ] F57C3: compose one scoped current 22-interface source receipt under the common selected/future/pressure graph.
+- [ ] F57C4a-e: common physical bounds and declared sectors; full angular local stress/error differences; quantitative interface admission.
+- [ ] F57C5a-b/F57C6a-b: assemble/join prescribed current T_B and establish residual=-div(T_B)+E_B with independent physical remainder bounds.
+- [ ] F57D1-2/F57E1-2/F57F: resolved source-defined velocity API, global cone/lift/temporal flatness and prescribed-domain kinetic energy.
+- [ ] F58a-c/F59/F60/F61: actual n-dependent recursion and per-order repair/remainder, both oscillatory families, independent corrected NS and measured dynamics.
+
+Perform one bounded next task, save current source and receipt hashes, commit/push and mark it complete with evidence. Prioritize common physical interface bounds and angular stress/error transfer. Do not repeat the historical pipeline, reset histories, select interval centers or claim temporal recursion from spatial C5/similarity scaling. This section supersedes older entries saying the eight support transfers remain open. The long-term goal remains active; 14/14 plus8/8 is an interface inventory, not overall progress.
+
+---
+
 # Current checkpoint: fourteen adjacent source traces (2026-10-06)
 
 Implementation and scoped five-pulse receipt: commit [687f3030](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/687f303033037113e0a6a574fba1143a5678f669).
