@@ -1,3 +1,13 @@
+# Current checkpoint: actual current heat pressure and stress (2026-10-05)
+
+Read [CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md](CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md). F57B is partially complete: the common current graph now returns forward absolute pressure mixed4, collar actual stress mixed3 and unbounded exterior actual stress mixed4. Four views contain60 pressure and150 factored stress rows; independent nonzero-constant fixtures and source identities pass. Checked loading uses the same common core, waiting and full Gamma future. Run --stage currentheatstress; receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_heat_pressure_stress_check.json.
+
+Both current terminal constants are explicitly retained. Actual angular stress has an additional R^-1 term; the absolute-pressure offset has an R^(1/2) term. Canonical Gamma cancellation does not eliminate these current terms. No stress-free exterior/global cone/energy/temporal completion is admitted.
+
+Next connect current native Xp/Xv and repair source functions/weights, close the original current angular/pressure terminal equations, and extend collar K to radial5 for stress mixed4. F57A native quantitative pulse interfaces, production points, global stress/flatness/required-domain energy and genuine temporal recursion remain open. This section supersedes older entries that leave all F57B work unstarted.
+
+---
+
 # Current checkpoint: common core and fourth bridge interface (2026-10-05)
 
 Implementation and scoped receipts: commit [1cf6edc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cf6edc7).

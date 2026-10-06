@@ -1,3 +1,16 @@
+# Next: current source constants, collar mixed4 and native pulse joins (2026-10-05)
+
+Read CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md and the updated F57B tasks in AGENT_TASKS.md. The current heat pressure/stress companion is admitted through pressure4, collar stress3 and exterior stress4, retaining the actual two constants. Run --stage currentheatstress. All four common-core/bridge joins remain accepted.
+
+1. Bind current native Xp/Xv to the repair initial source and identify the two repair constructors' functions/weights; rebuild from the actual inlet if they differ.
+2. Close actual angular and absolute-pressure terminal equations using the full collar and infinite Gamma future, then separately admit any stress-free exterior claim.
+3. Extend original K_y5 and collar stress mixed4; close quantitative native pulse interfaces (F57A).
+4. Complete production points, global stress/cone, independent flat remainder and prescribed-domain energy; implement genuine n-dependent temporal recursion and oscillatory correction afterward.
+
+Preserve accepted upstream evidence. Complete physical NS, energy and temporal gates remain false.
+
+---
+
 # Next: quantitative native pulse C4 and current heat companions - 2026-10-05
 
 F56 common-core/first and all-four bridge functional mixed4 joins are complete. Read CURRENT_CORE_FIRST_INTERFACE_2026_10_05.md and the authoritative detailed F57A/F57B queue at the top of AGENT_TASKS.md. Receipt: current_core_first_interface_check.json; focused stage: currentcorefirst.

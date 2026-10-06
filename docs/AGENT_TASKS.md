@@ -1,3 +1,9 @@
+# Active tasks after current heat pressure/stress recovery (2026-10-05)
+
+F57B is partially complete. Read CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md and CURRENT_CHECKPOINT.md first. Current absolute pressure mixed4, collar actual stress mixed3 and exterior actual stress mixed4 are admitted with both terminal constants retained. Follow the updated F57B checkboxes below: next close current native/repair input functions, current terminal equations and collar K_y5. F57A quantitative native interfaces can proceed independently. Global stress/energy/flatness, complete points and genuine temporal recursion remain open.
+
+---
+
 # Active tasks after fourth bridge interface closure (2026-10-05)
 
 Implementation and scoped receipts: commit [1cf6edc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1cf6edc7).
@@ -31,17 +37,26 @@ Execute F57A and F57B as independent bounded production tasks. Use the common cu
 - [ ] F57A-checked-runtime: evaluate an unsaved interior Z and legal native coordinates with checked hashes; admit only the uniform native pulse C4 and interface-ledger gates actually proved.
 - [ ] F57A-controller-and-docs: add a focused producer/checker stage that shares one current source object. Record each completed interface with receipt, scope and commit, then push owned files.
 
-### F57B: current heat pressure and stress companions
+### F57B: current heat pressure and stress companions (partial, 2026-10-05)
 
-- [ ] F57B-current-owner-binding: consume checked CurrentHeatSourceAssembly/CurrentHeatPhysicalAssembly; retain the current waiting/collar/exterior provider, original S=1/Rtail, source datum and selected amplitude. Legacy companion receipts are formula evidence, not current graph admission.
-- [ ] F57B-pressure-forward-history: connect current steep.waiting(Z,1) Ptail to the actual collar forward_pressure integral, pressure at t=3 and the full exterior tail difference. Bind the retained functions and integration limits, not symbolic placeholders or a forced -A_p value.
-- [ ] F57B-Gamma-source: use the canonical admitted H_delta integral and exact xi=2*(1-Z^2)*S*exp(-t). S_cap, H=1 or finite S-series cannot define the current exterior.
-- [ ] F57B-angular-and-energy-memory: retain the actual Xtail*(1-epsilon)-heat0.angular_numerator, complete future energy and both distinct epsilon atoms. Do not reset angular memory to zero.
-- [ ] F57B-original-stress-equations: bind heat_stress_equations, heat_terminal_stress_identities and heat_stress_C4 formulas to the current pressure/velocity histories. Recover stress components and their ordinary derivatives with original units.
-- [ ] F57B-collar-companion-bounds: produce whole-Z/whole-collar mixed4 bounds including both flat endpoints and the phi support crossing. Preserve absolute Pstar^2 and all radius/amplitude factors.
-- [ ] F57B-exterior-companion-bounds: retain the complete unbounded Gamma domain and prove tail convergence or log-power bounds for each required derivative; no finite radial cutoff may replace the exterior.
-- [ ] F57B-current-stress-free-exterior: identify the exact current exterior residual/stress relation from the same source functions. Keep any cone claim independent until its sign and margin bounds pass.
-- [ ] F57B-checked-companion-adapter: publish a focused source/companion receipt and fresh current runtime. Admit heat companion and local exterior gates separately; leave global tensor, full residual, energy and temporal gates false.
+Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_heat_pressure_stress_check.json. Run --stage currentheatstress. Read CURRENT_HEAT_PRESSURE_STRESS_2026_10_05.md for the exact constants, normalizations, derivative scopes and missing input equalities.
+
+- [x] F57B-current-owner-binding: eight graph checks identify the checked current source/physical heat provider, common core, datum, waiting, future and raw exact heat. The selected source parameters/radius definitions are bound; interval copies do not become defining values.
+- [x] F57B-pressure-forward-history: actual current Ptail, collar forward integral, trace3 and infinite Gamma future give the same Cp-minus-full-tail function. Both Cp definitions are retained; four FTC derivatives and full-density identities pass.
+- [x] F57B-Gamma-source: canonical full H_delta and exact xi=2*(1-Z^2)*S_exact*exp(-t), S_exact=1/Rtail, are retained. No finite tail cutoff, H=1, S-series or cap endpoint replaces the current source.
+- [x] F57B-angular-and-energy-memory: current Dtheta, complete future energy, separate epsilon atoms and absolute Cp are retained in pressure and actual stress. No zero constant is assumed.
+- [x] F57B-original-stress-equations-mixed3: original (3.16)-(3.18) recover collar stress through total3 and exterior stress through total4. Explicit angular/pressure constant terms, separate positive factors and all factor derivatives are retained. Thirty exact constant-stress identities and30 independent physical fixture rows pass.
+- [x] F57B-pressure-companion-bounds: four views supply60 current absolute-pressure mixed4 rows, full collar and unbounded exterior. An independent nonzero-Cp fixture supplies15 differentiated full-integral rows.
+- [x] F57B-exterior-actual-companion-bounds: entire [3,infinity) factored actual stress mixed4 is recovered. Canonical Gamma stress cancels; retained angular and pressure constants have physical radial powers -1 and+1/2. Factored bounds do not imply a bounded physical pressure-offset stress.
+- [x] F57B-checked-companion-adapter: producer, independent checker and checked loader pass. The focused stage shares one object. Only three scoped recovery gates are admitted; constant elimination and all global/energy/temporal gates remain false.
+- [ ] F57B-current-native-repair-inlet: source-bind native Xp=buffer.power(0,1).Mtheta/Utheta and current flatten Xv=1/(1-mu)+(Xp-1/(1-mu))*exp(-13*(1-mu)/mu). Prove equality with the repair initial source callable; a legacy Xv cap box and datum/hash compatibility are insufficient. If source functions differ, rebuild current repair from the actual inlet.
+- [ ] F57B-current-repair-function-bridge: identify fifth.angular4.repair and fifth.fourth.energy.base.repair weight functions and selected coefficient sources. Bind scale*r_pre(Z)=Xf_current(0)-Xf_current(Z), scale*r_heat(Z)=S_exact*Theta_current(Z), and identical W_A in both constructors. Keep their directed enclosures distinct.
+- [ ] F57B-current-angular-zero: replay actual XR->XS->XQ->XT->Xtail production formulas. Prove (1-epsilon)*Xtail=1/k+epsilon*J_current+S_exact*Theta_current from the selected repair equations and same full Gamma integral. Only then admit Dtheta=0. A legacy terminal-history theorem cannot admit the current graph.
+- [ ] F57B-current-pressure-zero: connect actual core/common axis datum, repaired absolute pressure primitive, current pulse endpoint, flatten, power/angular, steep/waiting Ptail and full collar/Gamma pressure future. Prove Cp=0 through this original equation; do not append a pressure correction after propagation.
+- [ ] F57B-collar-K5: extend the original full collar shape radial derivative rows to5, preserving sigma/phi support jets, axial depth and full Gamma derivatives. Source-bind the new fifth derivative rather than padding a zero row.
+- [ ] F57B-collar-companion-mixed4: use K_y5 to recover shear/stress through total4 over the full collar, both flat endpoints and phi crossing. Independent original-moment derivatives must include source-factor derivatives and both actual constants until eliminated.
+- [ ] F57B-current-stress-free-exterior: after current angular/pressure closure, bind actual exterior moments to the full canonical stress theorem and admit a dedicated current zero-stress receipt. Cone signs/margins and full physical residual remain separate obligations.
+- [ ] F57B-final-current-physical-companion: transfer admitted current similarity stresses to the physical tensor with exact nu/lambda/radius factors and fixed-position time terms; complete the local physical residual/remainder identity before global composition.
 
 ### F57C-F61: remaining reconstruction layers
 
