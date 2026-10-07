@@ -1,5 +1,7 @@
 # Original cutoff-local source and fixed-N 24-cell C1 range transport
 
+Successor: [CURRENT_NATIVE_PRIMITIVE_SUPPORT_2026_10_07.md](CURRENT_NATIVE_PRIMITIVE_SUPPORT_2026_10_07.md) applies original C0 A/B support before density and strictly improves five C0/three Z Rc target upper ranges on the same24-cell route. Remaining derivative sensitivity, controls/global N/closure and recursion stay open.
+
 Checked cutoff/source implementation: [102c8fc0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/102c8fc071de9e3babb5c891eee6fc36523d151a). Checked final transport implementation: [5aa2f83c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5aa2f83c4ef2412175deb867f5680cacc35ece21). This supersedes the three-provider obstruction in [CURRENT_NATIVE_SIGNED_U_COVER_2026_10_07.md](CURRENT_NATIVE_SIGNED_U_COVER_2026_10_07.md).
 
 All seventeen declared original full-Z interior providers now resolve at the same N=2048. More substantially, all twenty-four original continuous radial cells, with full Z[-1,1], produce fixed-N signed density and integral ranges. The five C0/Z correction histories are transported from the exact inlet through the full route to Rc. Five normalized Rc target C0/Z ranges are installed. These are conservative enclosures of the original source-function integrals; their very large widths do not establish small defects, convergent controls or terminal closure. Genuine coefficient recursion remains unfinished.
