@@ -1,5 +1,7 @@
 # Original whole-period Z supports tighten every terminal derivative bound
 
+Successor: [CURRENT_NATIVE_PAIRED_C1_2026_10_07.md](CURRENT_NATIVE_PAIRED_C1_2026_10_07.md) adds exact paired Poisson derivative supports, improving all five terminal Z upper bounds again and refreshing weighted source contributions. Genuine linear q_Z and actual controls/global N/closure/recursion remain open.
+
 Checked source: [96916dcb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/96916dcb1a684253a5261aa224575c985a1815be). Same original source family, candidate N2048, full Z[-1,1] and24 continuous radial cells as the preceding [direct q² stage](CURRENT_NATIVE_COLLECTED_Q2_2026_10_07.md). Five original terminal Z absolute upper ranges now strictly improve. No strict C0 target reduction is claimed in this step; previous C0 support improvement remains.
 
 ## Original derivative theorem
