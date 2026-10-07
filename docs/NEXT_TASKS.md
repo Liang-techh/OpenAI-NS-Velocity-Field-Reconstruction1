@@ -1,17 +1,17 @@
-# Current handoff: periodic mixed conditioning installed; first-bridge slow integral next (2026-10-07)
+# Current handoff: active-source/joint-kernel bounds installed; centered inverse residual next (2026-10-07)
 
-Checked implementation: [512b05cb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/512b05cb5913fca2aa861ee25805c7f65362ca5c). Equations, evidence and detailed tasks: [CURRENT_NATIVE_PERIODIC_MIXED_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_PERIODIC_MIXED_CONDITIONING_2026_10_07.md).
+Checked implementation: [e6b266c9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e6b266c9e698fce5972eb65c210c46ab8364d7f9). Detailed evidence and task acceptance criteria: [CURRENT_NATIVE_ACTIVE_KAPPA_MIXED_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_ACTIVE_KAPPA_MIXED_CONDITIONING_2026_10_07.md).
 
-**All five original averaged C1 target certificates are tighter in both Z domains.** Native C0/y/Z/yZ source correlations, uniform signed-u partial-angle kernels and the implicit mixed inverse chain rebuild the same original24-cell/17-chart inlet-to-Rc route. Endpoint terms, true microscopic widths, incoming memory, original pressure and Rc normalization are retained. These are function-domain bounds; actual five controls, terminal closure and scale recursion remain incomplete.
+**Five averaged C1 targets improve again on both Z domains.** Exact support-only kappa derivative correlations and weighted qP/q^2H products rebuild the same original24-cell/17-chart route. Maximum logarithmic cap: approximately1.548972048e+408906090034569677 ->1.106919531e+408906090034569677. This is a conservative bound improvement; the direct certificate remains sharper at N=160. Actual controls, terminal closure and scale recursion remain incomplete.
 
-- [x] **COND1:** separate weighted first-bridge endpoint/slow/kernel/quadratic budgets; incoming memory retained separately. The slow-variable integral dominates all five targets.
-- [x] **COND2:** native ordinary slow source derivatives and support-only exact E/V/a/b correlations.
-- [x] **COND3:** parameter-uniform signed-u periodic y/yZ bounds and full-route five-target recomputation. The new averaged floor certificate still does not beat the direct certificate at N=160; retain both.
-- [ ] **NEXT COND6a/b/c:** attribute mixed derivative factors, tighten the original correlated implicit chain, then prove weighted slow-variation integrals. Follow detailed acceptance criteria in the linked report. Source-defined partitions and seam cancellation remain conditional open work.
-- [ ] **CONTROL1/2:** five actual function-domain controls, whole-Z terminal identities and original repair/post-repair admission.
-- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets, common finite N/cone, heat/energy, genuine coefficient recursion, stress cancellation and full NS.
+- [x] **COND6a:** all56 signed first/mixed source product terms per cell;112 weighted first-bridge terms across two domains; true widths, original phase and incoming pressure memory retained.
+- [x] **COND6b1/2:** active a/b/Delta derivative correlations and parameter-uniform joint weighted kernels, with all original p2/source derivatives and no q/p2 division.
+- [ ] **NEXT COND6b3:** centered L_i=phi*T2_i(2pi)-T2_i(psi) function-domain cap. The dominant shared component is normalized_curvature*L_y*L_Z in A_yZ/B_yZ. Keep the exact inverse denominators and all cross terms.
+- [ ] **COND6b4/c/4/5/d:** centered B, weighted slow variation, source-defined partitions, exact seam cancellation and a certificate that improves the best retained bound.
+- [ ] **CONTROL1/2:** actual five function-domain controls, five whole-Z terminal identities and original repair/post-repair admission.
+- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets, common finite N/cone, compatible heat/energy, actual coefficient recursion, stress cancellation and full NS.
 
-Evidence: 960 transport rows, 480 incoming rows, 2300 budget rows and 1094 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Focused evidence: 960 transport rows, 2576 source terms and 1098 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
