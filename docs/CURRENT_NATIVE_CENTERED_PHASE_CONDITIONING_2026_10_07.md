@@ -1,5 +1,7 @@
 # Centered original phase and a*nu=v mixed derivative conditioning
 
+Successor: [CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md](CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md) installs SOURCE1a/3a exact source integral and target representations. Original numerical oracle/integrals/controls remain open.
+
 Checked implementation: [4eb8b731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4eb8b73150a190e05603ff006076541e0c7b1d30). `NativeCenteredPhaseConditioning.route(Z)` rebuilds the same original inlet-to-Rc route on **24 true cells /17 charts** for Z=[-1,1] and Z=[.49,.51], for every integer N>=160. Centered phase residuals and the original relation a*nu=v remove a spurious large factor from A/B mixed inverse bounds. All five averaged target certificates improve in both domains. Maximum natural-log cap: approximately `1.106919531e+408906090034569677` -> `9.624298732e+408906090034569676`.
 
 These are conservative logarithmic bounds, not actual error or field values. The direct certificate remains sharper at N=160 for every target. Actual source target evaluation, five controls, terminal closure and genuine scale recursion remain incomplete. The next production step connects exact N-dependent source functions to transport and repair; a sharper floor comparison is useful evidence, not a substitute for that interface.

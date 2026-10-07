@@ -1,16 +1,17 @@
-# Current handoff: centered mixed bounds installed; exact source targets and controls next (2026-10-07)
+# Current handoff: original source-function integrals and five Rc targets defined (2026-10-07)
 
-Checked implementation: [4eb8b731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4eb8b73150a190e05603ff006076541e0c7b1d30). Equations, evidence and detailed task criteria: [CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md).
+Checked implementation: [665263bc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/665263bc64dfea1d61f0f2b60be0f858d8299a34). Exact interface, evidence and next-agent acceptance criteria: [CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md](CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md).
 
-**Five averaged C1 target bounds improve again.** Centered K=J/nu and original a*nu=v retain every inverse mixed term on the same24-cell/17-chart route. Maximum log cap:1.106919531e+408906090034569677 ->9.624298732e+408906090034569676. Direct N=160 caps remain sharper. These are bound improvements; actual controls, terminal closure and scale recursion remain incomplete.
+The original full signed N-dependent source graphs now feed an exact integral function representation on **24 true cells / 17 charts**. All five Rc histories, target functions and first Z derivatives retain the original global phase, microscopic geometry, zero inlet, incoming pressure memory and same A/A_Z/mu. `FunctionRef` handles are distinct from cap/enclosure arithmetic. This advances function representation; original numerical targets, controls, terminal closure and genuine scale recursion remain incomplete.
 
-- [x] **COND6b3/4/5:** centered original phase residual, complete centered B free/inverse product and |A|,|B|/E<=3/2 C0 bounds. Fixed-free-angle and total inverse derivatives remain distinct; both nu first cross terms are kept.
-- [ ] **NEXT SOURCE1/2/3:** connect FULL signed N-dependent function graphs through true Duhamel kernels; add an original-source inverse/value oracle; transform actual Rc target functions with the same A/A_Z/mu. Saved caps are not target values.
-- [ ] **CONTROL1/2:** actual five function-domain controls, compatible finite N, five whole-Z terminal identities and original repair/post-repair admission. Existing repair log conditions are conditional.
-- [ ] **COND6c/4/5/d:** improve weighted variation/curvature or exact joins when useful; retain the best valid bound. Beating the floor direct estimate is diagnostic, not an independent gate that postpones source/control work.
-- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** actual higher jets, global finite N/cone, compatible heat/energy, actual coefficient recursion, stress cancellation and corrected NS.
+- [x] **SOURCE1a / SOURCE3a:** exact Duhamel integral graph and original joint Rc target definitions, including every signed density term, native Jacobian and first Z cross term. SOURCE1/3 numerical completion is not claimed.
+- [ ] **NEXT SOURCE2a/b:** actual source parameter/derivative/inverse oracle for all 17 charts, with original signed branches and correlated denominators. Never use saved coefficient midpoints or bounds as values. Bind the same family/graph hash, formal scales and shared integer N; report unresolved precision explicitly.
+- [ ] **SOURCE1b / SOURCE3b:** controlled numerical original transport and original target evaluation, with radial/Z/quad/precision checks, whole-route incoming memory and divided-row correlations.
+- [ ] **CONTROL1a/b / CONTROL2:** consume typed N*r functions in the original exact integral matrix/Gram nonlinear map; construct/evaluate the actual five C1 controls, compatible N and whole-Z terminal identities. Interval matrix entries and control-ball bounds are not controls.
+- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets/seams, global N/cone/heat/energy, actual coefficient recursion and independent repairs, oscillatory cancellation and corrected NS/material winding.
 
-Focused evidence: 960 transport rows, six exact centered product identities,80 original scalar-loop references and 1102 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Focused check PASS: 17 radius +17 Jacobian identities,23 exact joins,210 signed density root bindings,240 inherited rows,15 quiet rows,16 first-Z identities and five target transformations. Producer0.375s/checker6.063s;1089 working/staged hashes. The signed quadrature reference is explicitly **synthetic**, not an original-field result. Read-only reviewer: **GPT-5.6 Luna / max**. Long-term goal remains active; earlier sections are historical.
+
 
 ---
 
