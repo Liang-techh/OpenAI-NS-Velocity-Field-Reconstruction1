@@ -26,6 +26,36 @@ def unit_hull(value):
     return phase.clipped(value.ctx,value.coefficient*value.bounded_exp(value.scale.evaluate()),0,1)
 
 
+def bind_source_context(query,c):
+    """Outward-copy original ranges into one context without choosing values."""
+    source=query['source'];q=source['q'];old_bases=q.scale.bases
+    original_values=[q]+[value for rows in source['roots'].values() for value in rows.values()]
+    if query['rows'] is not None:original_values+=list(query['rows'].values())
+    if any(value.scale.bases is not old_bases or value.ledger is not q.ledger or value.ctx is not q.ctx for value in original_values):
+        raise ValueError('Original root/q ranges must share one basis, context and ledger')
+    if q.ctx is c:return query
+    copied=lambda value:c.mpf(ep(value))
+    bases=tuple(copied(value) for value in old_bases)
+    def rebind(value):
+        if value.scale.bases is not old_bases or value.ledger is not q.ledger:
+            raise ValueError('Original root/q ranges must share a source basis and ledger')
+        scale=prior.FormalScale(bases,value.scale.powers,copied(value.scale.offset))
+        result=prior.ScaledEnclosure(scale,copied(value.coefficient),value.ledger)
+        if result.ctx is not c:raise ValueError('Directed source context copy failed')
+        return result
+    before=q.ledger.get('coefficient_log_coordinate_rescalings',0)
+    roots={name:{order:rebind(value) for order,value in rows.items()} for name,rows in source['roots'].items()}
+    rows=None if query['rows'] is None else {order:rebind(value) for order,value in query['rows'].items()}
+    rebound_q=rebind(q)
+    record=dict(query['record'],original_source_ranges_directed_context_bridge=True,
+        source_log_values_and_exact_factor_powers_unchanged=True,original_source_ledger_unchanged=True,
+        coefficient_and_log_endpoints_outward_copied=True,source_function_values_not_selected=True,
+        context_bridge_coefficient_log_coordinate_rescalings=q.ledger.get('coefficient_log_coordinate_rescalings',0)-before,
+        conservative_range_conversion_not_added_source_correlations=True,
+        packet_metadata_kept_separate_from_rebound_density_arithmetic=True)
+    return dict(query,source=dict(source,q=rebound_q,roots=roots),rows=rows,record=record)
+
+
 def signed_u_branches(source,dstar_log):
     q=source['q'];c=q.ctx
     dstar=prior.ScaledEnclosure(prior.FormalScale(q.scale.bases,offset=dstar_log),1,q.ledger)
@@ -93,6 +123,11 @@ class BranchConditionedPhase(phase.ConditionedPhase):
         self.nq=self.normalized(current.square(self.q),c.mpf('.5'),True)
         self.ntq=self.normalized(self.t0*self.q,1/(2*c.sqrt(2)),False)
 
+    def normalized(self,value,cap,positive):
+        # The inherited theorem fallback reads directed endpoints of cap.
+        # Convert literal caps before it is needed on wider chart sources.
+        return super().normalized(value,self.c.mpf(cap),positive)
+
     def angle_endpoint(self,x,inverse=False):
         c=self.c
         if x in (0,c.mpf('.5'),1):return c.mpf(x)
@@ -159,6 +194,7 @@ class NativeSignedUDensityCover:
         if N<160:raise ValueError('Original integer N>=160 required')
         geometry=self.first_owner.binder.query(chart,Z,coordinate,N)
         qsource=self.first_owner.owner.query(chart,Z,geometry['raw']['coordinate'])
+        qsource=bind_source_context(qsource,self.ctx)
         source=qsource['source'];packet=source['packet']
         original_u,branches,empty=signed_u_branches(source,self.first_owner.dstar)
         E=source['roots']['E'][ZERO];E_Z=source['roots']['E'][(0,1)]
@@ -167,6 +203,9 @@ class NativeSignedUDensityCover:
             row=prior.signed.ordinary_axial_coefficient(packet.velocity['axial'][0],k)
             return prior.signed.expressions.RadiusPolynomial(packet.algebra,{0:row})
         V,V_Z=[signed_owner.leaf(leaf(k),E.scale.bases,E.ledger) for k in (0,1)]
+        for value in (E_Z,V,V_Z):
+            E.coerce(value)
+            if value.ctx is not self.ctx:raise ValueError('Original E/V density context bridge incomplete')
         cells=[]
         for phi in geometry['phase_boxes']:
             local=[]

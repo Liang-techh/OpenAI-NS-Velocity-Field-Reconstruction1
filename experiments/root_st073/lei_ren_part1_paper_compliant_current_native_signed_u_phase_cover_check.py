@@ -107,6 +107,23 @@ def run(original_owner,report=None):
     require(quiet['record']['status']=='enclosed' and all(v.zero for cell in quiet['cells']
         for group in ('kernels','Z_derivatives') for v in cell['values'][group].values()),'Original exact q-flat modulation must vanish')
     require(not quiet['source']['roots']['E'][(0,0)].zero,'Flat modulation must retain original nonzero velocity')
+    # The native bridge source keeps foreign interval log objects. Outward
+    # copying ranges must retain every exact formal power and original ledger.
+    raw=original_owner.owner.owner.query('bridge_second',(-1,1),'1.831')
+    bound=current.bind_source_context(raw,c)
+    require(bound['source']['q'].ctx is c,'Native bridge source context must match global arithmetic')
+    copied_rows=0
+    for name,rows in raw['source']['roots'].items():
+        for order,value in rows.items():
+            new=bound['source']['roots'][name][order]
+            require(new.scale.powers==value.scale.powers and new.ledger is value.ledger,'Range context bridge changed source powers/ledger')
+            require(ep(new.coefficient)[0]<=ep(value.coefficient)[0]<=ep(value.coefficient)[1]<=ep(new.coefficient)[1],
+                'Context bridge coefficient copy not outward')
+            require(ep(new.scale.offset)[0]<=ep(value.scale.offset)[0]<=ep(value.scale.offset)[1]<=ep(new.scale.offset)[1],
+                'Context bridge log offset copy not outward')
+            copied_rows+=1
+    for old,new in zip(raw['source']['q'].scale.bases,bound['source']['q'].scale.bases):
+        require(ep(new)[0]<=ep(old)[0]<=ep(old)[1]<=ep(new)[1],'Context bridge basis copy not outward')
     try:owner.spatial_query('O2_slope',(-1,1),'.1337',159)
     except ValueError:pass
     else:raise AssertionError('N<160 incorrectly accepted')
@@ -115,6 +132,7 @@ def run(original_owner,report=None):
         inherited_actual_broad_original_source=record,additional_original_full_Z_point_query=query['record'],
         original_exact_flat_q_query=quiet['record'],actual_local_C0_Z_integral_rows=10,
         original_source_context_and_ledger_preserved=True,original_integer_N_guard_retained=True,
+        original_bridge_root_ranges_outward_context_copied=copied_rows,
         working_dependency_hashes_checked=len(report['input_hashes']),
         all_17_chart_original_range_oracle_admitted=False,full_factored_function_graph_evaluator_installed=False,
         actual_five_controls_installed=False,actual_terminal_Z_function_closure_installed=False,current_whole_N_selected=False,

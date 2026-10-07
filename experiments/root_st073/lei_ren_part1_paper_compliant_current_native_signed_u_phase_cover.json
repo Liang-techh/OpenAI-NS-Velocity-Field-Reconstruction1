@@ -19370,7 +19370,7 @@
   "global_completed_stress_cone_certified": false,
   "actual_coefficient_recursion_certified": false,
   "full_corrected_NS_velocity_field_certified": false,
-  "execution_seconds": 6.172000000020489,
+  "execution_seconds": 6.155999999959022,
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
     "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
@@ -20402,7 +20402,7 @@
     "lei_ren_part1_paper_compliant_current_native_density_C1_local_integrals.json": "f503cc36bcbc2013fdf84d21d4f58fdcabb8760575b8589cea579260a49b3147",
     "lei_ren_part1_paper_compliant_current_native_density_C1_local_integrals_check.py": "8c4bda0f3ad751b26c6382881b7d1559e72b0d6e2f940c0fe8331486c47cc7be",
     "lei_ren_part1_paper_compliant_current_native_density_C1_local_integrals_check.json": "944387ac4222bc4fcedbd788a43f21120285f8716a6fe748ad16412669c435a8",
-    "lei_ren_part1_paper_compliant_current_native_signed_u_phase_cover.py": "b2734db8182f45bf580d15ae1dce6ca3766c75db1e3517ec29dd569079fced95"
+    "lei_ren_part1_paper_compliant_current_native_signed_u_phase_cover.py": "1b459848daa516b3bd40689548d3e5c4a09cf273add58264d31f5c734e58e51a"
   },
   "scope": "Original broad signed-crossing O2 source/radius-phase density C0/Z cover and ten local Duhamel contribution ranges. No selected field values, whole-route targets, controls, global closure or recursion admission."
 }
