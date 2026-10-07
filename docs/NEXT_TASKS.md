@@ -1,17 +1,18 @@
-# Current handoff: actual source quotient derivative bounds (2026-10-07)
+# Current handoff: original O3 inputs and reserved new repair interval (2026-10-07)
 
-Checked implementation: [429aa3ed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/429aa3eda372b369a34f7b713f44efef1283d630). Source API, analytic bounds, evidence and next tasks: [CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md).
+Checked implementation: [e07292e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e07292e155f57bff73f6007045e755e7373e8e2c). API, formulas, evidence and executable next tasks: [CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md](CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md).
 
-**LEFT4c1 norms advanced:** current original E/C denominators and complete signed a,b,p1,p2,t0 bounds through ordinary y2/Z1 now cover all15 noncore exported charts. All16 raw source covers, original five histories and separate P0 are retained. The new layer uses exact source-bound positivity and logarithmic norm arithmetic; no huge physical radius/amplitude or microscopic width/inverse is materialized.
+**LEFT4c1 right source/domain advanced:** original O3 transition and power are attached to the common-unit packet interface. Together with the previous layer,18 original charts and17 positive quotient charts now supply510 signed mixed derivative log bounds. Original five histories, physical radial shift and separate P0 are retained; the power wrapper's scalar-U units are kept separate from the raw source.
 
-- [x] Original open inner/reshape/restoration/patch relaxed inputs through Rh.
-- [x] Actual positive denominators and450 full signed quotient derivative log bounds on15 noncore charts.
-- [ ] **LEFT4c1 domain/scales:** strict right edge and original continuation up to2Rc, complete margins, conservative log scales and reserved new repair interval.
-- [ ] **LEFT4c2 / c3:** phase-held loop/inverse jets, shared phase, higher mixed4 source orders and own changed-history transport/tensor.
-- [ ] **LEFT4d / e:** new terminal repair/uniqueness, new whole finite N and modified strict cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, true coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
+- [x] Current original relaxed inputs through Rh and earlier450 quotient bounds.
+- [x] Original O3 packets,60 additional y2/Z1 quotient bounds and actual denominator positivity.
+- [x] Strict power right edge r_plus=Rw*exp(1), reserved new repair(Rw*exp(2),2Rw*exp(2)), and original right-segment cone attachment.
+- [ ] **LEFT4c1 left/margins/scales:** actual strict left collar, whole H0-2, untouched outer admission and conservative common log scales.
+- [ ] **LEFT4c2 / c3:** phase-held inverse/loop jets, common fast phase, required higher mixed orders and own changed-history transport/tensor.
+- [ ] **LEFT4d / e:** new functional terminal repair/uniqueness, new whole finite N and modified strict cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, actual coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Focused normalization/function-bound checks passed; 980 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. Core saved positive sector remains raw-only; source norms on existing charts do not yet assemble the whole chosen loop domain. All global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused source/recovery/domain checks passed; 985 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. The original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. Whole loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
 
 ---
 

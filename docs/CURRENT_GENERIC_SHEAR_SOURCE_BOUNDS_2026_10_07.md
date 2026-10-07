@@ -1,5 +1,7 @@
 # Current original source quotient derivative bounds
 
+**Successor:** original O3 packets,60 additional signed quotient log bounds and strict right/new-repair reservation are implemented in [CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md](CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md). Complete left collar/H0/scales, changed loop/transport/repair/N and actual recursion remain open.
+
 Checked implementation: [429aa3ed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/429aa3eda372b369a34f7b713f44efef1283d630). **A production source-bound layer now supplies logarithmic norms for the full signed original generic inputs on all15 noncore charts currently exported by the typed interface.** The derivative orders are ordinary D_y^j D_Z^k, j=0,1,2 and k=0,1. The current loop is still conditional: whole support/right-edge/repair-domain assembly, conservative common scales, phase-held loop-primitive derivatives and the new common frequency remain open. The long-term goal remains active.
 
 ## Implemented API and scope
