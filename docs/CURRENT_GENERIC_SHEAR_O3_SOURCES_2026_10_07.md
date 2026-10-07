@@ -1,5 +1,7 @@
 # Original O3 sources and new repair reservation
 
+**Successor:** actual left two-sided collar, exact complete endpoint/repair radius ordering and a logarithmic boundary eta constraint are implemented in [CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md). Whole H/outer/scales and modified loop/repair/N/recursion remain open.
+
 Checked implementation: [e07292e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e07292e155f57bff73f6007045e755e7373e8e2c). Original O3 transition and power now export full raw velocity/history/pressure covers in the same S=Pstar units as the earlier16 charts, with60 additional signed quotient derivative log bounds. A strict original power right edge and a later new moment-repair interval are reserved. This completes the right-source/domain subtask, not the complete Section11 loop, new repair or true coefficient recursion. The long-term goal remains active.
 
 ## API and retained source

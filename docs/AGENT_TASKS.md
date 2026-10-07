@@ -1,18 +1,17 @@
-# Current handoff: original O3 inputs and reserved new repair interval (2026-10-07)
+# Current handoff: both original loop-edge collars and repair geometry (2026-10-07)
 
-Checked implementation: [e07292e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e07292e155f57bff73f6007045e755e7373e8e2c). API, formulas, evidence and executable next tasks: [CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md](CURRENT_GENERIC_SHEAR_O3_SOURCES_2026_10_07.md).
+Checked implementation: [ffa1f9a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ffa1f9a89219dba7b6c010d549cad63a77214990). Formulas, API, evidence and next tasks: [CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md).
 
-**LEFT4c1 right source/domain advanced:** original O3 transition and power are attached to the common-unit packet interface. Together with the previous layer,18 original charts and17 positive quotient charts now supply510 signed mixed derivative log bounds. Original five histories, physical radial shift and separate P0 are retained; the power wrapper's scalar-U units are kept separate from the raw source.
+**LEFT4c1 endpoints/domain advanced:** r_minus=Ra*exp(hb*s_c/2) now has an explicit two-sided original strict collar; r_plus=Rw*exp(1) and new repair(Rw*exp(2),2Rw*exp(2)) lie in the original power source. Exact radius ordering and the boundary eta log constraint retain tiny width/excess without materialization or rounded subtraction.
 
-- [x] Current original relaxed inputs through Rh and earlier450 quotient bounds.
-- [x] Original O3 packets,60 additional y2/Z1 quotient bounds and actual denominator positivity.
-- [x] Strict power right edge r_plus=Rw*exp(1), reserved new repair(Rw*exp(2),2Rw*exp(2)), and original right-segment cone attachment.
-- [ ] **LEFT4c1 left/margins/scales:** actual strict left collar, whole H0-2, untouched outer admission and conservative common log scales.
-- [ ] **LEFT4c2 / c3:** phase-held inverse/loop jets, common fast phase, required higher mixed orders and own changed-history transport/tensor.
+- [x]18 original source charts /17 positive quotient charts /510 y2/Z1 signed bounds; same full histories and separate P0.
+- [x] Both actual strict two-sided edge collars, outside-left relaxed admission and original right/new-repair geometry.
+- [ ] **LEFT4c1 H/outer/scales:** whole actual H0-2, untouched post-repair admission and conservative common logarithmic loop scales.
+- [ ] **LEFT4c2 / c3:** phase-held inverse/loop jets, common phase, required higher mixed orders and own changed-history transport/tensor.
 - [ ] **LEFT4d / e:** new functional terminal repair/uniqueness, new whole finite N and modified strict cone.
 - [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, actual coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Focused source/recovery/domain checks passed; 985 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. The original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. Whole loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused source/collar/radius checks passed; 989 indexed dependency hashes matched. Source reasoning: GPT-5.6 Luna / max. Original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. Complete Section11 H/scales and all global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
 
 ---
 
