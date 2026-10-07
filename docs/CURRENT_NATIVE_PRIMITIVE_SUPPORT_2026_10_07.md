@@ -1,5 +1,7 @@
 # Original primitive C0 support and improved fixed-N Rc targets
 
+Successor: [CURRENT_NATIVE_COLLECTED_Q2_2026_10_07.md](CURRENT_NATIVE_COLLECTED_Q2_2026_10_07.md) adds direct original branch-local q squared mixed jets and a five-site original phase consumer, with complete24-cell continuous transport. Paired q/u derivatives, actual controls/compatible N/closure and recursion remain open.
+
 Checked source implementation: [289be044](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/289be044808854a6a70042c284588d069f48a0db). This extends [CURRENT_NATIVE_CUTOFF_TRANSPORT_2026_10_07.md](CURRENT_NATIVE_CUTOFF_TRANSPORT_2026_10_07.md) on the same original24-cell route, full Z[-1,1] and candidate N2048.
 
 Five original Rc target C0 absolute upper ranges now strictly improve; S_Z, Cp_Z and the divided joint target Z range also improve. The original M_Z and I_Z upper ranges remain unchanged. All24 continuous source cells and their C1 Duhamel transport still resolve. This is quantitative source-range improvement, not actual controls, terminal closure, a globally compatible N or coefficient recursion.
