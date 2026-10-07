@@ -1,5 +1,7 @@
 # Original factored source range oracle and signed-phase frontier
 
+Successor: [CURRENT_NATIVE_SIGNED_U_COVER_2026_10_07.md](CURRENT_NATIVE_SIGNED_U_COVER_2026_10_07.md) resolves the original broad signed-crossing O2 box, adds directed native context binding and attempts all17 declared full-Z providers (14 enclosed/3 unresolved). Its current task list supersedes the signed-u next tasks below; full-route targets/controls remain open.
+
 Implementation: [4eda94b9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4eda94b9e345b1590f60635ee707c28a6b9962a2). This extends [CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md](CURRENT_NATIVE_RC_FUNCTION_TRANSPORT_2026_10_07.md), preserving its accepted source artifacts.
 
 The exact integral graph is now connected to a **live original source range oracle** for the selected queries. Ten density frames on five charts resolve at N=1024 and N=2048, with 82 role-based C0/Z and Rc amplitude dispatches. An additional O2 radial/Z cell and ten new local integral C0/Z enclosures at N=2048 pass. These are original `ScaledEnclosure` ranges, not scalar values chosen from saved caps. Full original Rc numerical integration and controls remain open.
