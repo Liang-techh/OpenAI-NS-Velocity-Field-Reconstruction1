@@ -1,18 +1,18 @@
-# Current handoff: reference/slope stronger relaxed input (2026-10-06)
+# Current handoff: full original outer relaxed input (2026-10-07)
 
-Checked implementation: [6640f02c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6640f02c12050cafce4ffbeb54f809b12ad4405e). Detailed source/proof/API/tasks: [CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md](CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md).
+Checked implementation: [1633f6f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1633f6f12f80373ca63996ad3defcdb35957645f). Source proof/API/tasks: [CURRENT_O2_AXIAL_RELAXED_2026_10_07.md](CURRENT_O2_AXIAL_RELAXED_2026_10_07.md).
 
-**The original Rh_reference[-5,0] and O2_slope[0,1] now satisfy the full stronger relaxed input criterion, all Z[-1,1], with their actual cumulative angular deficit and radial shear.** For kappa<=2 this proves D/F>2-kappa, beyond direction positivity. Complete pressure, energy, histories and four source joins stay bound. Strict target admission remains false on these source charts.
+**The axial turnoff relaxed input is now complete on its whole closed phase/Z domain. Combined with reference, slope and buffer, all four original outer input charts satisfy the paper's full relaxed criterion.** The axial proof retains the M>=4B source correlation and every full stress sector; its complete cone product is below .91. The midplane and flat endpoints remain relaxed, so upstream source shear repair is still required.
 
-- [x] Uniform repair/history/radial/pressure and complete tensor/remainder error bounds.
-- [x] Strict changed-source O2 taper, closed O3, pre-repair transport and quiet repair cones; common N>=68,533,403 on those domains.
-- [x] **LEFT4a-buffer:** original shared[-11,-2] relaxed input, with nonzero kappa2 stress and explicit strict rejection.
-- [x] **LEFT4a-reference/slope:** stronger relaxed input on the complete two earlier charts, actual correlated angular deficit and source seam.
-- [ ] **LEFT4a-axial:** full axial turnoff relaxed branches with ordinary logR derivatives, complete energy/pressure and both source seams.
-- [ ] **LEFT4b-e:** actual strict inner collar or genuine stress-free boundary; source shear extension through every defective chart; new-family five-defect repair and global cone/frequency proof.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, actual coefficient recursion/smooth sum, oscillatory/mean stress cancellation, corrected u/v/w and full NS/dynamics.
+- [x] Full modulation/history/radial/pressure and complete tensor/remainder bounds.
+- [x] Strict changed-source taper, O3, pre-repair transport and quiet repair cones; scoped common N>=68,533,403.
+- [x] **LEFT4a:** original reference/slope/axial/buffer full relaxed input and original source joins; 1024 directed axial cutoff cells and 20 independent full axial stress cases.
+- [ ] **LEFT4b:** attach the existing compliant analytic core/exit strict collar to the current core-first graph through exact inlet-atom and pressure equality; use compliant_global_exit_certificate and compliant_K1_ledger, never legacy shared hashes.
+- [ ] **LEFT4c-d:** actual upstream shear loop, new-family five-defect repair and implicit control/error envelopes.
+- [ ] **LEFT4e / BOUND3-global:** complete support-edge/inner/global strict cone and common finite N.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, true coefficient recursion/smooth sum, waves/mean correction, corrected velocity and full NS/dynamics.
 
-New focused evidence: 30 complete signed stress cases and 142 independent paper branch decisions. Read-only reviewer: GPT-5.6 Luna / max. Only scoped relaxed input advances; strict/global/energy/recursion/full-NS gates and original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+Read-only reviewer: GPT-5.6 Luna / max. This completes a source-cone prerequisite; global/energy/recursion/full-NS gates and historical registry counts remain unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 

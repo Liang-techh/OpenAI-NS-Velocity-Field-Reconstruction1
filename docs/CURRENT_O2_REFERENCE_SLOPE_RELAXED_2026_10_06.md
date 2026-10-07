@@ -1,5 +1,7 @@
 # Original Rh/reference and O2 slope: stronger relaxed input cone
 
+Latest successor: [CURRENT_O2_AXIAL_RELAXED_2026_10_07.md](CURRENT_O2_AXIAL_RELAXED_2026_10_07.md), implementation [1633f6f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1633f6f12f80373ca63996ad3defcdb35957645f). Whole original axial relaxed input is now proved; strict inner collar and source shear repair remain open.
+
 Checked implementation: [6640f02c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6640f02c12050cafce4ffbeb54f809b12ad4405e). **LEFT4a-reference/slope is complete: the full original stress satisfies the paper's stronger relaxed cone on Rh_reference offset[-5,0] and O2_slope y[0,1], all Z[-1,1], including the reference/slope seam.** The source has bs=0 and kappa in[4/5,2]; strict admissibility remains false. The previously completed buffer relaxed input and changed-source strict cone/common-N certificates are retained. The axial turnoff relaxed input, actual strict inner collar/shear extension and the global target remain open.
 
 ## Actual source and correlated angular deficit
