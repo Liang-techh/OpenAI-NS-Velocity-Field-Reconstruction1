@@ -9,11 +9,14 @@ This completes the original integral-function prerequisite and **conditional mat
 - [x] **CONTROL-C1-cell-functions/limit-family:** genuine original integral C1 functions and unique exact five-control limit with full Z equation/tail.
 - [x] **CONTROL-C1-finite-evaluator/CONTROL2a-exact-limit:** cached operator/residual API and original five terminal C1-limit identities, retaining pressure memory and joint k row.
 - [x] **CONE2a/c-local:** prior active/q-flat/quiet/band conditional C0 budget retained over 24 cells/35 branches.
+- [x] **ORACLE3-point-Z-backend:** original scalar A/B and slow-Z point API with exact source formulas; explicit-input approximate service.
 - [ ] **NEXT ORACLE1..5:** genuine original source leaf/parameter/phase/integral APIs and certified value/Z numerical error contract.
 - [ ] **CONTROL1b/1d/2:** complete frequency compatibility ledger, common N, installed numeric controls/tail, terminal closure and radial/pressure field functions.
 - [ ] **HIGH/OUTER/REC/WAVE/PHYS:** spatial higher joins and outer cone/heat/energy; genuine coefficient recursion, wave cancellation and corrected physical uvw diagnostics.
 
 Both focused checkers PASS: 60 integral-Z references, 90 nonlinear value/Z comparisons and 30 independent terminal rows. References are explicitly manufactured. 1,156 dependency hashes audited against the Git index; read-only reviewer metadata **gpt-5.6-luna / max**, existing worker reused. No expensive ancestor replay. Historical sections follow.
+
+Additive checked source [1e6ab640](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1e6ab6408f840a88923f021dd1656ba5b8c77641) supplies the original scalar A/B slow-Z point backend (`GenericLoopPointZ`), including implicit phase-Z differentiation and exact cutoff/periodic zeros. Focused checks: 42 primitive/inverse, 21 direction, 14 implicit and 28 endpoint rows. Explicit inputs remain approximate; native source/parameter dispatch and numerical certification are still missing. Reviewer GPT-5.6 Luna/max PASS.
 
 ---
 
