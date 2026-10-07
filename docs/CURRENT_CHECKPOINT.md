@@ -1,18 +1,19 @@
-# Current handoff: pre-repair transport cone and changed-region common N (2026-10-06)
+# Current handoff: O2 relaxed input and upstream shear-collar repair (2026-10-06)
 
-Checked implementation: [974e4a14](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/974e4a143a906a150d5c10c28c177316ab3f1ceb). Detailed source/API/next tasks: [CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md](CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md).
+Checked implementation: [574723cf](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/574723cfd8b3a8867518f4ca641598a19db105d7). Detailed proof/API/ordered tasks: [CURRENT_O2_RELAXED_BUFFER_2026_10_06.md](CURRENT_O2_RELAXED_BUFFER_2026_10_06.md).
 
-**The complete signed stress cone now covers original power s[0,1] between modulation and quiet repair. Every changed-source interval uses one sufficient frequency N>=68,533,403.** Local profiles are exactly unchanged on this bridge; accumulated moment/energy/pressure and own-moment radial errors survive and are controlled. Original pressure/energy/source correlations remain.
+**The complete original O2 buffer offset[-11,-2] now satisfies the paper's relaxed input criterion with full nonzero stress.** Its actual shear is a2/bs0/kappa2; strict admission remains false at every N. Upstream reference/slope/axial charts also lack an already-admissible outside collar, so shifting a flat cutoff cannot complete this repair.
 
 - [x] **BOUND1 / BOUND2a:** uniform repair/history/radial/pressure and complete tensor/remainder error bounds.
-- [x] **BOUND2b modulation:** O2(-2,0], closed O3[0,1], N>=22.
-- [x] **BOUND2c:** quiet signed cone on original power s[1,2], all bumps/gaps/endpoints, N>=68,533,403.
-- [x] **BOUND3-bridge:** transported full stress cone on original power s[0,1], exact local zeros and retained cumulative histories.
-- [x] **COMMONN-changed:** checked common threshold ledger for all changed-source intervals and the implicit repair, N=68,533,403.
-- [ ] **BOUND2b-left3b/buffer and BOUND3-global:** paper cone/closure for the earlier nonzero O2 a2/bs0/vs2 source and exact flat offset-2; finish remaining inner regions and a global frequency/cone certificate.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** remaining physical interfaces, finite energy, actual n-dependent coefficient recursion and smooth sum, oscillatory/mean stress cancellation, corrected u/v/w and NS residual/dynamics.
+- [x] **BOUND2b modulation / BOUND2c / BOUND3-bridge:** strict O2(-2,0], closed O3, transported power s[0,1] and quiet repair s[1,2].
+- [x] **COMMONN-changed:** all changed-source intervals use one sufficient frequency N>=68,533,403; downstream original source is restored by the defining repair equation.
+- [x] **BOUND2b-buffer-relaxed:** original offset[-11,-2] full theta positivity, relaxed direction, exact pre-support equality and explicit strict rejection.
+- [ ] **LEFT4a:** earlier reference/slope/axial relaxed input, including the stronger kappa<2 lower and all source seams.
+- [ ] **LEFT4b-c:** actual strict inner collar or genuine stress-free boundary, followed by a source shear loop covering every defective upstream chart.
+- [ ] **LEFT4d-e / BOUND3-global:** new-family cumulative defects/independent repair, all support/collar cone bounds and genuinely global sufficient N.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, actual coefficient recursion and smooth sum, oscillatory/mean cancellation, corrected u/v/w and NS/dynamics.
 
-Transport reserves D/Ttheta=1, Q/Ttheta^2>1.9; weighted axial ratio<exp(-390). Evidence: 186 independent fixtures, 6 retained stress pieces and 8 exact local zeros. Read-only worker: GPT-5.6 Luna / max. The two new scoped gates are true; global common-N/admissibility/physical/energy/recursion/full-NS gates remain false. Original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+Focused new evidence: 15 full signed stress cases, 28 exact tensor modification zeros. Read-only reviewer: GPT-5.6 Luna / max. Only the relaxed-input gate is new; strict/global/energy/recursion/full-NS gates and original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 

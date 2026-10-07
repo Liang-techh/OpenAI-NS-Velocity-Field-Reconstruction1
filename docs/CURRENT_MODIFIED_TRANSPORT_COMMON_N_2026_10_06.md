@@ -1,5 +1,7 @@
 # Modified pre-repair transport cone and changed-region common N
 
+Latest successor: [CURRENT_O2_RELAXED_BUFFER_2026_10_06.md](CURRENT_O2_RELAXED_BUFFER_2026_10_06.md), implementation [574723cf](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/574723cfd8b3a8867518f4ca641598a19db105d7). Earlier O2 buffer relaxed input is now proved; actual upstream shear/collar repair and strict global gates remain open.
+
 Checked implementation: [974e4a14](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/974e4a143a906a150d5c10c28c177316ab3f1ceb). **BOUND3-bridge and the changed-region frequency ledger are complete. The full signed two-vector stress cone holds on original power s[0,1], all Z[-1,1], all inherited modulation phases and every finite integer N>=68,533,403.** This covers transport from closed O3 to the independent repair entrance. Together with the checked O2 open taper, closed O3 modulation and quiet repair strip, the same N suffices on every changed-source interval. The earlier unchanged O2 buffer and its exact degenerate left edge remain outside this strict certificate; global admissibility and global common-N gates remain false.
 
 ## Source, ordinary units and surviving histories
