@@ -65,6 +65,7 @@
       "whole_bridge_H0_independent_of_chi": true,
       "same_first_switch_kappa": true
     },
+    "postpower_radial_constancy_uses_original_V_AST": true,
     "same_original_micro_controls_and_complete_power_source": true,
     "signed_axial_three_scale_drive_and_full_histories_retained": true,
     "input_hashes": {
@@ -3389,6 +3390,6 @@
     "lei_ren_part1_paper_compliant_current_generic_shear_inputs.json": "d4f8a36295ada0b7e01814501705e135ffade49077ff73c7169dff1742e0196c",
     "lei_ren_part1_paper_compliant_current_generic_shear_inputs_check.py": "29b2006d272b8b6e50d74b6202c67d01012f2b58f5dcf3bea27c3b3b1a70afa0",
     "lei_ren_part1_paper_compliant_current_generic_shear_inputs_check.json": "a7f30291eabe67064e3061016d166f56d03bf2055c728e79f4f4e05f054121a3",
-    "lei_ren_part1_paper_compliant_current_inner_relaxed_inputs.py": "cfd673d97393be8539354aa004620f6cf819371fd842714eb91b720981657701"
+    "lei_ren_part1_paper_compliant_current_inner_relaxed_inputs.py": "65f4d68072ab142f42ef7d82658355584a605b2ea96671056a9d86513de3e7aa"
   }
 }

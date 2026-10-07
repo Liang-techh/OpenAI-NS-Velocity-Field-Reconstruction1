@@ -63,7 +63,18 @@ def exact_switch_source_theorem():
     y=s.Symbol('original_logR',real=True);f2=s.Symbol('same_R2_F',positive=True)
     F=f2*s.exp(-s.Rational(2,5)*y);U=s.sqrt(2*R)*s.exp(y/2)*F
     zero('same_postpower_a_four_fifths',1-2*s.diff(U,y)/U,s.Rational(4,5))
-    zero('same_postpower_radial_constant_V',s.diff(s.Symbol('same_R2_V'),y),0)
+    # Differentiate the bound original assignment, not an independently
+    # declared constant. The R2 inlet is fixed along this radial transport;
+    # its full axial coefficients are preserved in the source expression.
+    post=asts.method('microswitch_mixed_C4','postpower')
+    vexpr=next(node.value for node in ast.walk(post) if isinstance(node,ast.Assign)
+        and any(ast.unparse(target)=='V' for target in node.targets))
+    zpost=s.Symbol('same_axial_coordinate',real=True)
+    vcoeff=s.symbols('same_R2_V0:6',real=True)
+    original_V=eval(compile(ast.Expression(vexpr),'<bound original postpower V>','eval'),
+        {'__builtins__':{}},dict(jet=lambda coeffs:sum(value*zpost**j for j,value in enumerate(coeffs)),
+        inlet={'Uz_actual_axial5_coefficients':vcoeff}))
+    zero('same_postpower_radial_constant_V',s.diff(original_V,y),0)
     Db,Eb,chi=s.symbols('Dbar Ebar chi',positive=True);Eb=s.Symbol('signed_Ebar',real=True)
     et,ez=s.symbols('actual_signed_inertial_error_theta actual_signed_inertial_error_axial',real=True)
     a=chi*Db;b=-chi*Eb;t0=-b/a;p1=Db+et;p2=Eb+ez
@@ -73,6 +84,7 @@ def exact_switch_source_theorem():
          hb*(Db*Db+Eb*Eb*(1-sig)**2)/Db)
     return dict(passed=True,original_switch_and_postpower_AST_bindings=bindings,
         exact_shear_source_identities=checks,
+        postpower_radial_constancy_uses_original_V_AST=True,
         same_original_micro_controls_and_complete_power_source=True,
         signed_axial_three_scale_drive_and_full_histories_retained=True,input_hashes=asts.hashes)
 
