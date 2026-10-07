@@ -1,19 +1,19 @@
-# Current handoff: restricted q-flat margins and composed local C0 budget (2026-10-07)
+# Current handoff: original C1 integrals and convergent control family (2026-10-07)
 
-Checked source: [1b301374](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b30137409804f786f83893c7e0d6cf0e0ace019). Definitions, evidence and detailed executable tasks: [CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md). Predecessor: [repair-band partial functions](CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md).
+Checked source: [8812ab6f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8812ab6f6bfdca2c91c30cf991f83b1380d24c2a). Definitions, evidence and detailed tasks: [CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md). Predecessor: [local q-flat cone budget](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md).
 
-Every applicable original q=0 subset now has quantitative G1..G4 margins, complementary to the active-loop bounds. The source route retains 24 continuous cells/35 conditional branches. Six nonempty charts give 13 branches/52 state-frequency requirements; eleven source-proved empty strong subsets keep their original weak/active certificates. Whole bridge margins retain pointwise K cancellation and the actual first inlet sc/2. The O2 axial Theta floor is bound to the original product recipe; O3 retains signed pressure/energy. The local maximum includes all existing source/repair/active/quiet/band and positivity budgets.
+All 24 original cumulative-integral cells are realized as C1(Z) functions: unchanged 4,858-node graph, 336 nonzero coefficient integral nodes and 480 own-rate value/Z majorants. Their five original normalized targets now define a unique exact convergent C1 control family for every finite N meeting the recorded source/local conditions. Full implicit Z equations, cached arbitrary-depth finite iteration and factored dyadic tails are implemented. The five original terminal defect functions vanish at the exact C1 limit.
 
-This completes CONE2a/c **as a conditional local C0 budget layer**. Actual common N, point/integral oracle, converged controls/C1 tail, terminal functional closure, higher/outer admission and genuine coefficient recursion remain open. The enormous formal logN lower bound is not a practical machine integer or evaluated field.
+This completes the original integral-function prerequisite and **conditional mathematical control-family construction**. Original numerical point/phase/integral services, certified numeric controls/errors, a selected global common N, spatial higher joins, complete outer admission and genuine coefficient recursion remain open. Finite Picard endpoints are not reset to zero. Mathematical tails do not certify quadrature/roundoff errors; the sufficient logN remains an enormous formal bound.
 
-- [x] **CONE2a/c:** all seventeen q-flat chart cases, whole signed margins and active/q-flat conditional local cover.
-- [x] **CONE3a/b/c/d:** prior exact partial repair histories and terminal residual identities, conditional control-ball band budgets and full signed quiet/band margins retained.
-- [ ] **NEXT CONTROL1b:** inventory missing whole-frequency/seam/exterior conditions, prove their compatibility and choose a source-faithful common N representation.
-- [ ] **CONTROL1c/d:** original point/phase/integral oracle and cached evaluation, five actual controls/implicit Z derivatives and certified C1 tail.
-- [ ] **CONTROL2/HIGH/OUTER:** terminal function closure, corrected radial/pressure interfaces, required higher derivatives and complete outer cone/heat/energy composition.
-- [ ] **REC/WAVE/PHYS:** genuine n-dependent coefficient recovery/repair, flat summation, oscillatory stress cancellation and physical uvw/scale/material-winding diagnostics.
+- [x] **CONTROL-C1-cell-functions/limit-family:** genuine original integral C1 functions and unique exact five-control limit with full Z equation/tail.
+- [x] **CONTROL-C1-finite-evaluator/CONTROL2a-exact-limit:** cached operator/residual API and original five terminal C1-limit identities, retaining pressure memory and joint k row.
+- [x] **CONE2a/c-local:** prior active/q-flat/quiet/band conditional C0 budget retained over 24 cells/35 branches.
+- [ ] **NEXT ORACLE1..5:** genuine original source leaf/parameter/phase/integral APIs and certified value/Z numerical error contract.
+- [ ] **CONTROL1b/1d/2:** complete frequency compatibility ledger, common N, installed numeric controls/tail, terminal closure and radial/pressure field functions.
+- [ ] **HIGH/OUTER/REC/WAVE/PHYS:** spatial higher joins and outer cone/heat/energy; genuine coefficient recursion, wave cancellation and corrected physical uvw diagnostics.
 
-Focused checker PASS: four weighted identities, two bridge projections, K-correlation/cutoff proof, five original axial AST recipe bindings, seventeen chart cases and 52 negative-power state requirements. Producer 0.094s/checker 0.171s; 1,148 audited dependency hashes. Reviewer model metadata: **gpt-5.6-luna / max**; read-only, no new workers. Previous sections are historical.
+Both focused checkers PASS: 60 integral-Z references, 90 nonlinear value/Z comparisons and 30 independent terminal rows. References are explicitly manufactured. 1,156 dependency hashes audited against the Git index; read-only reviewer metadata **gpt-5.6-luna / max**, existing worker reused. No expensive ancestor replay. Historical sections follow.
 
 ---
 

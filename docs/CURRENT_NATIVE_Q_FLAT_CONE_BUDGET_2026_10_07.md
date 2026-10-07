@@ -1,5 +1,7 @@
 # Original restricted q-flat cone margins and composed local C0 frequency budget
 
+Successor: [CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md) realizes the original 24-cell integrals as C1(Z) functions and constructs the exact convergent five-control family and terminal C1-limit identities. Original numerical oracle/controls, global N, higher spatial joins, outer admission and genuine recursion remain open.
+
 Checked source: [1b301374](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b30137409804f786f83893c7e0d6cf0e0ace019). Predecessor: [repair-band functions and local power budgets](CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md). Producer 0.094s; focused checker 0.171s; 1,148 matching working/index dependency hashes. Read-only mathematical reviewer: **gpt-5.6-luna / max**. No new workers or source ancestor constructors were used.
 
 The original modulation route now has quantitative weighted G1..G4 input margins on every applicable q=0 subset, complementary to the accepted active-loop bounds. The original 24 continuous cells and 35 conditional cutoff branches are retained. Thirteen branches on six source charts receive 52 normalized state-frequency requirements. Eleven other source charts have source-proved empty q-flat subsets. The combined lower bound retains all prior source, repair, active, quiet, correction-band and band-positivity conditions.
