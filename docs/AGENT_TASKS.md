@@ -1,18 +1,18 @@
-# Current handoff: full source inputs and actual inner relaxed gate (2026-10-07)
+# Current handoff: original middle relaxed inputs through Rm (2026-10-07)
 
-Checked implementation: [5632ae72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5632ae7252f758770dd3cf5f1b842dab3bf824ea). Detailed source scope, APIs, evidence and next tasks: [CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md).
+Checked implementation: [46b538f5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/46b538f507e8a76e6a2f0aa386077f80ff293f9d). Source scope, APIs, evidence and detailed next tasks: [CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md).
 
-**LEFT4c1-gates-a and b-inner are implemented:** all16 original chart covers now export complete signed S/F=(-a,b) and I/F=(p1,p2) source expressions; the original analytic Ra<R<=110 relaxed input is attached to the actual current callable/history/pressure/width graph. The six inner charts have positive H0-2 margin and log/formal a/kappa/t0 bounds. Ra itself remains the separate stress-free endpoint.
+**LEFT4c1 middle gates advanced:** actual long reshape/reference110..Rz now have the full-source angular p1>3 barrier; actual restoration/bufferRz..Rm retain complete signed axial/pressure N and satisfy H0>2,kappa<1. Together with the previously attached inner theorem, original relaxed-input source gates coverRa<R<=Rm. The active five-bump patch is the next middle source gap.
 
-- [x] Typed common-unit packets, modal own-field recovery and full signed input/invariant expressions.
-- [x] Original whole open inner-exit relaxed input through110, existing strict inner support and original outer input.
-- [ ] **LEFT4c1 middle gates:** current-source long-reshape attachment/bounds, reference, full axial restore/buffer and active patch support conditions.
-- [ ] **LEFT4c1 norm/scales/domain:** actual p1/p2 derivative bounds, uniform scale formulas, strict right edge and reserved power repair interval.
-- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored jets, changed five-history transport and own tensor across true widths/seams.
-- [ ] **LEFT4d / e:** new-family terminal repair, new full finite N and whole modified cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** source interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and full corrected NS/dynamics.
+- [x] Typed16-chart source inputs/full signed invariants and own factored recovery.
+- [x] Original open inner exit, variable long reshape/reference and full signed restoration/buffer relaxed inputs, with exact current histories/P0.
+- [ ] **LEFT4c1 patch:** actual active-support and quiet-gap inequalities with retained changed moments.
+- [ ] **LEFT4c1 norms/scales/domain:** full p1/p2 slow/axial bounds, conservative scales, strict right edge and reserved new repair interval.
+- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored jets and own changed-history transport/tensor across true widths/seams.
+- [ ] **LEFT4d / e:** new terminal repair/uniqueness, new full finite N and whole modified cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed source interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and corrected NS/dynamics.
 
-The new gates certify original source expressions and the open inner analytic relaxed condition; they do not certify whole-upstream function assembly, p1/p2 norms, changed loop/repair/N or global cone. No source ancestor graph was rebuilt. Focused source/function and independent algebra checks passed; 964 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Strict registry counts and old scoped N>=68,533,403 remain unchanged. Long-term goal active. Earlier sections below are historical.
+Original analytic source admission is distinct from strict completed-tensor admission or a modified loop. The new APIs return function-domain certificates, not velocity point values. Active patch and generic norm/scale/loop gates remain open. Focused source/ODE/unit/domain checks passed; 972 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Strict registry and old scoped N unchanged; full long-term goal active. Earlier sections below are historical.
 
 ---
 

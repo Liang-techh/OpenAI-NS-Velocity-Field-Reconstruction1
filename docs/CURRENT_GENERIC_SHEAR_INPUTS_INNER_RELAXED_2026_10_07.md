@@ -1,5 +1,7 @@
 # Full current generic shear inputs and analytic inner relaxed attachment
 
+**Successor:** the current original long reshape/reference and full signed restoration/buffer relaxed inputs throughRm are implemented in [CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md). Active patch, generic norm/scales, changed loop/transport/repair/N and recursion remain open.
+
 Checked implementation: [5632ae72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5632ae7252f758770dd3cf5f1b842dab3bf824ea). **LEFT4c1-gates-a is implemented for the 16 saved original chart covers, and LEFT4c1-gates-b-inner is admitted analytically on the actual original source domain Ra<R<=110, all Z[-1,1].** The full signed inertial inputs are executable source expressions. The inner admission is attached through actual original callable, pressure, five-history, width and boundary function identities. It does not close the middle source gates, p1/p2 norms, changed generic loop/transport/repair, new common N, global cone or coefficient recursion. The full long-term goal remains active.
 
 ## Executable full source inputs
