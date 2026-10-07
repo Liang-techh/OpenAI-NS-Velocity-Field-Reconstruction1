@@ -1,19 +1,19 @@
-# Current handoff: repair-band partial functions and quiet/power cone budgets (2026-10-07)
+# Current handoff: restricted q-flat margins and composed local C0 budget (2026-10-07)
 
-Checked source: [04b6bfda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04b6bfdafed4f087e6247605051c5b3b0b343a2d). Definitions, evidence and executable continuation: [CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md](CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md). Predecessor: [modulation state errors](CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md).
+Checked source: [1b301374](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b30137409804f786f83893c7e0d6cf0e0ace019). Definitions, evidence and detailed executable tasks: [CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md). Predecessor: [repair-band partial functions](CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md).
 
-The original Rc..2Rc correction band now has exact finite-Picard five partial history/C1 functions, preserved incoming pressure memory, and exact terminal residual identities. Conditional same-source control-ball bounds provide full-band profile/radial derivative, density, moment and normalized cone-state errors. Original full signed O3 power G1..G4 margins cover quiet r_plus..Rc and the baseline under the repair band. Their sufficient local frequency conditions are combined with source/repair/active-state and positivity budgets.
+Every applicable original q=0 subset now has quantitative G1..G4 margins, complementary to the active-loop bounds. The source route retains 24 continuous cells/35 conditional branches. Six nonempty charts give 13 branches/52 state-frequency requirements; eleven source-proved empty strong subsets keep their original weak/active certificates. Whole bridge margins retain pointwise K cancellation and the actual first inlet sc/2. The O2 axial Theta floor is bound to the original product recipe; O3 retains signed pressure/energy. The local maximum includes all existing source/repair/active/quiet/band and positivity budgets.
 
-This advances the construction beyond modulation-only errors. It remains a function and budget layer: finite terminal histories equal finite control residuals, not zero. Actual solved controls/tail, terminal functional closure, globally compatible N, all-chart q-flat coverage, outer joins and genuine recursion remain open.
+This completes CONE2a/c **as a conditional local C0 budget layer**. Actual common N, point/integral oracle, converged controls/C1 tail, terminal functional closure, higher/outer admission and genuine coefficient recursion remain open. The enormous formal logN lower bound is not a practical machine integer or evaluated field.
 
-- [x] **CONE3a/b:** exact partial repair-band functions and finite terminal residual identities including all A_Z and joint k-row terms.
-- [x] **CONE3c/d / CONE2b:** continuous conditional control-ball band error budgets, signed whole-power quiet/band margins and combined local logN requirement.
-- [ ] **NEXT CONE2a/c:** restricted q-flat quantitative margins for inner six, O2 axial and O3 transition/power; compose with active branch and original joins over all 24 cells/35 branches.
-- [ ] **CONTROL1b/c/d:** complete whole N compatibility, original point/phase/integral oracle, then actual fixed-point controls with certified C1 tail.
-- [ ] **CONTROL2/HIGH/OUTER:** independently close corrected terminal histories/Z/pressure/heat functions; install radial/pressure field and required higher derivatives/global cone/energy.
-- [ ] **REC/WAVE/PHYS:** genuine coefficient recursion and independent repairs, flat summation, oscillatory stress cancellation, physical uvw and measured contraction/elongation/material winding.
+- [x] **CONE2a/c:** all seventeen q-flat chart cases, whole signed margins and active/q-flat conditional local cover.
+- [x] **CONE3a/b/c/d:** prior exact partial repair histories and terminal residual identities, conditional control-ball band budgets and full signed quiet/band margins retained.
+- [ ] **NEXT CONTROL1b:** inventory missing whole-frequency/seam/exterior conditions, prove their compatibility and choose a source-faithful common N representation.
+- [ ] **CONTROL1c/d:** original point/phase/integral oracle and cached evaluation, five actual controls/implicit Z derivatives and certified C1 tail.
+- [ ] **CONTROL2/HIGH/OUTER:** terminal function closure, corrected radial/pressure interfaces, required higher derivatives and complete outer cone/heat/energy composition.
+- [ ] **REC/WAVE/PHYS:** genuine n-dependent coefficient recovery/repair, flat summation, oscillatory stress cancellation and physical uvw/scale/material-winding diagnostics.
 
-Focused checks: 120 partial physical and 40 terminal residual C0/Z comparisons, ten exact density and two quotient/shear identities, 42 bump/derivative and 16 state comparisons. Scalar references are manufactured; actual original-family provenance is checked separately. Reviewer metadata: **gpt-5.6-luna / max**. Producer 3.110s/checker 47.531s; 1,144 audited dependency hashes. Previous sections are historical.
+Focused checker PASS: four weighted identities, two bridge projections, K-correlation/cutoff proof, five original axial AST recipe bindings, seventeen chart cases and 52 negative-power state requirements. Producer 0.094s/checker 0.171s; 1,148 audited dependency hashes. Reviewer model metadata: **gpt-5.6-luna / max**; read-only, no new workers. Previous sections are historical.
 
 ---
 

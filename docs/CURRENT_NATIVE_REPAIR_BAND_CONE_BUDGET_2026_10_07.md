@@ -1,5 +1,7 @@
 # Original repair-band partial functions and quiet/power cone budgets
 
+Successor: [CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md) completes the restricted original q-flat quantitative margins and merges them with the active/quiet/band C0 local budgets across 24 cells/35 branches. Common N, actual controls/tail, terminal closure, global exterior admission and genuine recursion remain open.
+
 Checked source: [04b6bfda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04b6bfdafed4f087e6247605051c5b3b0b343a2d). Predecessor: [continuous modulation state errors](CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md). Producer 3.110s, focused checker 47.531s. Working/index dependency audit: 1,144 matching hashes. Read-only mathematical reviewer: **gpt-5.6-luna / max**. Existing original owners and the accepted all-N route were reused; no source ancestor constructor was called.
 
 The same-source construction now carries five exact finite-Picard partial history functions on the entire repair band Rc<=R<=2Rc and Z[-1,1], including their first ordinary-Z derivatives. It also supplies conditional control-ball bounds for those histories, full inertial/radial/pressure differences and normalized state errors. The unchanged quiet interval r_plus..Rc and the original baseline under the correction band now have quantitative G1..G4 margins from the full signed O3 power theorem. Sufficient local frequency bounds are combined with the previous source/repair/active-state bounds.
