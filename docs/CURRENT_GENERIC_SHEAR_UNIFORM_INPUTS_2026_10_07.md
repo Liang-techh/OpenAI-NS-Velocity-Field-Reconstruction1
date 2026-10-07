@@ -1,5 +1,7 @@
 # Actual whole generic input margin and logarithmic loop scales
 
+**Successor:** actual inverse/A/B fixed-phase and fast derivative log bounds are now implemented in [CURRENT_GENERIC_SHEAR_LOOP_JET_BOUNDS_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_JET_BOUNDS_2026_10_07.md). Signed point-loop/higher-order rows, changed histories/new repair/N and true recursion remain open.
+
 Checked implementation: [be9a1cd6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be9a1cd6aa337beea1a9fac483c224fe44685a9e). The actual original modification domain r_minus<=R<=r_plus, all Z[-1,1], now has one positive H0-2 lower and the complete original weak/strong signed input branches. Actual source norm maxima, both boundary collars and this margin supply conservative Section11 d_star,q_star,B_star,J_star,eta in log form. These are current-source constants, not the earlier computational scalar fixtures. Actual phase-held inverse/loop jets, changed histories/new repair and common finite N remain open. The long-term goal remains active.
 
 ## API and source inputs

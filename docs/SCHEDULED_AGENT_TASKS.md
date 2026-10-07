@@ -1,17 +1,18 @@
-# Current handoff: actual whole H0 margin and logarithmic loop scales (2026-10-07)
+# Current handoff: actual inverse-phase and primitive derivative bounds (2026-10-07)
 
-Checked implementation: [be9a1cd6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be9a1cd6aa337beea1a9fac483c224fe44685a9e). Current source formulas, API, evidence and detailed next tasks: [CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md](CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md).
+Checked implementation: [6acd9f09](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6acd9f091b800f149ef8bd88094242c825211b94). Current source formulas, API, units, evidence and detailed next tasks: [CURRENT_GENERIC_SHEAR_LOOP_JET_BOUNDS_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_JET_BOUNDS_2026_10_07.md).
 
-**LEFT4c1 input/scales advanced:** one positive whole modification-box H0-2 lower, complete original weak/strong signed branches and actual d_star,q_star,B_star,J_star,eta are now assembled in log form. The full O2 buffer combines selector[0,9] and[9,11] original proofs. O3 includes complete energy/pressure and the post-radial theta denominator; local Uz=0 does not erase axial stress.
+**LEFT4c2 derivative bounds advanced:** all17 actual source charts now have fixed-phase inverse/A/B y,Z,yy,yZ log bounds and phi,phi_phi,y_phi,Z_phi bounds. Both phase lambda and Poisson denominator retain true positive log lower bounds. A is dimensionless and B is in the common Pstar unit. Source caps are bounds, never signed field values.
 
-- [x]18 original covers /17 positive quotient charts /510 y2/Z1 bounds; both strict edge collars and new repair geometry.
-- [x] Whole actual original H0-2 margin (log lower approximately-3.9120) and conservative current-source logarithmic loop constants.
-- [ ] **LEFT4c1-outer:** unchanged original post-repair admission through Rb and exact zero exterior.
-- [ ] **LEFT4c2:** signed input jets, branch-safe q, phase-held inverse/primitives, common fast phase and justified higher orders.
-- [ ] **LEFT4c3 / d / e:** own changed histories, new functional terminal repair, new whole finite N and modified strict cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, actual coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
+- [x]18 original covers /17 positive quotient charts /510 source quotient bounds; actual two-sided edge collars and new repair geometry.
+- [x] Whole current H0-2 margin, complete original signed branches/full11-unit O2 buffer and actual logarithmic loop constants.
+- [x] **LEFT4c2-bounds:** actual inverse/primitives at fixed phase through y,Z,yy,yZ, fast derivative terms and exact flat branch.
+- [ ] **LEFT4c2-signed/point/common-phase:** actual signed jet API and loop/inverse consumer, one common phase and justified higher physical orders.
+- [ ] **LEFT4c3 / d / e:** own changed five histories, functional terminal repair, new whole finite N and modified strict cone.
+- [ ] **LEFT4c1-outer / CONT / ENERGY:** original post-repair admission, changed interfaces and physical energy.
+- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Focused current-source/log scale checks passed; 999 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. Actual eta and2+eta remain separate formal sources; no installed physical loop, new N or actual recursion is claimed. Original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. All global completion gates remain false and the long-term goal remains active. Earlier sections below are historical.
+Focused check passed: 1054 current derivative caps, 7 exact identities and 96 modest independent scalar-loop comparisons; 1003 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. The new gate admits derivative majorants only, not a signed point field or full mixed4. Original cone inventory stays15 strict nonzero regions/17 open plus exact zero exterior. All global completion gates remain false and the long-term goal remains active. Earlier sections below are historical.
 
 ---
 
