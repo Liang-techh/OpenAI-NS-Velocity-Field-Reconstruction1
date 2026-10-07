@@ -1,5 +1,7 @@
 # Original signed-u cover and all17 provider frontier
 
+Successor (2026-10-07): [CURRENT_NATIVE_CUTOFF_TRANSPORT_2026_10_07.md](CURRENT_NATIVE_CUTOFF_TRANSPORT_2026_10_07.md) resolves the three declared provider blockers and covers all24 continuous fixed-N C1 integral cells to Rc. The14/3 results below are historical; actual controls, terminal closure and recursion remain open.
+
 Checked source implementation: [65bf1a28](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/65bf1a28d7d164f19f9f6c9749be42486b7b55d4). This extends [CURRENT_NATIVE_FACTORED_SOURCE_ORACLE_2026_10_07.md](CURRENT_NATIVE_FACTORED_SOURCE_ORACLE_2026_10_07.md) without changing its accepted original source artifacts.
 
 The original broad O2 coordinate[.12,.15], full Z[-1,1] box now resolves at N=2048. All three signed-u branches produce original density C0/Z ranges, and ten local Duhamel contribution ranges are evaluated. The range adapter is also connected to the existing namespace/role-bound function graph. Of seventeen declared full-Z interior chart queries, fourteen resolve and three retain explicit source obstructions. This is source-range progress; actual full-route Rc targets, five controls, whole-Z terminal closure and coefficient recursion remain unfinished.
