@@ -1,5 +1,7 @@
 # Current original middle relaxed inputs: R110 through Rm
 
+**Successor:** the current whole original implicit patch condition through Rh, covering supports and retained partial-history gaps, is implemented in [CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md). Whole source norm/scales, changed loop/transport/repair/N and true recursion remain open.
+
 Checked implementation: [46b538f5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/46b538f507e8a76e6a2f0aa386077f80ff293f9d). **LEFT4c1-gates-b-reshape, reference, restore and buffer are implemented on the current original analytic source.** Together with the existing whole open inner exit, the original relaxed-input gates now cover Ra<R<=Rm through the unchanged source functions. The active five-bump patch is the next original middle condition gap. Whole-upstream assembly, p1/p2 derivative norms/conservative scales, changed generic loop/history transport, new repair/common N, global strict tensor cone and coefficient recursion remain open. The full long-term goal stays active.
 
 ## Current source functions and executable domains

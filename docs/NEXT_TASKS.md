@@ -1,18 +1,17 @@
-# Current handoff: original middle relaxed inputs through Rm (2026-10-07)
+# Current handoff: original relaxed inputs through Rh (2026-10-07)
 
-Checked implementation: [46b538f5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/46b538f507e8a76e6a2f0aa386077f80ff293f9d). Source scope, APIs, evidence and detailed next tasks: [CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_MIDDLE_RELAXED_2026_10_07.md).
+Checked implementation: [52d90755](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/52d90755923633eb19692eabf76a8925f0565b98). Source scope, API, evidence and next production tasks: [CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md).
 
-**LEFT4c1 middle gates advanced:** actual long reshape/reference110..Rz now have the full-source angular p1>3 barrier; actual restoration/bufferRz..Rm retain complete signed axial/pressure N and satisfy H0>2,kappa<1. Together with the previously attached inner theorem, original relaxed-input source gates coverRa<R<=Rm. The active five-bump patch is the next middle source gap.
+**LEFT4c1 original middle source gap closed:** the current implicit five-moment patch now satisfies the whole relaxed condition on Rm..Rh, including all three active bump groups and four quiet gaps with retained partial histories/P0. Combined original open inner/reshape/restoration/patch conditions cover Ra<R<=Rh. Full signed p2 is retained; the conservative directed H0-2 lower bound is 4.222062679.
 
-- [x] Typed16-chart source inputs/full signed invariants and own factored recovery.
-- [x] Original open inner exit, variable long reshape/reference and full signed restoration/buffer relaxed inputs, with exact current histories/P0.
-- [ ] **LEFT4c1 patch:** actual active-support and quiet-gap inequalities with retained changed moments.
-- [ ] **LEFT4c1 norms/scales/domain:** full p1/p2 slow/axial bounds, conservative scales, strict right edge and reserved new repair interval.
-- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored jets and own changed-history transport/tensor across true widths/seams.
-- [ ] **LEFT4d / e:** new terminal repair/uniqueness, new full finite N and whole modified cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed source interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and corrected NS/dynamics.
+- [x] Typed16-chart source/full signed invariants and own factored recovery.
+- [x] Original open inner, reshape/reference, restoration/buffer and actual five-moment patch relaxed-input source conditions.
+- [ ] **LEFT4c1 norms/scales/domain:** full p1/p2/t0 derivative bounds, conservative scales, strict right edge and reserved new repair interval.
+- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored mixed4 jets and own changed-history transport/tensor across true widths/seams.
+- [ ] **LEFT4d / e:** new functional terminal repair/uniqueness, new full finite N and whole modified cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, true coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Original analytic source admission is distinct from strict completed-tensor admission or a modified loop. The new APIs return function-domain certificates, not velocity point values. Active patch and generic norm/scale/loop gates remain open. Focused source/ODE/unit/domain checks passed; 972 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Strict registry and old scoped N unchanged; full long-term goal active. Earlier sections below are historical.
+Original relaxed source admission is distinct from strict completed-tensor/global admission. The API gives function-domain certificates, not point velocity values. Focused checks passed; 976 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. All global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
 
 ---
 
