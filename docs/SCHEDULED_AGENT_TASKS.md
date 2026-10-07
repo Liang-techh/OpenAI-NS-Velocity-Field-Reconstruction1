@@ -1,18 +1,18 @@
-# Current handoff: completed tensor error bounds (2026-10-06)
+# Current handoff: modified whole O3 signed cone (2026-10-06)
 
-Checked implementation: [ce9268ce](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce9268ce120ebabdcf46e1ca64ed7ed82d38d95e). Detailed API and next agent tasks: [CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md](CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md).
+Checked implementation: [bdbe19b1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bdbe19b13b3024c1a42bdd38514cfa258d06763f). Detailed proof, API and next tasks: [CURRENT_MODIFIED_O3_TRANSITION_CONE_2026_10_06.md](CURRENT_MODIFIED_O3_TRANSITION_CONE_2026_10_06.md).
 
-**BOUND2a is implemented for the changed current O2/O3 and quiet repair sources.** Variable-N error bounds now cover the original full stress, completed diagonal, divergence, three-component remainder and Cartesian momentum decomposition. Original nonzero radial/moment cross terms and the cumulative absolute pressure remain. Whole signed cone admission remains open.
-
-The provider restores normalized derivatives from physical R-prefactor grids before applying each recovery shift once. Its physical-time wrapper uses the exact lambda^2*(1-Z^2)=tau relation and requires strict |Z|<1. Checked whole-source baseline packets are used; fixed-N modified values and obsolete full33 views are not inputs.
+**The complete modified source now satisfies the signed two-vector stress cone on closed O3 offset[0,1], all Z[-1,1], all phases and every integer N>=22.** The old zero-shear seam and right flat taper are included. Full original pressure/energy/moments and all stress cross terms remain. Weighted source identities preserve edge cancellation; native order-zero error monotonicity proves the all-N statement.
 
 - [x] **BOUND1 / BOUND2a:** uniform repair, history/radial/pressure jets and completed tensor/remainder error bounds.
-- [ ] **BOUND2b / BOUND2c:** signed directional/alignment inequalities on both modulation tapers and all quiet repair strips.
-- [ ] **BOUND3 / COMMONN:** one sufficient finite N for all completed cone constraints.
-- [ ] **CONT4f2b–4/6a4b/6b/7:** remaining physical interface providers and global composition.
-- [ ] Finite energy, actual n-dependent recursion, oscillatory/mean correction, resolved u/v/w and full corrected Cartesian NS/dynamics.
+- [x] **BOUND2b1/2-O3 / BOUND2b3-right:** complete closed O3 signed direction/alignment theorem.
+- [ ] **BOUND2b-left/buffer:** original O2 whole baseline, left taper, exact degenerate flat edge and earlier buffer joins.
+- [ ] **BOUND2c:** actual positive bs sign, local quiet tensor directions and all repair strip joins.
+- [ ] **BOUND3 / COMMONN:** one sufficient finite N for all completed regional cone constraints.
+- [ ] **CONT4f2b and successors:** remaining physical interface providers and global composition.
+- [ ] Finite energy, actual n-dependent coefficient recursion, oscillatory/mean corrections, resolved u/v/w and full corrected Cartesian NS/dynamics.
 
-Focused evidence: 79 exact identities, 10 signed fixtures, 1720 native/1720 physical comparisons. Read-only worker: GPT-5.6 Luna / max. No signed whole-cone, common-N, global/energy/recursion/NS gate is promoted. Full goal remains active. Earlier sections below are historical.
+O3 reserves: D/Ttheta>0.9 and Q/Ttheta^2>1.9; weighted axial ratio<exp(-390). Focused checks: 37 exact identities, 25 strict inequalities, 64 independent signed fixtures. Read-only worker: GPT-5.6 Luna / max. N=22 is an O3-only threshold; quiet repair/common-N/global/energy/recursion/full-NS gates remain open. Unmodified registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 
