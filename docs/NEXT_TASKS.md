@@ -1,17 +1,16 @@
-# Current handoff: active-source/joint-kernel bounds installed; centered inverse residual next (2026-10-07)
+# Current handoff: centered mixed bounds installed; exact source targets and controls next (2026-10-07)
 
-Checked implementation: [e6b266c9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e6b266c9e698fce5972eb65c210c46ab8364d7f9). Detailed evidence and task acceptance criteria: [CURRENT_NATIVE_ACTIVE_KAPPA_MIXED_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_ACTIVE_KAPPA_MIXED_CONDITIONING_2026_10_07.md).
+Checked implementation: [4eb8b731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4eb8b73150a190e05603ff006076541e0c7b1d30). Equations, evidence and detailed task criteria: [CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md).
 
-**Five averaged C1 targets improve again on both Z domains.** Exact support-only kappa derivative correlations and weighted qP/q^2H products rebuild the same original24-cell/17-chart route. Maximum logarithmic cap: approximately1.548972048e+408906090034569677 ->1.106919531e+408906090034569677. This is a conservative bound improvement; the direct certificate remains sharper at N=160. Actual controls, terminal closure and scale recursion remain incomplete.
+**Five averaged C1 target bounds improve again.** Centered K=J/nu and original a*nu=v retain every inverse mixed term on the same24-cell/17-chart route. Maximum log cap:1.106919531e+408906090034569677 ->9.624298732e+408906090034569676. Direct N=160 caps remain sharper. These are bound improvements; actual controls, terminal closure and scale recursion remain incomplete.
 
-- [x] **COND6a:** all56 signed first/mixed source product terms per cell;112 weighted first-bridge terms across two domains; true widths, original phase and incoming pressure memory retained.
-- [x] **COND6b1/2:** active a/b/Delta derivative correlations and parameter-uniform joint weighted kernels, with all original p2/source derivatives and no q/p2 division.
-- [ ] **NEXT COND6b3:** centered L_i=phi*T2_i(2pi)-T2_i(psi) function-domain cap. The dominant shared component is normalized_curvature*L_y*L_Z in A_yZ/B_yZ. Keep the exact inverse denominators and all cross terms.
-- [ ] **COND6b4/c/4/5/d:** centered B, weighted slow variation, source-defined partitions, exact seam cancellation and a certificate that improves the best retained bound.
-- [ ] **CONTROL1/2:** actual five function-domain controls, five whole-Z terminal identities and original repair/post-repair admission.
-- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets, common finite N/cone, compatible heat/energy, actual coefficient recursion, stress cancellation and full NS.
+- [x] **COND6b3/4/5:** centered original phase residual, complete centered B free/inverse product and |A|,|B|/E<=3/2 C0 bounds. Fixed-free-angle and total inverse derivatives remain distinct; both nu first cross terms are kept.
+- [ ] **NEXT SOURCE1/2/3:** connect FULL signed N-dependent function graphs through true Duhamel kernels; add an original-source inverse/value oracle; transform actual Rc target functions with the same A/A_Z/mu. Saved caps are not target values.
+- [ ] **CONTROL1/2:** actual five function-domain controls, compatible finite N, five whole-Z terminal identities and original repair/post-repair admission. Existing repair log conditions are conditional.
+- [ ] **COND6c/4/5/d:** improve weighted variation/curvature or exact joins when useful; retain the best valid bound. Beating the floor direct estimate is diagnostic, not an independent gate that postpones source/control work.
+- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** actual higher jets, global finite N/cone, compatible heat/energy, actual coefficient recursion, stress cancellation and corrected NS.
 
-Focused evidence: 960 transport rows, 2576 source terms and 1098 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Focused evidence: 960 transport rows, six exact centered product identities,80 original scalar-loop references and 1102 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
