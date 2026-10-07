@@ -34,6 +34,8 @@ The future-pressure function is transported from the actual Rd datum:
 
 The nonnegative backward weights and checked H_Rd range give H_Rd<=H<=1. The signed product uses H<=1; it does not replace pressure by an absolute unit cap. The same tiny absolute pressure memory is bounded separately with its original source amplitude and tail. This is the original pressure FTC and datum, with no adjustable pressure correction.
 
+The local symbolic Pmemory is bound to the inherited exact production formula by current_O2_modified_taper_cone.py:109-118 and current_O3_transition_direction_operator.py:58-65 (both with the lei_ren_part1_paper_compliant_ prefix). Their source hashes and exact theorem bindings are included in this receipt. The read-only reviewer accepted the final kernel and Rd-pressure comparisons without a mathematical or dimensional blocker.
+
 The exact signed shear is a=2, bs=8Z*B_y/(Pstar*U*C), kappa-2=bs^2/2. With r=Tz/Ttheta,
 
     Dcone/Ttheta=1-bs*r/2,
