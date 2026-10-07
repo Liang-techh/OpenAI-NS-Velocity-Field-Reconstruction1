@@ -1,16 +1,16 @@
-# Current handoff: conditioned native phase and A/B (2026-10-07)
+# Current handoff: native candidate velocities and five densities (2026-10-07)
 
-Checked implementation: [50d5ccee](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50d5ccee39750398e221347df47e227c4794c404). Current scope and tasks: [CURRENT_NATIVE_CONDITIONED_PHASE_2026_10_07.md](CURRENT_NATIVE_CONDITIONED_PHASE_2026_10_07.md).
+Checked implementation: [23cc3d8a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23cc3d8aafe6259f3389c8e242be6a562b0ab307). Scope and next tasks: [CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md](CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md).
 
-**Original C0 phase inverse and A/B functions now execute on five native source boxes.** Two enormous negative-u peaks use the Mobius/psi coordinates; the O2 buffer keeps nonzero tiny primitives; two O3 boxes are exactly flat.35 queries pass, including12 nontrivial active inverse/primitive queries. This extends the previous17-source q backend; it does not certify complete charts or spatial phase binding.
+**Actual native A/B now produce E_N/V_N and all five signed density kernels on five source boxes.**35 candidate queries and175 kernel enclosures pass, including12 nontrivial active queries. The tiny O2 buffer increments remain nonzero. Phase and N=1024 are explicit candidate inputs; whole source/spatial phase and integration are still open.
 
-- [x] Original17 source backends,714 signed roots,16 log-shear chart adapters and17 q query boxes.
-- [x] Conditioned positive rho/s, C0 two-angle inverse and original A/B on five native boxes.
-- [ ] **LEFT4c2-density-C0 / native-coverage / q-and-slow-jets / spatial-phase:** next actual production, with one explicitly declared candidate N and original microscopic offset binding.
-- [ ] **LEFT4c3 / LEFT4d:** actual signed defect integrals, Rc target/control functions and terminal identities.
+- [x] Original17 source backends,714 signed roots,16 log-shear adapters and17 q query boxes.
+- [x] Conditioned C0 inverse/A/B and actual candidate velocity/five density functions on five native boxes.
+- [ ] **LEFT4c2-spatial-phase / whole-coverage / slow-jets:** next production, preserving original microscopic radius offsets, signs and units.
+- [ ] **LEFT4c3 / LEFT4d:** actual signed cumulative integrals, Rc target/control functions and terminal identities.
 - [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** derivative/outer/energy/common-N/cone, genuine coefficient recursion, oscillatory cancellation and corrected NS field.
 
-Evidence:35 fresh native inverse/AB queries,16 independent scalar comparisons,8 extreme-log cases and 1018 working/index hashes. Review routing: read-only **GPT-5.6 Luna / max**. All global completion gates remain false. Earlier sections below are historical.
+Evidence:35 native velocity/density queries,175 kernel enclosures,16 independent original scalar comparisons and 1022 working/index hashes. Routing: one read-only **GPT-5.6 Luna / max** worker. All global completion gates remain false. Earlier sections below are historical.
 
 ---
 

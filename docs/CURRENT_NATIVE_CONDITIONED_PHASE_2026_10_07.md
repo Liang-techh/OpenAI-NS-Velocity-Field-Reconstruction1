@@ -1,5 +1,7 @@
 # Native conditioned phase inverse and original A/B functions
 
+> Successor: [CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md](CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md) ([23cc3d8a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23cc3d8aafe6259f3389c8e242be6a562b0ab307)) now executes native candidate velocities and all five signed C0 density kernels on these boxes. Spatial phase and actual integrals remain open.
+
 Checked implementation: [50d5ccee](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50d5ccee39750398e221347df47e227c4794c404). **The original Section11 phase inverse and A/B primitives now execute on five native source boxes, including two whose Poisson peaks cannot be resolved by materializing their width.** These are C0 function enclosures at explicit candidate periodic phases. Original spatial phase binding, slow derivatives, whole radial coverage, moment integration and actual coefficient recursion remain open.
 
 ## What was produced
@@ -47,7 +49,7 @@ New scoped gate: `current_native_conditioned_C0_phase_inverse_and_primitives_exe
 
 - [x] **LEFT4c2-conditioning-C0:** positive factored rho/s and small/large signed source conditioning.
 - [x] **LEFT4c2-inverse-C0-boxes:** directed two-coordinate Phi inverse and original A/B C0 on the five boxes above.
-- [ ] **LEFT4c2-density-C0:** use these actual A/B enclosures to compute E_N=E*exp(A/N), V_N=V+(B/Pstar)/N for an explicitly declared positive integer candidate N. Preserve tiny expm1(A/N) in log coordinates. Compute all five signed increments using original V and E. Candidate phase/N must remain explicitly separate from global admission.
+- [x] **LEFT4c2-density-C0 on these five boxes (see successor; whole coverage remains open):** use these actual A/B enclosures to compute E_N=E*exp(A/N), V_N=V+(B/Pstar)/N for an explicitly declared positive integer candidate N. Preserve tiny expm1(A/N) in log coordinates. Compute all five signed increments using original V and E. Candidate phase/N must remain explicitly separate from global admission.
 - [ ] **LEFT4c2-native-coverage:** subdivide original Z/coordinate boxes that cross u=0 or the small/large regimes; retain a complete union of sign branches and directed tails. Extend phase/A/B functions to all17 modification charts and inlet traces, not only the five samples.
 - [ ] **LEFT4c2-q-jets:** execute original q_y/q_Z and necessary higher orders. Preserve the exact flat derivatives and conditional positive active gamma. The current backend admits q C0 only.
 - [ ] **LEFT4c2-phase-slow-jets:** differentiate the original phase implicitly at fixed phi, using the exact positive Phi_psi. Keep the transformed coordinate correlations and original width/Pstar conversions; do not differentiate a selector or an inverse midpoint.
