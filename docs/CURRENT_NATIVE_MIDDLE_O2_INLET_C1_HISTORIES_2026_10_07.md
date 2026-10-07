@@ -1,5 +1,7 @@
 # Actual original inlet-to-O2-inlet C1 histories
 
+> Successor: [CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md) ([27c21b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/27c21b19b41aa7b5da9a5979fe0faf08b698dee9)) completes original O2 slope/axial/buffer C0/Z covers, actual .12 incoming and adjacent local transfer, with improved original-periodic bounds. O3-to-Rc and quantitative terminal closure remain open.
+
 Checked implementation: [caa69cab](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa69cabc652be58338ea8da12c7839d70e178af). Actual five-moment correction and own-history C0/Z covers now extend from original sc/2 inlet through the six inner charts and six middle/reference charts to **O2_slope coordinate0**. Whole Z=[-1,1] and Z=[.49,.51] are executed at candidate N=1024. O2/O3-to-Rc, quantitative terminal identities and scale recursion remain incomplete.
 
 ## Complete added middle route
@@ -54,8 +56,8 @@ Mark a task complete only after committing its implementation, result and focuse
 - [x] **LEFT4c3-pressure restoration conservative C1 covers (completed here):** integrate axial_restore [0,1] and restore_buffer [-7,-6], preserving analytic P0/P0_Z as a separate datum. Verify ordinary-Z differentiation and the same source-family admission.
 - [x] **LEFT4c3-actual patch conservative C1 covers (completed here):** cover native R/Rpatch in [1,e] with exact original log-coordinate lengths; apply the Jacobian once. Integrate all intervals from inherited left correction rows and verify the exact patch/Rh radius seam.
 - [x] **LEFT4c3-Rh reference to O2 inlet:** full Rh_reference [-5,0], actual O2_slope0 background and same-function source join; actual incoming correction C0/Z functions installed.
-- [ ] **LEFT4c3-O2 slope and local incoming:** integrate O2_slope [0,1] from these actual coordinate0 correction functions; explicitly supply coordinate .12, then apply the existing [.12,.15] operator and continue to1 without a gap.
-- [ ] **LEFT4c3-O2 axial and buffer:** cover O2_axial [0,1] with its exp(M)-1 true width and whole-Z cutoff crossings. Then cover O2_buffer [0,11], preserving the [0,9]/[9,11] admission distinction. Local cells cannot fill intervening gaps.
+- [x] **LEFT4c3-O2 slope and local incoming conservative C1 covers (see successor):** integrate O2_slope [0,1] from these actual coordinate0 correction functions; explicitly supply coordinate .12, then apply the existing [.12,.15] operator and continue to1 without a gap.
+- [x] **LEFT4c3-O2 axial and buffer conservative C1 covers (see successor):** cover O2_axial [0,1] with its exp(M)-1 true width and whole-Z cutoff crossings. Then cover O2_buffer [0,11], preserving the [0,9]/[9,11] admission distinction. Local cells cannot fill intervening gaps.
 - [ ] **LEFT4c3-O3/right collar:** integrate the required O3_slope_mu and O3_power route to the actual Rc endpoint. Prove quiet pieces on their original support; carry inherited rate-zero pressure C0/Z memory even when local density is zero.
 - [ ] **LEFT4c3-tight first-bridge bounds:** measure the widths of these covers and the repair-target budgets. Restore source correlations and use certified partitions or analytic phase averaging where broad denominator/derivative hulls dominate; do not cap field amplitudes or replace them with bound coordinates.
 - [ ] **LEFT4c3-signed oscillatory integration:** derive phase primitive/zero-mean integration-by-parts bounds with quadratic means and first-Z slow variation separated. Bound truncation and boundary terms without enumerating astronomically many cycles.

@@ -1,16 +1,16 @@
-# Current handoff: actual C1 histories to the original O2 inlet (2026-10-07)
+# Current handoff: actual complete O2 C1 histories (2026-10-07)
 
-Checked implementation: [caa69cab](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa69cabc652be58338ea8da12c7839d70e178af). Exact domains, source joins, evidence and detailed tasks: [CURRENT_NATIVE_MIDDLE_O2_INLET_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_MIDDLE_O2_INLET_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [27c21b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/27c21b19b41aa7b5da9a5979fe0faf08b698dee9). Route, improved bounds, evidence and detailed tasks: [CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md).
 
-**Actual original five-moment histories now cover the complete inlet-to-O2-inlet route**, including six inner and six middle/reference charts. Whole Z=[-1,1] and Z=[.49,.51], correction/own C0/Z rows, true lengths, analytic patch endpoint, separate P0/P0_Z and inherited pressure memory are retained. The terminal O2_slope0 background is queried directly and bound to the original reference/slope source join. Bounds remain wide; terminal matching and scale recursion are incomplete.
+**Actual original five-moment C0/Z histories now cover inlet -> complete inner/middle -> full O2 -> O3 transition0.** Actual .12 incoming data supplies the original three-cell [.12,.15] transfer. Eight true-width O2 cells retain inherited corrections, separate background/P0_Z, source joins and the buffer admission distinction. Original-loop parameter bounds avoid large Poisson denominator powers. Conservative covers remain distinct from quantitative terminal closure.
 
-- [x] Original inlet/common coordinates, true chart geometry and signed C1 density/integration backend.
-- [x] Actual inlet -> R110 -> complete reshape/reference/restoration/patch route -> Rh_reference0/O2_slope0. All seven background/history/P0 source-join entries retained.
-- [ ] **NEXT: LEFT4c3-O2 slope/axial/buffer.** Start from actual coordinate0 correction functions, supply local .12/.15 incoming data and complete the whole downstream route without resets.
-- [ ] **LEFT4c3-O3/right collar/tight signed bounds/global Rc + LEFT4d:** complete Rc functions, oscillatory cancellation, repair control and five terminal Z identities.
-- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, pressure/heat/energy, recursion, stress cancellation and full NS.
+- [x] Complete original inner/middle route and actual O2 inlet.
+- [x] Full O2 slope/axial/buffer; actual .12 incoming and original three-cell operator; first-Z periodic bound improvement and exact-flat handling.
+- [ ] **NEXT: LEFT4c3-O3/right collar/Rc.** Transition[0,1], then power offsets[0,1] and[1,2]; Rc=Rw*exp(2), power phase2/Tw. Carry memory through proven quiet support.
+- [ ] **LEFT4c3-tight signed bounds + LEFT4d:** improve inherited covers, separate phase means/slow variation, construct repair controls and prove five terminal Z identities.
+- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, heat/energy, recursion, quadratic stress cancellation and full NS.
 
-Evidence: 240 new chart C0/Z rows, 120 inherited rows, 20 terminal O2 own rows, seven source joins and 1068 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence: 320 new cell rows, 160 inherited rows, 40 serial/composite comparisons, 20 terminal own rows, 180 original-loop/cutoff reference checks and 1073 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
