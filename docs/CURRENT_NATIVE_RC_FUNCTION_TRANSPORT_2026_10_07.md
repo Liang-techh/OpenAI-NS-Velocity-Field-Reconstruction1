@@ -1,5 +1,7 @@
 # Original Rc source-function integral representation and target interface
 
+Successor: [CURRENT_NATIVE_FACTORED_SOURCE_ORACLE_2026_10_07.md](CURRENT_NATIVE_FACTORED_SOURCE_ORACLE_2026_10_07.md) connects explicit source roles to selected original factored C0/Z density and Rc amplitude queries. Full original graph integration/controls remain open.
+
 Implementation: [665263bc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/665263bc64dfea1d61f0f2b60be0f858d8299a34). This follows the checked centered-phase bound stage in [CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_CENTERED_PHASE_CONDITIONING_2026_10_07.md).
 
 The new `NativeRcFunctionTransport.build()` binds the accepted original full signed density graphs to **24 true cells / 17 charts**, constructs their exact Duhamel integral representations, carries all incoming histories, and forms all five Rc target functions and their first Z derivatives. These are source-bound function definitions. Original numerical integral values and five control functions have not yet been computed.
