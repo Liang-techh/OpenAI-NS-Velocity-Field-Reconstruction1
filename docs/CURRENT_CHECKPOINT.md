@@ -1,17 +1,17 @@
-# Current handoff: both original loop-edge collars and repair geometry (2026-10-07)
+# Current handoff: actual whole H0 margin and logarithmic loop scales (2026-10-07)
 
-Checked implementation: [ffa1f9a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ffa1f9a89219dba7b6c010d549cad63a77214990). Formulas, API, evidence and next tasks: [CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_DOMAIN_2026_10_07.md).
+Checked implementation: [be9a1cd6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be9a1cd6aa337beea1a9fac483c224fe44685a9e). Current source formulas, API, evidence and detailed next tasks: [CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md](CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md).
 
-**LEFT4c1 endpoints/domain advanced:** r_minus=Ra*exp(hb*s_c/2) now has an explicit two-sided original strict collar; r_plus=Rw*exp(1) and new repair(Rw*exp(2),2Rw*exp(2)) lie in the original power source. Exact radius ordering and the boundary eta log constraint retain tiny width/excess without materialization or rounded subtraction.
+**LEFT4c1 input/scales advanced:** one positive whole modification-box H0-2 lower, complete original weak/strong signed branches and actual d_star,q_star,B_star,J_star,eta are now assembled in log form. The full O2 buffer combines selector[0,9] and[9,11] original proofs. O3 includes complete energy/pressure and the post-radial theta denominator; local Uz=0 does not erase axial stress.
 
-- [x]18 original source charts /17 positive quotient charts /510 y2/Z1 signed bounds; same full histories and separate P0.
-- [x] Both actual strict two-sided edge collars, outside-left relaxed admission and original right/new-repair geometry.
-- [ ] **LEFT4c1 H/outer/scales:** whole actual H0-2, untouched post-repair admission and conservative common logarithmic loop scales.
-- [ ] **LEFT4c2 / c3:** phase-held inverse/loop jets, common phase, required higher mixed orders and own changed-history transport/tensor.
-- [ ] **LEFT4d / e:** new functional terminal repair/uniqueness, new whole finite N and modified strict cone.
+- [x]18 original covers /17 positive quotient charts /510 y2/Z1 bounds; both strict edge collars and new repair geometry.
+- [x] Whole actual original H0-2 margin (log lower approximately-3.9120) and conservative current-source logarithmic loop constants.
+- [ ] **LEFT4c1-outer:** unchanged original post-repair admission through Rb and exact zero exterior.
+- [ ] **LEFT4c2:** signed input jets, branch-safe q, phase-held inverse/primitives, common fast phase and justified higher orders.
+- [ ] **LEFT4c3 / d / e:** own changed histories, new functional terminal repair, new whole finite N and modified strict cone.
 - [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, actual coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Focused source/collar/radius checks passed; 989 indexed dependency hashes matched. Source reasoning: GPT-5.6 Luna / max. Original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. Complete Section11 H/scales and all global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused current-source/log scale checks passed; 999 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. Actual eta and2+eta remain separate formal sources; no installed physical loop, new N or actual recursion is claimed. Original cone inventory remains15 strict nonzero regions/17 open plus exact zero exterior. All global completion gates remain false and the long-term goal remains active. Earlier sections below are historical.
 
 ---
 

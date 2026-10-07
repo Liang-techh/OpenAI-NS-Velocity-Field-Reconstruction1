@@ -1,5 +1,7 @@
 # Original two-sided generic loop collars and ordered repair domain
 
+**Successor:** whole actual original H0-2, complete O2 buffer/outer signed input branches and current logarithmic Section11 constants are implemented in [CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md](CURRENT_GENERIC_SHEAR_UNIFORM_INPUTS_2026_10_07.md). Phase-held signed jets/inverse/primitives, own changed transport/new repair/N and true recursion remain open.
+
 Checked implementation: [ffa1f9a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ffa1f9a89219dba7b6c010d549cad63a77214990). Both selected generic-loop edges now have actual original strict two-sided collars. The left microscopic offset, both exact source radii and later new-repair reservation are assembled without materializing the width or subtracting tiny excess from rounded2. The full modification-box H0-2 bound and actual common loop scales remain the next critical path. The long-term goal remains active.
 
 ## Concrete chosen geometry
