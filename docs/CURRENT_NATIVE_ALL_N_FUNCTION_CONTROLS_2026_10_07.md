@@ -1,5 +1,7 @@
 # Original all-N coefficient functions and uniform C1 repair conditions
 
+Successor: [CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md](CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md) supplies original continuous modulation state errors and a quantitative q-active cone tolerance. It clarifies that C0 cone selection needs first Z/phase-held y bounds; higher total-y rows may grow with N. q-flat, quiet and repair-band margins, actual global N and closure remain open.
+
 Checked source: [b4ed26be](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b4ed26be1ced3e86f30c6a797e6b40f9f9107309). This follows the [exact five-control map and finite-iterate stage](CURRENT_NATIVE_FUNCTIONAL_CONTROLS_2026_10_07.md). The latest source graph contains 4,858 nodes. Focused checker: PASS, 18.594s. Working/index dependency audit: 1,135 matching hashes. Read-only reviewer metadata: **gpt-5.6-luna / max**. No new worker or source ancestor constructor was needed.
 
 The five-moment repair now has exact **N-dependent coefficient functions**, continuous all-N C0/Z histories and fresh uniform C1 target bounds over the complete original domain. All five transformed C1 bound upper limits strictly improve against the preceding original all-N target baseline. This is a reduction in conservative bounds, not a measured improvement in the actual corrected field or a percentage of project completion.
