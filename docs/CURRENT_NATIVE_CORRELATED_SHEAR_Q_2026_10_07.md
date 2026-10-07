@@ -1,5 +1,7 @@
 # Actual correlated shear and generic q interval backend
 
+> Successor: [CURRENT_NATIVE_CONDITIONED_PHASE_2026_10_07.md](CURRENT_NATIVE_CONDITIONED_PHASE_2026_10_07.md) ([50d5ccee](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50d5ccee39750398e221347df47e227c4794c404)) executes the original C0 phase inverse and A/B on five native boxes. Whole coverage, spatial phase and actual integrals remain open.
+
 Checked implementation: [0f8274e8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0f8274e859ecc18555b6345d704d6c6628f0ac99). **The17 native source query boxes now provide executable Section11 q interval functions;16 charts use original logarithmic shear jets.** This sharpens two previously unresolved branches and retains the tiny positive q at the exact-zero-excess O2 buffer. Conditioned phase inversion and actual cumulative signed defect integration are the next production work. Genuine coefficient recursion and the full corrected NS field remain incomplete.
 
 ## API
