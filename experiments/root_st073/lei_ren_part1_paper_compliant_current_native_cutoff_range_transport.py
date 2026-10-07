@@ -51,6 +51,8 @@ class NativeCutoffRangeTransport:
 
     @native.inlet.source_precision
     def cell(self,label,chart,left,right,*,Z,N):
+        N=density.density.density.candidate_integer(N)
+        if N<160:raise ValueError('Same common original integer N>=160 required, including quiet cells')
         geom=self.target.geometry(label,chart,left,right);coords=self.coordinates
         factors={key:widths.true_width_kernel(coords,geom,rate) for key,rate in RATES.items()}
         for factor in factors.values():
@@ -78,7 +80,10 @@ class NativeCutoffRangeTransport:
             if chart=='O3_power' and any(not value.zero for group in frame.values.values() for value in group.values()):
                 raise ArithmeticError('Original O3 quiet cell source must be exactly flat')
             if chart=='O3_power':
-                branches=source['actual_original_spatial_source']['original_q_slow_jet_source']['conditional_branches']
+                qsource=source['actual_original_spatial_source']['original_q_slow_jet_source']
+                if not qsource['source_q_and_jet_ZERO_same_object']:
+                    raise ArithmeticError('Original quiet q and ordinary ZERO jet must be the same exact source')
+                branches=qsource['conditional_branches']
                 if {branch['conditional_branch'] for branch in branches}!={'flat'}:
                     raise ArithmeticError('Original O3 quiet whole-cell cutoff branch must be proved flat')
             values={key:coords.rebase(frame.values['C0'][key],self.family)*factors[key]['mass'] for key in RATES}
@@ -102,6 +107,10 @@ class NativeCutoffRangeTransport:
         if N<160:raise ValueError('Same common original integer N>=160 required')
         coords=self.coordinates;c=self.ctx
         inlet=self.target.transfer.owner.inlet(Z,N=N)
+        original_inlet=self.target.transfer.owner.native.left_inlet(Z)
+        inlet_flags={key:original_inlet[key] for key in ('left_loop_q_A_B_exact_zero_by_existing_checked_collar',
+            'original_P0_and_all_five_incoming_histories_retained')}
+        if not all(inlet_flags.values()):raise ValueError('Original exact-flat inlet and full background/P0 memory theorem required')
         if any(not value.zero for group in ('initial_defect','initial_defect_Z') for value in inlet[group].values()):
             raise ValueError('Original exact zero correction inlet required')
         history={key:coords.scalar(0) for key in RATES};jets=dict(history);cells=[];unresolved=[]
@@ -136,7 +145,7 @@ class NativeCutoffRangeTransport:
         record=dict(source_family=self.family,candidate_N=N,Z_box=c.mpf(Z),original_exact_function_route_cells=24,
             original_whole_cell_queries=len(cells),enclosed_original_whole_cells=24-len(unresolved),
             unresolved_original_whole_cell_labels=unresolved,original_serial_cells=[q['record'] for q in cells],
-            original_zero_inlet=inlet['record'],original_common_coordinates=coords.record(),
+            original_zero_inlet=inlet['record'],original_checked_inlet_theorem_flags=inlet_flags,original_common_coordinates=coords.record(),
             full24_original_C1_integral_range_transport_enclosed=history is not None,
             original_Rc_C0_history_ranges=None if history is None else records(history),
             original_Rc_Z_history_ranges=None if jets is None else records(jets),

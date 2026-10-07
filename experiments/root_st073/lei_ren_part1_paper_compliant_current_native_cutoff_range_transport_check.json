@@ -13975,7 +13975,7 @@
   "global_completed_stress_cone_certified": false,
   "actual_coefficient_recursion_certified": false,
   "full_corrected_NS_velocity_field_certified": false,
-  "execution_seconds": 4.844000000040978,
+  "execution_seconds": 4.75,
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
     "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
@@ -15081,9 +15081,9 @@
     "lei_ren_part1_paper_compliant_current_native_cutoff_density_oracle.json": "8d12c1e387f725998fc9e760bdc8c9b97099aada1759858d92ad8688bb0ca983",
     "lei_ren_part1_paper_compliant_current_native_cutoff_density_oracle_check.py": "7cbbe22090463893199badc821cac17c35cfd361f612c4be66320042b101cbfd",
     "lei_ren_part1_paper_compliant_current_native_cutoff_density_oracle_check.json": "41491b4212e8eb5dcb0d5ae6041f79dd3fb54bda1f83bc44f9b1e29331912235",
-    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport.py": "6504b6f5438f0ff7c5f54078e6f385af585b5cabcb576d27b68a9e097193cb9d",
-    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport.json": "3c9c5fd314d68317b02d349ac68dd3cd28ddca338ba07ae03e66036a02125471",
-    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport_check.py": "ac7137b1d98c04ba2f02e88d73db6867350cd6b30932322b55b482e2e822f8cd"
+    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport.py": "392cdd5f5094ed64d23025a6345d0d8eebf180e51fb52d75c2017d2ebd4e7211",
+    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport.json": "526bd6ca965c9df15835dd7b7b97d24d298d72fd161e67b59ef8839f3b2464b7",
+    "lei_ren_part1_paper_compliant_current_native_cutoff_range_transport_check.py": "ee2522a2b16d92a6c42530793aee74034bc4bea5c5bb2c11e5eb20866718bb3f"
   },
   "scope": "Continuous24-cell original fixed-N range transport, actual common-basis contributions, unchanged incoming/quiet pressure memory, lower-N O2 cell and independent normalized target derivatives. Broad ranges do not establish small defects, repair contraction, scalar values, terminal closure, global N or recursion."
 }

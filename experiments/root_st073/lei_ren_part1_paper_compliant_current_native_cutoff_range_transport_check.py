@@ -52,6 +52,9 @@ def run(role_owner,report=None,live=None):
         report['full24_original_C1_integral_range_transport_enclosed'] and not report['unresolved_original_whole_cell_labels'],
         'All24 original whole-cell fixed-N ranges required')
     cells=report['original_serial_cells']
+    require(all(report['original_checked_inlet_theorem_flags'].values()) and
+        report['original_zero_inlet']['inlet_correction_zero_is_checked_initial_condition_not_downstream_history_reset'],
+        'Original exact-flat inlet and original background/P0 theorem flags required')
     require([(q['label'],q['chart']) for q in cells]==[(q[0],q[1]) for q in current.current.ROUTE],
         'Original exact function route order differs')
     previous=None;rows=0;quiet_pressure=0;positive_masses=0
@@ -78,6 +81,9 @@ def run(role_owner,report=None,live=None):
             source=row['original_whole_cell_source']
             require(source['status']=='enclosed' and 'separate_original_P0' in source and 'separate_original_P0_Z' in source,
                 'Continuous original source or separate pressure datum missing')
+            if row['chart']=='O3_power':
+                require(source['actual_original_spatial_source']['original_q_slow_jet_source']['source_q_and_jet_ZERO_same_object'],
+                    'Quiet source q and ordinary ZERO jet must remain the same exact object')
         previous=row
     require(set(report['original_Rc_target_C0_ranges'])==set(current.current.repair.ROWS) and
         set(report['original_Rc_target_Z_ranges'])==set(current.current.repair.ROWS),'All five actual fixed-N target rows required')
@@ -102,6 +108,9 @@ def run(role_owner,report=None,live=None):
     try:owner.route(N=159)
     except ValueError:pass
     else:raise AssertionError('Candidate N below original bound accepted')
+    try:owner.cell('initial_flat_collar','bridge_first',None,None,Z=(-1,1),N=159)
+    except ValueError:pass
+    else:raise AssertionError('Quiet cell bypassed the original candidate N guard')
     independent=independent_target_checks(owner.ctx)
     result=dict(all_passed=True,source_family=owner.family,**{current.GATE:True},candidate_N=2048,
         continuous_original_route_cells_checked=24,exact_original_function_radius_joins=23,
