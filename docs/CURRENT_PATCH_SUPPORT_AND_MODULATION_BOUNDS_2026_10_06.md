@@ -1,5 +1,7 @@
 # Actual patch support joins and whole modulation source norms
 
+Latest successor: [CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md](CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md); Rsh physical interface [d962130e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d962130e08ff98ea27035ac921ac203f5378ad10), correlated primitive shear [c2296cde](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c2296cde076b6c01559d3e3fc02d59785ac96f1e). CONT4f2a and primitive BOUND1a5a–b are complete. Independent repair, full signed cone/direction conditions, global composition and recursion remain open.
+
 Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
 
 Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
@@ -55,7 +57,7 @@ Files use prefix lei_ren_part1_paper_compliant_current_O3_frequency_source_bound
 - [x] **CONT4f5a–d:** actual six-support definitions, flat beta limits, partial/full FTC and terminal implicit closure, two independent source germs and actual x/Z/logR/Z mixed4 velocity/pressure units.
 - [x] **CONT4f6a1:** canonical fixed-unit physical spatial4/fixed-position time1 source transport at the six supports.
 - [x] **CONT4f6a2–3:** regenerate current-definition quantitative trace bounds from checked primitive patch packets; do not reuse the mismatched cached full33 view.
-- [ ] **CONT4f2a:** adapt already-proved reshape_reference UT/UZ/UR/P source rows to the global velocity interface API.
+- [x] **CONT4f2a:** adapt already-proved reshape_reference UT/UZ/UR/P source rows to the global velocity interface API.
 - [ ] **CONT4f2–4/6b:** compose the remaining unchanged inner/pulse/outer providers and twelve current modified germs with their common geometry, pressure datum, typed core and exact-zero layouts.
 - [ ] **CONT4f7:** publish all adjacent/internal physical velocity traces and admit global smooth velocity only after complete coverage.
 - [x] **BOUND1a2–3:** actual whole-support chi and original theta/Pstar source norm formulas, common Rd amplitude and original J factorization.

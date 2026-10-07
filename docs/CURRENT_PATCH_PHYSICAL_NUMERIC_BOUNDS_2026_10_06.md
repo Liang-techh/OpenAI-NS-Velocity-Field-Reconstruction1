@@ -1,5 +1,7 @@
 # Fresh six-support physical velocity and pressure bounds
 
+Latest successor: [CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md](CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md); Rsh physical interface [d962130e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d962130e08ff98ea27035ac921ac203f5378ad10), correlated primitive shear [c2296cde](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c2296cde076b6c01559d3e3fc02d59785ac96f1e). CONT4f2a and primitive BOUND1a5a–b are complete. Independent repair, full signed cone/direction conditions, global composition and recursion remain open.
+
 Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
 
 Implementation and focused receipt: commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb).
@@ -30,7 +32,7 @@ Files under experiments/root_st073 use prefix lei_ren_part1_paper_compliant_curr
 - [x] **CONT4f6a3:** quantitative common traces in the stated log_tau sector and viscosity1;216 keys/view, source function equality before bounds, zero layouts, all-angle/axial domains and foreign-definition rejection.
 - [x] **CONT4f6a4a:** named six-patch provider with fresh requested time/nu sectors and actual-lambda physical queries is implemented in the successor.
 - [ ] **CONT4f6a4b:** compose this provider into the complete global velocity-interface API; remaining providers and resolved coefficients are not supplied by the local atlas.
-- [ ] **CONT4f2a:** adapt the already proved reshape_reference source rows into the same physical trace interface.
+- [x] **CONT4f2a:** adapt the already proved reshape_reference source rows into the same physical trace interface.
 - [ ] **CONT4f2–4/6b/7:** complete the remaining unchanged inner and pulse/outer source adapters, typed axis/core maps, common pressure/geometry and all adjacent/internal physical trace exports.
 - [x] **BOUND1a4b:** substitute the actual current mu and Rd log-amplitude enclosure plus radius/Pstar factors into the whole-support finite-N source formulas. Keep scalar uncertainty and common N; do not choose a midpoint.
 - [ ] **BOUND1a5 / BOUND1b / BOUND2:** flat-edge correlations, independent moment-repair controls/bump/partial-history bounds and complete signed pressure/radial/diagonal stress errors.

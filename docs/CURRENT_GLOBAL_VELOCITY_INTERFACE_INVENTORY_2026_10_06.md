@@ -1,5 +1,7 @@
 # Current global velocity and absolute-pressure interface inventory
 
+Latest successor: [CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md](CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md); Rsh physical interface [d962130e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d962130e08ff98ea27035ac921ac203f5378ad10), correlated primitive shear [c2296cde](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c2296cde076b6c01559d3e3fc02d59785ac96f1e). CONT4f2a and primitive BOUND1a5a–b are complete. Independent repair, full signed cone/direction conditions, global composition and recursion remain open.
+
 Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
 
 Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
@@ -25,7 +27,7 @@ Filenames below have prefix lei_ren_part1_paper_compliant_ and live in experimen
 |first_second|actual_switch_mixed_C4: mixed_source_bindings / report|Adapt existing mixed4 packet|
 |second_power|same switch provider|Adapt existing mixed4 packet|
 |power_reshape|actual_long_reshape_mixed_C4: profile_source_bindings / evaluate|Adapt existing mixed4 packet|
-|reshape_reference|actual_Rsh_source_join: boundary_identities / build|Smallest already-proved source adapter to add|
+|reshape_reference|actual_Rsh_source_join: boundary_identities / build|Physical source/bound provider complete in current_Rsh_physical_velocity_interface|
 |reference_restore|reference_restore_mixed_C4: source_mixed / packet / reference_branch / restoration|Adapt existing mixed4 packet|
 |restore_buffer|same restoration provider / postrestore|Adapt existing mixed4 packet|
 |buffer_patch|actual_feedback_patch_mixed_C4: current_mixed_source_bindings / report|Adapt existing mixed4 packet|
@@ -77,7 +79,7 @@ The present current_actual_patch_background_tensor.interface uses b=a on support
 ## Concrete implementation queue
 
 - [x] **CONT4f1:** original32/current-modified/internal provider inventory and the missing six-support function theorem identified.
-- [ ] **CONT4f2a:** implement a small reshape_reference adapter consuming actual_Rsh_source_join.boundary_identities, typed UT/UZ/UR/P rows and the actual common radius. Keep its135 mixed4 physical rows separate from tensor traces.
+- [x] **CONT4f2a:** implement a small reshape_reference adapter consuming actual_Rsh_source_join.boundary_identities, typed UT/UZ/UR/P rows and the actual common radius. Keep its135 mixed4 physical rows separate from tensor traces.
 - [x] **CONT4f5a:** implement patch_support_velocity_pressure_mixed4_source_theorem(edge). Bind the actual radius, centers, normalized beta and all five moment programs by source hash.
 - [x] **CONT4f5b:** establish zero one-sided gamma jets0..4 from the actual analytic flat beta limits and disjoint supports. Do not prove equality by zero-containing numerical enclosures.
 - [x] **CONT4f5c:** prove matching partial-weight value/jets through order4 by FTC, with common zero weights at left edges and actual full weights at right edges. Preserve all nonzero cumulative histories; at71/40 use the same implicit terminal equations.
