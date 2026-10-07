@@ -1,19 +1,18 @@
-# Current handoff: typed upstream source packets and factored recovery (2026-10-07)
+# Current handoff: full source inputs and actual inner relaxed gate (2026-10-07)
 
-Checked implementation: [07c3ca61](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/07c3ca615bd5d88a268604f1c4b7e6934c5ff731). APIs, units, source scope and detailed production tasks: [CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md).
+Checked implementation: [5632ae72](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5632ae7252f758770dd3cf5f1b842dab3bf824ea). Detailed source scope, APIs, evidence and next tasks: [CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md).
 
-**The next source integration step is implemented:** 16 original core-to-O2 chart covers now share typed S=Pstar velocity, ordinary y/Z history rows, original P0 and radius/coordinate provenance. Bridge/micro/core factor ledgers are executable covers; width and swirl conversions are retained once. The exact own-field recovery backend consumes factored rows and supplies pressure/radial/full signed stress derivatives.
+**LEFT4c1-gates-a and b-inner are implemented:** all16 original chart covers now export complete signed S/F=(-a,b) and I/F=(p1,p2) source expressions; the original analytic Ra<R<=110 relaxed input is attached to the actual current callable/history/pressure/width graph. The six inner charts have positive H0-2 margin and log/formal a/kappa/t0 bounds. Ra itself remains the separate stress-free endpoint.
 
-- [x] Original outer relaxed input and strict inner support; generic Section 11 loop kernel.
-- [x] Own five-history transport/recovery backend and current original O2 conversion.
-- [x] **LEFT4c1-interface / c3-factored-recovery:** typed 16-chart source covers and modal own-field recovery; injected existing-owner API.
-- [ ] **LEFT4c1-gates:** complete original relaxed-input inequalities, lower a/interior/strict-edge margins and p bounds; reserve the actual repair interval.
-- [ ] **LEFT4c2-current:** install actual generic loop functions/shared phase and factored slow/mixed derivative covers.
-- [ ] **LEFT4c3-current:** propagate own changed histories across exact source widths/seams/gaps and export their recovered tensor.
-- [ ] **LEFT4d / e:** new-family terminal repair/uniqueness, new full finite N and global cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and corrected NS/dynamics.
+- [x] Typed common-unit packets, modal own-field recovery and full signed input/invariant expressions.
+- [x] Original whole open inner-exit relaxed input through110, existing strict inner support and original outer input.
+- [ ] **LEFT4c1 middle gates:** current-source long-reshape attachment/bounds, reference, full axial restore/buffer and active patch support conditions.
+- [ ] **LEFT4c1 norm/scales/domain:** actual p1/p2 derivative bounds, uniform scale formulas, strict right edge and reserved power repair interval.
+- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored jets, changed five-history transport and own tensor across true widths/seams.
+- [ ] **LEFT4d / e:** new-family terminal repair, new full finite N and whole modified cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** source interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and full corrected NS/dynamics.
 
-Saved boxes are covers, not point source functions; arbitrary coordinates require existing checked owner injection. Core saved rho[0.001,4] does not include the axis. Whole original relaxed-input assembly, current changed loop/moments, repair/common N and global gates remain false. Focused checks: 16 charts, 9586 original source coefficients and 543 changed-fixture coefficients; 955 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Old scoped N>=68,533,403 and registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+The new gates certify original source expressions and the open inner analytic relaxed condition; they do not certify whole-upstream function assembly, p1/p2 norms, changed loop/repair/N or global cone. No source ancestor graph was rebuilt. Focused source/function and independent algebra checks passed; 964 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Strict registry counts and old scoped N>=68,533,403 remain unchanged. Long-term goal active. Earlier sections below are historical.
 
 ---
 

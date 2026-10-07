@@ -1,5 +1,7 @@
 # Current original source packets and factored recovery, core through O2
 
+**Successor:** full signed current generic inputs and the actual whole open inner relaxed-source attachment are implemented in [CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_INPUTS_INNER_RELAXED_2026_10_07.md). Middle relaxed gates, p norms, changed loop/transport/repair/N and recursion remain open.
+
 Checked implementation: [07c3ca61](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/07c3ca615bd5d88a268604f1c4b7e6934c5ff731). **LEFT4c1-interface and factored recovery attachment are implemented.** Sixteen original chart covers now share a typed S=Pstar packet, including ordinary log-radius velocity and all five history rows, the separate original pressure datum, actual radius/selector provenance and unpruned factor bases. The generic recovery backend consumes these modes directly. Whole-current generic-loop input gates, actual changed field/history transport, terminal repair, new common N and scale recursion remain open. The long-term goal is active.
 
 ## Executable interface
