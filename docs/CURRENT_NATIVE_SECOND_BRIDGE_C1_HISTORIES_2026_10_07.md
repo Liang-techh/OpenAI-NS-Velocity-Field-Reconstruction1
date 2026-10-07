@@ -1,5 +1,7 @@
 # Actual inlet-to-phase2 C1 histories through both microscopic bridges
 
+> Successor: [CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md) ([bed4bb3b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bed4bb3b9b0ced79cfda2fca7860d02ee6ae9ffe)) now carries actual phase2 correction C0/Z functions through the full macro bridge and switch chain to R110. The route after R110 and quantitative closure remain open.
+
 Checked implementation: [5e6f617c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e6f617c296d50701fa74fedd79def6e1c05e91a). Actual five-moment correction and own-history C0/Z covers now extend from original inlet sc/2 through phase1 and the complete second bridge [1,2] to phase2. Executed domains are whole Z=[-1,1] and Z=[.49,.51], at candidate N=1024. The macro bridge and downstream route are still open. These are conservative function enclosures, not quantitative terminal closure or scale recursion.
 
 ## Implemented route and ownership
@@ -43,8 +45,8 @@ Mark a task complete only after committing its implementation, result and focuse
 - [x] **LEFT4c3-actual-initial collar:** sc/2 -> 3sc/4, whole-Z original correction/background/P0_Z retained.
 - [x] **LEFT4c3-active first bridge, whole-Z C1 covers:** sc/2 -> phase1 with genuine cutoff/phase crossings and actual inherited C0/Z histories. This item does not mean quantitative closure.
 - [x] **LEFT4c3-second bridge conservative C1 covers (completed in this report):** reuse the original whole-period C1 cover only after proving its a-positive lower bound on bridge_second [1,2]. Integrate its true h_bridge width, start from the known phase1 correction C0/Z functions, and compare original adjacent radius seams. No reset or omitted interval. Produce actual phase2 own histories on whole Z and the declared interval Z.
-- [ ] **LEFT4c3-macro bridge:** carry those phase2 rows through bridge_macro [0,1], using 4*logP+log(100/4)+1000-2*h_bridge. Keep microscopic terms and the original selected constants; handle all source/cutoff crossings on the full cell.
-- [ ] **LEFT4c3-microswitch chain:** integrate switch_first [0,1], switch_second [1,2], switch_power [0,1] in order. Use the two h_switch lengths and log(110/100)-2*h_switch. Preserve inherited C0/Z pressure memory and original signed axial terms.
+- [x] **LEFT4c3-macro bridge conservative C1 covers (see successor):** carry those phase2 rows through bridge_macro [0,1], using 4*logP+log(100/4)+1000-2*h_bridge. Keep microscopic terms and the original selected constants; handle all source/cutoff crossings on the full cell.
+- [x] **LEFT4c3-microswitch chain conservative C1 covers (see successor):** integrate switch_first [0,1], switch_second [1,2], switch_power [0,1] in order. Use the two h_switch lengths and log(110/100)-2*h_switch. Preserve inherited C0/Z pressure memory and original signed axial terms.
 - [ ] **LEFT4c3-reshape and inner route:** integrate reshape [0,1] and inner_reference [0,1], including the intervals outside the already accepted [.12,.15] local cell. Query original endpoint backgrounds, carry actual corrections and report radius seams explicitly.
 - [ ] **LEFT4c3-pressure restoration:** integrate axial_restore [0,1] and restore_buffer [-7,-6], preserving analytic P0/P0_Z as a separate datum. Verify ordinary-Z differentiation and the same source-family admission.
 - [ ] **LEFT4c3-actual patch:** cover native R/Rpatch in [1,e] with exact original log-coordinate lengths; apply the Jacobian once. Integrate all intervals from inherited left correction rows and verify the exact patch/Rh radius seam.

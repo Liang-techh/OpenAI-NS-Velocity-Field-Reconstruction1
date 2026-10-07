@@ -1,16 +1,16 @@
-# Current handoff: actual C1 histories through both bridges (2026-10-07)
+# Current handoff: actual C1 histories from inlet to R110 (2026-10-07)
 
-Checked implementation: [5e6f617c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e6f617c296d50701fa74fedd79def6e1c05e91a). API, evidence and detailed task acceptance criteria: [CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [bed4bb3b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bed4bb3b9b0ced79cfda2fca7860d02ee6ae9ffe). Exact domains, evidence and detailed tasks: [CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md).
 
-**Actual original five-moment histories now extend without gaps from sc/2 through phase1 to phase2 across the complete first and second microscopic bridges.** Whole Z=[-1,1] and Z=[.49,.51] are executed, including axial first derivatives. The second stage carries nonzero phase1 correction memory with true h_bridge width and retains original phase2 backgrounds plus separate P0/P0_Z. Bounds remain wide; terminal matching and scale recursion are incomplete.
+**Actual original five-moment histories now cover the entire inlet-to-R110 inner route**, including both microscopic bridges, the macro bridge and all three switch charts. Whole Z=[-1,1] and Z=[.49,.51], correction/own C0/Z rows, exact original widths/seams, separate P0/P0_Z and inherited pressure memory are retained. Bounds remain conservative and may be wide; quantitative terminal matching and scale recursion are incomplete.
 
-- [x] Original inlet/common coordinates, all 17 positive chart lengths/16 radius seams, signed C1 density/true-width integration backend and declared local cells.
-- [x] Actual initial collar, full first-bridge cutoff/phase C1 covers and full second-bridge actual phase1-to-phase2 C1 transfer.
-- [ ] **NEXT: LEFT4c3-macro bridge [0,1], switch chain and downstream route.** Start from known phase2 correction functions; use exact original widths/seams without resets or omitted intervals.
-- [ ] **LEFT4c3-tight signed bounds/global Rc + LEFT4d:** oscillatory cancellation, complete inlet-to-Rc functions, terminal control and all five Z identities.
+- [x] Original inlet/common coordinates, all 17 positive chart lengths/16 radius seams and signed C1 density/true-width backend.
+- [x] Actual inlet -> phase2 -> complete macro/switch chain -> R110. Added four-chart serial/reusable affine C1 operator and actual inherited data.
+- [ ] **NEXT: LEFT4c3-R110-to-Rh.** Complete reshape/reference, pressure restoration/buffer, actual patch and Rh route; preserve original analytic endpoints and backgrounds/P0_Z.
+- [ ] **LEFT4c3-O2/O3/tight signed bounds/global Rc + LEFT4d:** full downstream route, oscillatory cancellation, repair control and five terminal Z identities.
 - [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, pressure/heat/energy, recursion, stress cancellation and full NS.
 
-Evidence: 40 actual phase2 and 20 nonzero inherited C0/Z rows; accepted loop/cutoff references inherited; 1060 source hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence: 160 new chart C0/Z rows, 80 actual inherited rows, 20 serial/composite comparisons, four original seams and 1064 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
