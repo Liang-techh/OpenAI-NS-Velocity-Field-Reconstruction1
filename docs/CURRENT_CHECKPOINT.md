@@ -1,16 +1,16 @@
-# Current handoff: complete first-bridge C1 covers (2026-10-07)
+# Current handoff: actual C1 histories through both bridges (2026-10-07)
 
-Checked implementation: [c14d5cc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c14d5cc75263869d79cb89c326ceab9d4f0ae9c4). API, evidence, limitations and detailed task acceptance criteria: [CURRENT_NATIVE_FIRST_BRIDGE_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_FIRST_BRIDGE_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [5e6f617c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e6f617c296d50701fa74fedd79def6e1c05e91a). API, evidence and detailed task acceptance criteria: [CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md).
 
-**Actual original histories now propagate without gaps from sc/2 to phase1 over the full first bridge on whole Z=[-1,1] and Z=[.49,.51].** All five correction/own-history C0/Z rows retain the original active field, cutoff crossings, true microscopic width, common basis, background and separate P0/P0_Z. The covers remain wide; quantitative terminal closure and scale recursion are incomplete.
+**Actual original five-moment histories now extend without gaps from sc/2 through phase1 to phase2 across the complete first and second microscopic bridges.** Whole Z=[-1,1] and Z=[.49,.51] are executed, including axial first derivatives. The second stage carries nonzero phase1 correction memory with true h_bridge width and retains original phase2 backgrounds plus separate P0/P0_Z. Bounds remain wide; terminal matching and scale recursion are incomplete.
 
-- [x] Original inlet/common coordinates, all 17 positive true chart lengths and 16 radius seams, signed C1 density/integration backend and declared local cells.
-- [x] Actual sc/2 -> 3sc/4 collar and full remaining first-bridge C1 history covers through phase1.
-- [ ] **NEXT: LEFT4c3-second bridge [1,2] and downstream chain.** Carry actual phase1 correction functions across exact seams and true lengths; never reset or skip intervals.
+- [x] Original inlet/common coordinates, all 17 positive chart lengths/16 radius seams, signed C1 density/true-width integration backend and declared local cells.
+- [x] Actual initial collar, full first-bridge cutoff/phase C1 covers and full second-bridge actual phase1-to-phase2 C1 transfer.
+- [ ] **NEXT: LEFT4c3-macro bridge [0,1], switch chain and downstream route.** Start from known phase2 correction functions; use exact original widths/seams without resets or omitted intervals.
 - [ ] **LEFT4c3-tight signed bounds/global Rc + LEFT4d:** oscillatory cancellation, complete inlet-to-Rc functions, terminal control and all five Z identities.
 - [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, pressure/heat/energy, recursion, stress cancellation and full NS.
 
-Evidence: 40 native C0/Z history rows; 144 original primitive/implicit derivative and 36 q/q_Z references; 1056 source hashes. Read-only worker: **GPT-5.6 Luna / max**. No global completion is claimed. Older sections are historical.
+Evidence: 40 actual phase2 and 20 nonzero inherited C0/Z rows; accepted loop/cutoff references inherited; 1060 source hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 

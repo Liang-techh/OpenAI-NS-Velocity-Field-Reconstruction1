@@ -1,5 +1,7 @@
 # Actual whole first-bridge C1 history covers
 
+> Successor: [CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_SECOND_BRIDGE_C1_HISTORIES_2026_10_07.md) ([5e6f617c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5e6f617c296d50701fa74fedd79def6e1c05e91a)) now carries actual phase1 C0/Z correction functions through the full second bridge [1,2] to phase2, with original endpoint backgrounds and separate P0/P0_Z. Macro/downstream route and quantitative closure remain open.
+
 Checked implementation: [c14d5cc7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c14d5cc75263869d79cb89c326ceab9d4f0ae9c4). The actual original inlet-to-phase1 route now has conservative five-moment correction and own-history C0/Z covers on whole Z=[-1,1] and Z=[.49,.51]. This completes the first bridge interval, including its genuine active cutoff crossings. The second bridge and remaining route to Rc are still missing. Wide covers do not prove small errors, terminal identities, a global common frequency or scale recursion.
 
 ## What is implemented
@@ -40,7 +42,7 @@ Mark a task complete only after committing its implementation, result and focuse
 - [x] **LEFT4c3-true-chart geometry:** all 17 original positive lengths, 16 exact radius seams and true-width signed C1 adapter on five declared cells; see predecessor.
 - [x] **LEFT4c3-actual-initial collar:** sc/2 -> 3sc/4, whole-Z original correction/background/P0_Z retained.
 - [x] **LEFT4c3-active first bridge, whole-Z C1 covers:** sc/2 -> phase1 with genuine cutoff/phase crossings and actual inherited C0/Z histories. This item does not mean quantitative closure.
-- [ ] **LEFT4c3-second bridge:** reuse the original whole-period C1 cover only after proving its a-positive lower bound on bridge_second [1,2]. Integrate its true h_bridge width, start from the known phase1 correction C0/Z functions, and compare original adjacent radius seams. No reset or omitted interval. Produce actual phase2 own histories on whole Z and the declared interval Z.
+- [x] **LEFT4c3-second bridge conservative C1 covers (see successor):** reuse the original whole-period C1 cover only after proving its a-positive lower bound on bridge_second [1,2]. Integrate its true h_bridge width, start from the known phase1 correction C0/Z functions, and compare original adjacent radius seams. No reset or omitted interval. Produce actual phase2 own histories on whole Z and the declared interval Z.
 - [ ] **LEFT4c3-macro bridge:** carry those phase2 rows through bridge_macro [0,1], using 4*logP+log(100/4)+1000-2*h_bridge. Keep microscopic terms and the original selected constants; handle all source/cutoff crossings on the full cell.
 - [ ] **LEFT4c3-microswitch chain:** integrate switch_first [0,1], switch_second [1,2], switch_power [0,1] in order. Use the two h_switch lengths and log(110/100)-2*h_switch. Preserve inherited C0/Z pressure memory and original signed axial terms.
 - [ ] **LEFT4c3-reshape and inner route:** integrate reshape [0,1] and inner_reference [0,1], including the intervals outside the already accepted [.12,.15] local cell. Query original endpoint backgrounds, carry actual corrections and report radius seams explicitly.
