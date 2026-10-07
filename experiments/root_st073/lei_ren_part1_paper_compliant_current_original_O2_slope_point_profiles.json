@@ -1,0 +1,520 @@
+{
+  "original_O2_slope_point_coefficients_and_common_basis_E_V_dispatch_implemented": true,
+  "source_family": {
+    "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+  },
+  "original_recipe_binding": {
+    "passed": true,
+    "original_source_assignments_bound": 6,
+    "original_mass_densities": 3,
+    "input_hashes": {
+      "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+      "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+      "lei_ren_part1_paper_compliant_current_generic_shear_loop.py": "a32b1aca0436492481a2443b96bfd8cb85e4f3b66b3d78862b263dde543654b6"
+    }
+  },
+  "original_E_V_graph_leaf_identity": {
+    "passed": true,
+    "source_chain_AST_identities": [
+      "Utheta_over_Pstar_axial5_coefficients",
+      "Uz_ordinary_y_derivative_axial5",
+      "u0",
+      "u",
+      "V",
+      "one",
+      "out",
+      "velocity",
+      "logs",
+      "E",
+      "V"
+    ],
+    "original_E_source_leaf_equals_original_u_and_its_ordinary_Z_row": true,
+    "original_V_source_leaf_equals_4Z_times_original_Pstar_inverse_and_its_Z_row": true,
+    "coefficient_to_ordinary_Z_order0_1_factorials_are_one": true,
+    "common_inverse_factor_identity": "exp((-1/2)*(2*logP))=Pstar^-1",
+    "source_function_identity_not_equality_of_enclosure_endpoints": true,
+    "input_hashes": {
+      "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+      "lei_ren_part1_paper_compliant_current_pre_pulse_stress_operator.py": "6cd1959126bfbf7ef6bb8ceb201f034f6a78e25f15836c42e0930c039070846f",
+      "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.py": "11a4af5087c15cdf9bc1190bca91ac0fd943d5cd546860ffcc36ea1adc465e7f",
+      "lei_ren_part1_paper_compliant_current_native_generic_source_packets.py": "3325d19957c368d53fc0338fd5a6598883fb020991ecdff4a9e767c9e7919804",
+      "lei_ren_part1_paper_compliant_current_generic_shear_signed_jets.py": "7f79f8ee2714f255238db806e515d9233245d67f37ee1a4a397f40e524286fa3",
+      "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.py": "a4f03b3c81a9e238a6d6a7f420e85e744e21fbd00fbbb268e12a386dc2475648"
+    }
+  },
+  "original_source_recipe_and_leaf_chain_hashes_compared_to_accepted_receipt": true,
+  "exact_original_background_role_bindings": {
+    "all_N_original_E_C0": {
+      "namespace": "original_signed_input_graph.jet_expression_dag",
+      "source_node": 1
+    },
+    "all_N_original_E_Z": {
+      "namespace": "original_signed_input_graph.jet_expression_dag",
+      "source_node": 2
+    },
+    "all_N_original_V_C0": {
+      "namespace": "function_graph_nodes",
+      "source_node": 326
+    },
+    "all_N_original_V_Z": {
+      "namespace": "function_graph_nodes",
+      "source_node": 328
+    }
+  },
+  "original_O2_slope_point": {
+    "Z": {
+      "decimal": "0.370000000000000000000000000000000000000000000000000080182941302765869384216",
+      "exact_mpf_tuple": [
+        0,
+        553733740351932497649012109419545310487239721882747,
+        -170,
+        169
+      ]
+    },
+    "y": {
+      "decimal": "0.529999999999999999999999999999999999999999999999999518902352183404783694703",
+      "exact_mpf_tuple": [
+        0,
+        396593084306113815883751916205890560213833854861967,
+        -169,
+        169
+      ]
+    },
+    "E": {
+      "C0": {
+        "terms": [
+          {
+            "original_Pstar_power": 0,
+            "point_coefficient": {
+              "decimal": "0.905947310773446759999540205485825504492814931293541606198522168214651757538",
+              "exact_mpf_tuple": [
+                0,
+                338955130375915720894819385807615963276187085920463,
+                -168,
+                168
+              ]
+            }
+          }
+        ],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      },
+      "Z": {
+        "terms": [
+          {
+            "original_Pstar_power": 0,
+            "point_coefficient": {
+              "decimal": "-0.589674562382224120326906282047243269702421540291337701265548567587704884398",
+              "exact_mpf_tuple": [
+                1,
+                110311723316992538245301409753556079173356690817637,
+                -167,
+                167
+              ]
+            }
+          }
+        ],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      }
+    },
+    "V": {
+      "C0": {
+        "terms": [
+          {
+            "original_Pstar_power": -1,
+            "point_coefficient": {
+              "decimal": "1.48000000000000000000000000000000000000000000000000032073176521106347753686",
+              "exact_mpf_tuple": [
+                0,
+                553733740351932497649012109419545310487239721882747,
+                -168,
+                169
+              ]
+            }
+          }
+        ],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      },
+      "Z": {
+        "terms": [
+          {
+            "original_Pstar_power": -1,
+            "point_coefficient": {
+              "decimal": "4.0",
+              "exact_mpf_tuple": [
+                0,
+                1,
+                2,
+                1
+              ]
+            }
+          }
+        ],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      }
+    },
+    "histories": {
+      "m": {
+        "C0": {
+          "terms": [
+            {
+              "original_Pstar_power": -1,
+              "point_coefficient": {
+                "decimal": "1.48000000000000000000000000000000000000000000000000032073176521106347753686",
+                "exact_mpf_tuple": [
+                  0,
+                  553733740351932497649012109419545310487239721882747,
+                  -168,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        },
+        "Z": {
+          "terms": [
+            {
+              "original_Pstar_power": -1,
+              "point_coefficient": {
+                "decimal": "4.0",
+                "exact_mpf_tuple": [
+                  0,
+                  1,
+                  2,
+                  1
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        }
+      },
+      "h": {
+        "C0": {
+          "terms": [
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "0.578840877872056662146711969763396977457928351847414860054184013482886314831",
+                "exact_mpf_tuple": [
+                  0,
+                  216570084035601414130591171973402263235115932647207,
+                  -168,
+                  168
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        },
+        "Z": {
+          "terms": [
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "-0.37676334737032450522347335528622901162711494446924724521836548070246331055",
+                "exact_mpf_tuple": [
+                  1,
+                  563855615045633024739686752609086726339997502538247,
+                  -170,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        }
+      },
+      "k": {
+        "C0": {
+          "terms": [
+            {
+              "original_Pstar_power": -1,
+              "point_coefficient": {
+                "decimal": "0.856684499250643859977133715249827526637733960734174367067251752862062205625",
+                "exact_mpf_tuple": [
+                  0,
+                  641047448745380185826549869041270699175943160635733,
+                  -169,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        },
+        "Z": {
+          "terms": [
+            {
+              "original_Pstar_power": -1,
+              "point_coefficient": {
+                "decimal": "1.75775375738014638085610731322996897262358328957517455967179207844820155452",
+                "exact_mpf_tuple": [
+                  0,
+                  657653758575521437368680589428246964194664654649677,
+                  -168,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        }
+      },
+      "e": {
+        "C0": {
+          "terms": [
+            {
+              "original_Pstar_power": -2,
+              "point_coefficient": {
+                "decimal": "2.1904000000000000000000000000000000000000000000000016506994849529400310564",
+                "exact_mpf_tuple": [
+                  0,
+                  409762967860430048260268960970463529760557394193233,
+                  -167,
+                  169
+                ]
+              }
+            },
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "-0.357642434990612908140600442204430246284224447144945573639299870434890801841",
+                "exact_mpf_tuple": [
+                  1,
+                  535239684421418772779708032921801164040263591539755,
+                  -170,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        },
+        "Z": {
+          "terms": [
+            {
+              "original_Pstar_power": -2,
+              "point_coefficient": {
+                "decimal": "11.8400000000000000000000000000000000000000000000000025658541216885078202949",
+                "exact_mpf_tuple": [
+                  0,
+                  553733740351932497649012109419545310487239721882747,
+                  -165,
+                  169
+                ]
+              }
+            },
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "0.465573756518697426377068039812258566717083456570077337514711018259023632541",
+                "exact_mpf_tuple": [
+                  0,
+                  348383645414592217307576694838713045465559906534805,
+                  -169,
+                  168
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        }
+      },
+      "p": {
+        "C0": {
+          "terms": [
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "2.14966395504003474893733024771551281826236025508983637967035632660365653115",
+                "exact_mpf_tuple": [
+                  0,
+                  402142385920286113534568245218451237421657884693555,
+                  -167,
+                  169
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        },
+        "Z": {
+          "terms": [
+            {
+              "original_Pstar_power": 0,
+              "point_coefficient": {
+                "decimal": "-2.79840148954107786826215917549385079692874762734890111477627888965974834347",
+                "exact_mpf_tuple": [
+                  1,
+                  261751574967905465753875012280459069128355030937841,
+                  -166,
+                  168
+                ]
+              }
+            }
+          ],
+          "approximate_point_coefficients": true,
+          "source_caps_or_midpoints_used": false,
+          "original_positive_Pstar_factor_not_materialized": true
+        }
+      }
+    },
+    "a": {
+      "C0": {
+        "terms": [
+          {
+            "original_Pstar_power": 0,
+            "point_coefficient": {
+              "decimal": "1.66941326242438894183255900446734718202515639839576790026090978803057570238",
+              "exact_mpf_tuple": [
+                0,
+                624601655402283199343909627197107253387609313184919,
+                -168,
+                169
+              ]
+            }
+          }
+        ],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      },
+      "Z": {
+        "terms": [],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      }
+    },
+    "b": {
+      "C0": {
+        "terms": [],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      },
+      "Z": {
+        "terms": [],
+        "approximate_point_coefficients": true,
+        "source_caps_or_midpoints_used": false,
+        "original_positive_Pstar_factor_not_materialized": true
+      }
+    },
+    "original_defining_integrals": {
+      "J": {
+        "decimal": "0.0391147839275840435781004635924540403086237888436756190661946021924986772317",
+        "exact_mpf_tuple": [
+          0,
+          117076624904209541716003458707633350011164190591109,
+          -171,
+          167
+        ]
+      },
+      "masses": [
+        {
+          "decimal": "0.832288618659158128731127269224142149705735773234398801258280967450349571996",
+          "exact_mpf_tuple": [
+            0,
+            2432782357804470165768856954220460032483505743663,
+            -161,
+            161
+          ]
+        },
+        {
+          "decimal": "0.55706021881282825769480525496781552018493705302764560734122059834213333391",
+          "exact_mpf_tuple": [
+            0,
+            52105243000759011023434483860321197833583517398681,
+            -166,
+            166
+          ]
+        },
+        {
+          "decimal": "0.737389825798994803452117123686676587903106989214013559506307417458651276199",
+          "exact_mpf_tuple": [
+            0,
+            275890288065633326953051292832642219830409479103295,
+            -168,
+            168
+          ]
+        }
+      ]
+    }
+  },
+  "original_finite_coefficients_from_defining_integrals_not_cover_endpoints": true,
+  "background_E_V_queries_skip_unneeded_cumulative_mass_quadrature": true,
+  "original_nonzero_axial_source_kept_with_exact_Pstar_inverse_factor": true,
+  "original_five_history_functions_and_ordinary_Z_rows_evaluated": true,
+  "original_absolute_pressure_datum_kept_separate": true,
+  "original_analytic_P0_reference": {
+    "operation": "same_original_analytic_pressure_datum",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010",
+    "point_value_and_Z_derivative_not_evaluated": true
+  },
+  "original_p1_p2_and_phase_provider_installed": false,
+  "full_original_O2_source_point_provider_installed": false,
+  "quadrature_and_roundoff_certified": false,
+  "numerical_original_source_point_or_integral_oracle_installed": false,
+  "actual_five_controls_installed": false,
+  "certified_actual_fixed_point_tail_installed": false,
+  "actual_terminal_Z_function_closure_installed": false,
+  "current_whole_N_selected": false,
+  "whole_upstream_current_source_packet_assembled": false,
+  "current_upstream_generic_shear_loop_installed": false,
+  "current_upstream_modified_cumulative_moments_recovered": false,
+  "current_upstream_new_family_moment_repair_certified": false,
+  "current_upstream_new_common_finite_N_certified": false,
+  "global_completed_stress_cone_certified": false,
+  "actual_coefficient_recursion_certified": false,
+  "full_corrected_NS_velocity_field_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_compliant_current_generic_shear_loop.py": "a32b1aca0436492481a2443b96bfd8cb85e4f3b66b3d78862b263dde543654b6",
+    "lei_ren_part1_paper_compliant_current_pre_pulse_stress_operator.py": "6cd1959126bfbf7ef6bb8ceb201f034f6a78e25f15836c42e0930c039070846f",
+    "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.py": "11a4af5087c15cdf9bc1190bca91ac0fd943d5cd546860ffcc36ea1adc465e7f",
+    "lei_ren_part1_paper_compliant_current_native_generic_source_packets.py": "3325d19957c368d53fc0338fd5a6598883fb020991ecdff4a9e767c9e7919804",
+    "lei_ren_part1_paper_compliant_current_generic_shear_signed_jets.py": "7f79f8ee2714f255238db806e515d9233245d67f37ee1a4a397f40e524286fa3",
+    "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.py": "a4f03b3c81a9e238a6d6a7f420e85e744e21fbd00fbbb268e12a386dc2475648",
+    "lei_ren_part1_paper_compliant_current_native_Rc_all_N_function_controls.json": "306f7cbfa637c2f031e3c19ba1fcbd6350599daef70add3eefb1e504520ea189",
+    "lei_ren_part1_paper_compliant_current_native_Rc_all_N_function_controls_check.json": "7e350a727d7634b9323ebdf39ae4bc973ef2cedc0be08a0dbe71e9c576bd5f9b",
+    "lei_ren_part1_paper_compliant_current_generic_loop_function_sources_views.json.gz": "1b38862185dfbd19a1ec59172e780a65fdd1880fb32e17b9028295a5837b58e0",
+    "lei_ren_part1_paper_compliant_current_original_O2_slope_point_profiles.py": "9ddf9efb3b3b2ac81050a5fea537a43b72e50a4ae75f845b73577d63db2a4ecd"
+  },
+  "execution_seconds": 13.375,
+  "scope": "Actual original O2 slope defining profile integrals with approximate point coefficients and exact common Pstar powers. Four background E/V source roles bound. Full p1/p2, analytic P0 point service, native phase, certified integrals, controls and global field remain open."
+}

@@ -1,0 +1,947 @@
+{
+  "all_passed": true,
+  "original_O2_slope_point_coefficients_and_common_basis_E_V_dispatch_implemented": true,
+  "source_family": {
+    "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+  },
+  "original_recipe_binding": {
+    "passed": true,
+    "original_source_assignments_bound": 6,
+    "original_mass_densities": 3,
+    "input_hashes": {
+      "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+      "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+      "lei_ren_part1_paper_compliant_current_generic_shear_loop.py": "a32b1aca0436492481a2443b96bfd8cb85e4f3b66b3d78862b263dde543654b6"
+    }
+  },
+  "independent_original_profile_references": {
+    "passed": true,
+    "native_original_profile_point_queries": 9,
+    "independent_moment_value_Z_ODE_reference_comparisons": 180,
+    "independent_ODE_reference_Pstar_units": [
+      7,
+      13
+    ],
+    "reference_units_not_native_parameter_selection": true,
+    "maximum_absolute_independent_ODE_reference_error": {
+      "decimal": "0.0000000000000112324619725229304239801363540657443419418655036791097415862767523000343214",
+      "exact_mpf_tuple": [
+        0,
+        1050640740102359441920245054337385263,
+        -166,
+        120
+      ]
+    },
+    "original_E_V_role_dispatches": 36,
+    "original_profile_endpoints_checked": 2,
+    "wrong_source_scope_domain_or_scalar_cast_rejected": 6,
+    "same_original_P0_reference_and_nonzero_axial_factor_retained": true,
+    "point_queries": [
+      {
+        "y": {
+          "decimal": "0.136999999999999999999999999999999999999999999999999941199176377971695784908",
+          "exact_mpf_tuple": [
+            0,
+            205031141697877708588958537812101912261491464589017,
+            -170,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "-0.599999999999999999999999999999999999999999999999999732723528990780435385946",
+          "exact_mpf_tuple": [
+            1,
+            448973302988053376472171980610442143638302477202227,
+            -169,
+            169
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.745436966934322315447520374828801375810291032309659029186644428177411272908",
+                  "exact_mpf_tuple": [
+                    0,
+                    557802162023165032042318022578072888772890517199859,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.65773850023616674892428268367247180218555091086146400650378685381510677848",
+                  "exact_mpf_tuple": [
+                    0,
+                    492178378255733851802045314039476078329021044588111,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "-2.39999999999999999999999999999999999999999999999999893089411596312174154379",
+                  "exact_mpf_tuple": [
+                    1,
+                    448973302988053376472171980610442143638302477202227,
+                    -167,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.136999999999999999999999999999999999999999999999999941199176377971695784908",
+          "exact_mpf_tuple": [
+            0,
+            205031141697877708588958537812101912261491464589017,
+            -170,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "0.0",
+          "exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "1.01379427503067834900862770976716987110199580394113595896207121125780179429",
+                  "exact_mpf_tuple": [
+                    0,
+                    11853295942992256930899257979784048886423923490497,
+                    -163,
+                    164
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.136999999999999999999999999999999999999999999999999941199176377971695784908",
+          "exact_mpf_tuple": [
+            0,
+            205031141697877708588958537812101912261491464589017,
+            -170,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "0.699999999999999999999999999999999999999999999999999465447057981560870771893",
+          "exact_mpf_tuple": [
+            0,
+            261901093409697802942100322022757917122343111701299,
+            -168,
+            168
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.68039884230246869060981725487729521550469517043029327155212150757862236758",
+                  "exact_mpf_tuple": [
+                    0,
+                    127283714824077926774757132668822001464954883119431,
+                    -167,
+                    167
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "-0.639300925653326286479022924045780739400384723894235539838945988937893808247",
+                  "exact_mpf_tuple": [
+                    1,
+                    119595436747455770123932876333121343658346870045103,
+                    -167,
+                    167
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "2.79999999999999999999999999999999999999999999999999786178823192624348308757",
+                  "exact_mpf_tuple": [
+                    0,
+                    261901093409697802942100322022757917122343111701299,
+                    -166,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.529999999999999999999999999999999999999999999999999518902352183404783694703",
+          "exact_mpf_tuple": [
+            0,
+            396593084306113815883751916205890560213833854861967,
+            -169,
+            169
+          ]
+        },
+        "Z": {
+          "decimal": "-0.599999999999999999999999999999999999999999999999999732723528990780435385946",
+          "exact_mpf_tuple": [
+            1,
+            448973302988053376472171980610442143638302477202227,
+            -169,
+            169
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.757331983542890898120203867365319864748442128961490803662058762833699241982",
+                  "exact_mpf_tuple": [
+                    0,
+                    70837883772863710125977970537624740560422260658635,
+                    -166,
+                    166
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.668234103126080204223709294734105763013331290260139101629152443217713810015",
+                  "exact_mpf_tuple": [
+                    0,
+                    250016060374813094562275190132793201977960919971653,
+                    -168,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "-2.39999999999999999999999999999999999999999999999999893089411596312174154379",
+                  "exact_mpf_tuple": [
+                    1,
+                    448973302988053376472171980610442143638302477202227,
+                    -167,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.529999999999999999999999999999999999999999999999999518902352183404783694703",
+          "exact_mpf_tuple": [
+            0,
+            396593084306113815883751916205890560213833854861967,
+            -169,
+            169
+          ]
+        },
+        "Z": {
+          "decimal": "0.0",
+          "exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "1.02997149761833162144347725961683501605788129538762642387451588057557251288",
+                  "exact_mpf_tuple": [
+                    0,
+                    192679043862189291542660079862339294324348548991487,
+                    -167,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.529999999999999999999999999999999999999999999999999518902352183404783694703",
+          "exact_mpf_tuple": [
+            0,
+            396593084306113815883751916205890560213833854861967,
+            -169,
+            169
+          ]
+        },
+        "Z": {
+          "decimal": "0.699999999999999999999999999999999999999999999999999465447057981560870771893",
+          "exact_mpf_tuple": [
+            0,
+            261901093409697802942100322022757917122343111701299,
+            -168,
+            168
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.691256038670021222445286751420694641649584762005119660946183184639278396816",
+                  "exact_mpf_tuple": [
+                    0,
+                    129314794538382074860845691182778049882113120128515,
+                    -167,
+                    167
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "-0.64950231821344275934456473287850503242242863544105117836336856691413277771",
+                  "exact_mpf_tuple": [
+                    1,
+                    486015335177811824980359644713796697543512397798445,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "2.79999999999999999999999999999999999999999999999999786178823192624348308757",
+                  "exact_mpf_tuple": [
+                    0,
+                    261901093409697802942100322022757917122343111701299,
+                    -166,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.910000000000000000000000000000000000000000000000000106910588403687825845621",
+          "exact_mpf_tuple": [
+            0,
+            340471421432607143824730418629585292259046045211689,
+            -168,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "-0.599999999999999999999999999999999999999999999999999732723528990780435385946",
+          "exact_mpf_tuple": [
+            1,
+            448973302988053376472171980610442143638302477202227,
+            -169,
+            169
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.629717042267362890079301084722898576493251830864334507240555904706303515537",
+                  "exact_mpf_tuple": [
+                    0,
+                    235605117012204611187920159243101766445602748345513,
+                    -168,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.55563268435355549124644213357902815572933985076264840906692698558740264789",
+                  "exact_mpf_tuple": [
+                    0,
+                    207886867951945245165811905214501558628473013246041,
+                    -168,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "-2.39999999999999999999999999999999999999999999999999893089411596312174154379",
+                  "exact_mpf_tuple": [
+                    1,
+                    448973302988053376472171980610442143638302477202227,
+                    -167,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.910000000000000000000000000000000000000000000000000106910588403687825845621",
+          "exact_mpf_tuple": [
+            0,
+            340471421432607143824730418629585292259046045211689,
+            -168,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "0.0",
+          "exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.856415177483613530507849475223142064030822489975494448749508213805356475833",
+                  "exact_mpf_tuple": [
+                    0,
+                    640845918273196542431142833141236804732039475499795,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      },
+      {
+        "y": {
+          "decimal": "0.910000000000000000000000000000000000000000000000000106910588403687825845621",
+          "exact_mpf_tuple": [
+            0,
+            340471421432607143824730418629585292259046045211689,
+            -168,
+            168
+          ]
+        },
+        "Z": {
+          "decimal": "0.699999999999999999999999999999999999999999999999999465447057981560870771893",
+          "exact_mpf_tuple": [
+            0,
+            261901093409697802942100322022757917122343111701299,
+            -168,
+            168
+          ]
+        },
+        "E": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "0.574775286901754047320704345787343667134780194614426835965917125381109400431",
+                  "exact_mpf_tuple": [
+                    0,
+                    430097931726977545255800559155192486397341929865635,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": 0,
+                "point_coefficient": {
+                  "decimal": "-0.540057316551983668623480593357235660395095484872615200166751002500708216187",
+                  "exact_mpf_tuple": [
+                    1,
+                    404118862025348029099409921353872134869985705914019,
+                    -169,
+                    169
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "V": {
+          "C0": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "2.79999999999999999999999999999999999999999999999999786178823192624348308757",
+                  "exact_mpf_tuple": [
+                    0,
+                    261901093409697802942100322022757917122343111701299,
+                    -166,
+                    168
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          },
+          "Z": {
+            "terms": [
+              {
+                "original_Pstar_power": -1,
+                "point_coefficient": {
+                  "decimal": "4.0",
+                  "exact_mpf_tuple": [
+                    0,
+                    1,
+                    2,
+                    1
+                  ]
+                }
+              }
+            ],
+            "approximate_point_coefficients": true,
+            "source_caps_or_midpoints_used": false,
+            "original_positive_Pstar_factor_not_materialized": true
+          }
+        },
+        "original_point_coefficients": true,
+        "quadrature_errors_not_certified": true
+      }
+    ]
+  },
+  "original_E_V_graph_leaf_identity": {
+    "passed": true,
+    "source_chain_AST_identities": [
+      "Utheta_over_Pstar_axial5_coefficients",
+      "Uz_ordinary_y_derivative_axial5",
+      "u0",
+      "u",
+      "V",
+      "one",
+      "out",
+      "velocity",
+      "logs",
+      "E",
+      "V"
+    ],
+    "original_E_source_leaf_equals_original_u_and_its_ordinary_Z_row": true,
+    "original_V_source_leaf_equals_4Z_times_original_Pstar_inverse_and_its_Z_row": true,
+    "coefficient_to_ordinary_Z_order0_1_factorials_are_one": true,
+    "common_inverse_factor_identity": "exp((-1/2)*(2*logP))=Pstar^-1",
+    "source_function_identity_not_equality_of_enclosure_endpoints": true,
+    "input_hashes": {
+      "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+      "lei_ren_part1_paper_compliant_current_pre_pulse_stress_operator.py": "6cd1959126bfbf7ef6bb8ceb201f034f6a78e25f15836c42e0930c039070846f",
+      "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.py": "11a4af5087c15cdf9bc1190bca91ac0fd943d5cd546860ffcc36ea1adc465e7f",
+      "lei_ren_part1_paper_compliant_current_native_generic_source_packets.py": "3325d19957c368d53fc0338fd5a6598883fb020991ecdff4a9e767c9e7919804",
+      "lei_ren_part1_paper_compliant_current_generic_shear_signed_jets.py": "7f79f8ee2714f255238db806e515d9233245d67f37ee1a4a397f40e524286fa3",
+      "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.py": "a4f03b3c81a9e238a6d6a7f420e85e744e21fbd00fbbb268e12a386dc2475648"
+    }
+  },
+  "original_p1_p2_and_phase_provider_installed": false,
+  "full_original_O2_source_point_provider_installed": false,
+  "quadrature_and_roundoff_certified": false,
+  "numerical_original_source_point_or_integral_oracle_installed": false,
+  "actual_five_controls_installed": false,
+  "certified_actual_fixed_point_tail_installed": false,
+  "actual_terminal_Z_function_closure_installed": false,
+  "current_whole_N_selected": false,
+  "whole_upstream_current_source_packet_assembled": false,
+  "current_upstream_generic_shear_loop_installed": false,
+  "current_upstream_modified_cumulative_moments_recovered": false,
+  "current_upstream_new_family_moment_repair_certified": false,
+  "current_upstream_new_common_finite_N_certified": false,
+  "global_completed_stress_cone_certified": false,
+  "actual_coefficient_recursion_certified": false,
+  "full_corrected_NS_velocity_field_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.py": "e9a3a4ba148152fe8686e332067ce2a1a0464fa44e0d4f9f91f5def054f62d3b",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_compliant_current_generic_shear_loop.py": "a32b1aca0436492481a2443b96bfd8cb85e4f3b66b3d78862b263dde543654b6",
+    "lei_ren_part1_paper_compliant_current_pre_pulse_stress_operator.py": "6cd1959126bfbf7ef6bb8ceb201f034f6a78e25f15836c42e0930c039070846f",
+    "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.py": "11a4af5087c15cdf9bc1190bca91ac0fd943d5cd546860ffcc36ea1adc465e7f",
+    "lei_ren_part1_paper_compliant_current_native_generic_source_packets.py": "3325d19957c368d53fc0338fd5a6598883fb020991ecdff4a9e767c9e7919804",
+    "lei_ren_part1_paper_compliant_current_generic_shear_signed_jets.py": "7f79f8ee2714f255238db806e515d9233245d67f37ee1a4a397f40e524286fa3",
+    "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.py": "a4f03b3c81a9e238a6d6a7f420e85e744e21fbd00fbbb268e12a386dc2475648",
+    "lei_ren_part1_paper_compliant_current_native_Rc_all_N_function_controls.json": "306f7cbfa637c2f031e3c19ba1fcbd6350599daef70add3eefb1e504520ea189",
+    "lei_ren_part1_paper_compliant_current_native_Rc_all_N_function_controls_check.json": "7e350a727d7634b9323ebdf39ae4bc973ef2cedc0be08a0dbe71e9c576bd5f9b",
+    "lei_ren_part1_paper_compliant_current_generic_loop_function_sources_views.json.gz": "1b38862185dfbd19a1ec59172e780a65fdd1880fb32e17b9028295a5837b58e0",
+    "lei_ren_part1_paper_compliant_current_original_O2_slope_point_profiles.py": "9ddf9efb3b3b2ac81050a5fea537a43b72e50a4ae75f845b73577d63db2a4ecd",
+    "lei_ren_part1_paper_compliant_current_original_O2_slope_point_profiles.json": "9ce104b46bdd0efcfdb04d7cf9078dfa03f0d7ad598aabfd667e5b8be403bba8",
+    "lei_ren_part1_paper_compliant_current_original_O2_slope_point_profiles_check.py": "af7d1f62281ff34590048909ba07614f25bb88078aa51cf8fbe2701d0ea4fd9a"
+  },
+  "execution_seconds": 74.71799999999348,
+  "scope": "Original O2 profile coefficients and E/V background source roles only. Independent finite-unit ODE references test factor powers and histories; original global Pstar, phase, p1/p2, P0 point functions, certified errors and field are not installed."
+}
