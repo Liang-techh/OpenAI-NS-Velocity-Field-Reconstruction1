@@ -133,7 +133,7 @@
   "global_completed_stress_cone_certified": false,
   "actual_coefficient_recursion_certified": false,
   "full_corrected_NS_velocity_field_certified": false,
-  "execution_seconds": 28.07799999997951,
+  "execution_seconds": 27.70299999997951,
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
     "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
@@ -1145,8 +1145,8 @@
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures.json": "df9c0f21992e005691ecc494018ec7fab37dc5aa5dade2e958244932fdeab39e",
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures_check.py": "77619f6a66e017c9ea38eda701fbb6d47108d5f564c5911bd14927d2595305b1",
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures_check.json": "a57bf81713551a128c83a101255089bdf7d059c80a9ac5b40d646466151201e0",
-    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.py": "fb11e502c506409a5ca8b0133c4b9bd04cd7caccc6fa0139bee8e2cfb87357fa",
-    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.json": "3a0c3ba77df80b9d6dab5786950909071945a7531f6c6c2a4c4f01a86149bce3",
-    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q_check.py": "1d64548977fea043dfd81b9261722b1260b86f744afeb2cc9a4a5876361d50a5"
+    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.py": "aab33aad001589609b988008a2eb8c6cfe6050fdbf4546b920f00b073f70be3d",
+    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.json": "5364cd694d77d29704c95f7ee89789a10c93e5f91ae58df41776e9833e8f8a57",
+    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q_check.py": "3d4d3448526e6fb6b8b86595411bdf2c96c52fddba1fcbaaa37de152e291dbc6"
   }
 }

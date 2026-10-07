@@ -4841,7 +4841,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-3.0e-480",
@@ -8874,7 +8875,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-2.0",
@@ -12695,7 +12697,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-2.0",
@@ -16522,7 +16525,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-2.0",
@@ -21335,7 +21339,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.998834803047423042258305827653292291324759526937538086788490667279022158080932854549",
@@ -24349,7 +24354,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.2",
@@ -27888,7 +27894,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.20000000000000000000000000000000000000000000000000000000000000000000000000000000041",
@@ -30827,7 +30834,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.2",
@@ -34021,7 +34029,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.2",
@@ -36960,7 +36969,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.2",
@@ -39769,7 +39779,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.7",
@@ -42676,7 +42687,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.2",
@@ -46071,7 +46083,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-0.278395274399155211661994101241756924785930654461741601736552411971102834181704200102",
@@ -49233,7 +49246,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.0e-480",
@@ -52126,7 +52140,8 @@
             1
           ]
         },
-        "active_body_evaluated": true,
+        "active_body_enclosure_evaluated": true,
+        "active_enclosure_subdomain": "Delta<eta; exact flat zero included separately in mixed boxes",
         "branch_difference": {
           "coefficient_interval": {
             "lower": "-1.0",
@@ -54942,15 +54957,15 @@
                 "upper": "-941541067348079990.0726994734203394547326452660404676697538026913389637385867891172571",
                 "lower_exact_mpf_tuple": [
                   1,
-                  10890957278773296310099371093910021928794656233049894311494775295558858123881528217690563502839134743792516459575659780391403410938440203897515902767586150082734861079516597325155517510292391311834962290598438678108512629893703562754188799919,
-                  -741,
-                  801
+                  5445478639386648155049685546955010964397328116524947155747387647779429061940764108845281751419567371896258229787829890195701705469220101948757951383793075041367430539758298662580150800188096250854683666797888351343153485575760696420469757137,
+                  -740,
+                  800
                 ],
                 "upper_exact_mpf_tuple": [
                   1,
-                  5445478639386648155049685546955010964397328116524947155747387647779429061940764108845281751419567371896258229787829890195701705469220101948757951383793075041367430539758298662577758755146195655917481145299219339054256314946851781377094399959,
-                  -740,
-                  800
+                  10890957278773296310099371093910021928794656233049894311494775295558858123881528217690563502839134743792516459575659780391403410938440203897515902767586150082734861079516597325160301600376192501709367333595776702686306971151521392840939514273,
+                  -741,
+                  801
                 ]
               }
             },
@@ -55038,15 +55053,15 @@
                 "upper": "-941541067348079987.3027978664689558401561909161588718862524107423881267239214358241346",
                 "lower_exact_mpf_tuple": [
                   1,
-                  2722739319693324069514868191943778825843517770482046170098252020611562653717329146510009365123799880241813293991658676909859917733989261362655637974447077273073138019734132699840908010028278467786243960496460387448703372985433873824145766307,
-                  -739,
-                  799
+                  10890957278773296278059472767775115303374071081928184680393008082446250614869316586040037460495199520967253175966634707639439670935957045450622551897788309092292552078936530799371719017354499595085352347849777586995288784896692378601400344385,
+                  -741,
+                  801
                 ],
                 "upper_exact_mpf_tuple": [
                   1,
-                  10890957278773296278059472767775115303374071081928184680393008082446250614869316586040037460495199520967253175966634707639439670935957045450622551897788309092292552078936530799363632040113113871144975841985841549794813491941735495296583065227,
-                  -741,
-                  801
+                  170171207480832754344679261996486176615219860655127885631140751288222665857333071656875585320237492515113330874478667306866244858374328835165977373402942329567071126233383293740183109646164056173208630435152774796801387264010818415646880381,
+                  -735,
+                  795
                 ]
               }
             },
@@ -55507,7 +55522,7 @@
             0
           ]
         },
-        "active_body_evaluated": false,
+        "active_body_enclosure_evaluated": false,
         "branch_difference": {
           "coefficient_interval": {
             "lower": "1.0",
@@ -58336,7 +58351,7 @@
             0
           ]
         },
-        "active_body_evaluated": false,
+        "active_body_enclosure_evaluated": false,
         "branch_difference": {
           "coefficient_interval": {
             "lower": "1.0",
@@ -58582,7 +58597,7 @@
   "global_completed_stress_cone_certified": false,
   "actual_coefficient_recursion_certified": false,
   "full_corrected_NS_velocity_field_certified": false,
-  "execution_seconds": 26.32799999997951,
+  "execution_seconds": 26.780999999959022,
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
     "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
@@ -59594,7 +59609,7 @@
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures.json": "df9c0f21992e005691ecc494018ec7fab37dc5aa5dade2e958244932fdeab39e",
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures_check.py": "77619f6a66e017c9ea38eda701fbb6d47108d5f564c5911bd14927d2595305b1",
     "lei_ren_part1_paper_compliant_current_native_signed_input_enclosures_check.json": "a57bf81713551a128c83a101255089bdf7d059c80a9ac5b40d646466151201e0",
-    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.py": "fb11e502c506409a5ca8b0133c4b9bd04cd7caccc6fa0139bee8e2cfb87357fa"
+    "lei_ren_part1_paper_compliant_current_native_correlated_shear_q.py": "aab33aad001589609b988008a2eb8c6cfe6050fdbf4546b920f00b073f70be3d"
   },
   "scope": "Live correlated original shear jets and Section11 q interval functions on17 original query boxes; unresolved branch boxes retain conservative q covers. No radius/phase correlation, inverse, changed density integrals, common N, repair or recursive/full NS admission."
 }

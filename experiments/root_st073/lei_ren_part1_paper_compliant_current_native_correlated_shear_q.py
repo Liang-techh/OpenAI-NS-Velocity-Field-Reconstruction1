@@ -112,7 +112,7 @@ def q_enclosure(a,Delta,eta_log,log_a_lower):
     diff=Delta-eta;lo,hi=ep(diff.coefficient)
     if lo>=0:
         return dict(q=scalar(0),branch='flat',sigma_interval=c.mpf(0),
-            active_body_evaluated=False,branch_difference=diff,
+            active_body_enclosure_evaluated=False,branch_difference=diff,
             cutoff_scope='original Delta>=eta flat branch',positive_q_lower_retained=False)
     branch='active' if hi<0 else 'requires_source_box_refinement'
     gamma=eta*2-Delta
@@ -141,7 +141,8 @@ def q_enclosure(a,Delta,eta_log,log_a_lower):
     q=root*sigma
     if branch!='active':
         q=prior.ScaledEnclosure(q.scale,c.mpf([0,ep(q.coefficient)[1]]),q.ledger)
-    return dict(q=q,branch=branch,sigma_interval=sigma,active_body_evaluated=True,
+    return dict(q=q,branch=branch,sigma_interval=sigma,active_body_enclosure_evaluated=True,
+        active_enclosure_subdomain='Delta<eta; exact flat zero included separately in mixed boxes',
         branch_difference=diff,positive_active_gamma_enclosure=gamma,
         cutoff_scope=sigma_scope,positive_q_lower_retained=ep(q.coefficient)[0]>0,
         exact_zero_not_substituted_for_small_positive_q=True)
@@ -206,13 +207,13 @@ class NativeCorrelatedShearQ:
             roots['a']=a
         positive=self.owner.decode(self.owner.inventory[chart]['actual_positive_denominator_theorem'])
         roots['a'][ZERO]=roots['a'][ZERO].positive_intersection(positive['log_actual_a_positive_lower'])
+        if chart.startswith('O3_'):
+            # Bind all subsequent quotients to the exact same O3 a source.
+            roots['a']={k:roots['kappa_minus2'][k]+(2 if k==ZERO else 0) for k in ORDERS}
         roots['t0']=quotient_jet({k:-v for k,v in roots['b'].items()},roots['a'],positive['log_actual_a_positive_lower'])
         b2=multiply_jet(roots['b'],roots['b']);quotient=quotient_jet(b2,roots['a'],positive['log_actual_a_positive_lower'])
         if not chart.startswith('O3_'):
             roots['kappa_minus2']={k:roots['a'][k]+quotient[k]-(2 if k==ZERO else 0) for k in ORDERS}
-        else:
-            # Exact Delta is the original source, even when adding mu to2 rounds.
-            roots['a']={k:roots['kappa_minus2'][k]+(2 if k==ZERO else 0) for k in ORDERS}
         eta=packets.interval(self.ctx,self.owner.scales['selected_positive_eta_log'])
         loop=q_enclosure(roots['a'][ZERO],roots['kappa_minus2'][ZERO],eta,positive['log_actual_a_positive_lower'])
         record=dict(chart=chart,source_family=self.family,source_provenance=packet.provenance,

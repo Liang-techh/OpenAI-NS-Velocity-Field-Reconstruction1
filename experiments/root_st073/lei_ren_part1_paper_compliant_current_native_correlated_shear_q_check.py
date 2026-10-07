@@ -40,7 +40,7 @@ def q_kernel_check(c):
         reference=c.mpf(str(loop.q));error=c.mpf('1e-85')
         require(contains(actual+ c.mpf((-current.ep(error)[1],current.ep(error)[1])),reference),
             'q interval disagrees with original scalar source formula')
-        if aa=='2.019':require(q['q'].zero and not q['active_body_evaluated'],'Flat q must avoid its active body')
+        if aa=='2.019':require(q['q'].zero and not q['active_body_enclosure_evaluated'],'Flat q must avoid its active body')
         cases+=1
     # Delta=0 is active with q=sqrt(eta/a); eta here cannot be materialized.
     tiny_eta=c.mpf('-1e40')
@@ -82,7 +82,7 @@ def run(bridge=None):
             require(packets.encode(live['record'])==record,'Stored correlated shear/q differs from live original source: '+chart)
             roots=live['roots'];loop=live['loop'];direct+=live['evidence']['correlated_log_source_available']
             require(current.ep(live['q'].coefficient)[0]>=0,'Original q must have a nonnegative enclosure')
-            if loop['branch']=='flat':require(live['q'].zero and not loop['active_body_evaluated'],'Flat query cannot evaluate active q')
+            if loop['branch']=='flat':require(live['q'].zero and not loop['active_body_enclosure_evaluated'],'Flat query cannot evaluate active q')
             expected=None
             if chart in ('switch_power','inner_reference','axial_restore','restore_buffer','Rh_reference'):
                 expected={(j,k):owner.ctx.mpf('.8') if (j,k)==(0,0) else owner.ctx.mpf(0) for j,k in current.ORDERS}
