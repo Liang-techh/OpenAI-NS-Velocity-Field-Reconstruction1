@@ -1,16 +1,16 @@
-# Current handoff: actual C0/Z histories to the original Rc (2026-10-07)
+# Current handoff: all-N native Rc targets and first-bridge bottleneck (2026-10-07)
 
-Checked implementation: [57eaa8a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57eaa8a880746b045712bd94d510008aa26c1066). Route, exact quiet support, evidence and detailed tasks: [CURRENT_NATIVE_RC_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_RC_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [fea095e1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fea095e12d295d952c95e1266952f6322484f671). Equations, evidence, dominant cells and detailed tasks: [CURRENT_NATIVE_RC_PARAMETER_TARGETS_2026_10_07.md](CURRENT_NATIVE_RC_PARAMETER_TARGETS_2026_10_07.md).
 
-**The original radial history route now covers inlet -> inner/middle -> O2 -> O3 -> Rc without gaps.** Rc=Rw*exp(2), directly queried at power phase2/Tw. Whole Z=[-1,1] and Z=[.49,.51] have actual five-moment correction/own C0/Z covers, original endpoint background/P0_Z and inherited memory. The power region has exact-zero local increments and retains pressure memory. Covers remain conservative; quantitative five-moment closure and scale recursion are incomplete.
+**Native Rc correction/repair target C0/Z order covers now hold for every integer N>=160.** All24 true cells /17 original charts use improved periodic bounds, with original source, geometry, phase, amplitude, mu and pressure provenance. The actual targets now feed the accepted exact generic repair inverse/log-condition recipe. Coefficient objects are covers of N-dependent functions; controls and terminal closure remain incomplete.
 
-- [x] Full original inner/middle/O2 route, actual .12 incoming/local operator and improved first-Z periodic bounds.
-- [x] O3 transition plus power offsets0->1->2, actual Rc endpoint, original source/five-history/P0 seam and quiet two-sided right collar.
-- [ ] **NEXT: LEFT4c3-Rc repair-target budget and tight signed integration.** Use actual correction rows with same-source A/A_Z, preserve the joint (J-M)/mu expression and variable-N dependence, identify dominating bounds, and restore signed cancellation.
-- [ ] **LEFT4d-terminal controls and five Z identities.** Use the original reserved independent repair, Rc->2Rc geometry and compatible pressure datum.
-- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, outer/heat/energy, recursion, quadratic stress cancellation and full NS.
+- [x] Original inlet-to-Rc coverage, same-source amplitude and signed normalized five target rows.
+- [x] Rebuild both N^-1/N^-2 C0/Z orders from native source; improved periodic bounds on the entire route; connected conditional exact repair conditions.
+- [ ] **NEXT: active_first_bridge conditioning + signed phase cancellation.** This cell dominates all five target C1 bounds in both Z domains. Bind the existing primitive zero-mean theorem, expose the missing slow yZ density adapter, and tighten actual target budgets with signed averaging/IBP and explicit endpoint terms.
+- [ ] **LEFT4d-controls and terminal identities:** construct five original function-domain controls with the exact matrix/quadratic map, then prove five terminal Z identities and repair/post-repair admission.
+- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, heat/energy, recursion, quadratic stress cancellation and full NS.
 
-Evidence for the final segment: 120 new cell rows, 60 inherited rows, 40 exact quiet density rows, 8 preserved pressure rows, 20 operator comparisons, 20 Rc own rows and 1077 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence: 1920 order/transport rows, 960 inherited rows, 40 target rows, 80 exact quiet rows, 16 preserved pressure rows, 270 independent references and 1086 hashes. Worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
