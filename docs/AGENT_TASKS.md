@@ -1,16 +1,16 @@
-# Current handoff: actual local signed integrals (2026-10-07)
+# Current handoff: original q slow derivatives (2026-10-07)
 
-Checked implementation: [9863712f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9863712f8c0df7f14eb0fc353dc036745b38a5fc). Scope and next tasks: [CURRENT_NATIVE_LOCAL_SIGNED_INTEGRALS_2026_10_07.md](CURRENT_NATIVE_LOCAL_SIGNED_INTEGRALS_2026_10_07.md).
+Checked implementation: [8fc7c917](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fc7c9178d716025d231de36847bd3df12d6b049). Scope and next tasks: [CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md](CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md).
 
-**Five actual signed local integral contributions now cover a whole active O2-slope radial cell and the entire axial interval Z in[.49,.51].** Two native source queries give10 nonzero integral enclosures using true spatial phase and positive original Duhamel weights. Exact radial width=2e-8; N=1024 remains a candidate. This is a local C0 contribution, not the cumulative inlet-to-Rc history.
+**q_y,q_yy,q_Z,q_yZ,q_yyZ now execute on original source boxes and the actual integral radial/Z cell.**20 source queries give18 enclosed queries/108 ordinary rows and2 unresolved full-Z queries. The tiny O2 positive excess is retained by Delta=(a-2)+b^2/a; two actual Z=[.49,.51] subdivisions resolve flat with exact zero derivatives.
 
-- [x] Original17 source backends, correlated q, conditioned C0 inverse/A/B and candidate velocities/five kernels on admitted requests.
-- [x] Original spatial radius/phase binding and actual nonzero local C0 signed integral contributions.
-- [ ] **LEFT4c2-q/phase-slow-jets + LEFT4c3-density-C1/common-basis:** next production dependencies for cumulative functions.
-- [ ] **LEFT4c3-incoming/whole-integrals + LEFT4d:** actual cumulative histories throughRc, Z derivatives, target/control functions and terminal identities.
-- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** higher derivatives/outer/energy/common-N/cone, actual coefficient recursion, oscillatory correction and full NS field.
+- [x] Actual spatial phase/candidate velocities/five kernels and nonzero local C0 signed integral functions on the tested domains.
+- [x] Original six-row q slow jets, positive-root/cutoff derivatives, tiny excess correlation and two actual source subdivisions.
+- [ ] **LEFT4c2-implicit-phase/A/B-slow-jets + actual-fast-phase-chain:** next production; use the same refined source and stable signed Mobius/small-r charts.
+- [ ] **LEFT4c3-C1/density/common-basis/incoming/cumulative + LEFT4d:** actual inlet-to-Rc histories, target/control functions and terminal identities.
+- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** derivative/outer/energy/common-N/cone, actual coefficient recursion, oscillatory correction and full NS field.
 
-Evidence:10 actual nonzero signed integrals, independent analytic mass/signed-integral checks and 1027 source hashes. Read-only review worker: **GPT-5.6 Luna / max**. Global completion gates remain false. Earlier sections are historical.
+Evidence:108 native ordinary q rows, independent original derivatives/cutoff/correlation checks and 1018 source hashes. Read-only worker: **GPT-5.6 Luna / max**. No whole-source phase/C1 cumulative history or global completion gate is admitted. Earlier sections are historical.
 
 ---
 

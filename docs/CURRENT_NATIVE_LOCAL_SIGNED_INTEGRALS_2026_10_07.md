@@ -1,5 +1,7 @@
 # Actual native local signed Duhamel integrals
 
+> Successor: [CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md](CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md) ([8fc7c917](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fc7c9178d716025d231de36847bd3df12d6b049)) now executes original q slow derivatives on the admitted boxes and actual integral cell, and retains the tiny O2 excess to resolve two source subdivisions. Implicit phase/A/B jets and cumulative C1 histories remain open.
+
 Checked implementation: [9863712f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9863712f8c0df7f14eb0fc353dc036745b38a5fc). **Five actual nonzero signed local integral contributions are now executable over a whole active O2-slope source cell, including the whole axial interval Z in[.49,.51].** True spatial phase and original source functions feed the integrals. This advances beyond point density queries. It is one local C0 integral contribution, not the full cumulative history from r_minus to Rc.
 
 ## Exact domain, source and formula
@@ -41,7 +43,7 @@ Evidence: fresh same-source two-query native replay with10 nonzero signed contri
 
 - [x] **LEFT4c2-original-spatial-phase:** original17 affine radius offsets/Jacobians,16 radius/periodic-phase seam identities, exact inlet phase and candidate N*y binding on declared requests; see [spatial handoff](CURRENT_NATIVE_SPATIAL_PHASE_2026_10_07.md).
 - [x] **LEFT4c3-local-active-C0:** actual nonzero signed local Duhamel contribution functions on the stated O2 radial/Z cell. Whole cumulative histories remain open.
-- [ ] **LEFT4c2-q-slow-jets:** execute q_y,q_Z and required mixed/higher derivatives from the original correlated a,b,Delta roots. Use exact flat cutoff derivatives, positive active gamma and original cutoff derivatives. Retain tiny Delta=0 q; do not replace its function by0.
+- [x] **LEFT4c2-q-slow-jets on admitted source boxes and integral cell (see successor; whole coverage remains open):** execute q_y,q_Z and required mixed/higher derivatives from the original correlated a,b,Delta roots. Use exact flat cutoff derivatives, positive active gamma and original cutoff derivatives. Retain tiny Delta=0 q; do not replace its function by0.
 - [ ] **LEFT4c2-implicit-phase-jets:** use original Phi_psi positivity to recover inverse derivatives at fixed actual phi. Separate fast N*y derivatives from slow y/Z dependence. Recover A_y,A_Z,B_y,B_Z and needed higher orders in the conditioned coordinates with original hb/Pstar conversions exactly once.
 - [ ] **LEFT4c3-density-C1:** differentiate every signed kernel and original expm1 factor in the same native basis. Supply whole-cell C1 Z covers; do not insert zero Z derivatives into GenericMomentRecovery.
 - [ ] **LEFT4c3-common-cell-basis:** derive an explicit common factorization for adjacent cells so matching huge original amplitude/radius terms cancel symbolically before numeric rebasing. Sum transported cell contributions only after one shared basis/ledger is proved. Preserve signed intervals and tiny nonzero terms.
