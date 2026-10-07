@@ -1,17 +1,17 @@
-# Current handoff: seventeen live native source backends (2026-10-07)
+# Current handoff: live signed generic roots (2026-10-07)
 
-Checked implementation: [77fee782](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77fee78276704b3ea2d9be2b002ad9b8c789fdd5). APIs, exact scope and next production tasks: [CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md](CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md). General repair operator: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md).
+Checked implementation: [2f907ae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f907ae0abae581fb29170a19d6d567befb84140). API, exact scope and detailed production tasks: [CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md](CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md). Prior source backends: [CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md](CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md).
 
-**All17 original generic regions now query live from one accepted seed**, through unchanged original source/raw-row algorithms: bridge/switch, reshape/restoration/patch, reference/O2, O3 transition and power. The actual whole-Z s_c/2 inlet retains five histories/P0. Original derivative coordinates, formal factors and separate pressure datum are preserved.
+**714 signed ordinary root enclosures now execute over17 live native source query boxes.** Five tiny-amplitude adapters retain their original formal amplitude and square; O3 uses all six unrounded excess derivatives. The current sample boxes classify11 active/2 flat/4 unresolved. Exact phase/radius correlations and conditioned inverse/integrals remain next.
 
-- [x] Original whole scales, loop/rate definitions, five-defect envelopes and conditional general repair.
-- [x] **LEFT4c2-native-source-coverage / LEFT4c3-native-inlet:** all17 live original coefficient-cover backends, original five histories/P0 and actual strict inlet.
-- [ ] **LEFT4c2-signed-roots/phase/densities / LEFT4c3-seams/integrals:** actual factored root evaluation, q/A/B/inverse phase, common N/phase and cumulative signed defects toRc.
-- [ ] **LEFT4d-functions:** actual Rc targets, unique controls and terminal Z-function closure.
-- [ ] **HIGH / OUTER / CONT / ENERGY / LEFT4e:** required derivatives, outer/energy, one finite N and modified completed cone.
-- [ ] **REC / WAVE / PHYS:** genuine recursion, oscillatory cancellation and corrected NS/dynamics.
+- [x] Actual inlet,17 live source backends and714 numerical signed source-root/derivative covers.
+- [x] Same original scales, signed function graphs, five-defect bounds and conditional general repair operator.
+- [ ] **LEFT4c2-correlations/phase/densities:** sharpen actual source identities, bind exact microscopic phase, evaluate q/conditioned inverse/A/B and all five changed rates.
+- [ ] **LEFT4c3-seams/integrals:** actual cumulative signed defects from the real inlet toRc, with pressure memory retained.
+- [ ] **LEFT4d / HIGH / LEFT4e:** actual target/control/terminal functions, required derivatives and one common finite N/cone.
+- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion, oscillatory cancellation and corrected NS/dynamics.
 
-Focused checks:17 actual queries; 9659 exact mode/P0 comparisons, 34 rejected domains and 1024 working/index hashes. Reviewer:GPT-5.6 Luna/max. Outputs remain original function enclosures; changed defect integrals, repair controls, terminal closure, global cone and true recursion remain unfinished. All global completion gates are false. Earlier sections below are historical.
+Focused evidence:17 fresh queries/714 roots,5 formal amplitude adapters,12 unrounded O3 derivatives and 1010 working/index hashes. Read-only review: **GPT-5.6 Luna/max**. Root outputs remain interval covers; microscopic radius-tree correlations are metadata only in this backend. All global completion gates remain false. Earlier sections below are historical.
 
 ---
 

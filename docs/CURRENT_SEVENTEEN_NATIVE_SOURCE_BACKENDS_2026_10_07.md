@@ -1,5 +1,8 @@
 # Seventeen live original generic source backends
 
+> Successor stage: [CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md](CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md) ([2f907ae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f907ae0abae581fb29170a19d6d567befb84140)) now executes714 signed root enclosures. Conservative radius covers and prebounded plain rows remain explicitly scoped; phase/integral work is open.
+
+
 Checked implementation: [77fee782](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77fee78276704b3ea2d9be2b002ad9b8c789fdd5). **All17 original generic-loop regions now have live coordinate-cover queries from one accepted native seed.** This extends the [actual native inlet](CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md) through both O3 regions, preserving original velocity, all five cumulative histories, separate P0 and ordinary-log-radius jets. The remaining priority is the actual q/phase-inverse/changed-density backend and cumulative defect integrals, followed by the existing general repair operator's actual targets/controls.
 
 ## Runnable API
