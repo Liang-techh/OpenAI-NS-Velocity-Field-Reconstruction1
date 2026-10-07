@@ -6,7 +6,7 @@ Checked implementation: [57eaa8a8](https://github.com/Liang-techh/OpenAI-NS-Velo
 
 - [x] Full original inner/middle/O2 route, actual .12 incoming/local operator and improved first-Z periodic bounds.
 - [x] O3 transition plus power offsets0->1->2, actual Rc endpoint, original source/five-history/P0 seam and quiet two-sided right collar.
-- [ ] **NEXT: LEFT4c3-Rc repair-target budget and tight signed integration.** Export actual targets, identify dominating bound terms, restore signed phase cancellation and slow-variation estimates.
+- [ ] **NEXT: LEFT4c3-Rc repair-target budget and tight signed integration.** Use actual correction rows with same-source A/A_Z, preserve the joint (J-M)/mu expression and variable-N dependence, identify dominating bounds, and restore signed cancellation.
 - [ ] **LEFT4d-terminal controls and five Z identities.** Use the original reserved independent repair, Rc->2Rc geometry and compatible pressure datum.
 - [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, outer/heat/energy, recursion, quadratic stress cancellation and full NS.
 
