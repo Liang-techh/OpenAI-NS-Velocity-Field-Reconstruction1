@@ -1,21 +1,19 @@
-# Current handoff: continuous modulation state errors and active-loop cone budget (2026-10-07)
+# Current handoff: repair-band partial functions and quiet/power cone budgets (2026-10-07)
 
-Checked source: [1eb86191](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1eb861918c7910b629e7113c274838c81999cd25). Definitions, evidence, limits and detailed tasks: [CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md](CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md). This follows the [original all-N coefficient functions](CURRENT_NATIVE_ALL_N_FUNCTION_CONTROLS_2026_10_07.md).
+Checked source: [04b6bfda](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04b6bfdafed4f087e6247605051c5b3b0b343a2d). Definitions, evidence and executable continuation: [CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md](CURRENT_NATIVE_REPAIR_BAND_CONE_BUDGET_2026_10_07.md). Predecessor: [modulation state errors](CURRENT_NATIVE_CONE_STATE_ERRORS_2026_10_07.md).
 
-The same original all-N route now supplies full normalized cone-state errors (a,b,p1,p2) throughout 24 continuous radial cells/full Z[-1,1]/35 conditional source branches. Interior history bounds include incoming memory and each true mass. Full inertial/radial/pressure differences retain nonzero V, original transport, all cross terms and separate P0 cancellation. Exact normalized stress denominators and slow Ay/By shear errors are included.
+The original Rc..2Rc correction band now has exact finite-Picard five partial history/C1 functions, preserved incoming pressure memory, and exact terminal residual identities. Conditional same-source control-ball bounds provide full-band profile/radial derivative, density, moment and normalized cone-state errors. Original full signed O3 power G1..G4 margins cover quiet r_plus..Rc and the baseline under the repair band. Their sufficient local frequency conditions are combined with source/repair/active-state and positivity budgets.
 
-Weighted frozen q-active G1..G4 margins and an explicit polynomial gradient proof give rho=min(1,g/(512H^5)); the independent bound 208H^5 preserves at least half the margin. The active-state log-N threshold strictly exceeds the preceding combined source/repair bound. It is combined with admitted source/repair/positivity conditions, while q-flat/quiet/repair-band margins and whole N remain open.
+This advances the construction beyond modulation-only errors. It remains a function and budget layer: finite terminal histories equal finite control residuals, not zero. Actual solved controls/tail, terminal functional closure, globally compatible N, all-chart q-flat coverage, outer joins and genuine recursion remain open.
 
-Cone selection needs C0 state errors, profile/history C1(Z) and phase-held Ay/By. Higher total-y derivatives may grow with N; finite source-faithful higher rows remain necessary later, but their simultaneous smallness is not a prerequisite for this cone comparison.
+- [x] **CONE3a/b:** exact partial repair-band functions and finite terminal residual identities including all A_Z and joint k-row terms.
+- [x] **CONE3c/d / CONE2b:** continuous conditional control-ball band error budgets, signed whole-power quiet/band margins and combined local logN requirement.
+- [ ] **NEXT CONE2a/c:** restricted q-flat quantitative margins for inner six, O2 axial and O3 transition/power; compose with active branch and original joins over all 24 cells/35 branches.
+- [ ] **CONTROL1b/c/d:** complete whole N compatibility, original point/phase/integral oracle, then actual fixed-point controls with certified C1 tail.
+- [ ] **CONTROL2/HIGH/OUTER:** independently close corrected terminal histories/Z/pressure/heat functions; install radial/pressure field and required higher derivatives/global cone/energy.
+- [ ] **REC/WAVE/PHYS:** genuine coefficient recursion and independent repairs, flat summation, oscillatory stress cancellation, physical uvw and measured contraction/elongation/material winding.
 
-- [x] **CONE1-prefix/full-error:** continuous original C0/Z history envelopes, full inertial/radial/pressure differences and normalized state error polynomials.
-- [x] **CONE1-active-margin:** weighted q-active frozen margins, explicit stability tolerance and source+repair+active-state sufficient lower threshold.
-- [ ] **NEXT CONE2-q-flat/quiet:** quantitative original restricted flat-branch and quiet-power signed margins with incoming modulation memories; apply the full actual p errors.
-- [ ] **CONE3-repair:** actual control-ball profile/shear derivatives, corrected partial five moments on Rc..2Rc, full stress state errors and original band margins.
-- [ ] **CONTROL1b-common-N/oracle/tail / CONTROL2-field/closure:** combine every same-family region and join, admit one N, instantiate certified controls/tail and independently close the corrected five moments/Z/pressure/heat functions.
-- [ ] **HIGH/OUTER/REC/WAVE/PHYS:** finite required higher jets/global cone/energy, genuine coefficient recursion and independent repairs, flat remainder, actual oscillatory stress cancellation and corrected Cartesian field/NS/physical diagnostics.
-
-Focused PASS: seven original recovery identities, four frozen polynomial identities, exact quotient/shear identities, gradient coefficients (1,6,8,208), 36 independent prefix integrals, 324 full recovery and 216 normalized state comparisons. Actual source evidence: 240 continuous C0/Z prefix polynomials and 140 state error polynomials on 24 cells/35 branches. Reviewer model metadata: **gpt-5.6-luna / max**; producer 7.297s/checker 0.625s; dependency audit 1,139 hashes. Existing route reused. q-flat/quiet/repair-band/global cone, actual whole N/controls/tail/terminal closure/recursion/full NS remain false. Earlier sections are historical.
+Focused checks: 120 partial physical and 40 terminal residual C0/Z comparisons, ten exact density and two quotient/shear identities, 42 bump/derivative and 16 state comparisons. Scalar references are manufactured; actual original-family provenance is checked separately. Reviewer metadata: **gpt-5.6-luna / max**. Producer 3.110s/checker 47.531s; 1,144 audited dependency hashes. Previous sections are historical.
 
 ---
 
