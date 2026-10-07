@@ -1,17 +1,16 @@
-# Current handoff: live signed generic roots (2026-10-07)
+# Current handoff: correlated source shear and q (2026-10-07)
 
-Checked implementation: [2f907ae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f907ae0abae581fb29170a19d6d567befb84140). API, exact scope and detailed production tasks: [CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md](CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md). Prior source backends: [CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md](CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md).
+Checked implementation: [0f8274e8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0f8274e859ecc18555b6345d704d6c6628f0ac99). API, scope and next production tasks: [CURRENT_NATIVE_CORRELATED_SHEAR_Q_2026_10_07.md](CURRENT_NATIVE_CORRELATED_SHEAR_Q_2026_10_07.md). Prior714 roots: [CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md](CURRENT_NATIVE_SIGNED_ROOT_ENCLOSURES_2026_10_07.md).
 
-**714 signed ordinary root enclosures now execute over17 live native source query boxes.** Five tiny-amplitude adapters retain their original formal amplitude and square; O3 uses all six unrounded excess derivatives. The current sample boxes classify11 active/2 flat/4 unresolved. Exact phase/radius correlations and conditioned inverse/integrals remain next.
+**Original q interval functions now execute on17 live native query boxes.** Direct log-shear correlation on16 charts sharpens O2_slope/O2_buffer; the zero-excess buffer retains tiny positive q. Current samples:13 active/2 O3 flat/2 unresolved. Full radial coverage and phase inversion/integration remain open.
 
-- [x] Actual inlet,17 live source backends and714 numerical signed source-root/derivative covers.
-- [x] Same original scales, signed function graphs, five-defect bounds and conditional general repair operator.
-- [ ] **LEFT4c2-correlations/phase/densities:** sharpen actual source identities, bind exact microscopic phase, evaluate q/conditioned inverse/A/B and all five changed rates.
-- [ ] **LEFT4c3-seams/integrals:** actual cumulative signed defects from the real inlet toRc, with pressure memory retained.
-- [ ] **LEFT4d / HIGH / LEFT4e:** actual target/control/terminal functions, required derivatives and one common finite N/cone.
-- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion, oscillatory cancellation and corrected NS/dynamics.
+- [x] Actual inlet,17 source backends,714 signed roots and correlated shear/q C0.
+- [x] Original scales/rate graphs, five-defect bounds and conditional new-band repair operator.
+- [ ] **LEFT4c2-Poisson/inverse/A-B/phase/densities:** next actual conditioned loop implementation, with original microscopic phase binding and candidate common N.
+- [ ] **LEFT4c3 / LEFT4d:** actual signed integrals and target/control/terminal Z functions.
+- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** required derivative/outer/energy/N/cone, genuine recursion, oscillatory cancellation and corrected NS/dynamics.
 
-Focused evidence:17 fresh queries/714 roots,5 formal amplitude adapters,12 unrounded O3 derivatives and 1010 working/index hashes. Read-only review: **GPT-5.6 Luna/max**. Root outputs remain interval covers; microscopic radius-tree correlations are metadata only in this backend. All global completion gates remain false. Earlier sections below are historical.
+Focused evidence:17 source queries,16 direct log-shear sources,2 sharper branches, positive tiny zero-excess q and 1014 working/index hashes. Routing: one read-only **GPT-5.6 Luna/max** worker. All global completion gates remain false. Earlier sections below are historical.
 
 ---
 

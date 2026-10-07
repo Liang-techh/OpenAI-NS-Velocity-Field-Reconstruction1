@@ -1,5 +1,8 @@
 # Live signed generic input root enclosures
 
+> Successor: [CURRENT_NATIVE_CORRELATED_SHEAR_Q_2026_10_07.md](CURRENT_NATIVE_CORRELATED_SHEAR_Q_2026_10_07.md) ([0f8274e8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0f8274e859ecc18555b6345d704d6c6628f0ac99)) now executes original correlated shear and17 live q enclosures, with tiny positive O2 buffer q retained. Conditioned inverse/integrals are next.
+
+
 Checked implementation: [2f907ae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f907ae0abae581fb29170a19d6d567befb84140). **The17 original native source backends now feed a numerical interval backend for a, b, p1, p2, E, t0 and kappa-2 through ordinary y2/Z1.** Previously these714 roots were only arithmetic DAG definitions. The new queries execute signed arithmetic with collected source-log factors and the original positive-denominator theorems. The long-term reconstruction is still incomplete: conditioned phase inversion, actual changed densities/integrals, new repair functions, one common finite N and genuine coefficient recursion remain open.
 
 ## API and output semantics
