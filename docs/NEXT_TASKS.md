@@ -1,19 +1,18 @@
-# Current handoff: strict inner exit support attached (2026-10-07)
+# Current handoff: generic shear loop implemented (2026-10-07)
 
-Checked implementation: [2783e2a5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2783e2a5301a6f969fa056613c69bd0606ee1709). Source/proof/API/ordered tasks: [CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md](CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md).
+Checked implementation: [03ea3441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03ea34414d37a3373468e050c9c1459e7943542a). Formulas/API/limits/ordered tasks: [CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md).
 
-**LEFT4b is complete: the current core/first source now has an explicit strict inner exit subcollar and left shear support fraction[1/2,1].** Actual six inlet atoms, original P0, amplitude and exact hb are attached by source function identities, beyond family tuples. On its nonzero part kappa>2.019, direction/(omega*Hbar)>.95 and full quadratic/(omega*Hbar)^2>1.8. The core inlet retains the exact zero-stress case.
+**LEFT4c2-kernel is complete.** The executable Section 11 loop handles a=4/5, signed axial shear and nonzero original Uz, preserves exact mean shear, computes zero-mean velocity primitives and local finite-N formulas, and supplies all five changed moment densities. The same current strict left collar and outer relaxed-input receipts are bound.
 
 - [x] Original reference/slope/axial/buffer full relaxed input.
-- [x] Scoped changed-source taper/O3/pre-repair/quiet strict cones and old common N>=68,533,403.
-- [x] **LEFT4b:** current strict inner exit attachment, explicit positive support collar, same pressure/atoms/width and signed complete cone proof.
-- [ ] **LEFT4c1:** assemble the entire upstream current source/coordinate chain and remaining relaxed-input gates.
-- [ ] **LEFT4c2-3:** actual generic shear loop with source-bound left/right tapers; own divergence-free radial recovery and cumulative defects.
-- [ ] **LEFT4d:** new-family moment repair/unique terminal control and finite-N envelopes including the narrow left support.
-- [ ] **LEFT4e / BOUND3-global:** completed all-region strict cone and common finite N.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** remaining physical interfaces, energy, actual recursive coefficients/smooth sum, waves/mean correction, corrected velocity and full NS/dynamics.
+- [x] Current strict inner exit attachment and positive left support.
+- [x] Generic loop/phase/primitives, local finite-N velocity and full nonzero-source moment increments.
+- [ ] **LEFT4c1 / c2-current:** assemble full chart packets and remaining relaxed gates; install the loop against actual current functions and slow derivatives.
+- [ ] **LEFT4c3:** own cumulative moments, pressure and divergence-free radial recovery.
+- [ ] **LEFT4d:** new-family independent five-bump repair, unique controls and full new finite-N bound.
+- [ ] **LEFT4e / CONT / ENERGY / REC / WAVE / PHYS:** global cone, complete interfaces/energy, genuine coefficient recursion, waves and corrected NS/dynamics.
 
-Focused checker passed 420 signed cone cases and 9 cutoff cases; 568 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. Exact flat stress and width stay formal; no constant stress floor or physical point evaluator is inferred. Global/energy/recursion/full-NS gates and historical registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+The paper q cutoff already vanishes near strict edges. Do not add an independent spatial amplitude taper where kappa<=2. The old N>=68,533,403 remains scoped to the old changed-source support. This engine is a point-evaluation implementation with conditional whole-box input requirements, not an installed global physical field. Focused scalar checks passed; 945 indexed hashes matched. Read-only review: GPT-5.6 Luna / max. Global/source/repair/N/recursion gates and historical registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 

@@ -1,5 +1,7 @@
 # Current source strict inner exit collar and shear support boundary
 
+Latest successor: [CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md), implementation [03ea3441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03ea34414d37a3373468e050c9c1459e7943542a). The generic loop kernel is now executable; current full source assembly, cumulative recovery, new-family repair and new common N remain open. Its paper kappa cutoff supplies flat edges; the prospective left taper is not an independent multiplier.
+
 Checked implementation: [2783e2a5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2783e2a5301a6f969fa056613c69bd0606ee1709). **LEFT4b is complete: the existing compliant analytic exit cone is attached to the same current core-first source, with actual six inlet atoms, P0, amplitude and global positive width. An explicit nonzero strict subcollar now supplies the left support interval for upstream shear repair.** The whole core-to-outer strict cone and the upstream shear loop itself remain open. The full long-term goal is active.
 
 ## Source attachment rather than a family relabel
