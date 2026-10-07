@@ -1,16 +1,16 @@
-# Current handoff: actual C1 histories from inlet to R110 (2026-10-07)
+# Current handoff: actual C1 histories to the original O2 inlet (2026-10-07)
 
-Checked implementation: [bed4bb3b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bed4bb3b9b0ced79cfda2fca7860d02ee6ae9ffe). Exact domains, evidence and detailed tasks: [CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_BRIDGE_SWITCH_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [caa69cab](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caa69cabc652be58338ea8da12c7839d70e178af). Exact domains, source joins, evidence and detailed tasks: [CURRENT_NATIVE_MIDDLE_O2_INLET_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_MIDDLE_O2_INLET_C1_HISTORIES_2026_10_07.md).
 
-**Actual original five-moment histories now cover the entire inlet-to-R110 inner route**, including both microscopic bridges, the macro bridge and all three switch charts. Whole Z=[-1,1] and Z=[.49,.51], correction/own C0/Z rows, exact original widths/seams, separate P0/P0_Z and inherited pressure memory are retained. Bounds remain conservative and may be wide; quantitative terminal matching and scale recursion are incomplete.
+**Actual original five-moment histories now cover the complete inlet-to-O2-inlet route**, including six inner and six middle/reference charts. Whole Z=[-1,1] and Z=[.49,.51], correction/own C0/Z rows, true lengths, analytic patch endpoint, separate P0/P0_Z and inherited pressure memory are retained. The terminal O2_slope0 background is queried directly and bound to the original reference/slope source join. Bounds remain wide; terminal matching and scale recursion are incomplete.
 
-- [x] Original inlet/common coordinates, all 17 positive chart lengths/16 radius seams and signed C1 density/true-width backend.
-- [x] Actual inlet -> phase2 -> complete macro/switch chain -> R110. Added four-chart serial/reusable affine C1 operator and actual inherited data.
-- [ ] **NEXT: LEFT4c3-R110-to-Rh.** Complete reshape/reference, pressure restoration/buffer, actual patch and Rh route; preserve original analytic endpoints and backgrounds/P0_Z.
-- [ ] **LEFT4c3-O2/O3/tight signed bounds/global Rc + LEFT4d:** full downstream route, oscillatory cancellation, repair control and five terminal Z identities.
+- [x] Original inlet/common coordinates, true chart geometry and signed C1 density/integration backend.
+- [x] Actual inlet -> R110 -> complete reshape/reference/restoration/patch route -> Rh_reference0/O2_slope0. All seven background/history/P0 source-join entries retained.
+- [ ] **NEXT: LEFT4c3-O2 slope/axial/buffer.** Start from actual coordinate0 correction functions, supply local .12/.15 incoming data and complete the whole downstream route without resets.
+- [ ] **LEFT4c3-O3/right collar/tight signed bounds/global Rc + LEFT4d:** complete Rc functions, oscillatory cancellation, repair control and five terminal Z identities.
 - [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, pressure/heat/energy, recursion, stress cancellation and full NS.
 
-Evidence: 160 new chart C0/Z rows, 80 actual inherited rows, 20 serial/composite comparisons, four original seams and 1064 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence: 240 new chart C0/Z rows, 120 inherited rows, 20 terminal O2 own rows, seven source joins and 1068 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
