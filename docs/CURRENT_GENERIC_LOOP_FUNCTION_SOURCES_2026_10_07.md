@@ -1,5 +1,7 @@
 # Current generic loop and changed five source functions
 
+**Successor:** whole-source five-defect Duhamel log envelopes and quiet Rc inlet bounds are now checked in [CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md](CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md). Actual source replay/seam identities, evaluated changed histories, repair/N and genuine recursion remain open.
+
 Checked implementation: [32f562e5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/32f562e5d481a63b602f2f4a43b459b47d8489f4). Seventeen original positive source covers now bind the Section 11 analytic loop, changed normalized angular/axial velocities and all five signed moment increment functions to the original signed source expressions. This advances the actual function-definition layer beyond derivative norm caps. It does not install a numerical physical point evaluator, integrate the cumulative defects, repair terminal moments or choose the new whole-source N. The long-term goal remains active.
 
 ## Executable definitions and units
