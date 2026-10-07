@@ -1,5 +1,7 @@
 # Signed original generic input derivative expressions
 
+**Successor:** original loop/changed velocity/five signed source function definitions are now attached in [CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md](CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md). Actual point evaluation, cumulative integration, new repair/N and genuine recursion remain open.
+
 Checked implementation: [bc331efb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bc331efb32c86580ce3aebae7359537fddca0163). Seventeen positive original source covers now expose exact signed expression DAGs for a,b,p1,p2,E,t0,kappa_minus2 through ordinary y2/Z1. The saved leaves retain the original signed coefficient enclosures, four log-factor bases and a single formal R. Quotient derivatives keep real positive-function denominators instead of selecting values from norm caps. This completes the signed derivative-expression subtask; it does not install a physical point loop, determine N, or transport changed moments. The long-term goal remains active.
 
 ## Executable API

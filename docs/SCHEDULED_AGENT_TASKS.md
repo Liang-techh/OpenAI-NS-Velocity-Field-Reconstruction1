@@ -1,18 +1,19 @@
-# Current handoff: signed original source derivative expressions (2026-10-07)
+# Current handoff: actual loop and five signed source functions (2026-10-07)
 
-Checked implementation: [bc331efb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bc331efb32c86580ce3aebae7359537fddca0163). Current API, formulas, evidence and next production tasks: [CURRENT_GENERIC_SHEAR_SIGNED_JETS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SIGNED_JETS_2026_10_07.md).
+Checked implementation: [32f562e5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/32f562e5d481a63b602f2f4a43b459b47d8489f4). Current API, formulas, evidence and next production tasks: [CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md](CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md).
 
-**LEFT4c2 signed expressions advanced:**17 original source covers now expose714 signed ordinary derivative roots for a,b,p1,p2,E,t0,Delta through source y2/Z1. The graph retains true denominators, all pressure/energy/meridional sectors, exact source factors and one formal R. These are function derivative expressions over signed coefficient covers, not values selected from norm caps.
+**LEFT4c2 function definitions advanced:**17 original charts now bind the analytic q/Poisson phase/inverse/A/B to signed source expressions, then define E_N,V_N and all five full signed increment functions with first total-y/Z derivatives. One N and the original global phase are retained; flat branches are lazy and the canonical power branch has exact local source0. Saved covers are never chosen as point values.
 
-- [x] Whole current H0-2, complete original signed branches/full O2 buffer and logarithmic Section11 constants.
-- [x] Actual inverse/A/B derivative log bounds through y,Z,yy,yZ and fast derivative terms.
-- [x] **LEFT4c2-signed-expressions:** ordinary signed quotient graph, actual positive denominator certificates, original full inertial rows and explicit existing-owner query routing.
-- [ ] **LEFT4c2-point/common-phase:** actual loop/inverse consumer, successful live-source extraction, one fast phase and higher physical derivative rows.
-- [ ] **LEFT4c3 / d / e:** own changed five histories, functional terminal repair, new whole finite N and modified strict cone.
-- [ ] **LEFT4c1-outer / CONT / ENERGY:** original post-repair admission, changed interfaces and whole energy.
-- [ ] **REC / WAVE / PHYS:** actual coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
+- [x] Whole current H0-2, complete original branches/O2 buffer and actual logarithmic scales.
+- [x] Actual loop derivative bounds and original signed input expression graphs.
+- [x] **LEFT4c2-functions/rates:** analytic loop/changed velocity/five signed source definitions and actual N-power log bounds on17 charts.
+- [ ] **LEFT4c2-backend/orders:** actual live-source evaluation and sufficient mixed4 velocity/mixed3 stress rows.
+- [ ] **LEFT4c3:** ordered actual cumulative integration, quiet-gap memory and changed radial/pressure/full-stress recovery.
+- [ ] **LEFT4d / e:** new functional five-moment repair, one new whole finite N and changed strict cone.
+- [ ] **LEFT4c1-outer / CONT / ENERGY:** post-repair/exterior admission, changed interfaces and whole energy.
+- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
 
-Focused stage passed:714 roots, 9 exact identities and 126 independent signed multimode comparisons; 1008 indexed dependency hashes matched. Mathematical reviewer: GPT-5.6 Luna / max. Saved covers are not point functions and successful actual live-owner query is not claimed. Original cone inventory stays15 strict nonzero regions/17 open plus exact zero exterior. All global completion gates remain false and the long-term goal remains active. Earlier sections below are historical.
+Focused stage passed:8373 function nodes,28 exact source bindings and 81 independent active/transition/flat comparisons; 1013 indexed dependency hashes matched. Read-only mathematical reviewer: GPT-5.6 Luna / max. Actual point evaluator, changed cumulative integrals, repair/N/global cone and genuine recursion remain open. Original cone inventory stays15 strict nonzero regions/17 open plus exact-zero exterior. All global completion gates remain false and the long-term goal remains active. Earlier sections below are historical.
 
 ---
 
