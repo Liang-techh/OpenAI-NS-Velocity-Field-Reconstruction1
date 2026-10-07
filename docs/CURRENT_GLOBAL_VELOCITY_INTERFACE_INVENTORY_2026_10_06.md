@@ -1,5 +1,7 @@
 # Current global velocity and absolute-pressure interface inventory
 
+Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
+
 Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
 
 CONT4f1 read-only source inventory, following physical query code2665ebf4 and the full33 native dispatcher587e1c1e. Scanner metadata: **GPT-5.6 Luna / max**, independent context; no files changed, no constructors or numerical receipts rerun. This inventory is a task map, not a new global interface proof.
@@ -80,3 +82,5 @@ The present current_actual_patch_background_tensor.interface uses b=a on support
 - [ ] **CONT4f7:** publish the completed inventory plus actual two-sided function/physical evidence. Raise a global smooth velocity gate only after all adjacent/internal/modified seams are covered.
 
 Reuse existing source proofs and saved receipts. No cold ancestor reconstruction is needed for the symbolic six-support theorem. Whole-field energy, common N/cones, coefficient recursion and full corrected NS remain separate requirements.
+
+CONT4f6a1 is complete in the successor: all six patch source equalities are transported through the actual physical operators. CONT4f6a2–3 remain open for source-bound quantitative traces, followed by complete global composition.

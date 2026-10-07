@@ -1,5 +1,7 @@
 # Actual patch support joins and whole modulation source norms
 
+Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
+
 Implementation and focused receipts: commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b).
 
 Two concrete gaps are now closed at the source-function level: six actual patch support velocity/absolute-pressure mixed4 joins, and whole-support cutoff/original-source norms for the finite-frequency modulation. The previous physical Cartesian query layer remains available. Global physical interface exports, completed stress errors, common N, whole modified cones, energy and true coefficient recursion remain open.
@@ -47,7 +49,8 @@ Files use prefix lei_ren_part1_paper_compliant_current_O3_frequency_source_bound
 ## Detailed next agent tasks
 
 - [x] **CONT4f5a–d:** actual six-support definitions, flat beta limits, partial/full FTC and terminal implicit closure, two independent source germs and actual x/Z/logR/Z mixed4 velocity/pressure units.
-- [ ] **CONT4f6a:** compose these source joins with the actual canonical spatial4/fixed-position time1 operators. A hash-bound saved whole actual_patch native view can supply a common physical upper bound only where its domain covers the requested trace; prove source/operator/radius identity before consuming the bound. Do not treat a copied enclosure as function equality.
+- [x] **CONT4f6a1:** canonical fixed-unit physical spatial4/fixed-position time1 source transport at the six supports.
+- [ ] **CONT4f6a2–3:** regenerate current-definition quantitative trace bounds from checked primitive patch packets; do not reuse the mismatched cached full33 view.
 - [ ] **CONT4f2a:** adapt already-proved reshape_reference UT/UZ/UR/P source rows to the global velocity interface API.
 - [ ] **CONT4f2–4/6b:** compose the remaining unchanged inner/pulse/outer providers and twelve current modified germs with their common geometry, pressure datum, typed core and exact-zero layouts.
 - [ ] **CONT4f7:** publish all adjacent/internal physical velocity traces and admit global smooth velocity only after complete coverage.

@@ -1,5 +1,7 @@
 # Actual physical velocity and absolute-pressure queries
 
+Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
+
 Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
 
 Implementation and source receipts: commit [2665ebf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2665ebf47e7006b546dbc9f82f536c4830f55a2b).
@@ -132,3 +134,5 @@ Read this document and the exact source receipts before new work. The previous w
 Immediate next owners: CONT4f1–7 (actual global velocity interface composition), BOUND3/COMMONN/whole modified cones and TENSOR3a–b (own physical energy). Then construct the true n-dependent recovery equations, independent per-order moment repair and oscillatory/mean corrections. The long-term NS/dynamics goal remains active.
 
 Additional finite-N work: [CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md](CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md) implements BOUND1a1 conditional analytic profile derivatives and both shear errors. Actual whole-domain source norms, repair/completed tensor errors and common N remain open.
+
+The successor accepts the current six-support physical source theorem and keeps numeric common patch traces unavailable pending a fresh view tied to the exact current dispatcher definition. Existing runtime query proofs are not relabeled as a global smoothness or energy result.
