@@ -1,22 +1,21 @@
-# Current handoff: six physical patch source joins (2026-10-06)
+# Current handoff: six physical patch joins and fresh bounds (2026-10-06)
 
-Implementation and focused receipt: commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317).
+Implementation and focused receipt: commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb).
 
-**CONT4f6a1 is implemented:** the six current actual patch velocity/absolute-pressure source joins now imply physical Cartesian spatial4 and fixed-position time1 equality. The actual fixed radial unit, moving basis, radius, Pstar, common analytic P0 and current nonsingular delta hypothesis are retained. Earlier patch source proofs and whole finite-N cutoff/base norms remain available.
+**CONT4f6a1–3 are implemented in their stated sector:** the six actual patch velocity/absolute-pressure source joins now have physical Cartesian spatial4/fixed-position time1 equality and fresh quantitative bounds. Current primitive edge packets, original scalar/radius units and analytic P0 are preserved. The old cached full33 numeric view is rejected; six new views are generated without rebuilding the ancestor graph.
 
-Read [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md) for exact scope, the numeric-view lineage gap and executable next tasks. The new kernel runs without ancestor reconstruction. The runtime controller's last full stage remains currentmodifiedphysicalvelocity.
+Read [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md) for exact scope and executable tasks. The fresh views bind dispatcher99a1... and their own primitive/scalar/generator hash. Sector: log_tau[-3,-1], all angles, whole Z source closure (finite physical |Z|<1), viscosity1; exact positive constant-nu transport remains separate. The controller's last full runtime stage remains currentmodifiedphysicalvelocity.
 
-Evidence:210 spatial plus6 time label contributions;35 spatial multiindices;144 independent physical derivative comparisons; two asymmetric radial-unit/pressure changes detected;902 working/index hashes. Read-only derivation and lineage worker: **GPT-5.6 Luna / max**.
+Evidence:1296 fresh signed contribution groups, two terminal maps regenerated, foreign-definition guard and907 working/index hashes. The preceding source proof has216 physical identities and144 independent derivative comparisons. Read-only worker: **GPT-5.6 Luna / max**.
 
-- [x] Actual patch source joins, physical spatial4/time1 source transport at all six supports, current12 modified germs and inherited analytic pressure/heat sources.
-- [x] Actual finite-N derivative/shear formulas and whole-support cutoff/original-source norm formulas.
-- [ ] **Next CONT4f6a2–3:** regenerate tightly scoped patch numeric bounds from accepted primitive packets and attach the exact current definition. The saved full33 view's embedded bbcd... differs from the accepted99a1...; the new adapter rejects it as a quantitative bound.
-- [ ] **CONT4f2–4/6b/7:** remaining physical velocity interfaces and complete global coverage.
-- [ ] **BOUND1a4b/5 / BOUND1b / BOUND2:** actual scalar/physical factors, flat-edge phase correlations and independent repair/full signed tensor errors.
-- [ ] One common N/whole modified cones, finite physical energy, actual n-dependent recursion and oscillatory/mean correction.
-- [ ] Resolved u/v/w, independent full corrected NS residual and measured dynamics.
+- [x] Six actual patch source germs, physical source equality and fresh sector bounds; current12 modified germs and inherited pressure/heat sources.
+- [x] Finite-N derivative/shear formulas and actual whole-support cutoff/base norm formulas.
+- [ ] **CONT4f6a4 / CONT4f2–4/6b/7:** fresh physical trace export/point-coordinate adapter and remaining global velocity-interface coverage.
+- [ ] **BOUND1a4b/5 / BOUND1b / BOUND2:** current scalar/physical-factor substitution, flat-edge phase correlations and independent repair/full signed tensor errors.
+- [ ] One common N/whole modified cones, finite physical energy, real n-dependent recursion and oscillatory/mean correction.
+- [ ] Resolved u/v/w, full corrected Cartesian NS residual and measured dynamics.
 
-The physical source joins do not yet admit numeric common patch traces or global smooth velocity/cones. N=10^12 remains repair-only. Keep the persistent reconstruction goal active. Preserve unrelated files; earlier sections are historical.
+Local physical trace bounds do not admit global smooth velocity, common N/cones, energy or coefficient recursion. N=10^12 remains repair-only. Keep the full persistent reconstruction goal active. Preserve unrelated files; earlier sections are historical.
 
 ---
 

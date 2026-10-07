@@ -1,8 +1,10 @@
 # Six patch support joins in physical Cartesian coordinates
 
+Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
+
 Implementation and focused receipt: commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317).
 
-**CONT4f6a1 is implemented.** The six already proved actual patch velocity/absolute-pressure source joins are transported through the current canonical physical operators. This proves equality of both physical traces through spatial total order four and the first time derivative at fixed physical position. Quantitative common trace bounds remain open because the saved full33 blob carries a different dispatcher definition.
+**CONT4f6a1 is implemented.** The six already proved actual patch velocity/absolute-pressure source joins are transported through the current canonical physical operators. This proves equality of both physical traces through spatial total order four and the first time derivative at fixed physical position. The original saved full33 blob carries a different dispatcher definition; the successor now supplies fresh common trace bounds from accepted primitive packets.
 
 ## Actual source and coordinate transport
 
@@ -27,10 +29,10 @@ patch_physical_trace rejects that mismatched saved definition. The source theore
 ## Detailed next tasks
 
 - [x] **CONT4f6a1:** actual fixed-unit normalization, moving-basis Cartesian spatial4 and fixed-position time1 source equality at all six patch supports.
-- [ ] **CONT4f6a2a:** locate an accepted primitive patch packet whose domain covers each edge. Require family/source/datum/control hashes and ordinary logR/Z mixed4 rows; verify whether a whole x box or independent edge boxes exist. Do not use the mismatched full33 blob as the primitive source.
-- [ ] **CONT4f6a2b:** regenerate only those patch physical rows with the same radius, Pstar and canonical mapper. Carry exact scalar enclosures and log scales; no midpoint or enormous positive exponential materialization. If no primitive packet covers an edge, compute that bounded patch request from the checked provider only when a valid defining graph is available.
-- [ ] **CONT4f6a2c:** bind the newly generated views to the recomputed current dispatcher definition, explicit x/Z/time/angular domains and actual source hashes. Keep the old saved blob unchanged until its descendants can be updated consistently.
-- [ ] **CONT4f6a3:** publish quantitative physical trace views after source equality. Audit all216 contribution keys, exact-zero layouts, radius/unit/scalar hashes, time-sector coverage and rejection of a foreign definition; apply positive constant nu transport explicitly.
+- [x] **CONT4f6a2a:** locate an accepted primitive patch packet whose domain covers each edge. Require family/source/datum/control hashes and ordinary logR/Z mixed4 rows; verify whether a whole x box or independent edge boxes exist. Do not use the mismatched full33 blob as the primitive source.
+- [x] **CONT4f6a2b:** regenerate only those patch physical rows with the same radius, Pstar and canonical mapper. Carry exact scalar enclosures and log scales; no midpoint or enormous positive exponential materialization. If no primitive packet covers an edge, compute that bounded patch request from the checked provider only when a valid defining graph is available.
+- [x] **CONT4f6a2c:** bind the newly generated views to the recomputed current dispatcher definition, explicit x/Z/time/angular domains and actual source hashes. Keep the old saved blob unchanged until its descendants can be updated consistently.
+- [x] **CONT4f6a3:** publish quantitative physical trace views after source equality. Audit all216 contribution keys, exact-zero layouts, radius/unit/scalar hashes, time-sector coverage and rejection of a foreign definition; apply positive constant nu transport explicitly.
 - [ ] **CONT4f2a:** bring the already proved reshape_reference source joins into the same global physical interface API.
 - [ ] **CONT4f2–4/6b/7:** remaining unchanged inner and pulse/outer providers, common analytic pressure datum, typed axis/core maps, current12 affected germs, complete adjacent/internal physical interface coverage.
 - [ ] **BOUND1a4b/5 / BOUND1b / BOUND2:** actual finite-N scalar/physical-factor binding, flat-edge correlations, independent repair and full signed stress/pressure/radial error estimates.

@@ -1,5 +1,7 @@
 # Actual patch support joins and whole modulation source norms
 
+Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
+
 Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
 
 Implementation and focused receipts: commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b).
@@ -50,7 +52,7 @@ Files use prefix lei_ren_part1_paper_compliant_current_O3_frequency_source_bound
 
 - [x] **CONT4f5a–d:** actual six-support definitions, flat beta limits, partial/full FTC and terminal implicit closure, two independent source germs and actual x/Z/logR/Z mixed4 velocity/pressure units.
 - [x] **CONT4f6a1:** canonical fixed-unit physical spatial4/fixed-position time1 source transport at the six supports.
-- [ ] **CONT4f6a2–3:** regenerate current-definition quantitative trace bounds from checked primitive patch packets; do not reuse the mismatched cached full33 view.
+- [x] **CONT4f6a2–3:** regenerate current-definition quantitative trace bounds from checked primitive patch packets; do not reuse the mismatched cached full33 view.
 - [ ] **CONT4f2a:** adapt already-proved reshape_reference UT/UZ/UR/P source rows to the global velocity interface API.
 - [ ] **CONT4f2–4/6b:** compose the remaining unchanged inner/pulse/outer providers and twelve current modified germs with their common geometry, pressure datum, typed core and exact-zero layouts.
 - [ ] **CONT4f7:** publish all adjacent/internal physical velocity traces and admit global smooth velocity only after complete coverage.

@@ -1,5 +1,7 @@
 # Current global velocity and absolute-pressure interface inventory
 
+Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
+
 Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
 
 Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
