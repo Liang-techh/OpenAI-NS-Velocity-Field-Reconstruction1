@@ -1,17 +1,17 @@
-# Current handoff: original relaxed inputs through Rh (2026-10-07)
+# Current handoff: actual source quotient derivative bounds (2026-10-07)
 
-Checked implementation: [52d90755](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/52d90755923633eb19692eabf76a8925f0565b98). Source scope, API, evidence and next production tasks: [CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md](CURRENT_GENERIC_SHEAR_PATCH_RELAXED_2026_10_07.md).
+Checked implementation: [429aa3ed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/429aa3eda372b369a34f7b713f44efef1283d630). Source API, analytic bounds, evidence and next tasks: [CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md).
 
-**LEFT4c1 original middle source gap closed:** the current implicit five-moment patch now satisfies the whole relaxed condition on Rm..Rh, including all three active bump groups and four quiet gaps with retained partial histories/P0. Combined original open inner/reshape/restoration/patch conditions cover Ra<R<=Rh. Full signed p2 is retained; the conservative directed H0-2 lower bound is 4.222062679.
+**LEFT4c1 norms advanced:** current original E/C denominators and complete signed a,b,p1,p2,t0 bounds through ordinary y2/Z1 now cover all15 noncore exported charts. All16 raw source covers, original five histories and separate P0 are retained. The new layer uses exact source-bound positivity and logarithmic norm arithmetic; no huge physical radius/amplitude or microscopic width/inverse is materialized.
 
-- [x] Typed16-chart source/full signed invariants and own factored recovery.
-- [x] Original open inner, reshape/reference, restoration/buffer and actual five-moment patch relaxed-input source conditions.
-- [ ] **LEFT4c1 norms/scales/domain:** full p1/p2/t0 derivative bounds, conservative scales, strict right edge and reserved new repair interval.
-- [ ] **LEFT4c2 / c3:** actual generic loop/shared phase/factored mixed4 jets and own changed-history transport/tensor across true widths/seams.
-- [ ] **LEFT4d / e:** new functional terminal repair/uniqueness, new full finite N and whole modified cone.
+- [x] Original open inner/reshape/restoration/patch relaxed inputs through Rh.
+- [x] Actual positive denominators and450 full signed quotient derivative log bounds on15 noncore charts.
+- [ ] **LEFT4c1 domain/scales:** strict right edge and original continuation up to2Rc, complete margins, conservative log scales and reserved new repair interval.
+- [ ] **LEFT4c2 / c3:** phase-held loop/inverse jets, shared phase, higher mixed4 source orders and own changed-history transport/tensor.
+- [ ] **LEFT4d / e:** new terminal repair/uniqueness, new whole finite N and modified strict cone.
 - [ ] **CONT / ENERGY / REC / WAVE / PHYS:** changed interfaces/energy, true coefficient recursion/smooth sum, stress cancellation and corrected NS/dynamics.
 
-Original relaxed source admission is distinct from strict completed-tensor/global admission. The API gives function-domain certificates, not point velocity values. Focused checks passed; 976 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. All global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused normalization/function-bound checks passed; 980 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. Core saved positive sector remains raw-only; source norms on existing charts do not yet assemble the whole chosen loop domain. All global loop/repair/recursion/corrected-NS gates remain false; the long-term goal remains active. Earlier sections below are historical.
 
 ---
 

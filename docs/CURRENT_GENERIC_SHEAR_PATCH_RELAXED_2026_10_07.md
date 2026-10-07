@@ -1,5 +1,7 @@
 # Current original implicit patch relaxed input through Rh
 
+**Successor:** actual positive denominators and full signed quotient derivative log bounds on15 current noncore charts are implemented in [CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_BOUNDS_2026_10_07.md). Whole loop right-domain/scales, phase-held jets, changed transport/repair/N and true recursion remain open.
+
 Checked implementation: [52d90755](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/52d90755923633eb19692eabf76a8925f0565b98). **LEFT4c1-gates-b-patch-source, patch-supports and patch-gaps are implemented for the current original analytic background.** The new whole Rm..Rh patch condition extends the already attached open inner/reshape/restoration conditions from Ra<R<=Rm to Ra<R<=Rh. This closes the original middle relaxed-input source gap; the complete generic loop input bundle still requires source derivative norms, conservative scales and support reservation. The full long-term goal remains active.
 
 ## Current source and domain
