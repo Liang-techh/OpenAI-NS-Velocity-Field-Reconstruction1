@@ -1,19 +1,19 @@
-# Current handoff: uniform repair bounds (2026-10-06)
+# Current handoff: radial and absolute-pressure error bounds (2026-10-06)
 
-Checked implementation: [23dffae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23dffae0e1efd146de3154904d1eb7677063f44a). Read [CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md](CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md) for API, physical units and detailed agent tasks.
+Checked implementation: [d446dc0e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d446dc0ecc8756be088225c162c18bd9b9dbc431). Detailed API and next agent tasks: [CURRENT_RADIAL_PRESSURE_ERROR_BOUNDS_2026_10_06.md](CURRENT_RADIAL_PRESSURE_ERROR_BOUNDS_2026_10_06.md).
 
-**Uniform variable-N repair control/Jacobian bounds, quiet cumulative defect strips and repaired primitive shear are implemented.** query(N,logx) uses the actual independent map and source-correlated defects. It preserves the current pressure datum, never relabels saved N=10^12 coefficients, and returns factored physical units.
+**BOUND1b1c and BOUND1b2c are implemented for current changed native O2/O3 and quiet repair sources.** The provider returns all five signed history enclosures, own-M radial and own-Cp absolute-pressure error mixed jets through logR4/Z5 for variable N. It retains separate kineticN^-2, the original axis datum, actual mu/delta and the radial sqrtR shift exactly once.
 
-Repair-only N>=27,303,666 gives a unique implicit control vector in a uniform ball. Quiet primitive N>=68,533,403 gives a-2>=3mu/2 on the repair band. Existing N=10^12 passes both. The upstream modulation still uses its correlated quarter-reserve theorem. These local estimates do not admit the completed tensor or select a common cone frequency.
+Pressure is the cumulative Cp value; its first logR derivative is the swirl cross-plus-square term. They are distinguished by the API and checker. Quiet fixed-unit transport is bound to the original source; all error mixed rows vanish after the last repair bump. Factored native radius/amplitude logs are returned without exponentiating giant scales.
 
-- [x] **BOUND1b1a–b:** uniform actual source caps, implicit h-ball and nonlinear inverse Jacobian.
-- [x] **BOUND1b2a–b (quiet primitive):** bump logR4/Z5 bounds, partial/complement primitives, shrinking strips, same-equation terminal closure and quiet shear.
-- [ ] **BOUND1b1c / BOUND1b2c:** upstream mixed signed histories and own-M radial/own-Cp absolute-pressure error jets.
-- [ ] **BOUND1a5c / BOUND2/3 / COMMONN:** completed tensor pressure/alignment/directional margins and one sufficient common N.
+- [x] Uniform implicit repair controls/Jacobian, partial/remaining defect strips and quiet primitive reserve.
+- [x] **BOUND1b1c / BOUND1b2c:** upstream mixed history bounds and native radial/absolute-pressure error recovery.
+- [ ] **BOUND2a–c:** completed signed tensor errors, pressure/radial/diagonal terms and both directional/alignment cone margins.
+- [ ] **BOUND3 / COMMONN:** one sufficient finite N across all completed cone conditions.
 - [ ] **CONT4f2b–4/6a4b/6b/7:** remaining physical interface providers and global composition.
 - [ ] Finite energy, actual n-dependent recursion, oscillatory/mean correction, resolved physical velocity and full corrected Cartesian NS/dynamics.
 
-Focused verification:74 exact identities;12 Jacobian/inverse,45 raw-jet,30 bump/shear and184 continuous partial-integral comparisons;7 queries,6 guards,915 working/index hashes. Read-only worker: **GPT-5.6 Luna / max**. BOUND1b remains open for recovered errors. The persistent goal stays active. Frequency N is distinct from recursive order n. The controller's last full runtime stage remains currentmodifiedphysicalvelocity; sections below are historical.
+Focused check:61 exact source identities,40 original IntervalTaylor fixtures and8400 mixed comparisons;9 queries,6 guards,917 working/index hashes. Read-only worker: **GPT-5.6 Luna / max**. No completed tensor/global/common-N/energy/recursion/NS gate is promoted. Native error bounds are inputs to full tensor analysis, not its certificate. Keep the full persistent goal active. Earlier sections below are historical.
 
 ---
 
