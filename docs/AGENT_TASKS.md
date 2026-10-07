@@ -1,16 +1,16 @@
-# Current handoff: actual complete O2 C1 histories (2026-10-07)
+# Current handoff: actual C0/Z histories to the original Rc (2026-10-07)
 
-Checked implementation: [27c21b19](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/27c21b19b41aa7b5da9a5979fe0faf08b698dee9). Route, improved bounds, evidence and detailed tasks: [CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_O2_C1_HISTORIES_2026_10_07.md).
+Checked implementation: [57eaa8a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57eaa8a880746b045712bd94d510008aa26c1066). Route, exact quiet support, evidence and detailed tasks: [CURRENT_NATIVE_RC_C1_HISTORIES_2026_10_07.md](CURRENT_NATIVE_RC_C1_HISTORIES_2026_10_07.md).
 
-**Actual original five-moment C0/Z histories now cover inlet -> complete inner/middle -> full O2 -> O3 transition0.** Actual .12 incoming data supplies the original three-cell [.12,.15] transfer. Eight true-width O2 cells retain inherited corrections, separate background/P0_Z, source joins and the buffer admission distinction. Original-loop parameter bounds avoid large Poisson denominator powers. Conservative covers remain distinct from quantitative terminal closure.
+**The original radial history route now covers inlet -> inner/middle -> O2 -> O3 -> Rc without gaps.** Rc=Rw*exp(2), directly queried at power phase2/Tw. Whole Z=[-1,1] and Z=[.49,.51] have actual five-moment correction/own C0/Z covers, original endpoint background/P0_Z and inherited memory. The power region has exact-zero local increments and retains pressure memory. Covers remain conservative; quantitative five-moment closure and scale recursion are incomplete.
 
-- [x] Complete original inner/middle route and actual O2 inlet.
-- [x] Full O2 slope/axial/buffer; actual .12 incoming and original three-cell operator; first-Z periodic bound improvement and exact-flat handling.
-- [ ] **NEXT: LEFT4c3-O3/right collar/Rc.** Transition[0,1], then power offsets[0,1] and[1,2]; Rc=Rw*exp(2), power phase2/Tw. Carry memory through proven quiet support.
-- [ ] **LEFT4c3-tight signed bounds + LEFT4d:** improve inherited covers, separate phase means/slow variation, construct repair controls and prove five terminal Z identities.
-- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, heat/energy, recursion, quadratic stress cancellation and full NS.
+- [x] Full original inner/middle/O2 route, actual .12 incoming/local operator and improved first-Z periodic bounds.
+- [x] O3 transition plus power offsets0->1->2, actual Rc endpoint, original source/five-history/P0 seam and quiet two-sided right collar.
+- [ ] **NEXT: LEFT4c3-Rc repair-target budget and tight signed integration.** Export actual targets, identify dominating bound terms, restore signed phase cancellation and slow-variation estimates.
+- [ ] **LEFT4d-terminal controls and five Z identities.** Use the original reserved independent repair, Rc->2Rc geometry and compatible pressure datum.
+- [ ] **HIGH/OUTER/ENERGY/common N/cone/REC/WAVE/PHYS:** higher jets, outer/heat/energy, recursion, quadratic stress cancellation and full NS.
 
-Evidence: 320 new cell rows, 160 inherited rows, 40 serial/composite comparisons, 20 terminal own rows, 180 original-loop/cutoff reference checks and 1073 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence for the final segment: 120 new cell rows, 60 inherited rows, 40 exact quiet density rows, 8 preserved pressure rows, 20 operator comparisons, 20 Rc own rows and 1077 hashes. Read-only worker: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
