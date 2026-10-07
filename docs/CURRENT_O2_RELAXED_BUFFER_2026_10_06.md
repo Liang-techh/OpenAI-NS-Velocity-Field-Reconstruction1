@@ -1,5 +1,7 @@
 # Original O2 relaxed buffer input and actual strict-collar obstruction
 
+Latest successor: [CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md](CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md), implementation [6640f02c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6640f02c12050cafce4ffbeb54f809b12ad4405e). Whole original reference/slope stronger relaxed input now proved; axial turnoff and strict inner collar/shear repair remain open.
+
 Checked implementation: [574723cf](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/574723cfd8b3a8867518f4ca641598a19db105d7). **The current original O2 shared buffer offset[-11,-2], all Z[-1,1], including both seams, now has a continuous source-bound relaxed input cone proof.** This is input for the paper's shear modification, not a strict admissible stress certificate. Stress is nonzero and the exact shear remains a=2, bs=0, kappa=2 at every frequency. The previous changed-region strict cone/common-N result remains valid on its stated domains, N>=68,533,403; no global gate or original registry count is promoted.
 
 ## What was implemented

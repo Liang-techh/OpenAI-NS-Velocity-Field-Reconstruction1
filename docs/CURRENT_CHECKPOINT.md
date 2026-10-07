@@ -1,19 +1,18 @@
-# Current handoff: O2 relaxed input and upstream shear-collar repair (2026-10-06)
+# Current handoff: reference/slope stronger relaxed input (2026-10-06)
 
-Checked implementation: [574723cf](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/574723cfd8b3a8867518f4ca641598a19db105d7). Detailed proof/API/ordered tasks: [CURRENT_O2_RELAXED_BUFFER_2026_10_06.md](CURRENT_O2_RELAXED_BUFFER_2026_10_06.md).
+Checked implementation: [6640f02c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6640f02c12050cafce4ffbeb54f809b12ad4405e). Detailed source/proof/API/tasks: [CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md](CURRENT_O2_REFERENCE_SLOPE_RELAXED_2026_10_06.md).
 
-**The complete original O2 buffer offset[-11,-2] now satisfies the paper's relaxed input criterion with full nonzero stress.** Its actual shear is a2/bs0/kappa2; strict admission remains false at every N. Upstream reference/slope/axial charts also lack an already-admissible outside collar, so shifting a flat cutoff cannot complete this repair.
+**The original Rh_reference[-5,0] and O2_slope[0,1] now satisfy the full stronger relaxed input criterion, all Z[-1,1], with their actual cumulative angular deficit and radial shear.** For kappa<=2 this proves D/F>2-kappa, beyond direction positivity. Complete pressure, energy, histories and four source joins stay bound. Strict target admission remains false on these source charts.
 
-- [x] **BOUND1 / BOUND2a:** uniform repair/history/radial/pressure and complete tensor/remainder error bounds.
-- [x] **BOUND2b modulation / BOUND2c / BOUND3-bridge:** strict O2(-2,0], closed O3, transported power s[0,1] and quiet repair s[1,2].
-- [x] **COMMONN-changed:** all changed-source intervals use one sufficient frequency N>=68,533,403; downstream original source is restored by the defining repair equation.
-- [x] **BOUND2b-buffer-relaxed:** original offset[-11,-2] full theta positivity, relaxed direction, exact pre-support equality and explicit strict rejection.
-- [ ] **LEFT4a:** earlier reference/slope/axial relaxed input, including the stronger kappa<2 lower and all source seams.
-- [ ] **LEFT4b-c:** actual strict inner collar or genuine stress-free boundary, followed by a source shear loop covering every defective upstream chart.
-- [ ] **LEFT4d-e / BOUND3-global:** new-family cumulative defects/independent repair, all support/collar cone bounds and genuinely global sufficient N.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, actual coefficient recursion and smooth sum, oscillatory/mean cancellation, corrected u/v/w and NS/dynamics.
+- [x] Uniform repair/history/radial/pressure and complete tensor/remainder error bounds.
+- [x] Strict changed-source O2 taper, closed O3, pre-repair transport and quiet repair cones; common N>=68,533,403 on those domains.
+- [x] **LEFT4a-buffer:** original shared[-11,-2] relaxed input, with nonzero kappa2 stress and explicit strict rejection.
+- [x] **LEFT4a-reference/slope:** stronger relaxed input on the complete two earlier charts, actual correlated angular deficit and source seam.
+- [ ] **LEFT4a-axial:** full axial turnoff relaxed branches with ordinary logR derivatives, complete energy/pressure and both source seams.
+- [ ] **LEFT4b-e:** actual strict inner collar or genuine stress-free boundary; source shear extension through every defective chart; new-family five-defect repair and global cone/frequency proof.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, actual coefficient recursion/smooth sum, oscillatory/mean stress cancellation, corrected u/v/w and full NS/dynamics.
 
-Focused new evidence: 15 full signed stress cases, 28 exact tensor modification zeros. Read-only reviewer: GPT-5.6 Luna / max. Only the relaxed-input gate is new; strict/global/energy/recursion/full-NS gates and original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+New focused evidence: 30 complete signed stress cases and 142 independent paper branch decisions. Read-only reviewer: GPT-5.6 Luna / max. Only scoped relaxed input advances; strict/global/energy/recursion/full-NS gates and original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 
