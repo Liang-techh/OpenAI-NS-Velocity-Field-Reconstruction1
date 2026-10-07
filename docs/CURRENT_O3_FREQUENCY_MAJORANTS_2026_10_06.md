@@ -1,5 +1,7 @@
 # Source-bound finite-frequency derivative and shear-error envelopes
 
+Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
+
 Implementation: commit [2dd8180d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8180d2774757e8a0c2ee88d765c2db3e5c902).
 
 The supported O2/O3 modulation now has callable analytic envelopes with explicit N dependence. They cover ordinary logR derivatives0..4 and axial derivatives0..5 of theta/Pstar, the swirl increment and axial/Pstar, and the errors of both actual local shear components against the same periodic loop. This is BOUND1a1. The source norms supplied to the formulas remain conditional; they have not been certified on the actual whole domain.
@@ -40,11 +42,13 @@ The receipt records61 source/derivative identities,276 independent direct-differ
 ## Detailed next work
 
 - [x] **BOUND1a1:** actual source program bindings, conditional spatial/axial derivative envelopes, exact finite-N shear deviations and explicit N-growth degrees.
-- [ ] **BOUND1a2:** certify actual cutoff C_j on the whole modulation support. Consume the squared-exponent original sigma definition and the analytic tail bounds from flat_pulse_derivatives/check; retain its factor4 on the right cutoff. Do not use a different sigmoid definition.
-- [ ] **BOUND1a3:** derive original theta/Pstar F_jk and logarithmic derivative L1 bounds on the same O2/O3 source and all Z[-1,1], with its actual amplitude and original nonnegative J. Retain the common amplitude at Rd and do not replace it with a sampled coefficient.
+- [x] **BOUND1a2:** certify actual cutoff C_j on the whole modulation support. Consume the squared-exponent original sigma definition and the analytic tail bounds from flat_pulse_derivatives/check; retain its factor4 on the right cutoff. Do not use a different sigmoid definition.
+- [x] **BOUND1a3:** derive original theta/Pstar F_jk and logarithmic derivative L1 bounds on the same O2/O3 source and all Z[-1,1], with its actual amplitude and original nonnegative J. Retain the common amplitude at Rd and do not replace it with a sampled coefficient.
 - [ ] **BOUND1a4:** substitute those certified source bounds into this envelope, preserve positive mu and one N parameter, and publish actual full-domain profile bounds. The source and implicit controls must match the checked modified graph.
 - [ ] **BOUND1b:** add independent repair bump/control/partial-history bounds on every directed support piece. Local flatness does not erase cumulative moments or pressure.
 - [ ] **BOUND2a/BOUND3:** apply the actual signed tensor and pressure operators and preserve phase correlations. Compare the completed stress errors with the admitted loop margins; generic absolute derivative caps alone cannot prove cone signs.
 - [ ] **COMMONN:** combine repair contraction, supported shear, taper, pressure, radial/diagonal completion and joins into one sufficient finite integer. Keep N=10^12 labeled repair-only until this is done.
 
 Whole modified cones, total physical energy, true n-dependent coefficient recursion, oscillatory/mean corrections and full corrected NS remain open. These changes do not establish a lower full NS residual or a blow-up theorem.
+
+BOUND1a4a analytic substitution is complete in the successor. Actual runtime parameter/physical factor binding (BOUND1a4b), edge correlations and independent repair/completed stress/common N remain open.

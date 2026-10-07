@@ -1,5 +1,7 @@
 # Current global velocity and absolute-pressure interface inventory
 
+Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
+
 CONT4f1 read-only source inventory, following physical query code2665ebf4 and the full33 native dispatcher587e1c1e. Scanner metadata: **GPT-5.6 Luna / max**, independent context; no files changed, no constructors or numerical receipts rerun. This inventory is a task map, not a new global interface proof.
 
 The tensor registry contains32 adjacent interfaces and14 internal tensor traces. The separate original velocity interface atlas admits14 adjacent and8 internal velocity/absolute-pressure traces. Earlier tensor counts and self-comparisons cannot be substituted for all global velocity function joins. The current twelve modified germs override the relevant original O2/O3 providers.
@@ -45,11 +47,11 @@ Filenames below have prefix lei_ren_part1_paper_compliant_ and live in experimen
 
 Original source-level local mixed4 proofs exist for the first18 seams, but their tensor interface adapters do not supply one unified global velocity interface API. Fourteen pulse/outer seams already have full velocity source and physical trace evidence. Three of the first18 original seams require current modified germs as indicated above; historical proofs alone do not certify the changed source.
 
-## Internal support evidence and actual missing theorem
+## Internal source closures and remaining physical composition
 
 Four pulse-end edges (-63/20,-57/20,-23/20,-17/20) have full velocity source-difference evidence in current_pulse_support_interfaces.endpoint_difference_theorem / current_support_source_proof / interface. Four angular edges have full velocity identities in current_angular_support_interfaces.angular_endpoint_theorem / current_angular_support_proof / endpoint. The six new quiet-power repair edges are covered separately by the current twelve affected velocity/pressure interfaces.
 
-The six unchanged patch support edges still lack a genuine two-sided velocity/absolute-pressure mixed4 source theorem:
+The six unchanged patch support edges now have a genuine two-sided velocity/absolute-pressure mixed4 source theorem in current_patch_support_velocity_pressure; mapped physical trace composition remains open:
 
 | Exact x edge | Bump center | Support side |
 |---:|---:|---|
@@ -70,10 +72,10 @@ The present current_actual_patch_background_tensor.interface uses b=a on support
 
 - [x] **CONT4f1:** original32/current-modified/internal provider inventory and the missing six-support function theorem identified.
 - [ ] **CONT4f2a:** implement a small reshape_reference adapter consuming actual_Rsh_source_join.boundary_identities, typed UT/UZ/UR/P rows and the actual common radius. Keep its135 mixed4 physical rows separate from tensor traces.
-- [ ] **CONT4f5a:** implement patch_support_velocity_pressure_mixed4_source_theorem(edge). Bind the actual radius, centers, normalized beta and all five moment programs by source hash.
-- [ ] **CONT4f5b:** establish zero one-sided gamma jets0..4 from the actual analytic flat beta limits and disjoint supports. Do not prove equality by zero-containing numerical enclosures.
-- [ ] **CONT4f5c:** prove matching partial-weight value/jets through order4 by FTC, with common zero weights at left edges and actual full weights at right edges. Preserve all nonzero cumulative histories; at71/40 use the same implicit terminal equations.
-- [ ] **CONT4f5d:** replay actual patch_mixed and raw_patch_rows on two independently defined germs and compare every UT/UZ/UR/P row j+n<=4 in x/Z and y/Z. Preserve shared P0, Am and normalized-to-physical pressure units.
+- [x] **CONT4f5a:** implement patch_support_velocity_pressure_mixed4_source_theorem(edge). Bind the actual radius, centers, normalized beta and all five moment programs by source hash.
+- [x] **CONT4f5b:** establish zero one-sided gamma jets0..4 from the actual analytic flat beta limits and disjoint supports. Do not prove equality by zero-containing numerical enclosures.
+- [x] **CONT4f5c:** prove matching partial-weight value/jets through order4 by FTC, with common zero weights at left edges and actual full weights at right edges. Preserve all nonzero cumulative histories; at71/40 use the same implicit terminal equations.
+- [x] **CONT4f5d:** replay actual patch_mixed and raw_patch_rows on two independently defined germs and compare every UT/UZ/UR/P row j+n<=4 in x/Z and y/Z. Preserve shared P0, Am and normalized-to-physical pressure units.
 - [ ] **CONT4f2–4/6:** compose the remaining original native velocity providers, current modified germs and existing pulse/outer support traces into callable physical spatial4/fixed-position time1 interfaces. Preserve exact-zero source layouts and typed core factorization.
 - [ ] **CONT4f7:** publish the completed inventory plus actual two-sided function/physical evidence. Raise a global smooth velocity gate only after all adjacent/internal/modified seams are covered.
 

@@ -1,23 +1,22 @@
-# Current handoff: physical Cartesian velocity/absolute-pressure queries (2026-10-06)
+# Current handoff: six patch source joins and whole modulation norms (2026-10-06)
 
-Implementation and source receipts: commit [2665ebf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2665ebf47e7006b546dbc9f82f536c4830f55a2b).
+Implementation and focused receipts: commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b).
 
-**CONT4e2 / LOC1–6 are implemented:** CurrentModifiedPhysicalVelocity connects actual Cartesian/log-radius/source-correlated queries to the same checked all-point locator and full33 native velocity/pressure graph. It retains every candidate/source piece, actual lambda, positive constant viscosity, native core/axis and nonzero finite Gamma heat velocity.
+**CONT4f5a–d and BOUND1a2–3/4a are implemented:** six actual patch support velocity/absolute-pressure mixed4 function joins and whole-support cutoff/original-source norm formulas for the finite-N modulation. Actual partial/full moments, the unique implicit terminal closure, analytic P0, positive mu and factored Rd amplitude are retained. Physical Cartesian queries from2665ebf4 remain available.
 
-Read [CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md](CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md) for API, exact scope and detailed next tasks. Focused stage: currentmodifiedphysicalvelocity.
+Read [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md) for formulas, receipt scope and detailed next tasks. New source kernels run directly; the controller's last admitted runtime stage remains currentmodifiedphysicalvelocity.
 
-Additional progress: commit [2dd8180d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8180d2774757e8a0c2ee88d765c2db3e5c902) installs the actual modulation derivative/shear-error formulas with explicit N dependence (conditional source norms). Read [CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md](CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md) and [CURRENT_GLOBAL_VELOCITY_INTERFACE_INVENTORY_2026_10_06.md](CURRENT_GLOBAL_VELOCITY_INTERFACE_INVENTORY_2026_10_06.md). CONT4f1 inventory is complete; six patch support velocity/absolute-pressure function joins are a concrete remaining gap. Whole common N/cones/global velocity admission remain open.
+Evidence:240 support identities plus194 mixed4/source/unit identities, three asymmetric-germ negative controls;41 whole-source norm identities and1425 independent actual derivative comparisons;351 combined working/index hashes. Read-only derivation worker: **GPT-5.6 Luna / max**.
 
-Evidence: 177 new coordinate/viscosity/source bindings, five complete physical queries plus one fresh log-radius axis query, checked constructor/API/controller/compilation and 894 working/index hashes. Original native/full33 proofs are consumed. Configured read-only next-stage scanner: **GPT-5.6 Luna / max**; its inventory is not a proof of this physical stage.
+- [x] Full33 native velocity/absolute-pressure dispatch and actual physical Cartesian/log-radius queries.
+- [x] Twelve changed interfaces, inherited analytic pressure/heat sources, six actual patch support source joins.
+- [x] Finite-N source derivative/shear formulas and actual whole-support cutoff/base norm formulas.
+- [ ] **Next CONT4f2–4/6–7:** compose all current source joins into complete physical spatial4/time1 interface exports.
+- [ ] **Next BOUND1a4b/5 and BOUND1b/BOUND2:** current graph parameter/physical-factor binding, edge correlations and independent repair/full signed tensor errors.
+- [ ] Common N/whole modified cones, actual kinetic energy, true n-dependent recursion and oscillatory/mean corrections.
+- [ ] Resolved u/v/w, independent full corrected NS residual and measured dynamics.
 
-- [x] Independent implicit repair, own moments/pressure/radial source, signed tensor/remainder and full33 tensor dispatch.
-- [x] Twelve affected mixed4 velocity/pressure interfaces and analytic pressure/full Gamma heat inheritance.
-- [x] Full33 native velocity/absolute-pressure routing and actual physical coordinate integration with lambda/nu derivative bounds.
-- [ ] **Next CONT4f2–7:** compose all global adjacent/internal velocity/pressure function interfaces and axis regularity.
-- [ ] Finite-N errors, one common N/whole modified O2/O3 cones, own physical kinetic energy and remaining original/global cones.
-- [ ] True n-dependent recursion, oscillatory/mean corrections, resolved u/v/w and full corrected NS/energy/dynamics.
-
-Function enclosures do not resolve point coefficients. Global velocity interfaces, total energy/common N/cones/recursion/NS remain open. N=10^12 remains repair-only. Tensor33/32/14, atlas14/8 and original cone15+zero exterior/17 open counts are unchanged. Preserve unrelated files; earlier sections are historical.
+Source joins and analytic norm formulas do not resolve point coefficients or admit global smooth velocity/cones. N=10^12 remains repair-only. Tensor33/32/14, primitive atlas14/8 and original cone15+zero exterior/17 open counts are unchanged. Preserve unrelated files; earlier sections are historical.
 
 ---
 

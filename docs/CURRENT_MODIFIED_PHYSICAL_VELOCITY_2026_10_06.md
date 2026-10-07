@@ -1,5 +1,7 @@
 # Actual physical velocity and absolute-pressure queries
 
+Successor: [CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md](CURRENT_PATCH_SUPPORT_AND_MODULATION_BOUNDS_2026_10_06.md), commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b), closes the six patch support source-function gap and supplies actual whole-support modulation source norms. Global physical interface exports, common N/cones and recursion remain open.
+
 Implementation and source receipts: commit [2665ebf4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2665ebf47e7006b546dbc9f82f536c4830f55a2b).
 
 ## Constructed result
@@ -123,7 +125,7 @@ Read this document and the exact source receipts before new work. The previous w
 - [ ] **CONT4f2 — Unchanged inner interfaces.** Compose actual core/bridge, both bridge, bridge/switch, both switch and reshape/restoration/patch velocity/pressure function germs through mixed4, ordinary units and actual common radius. Preserve core axis regularity and microscopic widths formally.
 - [ ] **CONT4f3 — Incoming/pulse interfaces.** Bind incoming/entrance, entrance/main, main/exit, exit/gap, gap-coordinate/end and end/flatten full velocity/absolute-pressure mixed4 identities to current selected controls/future moments. Both reciprocal coordinate charts must compare functions before bounds.
 - [ ] **CONT4f4 — Outer/heat interfaces.** Compose flatten/power/angular/entry/steep/waiting/collar/exterior mixed4 source traces. Consume actual forward absolute pressure and Gamma FTC; zero heat stress does not imply zero velocity or pressure.
-- [ ] **CONT4f5 — Internal flat supports.** Connect patch support, pulse end support and angular support germs. Confirm local flat profile plus cumulative nonzero history/pressure behavior. Only the actual shared defining functions justify a smoothness claim.
+- [x] **CONT4f5 — Internal flat source supports.** Six actual patch support mixed4 velocity/absolute-pressure source joins are proved independently in current_patch_support_velocity_pressure. Existing pulse/end/angular support proofs and current repair germs remain consumed. Global physical spatial4/time1 trace exports remain open in CONT4f6.
 - [ ] **CONT4f6 — Physical trace norms.** Once functional joins are proved, export two actual spatial4/fixed-x time1 trace sides and common bounds on whole Z and compact time. Preserve typed core factorization and exact-zero native layouts.
 - [ ] **CONT4f7 — Global scope receipt.** Publish complete interface inventory/evidence and raise a global smooth velocity/absolute-pressure gate only after no unchanged or internal seam is missing. Keep total energy, common N/admissible cones and actual recursion separate.
 
