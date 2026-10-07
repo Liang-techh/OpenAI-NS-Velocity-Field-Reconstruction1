@@ -1,18 +1,18 @@
-# Current handoff: generic shear loop implemented (2026-10-07)
+# Current handoff: own shear moment and field recovery implemented (2026-10-07)
 
-Checked implementation: [03ea3441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03ea34414d37a3373468e050c9c1459e7943542a). Formulas/API/limits/ordered tasks: [CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md](CURRENT_GENERIC_SHEAR_LOOP_2026_10_07.md).
+Checked implementation: [67b783db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67b783db67c8fa9e840474d9cf3643ba77d789ec). Formulas/API/source units/ordered tasks: [CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md](CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md).
 
-**LEFT4c2-kernel is complete.** The executable Section 11 loop handles a=4/5, signed axial shear and nonzero original Uz, preserves exact mean shear, computes zero-mean velocity primitives and local finite-N formulas, and supplies all five changed moment densities. The same current strict left collar and outer relaxed-input receipts are bound.
+**LEFT4c3-backend is implemented:** changed five-history Duhamel transport, preserved quiet-gap memory, same P0, divergence-free radial recovery and full signed stress. Velocity/pressure/primitive ordinary rows reach four; stress rows reach three, with axial jets and exactly one physical prefactor shift. Saved original O2 source covers are attached in common S=Pstar units.
 
-- [x] Original reference/slope/axial/buffer full relaxed input.
-- [x] Current strict inner exit attachment and positive left support.
-- [x] Generic loop/phase/primitives, local finite-N velocity and full nonzero-source moment increments.
-- [ ] **LEFT4c1 / c2-current:** assemble full chart packets and remaining relaxed gates; install the loop against actual current functions and slow derivatives.
-- [ ] **LEFT4c3:** own cumulative moments, pressure and divergence-free radial recovery.
-- [ ] **LEFT4d:** new-family independent five-bump repair, unique controls and full new finite-N bound.
-- [ ] **LEFT4e / CONT / ENERGY / REC / WAVE / PHYS:** global cone, complete interfaces/energy, genuine coefficient recursion, waves and corrected NS/dynamics.
+- [x] Original outer relaxed input and strict current inner support.
+- [x] Generic Section 11 loop/phase/zero-mean primitives.
+- [x] Own moment/pressure/radial/stress recovery and derivative backend; current original O2 unit conversion.
+- [ ] **LEFT4c1 / c2-current:** complete typed upstream source packets, remaining relaxed bounds/right edge, then install actual generic modified functions and derivative covers.
+- [ ] **LEFT4c3-current:** accumulate their actual changed histories and export the recovered current tensor through every seam/gap.
+- [ ] **LEFT4d / e:** new-family terminal repair, unique controls, full finite-N bound and global cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** interfaces/energy, actual recursive coefficients/smooth sum, stress-canceling waves and corrected NS/dynamics.
 
-The paper q cutoff already vanishes near strict edges. Do not add an independent spatial amplitude taper where kappa<=2. The old N>=68,533,403 remains scoped to the old changed-source support. This engine is a point-evaluation implementation with conditional whole-box input requirements, not an installed global physical field. Focused scalar checks passed; 945 indexed hashes matched. Read-only review: GPT-5.6 Luna / max. Global/source/repair/N/recursion gates and historical registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
+The interval transport requires entire-cell source covers; cached ranges are not point values. Quiet local zero modulation does not remove incoming moment/pressure defects. Current generic-loop installation, changed full-family moments, repair/common N and global gates remain false. Scoped old N>=68,533,403 and registry counts are unchanged. Focused source/transport/derivative checks passed; 950 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Full goal remains active. Earlier sections below are historical.
 
 ---
 

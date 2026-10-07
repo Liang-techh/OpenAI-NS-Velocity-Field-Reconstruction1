@@ -1,5 +1,7 @@
 # Executable generic Section 11 shear loop and velocity primitives
 
+Latest successor: [CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md](CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md), implementation [67b783db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67b783db67c8fa9e840474d9cf3643ba77d789ec). Own-history transport and dependent-field derivative recovery are now implemented; full current generic-loop source/changed histories/repair/new N remain open.
+
 Checked implementation: [03ea3441](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03ea34414d37a3373468e050c9c1459e7943542a). **LEFT4c2-kernel is complete:** a callable generic loop now handles the early a=4/5 input, signed axial shear and nonzero original axial velocity. It computes the phase reparametrization, zero-mean primitives and actual local finite-N velocity/shear formulas. The complete current chart packet, integrated changed moments, independent repair and new common N remain open. The long-term goal is active; this is progress in admissible-stress construction, not coefficient recursion.
 
 ## Implemented construction
