@@ -6,12 +6,14 @@ Implementation and source receipts: commit [2665ebf4](https://github.com/Liang-t
 
 Read [CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md](CURRENT_MODIFIED_PHYSICAL_VELOCITY_2026_10_06.md) for API, exact scope and detailed next tasks. Focused stage: currentmodifiedphysicalvelocity.
 
+Additional progress: commit [2dd8180d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8180d2774757e8a0c2ee88d765c2db3e5c902) installs the actual modulation derivative/shear-error formulas with explicit N dependence (conditional source norms). Read [CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md](CURRENT_O3_FREQUENCY_MAJORANTS_2026_10_06.md) and [CURRENT_GLOBAL_VELOCITY_INTERFACE_INVENTORY_2026_10_06.md](CURRENT_GLOBAL_VELOCITY_INTERFACE_INVENTORY_2026_10_06.md). CONT4f1 inventory is complete; six patch support velocity/absolute-pressure function joins are a concrete remaining gap. Whole common N/cones/global velocity admission remain open.
+
 Evidence: 177 new coordinate/viscosity/source bindings, five complete physical queries plus one fresh log-radius axis query, checked constructor/API/controller/compilation and 894 working/index hashes. Original native/full33 proofs are consumed. Configured read-only next-stage scanner: **GPT-5.6 Luna / max**; its inventory is not a proof of this physical stage.
 
 - [x] Independent implicit repair, own moments/pressure/radial source, signed tensor/remainder and full33 tensor dispatch.
 - [x] Twelve affected mixed4 velocity/pressure interfaces and analytic pressure/full Gamma heat inheritance.
 - [x] Full33 native velocity/absolute-pressure routing and actual physical coordinate integration with lambda/nu derivative bounds.
-- [ ] **Next CONT4f1–7:** compose all global adjacent/internal velocity/pressure function interfaces and axis regularity.
+- [ ] **Next CONT4f2–7:** compose all global adjacent/internal velocity/pressure function interfaces and axis regularity.
 - [ ] Finite-N errors, one common N/whole modified O2/O3 cones, own physical kinetic energy and remaining original/global cones.
 - [ ] True n-dependent recursion, oscillatory/mean corrections, resolved u/v/w and full corrected NS/energy/dynamics.
 
