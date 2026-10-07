@@ -1,19 +1,18 @@
-# Current handoff: radial and absolute-pressure error bounds (2026-10-06)
+# Current handoff: completed tensor error bounds (2026-10-06)
 
-Checked implementation: [d446dc0e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d446dc0ecc8756be088225c162c18bd9b9dbc431). Detailed API and next agent tasks: [CURRENT_RADIAL_PRESSURE_ERROR_BOUNDS_2026_10_06.md](CURRENT_RADIAL_PRESSURE_ERROR_BOUNDS_2026_10_06.md).
+Checked implementation: [ce9268ce](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce9268ce120ebabdcf46e1ca64ed7ed82d38d95e). Detailed API and next agent tasks: [CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md](CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md).
 
-**BOUND1b1c and BOUND1b2c are implemented for current changed native O2/O3 and quiet repair sources.** The provider returns all five signed history enclosures, own-M radial and own-Cp absolute-pressure error mixed jets through logR4/Z5 for variable N. It retains separate kineticN^-2, the original axis datum, actual mu/delta and the radial sqrtR shift exactly once.
+**BOUND2a is implemented for the changed current O2/O3 and quiet repair sources.** Variable-N error bounds now cover the original full stress, completed diagonal, divergence, three-component remainder and Cartesian momentum decomposition. Original nonzero radial/moment cross terms and the cumulative absolute pressure remain. Whole signed cone admission remains open.
 
-Pressure is the cumulative Cp value; its first logR derivative is the swirl cross-plus-square term. They are distinguished by the API and checker. Quiet fixed-unit transport is bound to the original source; all error mixed rows vanish after the last repair bump. Factored native radius/amplitude logs are returned without exponentiating giant scales.
+The provider restores normalized derivatives from physical R-prefactor grids before applying each recovery shift once. Its physical-time wrapper uses the exact lambda^2*(1-Z^2)=tau relation and requires strict |Z|<1. Checked whole-source baseline packets are used; fixed-N modified values and obsolete full33 views are not inputs.
 
-- [x] Uniform implicit repair controls/Jacobian, partial/remaining defect strips and quiet primitive reserve.
-- [x] **BOUND1b1c / BOUND1b2c:** upstream mixed history bounds and native radial/absolute-pressure error recovery.
-- [ ] **BOUND2a–c:** completed signed tensor errors, pressure/radial/diagonal terms and both directional/alignment cone margins.
-- [ ] **BOUND3 / COMMONN:** one sufficient finite N across all completed cone conditions.
+- [x] **BOUND1 / BOUND2a:** uniform repair, history/radial/pressure jets and completed tensor/remainder error bounds.
+- [ ] **BOUND2b / BOUND2c:** signed directional/alignment inequalities on both modulation tapers and all quiet repair strips.
+- [ ] **BOUND3 / COMMONN:** one sufficient finite N for all completed cone constraints.
 - [ ] **CONT4f2b–4/6a4b/6b/7:** remaining physical interface providers and global composition.
-- [ ] Finite energy, actual n-dependent recursion, oscillatory/mean correction, resolved physical velocity and full corrected Cartesian NS/dynamics.
+- [ ] Finite energy, actual n-dependent recursion, oscillatory/mean correction, resolved u/v/w and full corrected Cartesian NS/dynamics.
 
-Focused check:61 exact source identities,40 original IntervalTaylor fixtures and8400 mixed comparisons;9 queries,6 guards,917 working/index hashes. Read-only worker: **GPT-5.6 Luna / max**. No completed tensor/global/common-N/energy/recursion/NS gate is promoted. Native error bounds are inputs to full tensor analysis, not its certificate. Keep the full persistent goal active. Earlier sections below are historical.
+Focused evidence: 79 exact identities, 10 signed fixtures, 1720 native/1720 physical comparisons. Read-only worker: GPT-5.6 Luna / max. No signed whole-cone, common-N, global/energy/recursion/NS gate is promoted. Full goal remains active. Earlier sections below are historical.
 
 ---
 

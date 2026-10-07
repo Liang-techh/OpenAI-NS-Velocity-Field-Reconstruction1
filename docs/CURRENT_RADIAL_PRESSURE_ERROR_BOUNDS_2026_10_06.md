@@ -1,5 +1,7 @@
 # Own-moment radial and absolute-pressure error jets for variable N
 
+Latest successor: [CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md](CURRENT_COMPLETED_TENSOR_ERROR_BOUNDS_2026_10_06.md), implementation [ce9268ce](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce9268ce120ebabdcf46e1ca64ed7ed82d38d95e). BOUND2a completed tensor error bounds are implemented. Signed cone/common-N/global/recursion gates remain open.
+
 Checked implementation: [d446dc0e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d446dc0ecc8756be088225c162c18bd9b9dbc431). **BOUND1b1c and BOUND1b2c are implemented in the changed native O2/O3 and quiet repair charts.** The provider supplies the missing derivative/error inputs for subsequent signed tensor estimates. Completed stress cones and actual coefficient recursion remain open.
 
 ## APIs and scope
@@ -41,7 +43,7 @@ Files use prefix lei_ren_part1_paper_compliant_current_O3_recovered_error_majora
 
 - [x] **BOUND1b1c:** upstream all-prefix signed history enclosures and mixed logR4/Z5 error jets, retaining separate kineticN^-2 and swirlN^-1 contributions.
 - [x] **BOUND1b2c:** own-M radial and own-Cp cumulative absolute-pressure mixed error jets in the current changed native charts, same pressure datum and single radial factor shift.
-- [ ] **BOUND2a:** bind the actual completed O2/O3 tensor recovery assignments to these error jets. Keep all original and modified pressure/radial sectors and source correlations. Publish explicit diagonal, off-diagonal, divergence/residual error formulas rather than bounding only the primitive shear.
+- [x] **BOUND2a (error bounds):** bind the actual completed O2/O3 tensor recovery assignments to these error jets. Keep all original and modified pressure/radial sectors and source correlations. Publish explicit diagonal, off-diagonal, divergence/residual error formulas rather than bounding only the primitive shear.
 - [ ] **BOUND2b:** carry the accepted correlated primitive floor through both directional vector inequalities and alignment conditions on both flat tapers. Preserve local chi/chi_y/phase dependence where the source floor vanishes. Check endpoints as source identities; do not divide by a cutoff that is zero there.
 - [ ] **BOUND2c:** bound completed signed tensor errors on the quiet repair band relative to the accepted a-2>=3mu/2 reserve. Include cumulative pressure values and their gradient, own-M radial derivatives, C versus C², all cross/kinetic terms, actual mu/delta and logPstar/logAd factors.
 - [ ] **BOUND3 / COMMONN:** combine every scalar/repair/pressure/radial/diagonal/direction/alignment constraint into one sufficient finite integer N. Provide each inequality and its source domain. The repair27,303,666 and quiet primitive68,533,403 thresholds alone are insufficient.
