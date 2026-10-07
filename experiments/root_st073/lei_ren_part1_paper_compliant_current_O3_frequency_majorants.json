@@ -1,0 +1,338 @@
+{
+  "exact_actual_source_frequency_majorant_theorem": {
+    "identities": {
+      "actual_profile_program_n": true,
+      "actual_profile_program_phase": true,
+      "actual_profile_program_chi": true,
+      "actual_profile_program_sin4": true,
+      "actual_profile_program_cos2": true,
+      "actual_profile_program_square": true,
+      "actual_profile_program_Arows": true,
+      "actual_profile_program_A": true,
+      "actual_profile_program_G": true,
+      "actual_profile_program_Enew": true,
+      "actual_profile_program_grows": true,
+      "actual_profile_program_x": true,
+      "actual_profile_program_mag": true,
+      "actual_profile_program_dgrows": true,
+      "actual_profile_program_einc": true,
+      "actual_profile_program_Vnew": true,
+      "actual_profile_program_slowA": true,
+      "actual_profile_program_slowB_over_E": true,
+      "actual_profile_program_aexcess": true,
+      "actual_profile_program_b": true,
+      "actual_ordinary_product_derivative_0": true,
+      "actual_ordinary_product_derivative_1": true,
+      "actual_ordinary_product_derivative_2": true,
+      "actual_ordinary_product_derivative_3": true,
+      "actual_ordinary_product_derivative_4": true,
+      "actual_cutoff_width_and_ordinary_derivative_0": true,
+      "actual_cutoff_width_and_ordinary_derivative_1": true,
+      "actual_cutoff_width_and_ordinary_derivative_2": true,
+      "actual_cutoff_width_and_ordinary_derivative_3": true,
+      "actual_cutoff_width_and_ordinary_derivative_4": true,
+      "actual_phase_derivative_h4_0": true,
+      "actual_phase_derivative_h4_1": true,
+      "actual_phase_derivative_h4_2": true,
+      "actual_phase_derivative_h4_3": true,
+      "actual_phase_derivative_h4_4": true,
+      "actual_phase_derivative_h2_0": true,
+      "actual_phase_derivative_h2_1": true,
+      "actual_phase_derivative_h2_2": true,
+      "actual_phase_derivative_h2_3": true,
+      "actual_phase_derivative_h2_4": true,
+      "independent_exponential_ordinary_jet_0": true,
+      "independent_exponential_ordinary_jet_1": true,
+      "independent_exponential_ordinary_jet_2": true,
+      "independent_exponential_ordinary_jet_3": true,
+      "independent_exponential_ordinary_jet_4": true,
+      "actual_theta_loop_error": true,
+      "actual_axial_loop_error": true,
+      "actual_swirl_increment_N_growth_order_0": true,
+      "actual_swirl_increment_N_growth_order_1": true,
+      "actual_swirl_increment_N_growth_order_2": true,
+      "actual_swirl_increment_N_growth_order_3": true,
+      "actual_swirl_increment_N_growth_order_4": true,
+      "actual_axial_N_growth_order_0": true,
+      "actual_axial_N_growth_order_1": true,
+      "actual_axial_N_growth_order_2": true,
+      "actual_axial_N_growth_order_3": true,
+      "actual_axial_N_growth_order_4": true,
+      "exp_increment_bound_uses_exact_real_integral_not_subtraction": true,
+      "positive_triangle_recurrence_modified_theta_over_Pstar_majorants": true,
+      "positive_triangle_recurrence_theta_increment_over_Pstar_majorants": true,
+      "positive_triangle_recurrence_modified_axial_over_Pstar_majorants": true
+    },
+    "passed": true,
+    "source_bindings": {
+      "current_O3_finite_frequency_profiles.profile.n": true,
+      "current_O3_finite_frequency_profiles.profile.phase": true,
+      "current_O3_finite_frequency_profiles.profile.chi": true,
+      "current_O3_finite_frequency_profiles.profile.sin4": true,
+      "current_O3_finite_frequency_profiles.profile.cos2": true,
+      "current_O3_finite_frequency_profiles.profile.square": true,
+      "current_O3_finite_frequency_profiles.profile.Arows": true,
+      "current_O3_finite_frequency_profiles.profile.A": true,
+      "current_O3_finite_frequency_profiles.profile.G": true,
+      "current_O3_finite_frequency_profiles.profile.Enew": true,
+      "current_O3_finite_frequency_profiles.profile.grows": true,
+      "current_O3_finite_frequency_profiles.profile.x": true,
+      "current_O3_finite_frequency_profiles.profile.mag": true,
+      "current_O3_finite_frequency_profiles.profile.dgrows": true,
+      "current_O3_finite_frequency_profiles.profile.einc": true,
+      "current_O3_finite_frequency_profiles.profile.Vnew": true,
+      "current_O3_finite_frequency_profiles.profile.slowA": true,
+      "current_O3_finite_frequency_profiles.profile.slowB_over_E": true,
+      "current_O3_finite_frequency_profiles.profile.aexcess": true,
+      "current_O3_finite_frequency_profiles.profile.b": true
+    },
+    "input_hashes": {
+      "lei_ren_part1_paper_compliant_current_O3_finite_frequency_profiles.py": "91e81e322669afdbfa8c1070c6ce34a9a58aa1c1929d601638a31a6dca894494",
+      "lei_ren_part1_paper_compliant_collar_Gamma_C4.py": "48611905878f81a77b39ceb604bc3e97378c86d941b3fddbaf7c088c5ab49833",
+      "lei_ren_part1_paper_compliant_steep_entry_stress_C3.py": "e8f18307a1e76d14b98b01f82bc1c1af456a95eb8ee5e613830f9ed0c80083bb"
+    },
+    "conditional_triangle_bound_rules": [
+      "ordinary Leibniz with positive binomial coefficients",
+      "|sin|<=1 and |cos|<=1 at every real actual phase",
+      "|exp(h)-1|<=|h|*exp(|h|), from h*integral_0^1 exp(r*h)dr",
+      "positive Bell recurrence for ordinary derivatives of exp(h)"
+    ],
+    "conditional_N_growth_degrees_after_exponential_factor": {
+      "swirl_increment": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "axial": [
+        -1,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "source_norm_inputs_not_evaluated_or_whole_domain_certified": true,
+    "repair_tensor_pressure_common_N_cones_and_coefficient_recursion_not_certified": true
+  },
+  "conditional_symbolic_envelopes": {
+    "logR_ordinary_derivative_order": 4,
+    "axial_ordinary_derivative_order": 5,
+    "actual_mu": "mu",
+    "finite_integer_N": "N",
+    "cutoff_derivative_majorants": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "original_theta_over_Pstar_derivative_majorants": [
+      [
+        "F0_0",
+        "F0_1",
+        "F0_2",
+        "F0_3",
+        "F0_4",
+        "F0_5"
+      ],
+      [
+        "F1_0",
+        "F1_1",
+        "F1_2",
+        "F1_3",
+        "F1_4",
+        "F1_5"
+      ],
+      [
+        "F2_0",
+        "F2_1",
+        "F2_2",
+        "F2_3",
+        "F2_4",
+        "F2_5"
+      ],
+      [
+        "F3_0",
+        "F3_1",
+        "F3_2",
+        "F3_3",
+        "F3_4",
+        "F3_5"
+      ],
+      [
+        "F4_0",
+        "F4_1",
+        "F4_2",
+        "F4_3",
+        "F4_4",
+        "F4_5"
+      ]
+    ],
+    "original_log_theta_derivative_majorant": "L1",
+    "exponent_A_over_N_derivative_majorants": [
+      "C0**2*mu/(8*pi*N)",
+      "mu*(4*pi*C0**2*N + 2*C0*C1)/(8*pi*N)",
+      "mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N)",
+      "mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N)",
+      "mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N)"
+    ],
+    "exponential_derivative_majorants": [
+      "exp(C0**2*mu/(8*pi*N))",
+      "mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+      "(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))",
+      "(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))",
+      "(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))"
+    ],
+    "exponential_increment_majorants": [
+      "C0**2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+      "mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+      "(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))",
+      "(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))",
+      "(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N))"
+    ],
+    "modified_theta_over_Pstar_majorants": [
+      [
+        "F0_0*exp(C0**2*mu/(8*pi*N))",
+        "F0_1*exp(C0**2*mu/(8*pi*N))",
+        "F0_2*exp(C0**2*mu/(8*pi*N))",
+        "F0_3*exp(C0**2*mu/(8*pi*N))",
+        "F0_4*exp(C0**2*mu/(8*pi*N))",
+        "F0_5*exp(C0**2*mu/(8*pi*N))"
+      ],
+      [
+        "F0_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_0*exp(C0**2*mu/(8*pi*N))",
+        "F0_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_1*exp(C0**2*mu/(8*pi*N))",
+        "F0_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_2*exp(C0**2*mu/(8*pi*N))",
+        "F0_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_3*exp(C0**2*mu/(8*pi*N))",
+        "F0_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_4*exp(C0**2*mu/(8*pi*N))",
+        "F0_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F1_5*exp(C0**2*mu/(8*pi*N))"
+      ],
+      [
+        "F0_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_0*exp(C0**2*mu/(8*pi*N))",
+        "F0_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_1*exp(C0**2*mu/(8*pi*N))",
+        "F0_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_2*exp(C0**2*mu/(8*pi*N))",
+        "F0_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_3*exp(C0**2*mu/(8*pi*N))",
+        "F0_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_4*exp(C0**2*mu/(8*pi*N))",
+        "F0_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N) + F2_5*exp(C0**2*mu/(8*pi*N))"
+      ],
+      [
+        "F0_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_0*exp(C0**2*mu/(8*pi*N))",
+        "F0_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_1*exp(C0**2*mu/(8*pi*N))",
+        "F0_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_2*exp(C0**2*mu/(8*pi*N))",
+        "F0_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_3*exp(C0**2*mu/(8*pi*N))",
+        "F0_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_4*exp(C0**2*mu/(8*pi*N))",
+        "F0_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F3_5*exp(C0**2*mu/(8*pi*N))"
+      ],
+      [
+        "F0_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_0*exp(C0**2*mu/(8*pi*N))",
+        "F0_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_1*exp(C0**2*mu/(8*pi*N))",
+        "F0_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_2*exp(C0**2*mu/(8*pi*N))",
+        "F0_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_3*exp(C0**2*mu/(8*pi*N))",
+        "F0_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_4*exp(C0**2*mu/(8*pi*N))",
+        "F0_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N) + F4_5*exp(C0**2*mu/(8*pi*N))"
+      ]
+    ],
+    "theta_increment_over_Pstar_majorants": [
+      [
+        "C0**2*F0_0*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F0_1*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F0_2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F0_3*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F0_4*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F0_5*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N)"
+      ],
+      [
+        "C0**2*F1_0*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F1_1*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F1_2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F1_3*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F1_4*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F1_5*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)"
+      ],
+      [
+        "C0**2*F2_0*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)",
+        "C0**2*F2_1*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)",
+        "C0**2*F2_2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)",
+        "C0**2*F2_3*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)",
+        "C0**2*F2_4*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)",
+        "C0**2*F2_5*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F1_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(4*pi*N)"
+      ],
+      [
+        "C0**2*F3_0*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F3_1*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F3_2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F3_3*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F3_4*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)",
+        "C0**2*F3_5*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F1_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 3*F2_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(8*pi*N)"
+      ],
+      [
+        "C0**2*F4_0*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_0*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_0*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_0*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)",
+        "C0**2*F4_1*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_1*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_1*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_1*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)",
+        "C0**2*F4_2*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_2*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_2*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_2*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)",
+        "C0**2*F4_3*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_3*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_3*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_3*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)",
+        "C0**2*F4_4*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_4*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_4*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_4*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)",
+        "C0**2*F4_5*mu*exp(C0**2*mu/(8*pi*N))/(8*pi*N) + F0_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))/(8*pi*N) + 3*mu*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu*(256*pi**4*C0**2*N**4 + 512*pi**3*C0*C1*N**3 + 2*C0*C4 + 8*C1*C3 + 6*C2**2 + 16*pi**2*N**2*(12*C0*C2 + 12*C1**2) + 4*pi*N*(8*C0*C3 + 24*C1*C2))/(8*pi*N) + 3*mu**2*(4*pi*C0**2*N + 2*C0*C1)*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 4*F1_5*(mu*(4*pi*C0**2*N + 2*C0*C1)*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))/(8*pi*N) + mu*(64*pi**3*C0**2*N**3 + 96*pi**2*C0*C1*N**2 + 2*C0*C3 + 6*C1*C2 + 4*pi*N*(6*C0*C2 + 6*C1**2))/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(32*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + 6*F2_5*(mu*(16*pi**2*C0**2*N**2 + 16*pi*C0*C1*N + 2*C0*C2 + 2*C1**2)/(8*pi*N) + mu**2*(4*pi*C0**2*N + 2*C0*C1)**2/(64*pi**2*N**2))*exp(C0**2*mu/(8*pi*N)) + F3_5*mu*(4*pi*C0**2*N + 2*C0*C1)*exp(C0**2*mu/(8*pi*N))/(2*pi*N)"
+      ]
+    ],
+    "modified_axial_over_Pstar_majorants": [
+      [
+        "C0*F0_0*sqrt(mu)/(2*pi*N)",
+        "C0*F0_1*sqrt(mu)/(2*pi*N)",
+        "C0*F0_2*sqrt(mu)/(2*pi*N)",
+        "C0*F0_3*sqrt(mu)/(2*pi*N)",
+        "C0*F0_4*sqrt(mu)/(2*pi*N)",
+        "C0*F0_5*sqrt(mu)/(2*pi*N)"
+      ],
+      [
+        "sqrt(mu)*(2*pi*C0*F0_0*N + C0*F1_0 + C1*F0_0)/(2*pi*N)",
+        "sqrt(mu)*(2*pi*C0*F0_1*N + C0*F1_1 + C1*F0_1)/(2*pi*N)",
+        "sqrt(mu)*(2*pi*C0*F0_2*N + C0*F1_2 + C1*F0_2)/(2*pi*N)",
+        "sqrt(mu)*(2*pi*C0*F0_3*N + C0*F1_3 + C1*F0_3)/(2*pi*N)",
+        "sqrt(mu)*(2*pi*C0*F0_4*N + C0*F1_4 + C1*F0_4)/(2*pi*N)",
+        "sqrt(mu)*(2*pi*C0*F0_5*N + C0*F1_5 + C1*F0_5)/(2*pi*N)"
+      ],
+      [
+        "sqrt(mu)*(4*pi**2*C0*F0_0*N**2 + 4*pi*C0*F1_0*N + C0*F2_0 + 4*pi*C1*F0_0*N + 2*C1*F1_0 + C2*F0_0)/(2*pi*N)",
+        "sqrt(mu)*(4*pi**2*C0*F0_1*N**2 + 4*pi*C0*F1_1*N + C0*F2_1 + 4*pi*C1*F0_1*N + 2*C1*F1_1 + C2*F0_1)/(2*pi*N)",
+        "sqrt(mu)*(4*pi**2*C0*F0_2*N**2 + 4*pi*C0*F1_2*N + C0*F2_2 + 4*pi*C1*F0_2*N + 2*C1*F1_2 + C2*F0_2)/(2*pi*N)",
+        "sqrt(mu)*(4*pi**2*C0*F0_3*N**2 + 4*pi*C0*F1_3*N + C0*F2_3 + 4*pi*C1*F0_3*N + 2*C1*F1_3 + C2*F0_3)/(2*pi*N)",
+        "sqrt(mu)*(4*pi**2*C0*F0_4*N**2 + 4*pi*C0*F1_4*N + C0*F2_4 + 4*pi*C1*F0_4*N + 2*C1*F1_4 + C2*F0_4)/(2*pi*N)",
+        "sqrt(mu)*(4*pi**2*C0*F0_5*N**2 + 4*pi*C0*F1_5*N + C0*F2_5 + 4*pi*C1*F0_5*N + 2*C1*F1_5 + C2*F0_5)/(2*pi*N)"
+      ],
+      [
+        "sqrt(mu)*(8*pi**3*C0*F0_0*N**3 + 12*pi**2*C0*F1_0*N**2 + 6*pi*C0*F2_0*N + C0*F3_0 + 12*pi**2*C1*F0_0*N**2 + 12*pi*C1*F1_0*N + 3*C1*F2_0 + 6*pi*C2*F0_0*N + 3*C2*F1_0 + C3*F0_0)/(2*pi*N)",
+        "sqrt(mu)*(8*pi**3*C0*F0_1*N**3 + 12*pi**2*C0*F1_1*N**2 + 6*pi*C0*F2_1*N + C0*F3_1 + 12*pi**2*C1*F0_1*N**2 + 12*pi*C1*F1_1*N + 3*C1*F2_1 + 6*pi*C2*F0_1*N + 3*C2*F1_1 + C3*F0_1)/(2*pi*N)",
+        "sqrt(mu)*(8*pi**3*C0*F0_2*N**3 + 12*pi**2*C0*F1_2*N**2 + 6*pi*C0*F2_2*N + C0*F3_2 + 12*pi**2*C1*F0_2*N**2 + 12*pi*C1*F1_2*N + 3*C1*F2_2 + 6*pi*C2*F0_2*N + 3*C2*F1_2 + C3*F0_2)/(2*pi*N)",
+        "sqrt(mu)*(8*pi**3*C0*F0_3*N**3 + 12*pi**2*C0*F1_3*N**2 + 6*pi*C0*F2_3*N + C0*F3_3 + 12*pi**2*C1*F0_3*N**2 + 12*pi*C1*F1_3*N + 3*C1*F2_3 + 6*pi*C2*F0_3*N + 3*C2*F1_3 + C3*F0_3)/(2*pi*N)",
+        "sqrt(mu)*(8*pi**3*C0*F0_4*N**3 + 12*pi**2*C0*F1_4*N**2 + 6*pi*C0*F2_4*N + C0*F3_4 + 12*pi**2*C1*F0_4*N**2 + 12*pi*C1*F1_4*N + 3*C1*F2_4 + 6*pi*C2*F0_4*N + 3*C2*F1_4 + C3*F0_4)/(2*pi*N)",
+        "sqrt(mu)*(8*pi**3*C0*F0_5*N**3 + 12*pi**2*C0*F1_5*N**2 + 6*pi*C0*F2_5*N + C0*F3_5 + 12*pi**2*C1*F0_5*N**2 + 12*pi*C1*F1_5*N + 3*C1*F2_5 + 6*pi*C2*F0_5*N + 3*C2*F1_5 + C3*F0_5)/(2*pi*N)"
+      ],
+      [
+        "sqrt(mu)*(16*pi**4*C0*F0_0*N**4 + 32*pi**3*C0*F1_0*N**3 + 24*pi**2*C0*F2_0*N**2 + 8*pi*C0*F3_0*N + C0*F4_0 + 32*pi**3*C1*F0_0*N**3 + 48*pi**2*C1*F1_0*N**2 + 24*pi*C1*F2_0*N + 4*C1*F3_0 + 24*pi**2*C2*F0_0*N**2 + 24*pi*C2*F1_0*N + 6*C2*F2_0 + 8*pi*C3*F0_0*N + 4*C3*F1_0 + C4*F0_0)/(2*pi*N)",
+        "sqrt(mu)*(16*pi**4*C0*F0_1*N**4 + 32*pi**3*C0*F1_1*N**3 + 24*pi**2*C0*F2_1*N**2 + 8*pi*C0*F3_1*N + C0*F4_1 + 32*pi**3*C1*F0_1*N**3 + 48*pi**2*C1*F1_1*N**2 + 24*pi*C1*F2_1*N + 4*C1*F3_1 + 24*pi**2*C2*F0_1*N**2 + 24*pi*C2*F1_1*N + 6*C2*F2_1 + 8*pi*C3*F0_1*N + 4*C3*F1_1 + C4*F0_1)/(2*pi*N)",
+        "sqrt(mu)*(16*pi**4*C0*F0_2*N**4 + 32*pi**3*C0*F1_2*N**3 + 24*pi**2*C0*F2_2*N**2 + 8*pi*C0*F3_2*N + C0*F4_2 + 32*pi**3*C1*F0_2*N**3 + 48*pi**2*C1*F1_2*N**2 + 24*pi*C1*F2_2*N + 4*C1*F3_2 + 24*pi**2*C2*F0_2*N**2 + 24*pi*C2*F1_2*N + 6*C2*F2_2 + 8*pi*C3*F0_2*N + 4*C3*F1_2 + C4*F0_2)/(2*pi*N)",
+        "sqrt(mu)*(16*pi**4*C0*F0_3*N**4 + 32*pi**3*C0*F1_3*N**3 + 24*pi**2*C0*F2_3*N**2 + 8*pi*C0*F3_3*N + C0*F4_3 + 32*pi**3*C1*F0_3*N**3 + 48*pi**2*C1*F1_3*N**2 + 24*pi*C1*F2_3*N + 4*C1*F3_3 + 24*pi**2*C2*F0_3*N**2 + 24*pi*C2*F1_3*N + 6*C2*F2_3 + 8*pi*C3*F0_3*N + 4*C3*F1_3 + C4*F0_3)/(2*pi*N)",
+        "sqrt(mu)*(16*pi**4*C0*F0_4*N**4 + 32*pi**3*C0*F1_4*N**3 + 24*pi**2*C0*F2_4*N**2 + 8*pi*C0*F3_4*N + C0*F4_4 + 32*pi**3*C1*F0_4*N**3 + 48*pi**2*C1*F1_4*N**2 + 24*pi*C1*F2_4*N + 4*C1*F3_4 + 24*pi**2*C2*F0_4*N**2 + 24*pi*C2*F1_4*N + 6*C2*F2_4 + 8*pi*C3*F0_4*N + 4*C3*F1_4 + C4*F0_4)/(2*pi*N)",
+        "sqrt(mu)*(16*pi**4*C0*F0_5*N**4 + 32*pi**3*C0*F1_5*N**3 + 24*pi**2*C0*F2_5*N**2 + 8*pi*C0*F3_5*N + C0*F4_5 + 32*pi**3*C1*F0_5*N**3 + 48*pi**2*C1*F1_5*N**2 + 24*pi*C1*F2_5*N + 4*C1*F3_5 + 24*pi**2*C2*F0_5*N**2 + 24*pi*C2*F1_5*N + 6*C2*F2_5 + 8*pi*C3*F0_5*N + 4*C3*F1_5 + C4*F0_5)/(2*pi*N)"
+      ]
+    ],
+    "theta_shear_error_vs_same_periodic_loop_upper": "C0*C1*mu/(2*pi*N)",
+    "axial_shear_error_vs_same_periodic_loop_upper": "(C0**3*mu**(3/2)/(4*pi) + sqrt(mu)*(C0*L1 + C1)/pi)*exp(C0**2*mu/(8*pi*N))/N",
+    "shear_error_bound_is_uniform_in_actual_phase": true,
+    "source_norm_inputs_are_conditional_not_certified_whole_domain": true,
+    "independent_repair_pressure_tensor_error_common_N_cones_remain_open": true
+  },
+  "conditional_actual_modulation_derivative_envelopes_available": true,
+  "actual_whole_domain_norm_inputs_certified": false,
+  "actual_independent_repair_envelopes_installed": false,
+  "current_common_cone_frequency_N_certified": false,
+  "current_modified_whole_cones_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_current_O3_finite_frequency_profiles.py": "91e81e322669afdbfa8c1070c6ce34a9a58aa1c1929d601638a31a6dca894494",
+    "lei_ren_part1_paper_compliant_collar_Gamma_C4.py": "48611905878f81a77b39ceb604bc3e97378c86d941b3fddbaf7c088c5ab49833",
+    "lei_ren_part1_paper_compliant_steep_entry_stress_C3.py": "e8f18307a1e76d14b98b01f82bc1c1af456a95eb8ee5e613830f9ed0c80083bb",
+    "lei_ren_part1_paper_compliant_current_O3_frequency_majorants.py": "89ac6d69e5a87122e31cc7f8fcd32853235f29ff028a916cdf6df3c75f78193b"
+  }
+}

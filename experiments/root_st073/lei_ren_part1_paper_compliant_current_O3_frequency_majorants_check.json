@@ -1,0 +1,36 @@
+{
+  "all_passed": true,
+  "exact_source_frequency_identities": 61,
+  "independent_synthetic_derivative_and_shear_comparisons": 276,
+  "synthetic_cases_are_not_actual_whole_domain_norm_certification": true,
+  "rejected_invalid_or_N_dependent_inputs": 6,
+  "conditional_N_growth_degrees": {
+    "swirl_increment": [
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "axial": [
+      -1,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "conditional_actual_modulation_derivative_envelopes_available": true,
+  "actual_whole_domain_norm_inputs_certified": false,
+  "actual_independent_repair_envelopes_installed": false,
+  "current_common_cone_frequency_N_certified": false,
+  "current_modified_whole_cones_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_current_O3_finite_frequency_profiles.py": "91e81e322669afdbfa8c1070c6ce34a9a58aa1c1929d601638a31a6dca894494",
+    "lei_ren_part1_paper_compliant_collar_Gamma_C4.py": "48611905878f81a77b39ceb604bc3e97378c86d941b3fddbaf7c088c5ab49833",
+    "lei_ren_part1_paper_compliant_steep_entry_stress_C3.py": "e8f18307a1e76d14b98b01f82bc1c1af456a95eb8ee5e613830f9ed0c80083bb",
+    "lei_ren_part1_paper_compliant_current_O3_frequency_majorants.py": "89ac6d69e5a87122e31cc7f8fcd32853235f29ff028a916cdf6df3c75f78193b",
+    "lei_ren_part1_paper_compliant_current_O3_frequency_majorants.json": "2c7acb4a14d6ff605eff8828e0e1868257aaa244f25afd48b6ff17fe28fda596",
+    "lei_ren_part1_paper_compliant_current_O3_frequency_majorants_check.py": "e05dcfc7e094aa71d1d8323295ffb307142ff7f9263d376fdf20b780a69ef065"
+  }
+}
