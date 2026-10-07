@@ -24,6 +24,8 @@ The bridge, micro and core caches retain both the converted `current_unresolved_
 
 Checked raw adapters already applied microscopic hb^-j ordinary-y conversion and the original swirl factor. The interface rehydrates those converted rows directly, with neither conversion repeated. Bridge macro uses the original ordinary coordinate; its fraction only chooses coverage. The patch's D_y=x D_x and the core's Euler/Stirling conversion are likewise already present. Physical radial rows contain the one +1/2 derivative shift. Axial coefficients use Taylor factorial conventions, while radial rows use ordinary derivative conventions.
 
+Specifically, the packet radial row j is `(D_y^j Ur)/(S*sqrt(current R/2)) = (D_y+1/2)^j Q`, with the radius prefactor fixed at the basepoint after differentiating the physical velocity. It is not `D_y^j Q`. The original micro generator already uses `rate_rows(Q,hb/2,j)` before hb^-j conversion; core and plain adapters use the same half shift. Generic recovery derives Q from its own m,V first and applies the half shift to that new Q. It does not shift the packet's already shifted radial rows again.
+
 P0/S^2 is read from the original source's separately saved pressure coefficients. It is never reconstructed by subtracting two broad pressure intervals, divided by S twice, reset at a seam, or exterior-normalized before terminal repair.
 
 ## Recovery and receipt scope
