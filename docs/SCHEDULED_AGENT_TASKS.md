@@ -1,18 +1,19 @@
-# Current handoff: own shear moment and field recovery implemented (2026-10-07)
+# Current handoff: typed upstream source packets and factored recovery (2026-10-07)
 
-Checked implementation: [67b783db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67b783db67c8fa9e840474d9cf3643ba77d789ec). Formulas/API/source units/ordered tasks: [CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md](CURRENT_GENERIC_SHEAR_MOMENT_RECOVERY_2026_10_07.md).
+Checked implementation: [07c3ca61](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/07c3ca615bd5d88a268604f1c4b7e6934c5ff731). APIs, units, source scope and detailed production tasks: [CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md).
 
-**LEFT4c3-backend is implemented:** changed five-history Duhamel transport, preserved quiet-gap memory, same P0, divergence-free radial recovery and full signed stress. Velocity/pressure/primitive ordinary rows reach four; stress rows reach three, with axial jets and exactly one physical prefactor shift. Saved original O2 source covers are attached in common S=Pstar units.
+**The next source integration step is implemented:** 16 original core-to-O2 chart covers now share typed S=Pstar velocity, ordinary y/Z history rows, original P0 and radius/coordinate provenance. Bridge/micro/core factor ledgers are executable covers; width and swirl conversions are retained once. The exact own-field recovery backend consumes factored rows and supplies pressure/radial/full signed stress derivatives.
 
-- [x] Original outer relaxed input and strict current inner support.
-- [x] Generic Section 11 loop/phase/zero-mean primitives.
-- [x] Own moment/pressure/radial/stress recovery and derivative backend; current original O2 unit conversion.
-- [ ] **LEFT4c1 / c2-current:** complete typed upstream source packets, remaining relaxed bounds/right edge, then install actual generic modified functions and derivative covers.
-- [ ] **LEFT4c3-current:** accumulate their actual changed histories and export the recovered current tensor through every seam/gap.
-- [ ] **LEFT4d / e:** new-family terminal repair, unique controls, full finite-N bound and global cone.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** interfaces/energy, actual recursive coefficients/smooth sum, stress-canceling waves and corrected NS/dynamics.
+- [x] Original outer relaxed input and strict inner support; generic Section 11 loop kernel.
+- [x] Own five-history transport/recovery backend and current original O2 conversion.
+- [x] **LEFT4c1-interface / c3-factored-recovery:** typed 16-chart source covers and modal own-field recovery; injected existing-owner API.
+- [ ] **LEFT4c1-gates:** complete original relaxed-input inequalities, lower a/interior/strict-edge margins and p bounds; reserve the actual repair interval.
+- [ ] **LEFT4c2-current:** install actual generic loop functions/shared phase and factored slow/mixed derivative covers.
+- [ ] **LEFT4c3-current:** propagate own changed histories across exact source widths/seams/gaps and export their recovered tensor.
+- [ ] **LEFT4d / e:** new-family terminal repair/uniqueness, new full finite N and global cone.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** interfaces/energy, true coefficient recursion/smooth sum, stress-canceling waves and corrected NS/dynamics.
 
-The interval transport requires entire-cell source covers; cached ranges are not point values. Quiet local zero modulation does not remove incoming moment/pressure defects. Current generic-loop installation, changed full-family moments, repair/common N and global gates remain false. Scoped old N>=68,533,403 and registry counts are unchanged. Focused source/transport/derivative checks passed; 950 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Full goal remains active. Earlier sections below are historical.
+Saved boxes are covers, not point source functions; arbitrary coordinates require existing checked owner injection. Core saved rho[0.001,4] does not include the axis. Whole original relaxed-input assembly, current changed loop/moments, repair/common N and global gates remain false. Focused checks: 16 charts, 9586 original source coefficients and 543 changed-fixture coefficients; 955 indexed hashes matched. Reviewer: GPT-5.6 Luna / max. Old scoped N>=68,533,403 and registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 

@@ -1,5 +1,7 @@
 # Own generic shear histories, pressure and radial/full stress recovery
 
+**Successor:** the typed original 16-chart packet interface and factored recovery attachment are implemented in [CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SOURCE_PACKETS_2026_10_07.md). Current original relaxed-input gates and modified whole-family loop/transport/repair/N remain open.
+
 Checked implementation: [67b783db](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67b783db67c8fa9e840474d9cf3643ba77d789ec). **LEFT4c3-backend is implemented:** all five changed histories propagate without resets, and their own pressure, divergence-free radial velocity and full signed stress can be recovered with ordinary log-radius/axial derivative rows. The backend is attached to saved original current O2 source covers. The new generic loop is not yet installed in the complete current source, so completed changed whole-family moments, independent repair and new common N remain open. The long-term goal is active.
 
 ## Common physical units and continuous history
