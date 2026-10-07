@@ -1,16 +1,16 @@
-# Current handoff: original phase/A/B first jets and actual spatial chain (2026-10-07)
+# Current handoff: original signed density Z functions and local C1 integrals (2026-10-07)
 
-Checked implementation: [9be86964](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9be869643f5379284db002c73a4330878f503bd8). Scope/API/detailed next tasks: [CURRENT_NATIVE_PHASE_FIRST_JETS_2026_10_07.md](CURRENT_NATIVE_PHASE_FIRST_JETS_2026_10_07.md).
+Checked implementation: [d9ab0b82](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d9ab0b822a8766fdac95482003f626263fcc4770). Scope/API/detailed next tasks: [CURRENT_NATIVE_DENSITY_C1_LOCAL_INTEGRALS_2026_10_07.md](CURRENT_NATIVE_DENSITY_C1_LOCAL_INTEGRALS_2026_10_07.md).
 
-**Original A_y,A_Z,B_y/Pstar,B_Z/Pstar and fast phase derivatives now execute; actual spatial chain at N=1024 is attached.**14 native query cells yield112 primitive value/derivative enclosures and24 total spatial derivative enclosures, including the whole local integral radial/Z cell. Small-r/p2=0 derivatives and tiny nonzero buffer primitives are retained.
+**All five original signed density kernels now have genuine Z derivatives, and local signed Duhamel contributions have C1 Z enclosures.** Seven native queries yield35 density C0 rows,35 density Z rows,10 integral values and10 integral Z rows on the declared domains, including the whole O2 radial/Z cell. All original nonzero-V/cross terms and tiny increments are retained.
 
-- [x] Actual radius phase, signed kernels, nonzero local C0 integrals and original six-row q slow jets on the declared domains.
-- [x] Conditioned implicit phase and A/B first slow/fast jets, exact symmetry behavior, and actual spatial first derivative chain on five boxes plus the whole local O2 cell.
-- [ ] **LEFT4c3-density-C1/local-C1:** next production; same-source E_Z/V_Z and exponential increments, five original signed-kernel Z derivatives, actual positive-weight local integration.
-- [ ] **LEFT4c3-common-basis/incoming/full-coverage/cumulative + LEFT4d:** inlet-to-Rc C1 histories, actual target/control functions and terminal Z identities.
-- [ ] **Higher phase jets / HIGH / LEFT4e / REC / WAVE / PHYS:** whole derivative/outer/energy/common-N/cone, true coefficient recursion, oscillatory correction and full NS field.
+- [x] Actual spatial phase, original q/A/B first jets and candidate spatial derivative chain on the declared domains.
+- [x] Same-source normalized V_Z, original exponential increment Z chain, five signed density Z functions and actual local C1 positive-weight integral functions.
+- [ ] **LEFT4c3-common-basis/serial-transfer/incoming/P0_Z:** next production; join adjacent cells and transport original memory with rate0 pressure retained.
+- [ ] **LEFT4c3-full-coverage/oscillation/cumulative + LEFT4d:** actual inlet-to-Rc C1 histories, target/control functions and five terminal Z identities.
+- [ ] **Higher jets / HIGH / LEFT4e / REC / WAVE / PHYS:** higher continuation/outer/energy/common-N/cone, true coefficient recursion, oscillatory correction and full NS field.
 
-Evidence:112 native primitive rows,24 spatial chain rows,54 independent original scalar comparisons and 1024 source hashes. Read-only worker: **GPT-5.6 Luna / max**. No whole-chart C1 cumulative history, new global N or global completion gate is admitted. Earlier sections are historical.
+Evidence:35 native density Z rows,10 actual integral Z rows,136 independent scalar/integral comparisons and 1030 source hashes. Read-only worker: **GPT-5.6 Luna / max**. Local p increments retain separate P0; total absolute-pressure Z recovery still needs P0_Z. No global cumulative history, common N or completion gate is admitted. Earlier sections are historical.
 
 ---
 
