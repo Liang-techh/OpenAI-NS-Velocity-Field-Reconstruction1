@@ -1,16 +1,17 @@
-# Current handoff: signed averaging installed; first-bridge conditioning next (2026-10-07)
+# Current handoff: periodic mixed conditioning installed; first-bridge slow integral next (2026-10-07)
 
-Checked implementation: [8c481507](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8c4815071ce603e6b2f7b401e670a873b915cffc). Equations, evidence and detailed tasks: [CURRENT_NATIVE_SIGNED_AVERAGING_2026_10_07.md](CURRENT_NATIVE_SIGNED_AVERAGING_2026_10_07.md).
+Checked implementation: [512b05cb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/512b05cb5913fca2aa861ee25805c7f65362ca5c). Equations, evidence and detailed tasks: [CURRENT_NATIVE_PERIODIC_MIXED_CONDITIONING_2026_10_07.md](CURRENT_NATIVE_PERIODIC_MIXED_CONDITIONING_2026_10_07.md).
 
-**Original inlet-to-Rc source-generated C0/Z corrections now have all-N>=160 N^-2 covers.** Exact zero-mean linear densities, nonlinear second remainder and fixed-phi mixed yZ source definitions are connected on24 true cells/17 charts. Per-cell endpoints, true widths, inherited memory, original pressure and normalized repair targets are retained. These are conservative function-domain bounds; no actual control field or terminal closure is installed.
+**All five original averaged C1 target certificates are tighter in both Z domains.** Native C0/y/Z/yZ source correlations, uniform signed-u partial-angle kernels and the implicit mixed inverse chain rebuild the same original24-cell/17-chart inlet-to-Rc route. Endpoint terms, true microscopic widths, incoming memory, original pressure and Rc normalization are retained. These are function-domain bounds; actual five controls, terminal closure and scale recursion remain incomplete.
 
-- [x] Original all-N source route and normalized target/conditional repair connection.
-- [x] Signed density split, formal mixed yZ interface, endpoint-retaining C0/Z IBP, second remainder and quiet pressure memory.
-- [ ] **NEXT: first-bridge slow y/yZ conditioning.** The averaged bound is not sharper at N=160 for any target in either current Z domain. Keep both certificates; decompose endpoint/slow/quadratic budgets, tighten original source correlations and mixed primitive estimates, then recompute the five target budgets.
-- [ ] **LEFT4d controls/terminal identities:** actual five function-domain controls, five whole-Z identities and original repair/post-repair admission.
-- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets, global finite N/cone, exact heat/energy, genuine coefficient recursion, stress cancellation and full NS.
+- [x] **COND1:** separate weighted first-bridge endpoint/slow/kernel/quadratic budgets; incoming memory retained separately. The slow-variable integral dominates all five targets.
+- [x] **COND2:** native ordinary slow source derivatives and support-only exact E/V/a/b correlations.
+- [x] **COND3:** parameter-uniform signed-u periodic y/yZ bounds and full-route five-target recomputation. The new averaged floor certificate still does not beat the direct certificate at N=160; retain both.
+- [ ] **NEXT COND6a/b/c:** attribute mixed derivative factors, tighten the original correlated implicit chain, then prove weighted slow-variation integrals. Follow detailed acceptance criteria in the linked report. Source-defined partitions and seam cancellation remain conditional open work.
+- [ ] **CONTROL1/2:** five actual function-domain controls, whole-Z terminal identities and original repair/post-repair admission.
+- [ ] **HIGH/OUTER/ENERGY/REC/WAVE/PHYS:** higher jets, common finite N/cone, heat/energy, genuine coefficient recursion, stress cancellation and full NS.
 
-Evidence: 340 mixed graph rows, 960 C0/Z transport rows, 480 inherited rows, 150 remainder references, six nonzero-endpoint IBP references and 1090 hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
+Evidence: 960 transport rows, 480 incoming rows, 2300 budget rows and 1094 dependency hashes. Reviewer: **GPT-5.6 Luna / max**. Earlier sections are historical.
 
 ---
 
