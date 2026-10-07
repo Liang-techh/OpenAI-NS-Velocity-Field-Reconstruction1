@@ -1,21 +1,19 @@
-# Current handoff: Rsh physical interface and correlated shear (2026-10-06)
+# Current handoff: uniform repair bounds (2026-10-06)
 
-Rsh code/receipt: [d962130e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d962130e08ff98ea27035ac921ac203f5378ad10). Correlated finite-N primitive shear code/receipt: [c2296cde](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c2296cde076b6c01559d3e3fc02d59785ac96f1e).
+Checked implementation: [23dffae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23dffae0e1efd146de3154904d1eb7677063f44a). Read [CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md](CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md) for API, physical units and detailed agent tasks.
 
-**CONT4f2a and primitive BOUND1a5a–b are implemented.** The reshape/reference source join now supplies independent physical velocity/absolute-pressure traces and216 common bounds, with actual-lambda/constant-nu queries. The original finite-N profiles satisfy a_minus2+b^2/(2+3mu)>=2mu*sigma+mu*chi^2/4 for all phases and finite integers N>=1, including both flat support edges by the undivided source formula.
+**Uniform variable-N repair control/Jacobian bounds, quiet cumulative defect strips and repaired primitive shear are implemented.** query(N,logx) uses the actual independent map and source-correlated defects. It preserves the current pressure datum, never relabels saved N=10^12 coefficients, and returns factored physical units.
 
-Read [CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md](CURRENT_RSH_INTERFACE_AND_CORRELATED_SHEAR_2026_10_06.md) for exact proof scope, APIs and next agent tasks. The correlated square retains compensation lost by independent error/margin ratios. It proves the primitive inequality before moment repair; full alignment/pressure/two-vector cones remain open. Original zero margin at O2_buffer9 and right-edge margin mu are preserved. Numerical caps can retain a zero lower endpoint even when the exact source lower envelope is positive.
+Repair-only N>=27,303,666 gives a unique implicit control vector in a uniform ball. Quiet primitive N>=68,533,403 gives a-2>=3mu/2 on the repair band. Existing N=10^12 passes both. The upstream modulation still uses its correlated quarter-reserve theorem. These local estimates do not admit the completed tensor or select a common cone frequency.
 
-Evidence:217 Rsh source/map identities,744 independent two-sided upper comparisons,216 common groups and8 guards;19 shear identities,128 independent correlated samples,8 actual taper queries and5 guards. Read-only worker: **GPT-5.6 Luna / max**.
+- [x] **BOUND1b1a–b:** uniform actual source caps, implicit h-ball and nonlinear inverse Jacobian.
+- [x] **BOUND1b2a–b (quiet primitive):** bump logR4/Z5 bounds, partial/complement primitives, shrinking strips, same-equation terminal closure and quiet shear.
+- [ ] **BOUND1b1c / BOUND1b2c:** upstream mixed signed histories and own-M radial/own-Cp absolute-pressure error jets.
+- [ ] **BOUND1a5c / BOUND2/3 / COMMONN:** completed tensor pressure/alignment/directional margins and one sufficient common N.
+- [ ] **CONT4f2b–4/6a4b/6b/7:** remaining physical interface providers and global composition.
+- [ ] Finite energy, actual n-dependent recursion, oscillatory/mean correction, resolved physical velocity and full corrected Cartesian NS/dynamics.
 
-- [x] Six named patch physical interfaces; actual finite-N scalar/log-amplitude/radius and five density derivative bounds.
-- [x] Reshape/reference physical provider and phase-specific taper error queries; correlated primitive shear lower envelope.
-- [ ] **CONT4f2b–4/6a4b/6b/7:** reference_restore and restore_buffer next, then complete global original/current-modified interface composition.
-- [ ] **BOUND1b / BOUND1a5c / BOUND2:** independent moment repair, repaired shear and full signed stress/pressure/alignment/directional cone margins.
-- [ ] One sufficient common N/whole modified cones, finite physical energy, actual n-dependent recursion and oscillatory/mean correction.
-- [ ] Resolved physical u/v/w, corrected Cartesian NS residual and measured dynamics.
-
-N>=1 certifies only this primitive inequality. N=10^12 remains repair-only for the previous construction; recursive order n is distinct from modulation frequency N. The controller's last full runtime stage remains currentmodifiedphysicalvelocity. Keep the persistent goal active and unrelated files intact. Earlier sections below are historical.
+Focused verification:74 exact identities;12 Jacobian/inverse,45 raw-jet,30 bump/shear and184 continuous partial-integral comparisons;7 queries,6 guards,915 working/index hashes. Read-only worker: **GPT-5.6 Luna / max**. BOUND1b remains open for recovered errors. The persistent goal stays active. Frequency N is distinct from recursive order n. The controller's last full runtime stage remains currentmodifiedphysicalvelocity; sections below are historical.
 
 ---
 

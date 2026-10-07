@@ -1,5 +1,7 @@
 # Rsh physical interface and correlated finite-N primitive shear
 
+Latest successor: [CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md](CURRENT_UNIFORM_REPAIR_BOUNDS_2026_10_06.md), implementation [23dffae0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23dffae0e1efd146de3154904d1eb7677063f44a). Variable-N implicit control/Jacobian, quiet cumulative strip and quiet repaired primitive estimates are implemented; recovered radial/pressure errors and full signed cones remain open.
+
 Rsh implementation and focused receipt: [d962130e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d962130e08ff98ea27035ac921ac203f5378ad10). Joint shear implementation and focused receipt: [c2296cde](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c2296cde076b6c01559d3e3fc02d59785ac96f1e).
 
 **CONT4f2a and the primitive parts of BOUND1a5a–b are implemented.** The already proved reshape/reference join now has a two-sided physical velocity/absolute-pressure query provider. A new exact correlated finite-N inequality preserves a positive primitive shear reserve through both flat tapers. The independent moment repair and completed signed tensor/direction conditions remain the next cone work; global velocity-interface composition remains open.
