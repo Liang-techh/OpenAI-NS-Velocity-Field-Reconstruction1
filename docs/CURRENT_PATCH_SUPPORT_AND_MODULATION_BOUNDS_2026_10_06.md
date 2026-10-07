@@ -1,8 +1,10 @@
 # Actual patch support joins and whole modulation source norms
 
+Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
+
 Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
 
-Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
+Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. The saved full33 view remains rejected; the numerical successor supplies fresh common patch bounds from checked primitive packets.
 
 Implementation and focused receipts: commit [cf89c259](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cf89c2591a9e785a9f8063ca202c7d1474fef86b).
 
@@ -58,7 +60,7 @@ Files use prefix lei_ren_part1_paper_compliant_current_O3_frequency_source_bound
 - [ ] **CONT4f7:** publish all adjacent/internal physical velocity traces and admit global smooth velocity only after complete coverage.
 - [x] **BOUND1a2–3:** actual whole-support chi and original theta/Pstar source norm formulas, common Rd amplitude and original J factorization.
 - [x] **BOUND1a4a:** substitute whole-support analytic norm formulas into the actual finite-N derivative/shear envelope.
-- [ ] **BOUND1a4b:** bind the actual runtime mu/Ad/log-amplitude enclosures and physical radius/Pstar factors on the checked graph, without selecting coefficient midpoints. Retain one N parameter across the construction.
+- [x] **BOUND1a4b:** bind the actual runtime mu/Ad/log-amplitude enclosures and physical radius/Pstar factors on the checked graph, without selecting coefficient midpoints. Retain one N parameter across the construction.
 - [ ] **BOUND1a5:** preserve pointwise chi, cutoff derivatives and actual phase correlations near the flat edges. A global absolute error cap alone does not imply a positive margin where the periodic loop margin tends to zero.
 - [ ] **BOUND1b:** derive independent repair/control/bump/partial-history majorants and their analytic N dependence on every support piece.
 - [ ] **BOUND2a/BOUND3:** apply full signed stress/pressure/radial/diagonal operators; retain source correlations and compare errors with actual whole-domain loop margins, including taper and endpoints.

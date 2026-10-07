@@ -1,5 +1,7 @@
 # Fresh six-support physical velocity and pressure bounds
 
+Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
+
 Implementation and focused receipt: commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb).
 
 **CONT4f6a2a–c / CONT4f6a3 are implemented for the saved sector and viscosity1.** The actual six patch support traces now have both a two-sided physical source theorem and fresh quantitative spatial4/time1 bounds. No ancestor graph was reconstructed. The old full33 blob remains rejected; its embedded version was not rewritten.
@@ -26,10 +28,11 @@ Files under experiments/root_st073 use prefix lei_ren_part1_paper_compliant_curr
 - [x] **CONT4f6a2a:** locate and bind all six current primitive packets,15 ordinary mixed rows per label, exact rational edges and shared datum.
 - [x] **CONT4f6a2b–c:** regenerate only the six physical views with actual scalar/log-radius units; attach the exact current dispatcher and new bound definition.
 - [x] **CONT4f6a3:** quantitative common traces in the stated log_tau sector and viscosity1;216 keys/view, source function equality before bounds, zero layouts, all-angle/axial domains and foreign-definition rejection.
-- [ ] **CONT4f6a4:** add the fresh views to the global velocity-interface export API. Preserve their explicit sector and current bound hash; use the existing actual-lambda/positive constant-nu operator for a requested physical point or new time sector. Do not relabel a domain bound as a resolved coefficient.
+- [x] **CONT4f6a4a:** named six-patch provider with fresh requested time/nu sectors and actual-lambda physical queries is implemented in the successor.
+- [ ] **CONT4f6a4b:** compose this provider into the complete global velocity-interface API; remaining providers and resolved coefficients are not supplied by the local atlas.
 - [ ] **CONT4f2a:** adapt the already proved reshape_reference source rows into the same physical trace interface.
 - [ ] **CONT4f2–4/6b/7:** complete the remaining unchanged inner and pulse/outer source adapters, typed axis/core maps, common pressure/geometry and all adjacent/internal physical trace exports.
-- [ ] **BOUND1a4b:** substitute the actual current mu and Rd log-amplitude enclosure plus radius/Pstar factors into the whole-support finite-N source formulas. Keep scalar uncertainty and common N; do not choose a midpoint.
+- [x] **BOUND1a4b:** substitute the actual current mu and Rd log-amplitude enclosure plus radius/Pstar factors into the whole-support finite-N source formulas. Keep scalar uncertainty and common N; do not choose a midpoint.
 - [ ] **BOUND1a5 / BOUND1b / BOUND2:** flat-edge correlations, independent moment-repair controls/bump/partial-history bounds and complete signed pressure/radial/diagonal stress errors.
 - [ ] **COMMONN / CONE / ENERGY:** one sufficient N for the combined inequalities, continuous whole modified cones, actual kinetic cross terms/Jacobian and complete spatial/time energy tails.
 - [ ] **REC / WAVE / PHYS / DYNAMICS:** real n-dependent recovery and per-order repair, finite remainder/smooth sum, oscillatory and mean corrections, resolved u/v/w, corrected Cartesian NS residual and measured contraction/elongation/material winding.

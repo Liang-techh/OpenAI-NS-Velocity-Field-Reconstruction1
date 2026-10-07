@@ -1,5 +1,7 @@
 # Current global velocity and absolute-pressure interface inventory
 
+Latest successor: [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md); named patch provider [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046), actual finite-N scalar/density bounds [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5). Local CONT4f6a4a and BOUND1a4b are complete; global composition and completed repair/cones/recursion remain open.
+
 Current successor: [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md), commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb), supplies fresh primitive-source quantitative bounds for all six patch supports. The old full33 cached view remains rejected; complete global physical exports, common N/cones and recursion remain open.
 
 Successor: [CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md](CURRENT_PATCH_PHYSICAL_SOURCE_TRACES_2026_10_06.md), commit [2ec26153](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ec2615312c46f7627264d26a0d8f9b4cfe83317), proves the six patch source joins in physical spatial4/time1 coordinates. Quantitative common patch bounds remain open because the saved full33 view carries a different embedded dispatcher definition; the new adapter rejects that bound.
@@ -55,7 +57,7 @@ Original source-level local mixed4 proofs exist for the first18 seams, but their
 
 Four pulse-end edges (-63/20,-57/20,-23/20,-17/20) have full velocity source-difference evidence in current_pulse_support_interfaces.endpoint_difference_theorem / current_support_source_proof / interface. Four angular edges have full velocity identities in current_angular_support_interfaces.angular_endpoint_theorem / current_angular_support_proof / endpoint. The six new quiet-power repair edges are covered separately by the current twelve affected velocity/pressure interfaces.
 
-The six unchanged patch support edges now have a genuine two-sided velocity/absolute-pressure mixed4 source theorem in current_patch_support_velocity_pressure; mapped physical trace composition remains open:
+The six unchanged patch support edges now have a genuine two-sided velocity/absolute-pressure mixed4 source theorem in current_patch_support_velocity_pressure; physical equality, fresh bounds and a named local query provider are complete in the successors; global composition remains open:
 
 | Exact x edge | Bump center | Support side |
 |---:|---:|---|
@@ -85,4 +87,4 @@ The present current_actual_patch_background_tensor.interface uses b=a on support
 
 Reuse existing source proofs and saved receipts. No cold ancestor reconstruction is needed for the symbolic six-support theorem. Whole-field energy, common N/cones, coefficient recursion and full corrected NS remain separate requirements.
 
-CONT4f6a1 is complete in the successor: all six patch source equalities are transported through the actual physical operators. CONT4f6a2–3 remain open for source-bound quantitative traces, followed by complete global composition.
+CONT4f6a1 is complete in the successor: all six patch source equalities are transported through the actual physical operators. CONT4f6a2–3 and local CONT4f6a4a are complete in the successors; CONT4f6a4b and complete global composition remain open.

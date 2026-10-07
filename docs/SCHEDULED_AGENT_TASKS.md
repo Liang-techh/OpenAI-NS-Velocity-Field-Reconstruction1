@@ -1,21 +1,21 @@
-# Current handoff: six physical patch joins and fresh bounds (2026-10-06)
+# Current handoff: named patch interfaces and actual finite-N bounds (2026-10-06)
 
-Implementation and focused receipt: commit [1b7a6d37](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7a6d37993ab29ce7436358002c51b7c738e4fb).
+Patch atlas code/receipt: [5a4f43af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5a4f43afd02b2c0329f79d31afffc3535f79e046). Actual finite-N parameter/density code/receipt: [a6b4c2c2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a6b4c2c26fd9263eb9ac00e8e000a580ba0df9e5).
 
-**CONT4f6a1–3 are implemented in their stated sector:** the six actual patch velocity/absolute-pressure source joins now have physical Cartesian spatial4/fixed-position time1 equality and fresh quantitative bounds. Current primitive edge packets, original scalar/radius units and analytic P0 are preserved. The old cached full33 numeric view is rejected; six new views are generated without rebuilding the ancestor graph.
+**CONT4f6a4a and BOUND1a4b are implemented locally.** The six patch supports are queryable by registry name with fresh time/positive constant-nu sectors and actual lambda. Finite-N source majorants now use the actual mu/logmu enclosure and exact original logAd, plus five physical defect-density units and derivative bounds. No ancestor graph was rebuilt.
 
-Read [CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md](CURRENT_PATCH_PHYSICAL_NUMERIC_BOUNDS_2026_10_06.md) for exact scope and executable tasks. The fresh views bind dispatcher99a1... and their own primitive/scalar/generator hash. Sector: log_tau[-3,-1], all angles, whole Z source closure (finite physical |Z|<1), viscosity1; exact positive constant-nu transport remains separate. The controller's last full runtime stage remains currentmodifiedphysicalvelocity.
+Read [CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md](CURRENT_PATCH_ATLAS_AND_ACTUAL_N_BOUNDS_2026_10_06.md) for APIs, evidence and detailed next tasks. The patch provider returns enclosures with current source/datum/definition hashes. Finite-N bounds cover logR offset[-2,1/2] and Z[-1,1], orders0..4/0..5. Extreme amplitudes and radii stay factored; density bounds are absolute and precede independent repair. Controller's last full runtime stage remains currentmodifiedphysicalvelocity.
 
-Evidence:1296 fresh signed contribution groups, two terminal maps regenerated, foreign-definition guard and907 working/index hashes. The preceding source proof has216 physical identities and144 independent derivative comparisons. Read-only worker: **GPT-5.6 Luna / max**.
+Evidence: six named interfaces x216 contribution groups,23 coordinate/nu identities and9 query guards;169 finite-N scalar/factor identities,30 independent product identities,107 independent symbolic caps,150 new physical density rows and7 N guards. Read-only worker: **GPT-5.6 Luna / max**.
 
-- [x] Six actual patch source germs, physical source equality and fresh sector bounds; current12 modified germs and inherited pressure/heat sources.
-- [x] Finite-N derivative/shear formulas and actual whole-support cutoff/base norm formulas.
-- [ ] **CONT4f6a4 / CONT4f2–4/6b/7:** fresh physical trace export/point-coordinate adapter and remaining global velocity-interface coverage.
-- [ ] **BOUND1a4b/5 / BOUND1b / BOUND2:** current scalar/physical-factor substitution, flat-edge phase correlations and independent repair/full signed tensor errors.
-- [ ] One common N/whole modified cones, finite physical energy, real n-dependent recursion and oscillatory/mean correction.
-- [ ] Resolved u/v/w, full corrected Cartesian NS residual and measured dynamics.
+- [x] Six patch source joins, physical spatial4/time1 transport, fresh bounds and named local provider with actual lambda/nu.
+- [x] Whole-support finite-N source norms and actual scalar/log-amplitude/radius substitution; all five physical density factor/derivative bounds.
+- [ ] **CONT4f6a4b / CONT4f2a–4/6b/7:** compose one global velocity-interface API; adapt reshape_reference next and preserve current modified germs.
+- [ ] **BOUND1a5 / BOUND1b / BOUND2:** correlated flat-edge errors/margins, independent moment-repair bounds and completed signed pressure/radial/tensor errors.
+- [ ] One sufficient common N and whole modified cones; finite physical energy; actual n-dependent recursion and oscillatory/mean correction.
+- [ ] Resolved physical u/v/w, independent corrected Cartesian NS residual and measured dynamics.
 
-Local physical trace bounds do not admit global smooth velocity, common N/cones, energy or coefficient recursion. N=10^12 remains repair-only. Keep the full persistent reconstruction goal active. Preserve unrelated files; earlier sections are historical.
+N=1,37,10^12 are envelope queries; a sufficient common N remains open and the previous N=10^12 is repair-only. Modulation frequency N is distinct from recursive coefficient order n. Keep the full persistent goal active. Preserve unrelated files; earlier sections below are historical.
 
 ---
 
