@@ -1,18 +1,18 @@
-# Current handoff: whole five-defect Duhamel log bounds (2026-10-07)
+# Current handoff: general five-moment repair operator (2026-10-07)
 
-Checked implementation: [a777e9f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a777e9f18c2cb47b0ddde2569675836e0058a5b6). Current formulas, API scope and next production tasks: [CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md](CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md). Prior loop/rate definitions: [CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md](CURRENT_GENERIC_LOOP_FUNCTION_SOURCES_2026_10_07.md).
+Checked implementation: [498e051d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/498e051d8c8d726f001964f7f29133063a42d7d7). Current formulas, conditional scope and production tasks: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md). Whole incoming bounds: [CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md](CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md).
 
-**LEFT4c3 cumulative envelopes advanced:**17 original source covers now give per-N-power union bounds for all five Duhamel defects, Z/interior-y/yZ/yy rows and quiet carry toRc. Four positive-rate kernels use1/rate; pressure uses the whole log-radius span and preserves its memory. Overlapping cover widths are never added. Actual source functions/seam identities and evaluated changed histories remain open.
+**LEFT4d general operator advanced:**fresh disjoint bumps on(Rc,2Rc), complete five-moment map and divided inverse now accept arbitrary generic-loop defects. Actual target bounds retain both inverse mu effects and A_Z/A. C1 Banach/positive-swirl sufficient log-N conditions are available. Actual source/defect functions, coefficients and terminal Z closure remain uninstalled.
 
-- [x] Whole current H0/scales, loop derivative bounds and original signed source expressions.
-- [x] **LEFT4c2-functions/rates:** branch-safe loop/changed angular-axial functions, one phase/N and five signed source definitions.
-- [x] **LEFT4c3-whole-envelopes:** actual source-union log bounds, derivative ODE rows and quiet pre-repairRc inlet; only this subtask is completed.
-- [ ] **LEFT4c3-source/seams/integrals:** actual bridge inlet at s_c/2, accepted owner routing, same-function seam traces and own cumulative integration/recovery.
-- [ ] **LEFT4c2-orders / LEFT4d/e:** sufficient high derivatives, new functional repair, one new whole finite N and changed strict cone.
-- [ ] **LEFT4c1-outer / CONT / ENERGY:** post-repair/exterior admission, interfaces and energy.
-- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
+- [x] Original whole H0/scales, loop/signed function definitions and whole cumulative defect envelopes.
+- [x] **LEFT4d-conditional-map:**fresh ln2 geometry/inverse, arbitrary generic target, C1 contraction/positivity log conditions.
+- [x] Explicit left-inlet existing-owner consumer at bridge_first s_c/2; actual successful live query remains open.
+- [ ] **LEFT4c2/3-live-functions/seams/integrals:**source replay, actual inlet, one phase/N and own cumulative integration/recovery.
+- [ ] **LEFT4d-installed-functions:**actual Rc target functions, unique controls and terminal Z-function closure.
+- [ ] **LEFT4c2-high-orders / LEFT4c1-outer / CONT / ENERGY / LEFT4e:**required high derivatives, outer/energy, one whole finite N and modified cone.
+- [ ] **REC / WAVE / PHYS:**genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
 
-Focused stage passed:11 exact identities,36 independent signed-kernel comparisons and 3 union comparisons; 1017 indexed dependency hashes matched. Reviewer: GPT-5.6 Luna / max. Actual defect function installation, source replay/seams, evaluated histories, repair/N/global cone and genuine recursion remain open. All global completion gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused stage passed:11 exact identities and 160 independent matrix/nonlinear/full-density/implicit-Z comparisons; 1022 indexed dependency hashes matched. Reviewer:GPT-5.6 Luna/max. No source functions, actual controls, terminal closure, global cone or true recursion are admitted by this conditional operator. All global completion gates remain false; the long-term goal remains active. Earlier sections below are historical.
 
 ---
 

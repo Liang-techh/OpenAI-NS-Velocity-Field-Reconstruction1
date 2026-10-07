@@ -1,5 +1,7 @@
 # Whole-source five-defect Duhamel bounds
 
+**Successor:**fresh general five-bump inverse and actual-target C1 log conditions are checked in [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md). Actual source/defect functions, controls, terminal closure and common-N/global cone remain open.
+
 Checked implementation: [a777e9f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a777e9f18c2cb47b0ddde2569675836e0058a5b6). The17 original source covers now give one whole-domain N-polynomial logarithmic envelope for all five cumulative defects, their Z/y/yZ/yy rows, and their signed quiet continuation to the new repair inlet Rc. This advances LEFT4c3 from local density rates to quantitative cumulative bounds. The saved covers do not supply a source-function replay or seam identity, so actual defect function installation and evaluated cumulative histories remain open. The long-term goal remains active.
 
 ## Source-linked cumulative contract
