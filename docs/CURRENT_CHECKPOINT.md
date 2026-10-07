@@ -1,16 +1,16 @@
-# Current handoff: original q slow derivatives (2026-10-07)
+# Current handoff: original phase/A/B first jets and actual spatial chain (2026-10-07)
 
-Checked implementation: [8fc7c917](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fc7c9178d716025d231de36847bd3df12d6b049). Scope and next tasks: [CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md](CURRENT_NATIVE_Q_SLOW_JETS_2026_10_07.md).
+Checked implementation: [9be86964](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9be869643f5379284db002c73a4330878f503bd8). Scope/API/detailed next tasks: [CURRENT_NATIVE_PHASE_FIRST_JETS_2026_10_07.md](CURRENT_NATIVE_PHASE_FIRST_JETS_2026_10_07.md).
 
-**q_y,q_yy,q_Z,q_yZ,q_yyZ now execute on original source boxes and the actual integral radial/Z cell.**20 source queries give18 enclosed queries/108 ordinary rows and2 unresolved full-Z queries. The tiny O2 positive excess is retained by Delta=(a-2)+b^2/a; two actual Z=[.49,.51] subdivisions resolve flat with exact zero derivatives.
+**Original A_y,A_Z,B_y/Pstar,B_Z/Pstar and fast phase derivatives now execute; actual spatial chain at N=1024 is attached.**14 native query cells yield112 primitive value/derivative enclosures and24 total spatial derivative enclosures, including the whole local integral radial/Z cell. Small-r/p2=0 derivatives and tiny nonzero buffer primitives are retained.
 
-- [x] Actual spatial phase/candidate velocities/five kernels and nonzero local C0 signed integral functions on the tested domains.
-- [x] Original six-row q slow jets, positive-root/cutoff derivatives, tiny excess correlation and two actual source subdivisions.
-- [ ] **LEFT4c2-implicit-phase/A/B-slow-jets + actual-fast-phase-chain:** next production; use the same refined source and stable signed Mobius/small-r charts.
-- [ ] **LEFT4c3-C1/density/common-basis/incoming/cumulative + LEFT4d:** actual inlet-to-Rc histories, target/control functions and terminal identities.
-- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** derivative/outer/energy/common-N/cone, actual coefficient recursion, oscillatory correction and full NS field.
+- [x] Actual radius phase, signed kernels, nonzero local C0 integrals and original six-row q slow jets on the declared domains.
+- [x] Conditioned implicit phase and A/B first slow/fast jets, exact symmetry behavior, and actual spatial first derivative chain on five boxes plus the whole local O2 cell.
+- [ ] **LEFT4c3-density-C1/local-C1:** next production; same-source E_Z/V_Z and exponential increments, five original signed-kernel Z derivatives, actual positive-weight local integration.
+- [ ] **LEFT4c3-common-basis/incoming/full-coverage/cumulative + LEFT4d:** inlet-to-Rc C1 histories, actual target/control functions and terminal Z identities.
+- [ ] **Higher phase jets / HIGH / LEFT4e / REC / WAVE / PHYS:** whole derivative/outer/energy/common-N/cone, true coefficient recursion, oscillatory correction and full NS field.
 
-Evidence:108 native ordinary q rows, independent original derivatives/cutoff/correlation checks and 1018 source hashes. Read-only worker: **GPT-5.6 Luna / max**. No whole-source phase/C1 cumulative history or global completion gate is admitted. Earlier sections are historical.
+Evidence:112 native primitive rows,24 spatial chain rows,54 independent original scalar comparisons and 1024 source hashes. Read-only worker: **GPT-5.6 Luna / max**. No whole-chart C1 cumulative history, new global N or global completion gate is admitted. Earlier sections are historical.
 
 ---
 
