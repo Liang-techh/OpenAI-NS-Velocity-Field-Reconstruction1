@@ -1,5 +1,7 @@
 # Original radius offsets and spatial candidate functions
 
+> Successor: [CURRENT_NATIVE_LOCAL_SIGNED_INTEGRALS_2026_10_07.md](CURRENT_NATIVE_LOCAL_SIGNED_INTEGRALS_2026_10_07.md) ([9863712f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9863712f8c0df7f14eb0fc353dc036745b38a5fc)) now executes five actual nonzero signed local C0 integral contributions on a whole O2-slope radial/Z cell. Cumulative inlet-to-Rc histories and C1 Z derivatives remain open.
+
 Checked implementation: [4e302b5c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4e302b5c46aea4c5ee8e05e2d471d00fe76f9810). **The actual phase N*log(R/r_minus), with candidate N=1024, now feeds native modified angular/axial velocities and all five signed density kernels at five declared source-coordinate requests.** The previous free-phase stage has a spatial successor. The original17 radius charts have offset/Jacobian representations and bounded point phase enclosures. This does not admit whole-chart modified velocities, actual cumulative histories, repair, or a global common N.
 
 ## Executed source arithmetic
@@ -35,7 +37,7 @@ Evidence: original same-source17-query replay, actual inlet,5 spatial candidate 
 - [x] **LEFT4c2-exact-radius-offset:** same-source affine log-radius offsets and coordinate Jacobians on17 original charts; microscopic positive widths retained.
 - [x] **LEFT4c2-spatial-phase on declared requests:** actual candidate N*y periodic enclosures, endpoint unions, selected binary/source-expression cancellations and exact inlet phase.
 - [x] **LEFT4c2-spatial-density on five requests:** same-source spatial phase feeds original modified E/V and all five signed kernels. Entire-chart coverage remains open.
-- [ ] **LEFT4c3-local-signed-integral:** take an actual narrow active cell in O2_slope around.1337, query its entire coordinate interval and true spatial phase, and enclose each signed Duhamel contribution with the exact positive kernel mass. Report contribution functions, not a globally initialized history. Retain rates1,3/2,3/2,1,0 and absolute P0.
+- [x] **LEFT4c3-local-signed-integral on the tested radial/Z cell (see successor; cumulative histories remain open):** take an actual narrow active cell in O2_slope around.1337, query its entire coordinate interval and true spatial phase, and enclose each signed Duhamel contribution with the exact positive kernel mass. Report contribution functions, not a globally initialized history. Retain rates1,3/2,3/2,1,0 and absolute P0.
 - [ ] **LEFT4c3-source-inlet-and-propagation:** attach original five incoming histories from the same source r_minus and original P0; transport the exact zero defect inlet through quiet collars without resetting pressure memory. Continue cell contributions across original chart lengths; split phase/sign/conditioning cells as needed.
 - [ ] **LEFT4c2-whole-coverage:** cover every original Z/radial chart interval for q, conditioned inverse, A/B and modified velocities/densities. Exact point requests are not interval-wide coverage.
 - [ ] **LEFT4c2-q-and-phase-slow-jets:** actual q_y/q_Z, implicit inverse/A/B derivatives, higher needed orders and same-function seam traces. Apply original radial/width/Pstar conversion exactly once.
