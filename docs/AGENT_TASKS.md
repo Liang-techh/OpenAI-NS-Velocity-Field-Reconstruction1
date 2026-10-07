@@ -1,18 +1,17 @@
-# Current handoff: actual native generic inlet source (2026-10-07)
+# Current handoff: seventeen live native source backends (2026-10-07)
 
-Checked implementation: [9165dd50](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9165dd50c9d4328d4434f3bd5777585e689edb7a). Runnable APIs, exact scope and production tasks: [CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md](CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md). Conditional repair operator: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md).
+Checked implementation: [77fee782](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77fee78276704b3ea2d9be2b002ad9b8c789fdd5). APIs, exact scope and next production tasks: [CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md](CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md). General repair operator: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md).
 
-**Actual inlet data obtained:** one genuine accepted native physical seed/bridge now supplies the whole-Z positive s_c/2 inlet, all five original incoming histories and independent P0. A smaller live source-cover backend queries all three original bridge charts through their unchanged raw operators. No numerical owner is hydrated from JSON.
+**All17 original generic regions now query live from one accepted seed**, through unchanged original source/raw-row algorithms: bridge/switch, reshape/restoration/patch, reference/O2, O3 transition and power. The actual whole-Z s_c/2 inlet retains five histories/P0. Original derivative coordinates, formal factors and separate pressure datum are preserved.
 
-- [x] Whole source H0/scales, original loop/rate definitions, five-defect envelopes and conditional general ln2-band repair.
-- [x] **LEFT4c3-left-live-source:** actual native inlet query and original five histories/P0 in formal Pstar units.
-- [x] **LEFT4c2-native-bridge-cover-backend:** first/second/macro live queries, exact original width/radial factors and unit shifts.
-- [ ] **LEFT4c2-remaining-functions/seams / LEFT4c3-own-integrals:** remaining14 charts, exact function backends, one global phase/N and actual cumulative signed defects toRc.
-- [ ] **LEFT4d-installed-functions:** actual Rc target functions, unique controls and terminal Z-function closure.
-- [ ] **HIGH / OUTER / CONT / ENERGY / LEFT4e:** high derivatives, outer/energy, one finite N and modified completed cone.
-- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
+- [x] Original whole scales, loop/rate definitions, five-defect envelopes and conditional general repair.
+- [x] **LEFT4c2-native-source-coverage / LEFT4c3-native-inlet:** all17 live original coefficient-cover backends, original five histories/P0 and actual strict inlet.
+- [ ] **LEFT4c2-signed-roots/phase/densities / LEFT4c3-seams/integrals:** actual factored root evaluation, q/A/B/inverse phase, common N/phase and cumulative signed defects toRc.
+- [ ] **LEFT4d-functions:** actual Rc targets, unique controls and terminal Z-function closure.
+- [ ] **HIGH / OUTER / CONT / ENERGY / LEFT4e:** required derivatives, outer/energy, one finite N and modified completed cone.
+- [ ] **REC / WAVE / PHYS:** genuine recursion, oscillatory cancellation and corrected NS/dynamics.
 
-Focused evidence:4 actual native queries on3 charts; 6467 exact modal/P0 comparisons, 7 rejected owners/domains, proof reuse/restoration guards and 1023 working/index hashes. Reviewer:GPT-5.6 Luna/max. All outputs remain directed coefficient covers; actual defect integrals, repair controls, terminal closure, global cone and true recursion remain unfinished. All global completion gates are false. Earlier sections below are historical.
+Focused checks:17 actual queries; 9659 exact mode/P0 comparisons, 34 rejected domains and 1024 working/index hashes. Reviewer:GPT-5.6 Luna/max. Outputs remain original function enclosures; changed defect integrals, repair controls, terminal closure, global cone and true recursion remain unfinished. All global completion gates are false. Earlier sections below are historical.
 
 ---
 

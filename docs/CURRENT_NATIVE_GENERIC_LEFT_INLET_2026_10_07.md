@@ -1,5 +1,7 @@
 # Actual native generic inlet and bridge source queries
 
+**Successor:**all17 original generic chart source-cover backends now query live from the same seed; see [CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md](CURRENT_SEVENTEEN_NATIVE_SOURCE_BACKENDS_2026_10_07.md). Actual signed loop-root/density evaluation, cumulative defects and installed repair/terminal functions remain next.
+
 Checked implementation: [9165dd50](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9165dd50c9d4328d4434f3bd5777585e689edb7a). The genuine original native source graph is now constructed and queried successfully at the strict positive generic inlet `s=s_c/2`, for the whole axial interval `Z in[-1,1]`. All five original incoming histories and the separate original pressure datum P0 are retained in common Pstar units. Three original bridge charts now have a live coordinate-cover backend. This clears the **actual inlet source-query** task through a smaller original source route; installed generic defect integrals and repair controls remain the next production work.
 
 ## Runnable source route
