@@ -1,5 +1,7 @@
 # Original C1 integral targets and convergent five-control family
 
+Successor: [CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md) supplies original O2 slope point coefficients, five C1 histories and source-bound E/V role service in the original Pstar basis. Full inertial p1/p2, evaluated analytic P0, conditioned native phase and certified numeric errors remain the next production tasks.
+
 Checked source: [8812ab6f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8812ab6f6bfdca2c91c30cf991f83b1380d24c2a). Predecessor: [restricted q-flat margins and local cone budget](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md). Read-only mathematical reviewer: **GPT-5.6 Luna / max**, existing worker reused. Both focused checkers PASS; 1,156 dependency hashes match the Git index. current_native_Rc_C1_integral_realization: producer 0.312s / checker 18.953s; current_native_Rc_convergent_control_family: producer 0.312s / checker 18.454s.
 
 The original 24-cell cumulative integrals are now realized as genuine C1 functions of Z, with unchanged 4,858-node native expression graph, 336 nonzero coefficient integral nodes and 480 value/Z own-rate integral majorants. The five original normalized targets drive an exact convergent C1 control family for every fixed finite integer N admitted by the recorded original source/local frequency conditions. The control limit closes the five terminal defect functions in C1 on Z[-1,1].

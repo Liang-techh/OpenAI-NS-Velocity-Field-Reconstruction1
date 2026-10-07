@@ -1,3 +1,20 @@
+# Current handoff: original O2 slope point profiles (2026-10-07)
+
+Checked source: [859404b3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/859404b310a49ca0899abfa8431d810bf164d127). Definitions, evidence and detailed tasks: [CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md). Predecessor: [C1 integral/control family and scalar loop-Z backend](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md).
+
+The original O2 slope has a stateless point-coefficient provider for E/V, a/b and all five radial-history functions with ordinary-Z derivatives. It computes original defining J/mass integrals, binds four accepted all-N E/V source leaves through the original AST source chain, and checks expected source hashes. Original Pstar inverse factors and both signs of energy remain. The same-family P0 datum is separately referenced and unevaluated. No expensive ancestors are rebuilt.
+
+The predecessor exact conditional five-control C1 limit and scalar A/B-Z backend remain available. This new service is approximate and retains formal source factors; full p1/p2, original P0 point service, conditioned native phase, certified numerical errors, global common N, installed controls and genuine coefficient recursion remain open.
+
+- [x] **ORACLE1-O2-background/history:** genuine original point coefficients and five C1 histories; accepted source-role/definition bindings, common Pstar basis and cheap background queries.
+- [x] **CONTROL-C1/ORACLE3-point-Z:** prior original integral functions, unique conditional control limit/tails, terminal C1-limit identities and scalar A/B slow-Z backend.
+- [ ] **NEXT O2-full-input:** full original inertial p1/p2, analytic pressure datum and radius/scale point representations; then one original phase/density integral with errors.
+- [ ] **ORACLE/CONTROL:** remaining charts, error contract, whole-frequency compatibility and common N, original numerical controls/tail and installed terminal closure.
+- [ ] **FIELD/HIGH/OUTER/REC/WAVE/PHYS:** corrected field functions and spatial/outer admission, genuine coefficient recursion, oscillatory cancellation and physical uvw diagnostics.
+
+Focused checker PASS: nine original coefficient queries, 180 independent ODE value/Z comparisons, 36 original background role dispatches, two endpoints and six guards. Reference Pstar=7,13 checks units only. 14 direct dependency hashes audited; reviewer metadata **gpt-5.6-luna / max**, read-only existing worker. Previous sections are historical.
+
+---
 # Current handoff: original C1 integrals and convergent control family (2026-10-07)
 
 Checked source: [8812ab6f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8812ab6f6bfdca2c91c30cf991f83b1380d24c2a). Definitions, evidence and detailed tasks: [CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md). Predecessor: [local q-flat cone budget](CURRENT_NATIVE_Q_FLAT_CONE_BUDGET_2026_10_07.md).
