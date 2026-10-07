@@ -326,7 +326,7 @@
   "global_completed_stress_cone_certified": false,
   "actual_coefficient_recursion_certified": false,
   "full_corrected_NS_velocity_field_certified": false,
-  "execution_seconds": 7.359000000054948,
+  "execution_seconds": 7.093999999924563,
   "scope": "Actual injected native source queries on three original bridge charts, including strict interior generic inlet; formal coefficient covers only. No changed loop functions/integrals, full tensor owner, point values, repair controls, common N or global cone.",
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
@@ -1280,7 +1280,7 @@
     "lei_ren_part1_paper_compliant_current_generic_shear_moment_recovery_check.py": "86f32db64f89bddf846548ceefe2b6aae1361a7e838f0b4389649e15a2b6d1e8",
     "lei_ren_part1_paper_compliant_current_generic_shear_moment_recovery_check.json": "117a32f9d1aee463c90cd0cd08ecf8ef2150d1ffcb13f95163c9ef891de165fd",
     "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.py": "a4f03b3c81a9e238a6d6a7f420e85e744e21fbd00fbbb268e12a386dc2475648",
-    "lei_ren_part1_paper_compliant_current_native_generic_left_inlet.py": "371b48166c1b8d5ba5cb8ba0b95eb625ace027fcea1e290eb95223a2897fec57",
+    "lei_ren_part1_paper_compliant_current_native_generic_left_inlet.py": "bf0b02c1a552540426acc23348909df5ad78d76dde9d41f20dc789cc12cf86e3",
     "lei_ren_part1_paper_compliant_current_generic_shear_source_packets_views.json.gz": "8e4ee7585e0bc14709b42e94e63b72436e38b6f2dbb4a2d4a8fde459c92a7ee4",
     "lei_ren_part1_paper_compliant_current_generic_shear_source_packets.json": "6ac6eddadbcf067e4947216a85b53912f3566131578f09eaa34a0855b6caf47c",
     "lei_ren_part1_paper_compliant_current_generic_shear_source_packets_check.py": "56fffb62f0bef011dbbc57bec7316a47b5c07f132721062a6154bf6844fa25bb",
@@ -1347,7 +1347,7 @@
     "lei_ren_part1_paper_compliant_current_generic_five_defect_bounds.json": "704cab5ad9dc41987eeea142d6ed82d97f6462166c10956371612daca446d5cd",
     "lei_ren_part1_paper_compliant_current_generic_five_defect_bounds_check.py": "3756ec30f0584a208da4613ef12d95c9690d3bce1e7ad286ebed1933c0c29b94",
     "lei_ren_part1_paper_compliant_current_generic_five_defect_bounds_check.json": "40202b381a34904d0fbd4ec358aa87b20a0c9013a60c4e4d5f8b8a89d224963e",
-    "lei_ren_part1_paper_compliant_current_native_generic_left_inlet_views.json.gz": "ad3c655cb552e44d549eed87c7e368cbf121c7ac42ddd49156ae4ae53286248f",
+    "lei_ren_part1_paper_compliant_current_native_generic_left_inlet_views.json.gz": "824dc99d18b12f88a50e411b3d82af23ccff16fc1887598899244231ad458bae",
     "lei_ren_part1_paper_compliant_current_checked_source_runtime.py": "ddb6f64034ce154ae24e86499006032c4514384586741e2f4f382021f06dad4a"
   }
 }

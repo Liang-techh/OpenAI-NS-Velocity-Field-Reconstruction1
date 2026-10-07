@@ -171,9 +171,9 @@ class NativeBridgeSourcePackets:
             original_P0_and_all_five_incoming_histories_retained=True,
             left_loop_q_A_B_exact_zero_by_existing_checked_collar=True,
             flat_left_branch_source_argument=dict(
-                identity='Delta=H0-2=D+kappa-2, D>=0; Delta>=left_kappa_excess>=2*eta',
+                identity='kappa-2>=left_kappa_excess>=2*eta; H0-2=D+kappa-2>=kappa-2 because D>=0',
                 source='accepted same-family loop-domain, uniform-input identity and generic flat-branch graph receipts',
-                branch='q=A=B=0 when Delta>=eta; no active inverse/loop evaluated on flat collar'),
+                branch='q=A=B=0 when kappa-2>=eta; no active inverse/loop evaluated on flat collar'),
             generic_inlet_defect_zero_is_declared_Section11_initial_condition=True,
             defect_transport_or_terminal_closure_not_inferred_from_initial_zero=True,
             returned_rows_are_covers_not_selected_point_function_values=True,
