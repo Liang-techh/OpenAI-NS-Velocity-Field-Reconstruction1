@@ -1,18 +1,18 @@
-# Current handoff: complete modified quiet repair cone (2026-10-06)
+# Current handoff: pre-repair transport cone and changed-region common N (2026-10-06)
 
-Checked implementation: [2caffbc2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2caffbc26f38a806db7d81ad5931275ef77e9a9b). Detailed proof/API/next tasks: [CURRENT_MODIFIED_QUIET_CONE_2026_10_06.md](CURRENT_MODIFIED_QUIET_CONE_2026_10_06.md).
+Checked implementation: [974e4a14](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/974e4a143a906a150d5c10c28c177316ab3f1ceb). Detailed source/API/next tasks: [CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md](CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md).
 
-**The complete modified quiet repair source now satisfies the signed stress cone on local y[0,1], original power s[1,2], all Z[-1,1] and every integer N>=68,533,403.** All three bumps, gaps and both ends are covered. The actual positive bs sign is source-bound. Strong local power deficit bounds control the full tensor errors; original pressure/energy/moments and cross terms remain. After the final support, the implicit equation restores the original source exactly.
+**The complete signed stress cone now covers original power s[0,1] between modulation and quiet repair. Every changed-source interval uses one sufficient frequency N>=68,533,403.** Local profiles are exactly unchanged on this bridge; accumulated moment/energy/pressure and own-moment radial errors survive and are controlled. Original pressure/energy/source correlations remain.
 
 - [x] **BOUND1 / BOUND2a:** uniform repair/history/radial/pressure and complete tensor/remainder error bounds.
-- [x] **BOUND2b modulation:** strict O2(-2,0], closed O3[0,1], both tapers and old seam for N>=22; exact degenerate left endpoint retained.
-- [x] **BOUND2c:** complete quiet signed cone, actual bs sign, every bump/gap/entry/terminal domain, all N>=68,533,403.
-- [ ] **BOUND3-bridge:** full stress cone on pre-repair original power s[0,1], retaining transported modulation histories despite local profile equality.
-- [ ] **BOUND3 / COMMONN:** one combined sufficient frequency and source-join ledger.
-- [ ] **BOUND2b-left3b/buffer:** applicable cone/closure for the nonzero a2/bs0/vs2 edge and earlier unchanged O2 buffer.
-- [ ] Remaining physical interfaces/global composition, finite energy, actual coefficient recursion, oscillatory/mean correction, resolved u/v/w and full corrected NS/dynamics.
+- [x] **BOUND2b modulation:** O2(-2,0], closed O3[0,1], N>=22.
+- [x] **BOUND2c:** quiet signed cone on original power s[1,2], all bumps/gaps/endpoints, N>=68,533,403.
+- [x] **BOUND3-bridge:** transported full stress cone on original power s[0,1], exact local zeros and retained cumulative histories.
+- [x] **COMMONN-changed:** checked common threshold ledger for all changed-source intervals and the implicit repair, N=68,533,403.
+- [ ] **BOUND2b-left3b/buffer and BOUND3-global:** paper cone/closure for the earlier nonzero O2 a2/bs0/vs2 source and exact flat offset-2; finish remaining inner regions and a global frequency/cone certificate.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** remaining physical interfaces, finite energy, actual n-dependent coefficient recursion and smooth sum, oscillatory/mean stress cancellation, corrected u/v/w and NS residual/dynamics.
 
-Quiet reserves D/Ttheta>0.9, Q/Ttheta^2>1.9; weighted axial ratio<exp(-390). Focused evidence: 108 signed quotient fixtures, 14 exact post-support tensor zeros. Read-only worker: GPT-5.6 Luna / max. Common-N/global/energy/recursion/full-NS gates remain open; unmodified registry counts stay unchanged. Full goal remains active. Earlier sections below are historical.
+Transport reserves D/Ttheta=1, Q/Ttheta^2>1.9; weighted axial ratio<exp(-390). Evidence: 186 independent fixtures, 6 retained stress pieces and 8 exact local zeros. Read-only worker: GPT-5.6 Luna / max. The two new scoped gates are true; global common-N/admissibility/physical/energy/recursion/full-NS gates remain false. Original registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 

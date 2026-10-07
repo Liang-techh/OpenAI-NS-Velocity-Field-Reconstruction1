@@ -1,5 +1,7 @@
 # Complete modified quiet repair signed cone, all N >= 68,533,403
 
+Latest successor: [CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md](CURRENT_MODIFIED_TRANSPORT_COMMON_N_2026_10_06.md), implementation [974e4a14](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/974e4a143a906a150d5c10c28c177316ab3f1ceb). Pre-repair bridge and changed-region common N now proved for N>=68,533,403; degenerate O2 and global gates remain open.
+
 Checked implementation: [2caffbc2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2caffbc26f38a806db7d81ad5931275ef77e9a9b). **BOUND2c is complete as a signed two-vector cone estimate on the actual independent repair strip: local y[0,1], original power distance s=1+y in[1,2], all Z[-1,1] and every integer N>=68,533,403.** All three disjoint bumps, all gaps, entry and terminal positions are included. The original absolute pressure, energy, incoming moments and radial cross terms remain. This is a scoped source cone theorem; pre-repair transport, the degenerate O2 buffer, sufficient common regional N, global interfaces, finite energy and actual coefficient recursion remain open.
 
 ## Signed source and local baseline
