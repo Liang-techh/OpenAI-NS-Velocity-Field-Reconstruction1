@@ -1,5 +1,7 @@
 # Native candidate velocities and five signed density kernels
 
+> Successor: [CURRENT_NATIVE_SPATIAL_PHASE_2026_10_07.md](CURRENT_NATIVE_SPATIAL_PHASE_2026_10_07.md) ([4e302b5c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4e302b5c46aea4c5ee8e05e2d471d00fe76f9810)) binds original spatial phase to candidate velocities and five signed kernels on five declared source-coordinate requests. Whole coverage and actual cumulative integrals remain open.
+
 Checked implementation: [23cc3d8a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23cc3d8aafe6259f3389c8e242be6a562b0ab307). **Actual source A/B now produce finite-N angular/axial velocity increments and all five signed density kernels on the five native boxes admitted by the [conditioned phase stage](CURRENT_NATIVE_CONDITIONED_PHASE_2026_10_07.md).** The original scalar formulas are no longer merely unused fixtures: the new kernel consumes actual native functions. Phase and N=1024 remain explicit candidate parameters. Original spatial phase, whole-chart coverage, slow derivatives and actual cumulative integrals remain open.
 
 ## Source, units and computation
@@ -43,8 +45,8 @@ New scoped gate: `current_native_candidate_velocity_and_five_signed_density_C0_f
 ## Next production tasks
 
 - [x] **LEFT4c2-density-C0-boxes:** actual native E_N/V_N and all five signed normalized density kernels at explicit candidate phases/N on the five admitted boxes.
-- [ ] **LEFT4c2-exact-radius-offset:** evaluate the unchanged original radius tree and r_minus=Ra*exp(hb*s_c/2). Keep hb*s and hb*s_c/2 separate from huge logRa. Bind y=log(R/r_minus) by cancellation of the same source base, not subtraction of independent conservative radius covers.
-- [ ] **LEFT4c2-spatial-phase:** bind phi=N*y for one explicitly declared candidate integer. Keep integer period separately, split cells that cross an integer, and retain tiny phase offsets near an endpoint. No interval midpoint/floor is a field value. A candidate N is not the theorem's global frequency admission.
+- [x] **LEFT4c2-exact-radius-offset (17 source charts; see successor):** evaluate the unchanged original radius tree and r_minus=Ra*exp(hb*s_c/2). Keep hb*s and hb*s_c/2 separate from huge logRa. Bind y=log(R/r_minus) by cancellation of the same source base, not subtraction of independent conservative radius covers.
+- [x] **LEFT4c2-spatial-phase on declared requests (see successor; whole coverage remains open):** bind phi=N*y for one explicitly declared candidate integer. Keep integer period separately, split cells that cross an integer, and retain tiny phase offsets near an endpoint. No interval midpoint/floor is a field value. A candidate N is not the theorem's global frequency admission.
 - [ ] **LEFT4c2-whole-native-coverage:** extend conditioning, A/B and velocity/density functions across all17 source charts using original Z/coordinate subdivisions and sign unions. A source box crossing the small/large signed-u regimes must stay unresolved until covered.
 - [ ] **LEFT4c2-q-slow-jets:** original q_y/q_Z and needed higher orders, with lazy exact flat derivatives, positive active gamma and retained Delta=0 tiny values.
 - [ ] **LEFT4c2-phase-and-primitive-jets:** original implicit inverse derivatives at fixed phi, A_y/A_Z and B_y/B_Z, and needed higher orders. Keep hb/Pstar conversion exactly once and use original Phi_psi positivity.

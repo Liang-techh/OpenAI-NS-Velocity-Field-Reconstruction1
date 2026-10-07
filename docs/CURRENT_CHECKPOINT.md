@@ -1,16 +1,16 @@
-# Current handoff: native candidate velocities and five densities (2026-10-07)
+# Current handoff: actual spatial candidate functions (2026-10-07)
 
-Checked implementation: [23cc3d8a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/23cc3d8aafe6259f3389c8e242be6a562b0ab307). Scope and next tasks: [CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md](CURRENT_NATIVE_CANDIDATE_DENSITIES_2026_10_07.md).
+Checked implementation: [4e302b5c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4e302b5c46aea4c5ee8e05e2d471d00fe76f9810). Scope and next tasks: [CURRENT_NATIVE_SPATIAL_PHASE_2026_10_07.md](CURRENT_NATIVE_SPATIAL_PHASE_2026_10_07.md).
 
-**Actual native A/B now produce E_N/V_N and all five signed density kernels on five source boxes.**35 candidate queries and175 kernel enclosures pass, including12 nontrivial active queries. The tiny O2 buffer increments remain nonzero. Phase and N=1024 are explicit candidate inputs; whole source/spatial phase and integration are still open.
+**Actual N*log(R/r_minus) now feeds modified E/V and all five signed density kernels on five declared source-coordinate requests.**17 original radius charts have affine offsets/Jacobians and bounded point phases;17 Jacobian and16 radius/phase seam identities pass. Five spatial cells give25 kernels, with3 nonzero cells. N=1024 remains a candidate integer.
 
-- [x] Original17 source backends,714 signed roots,16 log-shear adapters and17 q query boxes.
-- [x] Conditioned C0 inverse/A/B and actual candidate velocity/five density functions on five native boxes.
-- [ ] **LEFT4c2-spatial-phase / whole-coverage / slow-jets:** next production, preserving original microscopic radius offsets, signs and units.
-- [ ] **LEFT4c3 / LEFT4d:** actual signed cumulative integrals, Rc target/control functions and terminal identities.
-- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** derivative/outer/energy/common-N/cone, genuine coefficient recursion, oscillatory cancellation and corrected NS field.
+- [x] Original17 source backends,714 signed roots, correlated q and conditioned C0 inverse/A/B on the admitted boxes.
+- [x] Original radius offsets, selected binary periodic arithmetic, exact same left inlet and actual spatial velocity/density queries.
+- [ ] **LEFT4c3-local-signed-integral:** next bounded production output; use actual whole-cell source/phase covers and positive Duhamel mass.
+- [ ] **LEFT4c2-whole-coverage / slow-jets / LEFT4c3-C1-histories / LEFT4d:** actual global incoming histories, cumulative integrals, Rc targets, controls and terminal function identities.
+- [ ] **HIGH / LEFT4e / REC / WAVE / PHYS:** higher derivatives/outer/energy/common-N/cone, genuine coefficient recursion, oscillatory correction and full NS field.
 
-Evidence:35 native velocity/density queries,175 kernel enclosures,16 independent original scalar comparisons and 1022 working/index hashes. Routing: one read-only **GPT-5.6 Luna / max** worker. All global completion gates remain false. Earlier sections below are historical.
+Evidence:17 native radius/phase queries,5 spatial candidate cells/25 kernels, exact inlet, modular arithmetic/seam checks and 1023 source hashes. Read-only worker: **GPT-5.6 Luna / max**. All global completion gates remain false. Earlier sections are historical.
 
 ---
 
