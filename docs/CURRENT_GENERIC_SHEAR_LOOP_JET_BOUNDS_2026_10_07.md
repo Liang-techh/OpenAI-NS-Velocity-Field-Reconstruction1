@@ -1,5 +1,7 @@
 # Actual generic-loop inverse and phase-held primitive derivative bounds
 
+**Successor:** signed source derivative expressions are now exposed in [CURRENT_GENERIC_SHEAR_SIGNED_JETS_2026_10_07.md](CURRENT_GENERIC_SHEAR_SIGNED_JETS_2026_10_07.md). Actual point-loop/higher-order rows, changed transport/new repair/N and true recursion remain open.
+
 Checked implementation: [6acd9f09](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6acd9f091b800f149ef8bd88094242c825211b94). The actual original17-chart source cover now supplies uniform logarithmic bounds for the Section11 inverse phase and original loop primitives through y,Z,yy,yZ. The adapter also supplies phi,phi_phi,y_phi,Z_phi bounds needed to insert one common fast phase. These are bounds of the loop defined by the original analytic source expressions; source caps never define point field values. Signed point-loop evaluation, higher mixed rows, changed histories/new repair and common finite N remain open. The long-term goal remains active.
 
 ## Implemented API and units
