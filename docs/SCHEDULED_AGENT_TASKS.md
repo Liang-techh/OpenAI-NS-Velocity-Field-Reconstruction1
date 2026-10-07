@@ -1,18 +1,18 @@
-# Current handoff: general five-moment repair operator (2026-10-07)
+# Current handoff: actual native generic inlet source (2026-10-07)
 
-Checked implementation: [498e051d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/498e051d8c8d726f001964f7f29133063a42d7d7). Current formulas, conditional scope and production tasks: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md). Whole incoming bounds: [CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md](CURRENT_GENERIC_FIVE_DEFECT_BOUNDS_2026_10_07.md).
+Checked implementation: [9165dd50](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9165dd50c9d4328d4434f3bd5777585e689edb7a). Runnable APIs, exact scope and production tasks: [CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md](CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md). Conditional repair operator: [CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md](CURRENT_GENERIC_MOMENT_REPAIR_OPERATOR_2026_10_07.md).
 
-**LEFT4d general operator advanced:**fresh disjoint bumps on(Rc,2Rc), complete five-moment map and divided inverse now accept arbitrary generic-loop defects. Actual target bounds retain both inverse mu effects and A_Z/A. C1 Banach/positive-swirl sufficient log-N conditions are available. Actual source/defect functions, coefficients and terminal Z closure remain uninstalled.
+**Actual inlet data obtained:** one genuine accepted native physical seed/bridge now supplies the whole-Z positive s_c/2 inlet, all five original incoming histories and independent P0. A smaller live source-cover backend queries all three original bridge charts through their unchanged raw operators. No numerical owner is hydrated from JSON.
 
-- [x] Original whole H0/scales, loop/signed function definitions and whole cumulative defect envelopes.
-- [x] **LEFT4d-conditional-map:**fresh ln2 geometry/inverse, arbitrary generic target, C1 contraction/positivity log conditions.
-- [x] Explicit left-inlet existing-owner consumer at bridge_first s_c/2; actual successful live query remains open.
-- [ ] **LEFT4c2/3-live-functions/seams/integrals:**source replay, actual inlet, one phase/N and own cumulative integration/recovery.
-- [ ] **LEFT4d-installed-functions:**actual Rc target functions, unique controls and terminal Z-function closure.
-- [ ] **LEFT4c2-high-orders / LEFT4c1-outer / CONT / ENERGY / LEFT4e:**required high derivatives, outer/energy, one whole finite N and modified cone.
-- [ ] **REC / WAVE / PHYS:**genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
+- [x] Whole source H0/scales, original loop/rate definitions, five-defect envelopes and conditional general ln2-band repair.
+- [x] **LEFT4c3-left-live-source:** actual native inlet query and original five histories/P0 in formal Pstar units.
+- [x] **LEFT4c2-native-bridge-cover-backend:** first/second/macro live queries, exact original width/radial factors and unit shifts.
+- [ ] **LEFT4c2-remaining-functions/seams / LEFT4c3-own-integrals:** remaining14 charts, exact function backends, one global phase/N and actual cumulative signed defects toRc.
+- [ ] **LEFT4d-installed-functions:** actual Rc target functions, unique controls and terminal Z-function closure.
+- [ ] **HIGH / OUTER / CONT / ENERGY / LEFT4e:** high derivatives, outer/energy, one finite N and modified completed cone.
+- [ ] **REC / WAVE / PHYS:** genuine coefficient recursion/smooth sum, oscillatory cancellation and corrected NS/dynamics.
 
-Focused stage passed:11 exact identities and 160 independent matrix/nonlinear/full-density/implicit-Z comparisons; 1022 indexed dependency hashes matched. Reviewer:GPT-5.6 Luna/max. No source functions, actual controls, terminal closure, global cone or true recursion are admitted by this conditional operator. All global completion gates remain false; the long-term goal remains active. Earlier sections below are historical.
+Focused evidence:4 actual native queries on3 charts; 6467 exact modal/P0 comparisons, 7 rejected owners/domains, proof reuse/restoration guards and 1023 working/index hashes. Reviewer:GPT-5.6 Luna/max. All outputs remain directed coefficient covers; actual defect integrals, repair controls, terminal closure, global cone and true recursion remain unfinished. All global completion gates are false. Earlier sections below are historical.
 
 ---
 

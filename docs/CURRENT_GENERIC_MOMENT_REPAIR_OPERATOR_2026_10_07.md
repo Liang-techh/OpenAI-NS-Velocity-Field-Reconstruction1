@@ -1,5 +1,7 @@
 # Generic five-moment repair on(Rc,2Rc)
 
+**Successor:**actual native left-inlet and three bridge source-cover queries are now checked in [CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md](CURRENT_NATIVE_GENERIC_LEFT_INLET_2026_10_07.md). This clears actual inlet data access; point-function backends, cumulative defects, installed controls and terminal closure remain open.
+
 Checked implementation: [498e051d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/498e051d8c8d726f001964f7f29133063a42d7d7). A new five-bump map, uniform divided linear inverse and C1(Z) Banach/positivity log conditions now cover **arbitrary** same-family generic-loop inlet defects on the reserved(Rc,2Rc) band. This is a conditional functional repair operator, with actual whole-source target majorants. It does not yet install the missing actual defect functions, repair coefficients or terminal Z-function closure. The long-term goal remains active.
 
 ## APIs and source data
