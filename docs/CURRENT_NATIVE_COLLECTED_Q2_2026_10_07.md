@@ -1,5 +1,7 @@
 # Direct original q squared jets before continuous phase transport
 
+Successor: [CURRENT_NATIVE_PERIODIC_C1_SUPPORT_2026_10_07.md](CURRENT_NATIVE_PERIODIC_C1_SUPPORT_2026_10_07.md) derives original whole-period Z support before nonlinear density, tightening80 source derivative ranges and all five terminal Z target upper ranges. Actual controls/global N/closure and recursion remain open.
+
 Checked source: [20afd757](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/20afd757cc0f233ccad160d7178efc5a73bde1d2). Same original source family, full Z[-1,1], candidate N2048 and24 exact continuous radial cells as the preceding [primitive-support stage](CURRENT_NATIVE_PRIMITIVE_SUPPORT_2026_10_07.md). No strict final target upper reduction was established in this run. Rows without a strict final upper reduction: M, I, S, Cp, D=(J-M)/mu, M_Z, I_Z, S_Z, Cp_Z, D=(J-M)/mu_Z.
 
 ## Original formulas
