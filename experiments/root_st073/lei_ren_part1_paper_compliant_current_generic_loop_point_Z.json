@@ -1,0 +1,85 @@
+{
+  "original_Section11_scalar_phase_held_A_B_Z_backend_implemented": true,
+  "source_family": {
+    "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+  },
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_current_generic_loop_point_Z.py": "41b7ab052a9064e76fa29e88e7eac461d5c28a135f4ba7865520090d2483af8a",
+    "lei_ren_part1_paper_compliant_current_generic_shear_loop.py": "a32b1aca0436492481a2443b96bfd8cb85e4f3b66b3d78862b263dde543654b6",
+    "lei_ren_part1_paper_compliant_current_generic_shear_loop_check.json": "21b814c7672343064bf44393ffa1349b9cccb7e142fd40aa76ac2fdd27e0fb67"
+  },
+  "exact_original_loop_value_and_phase_inverse_reused": true,
+  "analytic_q_and_direction_slow_Z_chain_rules": true,
+  "phase_inverse_Z_from_original_implicit_equation": true,
+  "original_eta_and_d_star_Z_independent": true,
+  "point_primitive_A_B_and_slow_Z_backend_implemented": true,
+  "separate_original_point_input_provider_required": true,
+  "quadrature_or_roundoff_certified": false,
+  "original_native_parameter_point_values_selected": false,
+  "numerical_original_source_point_or_integral_oracle_installed": false,
+  "actual_five_controls_installed": false,
+  "certified_actual_fixed_point_tail_installed": false,
+  "actual_terminal_Z_function_closure_installed": false,
+  "current_whole_N_selected": false,
+  "whole_upstream_current_source_packet_assembled": false,
+  "current_upstream_generic_shear_loop_installed": false,
+  "current_upstream_modified_cumulative_moments_recovered": false,
+  "current_upstream_new_family_moment_repair_certified": false,
+  "current_upstream_new_common_finite_N_certified": false,
+  "global_completed_stress_cone_certified": false,
+  "actual_coefficient_recursion_certified": false,
+  "full_corrected_NS_velocity_field_certified": false,
+  "example_explicit_point_reference": {
+    "phase": {
+      "decimal": "0.370000000000000000000000000000000000000000000000000000000000003111507638931",
+      "exact_mpf_tuple": [
+        0,
+        4756536611006611215604207793329841303465720861597066792492073,
+        -203,
+        202
+      ]
+    },
+    "A": {
+      "decimal": "-0.0222790625647014315792101446823142903763149849141150123625942571417510545382",
+      "exact_mpf_tuple": [
+        1,
+        2291268686441280157334042712404076992321159176132379004153351,
+        -206,
+        201
+      ]
+    },
+    "B": {
+      "decimal": "-0.102249986326884370589528692025334010940624094495880244908425268612088021993",
+      "exact_mpf_tuple": [
+        1,
+        10515801155432452302225280179764870580836891624353566796977459,
+        -206,
+        203
+      ]
+    },
+    "A_Z_slow": {
+      "decimal": "0.00274692394998020967265180836921331038358229454569963400444912659303331926957",
+      "exact_mpf_tuple": [
+        0,
+        4520075878307203646237866632189485211487545592182278010996199,
+        -210,
+        202
+      ]
+    },
+    "B_Z_slow": {
+      "decimal": "-0.00879841200068151116789607726028703331802151662886285485736453092449020928431",
+      "exact_mpf_tuple": [
+        1,
+        904864190269438551775442465912092593547310060842721005145479,
+        -206,
+        200
+      ]
+    },
+    "manufactured_inputs_only": true,
+    "approximate_only": true
+  },
+  "execution_seconds": 0.23499999998603016,
+  "scope": "Original Section11 recipe point backend for A/B and slow-Z rows with explicit true scalar inputs; approximate angle quadrature and implicit inversion. Native source/parameter dispatch and numerical certification remain open."
+}
