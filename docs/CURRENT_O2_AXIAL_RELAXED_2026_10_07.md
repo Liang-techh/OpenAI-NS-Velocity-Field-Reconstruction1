@@ -1,5 +1,7 @@
 # Full original O2 axial turnoff: relaxed input completed
 
+Latest successor: [CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md](CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md), implementation [2783e2a5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2783e2a5301a6f969fa056613c69bd0606ee1709). Current strict inner exit and explicit left support are now attached; actual upstream shear/new-family repair and global cone remain open.
+
 Checked implementation: [1633f6f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1633f6f12f80373ca63996ad3defcdb35957645f). **LEFT4a-axial is complete on phase[0,1], Z[-1,1]. Together with the checked Rh/reference, slope and buffer results, the original upstream outer chain now has its full relaxed input cone.** The axial interior also satisfies the original strict cone where Z is nonzero. Its two flat phase endpoints and midplane remain relaxed; whole closed strict admission is false. This is a source stress result, not coefficient recursion or a corrected NS solution.
 
 ## Actual source and the decisive correlation

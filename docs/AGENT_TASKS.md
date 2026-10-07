@@ -1,18 +1,19 @@
-# Current handoff: full original outer relaxed input (2026-10-07)
+# Current handoff: strict inner exit support attached (2026-10-07)
 
-Checked implementation: [1633f6f1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1633f6f12f80373ca63996ad3defcdb35957645f). Source proof/API/tasks: [CURRENT_O2_AXIAL_RELAXED_2026_10_07.md](CURRENT_O2_AXIAL_RELAXED_2026_10_07.md).
+Checked implementation: [2783e2a5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2783e2a5301a6f969fa056613c69bd0606ee1709). Source/proof/API/ordered tasks: [CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md](CURRENT_INNER_EXIT_STRICT_COLLAR_2026_10_07.md).
 
-**The axial turnoff relaxed input is now complete on its whole closed phase/Z domain. Combined with reference, slope and buffer, all four original outer input charts satisfy the paper's full relaxed criterion.** The axial proof retains the M>=4B source correlation and every full stress sector; its complete cone product is below .91. The midplane and flat endpoints remain relaxed, so upstream source shear repair is still required.
+**LEFT4b is complete: the current core/first source now has an explicit strict inner exit subcollar and left shear support fraction[1/2,1].** Actual six inlet atoms, original P0, amplitude and exact hb are attached by source function identities, beyond family tuples. On its nonzero part kappa>2.019, direction/(omega*Hbar)>.95 and full quadratic/(omega*Hbar)^2>1.8. The core inlet retains the exact zero-stress case.
 
-- [x] Full modulation/history/radial/pressure and complete tensor/remainder bounds.
-- [x] Strict changed-source taper, O3, pre-repair transport and quiet repair cones; scoped common N>=68,533,403.
-- [x] **LEFT4a:** original reference/slope/axial/buffer full relaxed input and original source joins; 1024 directed axial cutoff cells and 20 independent full axial stress cases.
-- [ ] **LEFT4b:** attach the existing compliant analytic core/exit strict collar to the current core-first graph through exact inlet-atom and pressure equality; use compliant_global_exit_certificate and compliant_K1_ledger, never legacy shared hashes.
-- [ ] **LEFT4c-d:** actual upstream shear loop, new-family five-defect repair and implicit control/error envelopes.
-- [ ] **LEFT4e / BOUND3-global:** complete support-edge/inner/global strict cone and common finite N.
-- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** physical interfaces, energy, true coefficient recursion/smooth sum, waves/mean correction, corrected velocity and full NS/dynamics.
+- [x] Original reference/slope/axial/buffer full relaxed input.
+- [x] Scoped changed-source taper/O3/pre-repair/quiet strict cones and old common N>=68,533,403.
+- [x] **LEFT4b:** current strict inner exit attachment, explicit positive support collar, same pressure/atoms/width and signed complete cone proof.
+- [ ] **LEFT4c1:** assemble the entire upstream current source/coordinate chain and remaining relaxed-input gates.
+- [ ] **LEFT4c2-3:** actual generic shear loop with source-bound left/right tapers; own divergence-free radial recovery and cumulative defects.
+- [ ] **LEFT4d:** new-family moment repair/unique terminal control and finite-N envelopes including the narrow left support.
+- [ ] **LEFT4e / BOUND3-global:** completed all-region strict cone and common finite N.
+- [ ] **CONT / ENERGY / REC / WAVE / PHYS:** remaining physical interfaces, energy, actual recursive coefficients/smooth sum, waves/mean correction, corrected velocity and full NS/dynamics.
 
-Read-only reviewer: GPT-5.6 Luna / max. This completes a source-cone prerequisite; global/energy/recursion/full-NS gates and historical registry counts remain unchanged. Full goal remains active. Earlier sections below are historical.
+Focused checker passed 420 signed cone cases and 9 cutoff cases; 568 indexed source hashes matched. Reviewer: GPT-5.6 Luna / max. Exact flat stress and width stay formal; no constant stress floor or physical point evaluator is inferred. Global/energy/recursion/full-NS gates and historical registry counts are unchanged. Full goal remains active. Earlier sections below are historical.
 
 ---
 
