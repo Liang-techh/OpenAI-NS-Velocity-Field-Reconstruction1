@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md](CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md), checked source 0a710c20. The actual same-source nonlinear true-phase means, finite-N bias and mean own-rate C0/Z Duhamel component are DONE. Useful mixed bounds, centered primitives, actual spatial oscillatory remainder/sharp total averaging and full reconstruction remain OPEN. Historical task text below records the earlier mixed-density state.
+
 # Original O2 source-correlated q_y and actual nonlinear mixed densities
 
 Checked source [90b2ad11](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90b2ad117539c5deb2b1faac89eb6139cc08cfd6). Predecessor: [CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md](CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md), original direct-integral source42a1327a and handoffcc4c1a15. The existing GPT-5.6 Luna/max worker reviewed read-only. Root implemented, computed and accepted; no child was spawned. Full reconstruction remains active.

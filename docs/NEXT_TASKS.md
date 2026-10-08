@@ -1,3 +1,17 @@
+# Current handoff: original O2 true-phase means and finite-N nonlinear bias (2026-10-08)
+
+Checked source [0a710c20](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0a710c20ae9ba307e02631e5c774e924c17a37f9); actual bounds/evidence and successor implementation [CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md](CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md). Predecessor correlated-q_y source90b2ad11 remains accepted.
+
+Actual nonlinear five true-phase means now cover original y[0,1]/Z[-1,1], axis and both signs:64 source cells by3 predicates,768 interval inverse queries. Exact same-function reflection is integrated over four true-half-phase cells with correct full measure. Nonzero V and all finite-N pressure/energy biases remain. Mean m and its slow derivatives are exactly zero; this is not zero actual spatial oscillatory contribution. Mean C0/Z are integrated once with original own-rate Duhamel masses and formal Lambda0/L^2 derivative unit.
+
+- [x] **O2-SOURCE-REFLECTION/ACTUAL-TRUE-PHASE-MEANS/FINITE-N-BIAS/MEAN-DUHAMEL-C0-Z:** source 0a710c20,15360 pair rows,3840 native mean rows and 1276 staged exact hashes PASS.
+- [ ] **NEXT SOURCE-A-AMPLITUDE/USEFUL-MIXED-NORMS -> CENTERED-PRIMITIVES -> SPATIAL-OSCILLATORY-REMAINDER/SHARP-TOTAL-AVERAGING:** retain mean bias, actual common-N radius phase, own-rate kernels and every endpoint/source/oracle/error term.
+- [ ] **ACTUAL-INHERITED-HISTORY/AXIAL-BUFFER/ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal active and original scope unchanged; scale recursion remains open.
+
+Historical handoffs follow unchanged. Mark scoped tasks DONE only with evidence and a commit; use this successor as the active queue.
+
+---
+
 # Current handoff: original O2 correlated q_y and nonlinear mixed density rows (2026-10-08)
 
 Checked source [90b2ad11](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90b2ad117539c5deb2b1faac89eb6139cc08cfd6); full evidence and concrete successor queue [CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md](CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md). Original direct-integral source42a1327a remains accepted.
