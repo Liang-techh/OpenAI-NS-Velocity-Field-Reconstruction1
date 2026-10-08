@@ -1,3 +1,17 @@
+# Current handoff: original O2 slope mixed source and varying q/nu (2026-10-08)
+
+Checked source [7f852778](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7f852778afe78e633f426d62f58424e6b8a7caac); current evidence and executable queue [CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md](CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md).
+
+Complete original O2 slope y[0,1]/Z[-1,1] now has issued C0/y/Z/yZ E,V,p1,p2,a,b,t0,q,nu frames. Actual a_y,q_y,nu_y, original pressure prefix/suffix and all late errors remain. Positive endpoint q is formal, not zero. nu denotes phase normalization, not NS viscosity. Near-endpoint q_y can be very wide; no changed mixed phase primitive or five integral is claimed yet.
+
+- [x] **O2-SLOPE-ACTUAL-PARAMETER-SOURCE-JETS:** whole-domain original source interface completed.
+- [ ] **NEXT O2-VARIABLE-q/FIXED-PHASE-NU/FULL-A-B:** implement the linked exact transport queue, then prove the positive-small-q signed branch and actual five integrals.
+- [ ] **AXIAL/BUFFER/ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** the persistent full goal remains active.
+
+Focused new-source calculus and continuous-domain evidence passed;1232 staged dependency hashes passed. Historical handoffs below are preserved.
+
+---
+
 # Current handoff: original full reference axial C1 coverage (2026-10-08)
 
 Checked source [63ae47c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/63ae47c734b833ca344170086777b2177c1db9f3); current evidence and detailed executable queue [CURRENT_REFERENCE_FULL_AXIAL_C1_2026_10_08.md](CURRENT_REFERENCE_FULL_AXIAL_C1_2026_10_08.md).
