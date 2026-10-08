@@ -1,3 +1,5 @@
+Next runtime milestone: [CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md](CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md). Live two-chart all-N role dispatch and original N-dependent C0/Z coefficient evaluation are connected; full-cell/integral/control/global conditions remain open.
+
 # Original Rh_reference point and phase oracle extension
 
 Checked source [43723c51](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43723c513ce69d5a30d340251f6daa343764a908). Predecessor: [CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md](CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md).

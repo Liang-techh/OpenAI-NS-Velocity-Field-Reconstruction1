@@ -1,3 +1,18 @@
+# Current handoff: live original two-chart N-dependent coefficient runtime (2026-10-08)
+
+Checked source [766da2b0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/766da2b08cdc62e68d032aa285d89fedd60070bd); evidence and executable queue [CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md](CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md). Centered whole-Z/all-N/unit-C1-ball contract remains accepted.
+
+Live Rh_reference/O2_slope callbacks now supply exact all-N E/V/A/B C0/Z roles. A directed factored runtime evaluates the original N-dependent -1/-2 coefficients for all five signed densities, per actual source phase piece before union, retaining V/E/B cross terms and positive source tails. Five actual queries at N160/256 are evaluated independently; these are candidate local coefficient enclosures, not globally admitted N or terminal moment closure.
+
+- [x] **TWO-CHART-LIVE-ROLE-DISPATCH/FACTORED-COEFFICIENT-RUNTIME/NONLINEAR-PHASE-UNION:** completed. Existing scalar FunctionEvaluator guards remain unchanged.
+- [ ] **NEXT CANONICAL-FACTOR-ATLAS/WHOLE-CELL-SOURCE/OWN-RATE-INTEGRALS:** analytic source/radius conversions and directed full-cell integration must precede cross-cell summation. Point frames cannot be silently mixed.
+- [ ] **NEXT REMAINING-CHARTS/ALL-24-CELL-ORACLE/EXECUTABLE-N/ACTUAL-CONTROLS:** still open. Local runtime rejects integral/control operations.
+- [ ] **GLOBAL-JOINS/HEAT/STRESS/N-DEPENDENT-RECURSION/TWO-PULSES/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused independent exponential-average/density/runtime/guard checks and1178 Git-index hashes PASS. Producer22.407s, checker22.938s. GPT-5.6 Luna/max reviewed read-only interfaces; root implemented, computed and published. Earlier handoffs are historical.
+
+---
+
 # Current handoff: original reference source point/phase C0-Z extension (2026-10-08)
 
 Checked source [43723c51](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43723c513ce69d5a30d340251f6daa343764a908); evidence and executable queue [CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md](CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md). Centered all-N/unit-C1-ball contract remains accepted.
