@@ -1,3 +1,16 @@
+# Current handoff: complete original axial C0/Z transport (2026-10-08)
+
+Checked source [4033e3dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4033e3dc6d92bf7bb17ed5c12b86d8cdf8e38bae); implementation, evidence and detailed next tasks [CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md); predecessor [CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md](CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md).
+
+The original O2 axial selector [0,1] now has complete signed density integration and its five C0/Z affine operator on Z[.36,.38]/[-.38,-.36], N1024. The actual endpoint velocity/history/P0/stress, actual phase and supported signed-u inverse produce 24 queries/240 local integral rows. Two connectors and strict middle compose 15 ordered cells per tile. Genuine accepted 2048-cell slope correction enters the map; axial-exit correction, own histories and pressure are saved.
+
+- [x] **AXIAL-AMPLITUDE/HISTORY/STRESS/PHASE/INVERSE/FIVE-INTEGRALS/WHOLE-OPERATOR:** executed and checked on two strict-sign tiles with genuine incoming and pressure memory.
+- [ ] **NEXT BUFFER-SOURCE/INTEGRALS/NEW-RD-RC:** 11 log-radius units; phi advances 11264 periods at N1024. Use the new axial-exit correction, then reuse the accepted complete transition with the new Rd inlet.
+- [ ] **FIVE-FUNCTIONAL-DEFECTS/CONTROLS/AXIS/WHOLE-Z/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused checks PASS; 1290 Git-index hashes match. Reused GPT-5.6 Luna/max read-only worker; root owns code/computation. Earlier sections are historical and their former next tasks are superseded here.
+
+---
 # Current handoff: whole original axial signed b/q source (2026-10-08)
 
 Checked source [2cb96973](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2cb96973df6e02f63b0751e2572129a0f2656a51); evidence and executable tasks [CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md](CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md); predecessor [CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md).
