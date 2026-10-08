@@ -1,3 +1,5 @@
+Current successor: [CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md](CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md), checked source 15abec2f. Actual full-predicate Rc five joint targets are now implemented. The original24 control record adapter still needs exact five O2 slope partitions; finite controls/terminal/global N/sharp errors/recursion remain OPEN. Historical task text below records the predecessor state.
+
 # Actual full-predicate O2 correction reaches source-owned Rc
 
 Checked source [9d69c6f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9d69c6f3d842b0c71bd713f98ebee63d466c7d8e). Predecessor [CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md), source d48fd7b9/docs 1c8410bf. The complete paper-faithful reconstruction goal remains active.

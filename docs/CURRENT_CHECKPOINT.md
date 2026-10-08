@@ -1,3 +1,17 @@
+# Current handoff: actual full-predicate Rc five joint targets (2026-10-08)
+
+Checked source [15abec2f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/15abec2f6c91ef67d042983f3bdec5a41f466aae); evidence and ordered agent queue [CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md](CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md). Predecessor Rc source9d69c6f3/docsade8a180 remains accepted. Full original goal active.
+
+Actual N1024 correction at Rc now yields all five whole-Z C0/Z repair targets with fresh original A/A_Z at power offset2 and same positive mu. Joint k-A*m and its ordinary-Z derivative are formed before normalization; background/P0 and direct/spatial alternatives stay separate. Conservative covers do not prove sharp cancellation or solved controls.
+
+- [x] **ACTUAL Rc FULL-PREDICATE JOINT TARGET ADAPTER:** source 15abec2f, independent quotient/source acceptance and 1300 staged exact hashes PASS.
+- [ ] **NEXT FIVE EXACT O2 SLOPE PARTITIONS -> ACTUAL24 RECORD BRIDGE -> FINITE PICARD / SHARP ERRORS -> CERTIFIED FUNCTIONAL LIMIT / FIVE TERMINAL IDENTITIES / GLOBAL N:**64 uniform predicate bins cross .12/.13/.14/.15 seams; split/reintegrate them before claiming the original24 control precondition.
+- [ ] **SOURCE ORACLES / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** full scope unchanged. Finite target covers are not scale recursion or full residual closure.
+
+Historical handoffs follow unchanged. Use successor as active queue; mark DONE with evidence and a commit.
+
+---
+
 # Current handoff: actual full-predicate O2 correction reaches Rc (2026-10-08)
 
 Checked source [9d69c6f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9d69c6f3d842b0c71bd713f98ebee63d466c7d8e); evidence and detailed agent queue [CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md](CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md). Predecessor source d48fd7b9/docs 1c8410bf remains accepted. Full original goal active.
