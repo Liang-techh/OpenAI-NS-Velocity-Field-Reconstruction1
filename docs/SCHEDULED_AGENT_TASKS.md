@@ -1,3 +1,22 @@
+# Current handoff: original whole near-midplane C0/Z integration (2026-10-08)
+
+Checked source [28498a53](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/28498a5314e4ad951a6f73d376c191460d692370); current evidence and executable queue [CURRENT_REFERENCE_NEAR_MIDPLANE_2026_10_08.md](CURRENT_REFERENCE_NEAR_MIDPLANE_2026_10_08.md).
+
+Original source, regular inverse/primitive Z derivatives and five own-rate contributions now cover whole y[-5,0] and signed zeta[-1e-8,1e-8], plus the 100 times wider[-1e-6,1e-6]. Physical Z=zeta/(Pstar^11*Cstar^10) remains formal. Actual pressure odd carriers, finite alpha enclosure, even error jets and positive L/Q hulls are retained. Separate pressure boxes preserve source provenance, not joint arithmetic correlation. On the wider 16-cell source partition, |u|<=0.146716<1/4 across both signs and zero.
+
+N16384/16-cell wider C0 contribution bounds(m,h,k,e,p) are below(6.528e-6,1.0660e-5,4.334e-6,1.4315e-5,5.3100e-5). Ordinary Z bounds retain the native factor Lambda=Pstar^11*Cstar^10*L^-2. These are local source-window contributions, not terminal moment errors, global frequency admission or NS residuals.
+
+- [x] **FACTORED-NEAR-MIDPLANE/ORIGINAL-PRESSURE-CARRIERS:** installed with actual C0/Z source functions and complete pressure remainder/error provenance.
+- [x] **REGULAR-WHOLE-NEIGHBORHOOD/OWN-RATE-INTEGRALS:** installed on whole signed intervals with genuine nonzero p2_Z and actual N-dependent coefficients.
+- [x] **HUNDREDFOLD-COVERAGE:** accepted expanded neighborhood[-1e-6,1e-6] in zeta, with the original branch guard.
+- [ ] **NEXT REGULAR-y/yZ-SOURCE/FOURIER-MIXED/C1-AVERAGING:** derive original mixed source rows and full true-phase inverse/products before IBP. Do not use strict signed r^-1 through zero.
+- [ ] **REGULAR-SIGNED-OVERLAP/WHOLE-Z/ORACLE-FREQUENCY:** cover all missing source intervals and retain large derivative factors, actual endpoints and oracle errors.
+- [ ] **O2/AXIAL/BUFFER/ALL17-24/CONTROLS/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** follow the linked detailed acceptance queue; the full original goal remains active.
+
+Five levels,68 whole cells and25 own-rate mass comparisons; focused original derivative/defining-integral evidence and1208 Git-index hashes PASS. Producer54.594s, checker29.484s. Existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and published. Earlier handoffs below are historical.
+
+---
+
 # Current handoff: original exact-midplane whole-reference C0/Z integration (2026-10-08)
 
 Checked source [254c9d2c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/254c9d2cd2d44feabcbd953236b99c7542caf735); current evidence and ordered queue [CURRENT_REFERENCE_MIDPLANE_2026_10_08.md](CURRENT_REFERENCE_MIDPLANE_2026_10_08.md).
