@@ -1,3 +1,18 @@
+# Current handoff: original positive-log cutoff and microscopic support scale (2026-10-08)
+
+Checked source [f6e3f66d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f6e3f66dc03f204f516ed99d4b42654e2bf17f3d); results and executable next actions [CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md](CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md); predecessor [CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md](CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md).
+
+The same original sigma(s)=exp(L)/(1+exp(L)), L=1/(1-s)^2-1/s^2, now retains a positive logarithmic factor and genuine ordinary y2/Z1 rows. With unchanged mu/eta/q/source family, actual transition source queries on both strict-sign tiles certify the entire[2^-128,1/2] flat collar, joined with accepted[1/2,1]. The explicit-input C1 operator for[2^-128,1] has exact zero own increments and correct inherited attenuation/pressure memory. s is the original radial transition offset, not physical evolution time.
+
+- [x] **ORIGINAL-POSITIVE-LOG-SIGMA/COLLAR-C1:** actual defining cutoff/ordinary derivatives, native source/phase/inverse/density,20 new left-collar C0/Z zero rows, two-cell quiet operator and original incoming preserved.
+- [x] **SOURCE-DERIVED-ACTIVE-SUPPORT:** original nonzero-q support lies within s<=W, W=[log(mu)-log(eta)]^(-1/2); source logW upper approximately-4.707705336740406e17. This is a radial source scale, not residual/core contraction/recursion completion.
+- [ ] **NEXT MICROSCOPIC-PREFIX-COORDINATE/CONDITIONAL-Q:** use the same original parameter-derived support scale to express s=W*xi with true width/Jacobian once; preserve original active gamma/q bounds and retained seam. Do not enumerate ordinary grid cells or select a parameter/cap midpoint.
+- [ ] **ORIGINAL-O3-AMPLITUDE/ACTUAL-PREFIX-INTEGRALS:** retain the exact same-source E/E_Z/p2 factor relations for regular/signed inverse and genuine five C0/Z integrals. Prefix[0,2^-128] still explicitly unresolved; no incoming history may be set to zero.
+- [ ] **AXIAL-b/COMPLETE-TAIL/RC-TARGETS/FIVE-CONTROLS/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** all full-construction gates remain false.
+
+Focused check PASS;1261 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. Accepted original upstream/O2 integrals and defining source modules were not rerun or modified. Earlier sections are historical.
+
+---
 # Current handoff: original transition right-half C1 integral operator (2026-10-08)
 
 Checked source [5c9ba3fa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5c9ba3facb56c10d836991b8cca8ac863c829406); evidence and next actions [CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md](CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md); predecessor [CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md](CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md).
