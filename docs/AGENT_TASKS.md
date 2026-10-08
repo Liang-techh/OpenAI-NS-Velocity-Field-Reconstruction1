@@ -1,3 +1,17 @@
+# Current handoff: original O2 varying-q regular mixed phase on axis (2026-10-08)
+
+Checked source [1e16263f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1e16263f59f1fd7eadedac9ea41ddd350feec9c8); evidence and next executable queue [CURRENT_O2_REGULAR_MIXED_PHASE_2026_10_08.md](CURRENT_O2_REGULAR_MIXED_PHASE_2026_10_08.md).
+
+Actual original O2 slope now has varying-q fixed-true-phase inverse and complete A/B C0/y/Z/yZ transport over all y[0,1], exact Z=0 and whole phi[0,1]. q_y,nu_y,a_y and all E products remain. Ordinary transverse derivatives at the axis are included; nonzero-Z and signed coverage are still open. Source-backed64-cell whole-phase rectangles are conservative inverse-graph enclosures, not selected compatible fields. nu is phase normalization, not NS viscosity.
+
+- [x] **O2-SLOPE-SOURCE-JETS/REGULAR-VARIABLE-q/FIXED-PHI-NU/FULL-A-B (axis scope):** source-backed implementation and independent quadrature evidence accepted.
+- [ ] **NEXT POSITIVE-q-SIGNED-CURVATURE/CARRIER/DOMAIN-OVERLAP:** follow the linked queue, then compute actual O2 C0/Z five integrals.
+- [ ] **AXIAL/BUFFER/ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal remains active.
+
+Focused evidence:114 independent variable-q integral/implicit/product comparisons,64 continuous axis source/phase cells,6 true inverse brackets and1236 staged dependency hashes PASS. Historical handoffs follow unchanged.
+
+---
+
 # Current handoff: original O2 slope mixed source and varying q/nu (2026-10-08)
 
 Checked source [7f852778](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7f852778afe78e633f426d62f58424e6b8a7caac); current evidence and executable queue [CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md](CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md).
