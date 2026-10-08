@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md](CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md), checked source 90b2ad11. Source-correlated q_y and actual five nonlinear slow-y/yZ density rows are now DONE. Useful collected mixed norms, real finite-N phase means and sharp averaging, actual inherited history and full reconstruction remain OPEN. Historical task text below records the earlier direct-integral state.
+
 # Full original O2 five C0/Z direct Duhamel contribution
 
 Checked source [42a1327a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42a1327a6cacf00ca75697e48eff2f43f6f8cc81). Predecessor: [CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md). The existing GPT-5.6 Luna/max worker reviewed read-only. Root implemented, computed and accepted; no child was spawned. The full reconstruction goal remains active.

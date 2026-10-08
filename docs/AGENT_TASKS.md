@@ -1,3 +1,17 @@
+# Current handoff: original O2 correlated q_y and nonlinear mixed density rows (2026-10-08)
+
+Checked source [90b2ad11](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/90b2ad117539c5deb2b1faac89eb6139cc08cfd6); full evidence and concrete successor queue [CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md](CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md). Original direct-integral source42a1327a remains accepted.
+
+Source correlation removes the independent microscopic q denominator from the q_y outer range: magnitude<=31.915146646665, formal q_y power0 and gamma_q power-1. Original positive q/eta, exact nu_y and pressure/history data stay unchanged. The bound is propagated into actual mixed phase and complete five C0/y/Z/yZ density rows on64 original source cells by3 predicates.768 C0/Z phase range comparisons remain exactly unchanged.
+
+- [x] **O2-CORRELATED-q_y/ACTUAL-MIXED-DENSITY-Y-YZ-ROWS:** source 90b2ad11,3840 native density rows, focused source/endpoint/density evidence and 1272 staged dependency hashes PASS.
+- [ ] **NEXT COLLECTED-MIXED-NORMS -> TRUE-PHASE-MEANS/FINITE-N-BIAS -> CENTERED-PRIMITIVES/SHARP-AVERAGING:** turn native slow-y/yZ information into useful five full-window C0/Z bounds, retain all common-N boundary terms and source/oracle/integration error.
+- [ ] **ACTUAL-INHERITED-HISTORY/AXIAL-BUFFER/ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal active. Actual scale recursion is not achieved.
+
+Historical handoffs follow unchanged. Use this successor and mark completion only with source-backed evidence and a commit.
+
+---
+
 # Current handoff: full original O2 five C0/Z direct integrals (2026-10-08)
 
 Checked source [42a1327a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42a1327a6cacf00ca75697e48eff2f43f6f8cc81); evidence, actual bounds and detailed successor queue [CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md](CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md).
