@@ -1,3 +1,17 @@
+# Current handoff: full original O2 conditional varying-q mixed phase (2026-10-08)
+
+Checked source [59e85ae7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59e85ae7d96f1b827a882ec8c431db870c989511); evidence and detailed next implementation [CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md).
+
+The previous exact-axis adapter now has full original O2 regular/positive/negative conditional source support:64 radial cells by3 branches,192 source/phase frames, complete A/B C0/y/Z/yZ with actual q_y/nu_y, both signed curvature pieces and18 original inverse queries. The named predicates cover all original y[0,1]/Z[-1,1], including zero and overlap. Outer rectangles are not asserted entirely regular/signed; bounds apply on the named source predicate and true inverse graph.
+
+- [x] **O2-ISSUED-SOURCE-FRAMES/q-u-ATLAS/CORRELATED-Y/SIGNED-MIXED-AB/COMMON-INVERSE-DOMAIN-UNION (interface):** source59e85ae7, 228 independent comparisons plus32 overlap comparisons, 1252 unique staged hashes PASS.
+- [ ] **NEXT O2-ACTUAL-N-C0/Z-DENSITIES/PREDICATE-UNION/ENDPOINT-PHASE/FIVE-OWN-RATE-INTEGRALS/INCOMING-HISTORIES:** implement the real contribution using this interface; hull overlaps, preserve original P0 and pressure zero-rate memory, no q floor.
+- [ ] **AXIAL/BUFFER/ALL17-24/MEANS/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal remains active. Actual scale recursion is not yet achieved.
+
+Historical handoffs follow unchanged. Follow this current successor and mark completion only with evidence/commit.
+
+---
+
 # Current handoff: full original O2 pressure carrier and positive-q curvature (2026-10-08)
 
 Checked source [e039b72f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e039b72fc65ddb92883643f54397e8318dc977ef); evidence and detailed next implementation [CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md](CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md).
