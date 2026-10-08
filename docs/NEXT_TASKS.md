@@ -1,3 +1,18 @@
+# Current handoff: original reference source point/phase C0-Z extension (2026-10-08)
+
+Checked source [43723c51](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43723c513ce69d5a30d340251f6daa343764a908); evidence and executable queue [CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md](CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md). Centered all-N/unit-C1-ball contract remains accepted.
+
+Rh_reference now supplies closed actual E/V/a/b/p1/p2 point coefficients and ordinary Z rows, with directed errors, original pressure/factors, true candidate-N radius phase and A/B phase-held Z enclosures. Existing O2 point services are reused. Four actual N7 queries passed source, inverse/derivative and inlet-identity checks; 1067 Git-index dependency hashes PASS. No ancestor producer or slope quadrature rebuilt.
+
+- [x] **REFERENCE-CLOSED-POINT-C0/Z/TRUE-RADIUS-A-B-Z/SOURCE-INLET-IDENTITY:** committed.
+- [ ] **NEXT TYPED-PARTIAL-DISPATCH/FACTORED-EVALUATOR/WHOLE-CELL-INTEGRALS:** preserve actual coefficients/errors/factors and reject unsupported roles. Existing scalar FunctionEvaluator guards must not be bypassed with source endpoints/midpoints.
+- [ ] **NEXT REMAINING-CHART-POINTS/24-CELL-INTEGRAL-ORACLE/EXECUTABLE-N/ACTUAL-CONTROLS:** still open. Two local actual point paths do not install an all17 numerical oracle or select global N.
+- [ ] **GLOBAL-JOINS/HEAT/STRESS/N-DEPENDENT-RECURSION/TWO-PULSES/CORRECTED-UVW:** still open; overall construction flags remain false.
+
+Reused GPT-5.6 Luna/max for read-only normalization review; root implemented, computed, checked and published. Earlier handoffs are historical.
+
+---
+
 # Current handoff: centered all-N control bridge completed (2026-10-08)
 
 Checked source [57aec530](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57aec530daf25bcbdd03c8e9df34c8af3eed33c2); evidence and executable queue [CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md](CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md); predecessor [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md).

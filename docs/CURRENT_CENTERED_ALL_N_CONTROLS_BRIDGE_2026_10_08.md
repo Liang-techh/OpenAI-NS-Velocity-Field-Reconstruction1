@@ -1,3 +1,5 @@
+Next actual-source implementation: [CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md](CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md). Rh_reference C0/Z point and true-radius primitives are now connected; the centered whole-Z/all-N control contract below remains accepted.
+
 # Centered all-N control bridge and unit C1 ball
 
 Checked source [57aec530](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57aec530daf25bcbdd03c8e9df34c8af3eed33c2). Predecessor: [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md). Reused **GPT-5.6 Luna / max** for read-only interface and Banach-estimate review; root implemented, computed, checked and published.
