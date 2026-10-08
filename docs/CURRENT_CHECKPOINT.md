@@ -1,3 +1,16 @@
+# Current handoff: original O2 true-radius phase-held Z primitives (2026-10-07)
+
+Checked source: [db22ee20](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db22ee20c298a71a29e40e456b18fe0df4210694). Evidence, contracts and detailed executable tasks: [CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md).
+
+Original inverse-angle Z, A_Z and B_over_Pstar_Z enclosures now consume actual complete O2 point/error rows and true radius phase, with the same selected source auxiliary scales. The nonzero p2_Z midplane and positive tiny-q endpoint are retained. Both conditioned derivative coordinates execute, including a genuine narrow-peak phase at diagnostic N=19. Accepted source quadrature bits/errors are reused under the same hash/precision contract.
+
+- [x] **O2-C0/PHASE-HELD-Z:** true-radius inverse/A-B and their original phase-held Z rows; full E_Z product, regular midplane/Fourier tails, source-factored signed Mobius derivatives and exact symmetry branches.
+- [ ] **NEXT SIGNED-DENSITY/ONE-INTEGRAL:** bind native values/jets to the accepted exact N-dependent five-density graph; accelerate genuine ordered-node source computation; integrate one signed original own-rate source with common N/phase and propagated errors.
+- [ ] **WHOLE-ORACLE/CONTROL/FIELD/REC/WAVE:** remaining charts and correlated terminal pressure, whole-domain common N/controls, corrected field/exterior/global stress, actual n-dependent recursion and oscillatory cancellation, physical uvw diagnostics.
+
+Focused checker PASS:48 original scalar-Z component comparisons across16 inverse-chart cases; five native phase queries covering both coordinates, exact midplane and tiny endpoint; Git-index audit1062 hashes. Read-only reviewer **GPT-5.6 Luna / max**, existing worker only. Actual signed integrals, all-chart oracle, controls, global N and coefficient/scale recursion remain incomplete. Previous sections are historical.
+
+---
 # Current handoff: true-radius original O2 C0 inverse and A/B (2026-10-07)
 
 Checked source: [6f96a222](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6f96a22280e0d257ec54c383782fef85adf010c0). Evidence, source/precision contracts and executable next tasks: [CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md](CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md).
