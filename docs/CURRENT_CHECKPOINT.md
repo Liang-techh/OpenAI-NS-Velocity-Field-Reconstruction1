@@ -1,3 +1,21 @@
+# Current handoff: original full reference axial C1 coverage (2026-10-08)
+
+Checked source [63ae47c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/63ae47c734b833ca344170086777b2177c1db9f3); current evidence and detailed executable queue [CURRENT_REFERENCE_FULL_AXIAL_C1_2026_10_08.md](CURRENT_REFERENCE_FULL_AXIAL_C1_2026_10_08.md).
+
+The original Rh_reference y[-5,0] now has C0,y,Z,yZ source and actual-N C0/Z five own-rate integral enclosures over the entire reference Z[-1,1]. Three overlapping actual-u predicates bridge the formal central neighborhood and ordinary nonzero Z. Full pressure errors, source p2/Z sign, same-function overlap, original large Lambda0 and all histories remain. Independent interval rows are enclosures of the original function, not selected compatible fields.
+
+This closes reference axial domain coverage. Full-domain C0 effective bounds at16 cells/N16384 are about6.832e-5 to0.003603; ordinary Z bounds retain Lambda0 times2.160e9 to1.005e10. They are conservative contributions, not terminal defects, a global N or NS residual. The next work is actual O2 varying a/q/nu and implicit derivatives, then missing route units and functional terminal controls.
+
+- [x] **REFERENCE-FULL-PRESSURE-CARRIER/CONDITIONAL-SOURCE-COORDINATES:** all reference axial points, both signs and zero.
+- [x] **REFERENCE-REGULAR-SIGNED-OVERLAP/CORRELATED-MIXED-ROWS:** same defining source and unique inverse, full products.
+- [x] **REFERENCE-FULL-Z-C0/Z-OWN-RATE-ENVELOPES:** source-backed actual-N computation across the whole reference domain.
+- [ ] **NEXT O2-NONCONSTANT-PARAMETERS/IMPLICIT-NU/DENSITY-TRANSPORT:** follow the linked detailed acceptance queue; reference assumptions may not zero O2 derivatives.
+- [ ] **ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** the persistent full goal remains active.
+
+Focused evidence:256 whole source sign rectangles,128 independent overlapping primitive/jet comparisons,20 radial/60 conditional cells,10 own-rate mass comparisons and1228 Git-index hashes PASS. Producer 47.219s; checker 53.203s. Existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and published. Historical handoffs below are preserved.
+
+---
+
 # Current handoff: original whole near-midplane mixed C1 integration (2026-10-08)
 
 Checked source [989880da](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/989880da5d32dce3f5141820b9a7a1643b6e0c88); current evidence and executable queue [CURRENT_REFERENCE_NEAR_MIDPLANE_MIXED_C1_2026_10_08.md](CURRENT_REFERENCE_NEAR_MIDPLANE_MIXED_C1_2026_10_08.md).
