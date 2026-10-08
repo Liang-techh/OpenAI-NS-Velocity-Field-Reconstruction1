@@ -1,3 +1,18 @@
+# Current handoff: genuine upstream tile refinement and O2 replay (2026-10-08)
+
+Checked source: [e255eb97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e255eb97d0eb98176ed8063b7fb77721d9816291). Evidence and detailed forward tasks: [CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md](CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md). Predecessor: [CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md](CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md).
+
+The genuine13-cell pre-O2 source route is re-evaluated on Z[.36,.38]/[-.38,-.36] at N1024. Parameter-uniform periodic C1 covers improve34/48 primitive bounds per tile. Four unchanged accepted O2 C0/ordinary-Z integrals now receive the refined actual inlet. Downstream correction magnitude uppers shrink approximately m98.5%, h69.3%, k99.0%, e/p74.3%; these are enclosure reductions, not physical residuals or overall completion percentages.
+
+- [x] **REAL-UPSTREAM-TILES/UNIFORM-C1/O2-REPLAY:** complete original source route,48 paired bound decisions/tile,40 strict downstream C0/Z comparisons, original background once and P0/pressure memory separate.
+- [x] **CHART-LOCALIZATION:** firstbridge dominates ordinary-Z correction; inner_reference dominates C0 pressure correction. All true-width chart contributions are archived.
+- [ ] **NEXT FIRSTBRIDGE-CORRELATED-Z/INNER-REFERENCE-PRESSURE:** split the genuine cutoff branches, use direct q²/paired Poisson ordinary-Z identities, hull complete branches, and separately tighten the inner-reference pressure density. Preserve linear q_Z/p2_Z and the original owner/source contracts.
+- [ ] **CROSSING-Z/FULL-ROUTE/REPAIR/GLOBAL-N:** complete microscopic axial coverage, all remaining O2-to-Rc cells, actual correlated five targets/independent controls and one globally admitted frequency.
+- [ ] **MATCHING/STRESS/TRUE-RECURSION/CORRECTED-UVW:** matched exact heat background, admissible stress/flat remainder, n-dependent coefficient recursion, both oscillatory families and independent Cartesian field/residual/dynamics.
+
+Focused checker/replay PASS;1179 index hashes; two complete new source archives total2,822,737 bytes. Existing read-only **GPT-5.6 Luna / max**, no new child. Derivative and pressure bounds remain far too wide for terminal closure; all global gates remain false. Earlier sections are historical.
+
+---
 # Current handoff: original O2 same-N real upstream incoming (2026-10-08)
 
 Checked source: [80633e40](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80633e404dabbaa662a3c4f953187c977291d744). Evidence and detailed executable tasks: [CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md](CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md). Predecessor: [continuous original O2 history transport](CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md).
