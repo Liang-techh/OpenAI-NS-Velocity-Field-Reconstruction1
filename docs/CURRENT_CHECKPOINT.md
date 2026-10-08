@@ -1,3 +1,18 @@
+# Current handoff: active kappa derivatives and weighted original pressure (2026-10-08)
+
+Checked source: [0e8af43d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0e8af43df16e41943bfcb81886a6c239911ce2be). Evidence and executable next actions: [CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md](CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md). This supersedes [CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md](CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md) for current bounds and task status.
+
+The original firstbridge active relation now tightens Delta_Z/q_Z and all20 downstream ordinary-Z correction bounds at N1024 on Z[.36,.38]/[-.38,-.36]. Independently, integrating the original inner_reference E² weight removes the enormous width-times-maximum pressure overestimate. All4 accepted O2 outputs now have **normalized pressure cumulative correction magnitude upper <=0.40870**, compared with the former log upper about9.4154e17. This is a certified enclosure improvement, not a momentum residual or completion percentage.
+
+- [x] **ACTIVE-KAPPA-DELTA-Z/CONDITIONAL-A:** same original a_Z/b_Z and mixed roots, every cutoff branch/seam, actual complete13-cell serial source route.
+- [x] **ORIGINAL-WEIGHTED-PRESSURE/O2-MEMORY:** source-bound E_y=E/10 and p=E²*expm1(2A/N)/2, true-width integration, all12 active pressure contributions, separate P0, unchanged original O2 integrals.
+- [ ] **NEXT ACTUAL O2-TO-RC TRANSPORT:** extend the original O2_slope y[0,1] output through the remaining six original cells with actual incoming histories and evaluate correlated Rc targets. Use the new pressure report, which references rather than mutates the accepted full source archives.
+- [ ] **JOINT-SOURCE-Z/WHOLE-AXIAL-ATLAS:** firstbridge derivative bounds remain enormous; retain joint source correlations and cover crossing Z without deriving jets from enclosure selectors.
+- [ ] **FUNCTIONAL-FIVE-REPAIR/GLOBAL-N/MATCHING/STRESS/TRUE-RECURSION/CORRECTED-UVW:** these physical construction layers remain incomplete.
+
+Focused checks PASS; 1233 Git-index dependency hashes match. Existing read-only worker **GPT-5.6 Luna / max**, no new child. The pressure improvement is C0 only; every global completion flag remains false. Earlier sections are historical.
+
+---
 # Current handoff: firstbridge paired cutoff-branch C1 refinement (2026-10-08)
 
 Checked source: [da661d09](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da661d093a8d0d43ccff6fb549bb11b8720a4cfd). Evidence and detailed next actions: [CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md](CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md). Predecessor: [CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md](CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md).
