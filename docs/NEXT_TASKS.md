@@ -1,3 +1,17 @@
+# Current handoff: original microscopic velocity source and local five integrals (2026-10-08)
+
+Checked source [d3e2ee6f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3e2ee6f94f2f544fc0e90cb24d27cac909c0364); evidence and executable tasks [CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md); predecessor [CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md](CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md).
+
+Four actual bulk/seam queries on Z[.36,.38]/[-.38,-.36] now connect original microscopic geometry, exact shared Ud/Pstar factor, five inherited histories/P0, full signed roots, q, N*s phase, conditioned inverse and all five signed C0/Z density/integral contributions. All four local statuses are enclosed. Undetermined p2 sign is retained; accepted small-r inversion uses no artificial sign assumption.
+
+- [x] **SAFE-ORIGINAL-KERNELS/AMPLITUDE/HISTORY:** unchanged defining formulas, positive-log sigma y4, retained exponential corrections, same source Pstar factor and separate P0.
+- [x] **ACTUAL-LOCAL-FIVE-C0-Z-INTEGRALS:** four genuine original source intervals and 40 contribution covers; whole actual phase union and true width/Jacobian once.
+- [ ] **NEXT OPEN-ENDPOINT/CONTIGUOUS-PREFIX:** cover s=0->W/4 and bulk-to-seam, remaining seam/quiet pieces, compose original operator with genuine incoming correction. Local intervals are not full prefix closure.
+- [ ] **AXIAL/FULL-BUFFER/RC-TARGETS/FIVE-CONTROLS/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** full-construction gates remain false.
+
+Focused checks PASS, 1272 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. No accepted ancestor producer/check rerun. Earlier sections are historical.
+
+---
 # Current handoff: original microscopic coordinates and smooth q source (2026-10-08)
 
 Checked source [ca0fb994](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ca0fb99479d436ef5b91d90efc16e38f028f5036); evidence and executable tasks [CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md](CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md); predecessor [CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md](CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md).
