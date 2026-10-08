@@ -1,3 +1,17 @@
+# Current handoff: original O2 signed densities and genuine pressure own-rate integral (2026-10-07)
+
+Checked source: [2576ab3f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2576ab3ff5daccd00fc395966a6764b1cd8c6837). Evidence, units/errors and executable next tasks: [CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md](CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md).
+
+Actual original O2 source/error, true radius phase and conditioned C0/Z primitives now execute the accepted exact five signed density graph and Z rows. One genuine pressure own-rate0 contribution over the full O2 y in[0,1] window at exact Z0/N7 is enclosed by whole-cell defining-source/phase/inverse ranges. The 8192-cell normalized contribution is in [-1.88671e-5,-4.95116e-6], strictly negative; an independent defining-ODE reference is about -1.1909127e-5. Incoming pressure memory and P0 remain separate. This is not a full NS residual or five-moment closure.
+
+- [x] **SIGNED-DENSITIES/Z:** actual graph execution, all signed cross terms, original units/rates and tiny factored expm1; 180 independent reference components enclosed.
+- [x] **ONE-GENUINE-PRESSURE-INTEGRAL:** directed whole-cell J/f/a/q, exact pressure parity and primitive identities, true period unions, rate0 signed integral; 64/256/2048/8192 refinements establish a strict negative contribution. Complete evidence ships losslessly as .json.gz.
+- [ ] **NEXT FIVE-OWN-RATES/GENERAL-CELLS:** compute all five midplane Duhamel contributions from accepted cell source/error ranges, then general ordered masses and nonmidplane/Z derivative integration; preserve all incoming histories and P0.
+- [ ] **WHOLE-ORACLE/CONTROLS/FIELD/RECURSION:** actual radial/high-order jets, all-chart transport and correlated functional terminal identities, simultaneous common N and independent repair, matched exterior/global stress, actual n-dependent recursion, oscillatory cancellation and physical uvw.
+
+Focused receipts PASS and Git-index audit 1070 hashes. Read-only reviewer **GPT-5.6 Luna / max**, existing worker only. One local pressure contribution is integrated; full five transport/controls, Z-functional terminal matching, global N and coefficient/scale recursion are incomplete. Previous sections are historical.
+
+---
 # Current handoff: original O2 true-radius phase-held Z primitives (2026-10-07)
 
 Checked source: [db22ee20](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db22ee20c298a71a29e40e456b18fe0df4210694). Evidence, contracts and detailed executable tasks: [CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md).
