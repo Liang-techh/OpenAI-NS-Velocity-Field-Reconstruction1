@@ -1,3 +1,18 @@
+# Current handoff: original reference phase-aware C0 integration (2026-10-08)
+
+Checked source [56f3784a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56f3784ae318b49f23d638ff9ff9cc88f8a7339e); current evidence and task queue [CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md](CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md).
+
+Actual original slow-y source jets now drive reflection-centered C0 integration on Rh_reference[-5,0]. Original finite-N nonlinear remainders, arbitrary true phase origin, global endpoints, own decay rates and pressure memory are retained. Internal endpoints cancel only within this same closed source. Direct microscopic m/k bounds remain stronger and are preserved. N160/320 are independently evaluated candidates.
+
+- [x] **ACTUAL-RADIAL-SOURCE/LINEAR-REFLECTION/EXACT-N-REMAINDER/C0-ENDPOINT-IBP:** committed. N160/16-cell h,e,p integral bounds tighten about66,73,117 times.
+- [ ] **NEXT ACTUAL-MIXED-yZ/REFERENCE-C1-IBP/WHOLE-Z/MIDPLANE:** mixed derivatives must be actual source functions. Previous Z integrals remain separately valid; C0 tightening does not install the C1 averaging oracle.
+- [ ] **NEXT O2/AXIAL/BUFFER/REMAINING-UNITS/ALL17-24-INTEGRALS/ACTUAL-CONTROLS/GLOBAL-N:** retain the detailed predecessor queue and typed source/error contracts.
+- [ ] **JOINS/EXACT-HEAT/STRESS/FLAT/n-DEPENDENT-RECURSION/TWO-PULSES/CORRECTED-UVW:** open; the full goal remains active.
+
+Independent source/radial/remainder/reflection/weighted-endpoint checks and1208 Git-index hashes PASS. Producer26.609s, checker26.610s. GPT-5.6 Luna/max reviewed read-only; root implemented and published. Earlier handoffs below are historical.
+
+---
+
 # Current handoff: original reference whole-cell C0/Z integrals (2026-10-08)
 
 Checked source [b76d6ed6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b76d6ed614b40a23b4ae7e97d8a1fadc587aeef0); current evidence and detailed executable queue [CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md](CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md).

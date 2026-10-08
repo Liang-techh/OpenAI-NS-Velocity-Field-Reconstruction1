@@ -1,3 +1,5 @@
+Next averaging milestone: [CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md](CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md). Actual radial source jets, exact nonlinear remainder and endpoint-retaining C0 averaging are now implemented. Mixed-yZ/C1 averaging and whole-Z closure remain open. Read the new queue before the historical tasks below.
+
 # Original reference whole-cell C0/Z five-density integrals
 
 Checked source [b76d6ed6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b76d6ed614b40a23b4ae7e97d8a1fadc587aeef0). Predecessor: [CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md](CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md). The existing GPT-5.6 Luna/max worker reviewed source formulas read-only; root implemented, computed, checked and published. No additional agent was spawned.
