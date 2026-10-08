@@ -1,3 +1,17 @@
+# Current handoff: refined original O2 exit through all six cells to Rc (2026-10-08)
+
+Checked source: [05c0a703](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05c0a703c9b784a101c8da065f9a3198f36e158f). Executed evidence and next actions: [CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md](CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md). Predecessor: [CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md](CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md).
+
+Actual same-N1024 O2_slope exits carrying active-kappa derivatives and weighted original pressure now feed freshly queried original O2_axial, both O2_buffer cells, O3_slope_mu and both O3_power cells, on Z[.36,.38]/[-.38,-.36]. All4 accepted256/2048 histories reach the original Rc=Rw*exp(2), phase2/Tw. The entire actual upstream source prefix, full slope chart and six-cell tail are connected. Rate-zero pressure correction remains <=0.40870; original backgrounds/P0 are retained. These are source-function covers, not evaluated terminal defects or completed physical matching.
+
+- [x] **ACTUAL-O2-TO-RC-C1-TRANSPORT:** original six cells, genuine new source/true-width queries on both tiles, all360 inherited/correction/own C0/Z checks, all40 exact quiet-power density checks and4 Rc replays.
+- [ ] **NEXT SIX-CELL-ORIGINAL-NUMERICAL-ORACLE/CORRELATED-RC-TARGETS:** source-derived phase/inverse/density value-Z integration with native Jacobian once; actual targets and independent controls. Saved caps cannot become selected function values. Enormous axial period counts may require source-bound slow-variation/mean identities with retained error, rather than enumerating all oscillations.
+- [ ] **JOINT-FIRSTBRIDGE-Z/FULL-AXIAL/GLOBAL-N:** derivative bounds remain enormous, strict-sign tiles do not cover Z0 and candidateN1024 is not a global admission.
+- [ ] **FIVE-REPAIR/MATCHED-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** all dependent physical construction layers remain incomplete.
+
+Focused check PASS; 1239 Git-index hashes match. Existing read-only **GPT-5.6 Luna / max**, no new child. Original O2 integrals/upstream numerical source route were not rerun; every full-construction gate remains false. Earlier sections are historical.
+
+---
 # Current handoff: active kappa derivatives and weighted original pressure (2026-10-08)
 
 Checked source: [0e8af43d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0e8af43df16e41943bfcb81886a6c239911ce2be). Evidence and executable next actions: [CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md](CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md). This supersedes [CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md](CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md) for current bounds and task status.
