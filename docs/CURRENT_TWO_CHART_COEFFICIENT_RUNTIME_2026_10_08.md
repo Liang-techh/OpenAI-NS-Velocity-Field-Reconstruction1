@@ -1,3 +1,5 @@
+Next integral milestone: [CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md](CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md). Canonical original factors and fixed nonzero-Z Rh_reference whole-cell C0/Z own-rate contributions are now implemented. Whole-Z, midplane, phase-aware integration and all-route controls remain open. The unchecked queue below is the historical predecessor.
+
 # Live original two-chart all-N coefficient runtime
 
 Checked source [766da2b0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/766da2b08cdc62e68d032aa285d89fedd60070bd). Predecessor: [CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md](CURRENT_REFERENCE_POINT_ORACLE_2026_10_08.md). Reused GPT-5.6 Luna/max for read-only source-role/evaluator review; root implemented, computed, checked and published.

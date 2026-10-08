@@ -1,3 +1,18 @@
+# Current handoff: original reference whole-cell C0/Z integrals (2026-10-08)
+
+Checked source [b76d6ed6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b76d6ed614b40a23b4ae7e97d8a1fadc587aeef0); current evidence and detailed executable queue [CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md](CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md).
+
+The original reference window[-5,0] now has actual candidate-N160 five-density C0/Z own-rate contribution enclosures at fixed Z=37/100, computed on4/16 whole radial cells. Exact radius/delta factor collection permits cross-cell sums. Pressure late errors keep their Pstar^-1 factor; pressure zero-rate memory, incoming histories and separate P0 are retained. A bounded original implicit product removes the astronomical Z-range artifact.
+
+- [x] **FIXED-Z-SOURCE-FACTOR-ATLAS/REFERENCE-WHOLE-CELLS/OWN-RATE-CONTRIBUTIONS/SIGNED-IMPLICIT-Z-PRODUCT:** committed with scoped evidence. Eligible two-chart rebasing is supported; extra frozen units remain open.
+- [ ] **NEXT WHOLE-Z-C1/MIDPLANE/PHASE-AWARE-INTEGRATION:** fixed-Z full-period envelopes are coarse and do not prove terminal closure. Implement functional Z coverage and controlled oscillatory integration next.
+- [ ] **NEXT O2/AXIAL/BUFFER/REMAINING-UNITS/ALL17-24-CELL-ORACLE/ACTUAL-CONTROLS/GLOBAL-N:** open; use genuine source data and typed integral outputs. Existing scalar evaluator guards are unchanged.
+- [ ] **GLOBAL-JOINS/HEAT/STRESS/n-DEPENDENT-RECURSION/TWO-PULSES/CORRECTED-UVW:** open; the persistent full goal remains active.
+
+Independent factor/defining-integral/point-whole-cell/pressure-memory evidence and1200 Git-index hashes PASS. Producer23.375s, checker50.844s. Reused GPT-5.6 Luna/max read-only review; root implemented and published. Read the linked queue before historical handoffs below.
+
+---
+
 # Current handoff: live original two-chart N-dependent coefficient runtime (2026-10-08)
 
 Checked source [766da2b0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/766da2b08cdc62e68d032aa285d89fedd60070bd); evidence and executable queue [CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md](CURRENT_TWO_CHART_COEFFICIENT_RUNTIME_2026_10_08.md). Centered whole-Z/all-N/unit-C1-ball contract remains accepted.
