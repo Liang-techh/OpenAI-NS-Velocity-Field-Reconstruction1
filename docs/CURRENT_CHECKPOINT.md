@@ -1,3 +1,17 @@
+# Current handoff: original O2 complete spatial all-N envelope (2026-10-08)
+
+Checked source [8d7ca2a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8d7ca2a03ba7546b72871131d3a80f041160b787); bounds, limits and detailed successor queue [CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md](CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md). Predecessor slow source42738b08/docs3ce577a1 remains accepted. Full goal active.
+
+Actual original O2 full changed spatial five C0/Z contributions now have all integer N>=160 N^-2 envelopes, beyond the phase-mean component. Same-source zero-mean first-order primitives, nonzero full nonlinear bias/remainder, original common radius phase and every own-rate/local/global endpoint remain. Source-dependent output units Lambda0/L and Lambda0^2/L^3 are formal; conservative bounds do not imply small physical gradients, terminal/global N or scale recursion.
+
+- [x] **O2-PERIODIC-PRIMITIVE-BOUNDS / FULL-SPATIAL-ALL-N-ENVELOPE:** source 8d7ca2a0;3840 primitive rows,3840 remainder rows,7680 native components,320 masses and195 actual candidate radius endpoints; 1288 staged exact hashes PASS.
+- [ ] **NEXT REBIND EXISTING GENUINE N1024 UPSTREAM CORRECTION TO NEW O2 DRIVER -> SHARP FREQUENCY/PHASE BUDGET -> ACTUAL BUFFER/ALL17-24 -> FIVE TERMINAL CONTROLS/ONE GLOBAL N:** use source_incoming_common_N/middle_O2_inlet_C1_histories; preserve native basis/source-function compatibility, P0/rate0 memory and every endpoint/mean/remainder/oracle error. Existing old bridge or caller-obligation/affine/zero fixtures do not prove the new complete actual driver.
+- [ ] **JOINS/HEAT/ENERGY/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED UVW:** original scope unchanged. Sharp/all-route/terminal/global N/scale recursion/full residual remain open.
+
+Historical handoffs follow unchanged. Use successor as active queue; mark DONE with evidence and a commit.
+
+---
+
 # Current handoff: original O2 collected slow jets and first-order density norms (2026-10-08)
 
 Checked source [42738b08](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42738b08bacf6f1be8518954d4f74a8c574aa843); source bounds/scope and detailed successor queue [CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md](CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md). Predecessor uniform mean sourcee1e5895b/docs417a8226 remains accepted. Full goal active.

@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md](CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md), checked source 8d7ca2a0. Actual same-source periodic primitive bounds and complete O2 all-N spatial changed contribution envelopes are DONE. Sharp norms, source-owned incoming/all-route driver, terminal/global N and scale recursion remain OPEN. Historical task text below records the earlier slow-source state.
+
 # Actual original O2 collected slow jets and first-order density norms
 
 Checked source [42738b08](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42738b08bacf6f1be8518954d4f74a8c574aa843). Predecessor: [CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md](CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md), sourcee1e5895b/docs417a8226. The preceding goal turn was progress: native all-N mean coefficients were accepted and pushed. Full paper-faithful reconstruction remains active, including functional terminal matching, actual n-dependent recursion and corrected Cartesian NS.
