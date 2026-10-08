@@ -1,3 +1,17 @@
+# Current handoff: complete original transition and genuine Rc histories (2026-10-08)
+
+Checked source [b33994cb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b33994cbffdb0d76e876572786a860370b8c85f8); evidence and executable tasks [CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md); predecessor [CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md).
+
+The complete original O3 transition [0,1] now executes a contiguous five C0/Z operator on Z[.36,.38]/[-.38,-.36] at N1024. Closed endpoint, bulk-to-seam connection and all cutoff pieces give 14 actual source/inverse/integral queries and 140 local contribution rows. Exact quiet connections carry genuine incoming correction at Rd, and the two quiet power pieces update all five Rc correction/own-history covers with separate P0 added once.
+
+- [x] **COMPLETE-TRANSITION-PREFIX:** exact original endpoint telescope, closed s=0 source, seven source pieces and quiet collar; no gap assigned zero.
+- [x] **GENUINE-INCOMING/RC-MEMORY:** accepted 2048-cell upstream correction at Rd, original own rates and rate-zero pressure memory. Updated Rc covers are not terminal targets.
+- [ ] **NEXT WHOLE-AXIAL/FULL-BUFFER:** original signed b/amplitude/q source across active/flat crossings, true density transport and source-bound long-period integration.
+- [ ] **FIVE-RC-TARGETS/CONTROLS/WHOLE-Z/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** full-construction gates remain false.
+
+Focused checks PASS, 1278 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. No accepted ancestor producer/check rerun. Earlier sections are historical.
+
+---
 # Current handoff: original microscopic velocity source and local five integrals (2026-10-08)
 
 Checked source [d3e2ee6f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3e2ee6f94f2f544fc0e90cb24d27cac909c0364); evidence and executable tasks [CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md); predecessor [CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md](CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md).
