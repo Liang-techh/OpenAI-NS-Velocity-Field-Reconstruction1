@@ -1,5 +1,7 @@
 # Original O2 full inertial functions and exact pressure Z jets
 
+Successor: [CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md](CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md) connects one original parameter/radius frame and normalized pressure point jets with directed coefficient and all-late-source error budgets. Full factored O2 point inputs, conditioned phase and physical error admission remain open.
+
 Checked source: [8c619506](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8c6195065a5515119d976e848be8f00d7206690a). Predecessor: [original O2 slope point profiles](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md). Focused independent checker PASS; 607 direct dependency hashes audited against the Git index. Producer 14.672s; checker 28.422s. Existing read-only reviewer: **GPT-5.6 Luna / max**; no new workers.
 
 The O2 point-profile service now feeds the full original inertial inputs p1,p2 and their ordinary Z derivatives. The original absolute pressure is bound to the exact fourteen-stage preheat integral, its prescribed raw waiting root and its first two Z derivatives. This supplies source-function expressions needed by the Section 11 loop and the five-history correction route.

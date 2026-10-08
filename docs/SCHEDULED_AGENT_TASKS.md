@@ -1,3 +1,18 @@
+# Current handoff: correlated O2 parameters and normalized pressure points (2026-10-07)
+
+Checked source: [4ea85e94](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4ea85e94699ea4cc923d2025ceb5901a824aef0f). Detailed definitions, evidence and tasks: [CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md](CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md).
+
+The full O2 expression layer now has one source-bound exact/factored parameter frame, tying selected radius, Pstar, mu/delta/epsilon, stage lengths and the original raw waiting root. A separate normalized pressure service computes P0/Pstar² and its first two ordinary Z jets, with directed coefficient/roundoff errors and a new source-bound finite-end/all-eleven-late-stage error proof. It retains nonzero logarithmic tail budgets and physical Pstar² error amplification.
+
+- [x] **O2-PARAMETERS:** common original selected parameter/radius definitions and complete expression binding; no astronomical expansion or enclosure endpoint as a pressure/radius value.
+- [x] **O2-PRESSURE-POINTS:** actual normalized point approximations and explicit error budgets, full fourteen-density diagnostic reference and source-linked tail proof.
+- [ ] **NEXT O2-FULL-FACTORED-POINT-ADAPTER:** bind complete E,V,a,b,p1,p2 value/Z point coefficients with certified radial/pressure errors and correlated native factors. Preserve original absolute pressure identities.
+- [ ] **O2-PHASE/ONE-INTEGRAL:** native conditioned loop scales/global phase, factored angle inversion and one genuine signed original density integral with errors.
+- [ ] **ORACLE/CONTROL/FIELD/REC/WAVE:** remaining charts and error contracts, compatible common N and installed controls, corrected field/outer admission, genuine recursion, oscillatory cancellation and physical uvw diagnostics.
+
+At Z=0, P0/Pstar²≈-3.3146227300 with coefficient/arithmetic error upper≈7.54e-5, plus a separately retained exponentially small source-tail error. This normalized error is multiplied by Pstar² in physical pressure. It is not a physical residual bound. Checkers PASS; direct dependency audits 611/615 hashes. Read-only reviewer **gpt-5.6-luna / max**, existing worker only. Full native numerical oracle, installed controls, global N and recursion remain open. Previous sections are historical.
+
+---
 # Current handoff: original O2 full inertial and pressure functions (2026-10-07)
 
 Checked source: [8c619506](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8c6195065a5515119d976e848be8f00d7206690a). Definitions, evidence and detailed next tasks: [CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md). Predecessor: [original O2 point profiles](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md).
