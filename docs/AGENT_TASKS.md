@@ -1,3 +1,17 @@
+# Current handoff: original O2 five own-rate integrals and incoming memory (2026-10-07)
+
+Checked source: [622563a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/622563a264afbcede1aff30177e55de0b6472883). Evidence, units/errors and detailed executable next tasks: [CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md). Predecessor: [signed densities and pressure integral](CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md).
+
+All five actual original O2 C0 contributions over y in[0,1] at exact Z0 and diagnostic N7 are now enclosed with the original rates1,3/2,3/2,1,0, both primitives, signed cross terms and positive exact Duhamel masses. Four signs are proved: m/h/p negative, e positive; k remains unresolved. The checked pressure result is unchanged. Original nonzero inlet histories and quarter-window prefixes are computed, and an affine transport interface requires all five explicit incoming defects while preserving full pressure memory and separate P0. The complete cell evidence ships directly as .json.gz.
+
+- [x] **MIDPLANE-FIVE-CONTRIBUTIONS:** 64/256/2048/8192 source-cell refinements, all five original graph rows, same candidate phase/N and no extra R/Jacobian. Independent defining-J/five-Duhamel ODE values fall inside every refinement.
+- [x] **ORIGINAL/INCOMING-HISTORY:** original h/e/p inlets, positive own-rate transport, cumulative prefixes and explicit same-family/P0 incoming interface; C0 only and no default physical zero inlet.
+- [ ] **NEXT GENERAL-SOURCE-MASSES/NONZERO-Z:** genuine ordered M0/M1/M2 node/cell integrals and full f/H/D/P/p1/p2/P0 covers, then nonzero-Z inverse/integrals and Z-functional histories. Include original pressure tails, formal source factors and nonzero p2_Z.
+- [ ] **WHOLE-ORACLE/CONTROLS/FIELD/RECURSION:** actual radial/high-order jets, all-chart incoming functions and functional terminal identities, one admitted global N/independent repair, matched exterior/global stress, actual n-dependent recursion and oscillatory cancellation, physical uvw.
+
+Focused checker PASS and Git-index audit1074 hashes. Existing read-only reviewer **GPT-5.6 Luna / max**. Production about212 seconds; focused checker about9 seconds. This is local C0 midplane five transport, not Z-functional closure, all-chart matching, global N, C1 stress or coefficient/scale recursion. Previous sections are historical.
+
+---
 # Current handoff: original O2 signed densities and genuine pressure own-rate integral (2026-10-07)
 
 Checked source: [2576ab3f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2576ab3ff5daccd00fc395966a6764b1cd8c6837). Evidence, units/errors and executable next tasks: [CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md](CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md).

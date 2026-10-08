@@ -1,5 +1,7 @@
 # Original O2 signed densities and first genuine pressure own-rate integral
 
+> Successor: [all five midplane own-rate integrals and incoming history](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md). The previous NEXT MIDPLANE-ALL-FIVE-OWN-RATES task is completed for exact Z0/C0; nonzero-Z and functional/global transport remain open.
+
 Checked source: [2576ab3f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2576ab3ff5daccd00fc395966a6764b1cd8c6837). Predecessor: [original O2 phase-held Z primitives](CURRENT_ORIGINAL_O2_CONDITIONED_SLOW_Z_2026_10_07.md). Focused receipts PASS; direct Git-index audit covers 1070 dependency hashes. Existing read-only reviewer: **GPT-5.6 Luna / max**, no new workers or ancestor reconstructions.
 
 Two production gaps are now closed locally. Actual original O2 source/error and true-radius inverse/primitive rows execute the accepted exact five signed density graph, including Z derivatives. A separate whole-cell source path evaluates one genuine pressure own-rate contribution over the complete O2 y in[0,1] window at exact Z=0 and diagnostic N=7. Its finest enclosure is strictly negative. Point samples are not used as proof of a continuous integral.
