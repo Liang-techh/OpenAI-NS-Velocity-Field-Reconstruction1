@@ -1,3 +1,17 @@
+# Current handoff: original microscopic coordinates and smooth q source (2026-10-08)
+
+Checked source [ca0fb994](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ca0fb99479d436ef5b91d90efc16e38f028f5036); evidence and executable tasks [CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md](CURRENT_ORIGINAL_NORMALIZED_MICROSCOPIC_Q_2026_10_08.md); predecessor [CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md](CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md).
+
+Same original mu/eta/q now execute on parameter-normalized microscopic coordinates: xi=s*sqrt(D) for bulk and k=1/s^2-D for the cutoff seam. Five source queries retain nonzero active q, original ordinary y2,Z1 through the smooth active-to-flat seam, exact flat slow jets and the nonzero original s=0 endpoint. Positive widths are collected before endpoint subtraction; original affine radius and N*s phase are retained. No parameter midpoint or capped field value is selected.
+
+- [x] **TYPED-MICROSCOPIC-COORDINATES/CORRELATED-Q-SOURCE:** xi/k endpoint expressions, whole mu/eta cover, nonzero q, smooth seam derivatives, true width/Jacobian and actual phase.
+- [ ] **NEXT SAFE-ORIGINAL-TRANSITION-KERNELS/AMPLITUDE:** retain original logistic/integral formulas without unallocatable exp(-1/s^2); collect expm1 masses and profile corrections; preserve Utheta/Pstar and E/E_Z/p2 source factors.
+- [ ] **ACTUAL-PREFIX-DENSITY/FIVE-C1-INTEGRALS:** cover open endpoint/bulk-to-seam, connect amplitude/inverse/true masses. Current source queries are not full prefix integrals.
+- [ ] **AXIAL/FULL-BUFFER/RC-TARGETS/FIVE-CONTROLS/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** all full-construction gates remain false.
+
+Focused source check PASS; 183 independent original physical-y q/excess comparisons, 15 widths; 1266 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. Accepted upstream/O2/quiet-collar numerical integrations were not rerun or modified. Earlier sections are historical.
+
+---
 # Current handoff: original positive-log cutoff and microscopic support scale (2026-10-08)
 
 Checked source [f6e3f66d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f6e3f66dc03f204f516ed99d4b42654e2bf17f3d); results and executable next actions [CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md](CURRENT_ORIGINAL_POSITIVE_LOG_SIGMA_2026_10_08.md); predecessor [CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md](CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md).
