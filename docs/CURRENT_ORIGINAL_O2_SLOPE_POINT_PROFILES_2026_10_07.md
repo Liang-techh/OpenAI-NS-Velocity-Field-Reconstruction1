@@ -1,5 +1,7 @@
 # Original O2 slope point profiles and background E/V source service
 
+Successor: [CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md) supplies full O2 p1/p2 and ordinary Z expressions, with exact original fourteen-stage P0/Pstar² jets and raw waiting root. Native correlated parameters, numerical pressure, conditioned phase and certified numeric errors remain open.
+
 Checked source: [859404b3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/859404b310a49ca0899abfa8431d810bf164d127). Predecessor: [original C1 integral/control family and scalar loop-Z backend](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md). Focused checker PASS; 14 direct dependency hashes audited against the Git index. Producer 13.375s; checker 74.718s. Existing read-only reviewer: **GPT-5.6 Luna / max**, no new workers.
 
 The original O2 slope interval now has a stateless point-coefficient service. It evaluates the defining angular profile, original five radial-history functions and their ordinary-Z rows, and attaches four original all-N E/V background source roles. It uses the accepted source definitions and their expected hashes, with no expensive source ancestor construction.

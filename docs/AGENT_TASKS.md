@@ -1,3 +1,19 @@
+# Current handoff: original O2 full inertial and pressure functions (2026-10-07)
+
+Checked source: [8c619506](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8c6195065a5515119d976e848be8f00d7206690a). Definitions, evidence and detailed next tasks: [CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md). Predecessor: [original O2 point profiles](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md).
+
+The original O2 E/V and radial histories now feed full p1,p2 value/Z expressions. Exact fourteen-stage P0/Pstar² and its first two ordinary Z derivatives are bound with the original raw waiting root, all absolute-pressure and meridional terms, original radius/Pstar factors and one shared delta symbol. This is a source-expression service with approximate radial coefficients and formal native parameters; pressure integrals are not numerically evaluated.
+
+- [x] **O2-INERTIAL/PRESSURE-EXPRESSION:** full original I/F and Z rows; exact original pressure function/jet expressions with source binding.
+- [x] **O2-PROFILES / prior CONTROL-C1 / scalar A-B-Z:** previous original profiles, exact conditional five-control family and scalar loop-Z backend remain available.
+- [ ] **NEXT O2-SOURCE-PARAMETER-CONTRACT:** install correlated original radius/scales/lengths in an exact/factored frame, then evaluate original pressure jets and full point inputs. Do not substitute saved caps for original values.
+- [ ] **O2-PHASE/ONE-INTEGRAL:** native conditioned phase/scales and one full signed original density integral with Z errors; reuse the existing scalar backend and exact density formulas.
+- [ ] **ORACLE/CONTROL:** remaining charts, certified error contract, common global N and installed five controls/terminal functional closure.
+- [ ] **FIELD/OUTER/REC/WAVE/PHYS:** corrected field and joins, global cone/flat remainder, genuine coefficient recursion, oscillatory cancellation and physical Cartesian uvw/scale diagnostics.
+
+Focused evidence: four exact physical I/F identities, 28 pressure-density derivative identities, 16 manufactured-reference Z checks and seven guards. 607 direct dependency hashes audited. Read-only reviewer **gpt-5.6-luna / max**, existing worker only. Native numerical oracle, installed controls, global N and recursion gates remain false. Previous sections are historical.
+
+---
 # Current handoff: original O2 slope point profiles (2026-10-07)
 
 Checked source: [859404b3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/859404b310a49ca0899abfa8431d810bf164d127). Definitions, evidence and detailed tasks: [CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md](CURRENT_ORIGINAL_O2_SLOPE_POINT_PROFILES_2026_10_07.md). Predecessor: [C1 integral/control family and scalar loop-Z backend](CURRENT_NATIVE_C1_INTEGRAL_CONTROL_FAMILY_2026_10_07.md).
