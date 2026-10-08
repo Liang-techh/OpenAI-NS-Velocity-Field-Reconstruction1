@@ -1,3 +1,20 @@
+# Current handoff: original mixed reference C1 integration (2026-10-08)
+
+Checked source [bd32c71f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bd32c71fcf487750c562e6fc666694086d19b668); current evidence and detailed task queue [CURRENT_REFERENCE_MIXED_C1_2026_10_08.md](CURRENT_REFERENCE_MIXED_C1_2026_10_08.md).
+
+Actual original C0,y,Z,yZ source rows and correlated phase-curvature products now drive C0/Z reference integration at fixed Z=37/100 on[-5,0]. Both inverse cross terms, full E product rules, pressure late factors, actual N remainders, physical endpoints, own rates and pressure memory remain. At N16384/16 cells, Z h/e/p integral envelopes are about1.104e-6,1.317e-6,5.077e-6, approximately28/34/32 times tighter than direct integration at the same N. N160/320 retain direct Z bounds where they are tighter. This is a local contribution result; N16384 is not a selected global frequency.
+
+- [x] **FIXED-Z-ACTUAL-MIXED-ROOTS/CORRELATED-IMPLICIT-yZ/C1-ENDPOINT-IBP:** installed with actual source enclosures and independent defining-integral evidence.
+- [x] **FRESH-N-C0-Z/DUAL-BOUNDS/PRECISION-EXPORT:** actual levels(4,160),(16,160),(16,320),(16,16384); original interval precision retained.
+- [ ] **NEXT EXACT-MIDPLANE-WHOLE-CELLS:** separate Z0 adapter, original p2_Z retained, strict small-u guard or pressure-parity refinement. Keep the accepted signed service's Z0 rejection.
+- [ ] **NEXT FUNCTIONAL-Z-ATLAS/MIDPLANE-OVERLAP/WHOLE-Z-C1:** cover[-1,1] as functions; exact-Z samples do not close this task.
+- [ ] **NEXT O2/AXIAL/BUFFER/REMAINING-UNITS/ALL17-24/ACTUAL-CONTROLS/GLOBAL-N:** follow the linked ordered acceptance criteria and detailed predecessor queues.
+- [ ] **JOINS/EXACT-HEAT/STRESS/FLAT/n-RECURSION/TWO-PULSES/CORRECTED-UVW:** open; persistent full goal remains active.
+
+Focused evidence and1212 Git-index hashes PASS. Producer32.735s, checker95.969s. Existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and published. Earlier handoffs below are historical.
+
+---
+
 # Current handoff: original reference phase-aware C0 integration (2026-10-08)
 
 Checked source [56f3784a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56f3784ae318b49f23d638ff9ff9cc88f8a7339e); current evidence and task queue [CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md](CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md).

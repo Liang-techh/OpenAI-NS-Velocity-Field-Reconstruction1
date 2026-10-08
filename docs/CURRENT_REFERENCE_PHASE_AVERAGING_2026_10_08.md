@@ -1,3 +1,5 @@
+Current successor: [CURRENT_REFERENCE_MIXED_C1_2026_10_08.md](CURRENT_REFERENCE_MIXED_C1_2026_10_08.md) installs fixed nonzero-Z mixed source and C1 phase integration. The record below is historical; whole-Z/all-route closure remains open.
+
 # Original reference phase averaging and actual slow radial jets
 
 Checked source [56f3784a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/56f3784ae318b49f23d638ff9ff9cc88f8a7339e). Predecessor: [CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md](CURRENT_REFERENCE_WHOLE_CELL_INTEGRALS_2026_10_08.md). Reused the existing GPT-5.6 Luna/max worker for read-only formula/source review; root implemented, computed, checked and published. No child was spawned and no ancestor producer was rebuilt.
