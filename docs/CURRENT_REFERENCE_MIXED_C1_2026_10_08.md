@@ -1,3 +1,5 @@
+Current successor: [CURRENT_REFERENCE_MIDPLANE_2026_10_08.md](CURRENT_REFERENCE_MIDPLANE_2026_10_08.md) adds exact-midplane whole-window C0/Z contributions and identifies the retained large axial carrier. The fixed nonzero-Z C1 result below remains valid; whole-Z closure remains open.
+
 # Original reference mixed source and C1 phase integration
 
 Checked source [bd32c71f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bd32c71fcf487750c562e6fc666694086d19b668). Predecessor: [CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md](CURRENT_REFERENCE_PHASE_AVERAGING_2026_10_08.md). The existing GPT-5.6 Luna/max worker reviewed the new mixed-chain and weighted-curvature formulas read-only; root implemented, computed and published. No child was spawned. Unrelated work and ancestor producers remain untouched.

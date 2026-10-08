@@ -1,3 +1,21 @@
+# Current handoff: original exact-midplane whole-reference C0/Z integration (2026-10-08)
+
+Checked source [254c9d2c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/254c9d2cd2d44feabcbd953236b99c7542caf735); current evidence and ordered queue [CURRENT_REFERENCE_MIDPLANE_2026_10_08.md](CURRENT_REFERENCE_MIDPLANE_2026_10_08.md).
+
+The whole reference interval[-5,0] now has original C0/Z contribution enclosures at exact Z0, with p2(0)=0 and genuine nonzero p2_Z retained. Full-pressure odd-derivative parity removes only the order1 late budget at zero; even pressure errors remain. Actual N-dependent coefficients, phase, own rates and incoming/P0 separation are unchanged. The accepted signed service's Z0 rejection remains.
+
+**New dependency:** midplane Z bounds retain Lambda=Pstar^11*Cstar^10*L^-2 (L0=1). They cannot inherit the small unscaled fixed-Z=37/100 bounds. Near-axis functional coverage must collect this carrier with Z in a factored coordinate, and global frequency admission must include its derivative scale. N16384 is still a local candidate.
+
+- [x] **EXACT-MIDPLANE-WHOLE-SOURCE/TRUE-Z-PRIMITIVES/OWN-RATE-INTEGRALS:** installed at(4,160),(16,160),(16,320),(16,16384), with full source parity and retained formal amplification.
+- [x] **ORIGINAL-AST/INDEPENDENT-DERIVATIVE/DEFINING-INTEGRAL/LIVE-POINT-EVIDENCE:** scoped receipt committed.
+- [ ] **NEXT FACTORED-NEAR-MIDPLANE/p2-ODD/PRESSURE-REMAINDER-CARRIERS:** construct true source functions on a whole zeta=(Pstar^11*Cstar^10)*Z interval crossing0; retain actual pressure remainder and large derivative factors.
+- [ ] **NEXT REGULAR-NEIGHBORHOOD/MIXED-yZ/C1-AVERAGING/SIGNED-OVERLAP/WHOLE-Z:** obey branch guards and actual source/error/phase contracts; singleton Z0 is insufficient.
+- [ ] **O2/AXIAL/BUFFER/ALL17-24/ACTUAL-CONTROLS/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full original objective and detailed predecessor queues remain active.
+
+Focused source/primitive/live-oracle evidence and1204 Git-index hashes PASS. Producer24.734s, checker46.141s. Existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and published. Earlier handoffs below are historical.
+
+---
+
 # Current handoff: original mixed reference C1 integration (2026-10-08)
 
 Checked source [bd32c71f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bd32c71fcf487750c562e6fc666694086d19b668); current evidence and detailed task queue [CURRENT_REFERENCE_MIXED_C1_2026_10_08.md](CURRENT_REFERENCE_MIXED_C1_2026_10_08.md).
