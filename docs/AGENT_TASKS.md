@@ -1,3 +1,17 @@
+# Current handoff: original O2 collected slow jets and first-order density norms (2026-10-08)
+
+Checked source [42738b08](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42738b08bacf6f1be8518954d4f74a8c574aa843); source bounds/scope and detailed successor queue [CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md](CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md). Predecessor uniform mean sourcee1e5895b/docs417a8226 remains accepted. Full goal active.
+
+Actual original A/B and all five signed first-order density C0/y/Z/yZ norms now cover64 source cells by3 original predicates, including axis/both signs. Regular derivatives retain raw original p2 instead of dstar*u/q; kernel/u are reissued on the same basis. Signed predicates and original q/eta/nu/P0 stay fixed. Dominating units 1,Lambda0/L,Lambda0/L^2,Lambda0^2/L^3 remain formal; finite caps are upper bounds, not small physical gradients or selected compatible fields.
+
+- [x] **O2-COLLECTED-SLOW-Y/YZ/ACTUAL-SIGNED-FIRST-ORDER-JETS:** source 42738b08;192 actual frames,768 raw p2 rows,768 unchanged phase C0/Z checks,5376 native norms; 1284 staged exact hashes PASS.
+- [ ] **NEXT ACTUAL PERIODIC PRIMITIVE/ENDPOINT CAPS -> FULL ALL-N O2 SPATIAL AVERAGING AND NONLINEAR REMAINDER:** preserve original common-N radius phase, ordinary slow units and Z derivatives, exact leading zero mean but nonzero nonlinear mean bias, every own-rate/cell/global endpoint and source/error contribution.
+- [ ] **SHARP NORMS/ACTUAL HISTORIES/AXIAL BUFFER/ALL17-24/FIVE CONTROLS/TERMINAL/GLOBAL N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED UVW:** original scope unchanged. Actual scale recursion and full residual remain open.
+
+Historical handoffs follow unchanged. Use the successor as active queue; mark DONE with evidence and a commit.
+
+---
+
 # Current handoff: original O2 all-N native mean-bias coefficients (2026-10-08)
 
 Checked source [e1e5895b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e1e5895bceded1f2a092c44eefda7aea64c87c2f); actual bounds, scope and detailed queue [CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md](CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md). Predecessor true-phase means source0a710c20/docsb8ff8595 remains accepted. Full reconstruction goal active.
