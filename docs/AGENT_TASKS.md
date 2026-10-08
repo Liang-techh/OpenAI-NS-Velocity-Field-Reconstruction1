@@ -1,3 +1,15 @@
+# Current handoff: fresh original24 centered all-N C1 source (2026-10-08)
+
+Checked source [d276895e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d276895e8732d4b4523ac72c666b63fd64fb29ac); evidence and detailed tasks [CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **FRESH ALL24 ALL-N CENTERED C1 SOURCE / FIVE TARGETS / CONDITIONAL FREQUENCY:**37 primitive derivative covers tighten;5/5 target C1 bounds and sufficient source/repair log-N threshold improve. Same C0, exact N phase/functions, geometry, P0 and quiet pressure memory. 1330 staged exact hashes PASS.
+- [ ] **NEXT CERTIFIED ORIGINAL SOURCE / INTEGRAL ORACLE:** implement defining source callbacks and definite-integral C0/Z errors for the accepted centered evaluator. Preserve its N^-1 cancellation, N^-2 target roots, unit-ball limit and tails. Bind this derivative sidecar; do not replace centered metadata or take a numeric minimum of incompatible frequency contracts.
+- [ ] **GLOBAL N / ACTUAL CONTROLS / TERMINAL FUNCTIONS / HIGHER JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Repair-only bounds do not select global N.
+
+Historical handoffs follow byte-for-byte unchanged.
+
+---
+
 # Current handoff: centered first-bridge C1 controls (2026-10-08)
 
 Checked source [3e5f3a01](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e5f3a01ffe485163248ebc589f06be975ce36ff); evidence and detailed ordered tasks [CURRENT_CENTERED_FIRST_BRIDGE_C1_CONTROLS_2026_10_08.md](CURRENT_CENTERED_FIRST_BRIDGE_C1_CONTROLS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
