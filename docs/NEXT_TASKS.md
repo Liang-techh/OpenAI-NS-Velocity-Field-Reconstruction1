@@ -1,3 +1,17 @@
+# Current handoff: actual N1024 upstream to full-predicate O2 driver (2026-10-08)
+
+Checked source [d48fd7b9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d48fd7b932c4a8d6005390b35314f6eaf4695186); evidence and successor queue [CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md). Full original goal active. Predecessor O2 all-N source8d7ca2a0/docs7b5da061 remains accepted.
+
+The genuine13-cell upstream N1024 correction now feeds complete original O2 y[0,1]/Z[-1,1] five C0/Z integrals across64 cells and192 predicates, including the axis/both signs. Direct and full-spatial N^-2 bounds give alternative complete histories. Original background is added once, P0 stays separate and rate-zero pressure keeps all upstream memory. A new dominating offset collector resolves the real positive-relative-exponential connection failure while retaining source errors.
+
+- [x] **ACTUAL N1024 FULL-Z UPSTREAM -> FULL-PREDICATE O2 DRIVER / NATIVE OFFSET COLLECTOR:** source d48fd7b9, focused acceptance and 1292 staged exact hashes PASS.
+- [ ] **NEXT ACTUAL O2 BUFFER/DOWNSTREAM TO Rc -> ALL17-24 GRAPH EVALUATOR -> SHARP SOURCE ERROR -> FIVE FUNCTIONAL CONTROLS/ONE GLOBAL N:** continue real correction/history/pressure memory; no selected/reference/zero-incoming substitution.
+- [ ] **HEAT/ENERGY/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED UVW:** full goal unchanged. Conservative local driver does not imply small physical residuals or global/terminal/recursion completion.
+
+Historical handoffs follow unchanged. Use successor as active queue and mark DONE with source evidence/commit.
+
+---
+
 # Current handoff: original O2 complete spatial all-N envelope (2026-10-08)
 
 Checked source [8d7ca2a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8d7ca2a03ba7546b72871131d3a80f041160b787); bounds, limits and detailed successor queue [CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md](CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md). Predecessor slow source42738b08/docs3ce577a1 remains accepted. Full goal active.

@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md), checked source d48fd7b9. Actual candidate-N1024 upstream correction is now connected to the complete original whole-Z O2 predicate driver, including direct/spatial alternative histories and the large-offset native collector. O2 buffer/downstream Rc, sharp errors, all-route/terminal/global N and recursion remain OPEN. Historical task text below records the earlier envelope state.
+
 # Actual original O2 full spatial all-N envelope
 
 Checked source [8d7ca2a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8d7ca2a03ba7546b72871131d3a80f041160b787). Predecessor: [CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md](CURRENT_O2_COLLECTED_SLOW_JETS_2026_10_08.md), source42738b08/docs3ce577a1. The preceding goal turn was progress: actual slow source jets and five first-order native norms were accepted and pushed. The full paper-faithful reconstruction goal remains active.
