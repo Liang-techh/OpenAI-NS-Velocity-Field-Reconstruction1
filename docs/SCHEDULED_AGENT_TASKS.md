@@ -1,3 +1,16 @@
+# Current handoff: complete buffer periods and new Rd/Rc histories (2026-10-08)
+
+Checked source [a0e8c2a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a0e8c2a0c743a0856a22140a7962e7715394abb9); evidence and executable next tasks [CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md); predecessor [CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md).
+
+The entire original 11-unit buffer now has actual nonlinear five C0/Z integral covers on Z[.36,.38]/[-.38,-.36], N1024: 22 half-unit cells per tile, 512 periods per cell, 16 phase bins. Frozen C0 reflection means retain explicit full slow/weight errors; Z uses original nonlinear phase-bin derivatives with arbitrary-origin weight covers. The new complete-axial correction propagates through the buffer to Rd and the accepted complete transition/power to updated Rc correction, own histories and pressure.
+
+- [x] **BUFFER-SOURCE/STRESS/PHASE/C0-Z-PERIOD-INTEGRALS/NEW-RD-RC:** completed on two strict-sign tiles with real inverse output, nonzero formal factors and P0/pressure memory.
+- [ ] **NEXT ACTUAL-FIVE-CORRELATED-RC-TARGET-DEFECTS/INDEPENDENT-CONTROLS:** bind true original continuous-Z target functions in the same units, measure defect/error widths, refine the actual limiting term and solve distinct original controls.
+- [ ] **AXIS/WHOLE-Z/GLOBAL-N/EXACT-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused checks and 1296 Git-index hashes PASS. Reused GPT-5.6 Luna/max read-only worker; root implements/computes/publishes. Expensive actual phase inverses and accepted ancestor producers were not repeated by the checker. Earlier sections are historical.
+
+---
 # Current handoff: complete original axial C0/Z transport (2026-10-08)
 
 Checked source [4033e3dc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4033e3dc6d92bf7bb17ed5c12b86d8cdf8e38bae); implementation, evidence and detailed next tasks [CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md); predecessor [CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md](CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md).
