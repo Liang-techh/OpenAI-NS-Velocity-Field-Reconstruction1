@@ -1,3 +1,16 @@
+# Current handoff: whole original axial signed b/q source (2026-10-08)
+
+Checked source [2cb96973](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2cb96973df6e02f63b0751e2572129a0f2656a51); evidence and executable tasks [CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md](CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md); predecessor [CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md).
+
+The complete original O2 axial selector [0,1] now has signed b, correlated Delta/eta, genuine q ordinary y2/Z1 and positive source geometry on Z[.36,.38]/[-.38,-.36]. Both microscopic endpoint layers, smooth cutoff seams and the entire strict flat middle are covered. All 28 actual endpoint queries and 168 q rows replay. Endpoints retain nonzero q; b's original sign and q_Z are retained.
+
+- [x] **WHOLE-AXIAL-b/q/GEOMETRY:** original parameter-normalized source, a=2, true signed b, closed endpoints, full middle-flat proof and source partition.
+- [ ] **NEXT ENDPOINT-AMPLITUDE/HISTORY/STRESS/PHASE/FIVE-INTEGRALS:** join these sources to actual unchanged original providers and full axial transport with genuine slope-exit memory.
+- [ ] **BUFFER/FIVE-RC-TARGETS/CONTROLS/AXIS/WHOLE-Z/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** full-construction gates remain false.
+
+Focused checks PASS; 1284 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. No accepted ancestor producer/check rerun. Earlier sections are historical.
+
+---
 # Current handoff: complete original transition and genuine Rc histories (2026-10-08)
 
 Checked source [b33994cb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b33994cbffdb0d76e876572786a860370b8c85f8); evidence and executable tasks [CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_TRANSITION_2026_10_08.md); predecessor [CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md).

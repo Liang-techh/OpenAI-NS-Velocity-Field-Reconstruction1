@@ -1,3 +1,5 @@
+> Successor: [CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md](CURRENT_WHOLE_AXIAL_B_Q_SOURCE_2026_10_08.md), source [2cb96973](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2cb96973df6e02f63b0751e2572129a0f2656a51). Whole axial signed b/q and geometry now execute on two strict-sign tiles; actual endpoint amplitude/history/stress and density integrals remain open.
+
 # Complete original transition and genuine Rc histories
 
 Checked source [b33994cb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b33994cbffdb0d76e876572786a860370b8c85f8); predecessor [CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_FACTORED_TRANSITION_SOURCE_2026_10_08.md). Root owns mathematics, implementation, computation and publication. The existing read-only worker is GPT-5.6 Luna / max; no new child was spawned. No accepted ancestor producer/check or legacy suite was rerun.
