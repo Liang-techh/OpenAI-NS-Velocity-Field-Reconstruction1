@@ -1,3 +1,5 @@
+Superseded for next-task priority by [CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md](CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md): typed all-N bridge and source/local unit C1 control ball completed; actual source/integral oracle and global conditions are next.
+
 # Complete upstream centered C1 application and next common-N bridge
 
 Checked source [1c9edc42](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1c9edc421f52e431fe86e7525dc263173f78feef). Predecessor: [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md). Reused read-only worker **GPT-5.6 Luna / max**; root implemented, computed, checked and published. No new child or child edit/compute/Git task.

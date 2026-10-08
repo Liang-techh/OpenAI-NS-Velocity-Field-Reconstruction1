@@ -1,3 +1,18 @@
+# Current handoff: centered all-N control bridge completed (2026-10-08)
+
+Checked source [57aec530](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57aec530daf25bcbdd03c8e9df34c8af3eed33c2); evidence and executable queue [CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md](CURRENT_CENTERED_ALL_N_CONTROLS_BRIDGE_2026_10_08.md); predecessor [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md).
+
+The typed centered whole-Z/all-N target sidecar now feeds the original realized C1 integral/control graph. All5220 nodes,168 same-N source refs and336 genuine integrals remain unchanged. Complete-target averaging gives ||N*r||C1<=C/N; the new source/local frequency contract yields a unit C1 control ball, half contraction and exact factored tails. Original P0, geometry, N-dependent order -1 functions and pressure-zero-rate memory stay unchanged.
+
+- [x] **CENTERED-TO-ALL-N-TYPED-ADAPTER/UNIT-C1-BALL/EXACT-GRAPH-BINDING:** completed. This uses proved Z[-1,1]/all-N data, not scaled N1024 tiles.
+- [ ] **NEXT ORIGINAL-SOURCE-AND-24-CELL-INTEGRAL-ORACLE:** actual callbacks, implicit phase inverse and error-controlled oscillatory integration must feed the five-control evaluator; no cap-to-point fallback. Resolve an executable frequency strategy without pretending the enormous sufficient threshold is necessary or materialized.
+- [ ] **GLOBAL-N/SPATIAL-JOINS/HIGHER-JETS/ACTUAL-CONTROLS/TERMINAL-FIELD:** still open. Retained local C0 budget is conservative and does not admit a whole-construction N. Reoptimize it only using proved same-coordinate smaller control bounds.
+- [ ] **AXIS/ANALYTIC-P0/EXACT-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused algebra/graph/integral/memory checks and1176 Git-index hashes PASS. Producer0.468s, checker0.531s; no source ancestors/inverse solvers rebuilt. Reused GPT-5.6 Luna/max for read-only review; root owns implementation/compute/Git. Earlier handoffs are historical.
+
+---
+
 # Current handoff: all upstream centered C1 and typed all-N bridge (2026-10-08)
 
 Checked source [1c9edc42](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1c9edc421f52e431fe86e7525dc263173f78feef); evidence and executable queue [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md); predecessor [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md).
