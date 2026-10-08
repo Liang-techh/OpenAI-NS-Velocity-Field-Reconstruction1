@@ -1,3 +1,17 @@
+# Current handoff: original O2 continuous Z history transport (2026-10-08)
+
+Checked source: [01cb96ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/01cb96ef93663a0c36671dff1e3ac9a8625aeea1). Evidence and executable tasks: [CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md](CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md). Predecessor: [genuine fixed-Z density derivatives](CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md).
+
+Complete y[0,1] / Z[.36,.38] and[-.38,-.36] rectangles now have all five C0/genuine ordinary-Z modulation contributions and unmodulated original-history contributions on256/2048 refinements at candidate N7. Source-defined nonmidplane cumulative inlets and ordinary derivatives retain native Pstar inverse factors; original histories and explicit incoming C1 defects use the correct own rates, with separate P0 and rate-zero pressure memory. This is whole-Z source transport, not an axial sample fit.
+
+- [x] **CONTINUOUS-Z/SOURCE-INLET/ORIGINAL-HISTORY-C1:** full strict-sign rectangles, real original inlet functions, unmodulated source histories and explicit incoming value/Z affine interface.
+- [ ] **NEXT REAL-INCOMING/CROSSING-Z:** attach actual inner/O1 source incoming defects/derivatives; complete microscopic regular/signed coverage through p2=0 and extend the axial atlas. No physical incoming defect is assumed zero.
+- [ ] **FULL-ROUTE-FUNCTIONAL-REPAIR/GLOBAL-N/HIGH-JETS:** all-chart original terminal functions and five independent controls, one globally admitted N, required radial/higher ordinary-Z jets.
+- [ ] **MATCHING/STRESS/RECURSION/CORRECTED-FIELD:** matched exact heat exterior, admissible stress/flat remainder, true n-dependent coefficient recursion, two-family oscillatory cancellation and Cartesian uvw/full residual.
+
+Focused checker PASS; 4608 source cells/4640 actual phase-source derivative records/23040 independent positive masses; index audit 1094 hashes. Four full evidence archives total 192,473,558 bytes. Existing **GPT-5.6 Luna / max** read-only reviewer. Exact Z0/crossing coverage, real incoming function binding, terminal identities, selected controls/global N and coefficient recursion remain open. Previous sections are historical.
+
+---
 # Current handoff: original O2 genuine density-Z integrals (2026-10-07)
 
 Checked source: [596318e9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/596318e91f6f6e492f1290235e04366506c31fcf). Evidence, source/derivative contracts and detailed next tasks: [CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md). Predecessor: [fixed nonzero-Z C0 integrals](CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md).
