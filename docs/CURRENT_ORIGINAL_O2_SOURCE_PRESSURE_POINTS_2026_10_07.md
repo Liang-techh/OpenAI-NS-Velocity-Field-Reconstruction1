@@ -1,5 +1,7 @@
 # Original O2 correlated parameters and normalized pressure point jets
 
+Successor: [CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md](CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md) completes original O2 factored finite inputs with directed errors and conditional true radius phase points/covers. Next production is original conditioned loop scales/inverse/A-B primitives and one signed density integral; full oracle, controls and recursion remain open.
+
 Checked source: [4ea85e94](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4ea85e94699ea4cc923d2025ceb5901a824aef0f). Predecessor: [full original O2 inertial/pressure expressions](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md). Parameter-frame and pressure-point checkers PASS. Git-index dependency audits cover 611 and 615 direct hashes. Existing read-only reviewer: **GPT-5.6 Luna / max**; no new workers.
 
 Two production interfaces now bridge the expression layer toward actual original source evaluation. A common exact parameter frame binds the selected radius/scales and the prescribed raw waiting root. A normalized original pressure service returns approximate P0/Pstar² and its first two ordinary Z derivatives, with independently directed coefficient/arithmetic error and a source-bound all-late-stage error budget. It does not install the complete conditioned numerical p1/p2, phase, all-chart oracle, controls, common N or recursive field.

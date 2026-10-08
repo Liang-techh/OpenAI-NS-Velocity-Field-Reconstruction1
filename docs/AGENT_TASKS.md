@@ -1,3 +1,17 @@
+# Current handoff: complete O2 factored inputs and true radius phase (2026-10-07)
+
+Checked source: [d762ade6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d762ade6d02e9dc295ffe6ab7c570d5a79ac27ff). Detailed source contracts, evidence and executable tasks: [CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md](CURRENT_ORIGINAL_O2_FACTORED_INPUTS_PHASE_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md](CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md).
+
+Complete E,V,a,b,p1,p2 value/ordinary-Z point coefficients now retain the same original R/Pstar/delta/L factors and directed radial/pressure errors. A second service computes true frac(N log(R/r_minus)) phase points/covers at explicit candidate N. Exact integer periods are removed without expanding logCstar; the original positive hb*s_c/2 origin offset remains in the source and error budget.
+
+- [x] **O2-FACTORED-INPUTS:** full original inertial, velocity and pressure-dependent coefficient rows with separately factored finite and nonzero late-source errors. Ordinary-Z rows must not be differentiated twice.
+- [x] **O2-CANDIDATE-PHASE:** actual original radius origin, exact modular reduction, source-exp/log point arithmetic and directed periodic cover including microscopic negative offset. Conditional explicit N queries only.
+- [ ] **NEXT CONDITIONED-LOOP/ONE-INTEGRAL:** attach whole-input/source-selected eta/d_star scales, retain extreme factor/Poisson-width correlations, solve the original inverse phase, compute A/B and Z primitives, then evaluate one genuine signed density integral with full errors.
+- [ ] **ALL-CHART/CONTROL/FIELD/REC/WAVE:** complete remaining charts and pressure cancellation/error contracts, simultaneous common N and controls, corrected field/heat exterior/global stress, true n-dependent recursion and oscillatory cancellation, physical uvw diagnostics.
+
+Both focused checkers PASS:40 independent ODE/unit p1/p2 comparisons (maximum discrepancy≈9.38e-13),76 finite-error and19 positive pressure-tail records; four original phase queries checked with independent600-digit Decimal arithmetic. Direct index audits 619/1049 hashes. Reviewer **GPT-5.6 Luna / max**, existing read-only worker only. Full numerical source oracle, loop primitives, signed integrals, installed controls, global N and recursion remain open. Previous sections are historical.
+
+---
 # Current handoff: correlated O2 parameters and normalized pressure points (2026-10-07)
 
 Checked source: [4ea85e94](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4ea85e94699ea4cc923d2025ceb5901a824aef0f). Detailed definitions, evidence and tasks: [CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md](CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md). Predecessor: [CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md](CURRENT_ORIGINAL_O2_INERTIAL_FUNCTIONS_2026_10_07.md).
