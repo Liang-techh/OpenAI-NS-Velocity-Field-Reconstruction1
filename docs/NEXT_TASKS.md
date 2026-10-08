@@ -1,3 +1,18 @@
+# Current handoff: full original O2 five C0/Z direct integrals (2026-10-08)
+
+Checked source [42a1327a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42a1327a6cacf00ca75697e48eff2f43f6f8cc81); evidence, actual bounds and detailed successor queue [CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md](CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md).
+
+The original five-density graph now feeds actual candidate-N160 full-window C0/Z contributions on64 source cells and192 regular/positive/negative branches, covering all original y[0,1]/Z[-1,1] including the axis. Same original radius/common-N phase, complete nonlinear cross terms, branch hull rather than overlap sums, all five own-rate masses, original nonzero inlet and separate P0 are retained. Changed ordinary-Z unit Lambda0/L^2 remains formal.
+
+- [x] **O2-FINITE-N-DENSITIES/UNION/ACTUAL-ENDPOINT-PHASE/FIVE-DIRECT-INTEGRALS:** source 42a1327a, fixed-N continuous result and 1268 staged dependency hashes PASS.
+- [x] **O2-EXPLICIT-INCOMING-C1-ARITHMETIC-INTERFACE:** no default zero, owner/family/datum guards and pressure rate0 memory. Actual source-owned inherited incoming functions are NOT installed.
+- [ ] **NEXT CORRELATED-q_y -> MIXED-DENSITY-Y/YZ -> SHARP-O2-PHASE-AVERAGING:** direct changed-Z caps are still broad; improve source correlation, collect factors and retain all boundary/bias/error terms before terminal controls.
+- [ ] **ACTUAL-INHERITED-HISTORIES/AXIAL-BUFFER/ALL17-24/MEANS/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal remains active; scale recursion is not yet achieved.
+
+Historical handoffs follow unchanged. Follow this successor and record scoped evidence/commit for completion.
+
+---
+
 # Current handoff: full original O2 conditional varying-q mixed phase (2026-10-08)
 
 Checked source [59e85ae7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59e85ae7d96f1b827a882ec8c431db870c989511); evidence and detailed next implementation [CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_MIXED_PHASE_2026_10_08.md).

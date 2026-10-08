@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md](CURRENT_O2_FULL_FIVE_DIRECT_INTEGRALS_2026_10_08.md), checked source 42a1327a. The candidate-N160 original five C0/Z density layer, predicate union, common radius-phase endpoints, full-window direct own-rate integrals and explicit incoming arithmetic API are now DONE. Actual source-owned inherited incoming functions, sharp averaging, terminal/global N and full reconstruction remain OPEN. Historical task text below records the earlier interface-only state.
+
 # Full original O2 conditional varying-q mixed phase interface
 
 Checked source [59e85ae7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59e85ae7d96f1b827a882ec8c431db870c989511). Predecessor: [CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md](CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md). The existing GPT-5.6 Luna/max worker reviewed read-only. Root implemented, computed and accepted; no child was spawned. The persistent full reconstruction goal remains active.
