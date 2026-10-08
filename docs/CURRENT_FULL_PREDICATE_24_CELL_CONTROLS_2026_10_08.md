@@ -1,3 +1,15 @@
+# Current handoff: full-Z paired C1 source refinement (2026-10-08)
+
+Checked source [59d932ce](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59d932ceab3e6322638e0b0bac53c9fa5fedbb49); evidence and detailed ordered tasks [CURRENT_FULL_Z_PAIRED_C1_SOURCE_REFINEMENT_2026_10_08.md](CURRENT_FULL_Z_PAIRED_C1_SOURCE_REFINEMENT_2026_10_08.md). Predecessor original24 source13e5e5f5/docs cdb855a6 remains accepted. Complete paper-faithful reconstruction goal ACTIVE / INCOMPLETE.
+
+- [x] **FULL-Z PAIRED ORDINARY-Z SOURCE REFINEMENT AND ORIGINAL24 PROPAGATION:**16 original active native cells, every admitted cutoff branch,76/80 smaller local Z bounds, all five smaller terminal target Z bounds. C0/background/P0/geometry/source functions unchanged; depth3 finite control and actual residual enclosures regenerated. Source 59d932ce, 1318 staged exact hashes PASS.
+- [ ] **NEXT FIRST-BRIDGE CORRELATION / CONDITIONAL DENOMINATOR ESTIMATES:** first bridge still dominates; preserve source a/t0/Delta/eta/phase and flat endpoint suppression before taking independent bounds. Present sufficient contraction still FAILS. Follow the successor's concrete tasks and acceptance conditions.
+- [ ] **ONE GLOBAL N / FUNCTION LIMIT / FIVE TERMINAL IDENTITIES / ORACLES / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Improved derivative covers are not completed scale recursion.
+
+Historical handoffs follow unchanged. Mark DONE only with scoped evidence and commit.
+
+---
+
 # Actual original24 source histories and finite five-control residuals
 
 Checked source [13e5e5f5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/13e5e5f58f7fe81999a5a7be22d0174186acbcb4). Predecessor [CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md](CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md), source5ecd115b/docsfe1f21ec. Complete paper-faithful reconstruction remains active.
