@@ -1,3 +1,17 @@
+# Current handoff: actual source-correlated Rc five defects (2026-10-08)
+
+Checked source [53d8191d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/53d8191dcf493b475392ec7c8f7f0deb1e7be5a1); implementation, limits and detailed queue [CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md](CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md); predecessor [CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md).
+
+Actual M,D=(J-M)/mu,I,S,Cp C0/Z and N*r covers now consume the complete original route on both strict-sign tiles at N1024. All 24 axial, 704 buffer and 14 transition source/phase queries form joint k-a_eff*m before branch/phase hulls. Original positive mu, true widths, buffer mean/slow/weight errors, quiet memory and unchanged P0 are retained. Four-source diagnostics and all five original linear control responses are saved.
+
+- [x] **FINITE-N-FIVE-TARGET-COVERS/POST-SLOPE-JOINT-INTEGRATION/SOURCE-LEDGER/LINEAR-CONTROL-DIRECTIONS:** implemented and checked on both tiles.
+- [ ] **NEXT SLOPE-SOURCE-CORRELATION/C1-WIDENING/PRESSURE-MEMORY:** the genuine upstream slope inlet dominates current bounds. Recover its original joint source and trace the first limiting derivative; do not spend the next pass refining subdominant buffer cells.
+- [ ] **ORIGINAL-N-DEPENDENT-FUNCTION-ORACLE/LEGAL-COMMON-N/NONLINEAR-CONTROLS/TERMINAL-IDENTITIES:** still open. Current target covers and h_linear do not certify a nonlinear repaired field at N1024.
+- [ ] **AXIS/WHOLE-Z/EXACT-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused new mathematics, both actual source replays and 1302 Git-index hashes PASS. Reused GPT-5.6 Luna/max read-only worker. Root owns code/compute/Git; accepted upstream solvers/producers were not repeated. Earlier sections are historical and their next steps are superseded by this handoff.
+
+---
 # Current handoff: complete buffer periods and new Rd/Rc histories (2026-10-08)
 
 Checked source [a0e8c2a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a0e8c2a0c743a0856a22140a7962e7715394abb9); evidence and executable next tasks [CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md); predecessor [CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_ORIGINAL_AXIAL_TRANSPORT_2026_10_08.md).
