@@ -1,3 +1,21 @@
+# Current handoff: original whole near-midplane mixed C1 integration (2026-10-08)
+
+Checked source [989880da](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/989880da5d32dce3f5141820b9a7a1643b6e0c88); current evidence and executable queue [CURRENT_REFERENCE_NEAR_MIDPLANE_MIXED_C1_2026_10_08.md](CURRENT_REFERENCE_NEAR_MIDPLANE_MIXED_C1_2026_10_08.md).
+
+Actual original C0,y,Z,yZ source rows and smooth regular Fourier/implicit mixed primitives now drive whole y[-5,0], zeta[-1e-6,1e-6] C0/Z own-rate phase averaging. Physical Z=zeta/(Pstar^11*Cstar^10) remains formal. All pressure errors, full E/V products, both inverse cross terms, M48 derivative tails, actual endpoints and finite-N nonlinear terms remain. The reference q/nu are proved constant; varying O2 parameters are separate.
+
+At N16384/16 cells, C0 five-density contribution bounds are about5.685e-10 to2.087e-9. Ordinary Z contribution bounds divided by Lambda0=Pstar^11*Cstar^10 are about0.001056 to0.001855, approximately1172 to4164 times tighter than same-method direct bounds. All original L powers remain. These are source-window bounds, not terminal closure, global frequency admission or NS residuals.
+
+- [x] **REGULAR-y/yZ-SOURCE/FULL-PRESSURE-POWERS:** installed on the whole signed axial window.
+- [x] **REGULAR-FOURIER-MIXED/TRUE-PHASE-CROSS-TERMS/FULL-E-V-PRODUCTS:** source-backed through zero, without r^-1.
+- [x] **WHOLE-NEIGHBORHOOD-C1-IBP/DIRECT-SELECTOR/FINITE-OFFSET-ANCHOR:** actual-N contributions with positive own rates, global endpoints and preserved original large factors.
+- [ ] **NEXT TYPED-AXIAL-CELLS/REGULAR-SIGNED-OVERLAP/WHOLE-Z:** preserve formal physical endpoints and source-function coverage; finite samples cannot fill the astronomical axial gap.
+- [ ] **ALL17-24/FREQUENCY/ACTUAL-CONTROLS/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full original objective and the linked detailed acceptance queue remain active.
+
+Focused evidence:60 original y/yZ derivative comparisons,96 independent defining-integral/primitive comparisons,36 whole cells,15 own-rate mass comparisons and1224 Git-index hashes PASS. Producer36.500s, checker63.141s. Existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and published. Earlier handoffs below are historical.
+
+---
+
 # Current handoff: original whole near-midplane C0/Z integration (2026-10-08)
 
 Checked source [28498a53](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/28498a5314e4ad951a6f73d376c191460d692370); current evidence and executable queue [CURRENT_REFERENCE_NEAR_MIDPLANE_2026_10_08.md](CURRENT_REFERENCE_NEAR_MIDPLANE_2026_10_08.md).
