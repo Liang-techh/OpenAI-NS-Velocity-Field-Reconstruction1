@@ -1,3 +1,5 @@
+Current successor: [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md). Remaining upstream centered supports and bridge_macro priority are completed; M/D/S terminal Z caps tighten further and firstbridge again dominates all inherited components. Next work is the typed centered-to-all-N bridge and source/integral control oracle.
+
 # Actual firstbridge centered C1 and updated five Rc targets
 
 Checked source [59bd7ee4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59bd7ee442cb46799abf8d7e4e55d528a327c60b). Predecessor: [CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md](CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md). Worker metadata **GPT-5.6 Luna / max**, reused read-only. Root owns implementation, computation, checks and Git; no child was spawned or asked to edit/run producers.

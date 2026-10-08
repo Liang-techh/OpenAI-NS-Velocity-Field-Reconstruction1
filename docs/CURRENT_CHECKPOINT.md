@@ -1,3 +1,17 @@
+# Current handoff: all upstream centered C1 and typed all-N bridge (2026-10-08)
+
+Checked source [1c9edc42](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1c9edc421f52e431fe86e7525dc263173f78feef); evidence and executable queue [CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md](CURRENT_UPSTREAM_CENTERED_C1_2026_10_08.md); predecessor [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md).
+
+All12 upstream charts now use the centered C1 support or their tighter accepted covers on both strict-sign tiles, N1024. The remaining11 charts contribute22 original native queries; secondbridge/macro/two micro charts yield16 new primitive and40 density Z reductions. M/D/S terminal Z caps tighten on both tiles; I/Cp retain their preceding caps. All C0/P0/pressure-zero-rate memory and true widths stay unchanged. Firstbridge again dominates all inherited component Z caps.
+
+- [x] **REMAINING11-CHART-SOURCES/CENTERED-C1/ALL12-TRANSPORT/NEW-FIVE-TARGETS:** implemented and checked; bridge_macro priority completed.
+- [ ] **NEXT CENTERED-TO-ALL-N-TYPED-ADAPTER:** all-N graph shares the original family/P0/24-cell geometry, but its NativePairedC1Transport-only interface does not consume centered coefficients. Implement the explicit source/owner/geometry/hash bridge using proved all-N data; do not scale N1024 targets or rerun unchanged producers.
+- [ ] **GLOBAL-N-CONTRACT/REAL-SOURCE-INTEGRAL-ORACLE/NONLINEAR-FIVE-CONTROLS:** still open. Generic/repair frequency inequalities omit global cone/higher-jet/join/exterior requirements; CachedC1ControlEvaluator still needs actual source/integral callbacks. Remaining eta sensitivity is retained and handled by valid frequency bounds, not erased through precision.
+- [ ] **AXIS/WHOLE-Z-FULL-FUNCTIONS/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+All22 new source replays, both complete transport/target replays, unchanged C0 and1336 Git-index hashes PASS. Reused GPT-5.6 Luna/max read-only worker; root owns implementation/compute/Git. Existing firstbridge/slope/downstream data and centered math receipts are reused. Earlier sections are historical.
+
+---
 # Current handoff: tighter firstbridge C1 and new Rc derivative frontier (2026-10-08)
 
 Checked source [59bd7ee4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59bd7ee442cb46799abf8d7e4e55d528a327c60b); detailed evidence and executable queue [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md); predecessor [CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md](CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md).
