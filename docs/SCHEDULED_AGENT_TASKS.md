@@ -1,3 +1,18 @@
+# Current handoff: original slope joint sources and first-bridge C1 obstruction (2026-10-08)
+
+Checked source [79746360](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/79746360a9d55e907b76019e4bfd6a58426743aa); evidence and detailed queue [CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md](CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md); predecessor [CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md](CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md).
+
+All 4096 original slope cells / 6148 saved phase queries now form joint k-a_eff*m and ordinary Z derivatives before hulls on both strict-sign tiles, N1024. Original native factors, true endpoint masses and exact a_eff=qi*exp(.3-y/2-2.5mu) are retained. New Rc five-target/linear-response covers split pre-slope inherited memory from slope own, axial, buffer and transition. P0 and pressure rate-zero memory remain unchanged.
+
+- [x] **COMPLETE-SLOPE-OWN-JOINT-SOURCE/SEPARATED-RC-LEDGER:** implemented and checked on both tiles.
+- [x] **FIRST-INHERITED-C1-CHART-ATTRIBUTION:** active_first_bridge has the largest inherited Z cap in all five rows; the slope own term is now independently available.
+- [ ] **NEXT FIRSTBRIDGE-PHASE-HELD-JOINT-DERIVATIVE:** recover same-source a/b/p2/q/primitive/inverse tuples only for the limiting chart, trace the first widening operation and replace that chart's inherited component approximation. Do not repeat the eleven other upstream charts or already subdominant buffer producers.
+- [ ] **SLOPE-J-MISMATCH/PERIOD-CANCELLATION/PRESSURE/N-DEPENDENT-ORACLE/NONLINEAR-CONTROLS:** still open. Total caps are not materially smaller; neither N1024 nonlinear closure nor a legal uniform N is established.
+- [ ] **AXIS/WHOLE-Z/EXACT-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Focused slope math, all saved sums, 16 source-cell replays, both terminal compositions and 1308 Git-index hashes PASS. Reused GPT-5.6 Luna/max read-only worker; root owns implementation/compute/Git. Accepted inverse solvers and ancestor producers were not rerun. Earlier sections are historical.
+
+---
 # Current handoff: actual source-correlated Rc five defects (2026-10-08)
 
 Checked source [53d8191d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/53d8191dcf493b475392ec7c8f7f0deb1e7be5a1); implementation, limits and detailed queue [CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md](CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md); predecessor [CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md](CURRENT_COMPLETE_BUFFER_PERIOD_TRANSPORT_2026_10_08.md).
