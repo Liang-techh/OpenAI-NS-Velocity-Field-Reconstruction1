@@ -1,3 +1,17 @@
+# Current handoff: original O2 ordered source masses and nonzero-Z coefficient cells (2026-10-07)
+
+Checked source: [3eaaf5af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3eaaf5afa31224bce2c4bcb673a0ccf3169d7d36). Evidence, source/error contracts and detailed executable tasks: [CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md](CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md). Predecessor: [five own integrals and incoming memory](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md).
+
+The three actual original defining masses now have complete ordered node prefixes/suffixes and whole y-cell f/H/D/P ranges. Full original C0/ordinary-Z E/V/a/b/p1/p2 coefficient ranges execute for fixed nonzero Z and Z intervals with both Pstar sectors, delta/L/R and positive late-pressure errors. The exact pressure identity alpha=P(y)+remaining_pressure_mass(y) cancels correlated baseline terms symbolically while keeping the same datum and all late errors. Native source/conditioner semantic factor slots are explicitly bound.
+
+- [x] **ORIGINAL-ORDERED-MASSES/PROFILE-CELLS:** 64/256/2048/8192 refinements, true positive defining weights, original nonzero inlets, prefix/suffix pressure and independent defining ODE. No repeated nested source quadrature.
+- [x] **FULL-NONZERO-Z-COEFFICIENT-CELLS:** original C0/ordinary-Z templates, pressure suffix cancellation, complete source factors/tails, exact midplane parity with nonzero p2_Z. Four signed geometry queries and one midplane regular query succeed; four crossing/near-end boxes correctly remain unresolved.
+- [ ] **NEXT POSITIVE-LOG-Q/SIGNED-Z/INTEGRALS:** derive continuous log-q covers from the original flat-cutoff complement and native positive eta, retain the regular region across p2=0, then integrate original nonzero-Z phase/A-B/five densities over the complete window with one common candidate N. Geometry success is not integral admission.
+- [ ] **FUNCTIONAL/ALL-CHART/MATCHING/RECURSION:** genuine Z-functional own histories, radial/high-order jets and all-chart incoming functions, admitted common N/independent five repair, matched exterior/global stress, true n-dependent recursion and oscillatory cancellation, physical uvw/full residual.
+
+Focused checker PASS and Git-index audit1078 hashes. Existing read-only reviewer **GPT-5.6 Luna / max**. Source masses use90 directed digits and native factors260; complete evidence ships losslessly as about50.8 MB gzip. There is still no nonmidplane inverse/integral, all-chart source oracle, functional matching, controls, global N, corrected stress or coefficient/scale recursion. Previous sections are historical.
+
+---
 # Current handoff: original O2 five own-rate integrals and incoming memory (2026-10-07)
 
 Checked source: [622563a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/622563a264afbcede1aff30177e55de0b6472883). Evidence, units/errors and detailed executable next tasks: [CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md). Predecessor: [signed densities and pressure integral](CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md).

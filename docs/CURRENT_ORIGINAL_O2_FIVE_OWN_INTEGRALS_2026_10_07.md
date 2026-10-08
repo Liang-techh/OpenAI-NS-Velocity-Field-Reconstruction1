@@ -1,5 +1,7 @@
 # Original O2 five own-rate integrals and explicit incoming history
 
+> Successor: [ordered original source masses and nonzero-Z coefficient cells](CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md). General defining masses and the full source coefficient bridge are completed; nonmidplane phase integrals and functional/global matching remain open.
+
 Checked source: [622563a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/622563a264afbcede1aff30177e55de0b6472883). Predecessor: [signed densities and genuine pressure integral](CURRENT_ORIGINAL_O2_SIGNED_DENSITIES_PRESSURE_INTEGRAL_2026_10_07.md). The focused checker passes; the direct Git-index dependency audit covers 1074 hashes. Existing read-only reviewer: **GPT-5.6 Luna / max**. No new workers or ancestor producers were run.
 
 All five genuine original O2 contributions over the complete y in[0,1] window at exact Z=0 and diagnostic N=7 are now enclosed. The calculation keeps both original primitives, the axial increment B/N, the signed cross terms, and each moment's prescribed Duhamel rate. It also transports the original nonzero histories and exposes an affine interface for five explicitly supplied incoming defects.
