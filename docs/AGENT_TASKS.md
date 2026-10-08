@@ -1,3 +1,17 @@
+# Current handoff: original O2 same-N real upstream incoming (2026-10-08)
+
+Checked source: [80633e40](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80633e404dabbaa662a3c4f953187c977291d744). Evidence and detailed executable tasks: [CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md](CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md). Predecessor: [continuous original O2 history transport](CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md).
+
+The actual original sc/2-to-O2-inlet correction C0/Z covers and exact 13-cell incoming graph roots are now attached to fresh genuine O2 y[0,1] integrals at the same candidate N1024, on Z[.36,.38] and[-.38,-.36], 256/2048 refinements. Entire upstream formal factors, own-rate decay, original histories added once and separate P0/pressure memory are retained. Previous N7 modulation contributions are not reused. Whole-Z[-1,1] upstream bounds remain conservative and are not narrowed by this attachment.
+
+- [x] **SAME-N-REAL-INCOMING/ORIGINAL-O2-C1:** genuine source-derived upstream correction covers, exact incoming roots, fresh N1024 phase/density integrals and full factored C0/Z own-history transport.
+- [ ] **NEXT UPSTREAM-WIDTH/CROSSING-Z:** attribute the dominant upstream bound by chart; build genuine axial-tile/phase source covers to tighten it, and complete microscopic regular/signed crossing-Z coverage.
+- [ ] **COMPLETE-ROUTE/FUNCTIONAL-REPAIR/GLOBAL-N:** continue from O2_slope y1 through all remaining charts to Rc, evaluate correlated five targets/independent controls, and admit one global frequency with required higher jets.
+- [ ] **MATCHING/STRESS/RECURSION/CORRECTED-UVW:** matched exact heat exterior, admissible stress/flat remainder, true n-dependent coefficient recursion, both oscillatory pulse families and independent Cartesian field/residual/dynamics.
+
+Focused checker PASS; 4608 source cells/6662 true phase-source jet records/23040 independent masses; index audit 1171 hashes. 10 lossless evidence chunks total 209,747,250 bytes. Existing **GPT-5.6 Luna / max** read-only reviewer. Upstream numerical bounds, full Rc identities, global N and coefficient recursion are not solved. Previous sections are historical.
+
+---
 # Current handoff: original O2 continuous Z history transport (2026-10-08)
 
 Checked source: [01cb96ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/01cb96ef93663a0c36671dff1e3ac9a8625aeea1). Evidence and executable tasks: [CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md](CURRENT_ORIGINAL_O2_CONTINUOUS_Z_HISTORY_TRANSPORT_2026_10_08.md). Predecessor: [genuine fixed-Z density derivatives](CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md).
