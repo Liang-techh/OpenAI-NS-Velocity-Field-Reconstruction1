@@ -1,3 +1,17 @@
+# Current handoff: original generic tail phase/density and actual period integrals (2026-10-08)
+
+Checked implementation [47f312ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/47f312aeeef9e526cf5f2af032f7155fd8de2881); source/results/next actions [CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md](CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md); predecessor [CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md](CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md).
+
+The original chart-generic interface now executes actual N*y -> conditioned inverse -> A/B ordinary first jets -> all five signed density C0/Z functions. Both strict-sign axial tiles have original buffer selector[5,5+1/N] integrals at N1024 on8/32 ordered cells. All20 refinements agree by enclosure overlap;32-cell widths are approximately0.710 of8-cell for m/k and0.302 for h/e/p (including ordinary Z rows). These are real local integral enclosures, not saved primitive caps selected as field values. Complete original axial/transition source branches and Rc target/control closure remain open.
+
+- [x] **GENERIC-TRUE-PHASE-DENSITY-INTERFACE/ACTUAL-PERIOD-C1:** both signs, original source/actual phase/inverse/first jets, fixed endpoint/true mass, four numerical period integrals; explicit full-domain branch refusals.
+- [ ] **NEXT ORIGINAL-SOURCE-BRANCH-ATLAS:** exact endpoint-focused source partitions at O2_axial phase1 and O3_slope_mu phase0; preserve unresolved seam cells and only use flat shortcut when all original q jets vanish.
+- [ ] **COMPLETE-TAIL-INTEGRALS/CORRELATED-RC-TARGETS/FIVE-CONTROLS:** period averages and actual slow variation/boundary error for enormous radial widths, complete original buffer/transition, exact quiet-power memory, same source targets and independent controls.
+- [ ] **WHOLE-AXIAL/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** all full-construction gates remain false.
+
+Focused saved-source checker PASS;1245 Git-index hashes match. Existing read-only **GPT-5.6 Luna / max** reviewed derivative/geometry contracts. No new child; accepted upstream/O2 integrations were not rerun. Earlier sections are historical.
+
+---
 # Current handoff: refined original O2 exit through all six cells to Rc (2026-10-08)
 
 Checked source: [05c0a703](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05c0a703c9b784a101c8da065f9a3198f36e158f). Executed evidence and next actions: [CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md](CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md). Predecessor: [CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md](CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md).

@@ -1,5 +1,7 @@
 # Refined original O2 exits continued to the actual Rc
 
+Current successor: [CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md](CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md), checked source [47f312ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/47f312aeeef9e526cf5f2af032f7155fd8de2881). Original generic covered-source phase/density evaluation and actual buffer-period C0/Z integrals are now executed; complete axial/transition/tail targets and controls remain open.
+
 Accepted implementation [05c0a703](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05c0a703c9b784a101c8da065f9a3198f36e158f); predecessor [CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md](CURRENT_ACTIVE_KAPPA_WEIGHTED_PRESSURE_2026_10_08.md). This executes the previously open **ACTUAL-O2-TO-RC-C1-TRANSPORT** task with the real weighted-pressure/active-kappa incoming functions. Root owns implementation/math/compute. Existing read-only **GPT-5.6 Luna / max** reviewed original geometry and numerical oracle reuse; no new child was spawned.
 
 ## Executed state
