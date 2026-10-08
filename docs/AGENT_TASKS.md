@@ -1,3 +1,18 @@
+# Current handoff: full original O2 pressure carrier and positive-q curvature (2026-10-08)
+
+Checked source [e039b72f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e039b72fc65ddb92883643f54397e8318dc977ef); evidence and detailed next implementation [CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md](CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md).
+
+Full original O2 y[0,1]/Z[-1,1] has p2=Z*g with g/Lambda0 in[-1413.118,-86.1086] and all original pressure errors retained. Actual g_y/g is enclosed; q_y remains nonzero. A new conditional signed mixed curvature theorem is valid for every positive q, with q kept formal in the primitive bound and added varying-q terms. These complete source/derivative prerequisites for extending the axis adapter, not the signed phase implementation or five-moment closure.
+
+- [x] **O2-FULL-PRESSURE-ODD-CARRIER:**1024 whole original source rectangles and smooth axis carrier.
+- [x] **O2-ALL-POSITIVE-q-WEIGHTED-CURVATURE (conditional theorem):** both q branches and original positive endpoint factor.
+- [ ] **NEXT ISSUED-SOURCE-PREDICATES/LOG-q-u-ATLAS/SIGNED-MIXED-AB/OVERLAP:** bind the linked proofs and implement actual full-domain regular/signed transport, then O2 C0/Z five integrals. Conditional curvature records require a separately proved signed predicate.
+- [ ] **AXIAL/BUFFER/ALL17-24/CONTROLS/TERMINAL/GLOBAL-N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED-UVW:** full goal remains active.
+
+Focused evidence includes1024 source rectangles,784 finite curvature comparisons plus exact inequalities and1239 staged unique dependency hashes PASS. Historical handoffs follow unchanged.
+
+---
+
 # Current handoff: original O2 varying-q regular mixed phase on axis (2026-10-08)
 
 Checked source [1e16263f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1e16263f59f1fd7eadedac9ea41ddd350feec9c8); evidence and next executable queue [CURRENT_O2_REGULAR_MIXED_PHASE_2026_10_08.md](CURRENT_O2_REGULAR_MIXED_PHASE_2026_10_08.md).

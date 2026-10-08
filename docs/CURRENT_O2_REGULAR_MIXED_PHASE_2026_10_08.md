@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md](CURRENT_O2_FULL_AXIAL_CARRIER_POSITIVE_Q_2026_10_08.md), checked source e039b72f. Full O2 pressure carrier/sign and the all-positive-q conditional curvature theorem are DONE as prerequisites. Combined signed source/phase/domain tasks below remain OPEN until actual issued predicate frames and signed mixed primitives are installed. Follow the successor queue; do not reuse reference sign bounds or interpret the full Z rectangle as signed.
+
 # Original O2 variable-q regular mixed phase and complete A/B transport
 
 Checked source [1e16263f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1e16263f59f1fd7eadedac9ea41ddd350feec9c8). Predecessor: [CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md](CURRENT_O2_MIXED_SOURCE_JETS_2026_10_08.md), source7f852778. The existing GPT-5.6 Luna/max worker reviewed read-only; root implemented and computed. No child was spawned. The full reconstruction goal remains active.
