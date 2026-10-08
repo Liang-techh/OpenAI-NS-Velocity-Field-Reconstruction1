@@ -1,3 +1,18 @@
+# Current handoff: tighter firstbridge C1 and new Rc derivative frontier (2026-10-08)
+
+Checked source [59bd7ee4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59bd7ee442cb46799abf8d7e4e55d528a327c60b); detailed evidence and executable queue [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md); predecessor [CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md](CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md).
+
+Accepted centered phase a*nu=v and alpha identities now tighten the actual original firstbridge on both strict-sign tiles, N1024. Both primitive Z covers, all five firstbridge density Z integral covers and all five final Rc target Z covers strictly improve on each tile. Every C0 target and original P0 are exactly unchanged. Only two firstbridge packets are queried; other11 upstream charts, all slope integrals and downstream inverse data are reused.
+
+- [x] **ACTUAL-FIRSTBRIDGE-CENTERED-C1/NEW-12-CHART-Z-TRANSPORT/ALL-FIVE-RC-Z-TARGETS:** executed and checked; original C0/pressure-zero-rate memory retained.
+- [x] **NEW-DERIVATIVE-FRONTIER:** bridge_macro now dominates inherited m/k/e; firstbridge remains dominant in h/p. The old all-five-firstbridge ranking is superseded.
+- [ ] **NEXT BRIDGE-MACRO-CENTERED-C1:** apply original centered/v identities only to this chart, compare its Z source integrals, replace certified tighter covers and recompose the same five targets. Preserve all other sources; do not repeat full upstream/slope/buffer producers.
+- [ ] **LOCAL-a/CUTOFF/PHASE-HELD-JOINT-SOURCE/PRESSURE/N-DEPENDENT-ORACLE/NONLINEAR-CONTROLS:** still open. Remaining caps are enormous; no actual nonlinear small repair or legal common N is established.
+- [ ] **AXIS/WHOLE-Z/EXACT-HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** still open; full-construction flags remain false.
+
+Both actual source/transport/target replays, exactly unchanged C0 targets and 1330 Git-index hashes PASS. Reused GPT-5.6 Luna/max read-only worker; root owns code/compute/Git. Existing centered math checks are reused through their accepted receipt; no new inverse solve or ancestor producer rerun. Earlier sections are historical.
+
+---
 # Current handoff: original slope joint sources and first-bridge C1 obstruction (2026-10-08)
 
 Checked source [79746360](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/79746360a9d55e907b76019e4bfd6a58426743aa); evidence and detailed queue [CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md](CURRENT_SLOPE_JOINT_SOURCE_2026_10_08.md); predecessor [CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md](CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md).

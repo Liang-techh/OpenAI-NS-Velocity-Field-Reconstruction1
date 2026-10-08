@@ -1,3 +1,5 @@
+Current successor: [CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md](CURRENT_FIRSTBRIDGE_CENTERED_C1_2026_10_08.md). Applying the accepted centered identities now strictly tightens all five final Z caps on both tiles. bridge_macro becomes dominant in inherited m/k/e; firstbridge remains dominant in h/p. Use the successor queue.
+
 # Original slope joint source and separated Rc error ledger
 
 Checked source [79746360](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/79746360a9d55e907b76019e4bfd6a58426743aa). Predecessor: [CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md](CURRENT_RC_JOINT_TERMINAL_DEFECTS_2026_10_08.md). Reused worker **GPT-5.6 Luna / max**, read-only formula review. Root implemented, computed, checked and published; no new child or child compute/Git task.
