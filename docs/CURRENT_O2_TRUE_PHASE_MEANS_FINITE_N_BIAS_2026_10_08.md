@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md](CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md), checked source e1e5895b. Source |A|<=1/2, dual native/physical amplitude mean bounds and uniform all-N>=160 N^-2 mean coefficients are DONE. Actual slow-y/yZ collection, spatial oscillatory remainder, terminal/global N and scale recursion remain OPEN. Historical task text below records the earlier finite-N mean state.
+
 # Actual original O2 true-phase means and finite-N nonlinear bias
 
 Checked source [0a710c20](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0a710c20ae9ba307e02631e5c774e924c17a37f9). Predecessor: [CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md](CURRENT_O2_CORRELATED_QY_MIXED_DENSITIES_2026_10_08.md). The existing GPT-5.6 Luna/max worker reviewed read-only; root implemented, computed and accepted, without a new child. The preceding goal turn was progress (source90b2ad11/docs259721b9). The persistent full reconstruction goal remains active.

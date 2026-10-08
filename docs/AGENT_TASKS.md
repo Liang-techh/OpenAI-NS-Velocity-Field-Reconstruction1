@@ -1,3 +1,17 @@
+# Current handoff: original O2 all-N native mean-bias coefficients (2026-10-08)
+
+Checked source [e1e5895b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e1e5895bceded1f2a092c44eefda7aea64c87c2f); actual bounds, scope and detailed queue [CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md](CURRENT_O2_ALL_N_NATIVE_MEAN_BIAS_2026_10_08.md). Predecessor true-phase means source0a710c20/docsb8ff8595 remains accepted. Full reconstruction goal active.
+
+Actual original y[0,1]/Z[-1,1],64 cells and192 predicates now have uniform all integer N>=160 five mean C0/Z N^-2 coefficients, derived from N-independent source inputs. Native q factors and |A|<=1/2 are both retained before unit division. At N160 h/p mean C0 bounds improve about122/127 times. This does not finish the spatial oscillatory integral, terminal identities or scale recursion.
+
+- [x] **O2-SOURCE-A-AMPLITUDE/DUAL-MEAN-NORMS/ALL-N-MEAN-NMINUS2-COEFFICIENTS:** source e1e5895b;768 actual source parts,16896 native coefficient rows,640 independent exponential-pair comparisons; 1280 staged exact hashes PASS.
+- [ ] **NEXT COLLECT ACTUAL SLOW-Y/YZ -> ACTUAL ZERO-MEAN FIRST-ORDER PRIMITIVES -> SPATIAL OSCILLATORY REMAINDER/SHARP TOTAL AVERAGING:** retain raw regular p2 derivative carriers, correlated q_y and exact d_star offset; signed necessary q inequalities, every phase/own-rate endpoint, full nonlinear remainder and mean bias. See detailed acceptance in successor.
+- [ ] **ACTUAL HISTORIES/AXIAL BUFFER/ALL17-24/FIVE CONTROLS/TERMINAL/GLOBAL N/JOINS/HEAT/STRESS/FLAT/n-RECURSION/PULSES/CORRECTED UVW:** original full scope unchanged; no global N, full residual or scale recursion claim.
+
+Historical handoffs follow unchanged. Use the successor as active queue; mark DONE with evidence and a commit.
+
+---
+
 # Current handoff: original O2 true-phase means and finite-N nonlinear bias (2026-10-08)
 
 Checked source [0a710c20](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0a710c20ae9ba307e02631e5c774e924c17a37f9); actual bounds/evidence and successor implementation [CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md](CURRENT_O2_TRUE_PHASE_MEANS_FINITE_N_BIAS_2026_10_08.md). Predecessor correlated-q_y source90b2ad11 remains accepted.
