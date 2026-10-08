@@ -1,3 +1,17 @@
+# Current handoff: firstbridge paired cutoff-branch C1 refinement (2026-10-08)
+
+Checked source: [da661d09](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da661d093a8d0d43ccff6fb549bb11b8720a4cfd). Evidence and detailed next actions: [CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md](CURRENT_FIRSTBRIDGE_PAIRED_BRANCH_C1_O2_REPLAY_2026_10_08.md). Predecessor: [CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md](CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md).
+
+Genuine firstbridge negative/transition/flat cutoff branches now use original direct q² jets and exact paired Poisson derivative identities on Z[.36,.38]/[-.38,-.36], N1024. Both firstbridge primitive derivative covers tighten and all20 downstream ordinary-Z correction comparisons improve through the complete13-cell pre-O2 route and4 unchanged original O2 integrals. All C0 contributions, original backgrounds/P0 and the native owner remain unchanged. These are formal enclosure improvements, not physical residual or project-completion percentages.
+
+- [x] **CONDITIONAL-Q-Q2/PAIRED-Z/ACTUAL-O2-REPLAY:** all3 cutoff branches, original linear q_Z/p2_Z, complete same-source derivative hulls, true widths, inherited history and rate-zero pressure memory.
+- [ ] **NEXT ACTIVE-BRANCH-DELTA-Z:** use kappa=a+b²/a<=K to bound the same original Delta_Z from unchanged a_Z/b_Z and positive a lower before conditional q/q² evaluation. The current unconditioned Delta_Z bound is the next firstbridge obstruction.
+- [ ] **INNER-REFERENCE-PRESSURE:** use the exact single E²*expm1(2A/N)/2 pressure expression with original factors and true mass; keep P0 separate. Actual period-integral cancellation remains a separate task.
+- [ ] **FULL-AXIAL/RC-REPAIR/GLOBAL-N/STRESS/TRUE-RECURSION/CORRECTED-UVW:** entire original source atlas/route, functional five controls, matched heat background, admissible stress/flat remainder, n-dependent coefficient recursion, both oscillatory families and independent Cartesian field/residual/dynamics.
+
+Focused checks PASS;1222 index hashes; two complete new source archives total3,073,394 bytes. Existing read-only **GPT-5.6 Luna / max**, no new child. Ordinary-Z and pressure bounds remain enormous; every global gate is false. Earlier sections are historical.
+
+---
 # Current handoff: genuine upstream tile refinement and O2 replay (2026-10-08)
 
 Checked source: [e255eb97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e255eb97d0eb98176ed8063b7fb77721d9816291). Evidence and detailed forward tasks: [CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md](CURRENT_UPSTREAM_TILE_UNIFORM_C1_O2_REPLAY_2026_10_08.md). Predecessor: [CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md](CURRENT_ORIGINAL_O2_SAME_N_ACTUAL_INCOMING_2026_10_08.md).
