@@ -1,5 +1,7 @@
 # Original O2 factored point inputs and true radius phase
 
+Successor: [CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md](CURRENT_ORIGINAL_O2_CONDITIONED_PRIMITIVES_2026_10_07.md) connects actual original O2 point/error inputs, true-radius phase and source-selected auxiliary scales to conditioned C0 inverse/A-B enclosures. Next is phase-held Z primitives, efficient actual point evaluation and one signed density integral; all-chart/global/recursion gates remain open.
+
 Checked source: [d762ade6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d762ade6d02e9dc295ffe6ab7c570d5a79ac27ff). Predecessor: [original parameter frame and normalized pressure points](CURRENT_ORIGINAL_O2_SOURCE_PRESSURE_POINTS_2026_10_07.md). Both new checkers PASS. Git-index dependency audits cover 619 and 1049 hashes. Existing read-only reviewer: **GPT-5.6 Luna / max**; no new workers or ancestor reconstructions.
 
 Two new production services now connect the original O2 slope chart to numerical source evaluation. Complete E,V,a,b,p1,p2 value/Z rows carry genuine source-derived finite coefficients, exact correlated factors and directed radial/pressure errors. A separate lightweight service evaluates the original spatial phase frac(N log(R/r_minus)) with directed periodic covers, including the positive microscopic origin offset. Native conditioned loop inversion, A/B evaluation, a signed density integral, all-chart oracle, controls, common N and actual coefficient recursion remain open.
