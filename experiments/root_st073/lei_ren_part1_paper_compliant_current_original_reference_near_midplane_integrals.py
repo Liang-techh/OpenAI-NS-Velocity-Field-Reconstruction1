@@ -276,18 +276,26 @@ def run():
     for count,N in ((4,160),(16,160),(16,16384)):
         levels.append(owner.integrate(count=count,N=N)['report'])
         print('Original whole near-midplane source/integrals:',count,'cells, N',N,flush=True)
+    wider=OriginalReferenceNearMidplane(zeta_lower='-1/1000000',zeta_upper='1/1000000')
+    if wider.family!=owner.family or wider.hashes!=owner.hashes:
+        raise ValueError('Expanded neighborhood must use the identical original family and inputs')
+    for count,N in ((16,160),(16,16384)):
+        levels.append(wider.integrate(count=count,N=N)['report'])
+        print('Original hundredfold expanded near-midplane source/integrals:',count,'cells, N',N,flush=True)
     report=dict(**{GATE:True},source_family=owner.family,
         actual_original_near_midplane_reference_levels=levels,
         actual_variable_L_source_atlas=owner.atlas.record(),
         original_pressure_odd_remainder_theorem=owner.pressure_theorem,
         original_Z_polynomial_compiler_identities=owner.compiler_proof,
         full_closed_zeta_neighborhood_not_midplane_samples=True,
+        accepted_signed_zeta_windows=[['-1/100000000','1/100000000'],['-1/1000000','1/1000000']],
+        wider_neighborhood_half_width_ratio=100,
         actual_C0_Z_source_and_regular_primitives_installed=True,
         original_large_Z_amplification_and_even_pressure_errors_retained=True,
         all_17_chart_or_24_cell_oracle_installed=False,actual_five_controls_installed=False,current_whole_N_selected=False,
         **dict.fromkeys(point.source.inertial.profiles.loop.OPEN,False),
         input_hashes=owner.hashes,execution_seconds=time.monotonic()-begin,
-        scope='Whole original Rh_reference[-5,0] C0/Z source and regular primitive/integral enclosures on signed zeta[-1e-8,1e-8], physical Z=zeta/(Pstar^11*Cstar^10). Full-pressure odd derivative carrier, even jet errors, finite alpha enclosure, variable positive L/Q, exact source/Z power collection and actual N coefficients. Ordinary Z native factor remains. Not full[-1,1] Z, terminal/all-route control/global N/recursive corrected NS.')
+        scope='Whole original Rh_reference[-5,0] C0/Z source and regular primitive/integral enclosures on signed zeta[-1e-8,1e-8] and hundredfold expanded[-1e-6,1e-6], physical Z=zeta/(Pstar^11*Cstar^10). Full-pressure odd derivative carrier, even jet errors, finite alpha enclosure, variable positive L/Q hulls, exact source/Z power collection and actual N coefficients. Ordinary Z native factor remains. Separate pressure jet boxes retain provenance but not joint arithmetic correlation. Not full[-1,1] Z, terminal/all-route control/global N/recursive corrected NS.')
     (HERE/NAME).write_bytes(gzip.compress(json.dumps(base.encoded(report),indent=2).encode()+b'\n',compresslevel=9,mtime=0))
     return report
 

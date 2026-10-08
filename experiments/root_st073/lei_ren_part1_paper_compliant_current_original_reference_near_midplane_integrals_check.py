@@ -91,7 +91,7 @@ def factor_pressure_source(owner):
 
 def independent_regular_primitives(owner):
     a=owner.atlas;c=owner.ctx;p=mp.mp.clone();p.dps=110;comparisons=0
-    for uu in ('-.09','0','.09'):
+    for uu in ('-.14','0','.14'):
         u=p.mpf(uu);q=p.mpf('.9');E=p.mpf('1.3');EZ=p.mpf('-.2');aa=p.mpf('.8');uZ=p.mpf('.7')
         roots={name:{(0,0):a.scalar(c.mpf(value)),(0,1):a.scalar(c.mpf(dZ))}
             for name,value,dZ in (('E',E,EZ),('a',aa,0),('b',0,0),('t0',0,0),('p2',u/q,uZ/q))}
@@ -116,7 +116,7 @@ def independent_regular_primitives(owner):
             assert proof['branch']==('exact_midplane_nonzero_p2_Z' if u==0 else 'regular_small_r_Fourier')
             for key,value in expected.items():
                 got=(primitive if key in primitive else slow)[key].finite_interval()
-                # M48 Fourier tails at |u|=.09 are intentionally larger
+                # M48 Fourier tails at |u|=.14 are intentionally larger
                 # than numerical quadrature error and are checked as covers.
                 saved.contains(got,value,p.mpf('1e-95'));comparisons+=1
             for key,value in (('T1_fixed_angle',T1),('T1_Z_fixed_angle',T1Z),('T2_Z_fixed_angle',T2Z)):
@@ -167,7 +167,7 @@ def integral_contracts(owner,manifest):
     for level in levels:
         count,N=level['exact_original_cells'],level['candidate_N'];cells=level['full_whole_cell_source_phase_records']
         assert level['source_family']==owner.family and 'original_Z_exact' not in level
-        assert level['exact_zeta_interval']==['-1/100000000','1/100000000'] and len(cells)==count
+        assert level['exact_zeta_interval'] in manifest['accepted_signed_zeta_windows'] and len(cells)==count
         for flag in ('whole_near_midplane_reference_C0_Z_contributions_installed',
             'original_regular_source_and_Fourier_Z_functions_used','native_large_Z_derivative_factor_not_capped',
             'actual_source_functions_uniform_over_this_zeta_window','high_precision_source_and_integral_exports_retained',
@@ -209,12 +209,15 @@ def integral_contracts(owner,manifest):
                 v=saved.interval(c,row['coefficient_interval'])*c.exp(saved.interval(c,scale['additional_log_interval']))
                 assert all(mp.isfinite(x) for x in ep(v))
                 bounds[name][jet if jet=='C0' else 'Z_divided_by_Pstar11_Cstar10_Lminus2']=max(abs(x) for x in ep(v))
-        summaries.append(dict(cells=count,N=N,whole_zeta_contribution_bounds=bounds))
-    assert [(v['exact_original_cells'],v['candidate_N']) for v in levels]==[(4,160),(16,160),(16,16384)]
-    first,last=levels[1],levels[-1]
+        summaries.append(dict(cells=count,N=N,exact_zeta_interval=level['exact_zeta_interval'],whole_zeta_contribution_bounds=bounds))
+    assert [(v['exact_original_cells'],v['candidate_N']) for v in levels]==[(4,160),(16,160),(16,16384),(16,160),(16,16384)]
+    assert [v['exact_zeta_interval'] for v in levels]==[manifest['accepted_signed_zeta_windows'][0]]*3+[manifest['accepted_signed_zeta_windows'][1]]*2
+    assert manifest['wider_neighborhood_half_width_ratio']==100
+    first,last=levels[1],levels[2]
     assert first['full_whole_cell_source_phase_records'][0]['source']['whole_cell_N_dependent_coefficients']['-1']['h']!=last['full_whole_cell_source_phase_records'][0]['source']['whole_cell_N_dependent_coefficients']['-1']['h']
     return dict(passed=True,whole_y_zeta_cells_checked=cells_checked,positive_own_rate_mass_comparisons=masses,
         pressure_zero_rate_memory_mass=5,native_large_Z_source_factor=[11,10,-2,0],
+        hundredfold_larger_whole_neighborhood_with_original_regular_guard=True,
         actual_N_dependent_coefficients_recomputed=True,computed_ranges=summaries,
         bounds_are_source_window_contributions_not_terminal_or_NS_errors=True)
 
@@ -238,7 +241,7 @@ def run():
         compressed_producer_report=dict(filename=current.NAME,lossless_original_json_sha256=hashlib.sha256(raw).hexdigest()),
         **dict.fromkeys(flags,False),input_hashes={**manifest['input_hashes'],current.NAME:current.sha(current.NAME),
             Path(__file__).name:current.sha(Path(__file__).name)},execution_seconds=time.monotonic()-begin,
-        scope='Actual original whole Rh_reference C0/Z functions, primitives and own-rate contributions on signed zeta[-1e-8,1e-8], retaining physical Z=zeta/Lambda0, variable L/Q, consistent full-pressure remainder and native ordinary-Z amplification. Not full Z[-1,1], C1 phase averaging, terminal/all-route controls/global N, recursion or corrected NS.')
+        scope='Actual original whole Rh_reference C0/Z functions, primitives and own-rate contributions on signed zeta[-1e-8,1e-8] and hundredfold expanded[-1e-6,1e-6], retaining physical Z=zeta/Lambda0, positive L/Q hulls, original full-pressure remainder jet provenance and native ordinary-Z amplification. Separate pressure boxes do not preserve joint correlation. Not full Z[-1,1], C1 phase averaging, terminal/all-route controls/global N, recursion or corrected NS.')
     (current.HERE/current.RECEIPT).write_text(json.dumps(current.base.encoded(report),indent=2)+'\n',encoding='utf8')
     print('Whole original near-midplane source and integral evidence PASS',flush=True)
     return report
