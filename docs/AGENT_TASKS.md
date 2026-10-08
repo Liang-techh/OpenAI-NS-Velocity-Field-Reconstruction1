@@ -1,3 +1,17 @@
+# Current handoff: original O2 genuine density-Z integrals (2026-10-07)
+
+Checked source: [596318e9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/596318e91f6f6e492f1290235e04366506c31fcf). Evidence, source/derivative contracts and detailed next tasks: [CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_GENUINE_DENSITY_Z_INTEGRALS_2026_10_07.md). Predecessor: [fixed nonzero-Z C0 integrals](CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md).
+
+The complete original O2 y window at fixed Z=37/100 and candidate N7 now has all five genuine ordinary-Z density contribution enclosures on 64/256/2048 refinements. The original p2_Z rows are regrouped in their common R*Pstar/L carrier, exact source/primitive identities and original E derivative coordinate avoid lost scale correlations, and the accepted graph integrates true density_Z rows. All previous C0 source-cell densities, masses, contributions and full integrals remain exactly unchanged. Incoming histories/P0 and global frequency/control requirements are retained.
+
+- [x] **GENUINE-SLOW-Z/FIVE-DENSITY-Z-INTEGRALS:** original ordinary source derivatives, complete source/phase pieces, correct own-rate positive masses and native endpoint retention; independent original scalar derivatives/Jacobians checked.
+- [ ] **NEXT CONTINUOUS-Z/INCOMING-HISTORIES:** complete strict-sign Z interval transport and original/nonzero incoming histories, then microscopic crossing-Z regular coverage and all-chart terminal functions.
+- [ ] **FUNCTIONAL-REPAIR/GLOBAL-N/HIGH-JETS:** five full terminal identities and independent controls, one globally admitted N and radial/higher ordinary-Z source/phase/history jets.
+- [ ] **MATCHING/STRESS/RECURSION/CORRECTED-FIELD:** exact heat exterior and matched background, global stress cone/flat remainder, real n-dependent coefficient recursion, oscillatory stress cancellation and physical uvw/full NS residual.
+
+Focused checker PASS; Git-index dependency audit 1086 hashes. Full native evidence is 88,546,593 bytes gzip. Existing read-only reviewer **GPT-5.6 Luna / max**. Exact-Z0 unmaterializable derivatives retain their formal source factors; signed crossing Z in[-.01,.01] stays unresolved. Fixed-Z derivative integrals do not claim continuous-Z terminal closure or scale recursion. Previous sections are historical.
+
+---
 # Current handoff: native positive O2 q and fixed nonzero-Z five integrals (2026-10-07)
 
 Checked source: [f754ed69](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f754ed69b499ca6cd4f4daad45ad693aa3eaab17). Evidence, exact local-source contracts and detailed executable next tasks: [CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md). Predecessor: [ordered source masses/coefficient cells](CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md).
