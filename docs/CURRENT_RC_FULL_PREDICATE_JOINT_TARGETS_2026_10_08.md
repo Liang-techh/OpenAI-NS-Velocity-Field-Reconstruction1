@@ -1,3 +1,5 @@
+Current successor: [CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md](CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md), checked source 5ecd115b. The five exact original O2 slope operators are now implemented by valid source-density restriction and fresh measure weights. The actual13+5+6/control-record bridge and newly issued Rc target are NEXT; terminal/global N/sharp errors/actual recursion remain OPEN. Historical task text below records the predecessor state.
+
 # Actual full-predicate Rc five joint C0/Z targets
 
 Checked source [15abec2f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/15abec2f6c91ef67d042983f3bdec5a41f466aae). Predecessor [CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md](CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md), source9d69c6f3/docsade8a180. The complete paper-faithful reconstruction goal remains active.
