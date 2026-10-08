@@ -1,3 +1,17 @@
+# Current handoff: native positive O2 q and fixed nonzero-Z five integrals (2026-10-07)
+
+Checked source: [f754ed69](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f754ed69b499ca6cd4f4daad45ad693aa3eaab17). Evidence, exact local-source contracts and detailed executable next tasks: [CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md](CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md). Predecessor: [ordered source masses/coefficient cells](CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md).
+
+The complete original O2 y window at fixed Z=37/100 now has all five signed own-rate contribution enclosures at candidate N7 on 64/256/2048 refinements. Original positive logq endpoint ranges, conditional log|u| source coordinates, true radius phase unions, original inverse/A and exact equivalent signed B retain E/V and all cross terms. Full source/phase pieces are integrated before finite normalized density export/summation. All refinement intervals overlap and contract; all five finest intervals still cross zero. Incoming histories/P0, native physical scales and global common-N requirements are not replaced by diagnostic choices.
+
+- [x] **POSITIVE-LOGQ/LOCAL-U/COMPLETE-NONZERO-Z-INTEGRALS:** original native eta, q>0 through y=1, complete overlapping regular/signed pieces and fixed Z=.37 five contributions with correct own rates/masses.
+- [ ] **NEXT GENUINE-SLOW-Z/DENSITY-Z-INTEGRALS:** adapt original phase-held Z formulas with u_Z=u*(p2_Z/p2), equivalent signed B_Z and original exact-Z0 branch; integrate genuine five density_Z graph rows. Preserve microscopic regular coverage for p2=0/crossing boxes.
+- [ ] **FUNCTIONAL-HISTORIES/ALL-CHART-REPAIR/GLOBAL-N:** continuous Z-range contribution functions, original and actual incoming histories, functional terminal identities, independent controls and a globally admitted common N. The shipped fixed-Z contribution is not a terminal functional solution.
+- [ ] **MATCHING/STRESS/RECURSION/CORRECTION:** high jets, exact heat exterior and matched background, admissible stress/flat remainder, real n-dependent coefficients, two-family oscillatory cancellation and physical uvw/full NS residual.
+
+Focused checker PASS; Git-index dependency audit 1082 hashes. Full native cell evidence ships as 62,472,792 bytes gzip. Existing read-only reviewer **GPT-5.6 Luna / max**. Signed Z in[-.01,.01] remains explicitly unresolved. Immediate next action is the slow-Z adapter and genuine density-Z integral, not another historical validation loop. Previous sections are historical.
+
+---
 # Current handoff: original O2 ordered source masses and nonzero-Z coefficient cells (2026-10-07)
 
 Checked source: [3eaaf5af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3eaaf5afa31224bce2c4bcb673a0ccf3169d7d36). Evidence, source/error contracts and detailed executable tasks: [CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md](CURRENT_ORIGINAL_O2_ORDERED_SOURCE_CELLS_2026_10_07.md). Predecessor: [five own integrals and incoming memory](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md).

@@ -1,5 +1,7 @@
 # Original O2 ordered defining masses and nonzero-Z source coefficient cells
 
+Successor: [native positive log-q and fixed nonzero-Z five integrals](CURRENT_ORIGINAL_O2_POSITIVE_LOGQ_NONZERO_Z_INTEGRALS_2026_10_07.md) supersedes the earlier endpoint and fixed nonzero-Z integral blockers. Crossing-Z coverage, genuine density-Z integration and functional/global stages remain open.
+
 Checked source: [3eaaf5af](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3eaaf5afa31224bce2c4bcb673a0ccf3169d7d36). Predecessor: [five midplane own integrals and incoming memory](CURRENT_ORIGINAL_O2_FIVE_OWN_INTEGRALS_2026_10_07.md). Focused checker PASS; Git-index dependency audit covers1078 hashes. The existing **GPT-5.6 Luna / max** read-only reviewer checked the source normalization, pressure correlation and factor bridge; no new worker, ancestor producer or repeated nested source quadrature was used.
 
 Three original defining mass integrals now execute on ordered continuous source cells over the complete O2 y in[0,1] window. Their prefixes/suffixes produce whole-cell f/H/D/P ranges. Full original E/V/a/b/p1/p2 coefficient ranges and ordinary Z derivatives consume these ranges for fixed nonzero Z and entire Z intervals. A pressure suffix identity cancels the large baseline terms symbolically before interval arithmetic, retaining the original datum and positive late-source error.
