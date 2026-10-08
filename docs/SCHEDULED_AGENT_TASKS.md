@@ -1,3 +1,17 @@
+# Current handoff: actual full-predicate O2 correction reaches Rc (2026-10-08)
+
+Checked source [9d69c6f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9d69c6f3d842b0c71bd713f98ebee63d466c7d8e); evidence and detailed agent queue [CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md](CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md). Predecessor source d48fd7b9/docs 1c8410bf remains accepted. Full original goal active.
+
+The actual N1024 full-Z O2 correction now reaches Rc through six fresh original downstream cells. Whole signed C0/Z covers, true axial width exp(40)-1, original phase/radius joins, separate backgrounds/P0 and quiet-power pressure memory remain. Direct and spatial bounds are alternatives, not added physical contributions.
+
+- [x] **FULL-PREDICATE O2 -> SIX ACTUAL DOWNSTREAM CELLS -> Rc / EXACT REVERSE FACTOR ADAPTER:** source 9d69c6f3, focused acceptance and 1296 staged exact hashes PASS.
+- [ ] **NEXT ACTUAL Rc JOINT TARGET -> FINITE CONTROL-RANGE BRIDGE -> EXACT SOURCE-FUNCTION LIMIT / SHARP ERRORS / FIVE TERMINAL IDENTITIES / ONE GLOBAL N:** use actual correction errors and source A/A_Z at power offset2; keep P0 separate and all source provenance/errors.
+- [ ] **ALL17-24 POINT/MIXED ORACLE / JOINS / HEAT / ENERGY / STRESS / FLAT / n-RECURSION / PULSES / CORRECTED UVW:** full scope unchanged. Candidate conservative Rc covers do not admit terminal identities, global frequency or scale recursion.
+
+Historical handoffs follow unchanged. Use successor as active queue; mark DONE with source evidence and a commit.
+
+---
+
 # Current handoff: actual N1024 upstream to full-predicate O2 driver (2026-10-08)
 
 Checked source [d48fd7b9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d48fd7b932c4a8d6005390b35314f6eaf4695186); evidence and successor queue [CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md](CURRENT_O2_FULL_PREDICATE_SOURCE_INCOMING_2026_10_08.md). Full original goal active. Predecessor O2 all-N source8d7ca2a0/docs7b5da061 remains accepted.

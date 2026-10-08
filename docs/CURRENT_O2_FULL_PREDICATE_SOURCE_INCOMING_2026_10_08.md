@@ -1,3 +1,5 @@
+Current successor: [CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md](CURRENT_FULL_PREDICATE_O2_TO_RC_2026_10_08.md), checked source 9d69c6f3. Actual N1024 full-predicate O2 correction now reaches source-owned Rc through all six downstream source cells with whole-Z C0/Z and pressure memory. The earlier downstream tasks below are completed by this successor; terminal controls, sharp/all-route/global N and actual recursion remain OPEN. Historical task text below records the predecessor state.
+
 # Actual source-owned N1024 correction through the full-predicate O2 driver
 
 Checked source [d48fd7b9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d48fd7b932c4a8d6005390b35314f6eaf4695186). Predecessor: [CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md](CURRENT_O2_FULL_SPATIAL_ALL_N_ENVELOPE_2026_10_08.md), source8d7ca2a0/docs7b5da061. The complete paper-faithful reconstruction goal remains active.
