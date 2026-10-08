@@ -1,3 +1,15 @@
+# Current handoff: centered first-bridge C1 controls (2026-10-08)
+
+Checked source [3e5f3a01](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e5f3a01ffe485163248ebc589f06be975ce36ff); evidence and detailed ordered tasks [CURRENT_CENTERED_FIRST_BRIDGE_C1_CONTROLS_2026_10_08.md](CURRENT_CENTERED_FIRST_BRIDGE_C1_CONTROLS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **CENTERED FIRST-BRIDGE AND ORIGINAL24 PROPAGATION:**2 primitive and5 local Z bounds improve; all five terminal Z caps improve. C0, other23 local Z, source phases, geometry, P0 and exact control functions unchanged. 1326 staged dependency hashes PASS.
+- [ ] **NEXT GENUINE ALL-N SOURCE C1 ADAPTER AND CONDITIONAL FREQUENCY BOUND:** fresh original24 source queries and branch estimates; retain exact N phase and N^-1/N^-2 dependence. Do not rescale fixedN1024 reports or claim a global N from repair-only conditions.
+- [ ] **GLOBAL N / FUNCTION LIMIT / TERMINAL IDENTITIES / ORACLES / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Sufficient fixedN1024 contraction still FAILS.
+
+Historical handoffs follow byte-for-byte unchanged.
+
+---
+
 # Current handoff: full-Z paired C1 source refinement (2026-10-08)
 
 Checked source [59d932ce](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/59d932ceab3e6322638e0b0bac53c9fa5fedbb49); evidence and detailed ordered tasks [CURRENT_FULL_Z_PAIRED_C1_SOURCE_REFINEMENT_2026_10_08.md](CURRENT_FULL_Z_PAIRED_C1_SOURCE_REFINEMENT_2026_10_08.md). Predecessor original24 source13e5e5f5/docs cdb855a6 remains accepted. Complete paper-faithful reconstruction goal ACTIVE / INCOMPLETE.
