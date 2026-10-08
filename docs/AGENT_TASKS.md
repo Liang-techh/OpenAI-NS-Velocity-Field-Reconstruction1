@@ -1,9 +1,21 @@
+# Current handoff: original17 exact-point phase and source binding (2026-10-08)
+
+Checked source [504cdc78](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/504cdc789e2bb6921a5e61bfbe88a4a1ede0df62); evidence and ordered tasks [CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md](CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ORIGINAL ALL17 EXACT-POINT PHASE:**17 interior/3 large-N/4 endpoint queries, signed unchanged microscopic widths, adaptive defining exp/log and exact selected-dyadic periods. Issued original graph phase/endpoint binding;1121 staged exact hashes PASS.
+- [ ] **NEXT GENUINE SOURCE LEAF / INTEGRAL ADAPTER:** actual C0/Z graph-root callbacks, starting with reference/O2 point services; complete other charts and certified interval/quadrature errors. Preserve pressure memory, original phase and masses. Existing range frames are not source point values.
+- [ ] **CONTROL EVALUATION / GLOBAL N / TERMINAL FUNCTIONS / HIGHER JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Keep complete-target N^-2 averaging AND retained exact N-dependent order -1/order -2 coefficient functions. Phase-only capability does not close these tasks.
+
+Prior handoffs follow. The immediately preceding handoff's averaging wording is corrected; older historical suffixes are unchanged.
+
+---
+
 # Current handoff: fresh original24 centered all-N C1 source (2026-10-08)
 
 Checked source [d276895e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d276895e8732d4b4523ac72c666b63fd64fb29ac); evidence and detailed tasks [CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
 
 - [x] **FRESH ALL24 ALL-N CENTERED C1 SOURCE / FIVE TARGETS / CONDITIONAL FREQUENCY:**37 primitive derivative covers tighten;5/5 target C1 bounds and sufficient source/repair log-N threshold improve. Same C0, exact N phase/functions, geometry, P0 and quiet pressure memory. 1330 staged exact hashes PASS.
-- [ ] **NEXT CERTIFIED ORIGINAL SOURCE / INTEGRAL ORACLE:** implement defining source callbacks and definite-integral C0/Z errors for the accepted centered evaluator. Preserve its N^-1 cancellation, N^-2 target roots, unit-ball limit and tails. Bind this derivative sidecar; do not replace centered metadata or take a numeric minimum of incompatible frequency contracts.
+- [ ] **NEXT CERTIFIED ORIGINAL SOURCE / INTEGRAL ORACLE:** implement defining source callbacks and definite-integral C0/Z errors for the accepted centered evaluator. Preserve its complete-target N^-2 averaging, retained exact N-dependent order -1/order -2 coefficient functions, unit-ball limit and tails. Bind this derivative sidecar; do not replace centered metadata or take a numeric minimum of incompatible frequency contracts.
 - [ ] **GLOBAL N / ACTUAL CONTROLS / TERMINAL FUNCTIONS / HIGHER JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Repair-only bounds do not select global N.
 
 Historical handoffs follow byte-for-byte unchanged.
