@@ -25,3 +25,6 @@ dist/
 /experiments/root_st073/scale_generator_momentum_defect.npz
 /experiments/root_st073/.scale_replay_cache/
 /work_paper_cache/
+
+# Whole-cell pressure integral report is shipped losslessly as .json.gz
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_original_O2_pressure_own_integral.json
