@@ -1,3 +1,5 @@
+Current successor: [CURRENT_FULL_PREDICATE_24_CELL_CONTROLS_2026_10_08.md](CURRENT_FULL_PREDICATE_24_CELL_CONTROLS_2026_10_08.md), checked source 13e5e5f5. Actual13+5+6 records, new Rc target, shared live control owners and finite numerical residuals are now implemented. Present conservative first-Z source bounds fail sufficient contraction; sharpen first-bridge errors next. Fixed point, terminal/globalN and actual recursion remain OPEN. Historical predecessor task text below is unchanged.
+
 # Actual full-predicate O2 on the original five slope intervals
 
 Checked source [5ecd115b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ecd115b20bb485085a5c9cbb9f5884b51163f21). Predecessor [CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md](CURRENT_RC_FULL_PREDICATE_JOINT_TARGETS_2026_10_08.md), source15abec2f/docs4271c07d. The complete paper-faithful reconstruction goal remains active.

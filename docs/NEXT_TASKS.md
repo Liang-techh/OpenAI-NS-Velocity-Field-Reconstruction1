@@ -1,3 +1,17 @@
+# Current handoff: actual original24 finite controls and source error budgets (2026-10-08)
+
+Checked source [13e5e5f5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/13e5e5f58f7fe81999a5a7be22d0174186acbcb4); evidence and ordered tasks [CURRENT_FULL_PREDICATE_24_CELL_CONTROLS_2026_10_08.md](CURRENT_FULL_PREDICATE_24_CELL_CONTROLS_2026_10_08.md). Predecessor five exact O2 partitions source5ecd115b/docsfe1f21ec remains accepted. Complete original reconstruction goal active.
+
+The actual13+5+6 source operators now reach Rc and issue the new five joint targets. Same live original owners generate depth3 finite control iterates and numerical C0/Z repair residuals. Original source radius/phase, widths, backgrounds/P0 and pressure memory remain. 1305 staged exact dependency hashes PASS.
+
+- [x] **ACTUAL ORIGINAL24 CONTINUOUS SOURCE-RANGE BRIDGE -> NEW JOINT TARGET -> FINITE PICARD / NUMERICAL RESIDUAL / BUDGET INVENTORY:** source 13e5e5f5; exact original source/graph correspondence and affine-memory checks pass.
+- [ ] **NEXT SHARPEN FIRST-BRIDGE ORDINARY-Z ERRORS / PRESERVE JOINT CORRELATIONS:** the dominant coarse derivative bound already starts in active_first_bridge. Present sufficient contraction test FAILS; more finite iterations do not certify a limit. Follow the detailed source-level tasks in the successor.
+- [ ] **ONE GLOBAL N / FUNCTIONAL LIMIT / FIVE TERMINAL IDENTITIES / ORACLES / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** remain OPEN. Actual24 finite control ranges are not solved controls or scale recursion.
+
+Historical handoffs follow unchanged. Mark DONE with evidence and a commit.
+
+---
+
 # Current handoff: actual full-predicate O2 five exact slope partitions (2026-10-08)
 
 Checked source [5ecd115b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ecd115b20bb485085a5c9cbb9f5884b51163f21); evidence and ordered agent queue [CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md](CURRENT_O2_FIVE_EXACT_SLOPE_PARTITIONS_2026_10_08.md). Predecessor joint targets source15abec2f/docs4271c07d remains accepted. Complete original goal active.
