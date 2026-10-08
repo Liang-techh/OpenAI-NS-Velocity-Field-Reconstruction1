@@ -1,3 +1,18 @@
+# Current handoff: original transition right-half C1 integral operator (2026-10-08)
+
+Checked source [5c9ba3fa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5c9ba3facb56c10d836991b8cca8ac863c829406); evidence and next actions [CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md](CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md); predecessor [CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md](CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md).
+
+Both actual strict-sign Z tiles now have source-queried original O3_slope_mu[1/2,1] with exact flat q and all needed ordinary q slow jets. All20 own integral C0/Z increments are exact zero by the original cutoff theorem; the half-unit affine operator retains actual incoming m/h/k/e attenuation and exact pressure memory. The unresolved left half is not skipped. Earlier actual buffer-period8/32 integrations remain accepted, with29%-70% narrower local enclosures.
+
+- [x] **ORIGINAL-TRANSITION-RIGHT-HALF-C1:** whole native [1/2,1], actual same-family source/phase, exact flat q/slow jets, original true width/rates, zero own increments and explicit nonreset incoming operator on both signs.
+- [x] **BOUNDED-ENDPOINT-ATLAS-DIAGNOSTIC:**176 source queries/128 final cells remain explicitly unresolved under the old broad source bounds. This is diagnostic evidence, not128 covered numerical cells or completed whole-chart closure. Do not repeat the same grid sweep.
+- [ ] **NEXT CORRELATED-AXIAL-b/POSITIVE-CUTOFF-AND-ETA:** restore the original source sign/factor relations and nonzero logarithmic sigma value before normalizing Delta/eta. Refine only after those source inequalities improve.
+- [ ] **COMPLETE-AXIAL/LEFT-TRANSITION/BUFFER-INTEGRALS/RC-TARGETS/FIVE-CONTROLS:** original full route and actual incoming/physical units/P0; no missing interval may be treated as zero.
+- [ ] **WHOLE-AXIAL/GLOBAL-N/HEAT/STRESS/TRUE-RECURSION/CORRECTED-UVW:** every global construction gate remains false.
+
+Focused saved-source/partition check PASS;1255 Git-index hashes match. Existing read-only GPT-5.6 Luna/max, no new child. Accepted original upstream/O2 integrals were not rerun. Earlier sections are historical.
+
+---
 # Current handoff: original generic tail phase/density and actual period integrals (2026-10-08)
 
 Checked implementation [47f312ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/47f312aeeef9e526cf5f2af032f7155fd8de2881); source/results/next actions [CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md](CURRENT_GENERIC_TAIL_TRUE_PERIOD_INTEGRALS_2026_10_08.md); predecessor [CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md](CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md).

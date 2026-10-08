@@ -1,5 +1,7 @@
 # Original generic tail functions and actual buffer-period C1 integrals
 
+Current successor: [CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md](CURRENT_ORIGINAL_TRANSITION_RIGHT_HALF_2026_10_08.md), checked source [5c9ba3fa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5c9ba3facb56c10d836991b8cca8ac863c829406). Original transition[1/2,1] now has a genuine exact-flat C1 integral operator. The bounded endpoint atlas did not resolve old source bounds; next work must improve original axial b/cutoff/eta correlations before another sweep.
+
 Checked source [47f312ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/47f312aeeef9e526cf5f2af032f7155fd8de2881); predecessor [CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md](CURRENT_REFINED_ORIGINAL_O2_TO_RC_TAIL_2026_10_08.md). Root implemented and computed; existing read-only GPT-5.6 Luna/max reviewed source/first-derivative/geometry contracts, with no worker edits, compute or new child.
 
 ## Implemented numerical interface
