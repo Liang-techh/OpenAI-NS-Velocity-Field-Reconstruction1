@@ -1,3 +1,9 @@
+# Successor: genuine mixed yZ inputs (2026-10-09)
+
+[Checked source/primitive yZ enclosures](CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md) complete RM-W3a/b. Actual G_Z/G_yZ and weighted Z integrals are next; existing C0 reductions and direct Z covers remain accepted. Real finite-N inlet, functional closure and true coefficient recursion are OPEN. Full reconstruction **ACTIVE / INCOMPLETE**. Historical weighted evidence below is unchanged.
+
+---
+
 # Actual Rm phase primitives and weighted C0 integral reduction
 
 Checked source [85a24450](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85a24450c1ca121c8d0f66224bcd9db9ec4261b6). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [genuine first spatial source/density jets](CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md).

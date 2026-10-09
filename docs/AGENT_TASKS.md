@@ -1,3 +1,15 @@
+# Current handoff: genuine original Rm mixed yZ (2026-10-09)
+
+Checked source [2dd8313b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8313b9da16d5e82c936e8cbcfb11d0c63a13e); evidence and production queue [CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md](CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W3a/b:** genuine source yZ and general original fixed-phi A/B/five-density mixed enclosures. 24 independent manufactured source comparisons, 28 scalar mixed comparisons, 10 native queries; 1207 staged exact dependency hashes PASS. Worker: GPT-5.6 Luna/max, read-only.
+- [ ] **NEXT RM-W3c/W4:** use f1_Z/f1_yZ for actual endpoint-retaining Z averaging, differentiate nonlinear bias, and produce real finite-N Rm incoming histories. Mixed inputs alone are not Z integral tightening or terminal closure.
+- [ ] **RM-W5..W11:** sharper primitives, complete Rc/all24, spatial/higher/whole-Z derivatives, same-owner cone/unique repair/global N, heat/energy, admissible stress/flat/real n-recursion, pulses/full corrected NS remain OPEN.
+
+Historical evidence below is unchanged. Mark completed work with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm weighted C0 averaging (2026-10-09)
 
 Checked source [85a24450](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85a24450c1ca121c8d0f66224bcd9db9ec4261b6); evidence/tasks [CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md](CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
