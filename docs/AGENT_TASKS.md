@@ -1,3 +1,15 @@
+# Current handoff: actual original first-switch functions (2026-10-09)
+
+Checked source [0cbd7d97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0cbd7d97b1ab5b9c8306cf5efd0f1d94a4bb5f89); detailed evidence/tasks [CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL FIRST SWITCH:** current-radius original comparison modes, fixed source-bound denominator, complete weighted-sigma phi/V and six-history integrals, ordinary Z0..5, signed tiny increments and phase ODEs. 48 field, 144 history and 192 ODE comparisons; 319 staged dependency hashes PASS. Native0,.5; continuous upstream micro/whole-Z completion remains open.
+- [ ] **NEXT SECOND SWITCH / TRUE R110:** consume actual first-switch endpoint, retain V, use original sigma-weighted angular interpolation, complete six-moment transport and nonzero R2 displacement. Then original a=.8,b=0 power transport with inherited tails, P0 and anchored B.
+- [ ] **MICRO / WHOLE-Z / RESHAPE-RESTORATION / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Accepted predecessors and downstream partial machinery remain reusable.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: factored actual R100 endpoint ready for first switch (2026-10-08)
 
 Checked source [04dc4c9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04dc4c9a4570c620f23562eb049b24583469357b); detailed evidence/tasks [CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md](CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

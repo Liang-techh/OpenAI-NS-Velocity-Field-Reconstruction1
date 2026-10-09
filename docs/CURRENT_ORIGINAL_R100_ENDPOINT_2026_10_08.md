@@ -1,3 +1,9 @@
+# Successor: actual original first-switch field and six-history functions
+
+Source [0cbd7d97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0cbd7d97b1ab5b9c8306cf5efd0f1d94a4bb5f89) adds complete first-switch phi/V and six moment function enclosures with current-radius modes, true weighted sigma, nonzero errors and microscopic Jacobian. The exact R100 interface below remains accepted. Follow [CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md) for the second switch, true R110, upstream micro/whole-Z and downstream tasks. Global N and actual coefficient recursion remain open.
+
+---
+
 # Original factored actual R100 endpoint and first-switch inlet
 
 Checked source [04dc4c9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04dc4c9a4570c620f23562eb049b24583469357b). Full reconstruction **ACTIVE / INCOMPLETE**. The admitted actual macro endpoint now exports same-source normalized F/V and H/M/K/A/B/C, Q through ordinary Z order4, true amplitude derivative ratios, physical velocity/cumulative moment rows and separate physical pressure components. Native frames Z=0,.5 are supported. This prepares the first-switch inlet; it does not integrate the switch, close R110 or establish scale recursion.
