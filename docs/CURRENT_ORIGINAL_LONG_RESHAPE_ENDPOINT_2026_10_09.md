@@ -1,3 +1,9 @@
+# Successor: actual reference and axial restoration through Rm
+
+Source [0d365bc0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0d365bc065756ad5a9d6312d06bf2220b9191471) carries these actual Rsh histories through original reference/full-cutoff restoration/postrestore into Rm, preserving signed tails, V/P0/source geometry and physical mixed4 rows. Follow [CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md) for actual Rm patch target, source cells/finite-N densities and remaining global work. Whole-Z, upstream micro, active patch/global N and real n-recursion remain open.
+
+---
+
 # Actual source R110 to finite original long-reshape endpoint
 
 Checked source [5ac96a82](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ac96a82cb1058da393075772b423221df7b526e). Full reconstruction **ACTIVE / INCOMPLETE**. Actual second-switch/power-transport R110 fields and six histories now drive the original full finite long reshape at native Z=0,.5. The terminal six history functions, Q, physical velocity/moments and separate pressure are available with ordinary axial derivatives and factored source errors. This is conditional two-frame terminal transport, not continuous whole-reshape/whole-Z/global closure or n-recursion.

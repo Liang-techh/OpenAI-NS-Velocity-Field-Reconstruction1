@@ -1,3 +1,15 @@
+# Current handoff: actual reference/restoration functions through Rm (2026-10-09)
+
+Checked source [0d365bc0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0d365bc065756ad5a9d6312d06bf2220b9191471); detailed evidence/tasks [CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL Rsh -> Rz -> RESTORE EXIT -> Rm:** actual six histories/E/P0 feed original signed reference tails, full sigma restoration kernels and postrestore; exact geometry/source-object joins and factored physical mixed4 rows remain. 432 independent complete history and 1620 physical mixed4 comparisons; 352 staged dependency hashes PASS. Native0,.5; upstream micro and whole-Z still conditional.
+- [ ] **NEXT ACTUAL Rm TARGET / ACTIVE-PATCH INLET / SOURCE RADIAL CELLS / FINITE-N Rsh->Rm DENSITIES:** bind new actual centered tails and exact Am/Rm/P0, actual repair target/feedback; enclose full source cells and connect original stress/inertial/general fixed-phase calculus. Closed Rh_reference integrals are a separate source window.
+- [ ] **WHOLE-Z / CORE-MICRO / CONTINUOUS RESHAPE / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Actual Rm functions do not establish recursive scaling or complete corrected NS.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual long-reshape terminal history functions (2026-10-09)
 
 Checked source [5ac96a82](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ac96a82cb1058da393075772b423221df7b526e); detailed evidence/tasks [CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md](CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
