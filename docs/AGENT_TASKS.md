@@ -1,3 +1,17 @@
+# Current handoff: actual finite-N prefix reaches Rc through original O3 (2026-10-09)
+
+Latest authoritative production: [CURRENT_ORIGINAL_O3_RC_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_O3_RC_FINITE_N_2026_10_09.md), checked source [37dd5701](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/37dd57016a32aae11f13cee92145dcc6d4dce560). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Same-current N257,Z0,.5 route now reaches Rc: original slope-mu source/integrals and two proved quiet power units, with real incoming history retained.
+- [x] Positive formal mu, direct Delta=2mu*sigma or2mu, exact 2mu>=eta log guard, conservative q^2<=eta/2 active cover and all signed p2_Z/pressure terms. 12 new source cells and 1252 exact staged hashes pass.
+- [ ] **NEXT:** genuine whole-Z current-N source/incoming bridge, preserving implicit controls and native units/atlas. Existing N1024/N7 archived histories and two-point interpolation cannot fill this gap.
+- [ ] Native O2 apply_incoming consumes complete own history: background plus correction; correction-only exports require a proven adapter. Then continue whole-Z to Rc, sharpen joint mu-sensitive defects and solve functional repair.
+- [ ] Five functional terminal identities, global N/cone/heat, true n-dependent recursion and full corrected NS remain unfinished.
+
+Read the latest document before historical checkpoints below. Continue source production; ancestor producer/checker replay is unnecessary.
+
+---
+
 # Current handoff: actual finite-N O2 axial/buffer prefix reaches Rd (2026-10-09)
 
 Latest authoritative production: [CURRENT_ORIGINAL_O2_AXIAL_BUFFER_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_O2_AXIAL_BUFFER_FINITE_N_2026_10_09.md), checked source [2289af5f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2289af5fec977d4fbb6153f23d5a8036fe3dd652). Full reconstruction **ACTIVE / INCOMPLETE**.
