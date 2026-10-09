@@ -1,3 +1,9 @@
+# Successor: weighted local C0 integral reduction (2026-10-09)
+
+[Checked actual Rm phase primitives and averaging](CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md) now use these genuine slow-y inputs for endpoint-retaining C0 IBP, with all nonlinear remainders retained. The first implementation of RM-J4 is complete and reduces all five conditional Z=0 local bounds approximately40%–67%; further tightening remains open. Z=.5 retains its baseline; ordinary Z averaging still requires yZ. RM-J5 actual finite-N inlet and full reconstruction remain **ACTIVE / INCOMPLETE**. Historical first-jet evidence below is unchanged.
+
+---
+
 # Actual Rm genuine first spatial source and five density jets
 
 Checked source [c4943b7f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4943b7f971de04e28a21d83589961d9d753a185). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [complete local C0/Z density integrals](CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md).

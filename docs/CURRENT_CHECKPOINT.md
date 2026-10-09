@@ -1,3 +1,15 @@
+# Current handoff: actual Rm weighted C0 averaging (2026-10-09)
+
+Checked source [85a24450](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85a24450c1ca121c8d0f66224bcd9db9ec4261b6); evidence/tasks [CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md](CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W1/W2 SAME-ORIGINAL PHASE PRIMITIVES / OWN-RATE C0 IBP:** genuine slow-y source, exact leading zero means, actual endpoint phase boxes, all nonlinear second remainders and original dx/x/suffixes. Five Z=0 local absolute bounds reduce approximately40%–67% at candidate N257. Z=.5 retains the tighter baseline; ordinary Z is bitwise unchanged. 20 native cells, 30 independent original quadrature comparisons, 1203 staged exact dependency hashes PASS.
+- [ ] **RM-W3/W4 NEXT GENUINE MIXED yZ / Z AVERAGING / REAL FINITE-N Rm INLET:** restore f1_yZ and true prefix correction histories before claiming Z tightening or complete terminal defects. Local improvement is not five-moment closure.
+- [ ] **RM-W5..W11 SHARPER PHASE PRIMITIVES / COMPLETE Rc ALL24 / WHOLE-Z HIGHER JETS / ACTUAL CONE UNIQUE REPAIR GLOBAL N / ANALYTIC HEAT ENERGY / STRESS FLAT REAL n-RECURSION / PULSES CORRECTED NS:** OPEN.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm genuine first spatial source and density jets (2026-10-09)
 
 Checked source [c4943b7f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4943b7f971de04e28a21d83589961d9d753a185); evidence/tasks [CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md](CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
