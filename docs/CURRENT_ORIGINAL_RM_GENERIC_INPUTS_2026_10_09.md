@@ -1,3 +1,9 @@
+# Successor: actual Rm whole radial positive quotients and q
+
+Checked source [b69ce76e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b69ce76e4c32d2561c6704adeb21474e8bc63300); evidence/tasks [CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md](CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md). E/C positivity and original source-correlated a,b,t0,kappa,p1,p2,q,u are now installed over the entire radial patch at the two conditional axial frames. Tiny high-Z modes and one shared R factor are preserved. Actual new-owner dstar/cone, admitted phase/densities/integrals, whole-Z, finite-N Rc/all24/global N and real n-recursion remain open. Historical text below is unchanged.
+
+---
+
 # Actual leading Rm full signed generic shear and inertial source inputs
 
 Checked source [a38f648b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a38f648b11045271de0427c8086c29d6ee2cf101). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [actual Rm mixed4/raw units/closed cells](CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md). This layer connects that new live leading-patch owner to the original full signed generic input equations. It supplies expression enclosures for E,C,B, full inertial p1/p2 numerators and relaxed-cone numerators. Actual quotient positivity/bounds, q/dstar, finite-N phase/A/B/five densities, Rc repair, all24/global N and real n-recursion remain OPEN.

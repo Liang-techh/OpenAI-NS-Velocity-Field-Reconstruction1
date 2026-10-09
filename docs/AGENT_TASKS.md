@@ -1,3 +1,16 @@
+# Current handoff: actual Rm whole radial positive quotients and q (2026-10-09)
+
+Checked source [b69ce76e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b69ce76e4c32d2561c6704adeb21474e8bc63300); evidence/tasks [CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md](CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-Q1/Q2 ACTUAL E/C POSITIVITY, CORRELATED SHEAR/q, SIGNED INERTIA/u:** whole x in [1,e] at conditional Z=0,.5; original P0/five bases/ledger/geometry retained. Common am cancels analytically; tiny high-Z Pstar^-2 modes survive, with R attached once. 154 independent quotient/q/u comparisons, 456 native coefficients and 1064 staged dependency hashes PASS. Shear/q Z5; inertia/u Z4.
+- [ ] **RM-Q3/Q4 ACTUAL dstar/CONE AND MIXED SLOW DERIVATIVES:** selected original eta/dstar are definitions, not a new-owner admission theorem. Positive-Delta cutoff derivatives require source refinement. Current fixed-x Z jets do not replace y/Z jets.
+- [ ] **RM-Q5..Q8 SAME-OWNER SIGNED u/NORMALIZED PHASE, TRUE ALL-N A/B/FIVE DENSITIES, dx/x INTEGRALS:** retain full signed terms and both N levels, distinguish spatial N*phase terms from fixed-phase derivatives, preserve incoming Rc/P0. Follow the detailed tasks in the evidence document.
+- [ ] **RM-Q9..Q13 RESTORATION/CONTINUOUS ATLAS, FINITE-N Rc/ALL24, WHOLE-Z/GLOBAL N, HEAT/ENERGY/STRESS/FLAT, REAL n-RECURSION, PULSES/CORRECTED UVW:** OPEN. This layer does not complete recursive scaling or corrected Navier-Stokes.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm full signed generic inputs (2026-10-09)
 
 Checked source [a38f648b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a38f648b11045271de0427c8086c29d6ee2cf101); evidence/tasks [CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md](CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
