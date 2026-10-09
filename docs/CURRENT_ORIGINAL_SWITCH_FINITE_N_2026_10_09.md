@@ -1,3 +1,9 @@
+# Successor: actual frozen-macro finite-N local source now integrated (2026-10-09)
+
+[Current original macro finite-N source](CURRENT_ORIGINAL_MACRO_FINITE_N_2026_10_09.md) completes the first conditional local RM-W4a.2.4 implementation and moves the complete local-source affine operator to R0=Ra*exp(2hb). Its genuine incoming correction is still missing; the two earlier bridge windows and actual r_minus input remain required. Full reconstruction **ACTIVE / INCOMPLETE**. Historical switch evidence below is unchanged.
+
+---
+
 # Current original R100-to-R110 switch finite-N sources
 
 Checked source [e4ed67d3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e4ed67d307748ffaabfae288d66928ac0d976ede). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [current reference/restoration local drivers](CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md).
