@@ -1,3 +1,15 @@
+# Current handoff: factored actual R100 endpoint ready for first switch (2026-10-08)
+
+Checked source [04dc4c9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04dc4c9a4570c620f23562eb049b24583469357b); detailed evidence/tasks [CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md](CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **EXACT R100 ACTUAL SOURCE INTERFACE:** accepted macro phi/V and H/M/K/A/B/C, Q0..4, same anchored F0/F0^2 derivative ratios, separate original P0 and physical velocity/pressure/moment rows, without materializing extreme factors. 20 Q, 68 velocity, 72 pressure and 120 moment comparisons; 313 staged dependency hashes PASS. Native frames0,.5; full switch scope stays open.
+- [ ] **NEXT ACTUAL FIRST SWITCH / SECOND SWITCH / TRUE R110:** continue the original known comparison direction, consume the factored actual R100 inlet and integrate true phi/V and all six histories with microscopic geometry/Jacobian and nonzero errors. Preserve P0 and anchored amplitude; caps and comparison-history substitutions are not function providers.
+- [ ] **MICRO / WHOLE-Z / RESHAPE-RESTORATION / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN; accepted source and downstream partial machinery remain reusable.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual original frozen-macro six moment functions (2026-10-08)
 
 Checked source [d3eb501b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3eb501b7573fbe00009ccb79fb67becdf921fdb); detailed evidence/tasks [CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

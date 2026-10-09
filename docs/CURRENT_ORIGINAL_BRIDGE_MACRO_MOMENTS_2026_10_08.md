@@ -1,3 +1,9 @@
+# Successor: factored actual R100 endpoint and original pressure interface
+
+Source [04dc4c9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/04dc4c9a4570c620f23562eb049b24583469357b) adds the exact R100 actual F/V, six histories, Q0..4, anchored amplitude derivative ratios and separate physical pressure interface. The accepted actual macro moment integrals below remain unchanged. Follow [CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md](CURRENT_ORIGINAL_R100_ENDPOINT_2026_10_08.md) for the actual first/second switches, true R110 functions and downstream tasks. Whole-Z, global N and actual coefficient recursion remain open.
+
+---
+
 # Original frozen-macro actual six moment functions
 
 Checked source [d3eb501b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3eb501b7573fbe00009ccb79fb67becdf921fdb). Full reconstruction **ACTIVE / INCOMPLETE**. The actual frozen macro now has callable H/M/K/A/B/C finite Volterra integrals and their defining radial ODE rows, using the original nonlinear phi/V sources and the actual micro inlet errors. Native frames Z=0,.5 and exact rational macro fractions are admitted. Whole-Z source functions, both micro function providers, switches and the complete bridge remain open.
