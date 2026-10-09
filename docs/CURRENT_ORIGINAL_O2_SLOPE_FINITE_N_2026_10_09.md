@@ -1,3 +1,16 @@
+# Current handoff: actual finite-N O2 axial/buffer prefix reaches Rd (2026-10-09)
+
+Latest authoritative production: [CURRENT_ORIGINAL_O2_AXIAL_BUFFER_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_O2_AXIAL_BUFFER_FINITE_N_2026_10_09.md), checked source [2289af5f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2289af5fec977d4fbb6153f23d5a8036fe3dd652). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Same-current N257,Z0,.5 original axial turnoff and eleven-unit buffer: 14 source cells, physical widths, full signed C0/Z drivers and genuine Rd incoming/background.
+- [x] Exact a2, correlated Delta=b^2/2, retained nonzero kernel/history tails, buffer q^2=eta/2 and axis p2_Z preserved. New producer/checker and 1248 exact staged hashes pass.
+- [ ] **NEXT:** actual O3 slope-mu source/driver consumes this exported Rd input; keep tiny positive mu/Delta formal before arithmetic with2. Then prove quiet power and transport actual memory to Rc.
+- [ ] Sharpness/all-Z functional five-moment repair, heat/cone/global N, genuine n-dependent recursion and full corrected NS remain unfinished. Current conservative source enclosures do not prove these gates.
+
+Read the latest document before historical checkpoints below. No ancestor producer/checker replay is needed.
+
+---
+
 # Actual current finite-N prefix through the original O2 slope exit
 
 Checked source [eac1c7df](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/eac1c7dfaa04642fedd83409aa26c6847e1a1ff9). Full reconstruction **ACTIVE / INCOMPLETE**. Previous stage: [actual Rh-reference/Rref input](CURRENT_ORIGINAL_RH_REFERENCE_FINITE_N_2026_10_09.md).
