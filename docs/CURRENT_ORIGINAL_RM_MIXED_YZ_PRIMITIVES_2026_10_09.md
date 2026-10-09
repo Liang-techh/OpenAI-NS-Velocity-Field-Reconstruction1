@@ -1,3 +1,9 @@
+# Successor: conditional weighted Z integrals (2026-10-09)
+
+[Checked G_Z/G_yZ and weighted Z averaging](CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md) complete the first conditional local RM-W3c implementation. All ten Z bounds improve through valid IBP/direct routes; C0 bounds are bitwise preserved. Actual incoming corrections, functional closure, whole-axis control, cone/global N and true coefficient recursion remain OPEN. Full reconstruction **ACTIVE / INCOMPLETE**. Historical mixed-source evidence below is unchanged.
+
+---
+
 # Actual Rm genuine mixed yZ source and original primitive enclosures
 
 Checked source [2dd8313b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8313b9da16d5e82c936e8cbcfb11d0c63a13e). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [weighted C0 averaging](CURRENT_ORIGINAL_RM_WEIGHTED_AVERAGING_2026_10_09.md).

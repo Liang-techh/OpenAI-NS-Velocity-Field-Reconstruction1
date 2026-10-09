@@ -1,3 +1,15 @@
+# Current handoff: actual Rm weighted axial integral progress (2026-10-09)
+
+Checked source [43f79b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43f79b638a2a131a8baa487aa2a93aa054b4e899); evidence/tasks [CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md](CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W3a/b/c FIRST CONDITIONAL IMPLEMENTATION:** genuine source yZ, original fixed-phi mixed primitives, G_Z/G_yZ and retained nonlinear-Z weighted IBP. All ten conditional0,.5 local Z bounds strictly improve; 16 Z=0 cell/density rows use IBP, while Z=.5 uses tighter direct partition caps. All C0 bounds are bitwise unchanged. Bounds remain enormous, not defect values or closure evidence.
+- [ ] **NEXT RM-W4 REAL FINITE-N PREFIX / Rm INLET:** produce true corrections on actual windows, carry all own-rate histories and export the C0/Z incoming vector; never substitute leading histories, None or zeros.
+- [ ] **RM-W5..W11:** sharper mixed primitives, complete Rc/all24, whole-Z/higher/spatial jets, actual cone/unique functional five-moment repair/global N, heat/energy, stress/flat/real n-recursion and pulses/full corrected NS remain OPEN.
+
+1211 staged exact dependency hashes PASS; GPT-5.6 Luna/max read-only review. Historical evidence below is unchanged. Mark completed work with scoped evidence and a commit.
+
+---
+
 # Current handoff: genuine original Rm mixed yZ (2026-10-09)
 
 Checked source [2dd8313b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2dd8313b9da16d5e82c936e8cbcfb11d0c63a13e); evidence and production queue [CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md](CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
