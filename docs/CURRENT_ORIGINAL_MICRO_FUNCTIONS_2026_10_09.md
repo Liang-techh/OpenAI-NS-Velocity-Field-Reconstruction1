@@ -1,3 +1,15 @@
+# Current handoff: real source-bound finite-N prefix through Rm (2026-10-09)
+
+Checked source [d2252bb4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d2252bb48d052d1d16bd648a8a2d09f05ba6f2cc); details/tasks [CURRENT_ORIGINAL_MICRO_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_MICRO_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W4a.2.1 / .2.2c / .2.3a/b / .2.5 / .3 / W4b.4 / W4c.5a CONDITIONAL PREFIX:** source-owned true r_minus initial/support condition, both micro density integrations and actual R0/R100/R110/Rm C0/Z correction enclosures at Z0,.5,N257. Sixteen new cells; real incoming memory retained. Background histories are not zeroed or substituted for defects.
+- [ ] **NEXT W4c.5b Rm-to-Rh CONSUMER:** bind this actual incoming packet to the complete accepted all-u/weighted whole-patch local source, preserving decay. The older whole-atlas route at Z0 still has four unresolved cells; do not discard them.
+- [ ] **W4c.5c / RM-W5..W11:** remaining Rh/Rc prefix, sharp correlations/phase averaging, all charts/whole-Z/high jets, functional closure/cone/global N, heat/energy, stress/flat/true recursion and corrected NS remain OPEN.
+
+1109 exact staged hashes PASS; GPT-5.6 Luna/max read-only review. All historical conditional/unknown-input flags below are predecessor evidence; current source above supplies the conditional Rm incoming enclosure.
+
+---
+
 # Current original Ra microscopic source functions
 
 Checked source [2a3373a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2a3373a0e1f515af9dcb78c96ed467ca93a78f57). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [frozen-macro finite-N local driver](CURRENT_ORIGINAL_MACRO_FINITE_N_2026_10_09.md).
