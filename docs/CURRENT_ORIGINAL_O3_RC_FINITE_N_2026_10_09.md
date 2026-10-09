@@ -1,3 +1,17 @@
+# Current handoff: live original whole-Z leading bridge source (2026-10-09)
+
+Latest production: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SOURCE_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SOURCE_2026_10_09.md), checked source [ab71f2a1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ab71f2a190ee8cb7fecdc85007bd5a3f1410c129). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ALLZ-1a:** an arbitrary interval source API now covers Z in[-1,1], with fresh degree24/depth6 coupled core rows, six original atoms, analytic P0, certified anchored amplitude and live micro/macro bridge inputs. Four complete source cells; old frame/archived whole-axis packets are removed during successful replay.
+- [x] The previous actual same-current N257,Z0,.5 correction chain remains complete through Rc; all real incoming histories remain present.
+- [ ] **NEXT ALLZ-1b/1c:** attach live whole-Z MicroFunctions/ActualMacroMoments consumers and prove positive whole-cell quotients. Then carry genuine interval leading functions through switches/reshape/reference and the implicit Rm patch.
+- [ ] **ALLZ-2..4:** actual whole-Z current N257 five-density/history transport to Rref, correct native O2 complete-own or proved correction-only incoming, then whole-Z Rc continuation. A leading source packet is not finite-N incoming.
+- [ ] Whole-Z terminal five-control identities, joint mu-sensitive sharpness, global N/cone/heat, true n-dependent recursion and full corrected NS remain open.
+
+Read the latest source/task document before historical checkpoints below. Produce actual interval functions and current corrections; ancestor replay and sampled interpolation are unnecessary.
+
+---
+
 # Actual current finite-N prefix reaches Rc through original O3
 
 Checked source [37dd5701](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/37dd57016a32aae11f13cee92145dcc6d4dce560). Full reconstruction **ACTIVE / INCOMPLETE**. Previous input: [actual Rd after axial turnoff/buffer](CURRENT_ORIGINAL_O2_AXIAL_BUFFER_FINITE_N_2026_10_09.md).
