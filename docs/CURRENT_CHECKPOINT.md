@@ -1,3 +1,17 @@
+# Current handoff: whole-Z actual micro/macro functions (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_MICRO_MACRO_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_MICRO_MACRO_2026_10_09.md), checked source [9c4cfa00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9c4cfa0079a9d1d4496989836cf91527db48e8c9). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-1b: actual micro/macro interval functions, all six background histories, positive Dbar theorem and full signed generic recovery now reach R100 on all Z in[-1,1].
+- [ ] NEXT ALLZ-2a/2b: finish source-owned whole-Z finite-N density/history transport r_minus..R100 with one freshly selected common N. N257 fails current coarse exponent bounds; prefix exponent admission is separate from global cone/N admission.
+- [ ] Carry the same new N and actual incoming through switches/reshape/Rm controls/Rh/reference/native O2/O3 to whole-Z Rc, then solve functional terminal repair.
+- [x] Existing N257,Z0,.5 chain through Rc remains separate and preserved.
+- [ ] Global cone/heat/N, genuine scale recursion/pulses and full corrected forced NS remain unfinished.
+
+Read the latest source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: live original whole-Z leading bridge source (2026-10-09)
 
 Latest production: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SOURCE_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SOURCE_2026_10_09.md), checked source [ab71f2a1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ab71f2a190ee8cb7fecdc85007bd5a3f1410c129). Full reconstruction **ACTIVE / INCOMPLETE**.

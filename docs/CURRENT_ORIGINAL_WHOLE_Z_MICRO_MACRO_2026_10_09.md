@@ -1,0 +1,41 @@
+# Current whole-Z original micro/macro functions through R100
+
+Checked source [9c4cfa00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9c4cfa0079a9d1d4496989836cf91527db48e8c9). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+## Completed production
+
+ALLZ-1b is complete. WholeZMicroMacro consumes the live original interval bridge source on Z in[-1,1], with four complete cells [-1,-.5],[-.5,0],[0,.5],[.5,1]. It evaluates the actual two microscopic windows and frozen macro region, retaining six background histories, five physical own histories, analytic P0 and ordinary axial derivatives through order5. It reconstructs the complete signed generic source through R100. These are continuous source enclosures on entire intervals, not interpolation between saved Z0,.5 frames.
+
+The actual second microscopic endpoint supplies the macro inlet. Its angular and axial source terms and all six inlet histories remain in the same live flow, basis and ledger. DeltaV is composed directly from its source terms; it is not recovered by subtracting nearly equal total velocities. Original micro and macro arithmetic is replayed from unchanged source ASTs, with a local positive-source proof callback. The callback binds the admitted global exit certificate, K1 ledger and physical norm family and applies the genuine theorem Dbar>=1/(2K) over Ra<R<=110. Here logK is physical_norm_family.selected_log_K_upper, not logKbar. The stronger Dbar>=3.5 theorem is confined to100..110. A positive intersection refines the same actual source cover; it does not select a new background field or replace derivative rows.
+
+Generic recovery preserves the original pressure, inertial, nonlinear and meridional sectors. Meridional Q uses m_Z. P0 remains a separate analytic datum. Ordinary F0 derivative ratios are converted to Taylor coefficients by dividing by n! before endpoint recovery. At R100, background history functions are exported independently of finite-N corrections.
+
+Evidence: producer 288.203s; checker 205.594s; both terminal PASS. Receipt replay counts: {"exact_directed_interval_rows": 13372, "live_replayed_radial_cells": 8, "live_seam_overlap_rows": 192, "original_positive_Dbar_calls": 8, "saved_finite_directed_interval_rows": 48420, "typed_source_rejections": 3, "whole_Z_cells": 4}. Exact staged dependency audit: 981 hashes PASS. Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_micro_macro.py, .json.gz, _check.py, _check.json. Independent physical-history ODE/unit checks and the separate pressure datum are retained. Source-defined micro/macro joining is the functional identity; endpoint overlap rows only check enclosure consistency.
+
+## Current finite-N work
+
+The whole-Z source-owned correction producer is being implemented in current_original_whole_Z_R100_finite_N.py. Its source-defined r_minus left collar has zero correction and nonzero original background histories. It attaches original quotient/inverse primitives and all five signed C0/Z densities, then integrates the true own-rate Volterra kernels. This task is still OPEN until the complete report and checker pass.
+
+N257 does not satisfy the current coarse whole-prefix exponent bounds. An actual source cell gave log|A| upper2758.69267658961917, corresponding to a dyadic N of about3982 bits. The4096-bit interface bound is a representation guard, not a theorem selecting N. The implementation must select one fresh common N from every actual source cell, retain A_Z, and only materialize an A cover after proving its magnitude below that same explicit N. No local N per cell or old boundary transplant is allowed. Such a prefix exponent budget does not prove global N, stress-cone or terminal-repair admission.
+
+The earlier N257,Z0,.5 correction chain through Rc remains valid in its stated two-frame scope. It must remain separate from this newly selected whole-Z candidate chain.
+
+## Ordered executable tasks
+
+- [x] **ALLZ-1a** Live arbitrary Z-cell leading bridge source, coupled core atoms, anchored amplitude and analytic pressure.
+- [x] **ALLZ-1b** Live actual micro/macro consumers and genuine source-defined six-history joining through R100; complete signed generic source.
+- [x] **ALLZ-1c-D** Analytic same-source positive Dbar intersection using the admitted exit/K1/norm-family theorem. Other denominator and finite-N/global inequalities remain scoped to their actual proof.
+- [ ] **ALLZ-2a** Finish all40 current whole-Z primitive requirements, choose one fresh common dyadic N with strict A/N exponent margin, and compute every original signed density C0/Z. Preserve full p2_Z at the axis, pressure/inertial terms and independent P0. A_C0 outward cover must leave the actual A_Z source intact.
+- [ ] **ALLZ-2b** Propagate actual source-owned corrections r_minus..R0..R100 using m:1,h:3/2,k:3/2,e:1,p:0. Apply true radial measure once, retain suffix factors and nonzero incoming decay, and export background/correction/complete-own histories separately. Audit one common N and all four axial source cells.
+- [ ] **ALLZ-2c** Build R100..R110 first/second switch and post-power live interval adapters. Hydrate fixed source controls only after identity checks; actual fields and all histories must come from the live R100 source. Recompute their finite-N drivers with the same fresh N and source phase origin.
+- [ ] **ALLZ-2d** Carry live leading fields and current correction memories through long reshape and reference/restoration to Rm. Preserve exact physical widths, formal positive factors and all true own-rate kernels. Do not invoke obsolete expensive constructors or ancestor producer/checker chains.
+- [ ] **ALLZ-1d-Rm** Evaluate the actual implicit Rm control inverse on whole-Z function defects and derivative enclosures. Feed those controls to the actual patch. Fixed Z0,.5 controls cannot define whole-Z repair.
+- [ ] **ALLZ-2e** Transport actual patch/restoration/reference correction histories through Rh to Rref, maintaining family/datum/P0/N/radius and cell basis guards.
+- [ ] **ALLZ-3** Attach the native O2 atlas/units to complete-own incoming background+correction at Rref. If using correction-only incoming, prove a distinct adapter. Recompute original O2 slope, axial turnoff and buffer drivers at the new common N.
+- [ ] **ALLZ-4** Recompute O3 positive-mu slope and quiet powers with genuine incoming, keeping direct Delta=2mu*sigma/2mu formal and retaining all signed derivative terms. Reach Rc over the full axial interval.
+- [ ] **SHARP-1** Tighten joint mu-sensitive source/phase/defect correlations as needed for the functional five-control inverse. Conservative valid bounds are not a proof of its required smallness. Subdivide actual source boxes only where they help.
+- [ ] **REPAIR-1** Solve original Rc..2Rc five functional terminal controls in admitted units; prove all five terminal identities, required C1/high jets, divergence and axis regularity on the full Z domain.
+- [ ] **RM-W7..W8** Same-source exact heat exterior, pressure/finite-energy joins, all-region admissible stress cone and one admitted N for the complete modified field.
+- [ ] **RM-W9..W11** Admissible stress/flat remainder, genuine n-dependent coefficient recursion, two-family oscillatory pulses and mean quadratic stress cancellation, full corrected forced NS and physical shrinking/relative axial elongation/material winding diagnostics.
+
+Mark DONE only with concrete implementation, current report/receipt and source commit. The full objective remains active until the reconstruction is complete.
