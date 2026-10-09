@@ -1,3 +1,16 @@
+# Current handoff: complete local R100-to-Rm finite-N sources (2026-10-09)
+
+Checked source [e4ed67d3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e4ed67d307748ffaabfae288d66928ac0d976ede); detailed evidence/tasks [CURRENT_ORIGINAL_SWITCH_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_SWITCH_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W4a.1 FIRST CONDITIONAL IMPLEMENTATION:** original first/second/post-power whole-cell sources, variable a/nonzero first V_y, all five nonlinear N257 C0/Z local drivers and own-rate memory. Twenty-four new cells at Z=0,.5. Composed with accepted downstream drivers, the complete local-source affine operator now starts at R100.
+- [ ] **NEXT RM-W4a.2.1..5:** genuine earliest boundary, true micro/bridge source windows, frozen macro finite-N drivers and a real current R100 correction vector. Background rows, arbitrary zero and saved N1024 are not valid inputs. Follow the detailed ordered tasks above.
+- [ ] **RM-W4a.3 / W4b.4 / W4c.5:** apply true earlier input to the new R100-to-R110 and complete R100-to-Rm operators. Local source completeness is not inlet completeness.
+- [ ] **RM-W5..W11:** sharp bounds, Rc/all24, whole-Z/higher jets, functional five-moment/cone/global N, heat/energy, stress/flat/actual recursion and corrected NS/dynamics remain OPEN.
+
+1079 staged exact dependency hashes PASS; one reused GPT-5.6 Luna/max read-only worker. Changed-scope checks only. Historical evidence below is unchanged.
+
+---
+
 # Current handoff: complete local downstream finite-N drivers (2026-10-09)
 
 Checked source [8b7f3557](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8b7f3557dcb2ecc4dd961db4441abdae81ece88b); detailed evidence/tasks [CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

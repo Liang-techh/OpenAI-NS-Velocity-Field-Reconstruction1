@@ -1,3 +1,9 @@
+# Successor: current R100-to-R110 local source drivers now integrated (2026-10-09)
+
+[Current original switch finite-N source](CURRENT_ORIGINAL_SWITCH_FINITE_N_2026_10_09.md) completes the first conditional local RM-W4a.1 implementation and composes all local drivers from R100 to Rm. The genuine R100 boundary remains unsupplied. Real inlet admission, functional closure, whole-axis control, cone/global N and actual recursion remain OPEN. Full reconstruction **ACTIVE / INCOMPLETE**. Historical downstream evidence below is unchanged.
+
+---
+
 # Current original downstream finite-N source and R110-to-Rm local drivers
 
 Checked source [8b7f3557](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8b7f3557dcb2ecc4dd961db4441abdae81ece88b). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [current original long-reshape finite-N source](CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md).
