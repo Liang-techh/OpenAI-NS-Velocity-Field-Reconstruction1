@@ -1,3 +1,15 @@
+# Current handoff: issued original reference integral callbacks (2026-10-08)
+
+Checked source [9e5c171f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e5c171fc5b7238e14b21f54bc49190e49fbe85a); evidence and executable tasks [CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **TEN REFERENCE C0/Z DEFINITE-INTEGRAL CALLBACKS:** genuine closed source cells, current original phase, exact node/root/kernel/Jacobian binding, retained N-dependent coefficients and pressure errors. Three fixed-Z frames produce30 ordinary directed results; 1212 staged exact hashes PASS.
+- [ ] **NEXT O2 C0/Z GRAPH INTEGRALS:** reuse original O2 positive-logq and correlated-Z cell machinery with true shared candidate N>=160 phase; do not rescale the historical N7 report. Reference midplane/continuous-Z and complete evaluator compatibility also remain open.
+- [ ] **ALL17 SOURCE / ALL24 INTEGRALS / ACTUAL CONTROLS / GLOBAL N / TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging and both exact N-dependent order -1/order -2 coefficient functions.
+
+Prior handoffs follow byte-for-byte unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: genuine reference/O2 point source leaves (2026-10-08)
 
 Checked source [dae49982](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dae49982b9bd6ac22f113432871b272cc8ae754c); evidence and ordered tasks [CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md](CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

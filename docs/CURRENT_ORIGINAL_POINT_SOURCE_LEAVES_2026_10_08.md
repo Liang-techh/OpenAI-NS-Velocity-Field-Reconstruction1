@@ -1,3 +1,9 @@
+# Successor: issued reference C0/Z integral callbacks
+
+Source [9e5c171f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e5c171fc5b7238e14b21f54bc49190e49fbe85a) connects the ten Rh_reference definite-integral nodes to genuine whole-cell source enclosures. Follow [CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md) for current O2/evaluator tasks. The point services below remain accepted; all-chart coverage, continuous-Z closure and actual controls are still open.
+
+---
+
 # Genuine reference and O2 point source callbacks
 
 Checked source [dae49982](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dae49982b9bd6ac22f113432871b272cc8ae754c). Original17 phase [CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md](CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md) and original24 centered C1 source [CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md) remain accepted. Full reconstruction **ACTIVE / INCOMPLETE**.
