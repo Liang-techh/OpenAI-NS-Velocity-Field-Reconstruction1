@@ -1,3 +1,17 @@
+# Current handoff: correlated bridge arithmetic and new Rc retransport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_CORRELATED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_CORRELATED_FUNCTIONS_2026_10_09.md), checked source [2c73c998](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2c73c998fd0e305bf3a0fac419770d2ff4d2c6c0). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Direct C/B/E quotients and genuine inverse-identity Z derivatives installed on the original bridge.
+- [x] Same-function C0/phi magnitude theorem applied; Z derivatives remain real source derivatives.
+- [x] New four-Z bridge outputs propagated through original downstream local drivers/memories; actual Rc bounds recomputed.
+- [ ] NEXT collect dependent Poisson derivative factors and tighten actual active/flat source-Z and signed integral cancellation. The conservative repair test still needs closure before controls/global N can be admitted.
+- [ ] Exterior/heat closure, higher finite-N jets, stress cone, temporal n-recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: actual Rc relative defects/targets installed (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RC_RELATIVE_DEFECTS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RC_RELATIVE_DEFECTS_2026_10_09.md), checked source [394c5a67](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/394c5a6774243061a65191c5410951cb425fad57). Full reconstruction **ACTIVE / INCOMPLETE**.
