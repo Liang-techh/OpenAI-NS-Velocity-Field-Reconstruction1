@@ -1,0 +1,54 @@
+# Current whole-Z source-centered leading Rm controls are solved
+
+Checked source [3337b7d5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3337b7d52ee2bed5c9e78380ad9275eb1c6cb55f). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+ALLZ-1d-CORRELATION and ALLZ-1d-CONTROLS are complete. Actual leading Rm five-defect functions now feed the original implicit map on every Z in[-1,1]. All four axial cells pass a strict self-map in the same normalized unit box and uniform contraction. The same invertible Jacobian recovers ordinary axial coefficients through Z5. Source-bound uniqueness in the common box identifies the local solutions at shared axial endpoints, yielding one smooth whole-axis leading control family. These axial derivative coefficients are distinct from the still-unfinished n-dependent temporal coefficient recursion.
+
+## Actual centering fixes the previous obstruction
+
+Independent interval subtraction had widened V-4Z and the centered-square defect beyond the original inverse box. The new source algorithm cancels the prescribed affine term before evaluation. The admitted core seed is exactly U0=4Z+j; the centered raw exit is j+sum(n=1..24)4^n*Uz_n plus the original differentiated analytic tail. Every fresh coupled radial correction remains, including pressure/swirl effects. Ordinary Taylor tails divide by k! exactly once. No old finite rows, parameter representatives, linear-only model or zero defects replace the source.
+
+The actual micro endpoint log/angular and signed axial increments define the macro inlet. The original macro exponential polynomial changes only its affine seed, retaining every hydro/pressure/swirl drive, genuine radius geometry and full third-order exponential remainder. The first-switch increment uses the original eight full cutoff cells, actual source differences, weighted masses and exact total sigma mass1/2. Second-switch and post-power keep V constant by the original source equations. This produces the same actual E110=V110-4Z without subtraction of two broad V/Z boxes.
+
+At the finite long endpoint, the centered identities are formed before interval evaluation:
+
+- mean_error=E110+actual_mean_incoming_memory;
+- axial_square=E110^2+actual_axial_incoming_memory-8Z*actual_mean_incoming_memory;
+- mixed_error=E110*theta_Rsh+inherited_theta_z-V110*inherited_theta.
+
+All finite long kernels, inherited decays and tail errors remain. The original reference/restoration/postrestore equations transport these actual centered histories to Rm. Original P0 is the identical independent analytic object throughout, excluded from the five defects. The N=2^3981 correction prefix through Rm remains valid and separate; finite-N correction rows are not inserted into the leading implicit map.
+
+## Quantitative result and proof scope
+
+The old normalized mean C0 upper bound was about1.32555e19; it is now at most0.00115841711. The old normalized centered-energy upper bound was about3.96e29..1.01e30; it is now about3.02e-15..7.74e-15. These are conservative source-defect enclosures in the original anisotropic control units, not NS momentum residual values.
+
+Original units remain (t,t,angularUnit,angularUnit,angularUnit), angularUnit=10^10*t^2*canonical_Pstar^-2. invAm2=exp(1.2)*(1+Z^2)^2*Pstar^-2 and the original2+3 block matrix are unchanged. Formal basis division cancels Pstar^-2 before ordinary materialization; an outward angular weight cover is used only in the transformed quadratic coefficients, never as a divisor or physical field value.
+
+Every local inverse uses the common normalized box[-1,1]^5. Initial contraction bounds are about9.65e-6..2.47e-5; higher-Jacobian bounds are about4.44e-8..1.14e-7. All source functions are smooth on the already admitted real axial domain. The common map/box and uniqueness, rather than overlap of output intervals, establish compatibility at shared axial endpoints. Residual-zero containment is only a diagnostic.
+
+The original pure leading patch is queried at x=1 and x=2 on each complete axial interval. x=1 retains its actual incoming primitives and zero bump corrections. x=2 is beyond all three supports and satisfies the five original leading functional identities by the exact full-weight implicit map. This is the leading patch closure; the finite-N Rc..2Rc terminal repair, global cone, exact heat exterior and corrected NS field remain unfinished. The old generic local coefficient API retains its local-scope flag; this wrapper's checked common-box theorem is the whole-axis admission.
+
+## Evidence and interfaces
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_Rm_centered_inverse.py, .json.gz, _check.py, _check.json. Producer 106.610s; checker 119.687s; terminal PASS. Counts: {"actual_factored_control_rows": 120, "actual_patch_endpoint_queries": 8, "common_unit_boxes": 4, "exact_directed_interval_rows": 13848, "normalized_defect_rows": 120, "original_terminal_functional_identities": 20, "same_Jacobian_higher_orders": 16, "source_defined_pressure_joins": 12, "typed_rejections": 2, "whole_Z_cells": 4}. Exact staged dependency audit: 1048 hashes PASS.
+
+The checker uses independent symbolic source-centering identities and original map/unit algebra, replays fresh actual-centered source owners on all four intervals, verifies actual normalized defects and factored controls, strict common boxes, same-Jacobian higher jets, identical pressure objects and original patch endpoint functions. It checks consistency against the previous broad extensions without treating their overlap as the proof of functional equivalence. No ancestor producers/checkers or saved-label constructors are executed.
+
+WholeZRmCenteredInverse.owner(ends) returns .patch (the actual _ActualRmLeadingPatch), .reference, .actual_E110 and .source_centering_proof. Cells are (-1,-.5),(-.5,0),(0,.5),(.5,1). The controls are enclosures of functions on these complete cells, not interpolation of point controls. The original source identity and one common pressure datum remain binding prerequisites.
+
+## Ordered next tasks
+
+- [x] **ALLZ-1a/1b, ALLZ-2a/2b-R100, ALLZ-2c-R110, ALLZ-2d-LONG/Rm** Actual whole-Z original source through Rm, genuine same-N finite correction prefix and distinct background/correction/complete-own histories.
+- [x] **ALLZ-1d-CORRELATION** Source-centered core/micro/macro/first-switch E110 and exact centered long/reference/restoration histories. Real defects retained; previous broad-box obstruction resolved.
+- [x] **ALLZ-1d-CONTROLS** Original implicit leading map solved with the same common normalized box and smooth whole-Z ordinary axial coefficients0..5; all four C1 self-map/contraction and higher-jet inverses checked.
+- [ ] **ALLZ-1e-PATCH** Attach current_original_Rm_patch_mixed4_cells._MixedPatchOwner directly to each new .patch; avoid OriginalRmPatchMixed4Cells/OriginalRmDefectPatchInverse saved-label constructors. Admit the same flat beta derivative receipt and pure source bindings. Produce closed radial cells covering x=R/Rm in[1,e], including all support edges49/40,51/40,59/40,61/40,69/40,71/40 and three centers5/4,3/2,7/4. Use evaluate(x), cell(left,right), gamma_rows, partial_initial and mixed_functions. Preserve same P0, source bases, all signed partial weights, actual incoming defects and physical radial/amplitude prefactors before taking y/Z derivatives. Export velocities, pressure and five primitives through total mixed order4 over every axial cell. Keep any local generic frame flags separate from the wrapper's whole-axis admission. Do not advertise a finite-N density oracle until original generic recovery/quotient graph is installed.
+- [ ] **ALLZ-2e-PATCH-DRIVERS** Install the original patch full signed generic recovery, nonlinear quotient and five-density graph at current N=2^3981 using actual leading controls and genuine Rm C0/Z correction incoming. Retain pressure, inertial, quadratic and meridional sectors; apply true radial own-rate masses/memories once. Leading map closure does not reset finite-N correction histories.
+- [ ] **ALLZ-2e-Rref** Continue original Rh/restoration/reference functions with current repaired leading background and genuine same-N correction through Rref. Bind family/datum/P0/N/native units and phase origin; export separate background/correction/complete-own incoming at all interfaces.
+- [ ] **ALLZ-3-O2** Attach native O2 atlas/ledger to complete-own incoming or prove an explicit correction-only adapter, then recompute slope/axial turnoff/buffer with all original signed terms and current N.
+- [ ] **ALLZ-4-Rc** Recompute original positive-mu O3 slope and quiet powers over whole Z, carrying every real incoming history to Rc.
+- [ ] **SHARP-1** Obtain joint source/phase/mu-sensitive functional bounds and genuine higher finite-N correction jets for the final control inversion. Leading control axial5 now exists; high correction jets still do not. Do not substitute leading jets for correction jets or pad missing rows with zeros.
+- [ ] **REPAIR-1** Solve original Rc..2Rc finite-N five functional controls and prove terminal identities, necessary high regularity, divergence and axis regularity over the whole domain.
+- [ ] **RM-W7..W8** Exact heat exterior, analytic pressure/energy joins, completed-field admissible stress cone and one globally admitted N. The current prefix budgets and leading patch theorem alone do not imply global completion.
+- [ ] **RM-W9..W11** Stress/flat remainder, genuine n-dependent coefficient recursion, two-family oscillatory pulses and averaged quadratic stress cancellation, full corrected forced NS and physical shrinking/elongation/material winding diagnostics.
+
+For each task mark DONE only with implementation, current report/receipt and source commit. Full reconstruction remains active until the requested stages are complete.

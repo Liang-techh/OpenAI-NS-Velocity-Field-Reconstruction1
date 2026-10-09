@@ -1,3 +1,16 @@
+# Current handoff: whole-Z source-centered leading Rm controls solved (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_CENTERED_CONTROLS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_CENTERED_CONTROLS_2026_10_09.md), checked source [3337b7d5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3337b7d52ee2bed5c9e78380ad9275eb1c6cb55f). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-1d-CORRELATION/CONTROLS: genuine centered core/bridge/long functions resolve the broad interval subtraction obstruction. All four actual axial cells pass strict self-map/contraction in the same normalized box; original leading control functions and axial0..5 coefficients now exist over all Z[-1,1].
+- [x] Original leading patch x=1/x=2 endpoint functions, identical P0 and five full-weight functional identities are checked;120 factored control rows and120 normalized defect rows.
+- [ ] NEXT ALLZ-1e: attach _MixedPatchOwner to these actual patches and produce full closed-cell y/Z mixed4 velocity/pressure/primitives on Rm..Rh, including every support edge. Then install same-N signed patch drivers and genuine correction transport.
+- [ ] Whole-Z same-N post-Rm/Rref/O2/O3/Rc correction chain, high correction jets/final repair, global N/cone/heat and genuine n-dependent recursion/pulses/full corrected forced NS remain unfinished.
+
+Read this latest source/task document before historical checkpoints below. The earlier Rm broad-box failure has now been resolved for the leading map.
+
+---
+
 # Current handoff: whole-Z actual source and same-N finite correction prefix reaches Rm (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_FINITE_N_2026_10_09.md), checked source [f5521e75](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f5521e75100549078e706d986b7a7f40d78a059e). Full reconstruction **ACTIVE / INCOMPLETE**.
