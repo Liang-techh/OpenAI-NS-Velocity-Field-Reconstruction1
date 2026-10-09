@@ -1,3 +1,15 @@
+# Current handoff: real N257 prefix through reference and O2 slope (2026-10-09)
+
+Checked source [eac1c7df](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/eac1c7dfaa04642fedd83409aa26c6847e1a1ff9); latest tasks [CURRENT_ORIGINAL_O2_SLOPE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_O2_SLOPE_FINITE_N_2026_10_09.md) and reference evidence [CURRENT_ORIGINAL_RH_REFERENCE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_RH_REFERENCE_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **W4c.5c.1..4b CONDITIONAL PREFIX:** actual Rh input now reaches Rref and original O2 slope exit at Z0,.5,N257. Complete signed midplane source, nonzero p2_Z, all nonlinear C0/Z densities, original scalar J/three masses, P0 and incoming memories retained. At critical a2, q^2=eta/2 remains positive.
+- [ ] **NEXT W4c.5c.4c..6:** actual same-current axial turnoff and 11-unit buffer, O3 positive-mu transition, proved quiet powers with real memory, and genuine Rc incoming. Do not transplant N1024 tail packets or reset incoming after V turns off.
+- [ ] **RM-W5..W11:** sharp correlation/averaging, all-Z/high-jet terminal functions, independent five-moment closure/cone/global N, heat/energy, stress/flat/true recursion and corrected NS remain OPEN.
+
+New reference and slope scoped checks PASS with 1240/1244 exact staged hashes. One reused read-only GPT-5.6 Luna/max worker. Historical unknown-Rh/Rref-input tasks below are predecessor evidence superseded conditionally by this source.
+
+---
+
 # Current original source-bound finite-N prefix through Rh
 
 Checked source [e1aed416](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e1aed41680b81a112426de56dfbee81dbefd4e18). Full reconstruction **ACTIVE / INCOMPLETE**. Upstream: [true micro prefix through Rm](CURRENT_ORIGINAL_MICRO_FINITE_N_2026_10_09.md).
