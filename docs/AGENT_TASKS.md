@@ -1,3 +1,15 @@
+# Current handoff: true terminal-patch source points (2026-10-08)
+
+Checked source [514d7b64](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/514d7b64132bd4a8f8b6fa4c3b38648b35392962); executable tasks and evidence [CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL-PATCH TERMINAL TRUE C0/Z POINTS:** original full-weight closure, current-R normalization, actual radius phase and signed-density roots connected on71/40<=x<=e;50 dispatches,45 ordinary callbacks,5 huge derivative sectors retained factored. Separate original P0 and unknown incoming correction histories preserved. 1144 staged exact hashes PASS.
+- [ ] **NEXT TERMINAL WHOLE-CELL SOURCE / TAIL INTEGRALS / AFFINE HISTORY:** derive full-cell source and phase errors; integrate original log-radius kernels with dx/x, then connect the tail contribution to reference/O2 while retaining unknown H(71/40). Tail contribution does not replace full original patch integral.
+- [ ] **ACTIVE PATCH / PRECEDING TRUE SOURCE / UPSTREAM ROOTS / CONTINUOUS-Z / ALL17 SOURCE / ALL24 INTEGRALS / ACTUAL CONTROLS / GLOBAL N / FIVE TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Keep complete-target N^-2 averaging and exact N-dependent functions.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: radial-variable histories and endpoint jets (2026-10-08)
 
 Checked source [b5aa6669](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5aa66692ef678298edbccc0ea6c44a6c80750d2); evidence and executable tasks [CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

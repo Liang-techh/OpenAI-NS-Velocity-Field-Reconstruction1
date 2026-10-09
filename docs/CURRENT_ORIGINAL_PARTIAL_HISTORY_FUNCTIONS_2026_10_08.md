@@ -1,3 +1,9 @@
+# Successor: genuine terminal-patch point source region
+
+Source [514d7b64](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/514d7b64132bd4a8f8b6fa4c3b38648b35392962) adds original actual_patch C0/Z point callbacks on71/40<=x<=e, including the exact Rh seam and original pressure errors. The radial functions below remain accepted. Follow [CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md) for whole-cell tail integrals, affine history extension and active-patch/upstream work; unknown correction histories, global N and recursion remain open.
+
+---
+
 # Original radial-variable affine histories and endpoint derivatives
 
 Checked source [b5aa6669](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5aa66692ef678298edbccc0ea6c44a6c80750d2). Previous accepted source-bound evaluator [CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md](CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md) remains in use. Full reconstruction **ACTIVE / INCOMPLETE**.
