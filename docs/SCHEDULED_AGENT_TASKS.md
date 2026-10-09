@@ -1,3 +1,15 @@
+# Current handoff: actual long-reshape terminal history functions (2026-10-09)
+
+Checked source [5ac96a82](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ac96a82cb1058da393075772b423221df7b526e); detailed evidence/tasks [CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md](CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL R110 -> ORIGINAL LONG-RESHAPE EXIT:** true anchored B and all six actual R110 histories now drive complete finite terminal kernels with original T=400Abar. V/P0 and nonzero incoming/body/tail/source errors remain; Q/velocity/pressure/moments and defining ODEs are available at native0,.5. 72 independent complete history and 130 physical-unit comparisons; 348 staged dependency hashes PASS.
+- [ ] **NEXT ACTUAL REFERENCE/Rz -> PRESSURE-AXIAL RESTORATION/Rm:** feed these actual Rsh outputs into original reference/restoration functions, preserve units/source P0/geometry and inherited tails, then bind actual inlets to reusable partial-history machinery.
+- [ ] **CONTINUOUS RESHAPE / CORE-MICRO / WHOLE-Z / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Two native endpoint frames do not establish whole-axis or scale-recursion closure.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual second switch and two-frame R110 source functions (2026-10-09)
 
 Checked source [33e1fea2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/33e1fea2f6c8fe0497200d02e1b32aa7f1825e06); detailed evidence/tasks [CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md](CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

@@ -1,3 +1,9 @@
+# Successor: actual finite long-reshape terminal histories
+
+Source [5ac96a82](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5ac96a82cb1058da393075772b423221df7b526e) transports the actual R110 six histories and anchored B through the full original finite long reshape, preserving incoming memory, source/body/tail errors and separate P0. Follow [CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md](CURRENT_ORIGINAL_LONG_RESHAPE_ENDPOINT_2026_10_09.md) for actual reference/restoration and remaining source/global tasks. Whole-Z, upstream micro, global N and real n-recursion remain open.
+
+---
+
 # Actual original second switch and source-owned R110 functions
 
 Checked source [33e1fea2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/33e1fea2f6c8fe0497200d02e1b32aa7f1825e06). Full reconstruction **ACTIVE / INCOMPLETE**. Both original switch segments now supply actual phi/V and six moment function enclosures at native Z=0,.5, conditional on the admitted R100 inlets. The actual second-exit histories feed original a=4/5,b=0 power transport to fixed rational R in(100,110], subject to R>=R2. Source-owned Q, physical velocity/moments, separate pressure and anchored log-shape B are recovered at105/110. Whole-Z, continuous core-to-R100 micro providers and all global closure layers remain open.
