@@ -1,3 +1,9 @@
+# Successor: genuine long-window finite-N source production (2026-10-09)
+
+[Current full R110-to-Rsh source and local Duhamel](CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md) implement the first conditional RM-W4b.1/.2/.3 layer, including nonzero nonlinear density drivers and explicit incoming memory. Real current R110/Rm inlet, downstream source windows, functional closure, cone/global N, whole-axis control and coefficient recursion remain OPEN. Full reconstruction **ACTIVE / INCOMPLETE**. Historical Rm averaging evidence below is unchanged.
+
+---
+
 # Actual Rm genuine axial phase primitives and weighted Z integral bounds
 
 Checked source [43f79b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43f79b638a2a131a8baa487aa2a93aa054b4e899). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [genuine mixed source/primitive yZ](CURRENT_ORIGINAL_RM_MIXED_YZ_PRIMITIVES_2026_10_09.md).

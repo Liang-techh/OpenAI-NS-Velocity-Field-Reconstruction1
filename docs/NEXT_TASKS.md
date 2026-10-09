@@ -1,3 +1,16 @@
+# Current handoff: long-reshape finite-N source drivers (2026-10-09)
+
+Checked source [2f240f3c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f240f3ceb83d5a9ef155358db2f8134cd9b43ff); detailed evidence/tasks [CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W4b.1/.2/.3 FIRST LOCAL IMPLEMENTATION:** actual current full R110-to-Rsh source, common-unit recovery, finite-N signed density C0/Z covers and nonzero own-rate Duhamel drivers. Eight full-window cells across conditional Z=0,.5 at candidate N257; ten nonzero incoming-memory rows retained. This is a new source window, not a closed prefix.
+- [ ] **NEXT RM-W4c.1/.2:** produce analytic reference interval cells and genuine signed drivers with dy=gap*d_rho. Then restoration uses nonzero V_y/general shear branches; postrestore reaches Rm. Endpoint samples and homogeneous-only decay cannot replace full source drivers.
+- [ ] **RM-W4a / W4b.4 / W4c.5:** true current N257 R110 incoming corrections, typed affine application and full endpoint/source-bound prefix composition remain OPEN. Saved N1024 and background histories cannot supply these inputs.
+- [ ] **RM-W5..W11:** sharper covers, Rc/all24, whole-Z/higher jets, actual cone/functional five-moment/global N, heat/energy, stress/flat/real n-recursion and corrected NS/dynamics remain OPEN.
+
+1071 staged exact dependency hashes PASS; GPT-5.6 Luna/max read-only source review. Only changed-scope producer/checker ran. Historical evidence below is unchanged. Mark DONE with scoped evidence and commit.
+
+---
+
 # Current handoff: actual Rm weighted axial integral progress (2026-10-09)
 
 Checked source [43f79b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43f79b638a2a131a8baa487aa2a93aa054b4e899); evidence/tasks [CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md](CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
