@@ -1,3 +1,9 @@
+# Successor: original O2 five-route integral callbacks
+
+Source [865cdb36](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/865cdb360a6e228503ff05fbc4e890073bbd01c3) completes all50 O2 issued C0/Z integral callbacks at fixed nonzero Z using current actual-N phase and original signed sources. Follow [CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md) for evaluator/history and remaining tasks. The reference services below remain accepted; continuous-Z closure, all-chart coverage and actual controls are open.
+
+---
+
 # Genuine issued reference C0/Z integral callbacks
 
 Checked source [9e5c171f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e5c171fc5b7238e14b21f54bc49190e49fbe85a). Point source leaves [CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md](CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md), original17 precise phase and accepted reference whole-cell integral mathematics remain in use. Full reconstruction **ACTIVE / INCOMPLETE**.

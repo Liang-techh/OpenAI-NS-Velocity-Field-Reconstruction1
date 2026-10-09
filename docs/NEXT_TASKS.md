@@ -1,3 +1,15 @@
+# Current handoff: original O2 five-route integral callbacks (2026-10-08)
+
+Checked source [865cdb36](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/865cdb360a6e228503ff05fbc4e890073bbd01c3); evidence and executable tasks [CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ALL50 O2 ISSUED C0/Z INTEGRAL NODES:** exact original five decimal segments, own-rate kernels, original source/pressure errors, actual current-N phase and full signed density DAG. Three fixed-Z frames give150 ordinary callbacks; 1220 staged exact hashes PASS.
+- [ ] **NEXT ACCEPTED-ROUTE EVALUATOR / PARTIAL INTEGRALS / HISTORY:** adapt parameter/source/integrate to real graph evaluation, begin with accepted reference/O2 routes, validate phase and retain incoming/P0. Midplane/continuous-Z and remaining15 charts remain open.
+- [ ] **ALL17 SOURCE / ALL24 INTEGRALS / ACTUAL CONTROLS / GLOBAL N / TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging and exact N-dependent order -1/order -2 coefficient functions.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: issued original reference integral callbacks (2026-10-08)
 
 Checked source [9e5c171f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e5c171fc5b7238e14b21f54bc49190e49fbe85a); evidence and executable tasks [CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
