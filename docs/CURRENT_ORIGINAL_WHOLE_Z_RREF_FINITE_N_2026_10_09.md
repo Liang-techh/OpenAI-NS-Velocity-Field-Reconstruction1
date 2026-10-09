@@ -1,0 +1,48 @@
+# Current whole-Z genuine same-N correction prefix reaches Rref
+
+Checked source [05702dab](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05702dab494da3a40e9d12dd32ba111d3016006f). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+ALLZ-2e-Rref-SOURCE/DRIVERS/TRANSPORT are complete. The whole-Z genuine N=2^3981 correction prefix now reaches Rref after the actual repaired Rh reference window. All four closed Z cells cover [-1,1]. Each has five closed offset cells covering [-5,0], actual signed nonlinear C0/Z drivers, genuine Rh incoming and true original own-rate transport. Original background, correction and complete-own Rref packets remain separate. This extends the prerequisite correction chain; genuine n-dependent coefficient recursion is unfinished.
+
+## Source, seam and phase
+
+WholeZRhReferenceFiniteN feeds the live current whole-Z leading patch owner to the pure original Rh reference background_cell. Source assignments are bound to the original reference method without constructing CompliantPrePulseMixedC4 or any old N257 wrapper. The source is R=Rm*exp(6+offset), E=exp(offset/10)/(1+Z^2), V=4Z with offset in [-5,0]. Rref=Rm*exp(6), Rh=Rm*e and total physical log length is 5.
+
+The reference histories are m=V, h=5E/8, k=5EV/8, e=V^2/Pstar^2-5E^2/12 and p=5E^2/2 before the original generic recovery's single Pstar conversion for raw m/k/V. Their original y and yZ equations hold identically. Here E_y=E/10, V_y=0 and a=4/5 are the original reference definitions. This specialization is used after the leading patch terminal, where all angular bumps vanish; it is not used inside active Rm bumps.
+
+The Rh seam follows from the same unique whole-Z leading implicit map's full-weight five identities. The angular identity exp(-.6)*e^.1=exp(-.5), identical radius/P0 and original five reference histories define the functional join. Directed overlap of 42 velocity/history source rows per Z cell is a consistency check, not the equality proof. The original meridional recovery uses m_Z, not m_y, and never divides by abs(Z). Ordinary axial5 source and signed C0/Z density rows cover the midplane as part of the complete interval domain.
+
+The original full signed inertial/pressure/meridional recovery, reference general-q graph and all-u inverse primitives are retained. Each cell proves actual A/N before any N-capped outward C0 adapter, retaining A_Z and exact flat inverse zeros. The original eta/dstar remain parameter definitions; they do not transfer a global cone or N theorem. Full phase covers are conservative enclosures, not averaged cancellation or sharp correction estimates.
+
+The phase remains frac(N*(logRm+6+offset-logRa-hb*s_c/2)), using the same accepted positive origin as the entire prefix. It is not restarted at Rh. An old reference metadata phase recipe from a different formal rebase is explicitly removed; only the original background assignment bindings and current phase geometry are retained. All rows share the current five-slot basis/ledger, original P0 and candidate N.
+
+## Genuine incoming and transport
+
+The new Rh incoming is hydrated from whole_Z_Rm_patch_finite_N.json.gz/source_cells[*]/actual_Rh_correction_C0_Z. Source identity, N, exact P0 tuples and exact Rm/Rh radius factors are checked before rebinding to the live algebra. The correction-only five C0/Z pairs are not used as complete own histories. No old saved labels, N257 density packets or phase receipts are transplanted.
+
+Each offset cell has width 1 and suffix -right. Its true positive own-rate mass and suffix decay are applied once. Incoming memory is exp(-5) for m/e, exp(-15/2) for h/k and exactly 1 for p. Actual_Rref_correction_C0_Z, actual_original_Rref_background_C0_Z and actual_Rref_complete_own_history_C0_Z are separate outputs. This supplies correction C0/Z only; it does not create higher finite-N correction jets from the background axial5 rows.
+
+## Evidence and interface
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_Rh_reference_finite_N.py, .json.gz, _check.py, _check.json. Producer 123.546s; checker 124.922s; terminal PASS. Replay counts: {"Rref_correction_rows": 40, "actual_Rh_background_join_rows": 168, "closed_reference_source_cells": 20, "exact_directed_interval_rows": 30512, "genuine_Rh_incoming_rows": 40, "nonlinear_density_C0_Z_rows": 200, "strict_actual_A_N_budgets": 20, "true_own_rate_weight_rows": 300, "typed_rejections": 9, "whole_Z_cells": 4}. Staged dependency audit: 1064 exact input hashes PASS.
+
+Independent symbolic identities check the five y/yZ equations, reference shear, meridional axial derivative and Rh amplitude/radius join. Ten independent closed nonconstant signed-driver integrals verify nonzero incoming memory; 75 independent cell mass/decay comparisons check all original rates and pressure's full width. Fresh current owners replay all 20 native cells and four complete Rh-to-Rref transports. Typed rejections cover wrong N/source/P0/radius/incoming rows and invalid domains. Ancestor producers/full checkers are not run.
+
+Use WholeZRhReferenceFiniteN.query(ends,left,right) for an exact closed reference offset cell, .query(ends,(0,1)) for Rref, .inlet(ends) for genuine Rh correction, .seam(ends) for the leading functional join contract and .contribution(ends) for the complete Rref boundary packet. OPEN gates for Rc repair, global cone/heat, temporal recursion and full corrected NS remain false.
+
+## Ordered next tasks
+
+- [x] **ALLZ-1a/1b, ALLZ-2a..2d** Actual original whole-Z source and genuine same-N correction prefix through Rm.
+- [x] **ALLZ-1d / ALLZ-1e-PATCH** Source-centered leading controls, common-box whole-axis axial5 family and closed-cell leading mixed4 patch functions.
+- [x] **ALLZ-2e-PATCH** Actual patch generic source, nonconstant correlated shear, signed drivers and genuine Rm-to-Rh correction transport.
+- [x] **ALLZ-2e-Rref-SOURCE/DRIVERS/TRANSPORT** Original repaired Rh reference functions, signed full-phase C0/Z drivers, same global phase, genuine Rh incoming and true memory through Rref.
+- [ ] **ALLZ-3-O2-SLOPE-SOURCE** Reuse pure current_original_O2_slope_finite_N.background_cell and its original slope_masses/sigma_jets helpers. Input the actual current whole-Z owner. Retain E=exp(y/10-.6*J)/(1+Z^2), V=4Z, all three finite source history integrals and R=Rm*exp(6+y), y in [0,1]. Scalar J/mass functions are Z independent and may be cached once per exact cell/context after preserving original directed provenance. Prove the Rref join from J(0)=mass(0)=0. Do not construct old O2 wrappers or saved labels.
+- [ ] **ALLZ-3-O2-SLOPE-DRIVERS** Feed actual a=.8+1.2*sigma(y), C=aE and explicit radius into original generic recovery and switch.general_quotients. Preserve the exact critical endpoint a(1)=2 and E_y=-E/2; an arbitrary interval around 2 can swamp the tiny positive eta source. Retain the true active/flat q union, signed all-u roots and unchanged N exponent budget. Do not force q=0 merely because Delta=0.
+- [ ] **ALLZ-3-O2-SLOPE-TRANSPORT** Hydrate actual_Rref_correction_C0_Z from this report at unchanged N=2^3981 and exact Rref/P0/source identity. Use original y partition 0,1/4,1/2,3/4,1; true widths/suffixes and total width 1; pressure memory 1. Export separate slope-exit background/correction/complete-own packets, exact R=Rm*exp(7), and a live original slope-exit source for axial continuation.
+- [ ] **ALLZ-3-O2-AXIAL/BUFFER** Reuse pure current_original_O2_axial_buffer_finite_N source functions and CRITICAL_QUOTIENTS. Axial selector p in [0,1] maps to y=exp(40*p), with physical dy=40*exp(40*p)dp and length exp(40)-1. Buffer tau in [0,11] maps to y=exp(40)+tau and length 11. Retain original turnoff kernel/far-tail memory, every signed driver and incoming. Reference a=.8 is invalid; a=2 is the original axial critical source. Keep exact phase and radius units.
+- [ ] **ALLZ-4-Rc** Continue positive-mu O3 and quiet windows with every original signed driver, source-bound positive mu, true lengths and actual incoming through Rc. Old N257 two-frame closure cannot be promoted to the current whole-Z prefix.
+- [ ] **SHARP-1 / REPAIR-1** Improve joint source/phase/mu bounds and obtain genuine high finite-N correction jets; solve whole-axis Rc..2Rc functional controls at the actual corrected inlet and prove five terminal identities and smooth joins. Existing leading jets do not substitute for missing correction jets.
+- [ ] **RM-W7..W8** Exact heat exterior, analytic pressure/energy joins, full-field admissible stress cone and one globally admitted N.
+- [ ] **RM-W9..W11** Stress/flat remainder, genuine n-dependent recursion, oscillatory pulse families/averaged quadratic cancellation, full corrected forced NS and shrinking/elongation/material winding diagnostics.
+
+Mark tasks DONE with implementation, current report/receipt and source commit. Full reconstruction remains active.
