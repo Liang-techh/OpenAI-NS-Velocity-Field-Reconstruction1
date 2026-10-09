@@ -1,3 +1,16 @@
+# Current handoff: whole-Z actual source and same-N finite correction prefix reaches Rm (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_FINITE_N_2026_10_09.md), checked source [f5521e75](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f5521e75100549078e706d986b7a7f40d78a059e). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-2d-LONG/Rm: actual original long/reference/restoration/postrestore functions and genuine N=2^3981 R110 incoming reach Rm over all Z[-1,1];32 true radial cells, all five C0/Z drivers and own-rate memories checked.
+- [x] Rm background/correction/complete-own histories, source-owned six-jet background, independent P0, actual finite long kernels/tails and exact Rm radius are exported separately.
+- [ ] NEXT ALLZ-1d-CORRELATION/CONTROLS: preserve common4Z and centered-square source identities before interval evaluation, then solve the original leading implicit map on the whole axis. Direct current broad-box attempts fail self-map inclusion despite contraction<1; no accepted whole-axis controls yet.
+- [ ] Whole-Z actual leading patch/Rref/O2/O3/Rc, high correction jets/terminal repair, global N/cone/heat and genuine n-dependent recursion/pulses/full corrected forced NS remain unfinished.
+
+Read the latest source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z same-N finite correction prefix reaches R110 (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_R110_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_R110_FINITE_N_2026_10_09.md), checked source [dd9803a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dd9803a8071610fa57df9caf8f48464e8bbc597e). Full reconstruction **ACTIVE / INCOMPLETE**.

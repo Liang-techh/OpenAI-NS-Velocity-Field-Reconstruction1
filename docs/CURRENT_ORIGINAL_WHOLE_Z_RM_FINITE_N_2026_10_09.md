@@ -1,0 +1,156 @@
+# Current whole-Z actual source and same-N finite histories reach Rm
+
+Checked source [f5521e75](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f5521e75100549078e706d986b7a7f40d78a059e). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+ALLZ-2d-LONG and ALLZ-2d-Rm are complete. Actual original long reshape, reference, axial restoration and postrestore functions cover every Z in[-1,1]. The genuine N=2^3981 correction incoming at R110 continues through all four windows to Rm. Four axial cells each contain eight true radial source cells. Background, correction and complete-own C0/Z histories remain separate; actual six-jet background functions and the independent analytic P0 are retained. Genuine n-dependent scale recursion remains unfinished.
+
+## Actual source contract
+
+WholeZLongRmFiniteN.owner(ends) uses checked current whole-Z R110 background fields and six histories, then rebuilds the exact current anchored source basis and P0 for each axial interval. It invokes only the pure ActualLongReshapeEndpoint and ActualReferenceRestoreFunctions APIs. The saved-label long/reference constructors are forbidden during the checker. The original fixed T=400*A_upper, selected_logCstar, finite terminal kernel backend and three complete admitted restoration integrals are source-bound to the same family/datum.
+
+B_log=-Lambda*G+log(phi_R110)+log(1+Z^2)+log(220)/2 is rebuilt from the actual anchored G. The source gradient_jets API returns the ordinary Taylor coefficients of G', so the primitive coefficient G[n] is gradient[n-1]/n for n>=1. B_log is distinct from history B. Actual B C2 rows pass the frozen original bound without selecting field values from a cap. The finite long kernel body, tail errors, nonzero incoming decays, actual V_R110 and separate P0 remain present. The reference/restoration joins share the same actual source objects and original six centered ODEs.
+
+Original generic recovery retains pressure, inertial, nonlinear and meridional sectors before quotient/inverse primitives and the signed five-density graph. Every actual downstream A/N exponent budget passes at the unchanged N=2^3981. The N-capped A_C0 cover remains outward and retains A_Z. Actual phase origin stays frac(N*(logR-logRa-hb*s_c/2)); full-period covers enclose it conservatively and do not establish averaged-phase cancellation.
+
+True radial lengths are T, gap=10*(logC+logP)-T-8,1,1. Their exact sum is10*(logC+logP)-6. Each correction driver receives its true mass, own decay and suffix factor once. Rates m:1,h:3/2,k:3/2,e:1,p:0 remain unchanged. Genuine R110 incoming is carried across every window, pressure memory is exactly1, and tiny positive factors stay formal. Rm=110*Cstar^10*Pstar^10*exp(-6) uses the same source basis.
+
+Only C0/Z correction histories are available; higher correction jets are not fabricated or inserted into the six-jet leading background. Existing two-frame N257 results through Rc remain distinct from this whole-Z N=2^3981 chain.
+
+## Evidence
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_long_Rm_finite_N.py, .json.gz, _check.py, _check.json. Producer 77.094s; checker 77.781s; both terminal PASS. Replay counts: {"actual_boundary_C0_Z_rows": 760, "actual_finite_kernel_backends": 12, "actual_nonlinear_density_C0_Z_rows": 320, "actual_own_rate_weight_rows": 480, "actual_radial_source_cells": 32, "exact_directed_interval_rows": 19948, "fresh_source_queries": 8, "genuine_R110_incoming_rows": 40, "independent_original_P0_rows": 216, "source_defined_background_joins": 20, "typed_rejections": 3, "whole_Z_cells": 4}. Exact staged dependency audit: 1043 hashes PASS.
+
+The checker constructs fresh interval owners on all four axial cells, replays one complete long source query and the Rm endpoint per cell, and checks all32 nonlinear density packets, true weights, real incoming, propagated boundaries and complete-own additions. It checks source-defined joins, independent P0, finite kernel outputs including retained tails, exact radius and typed domain rejection. It does not replay ancestor producers/checkers. This certifies the emitted conservative source/transport enclosures, not terminal functional repair or global cone admission.
+
+## Concrete next blocker: centered defect correlation
+
+After the Rm source check passed, a direct exploratory call to _ActualRmLeadingPatch(current_reference,t,W,bump) was attempted on all four actual axial intervals. It failed the original normalized C1 inverse self-map test on every cell. Uniform contraction bounds were below1 (about9.65e-6 to2.47e-5); self-map inclusion was false. Current independent source enclosures give excessively broad normalized mean/mixed and centered-energy defects. This diagnostic failure is not a nonexistence result or an accepted control solution.
+
+Exploratory diagnostic rows (not a production control certificate):
+
+```json
+[
+  {
+    "exact_Z_cell": [
+      "-1",
+      "-.5"
+    ],
+    "normalized_C0_abs_upper": [
+      "13255451127217098355.0",
+      "3376420136782901645.5",
+      "3.5841023313175582375e-973",
+      "1.013297213322962546e+30",
+      "3.8225675347494279425e-1149"
+    ],
+    "normalized_C1_abs_upper": [
+      "3.1676544477675741397e-480",
+      "8.0686293971933489791e-481",
+      "7.5782170184059042819e-969",
+      "2.026594426645925092e+30",
+      "1.9360380222712714969e-966"
+    ],
+    "first_inverse_certified": false,
+    "first_inverse_self_map": false,
+    "first_inverse_contraction": "0.000024707933766989532935",
+    "actual_axial5_inverse_solved": false,
+    "error": "Actual defect C1 inverse failed"
+  },
+  {
+    "exact_Z_cell": [
+      "-.5",
+      "0"
+    ],
+    "normalized_C0_abs_upper": [
+      "13255451127217098355.0",
+      "3376420136782901645.5",
+      "3.5841023313175582375e-973",
+      "3.9581922395428224453e+29",
+      "3.8225675347494279425e-1149"
+    ],
+    "normalized_C1_abs_upper": [
+      "3.1676544477675741397e-480",
+      "8.0686293971933489791e-481",
+      "7.5782170184059042819e-969",
+      "6.3331075832685159126e+29",
+      "1.9360380222712714969e-966"
+    ],
+    "first_inverse_certified": false,
+    "first_inverse_self_map": false,
+    "first_inverse_contraction": "9.6515366277318634823e-6",
+    "actual_axial5_inverse_solved": false,
+    "error": "Actual defect C1 inverse failed"
+  },
+  {
+    "exact_Z_cell": [
+      "0",
+      ".5"
+    ],
+    "normalized_C0_abs_upper": [
+      "13255451127217098355.0",
+      "3376420136782901645.5",
+      "3.5841023313175582375e-973",
+      "3.9581922395428224453e+29",
+      "3.8225675347494279425e-1149"
+    ],
+    "normalized_C1_abs_upper": [
+      "3.1676544477675741397e-480",
+      "8.0686293971933489791e-481",
+      "7.5782170184059042819e-969",
+      "6.3331075832685159126e+29",
+      "1.9360380222712714969e-966"
+    ],
+    "first_inverse_certified": false,
+    "first_inverse_self_map": false,
+    "first_inverse_contraction": "9.6515366277318634823e-6",
+    "actual_axial5_inverse_solved": false,
+    "error": "Actual defect C1 inverse failed"
+  },
+  {
+    "exact_Z_cell": [
+      ".5",
+      "1"
+    ],
+    "normalized_C0_abs_upper": [
+      "13255451127217098355.0",
+      "3376420136782901645.5",
+      "3.5841023313175582375e-973",
+      "1.013297213322962546e+30",
+      "3.8225675347494279425e-1149"
+    ],
+    "normalized_C1_abs_upper": [
+      "3.1676544477675741397e-480",
+      "8.0686293971933489791e-481",
+      "7.5782170184059042819e-969",
+      "2.026594426645925092e+30",
+      "1.9360380222712714969e-966"
+    ],
+    "first_inverse_certified": false,
+    "first_inverse_self_map": false,
+    "first_inverse_contraction": "0.000024707933766989532935",
+    "actual_axial5_inverse_solved": false,
+    "error": "Actual defect C1 inverse failed"
+  }
+]
+```
+
+The next implementation should form V-4Z and axial_square before losing common source dependencies to interval subtraction. In particular, cancel the prescribed4Z core term and the corresponding16Z^2/8Z*mean terms algebraically, preserving j, the actual coupled radial correction, signed finite-width contributions, inherited decays, restoration kernels and all ordinary Z0..5 rows. Do not set those defects to zero, transplant old point controls, widen a physical amplitude arbitrarily, or claim closure from residual-zero containment.
+
+## Ordered tasks for the next agent
+
+- [x] **ALLZ-1a/1b** Live whole-Z core/bridge/micro/macro source and six histories through R100.
+- [x] **ALLZ-2a/2b-R100** Genuine correction prefix r_minus..R100 at one current source-owned N=2^3981.
+- [x] **ALLZ-2c-R110** Original switches/post-power, real incoming and separate R110 background/correction/complete-own exports.
+- [x] **ALLZ-2d-LONG** Pure original finite long endpoint attached to actual whole-Z R110 six-background-jet source; anchored B, finite body/tails and independent P0 retained.
+- [x] **ALLZ-2d-Rm** Original reference/restoration/postrestore signed drivers and genuine same-N transport to Rm, checked on every axial cell.
+- [ ] **ALLZ-1d-CORRELATION** Add a pure source-centered R110/Rm backend that retains the exact common4Z core term and centered quadratic identities before interval evaluation. Start with core_coefficient_rebuild.initial_rows/source_data and actual_bridge_integrals.prepare/contributions, using already hydrated fixed controls. Recover actual E_R110 and centered mean/axial source histories with the same source family, original ordinary Taylor convention and finite-width errors. Bind each algebraic cancellation to the original field equations; keep all surviving j/core correction/width/decay terms. Compare the new valid directed enclosures to the current broad ones and export every defect C0..Z5.
+- [ ] **ALLZ-1d-CONTROLS** Feed these current whole-Z centered functions into _ActualRmLeadingPatch and implicit_axial_jets. Hydrate only original accepted t, fixed beta weights/matrix and stateless bump methods. Preserve invAm2=exp(1.2)*(1+Z^2)^2*Pstar^-2 and units(t,t,10^10*t^2*Pstar^-2,10^10*t^2*Pstar^-2,10^10*t^2*Pstar^-2). Require a strict self-map, contraction<1, same-Jacobian higher jets and common-source P0. Prove compatibility of the unique implicit family over adjacent axial cells before marking whole-axis controls complete. Do not use the Rc terminal-control interface for the Rm leading map.
+- [ ] **ALLZ-1e-PATCH** Install the actual whole-Z leading bump patch on Rm..Rh, including signed partial weights, physical velocities/pressure/primitives and radial/axial mixed4 derivatives. Functional leading closure must follow from the exact implicit map, with original normalization and positive swirl guarded. Finite-N corrections remain separate inputs.
+- [ ] **ALLZ-2e-Rref** Transport genuine N=2^3981 incoming through the current corrected patch/restoration/reference to Rref. Recompute all signed density sectors using actual controls, native units and original phase origin; export background/correction/complete-own at every interface.
+- [ ] **ALLZ-3-O2** Attach the native O2 atlas/ledger to complete-own incoming, or prove a correction-only adapter. Recompute original slope, axial turnoff and buffer functions with current N and all pressure/meridional sectors.
+- [ ] **ALLZ-4-Rc** Recompute positive-mu O3 slope and quiet powers, all signed drivers and real incoming to Rc over the whole axial domain.
+- [ ] **SHARP-1** Obtain the joint source/phase/mu-sensitive bounds and genuine high correction jets required by terminal functional control inversion. Existing full-phase C0/Z boxes do not prove the necessary smallness. Use correlated analytic estimates or adaptive actual source subdivision; never pad missing jets with zeros.
+- [ ] **REPAIR-1** Solve original Rc..2Rc five functional controls and prove all five terminal identities, required C1/high jets, exact divergence and axis regularity across the whole domain.
+- [ ] **RM-W7..W8** Construct exact heat exterior and pressure/energy joins, verify the completed full-domain admissible stress cone, and admit one global N for the corrected field. Current prefix A/N budgets alone do not complete this admission.
+- [ ] **RM-W9..W11** Build admissible stress/flat remainder, genuine n-dependent coefficient recursion, two-family oscillatory pulses and averaged quadratic stress cancellation, then full corrected forced NS and physical shrinking/elongation/material winding diagnostics.
+
+For each task, mark DONE only with its implementation, current report/receipt and source commit. The full reconstruction objective stays active until its required stages are complete.
