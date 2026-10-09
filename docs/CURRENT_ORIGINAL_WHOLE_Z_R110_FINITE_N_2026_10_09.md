@@ -1,0 +1,41 @@
+# Current whole-Z same-N source and finite correction histories reach R110
+
+Checked source [dd9803a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dd9803a8071610fa57df9caf8f48464e8bbc597e). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+ALLZ-2c-R110 is complete. Actual first-switch, second-switch and post-power functions now cover all Z in[-1,1]. The same source-owned N=2^3981 correction chain that reached R100 continues through every original switch window to R110 with genuine incoming preserved. Four complete axial cells each contain six true radial cells. R110 background, correction and complete-own C0/Z histories are exported separately, together with the actual six-jet background fields/histories, analytic P0, exact radius110 and same-N candidate velocity bounds.
+
+## Source and incoming contract
+
+WholeZMicroMacro.owner(ends) supplies the genuine six ordinary Z0..5 background field/history rows at R100 to FirstSwitchFunctions. Its actual first-exit rows define SecondSwitchFunctions. The original shifted comparison modes, angular exponential errors, original weighted-sigma integrals and all six original background ODEs remain present. The finite-N C0/Z cumulative correction is a separate input to Volterra transport; it is neither inserted into a six-jet constructor nor padded with invented zero higher derivatives. These are interval functions for every point in the axial cells, not renamed Z0,.5 packets.
+
+The first-switch and second-switch a identities are respectively hb*Dbar and hb*Dbar*(1-sigma)+0.8*sigma. The original admitted Dbar>=3.5 theorem on100..110 is bound to the same actual source modes and source family. The guard2hb<log(1.1) keeps both microscopic switches inside that domain. A local AST replay supplies only the Dbar proof callback; original prefix arithmetic is unchanged. The value of a is intersected with its positive source-identity lower bound, derivative rows remain the original ones, and phi_y is recomputed with the same original identity. Post-power retains a=0.8 and its actual positive theta kernels.
+
+Original generic recovery supplies all pressure, inertial, nonlinear and meridional terms before quotient/inverse primitives and the signed five-density graph. All actual A/N exponent budgets pass at the unchanged common N=2^3981. A_C0 outward covers retain A_Z. The actual periodic phase origin stays tied to r_minus; full-period covers conservatively enclose it and do not prove averaged-phase cancellation. R110 candidate velocity bounds include genuine deltaE/deltaV and their Z derivatives as full-phase enclosures.
+
+Each five-history cell uses its true physical mass, decay and suffix weight. The two microscopic lengths are hb and hb, and post-power length is log(1.1)-2hb; their exact sum is log(1.1). Rates are m:1,h:3/2,k:3/2,e:1,p:0. Incoming memory is never reset; pressure memory is exactly1. Background+correction is explicitly exported as complete-own incoming for future native consumers. Tiny positive width and memory factors remain formal.
+
+P0 is the independent same-source analytic datum. Cross-codec source comparison uses exact directed coefficient/offset tuples and formal powers, rather than decimal display strings with different formatting. Existing N257,Z0,.5 results through Rc remain separate from this whole-Z N=2^3981 chain.
+
+## Evidence
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_switch_finite_N.py, .json.gz, _check.py, _check.json. Producer 201.375s; checker 145.813s; both terminal PASS. Replay counts: {"actual_boundary_C0_Z_rows": 600, "actual_nonlinear_density_C0_Z_rows": 240, "actual_own_rate_weight_rows": 360, "actual_radial_source_cells": 24, "exact_directed_interval_rows": 10276, "fresh_source_queries": 8, "genuine_R100_incoming_rows": 40, "independent_original_P0_rows": 168, "typed_rejections": 3, "whole_Z_cells": 4}. Exact staged dependency audit: 1029 hashes PASS.
+
+The checker constructs fresh live first/second source owners for all four cells, replays one complete first-switch source query and the R110 endpoint query per cell, and checks all24 emitted nonlinear density C0/Z packets, true weights, genuine R100 incoming and propagated R110 boundaries. It checks exact P0 rows, complete-own addition, retained six-jet source-defined joins, source radius and typed domain rejection. It does not replay ancestor producers/checkers. Conservative valid C0/Z histories are not the high-jet smallness proof required by terminal functional control inversion.
+
+## Ordered next work
+
+- [x] **ALLZ-1a/1b** Actual full-Z bridge/core/micro/macro background and complete signed source through R100.
+- [x] **ALLZ-2a/2b-R100** Source-owned correction r_minus..R100 at one freshly selected common N=2^3981.
+- [x] **ALLZ-2c-R110** Genuine whole-Z switches/post-power and same-N finite correction transport with real R100 incoming, checked R110 background/correction/complete-own and candidate velocities.
+- [ ] **ALLZ-2d-LONG** Attach ActualLongReshapeEndpoint in current_original_long_reshape_endpoint.py to the actual R110 six-background-jet field/history export, exact whole-Z coordinate, delta, amplitude ratios and P0. Read the same accepted T=400*A_upper and logC=selected_logCstar. Reconstruct anchored log-shape B_log=-Lambda*G+log(phi)+log(1+Z^2)+log(220)/2 from genuine anchored G and its source derivatives; B_log is distinct from history B. Reuse source_packet/source_quotients/kernel_weight from current_original_long_reshape_finite_N.py. Hydrate only fixed source controls, retain true geometry/ordinary derivative conventions, and keep C0/Z correction incoming separate from six-jet background functions. Avoid the saved-label long owner.
+- [ ] **ALLZ-2d-Rm** Recompute original same-N signed drivers through the long/reference region with all five true own-rate kernels and suffixes. Export genuine current Rm incoming and background with family/datum/P0/N/radius/units guards. Do not reuse archived N1024 or N257 downstream corrections.
+- [ ] **ALLZ-1d-CONTROLS** Evaluate the actual implicit Rm control inverse on whole-Z function defects and real derivative/high-jet enclosures. Fixed controls at Z0,.5 do not define full-Z repair. Supply source-consistent interval controls to _ActualRmLeadingPatch and its mixed patch cells.
+- [ ] **ALLZ-2e-Rref** Continue the actual patch with these controls and genuine same-N incoming through Rh/restoration/reference to Rref, keeping exact native units and phase origin.
+- [ ] **ALLZ-3-O2** Attach native O2 atlas/ledger to complete-own incoming (background+correction), or prove an explicit correction-only adapter. Recompute original slope, axial turnoff and buffer at N=2^3981.
+- [ ] **ALLZ-4-Rc** Recompute original positive-mu O3 slope and quiet powers with all signed source terms and real incoming, reaching Rc on every axial cell.
+- [ ] **SHARP-1** Obtain joint source/phase/mu-sensitive functional defect bounds and genuine high correction jets needed for control inversion. Conservative full-phase C0/Z covers alone do not establish those inequalities. Use correlated analytic estimates or adaptive actual source subdivision where needed.
+- [ ] **REPAIR-1** Solve original Rc..2Rc five functional controls; prove all five terminal identities, required C1/high jets, divergence and axis regularity over the complete axial domain.
+- [ ] **RM-W7..W8** Exact heat exterior and pressure/energy joins, full-domain admissible stress cone and one globally admitted N for the completed modified field.
+- [ ] **RM-W9..W11** Admissible stress/flat remainder, genuine n-dependent coefficient recursion, two-family oscillatory pulses/mean quadratic stress cancellation, full corrected forced NS and physical shrinking/elongation/material winding diagnostics.
+
+Mark each task DONE with implementation, current report/receipt and source commit. Keep the full reconstruction objective active until all required stages are complete.

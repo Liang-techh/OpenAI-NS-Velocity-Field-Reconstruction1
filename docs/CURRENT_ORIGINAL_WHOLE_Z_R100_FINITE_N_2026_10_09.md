@@ -1,3 +1,16 @@
+# Current handoff: whole-Z same-N finite correction prefix reaches R110 (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_R110_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_R110_FINITE_N_2026_10_09.md), checked source [dd9803a8](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dd9803a8071610fa57df9caf8f48464e8bbc597e). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-2c-R110: live whole-Z first/second switch and post-power functions now retain actual R100 correction incoming through R110 at the same N=2^3981;24 true radial cells, all five C0/Z drivers and real own-rate memories.
+- [x] R110 background/correction/complete-own, six-jet background source, exact P0/radius and candidate velocity bounds are exported separately.
+- [ ] NEXT ALLZ-2d: attach genuine R110 background to long reshape/reference pure functions, transport the same-N incoming to Rm, and solve whole-Z implicit controls. Do not fill missing correction jets with zeros or reuse old N257/N1024 packets.
+- [ ] Whole-Z Rref/O2/O3/Rc and functional terminal repair, joint sharpness, global N/cone/heat, genuine scale recursion/pulses and full corrected forced NS remain unfinished.
+
+Read the latest source/task document before historical checkpoints below.
+
+---
+
 # Current whole-Z source-owned finite-N correction histories reach R100
 
 Checked source [4e03c518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4e03c518eae18082e352e9124e1ee3c39322f9d6). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
