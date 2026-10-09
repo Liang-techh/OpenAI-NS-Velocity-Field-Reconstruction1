@@ -1,3 +1,9 @@
+# Successor: genuine first spatial derivatives (2026-10-09)
+
+[Checked first y/Z source and density jets](CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md) now install real radial roots and actual N*phi chains. The first-derivative part of RM-U7 is complete; mixed second derivatives and higher smoothness remain OPEN. Weighted integral reduction, actual finite-N Rm incoming histories and five-moment closure remain production priorities. Full reconstruction **ACTIVE / INCOMPLETE**. Historical all-u evidence below is unchanged.
+
+---
+
 # Original all-signed-u bounds and complete local Rm C0/Z integrals
 
 Checked source [92d9608f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92d9608f5c5f3fc0bf7b4e8b9cc045b171cd1834). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [active source atlas with four unknown cells](CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md).

@@ -1,3 +1,15 @@
+# Current handoff: actual Rm genuine first spatial source and density jets (2026-10-09)
+
+Checked source [c4943b7f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c4943b7f971de04e28a21d83589961d9d753a185); evidence/tasks [CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md](CURRENT_ORIGINAL_RM_FIRST_SPATIAL_JETS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-J1..J3 GENUINE FIRST y/Z ROOTS / ORIGINAL A-B / ACTUAL FAST PHASE / FIVE DENSITY DERIVATIVES:** actual mixed4 rows, unchanged signed recovery, correlated a/q and exactly one R_y term. Full original inverse or all-u real-y bounds, phi_y=N257, phi_Z=0. Conditional Z=0,.5; whole active/terminal source cells included. 80 primitive / 200 density rows, 28 symbolic recovery / 184 independent original scalar comparisons, 1198 staged dependency hashes PASS.
+- [ ] **RM-J4/J5 NEXT WEIGHTED INTEGRAL REDUCTION / REAL FINITE-N Rm INLET:** these first derivatives are available for justified averaging with endpoint/slow terms. Complete local C0/Z integrals remain coarse; actual finite-N incoming correction is still unsupplied.
+- [ ] **RM-J6..J12 MIXED SECOND JETS / FLAT EDGE CORRELATION / Rc ALL24 / ACTUAL CONE UNIQUE REPAIR WHOLE-Z GLOBAL N / ANALYTIC HEAT ENERGY / STRESS FLAT REAL n-RECURSION / PULSES CORRECTED NS:** OPEN. Full goal remains active; first spatial jets do not complete scale recursion.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: complete local Rm integrals via original all-u bounds (2026-10-09)
 
 Checked source [92d9608f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92d9608f5c5f3fc0bf7b4e8b9cc045b171cd1834); evidence/tasks [CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
