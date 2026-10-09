@@ -1,3 +1,9 @@
+# Successor: actual Rm leading five-defect inverse and partial patch
+
+Checked source [1d4903c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1d4903c652476c44ac0d579b71c09e8971b42876); evidence/tasks [CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md](CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md). Actual Rm rows now feed canonical normalized leading repair Z0..5 and partial velocity/pressure/primitives at native0,.5. Full radial mixed4, whole-axis and finite-N Rc/all24/global N remain open. Historical text below is preserved.
+
+---
+
 # Actual Rsh reference / axial restoration functions through Rm
 
 Checked source [0d365bc0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0d365bc065756ad5a9d6312d06bf2220b9191471). Full reconstruction **ACTIVE / INCOMPLETE**. The actual long-reshape terminal six histories now feed original reference transport, full-cutoff axial restoration and postrestore through the true Rm inlet. Actual normalized histories, Q, physical velocity/pressure/five primitives and mixed y/Z derivatives through total order4 are available at native Z=0,.5. All incoming tails and original analytic P0 remain. Finite-N density integrals, actual active patch, whole-axis source closure and actual n-recursion remain open.

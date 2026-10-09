@@ -1,3 +1,15 @@
+# Current handoff: actual Rm leading inverse and partial patch (2026-10-09)
+
+Checked source [1d4903c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1d4903c652476c44ac0d579b71c09e8971b42876); detailed evidence/tasks [CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md](CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL Rm FIVE DEFECTS / NORMALIZED LEADING INVERSE Z0..5 / PARTIAL PATCH:** canonical anisotropic source division, original unique implicit map, actual beta/partial moments, physical velocity/pressure/primitives and separate P0. Native0,.5 strict contraction upper bounds 6.17698e-06/9.65154e-06; 770 independent physical Taylor comparisons; 356 staged dependency hashes PASS. Whole axis and upstream micro inlets remain conditional.
+- [ ] **NEXT FULL PATCH RADIAL MIXED4 / SOURCE CELLS / FINITE-N Rsh->Rm DENSITIES:** complete beta derivatives/partial primitive equations and Q, preserve tiny correction sectors and source prefactors, then connect original density compiler. Leading Lh+Q+d is separate from finite-N B*h+N*r+Q/N.
+- [ ] **WHOLE-Z / CONTINUOUS CORE-MICRO-RESHAPE / UNIQUE FINITE-N Rc PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Two source-frame leading patch solutions do not establish recursive scaling or full corrected NS.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual reference/restoration functions through Rm (2026-10-09)
 
 Checked source [0d365bc0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0d365bc065756ad5a9d6312d06bf2220b9191471); detailed evidence/tasks [CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_REFERENCE_RESTORE_FUNCTIONS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
