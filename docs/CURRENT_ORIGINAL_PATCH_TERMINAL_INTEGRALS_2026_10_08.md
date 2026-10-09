@@ -1,3 +1,9 @@
+# Successor: general varying-shear fixed-phase Z backend
+
+Source [3d69b9ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3d69b9ef628c4ac923f427f72fc19c07b7282869) adds the general factored a,b,t0,q ordinary-Z derivative backend, with genuine O2 binding and scoped independent checks. Terminal integrals below remain accepted. Follow [CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md](CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md) for defining upstream histories/unique active-patch coefficients, native derivative attachment and complete patch integration. Full controls, global N and recursion remain open.
+
+---
+
 # Original terminal-patch integrals and affine history extension
 
 Checked source [788836a6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/788836a6d630eb93c1d98946e4b1088dd151ac0d). Accepted [terminal source points](CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md) and [reference/O2 radial-variable histories](CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md) remain in use. Full reconstruction **ACTIVE / INCOMPLETE**.

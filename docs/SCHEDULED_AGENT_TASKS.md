@@ -1,3 +1,15 @@
+# Current handoff: varying-shear fixed-phase Z backend (2026-10-08)
+
+Checked source [3d69b9ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3d69b9ef628c4ac923f427f72fc19c07b7282869); detailed tasks/evidence [CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md](CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **GENERAL a,b,t0,q FIXED-PHASE Z CALCULUS:** source-factored q_Z/cutoff, both signed charts, regular r=0, secular-free implicit inverse and full A_Z/B_Z. Genuine accepted O2 specialization is attached. 102 independent scalar comparisons, 10 C0 finite differences, 12 error-box comparisons, four extreme-factor records and 10 guards pass; 1067 staged exact dependency hashes PASS. Generic constructor remains conditional on caller-bound native source/cone/scale hypotheses.
+- [ ] **NEXT DEFINING ACTIVE-PATCH UPSTREAM INPUTS / UNIQUE IMPLICIT COEFFICIENT FUNCTIONS:** resolve original E=V110-4Z and five inherited tails from actual source functions, preserving pressure/errors. Long-reshape formal integrals remain unresolved; prebounded packets/drive caps cannot become field values. Bind the outer actual feedback packet through raw_patch_rows and the original inertial compiler, then attach the general backend and complete original patch integrals.
+- [ ] **TRUE UPSTREAM / CONTINUOUS-Z / ALL17 SOURCES / ALL24 INTEGRALS / CONTROLS / GLOBAL N / FIVE TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Accepted terminal/reference/O2 partial integrals and affine histories remain; full source-owned boundary functions are still required.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: terminal-patch integrals and affine history connection (2026-10-08)
 
 Checked source [788836a6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/788836a6d630eb93c1d98946e4b1088dd151ac0d); executable tasks/evidence [CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
