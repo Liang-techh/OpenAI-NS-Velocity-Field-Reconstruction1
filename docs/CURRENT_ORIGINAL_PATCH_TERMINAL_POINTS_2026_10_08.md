@@ -1,3 +1,9 @@
+# Successor: terminal whole-source integrals and affine history extension
+
+Source [788836a6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/788836a6d630eb93c1d98946e4b1088dd151ac0d) adds original terminal-patch interval/tail C0/Z integrals with dx/x and connects them to reference/O2 histories while preserving unknown incoming functions. Point sources below remain accepted. Follow [CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md) for active-patch source functions, general inverse/Z derivatives and complete patch/upstream work. Full controls, global N and recursion remain open.
+
+---
+
 # Original actual-patch terminal source points
 
 Checked source [514d7b64](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/514d7b64132bd4a8f8b6fa4c3b38648b35392962). Existing [radial-variable partial histories](CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md) remain accepted. Full reconstruction **ACTIVE / INCOMPLETE**.

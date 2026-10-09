@@ -1,3 +1,15 @@
+# Current handoff: terminal-patch integrals and affine history connection (2026-10-08)
+
+Checked source [788836a6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/788836a6d630eb93c1d98946e4b1088dd151ac0d); executable tasks/evidence [CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **TERMINAL WHOLE-SOURCE INTEGRALS AND REFERENCE/O2 CONNECTION:** genuine actual_patch C0/Z partial/tail integrals on71/40<=x<=e with dx/x, original N-dependent coefficients, pressure/phase errors and stable microscopic masses;6 frames/60 integral rows,2 actual affine extensions. Unknown incoming functions and separate P0 remain. 1236 staged exact hashes PASS.
+- [ ] **NEXT ACTIVE-PATCH COEFFICIENTS / GENERAL a,b,t0 DERIVATIVES / FULL PATCH INTEGRAL:** recover original unique implicit source functions and all variable-parameter inverse/Z terms on1<=x<71/40; integrate compact supports with errors and compose original full[1,e] contribution. Terminal-only callbacks do not replace full patch integrals.
+- [ ] **TRUE UPSTREAM / CONTINUOUS-Z / ALL17 SOURCES / ALL24 INTEGRALS / CONTROLS / GLOBAL N / FIVE TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging and exact N-dependent coefficient functions.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: true terminal-patch source points (2026-10-08)
 
 Checked source [514d7b64](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/514d7b64132bd4a8f8b6fa4c3b38648b35392962); executable tasks and evidence [CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md](CURRENT_ORIGINAL_PATCH_TERMINAL_POINTS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
