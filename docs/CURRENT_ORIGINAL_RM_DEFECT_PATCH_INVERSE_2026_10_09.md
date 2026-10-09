@@ -1,3 +1,9 @@
+# Successor: actual leading patch mixed4 and closed radial cells
+
+Checked source [e50bec23](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e50bec23330e72b21af3c2cfa6bfe1db87379de1); evidence/tasks [CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md](CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md). Actual native0,.5 patch now supplies x/y/R mixed4, current raw units and full-support radial cells through exact Rh. Whole-Z, finite-N densities/Rc/all24/global N and real n-recursion remain open. Historical text below is unchanged.
+
+---
+
 # Actual Rm leading five-defect inverse and partial patch
 
 Checked source [1d4903c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1d4903c652476c44ac0d579b71c09e8971b42876). Full reconstruction **ACTIVE / INCOMPLETE**. Actual Rm histories now define the original five defects, feed the anisotropically normalized leading implicit inverse, and provide partial bump velocities, pressure and five cumulative primitives through ordinary Z order5 (Ur through4). Native source frames0,.5 only. The genuine leading repair has strict inclusion, contraction and a common Jacobian for higher coefficients. Whole-axis source functions, full radial mixed4, finite-N Rc/all24/controls/global N and real n-recursion remain open.

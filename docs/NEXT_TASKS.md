@@ -1,3 +1,15 @@
+# Current handoff: actual Rm patch mixed4 and radial cells (2026-10-09)
+
+Checked source [e50bec23](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e50bec23330e72b21af3c2cfa6bfe1db87379de1); detailed evidence/tasks [CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md](CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **FULL LEADING PATCH MIXED4 / RAW CURRENT UNITS / CLOSED CELLS / Rh:** actual coefficients feed original radial RHSs, physical x/y/R derivatives, pressure P0 and partial primitive memory. 810 independent physical and 270 raw-unit comparisons; 3240 native cell/point comparisons; 361 staged dependency hashes PASS. Native0,.5 only; Q Z4; total mixed order<=4.
+- [ ] **NEXT PATCH DENSITY COMPILER / REFERENCE-RESTORATION CELLS / ACTUAL Rsh->Rm FIVE DENSITIES:** connect canonical raw source units, true all-N phase/shear/both levels and full inertial terms; integrate actual source windows without cap-selected fields or lost incoming tails.
+- [ ] **WHOLE-Z / CONTINUOUS CORE-MICRO-RESHAPE / FINITE-N Rc REPAIR / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Leading mixed4/cells do not complete recursive scaling or corrected NS.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm leading inverse and partial patch (2026-10-09)
 
 Checked source [1d4903c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1d4903c652476c44ac0d579b71c09e8971b42876); detailed evidence/tasks [CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md](CURRENT_ORIGINAL_RM_DEFECT_PATCH_INVERSE_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
