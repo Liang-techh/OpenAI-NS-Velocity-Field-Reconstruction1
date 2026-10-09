@@ -1,3 +1,15 @@
+# Current handoff: complete local Rm integrals via original all-u bounds (2026-10-09)
+
+Checked source [92d9608f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92d9608f5c5f3fc0bf7b4e8b9cc045b171cd1834); evidence/tasks [CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-U1/U2 ORIGINAL ALL-u Z BOUNDS / COMPLETE LOCAL INTEGRALS:** inverse identity A=a/2*(phi-psi_fraction) and independently checked Poisson L2/implicit derivative bounds enclose all4 former Z=0 edge cells, retaining nonzero p2_Z/q_Z. Both conditional0,.5 now have complete [1,e] local five-density C0/Z bounds at candidate N257. 22 active cells / 220 weighted rows, 336 independent finite comparisons, 1194 staged dependency hashes PASS.
+- [ ] **RM-U3..U6 NEXT SHARP WEIGHTED BOUNDS / FLAT PEAK REFINEMENT / REAL Rm FINITE-N INLET / COMPLETE Rc ALL24:** original global majorants are coarse bounds, not a replacement field or sharp five-moment closure. Actual incoming correction remains unsupplied; preserve every prefix tail and suffix.
+- [ ] **RM-U7..U11 MIXED JETS / ACTUAL CONE UNIQUE REPAIR WHOLE-Z GLOBAL N / ANALYTIC HEAT ENERGY / STRESS FLAT REAL n-RECURSION / PULSES CORRECTED NS:** OPEN.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm active density atlas and known contributions (2026-10-09)
 
 Checked source [58a422f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/58a422f3a86e4d2e7f2df547367696385c0714ab); evidence/tasks [CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md](CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

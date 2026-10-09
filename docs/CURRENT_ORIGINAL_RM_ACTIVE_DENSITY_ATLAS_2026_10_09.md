@@ -1,3 +1,9 @@
+# Successor: original all-u bounds close all four local source gaps
+
+Checked source [92d9608f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92d9608f5c5f3fc0bf7b4e8b9cc045b171cd1834); evidence/tasks [CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_ALL_U_INTEGRALS_2026_10_09.md). The original inverse/Poisson integral theorem now encloses the four previously unknown Z=0 cells, with genuine nonzero Z derivatives. Both conditional frames have complete local [1,e] C0/Z bounds; sharp defects, actual incoming prefix, moment closure, whole-Z/global N and true n-recursion remain OPEN. The historical partial-atlas evidence below is unchanged.
+
+---
+
 # Actual Rm active source atlas and known five-density C0/Z contributions
 
 Checked source [58a422f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/58a422f3a86e4d2e7f2df547367696385c0714ab). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [whole terminal local integrals](CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md).
