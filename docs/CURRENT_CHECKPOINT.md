@@ -1,3 +1,16 @@
+# Current handoff: complete local downstream finite-N drivers (2026-10-09)
+
+Checked source [8b7f3557](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8b7f3557dcb2ecc4dd961db4441abdae81ece88b); detailed evidence/tasks [CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W4c.1/.2/.3/.4 FIRST CONDITIONAL IMPLEMENTATION:** full reference/restoration/postrestore interval functions, nonzero V_y/general q C0/Z, all five nonlinear finite-N drivers and own-rate suffixes. Twenty-four downstream cells at Z=0,.5 / N257. Local R110-to-Rm source composition now includes the accepted long-window driver and retains the real unknown R110 boundary.
+- [ ] **NEXT RM-W4a.1/.2/.3:** produce genuine earlier current-source correction windows and a real N257 R110 incoming vector. Use current definitions/whole-cell rows; saved N1024, background histories and arithmetic rebasing cannot supply it.
+- [ ] **RM-W4b.4 / W4c.5:** source-bound affine application and real Rm inlet admission remain OPEN. Complete local downstream sources do not equal a complete incoming correction.
+- [ ] **RM-W5..W11:** sharper bounds, Rc/all24, whole-Z/higher jets, actual cone/functional five-moment/global N, heat/energy, stress/flat/actual n-recursion and corrected NS/dynamics remain OPEN.
+
+1075 staged exact dependency hashes PASS; GPT-5.6 Luna/max read-only review. Changed-scope checks only. Historical evidence below is unchanged; mark DONE with scoped evidence and commit.
+
+---
+
 # Current handoff: long-reshape finite-N source drivers (2026-10-09)
 
 Checked source [2f240f3c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f240f3ceb83d5a9ef155358db2f8134cd9b43ff); detailed evidence/tasks [CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_LONG_RESHAPE_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

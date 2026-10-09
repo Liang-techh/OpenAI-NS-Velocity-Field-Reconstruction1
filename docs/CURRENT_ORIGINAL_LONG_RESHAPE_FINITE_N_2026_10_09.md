@@ -1,3 +1,9 @@
+# Successor: downstream source windows now integrated (2026-10-09)
+
+[Current reference/restoration/postrestore finite-N source](CURRENT_ORIGINAL_REFERENCE_RESTORE_FINITE_N_2026_10_09.md) completes the first conditional local RM-W4c.1/.2/.3/.4 implementation and composes all local R110-to-Rm drivers, including the accepted long driver. The genuine R110 boundary is still unsupplied. Real Rm inlet, functional closure, whole-axis control, cone/global N and actual coefficient recursion remain OPEN. Full reconstruction **ACTIVE / INCOMPLETE**. Historical long-window evidence below is unchanged.
+
+---
+
 # Current original R110-to-Rsh finite-N source and local Duhamel
 
 Checked source [2f240f3c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f240f3ceb83d5a9ef155358db2f8134cd9b43ff). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [Rm weighted Z averaging and prefix starting points](CURRENT_ORIGINAL_RM_WEIGHTED_Z_AVERAGING_2026_10_09.md).
