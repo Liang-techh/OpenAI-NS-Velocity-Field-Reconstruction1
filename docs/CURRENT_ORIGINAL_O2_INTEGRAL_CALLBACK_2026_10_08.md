@@ -1,3 +1,9 @@
+# Successor: source-bound route evaluator and explicit affine histories
+
+Source [d07c2bfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d07c2bfc72ece694b93613b8f1f970fc79fc0481) evaluates accepted reference/O2 contribution graph nodes and derives six-route affine outgoing operators while retaining ten unknown upstream functions. Follow [CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md](CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md) for partial-coordinate and genuine-upstream tasks. The services below remain accepted; actual full histories and complete control compatibility are open.
+
+---
+
 # Genuine original O2 five-route C0/Z integral callbacks
 
 Checked source [865cdb36](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/865cdb360a6e228503ff05fbc4e890073bbd01c3). Reference integral callbacks remain accepted in [CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_REFERENCE_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

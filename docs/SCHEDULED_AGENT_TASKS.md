@@ -1,3 +1,15 @@
+# Current handoff: genuine route evaluator and affine histories (2026-10-08)
+
+Checked source [d07c2bfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d07c2bfc72ece694b93613b8f1f970fc79fc0481); evidence and executable tasks [CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md](CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **NODE-AWARE SIX-ROUTE EVALUATION:**60 issued integral nodes,9 original parameter recipes and true phase-derived point sources;120 fresh integral expressions/20 points/120 outgoing affine operators. Ten original upstream functions stay unknown; 1224 staged exact hashes PASS.
+- [ ] **NEXT PARTIAL-COORDINATE HISTORY / GENUINE UPSTREAM DATA:** extend exact reference/O2 subinterval kernels and C0/Z operators, then recover preceding original boundary functions. Assumed boundary actions are conditional and do not give actual full histories. Midplane/continuous-Z and full control compatibility remain open.
+- [ ] **ALL17 SOURCE / ALL24 INTEGRALS / ACTUAL CONTROLS / GLOBAL N / TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging and exact N-dependent order -1/order -2 functions.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: original O2 five-route integral callbacks (2026-10-08)
 
 Checked source [865cdb36](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/865cdb360a6e228503ff05fbc4e890073bbd01c3); evidence and executable tasks [CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
