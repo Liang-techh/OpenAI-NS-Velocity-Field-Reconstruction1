@@ -1,3 +1,15 @@
+# Current handoff: actual Rm conditioned spatial phase and five Z densities (2026-10-09)
+
+Checked source [74761b84](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/74761b8449cea232600811843a0c98aa895fe771); evidence/tasks [CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md](CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-P1/P2 SAME ACTUAL OWNER / ORIGINAL PHASE / A-B Z-PHI / FIVE SIGNED C0-Z DENSITIES:** genuine q_Z retains b terms; p2 supplies R once; actual Rm point/cell phase preserves dyadic logC, analytic logP, inlet width and seam/full-period covers. Candidate N=257, two conditional axial frames only. 64 independent scalar comparisons, 100 native density rows and 1179 staged dependency hashes PASS.
+- [ ] **RM-P3..P7 NEXT TERMINAL/ACTIVE dx/x DENSITY INTEGRATION, CORRELATED BOUNDS, GENUINE y/Z CHAINS, ACTUAL dstar/CONE:** start from the accepted terminal source cell; retain all signed/cross/pressure terms and incoming histories. Do not infer zero integrals from oscillatory mean intuition or transfer old-owner margin proofs.
+- [ ] **RM-P8..P12 RESTORATION/CONTINUOUS ATLAS, CUMULATIVE Rc/FINITE-N ALL24 REPAIR, WHOLE-Z/GLOBAL N, HEAT/ENERGY/STRESS/FLAT, REAL n-RECURSION, PULSES/CORRECTED UVW:** OPEN. Phase/density functions do not complete these stages.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm whole radial positive quotients and q (2026-10-09)
 
 Checked source [b69ce76e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b69ce76e4c32d2561c6704adeb21474e8bc63300); evidence/tasks [CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md](CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

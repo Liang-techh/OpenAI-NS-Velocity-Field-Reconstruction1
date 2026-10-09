@@ -1,3 +1,9 @@
+# Successor: actual Rm source-bound conditioned phase and five Z densities
+
+Checked source [74761b84](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/74761b8449cea232600811843a0c98aa895fe771); evidence/tasks [CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md](CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md). The same actual Rm owner now drives original A/B/Z/phase primitives and all five signed C0/Z densities at actual radius phases, including closed active/terminal source cells. Candidate N=257, conditional frames0,.5. Radial cumulative integration, actual dstar/cone, finite-N Rc/all24/global N, whole-Z and real n-recursion remain OPEN. Historical text below is unchanged.
+
+---
+
 # Actual Rm whole radial positive quotients and original shear q
 
 Checked source [b69ce76e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b69ce76e4c32d2561c6704adeb21474e8bc63300). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [full signed generic inputs](CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md). The new actual leading Rm owner now supplies strictly positive E,C and their product on the entire radial patch x in [1,e], conditional on the two accepted axial frames Z=0,.5. Original a,b,t0,kappa, p1,p2, q and signed u recipes are installed from that same source. Whole-axis admission, the actual owner's dstar/cone margin, finite-N phase/densities/integrals, all24/global N and real n-dependent recursion remain OPEN.
