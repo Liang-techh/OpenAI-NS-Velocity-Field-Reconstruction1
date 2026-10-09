@@ -1,0 +1,41 @@
+# Current original source-bound finite-N prefix through Rh
+
+Checked source [e1aed416](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e1aed41680b81a112426de56dfbee81dbefd4e18). Full reconstruction **ACTIVE / INCOMPLETE**. Upstream: [true micro prefix through Rm](CURRENT_ORIGINAL_MICRO_FINITE_N_2026_10_09.md).
+
+The actual current N257 Rm incoming now reaches Rh at Z=0,.5. The new typed consumer combines the real source-bound prefix with the accepted complete all-u/weighted local Rm patch source. It retains every own-rate incoming memory and the separate analytic P0. This supplies actual conditional boundary C0/Z enclosures; it does not prove small defects, whole-Z functions, terminal functional closure, cone margins or one admitted global N.
+
+## Source and transport
+
+The consumer hydrates the checked micro-prefix, weighted-local and complete all-u reports. It runs neither old source integration producers nor ancestor checkers. Before restoring rows, it binds family, frame, N257, canonical P0, full exact partition, every source Rm factor, exact cell geometry, positive micro phase origin, source hashes and the exact actual endpoint phase records. Both frames have zero unknown local source integrals in the accepted all-u baseline.
+
+The older whole-atlas route at Z0 still has four unresolved cells. It is not called or promoted. The complete accepted all-u baseline covers those cells; the weighted route uses its unchanged direct ordinary Z row and a valid endpoint-retaining C0 bound. No weighted Z averaging or nonlinear mean cancellation is introduced.
+
+All incoming/local rows are restored into one current interval context, formal source basis and ledger. For each of m,h,k,e,p:
+
+    correction_j(Rh) = exp(-lambda_j)*actual_current_correction_j(Rm)
+                       + accepted_complete_local_Rm_Rh_driver_j.
+
+The same equation applies to the ordinary Z row because the original radius endpoints/weights/phase are Z-independent. The exact logarithmic width is log(e/1)=1. Pressure has lambda_p=0 and memory exactly1. Zero local increments never reset nonzero incoming histories. Background moments and P0 are not added to correction rows.
+
+The report exports actual_current_Rm_incoming_correction_C0_Z, accepted_complete_local_Rm_Rh_driver_C0_Z, actual_current_Rh_correction_C0_Z, original_incoming_Rm_to_Rh_decays and exact Rm/Rh factors. The accepted input rows and ordinary Z local rows are preserved bitwise.
+
+## Scoped evidence
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rm_finite_N_prefix.py, .json.gz, _check.py, _check.json. Producer 32.219s, checker 35.657s, both terminal exit0. 1236 exact staged dependency hashes PASS.
+
+Native evidence: 20 actual incoming rows, 20 accepted local rows, 20 actual outgoing rows, 20 complete source cells and 22 exact current endpoint-phase bindings. 19 wrong source/frame/N/P0/radius/phase/partition/inlet cases are rejected. 20 independent nonzero-inlet and zero-local-source memory comparisons pass. One reused read-only GPT-5.6 Luna/max worker mapped the next route. All broad gates remain false.
+
+## Next production: same-current N257 Rh-to-Rc route
+
+- [x] **W4c.5b CONDITIONAL REAL Rh INPUT:** same current source-bound Rm packet consumed by complete accepted local patch, actual Rh C0/Z enclosure at Z0,.5,N257, pressure memory1 retained.
+- [ ] **W4c.5c.1 ORIGINAL TAIL MAP:** identify the original Rh/reference/O2/O3/Rc ordering and exact physical source endpoints. Separate background transitions from support of the generic finite-N modification; record each physical y width and globally anchored phase.
+- [ ] **W4c.5c.2 CURRENT Rh SOURCE JOIN:** bind actual Rh input to the exact current leading Rh source with the same P0, source basis, family, hb, s_c, eta, d_star and N257. Prove equality of defining functions at the seam; row overlap alone is a consistency check.
+- [ ] **W4c.5c.3 CURRENT REFERENCE/TAIL PROVIDER:** hydrate or build a bounded provider for the next original tail source from current actual fields/histories. Retain all nonzero background inertia and derivatives. Do not run old expensive constructors or infer a full provider from graph-range records.
+- [ ] **W4c.5c.4 SAME-N LOCAL DRIVERS:** integrate every genuine reference/O2/O3 support window at N257 with true original measure, all five nonlinear C0/Z densities, endpoint phase and own-rate suffix. Use full-period source enclosures initially where averaging is not yet executable.
+- [ ] **W4c.5c.5 QUIET MEMORY:** every zero-source tail interval still transports the real preceding correction by its exact own-rate memory; pressure memory1. Keep quiet-source proof and transport width separate.
+- [ ] **W4c.5c.6 ACTUAL Rc INPUT:** compose every same-source cell in physical order, guard family/P0/N/frame/radius, export real Rc C0/Z functions/enclosures and scoped receipt. The old current_native_Rc_C1_histories O3 records use N1024 and are not admissible N257 input. Its functional graph alone has no numerical source oracle.
+- [ ] **RM-W5 SHARPNESS:** preserve signed radius/phase/source correlations; improve broad micro/tail bounds and supply genuine slow yZ data before claiming weighted Z averaging.
+- [ ] **RM-W6..W8 FUNCTIONAL CLOSURE:** extend the genuine source to all Z/charts and high jets; repair all five actual terminal functions independently, with axis/pressure/heat matching, cone margins and one global admitted N. Two frames do not establish this.
+- [ ] **RM-W9..W11 COMPLETE RECONSTRUCTION:** exact heat/finite energy, admissible stress/flat remainder, true n-dependent coefficient recursion, mean/pulse stress cancellation, full corrected NS and measured shrinking/elongation/winding.
+
+Mark DONE only with implementation, scoped report/receipt and commit. Continue source production; do not rerun ancestors or substitute the old N1024 tail. Full goal remains active.

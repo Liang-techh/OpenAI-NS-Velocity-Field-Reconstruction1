@@ -1,3 +1,15 @@
+# Current handoff: actual N257 prefix consumed through Rh (2026-10-09)
+
+Checked source [e1aed416](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e1aed41680b81a112426de56dfbee81dbefd4e18); details/tasks [CURRENT_ORIGINAL_RM_FINITE_N_PREFIX_2026_10_09.md](CURRENT_ORIGINAL_RM_FINITE_N_PREFIX_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **W4c.5b CONDITIONAL Rh INPUT:** actual current Rm incoming plus complete all-u/weighted local Rm source now gives real Rh C0/Z enclosures at Z0,.5,N257. Every own-rate memory and analytic P0 retained; no old integration/ancestor checker rerun.
+- [ ] **NEXT W4c.5c.1..6 SAME-CURRENT Rh-to-Rc ROUTE:** exact source tail map, current Rh join/provider, N257 local windows, quiet memories and genuine Rc incoming. Existing N1024 O3 numerical packets and graph-only records cannot substitute for this route.
+- [ ] **RM-W5..W11:** sharper phase/source correlations, all-Z/high-jet terminal functions, five-moment repair/cone/global N, heat/energy, stress/flat/true recursion and corrected NS remain OPEN.
+
+1236 staged hashes PASS; GPT-5.6 Luna/max read-only route map. Historical unknown-Rm/Rh-input statements below are predecessor evidence, superseded conditionally by this source.
+
+---
+
 # Current original source-bound finite-N prefix through Rm
 
 Checked source [d2252bb4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d2252bb48d052d1d16bd648a8a2d09f05ba6f2cc). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessors: [micro background functions](CURRENT_ORIGINAL_MICRO_FUNCTIONS_2026_10_09.md) and [macro local driver](CURRENT_ORIGINAL_MACRO_FINITE_N_2026_10_09.md).
