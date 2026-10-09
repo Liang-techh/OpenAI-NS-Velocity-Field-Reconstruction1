@@ -1,3 +1,16 @@
+# Current handoff: whole-Z genuine same-N correction reaches Rc (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RC_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RC_FINITE_N_2026_10_09.md), checked source [bb59cdea](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bb59cdea04aa69b89d93ed74032fd9af0e44a440). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-4-O3/RC: current whole-Z Rd background/correction adapter, positive source mu/quiet margin, original transition/power functions and genuine N=2^3981 transport through all24 closed cells to Rc.
+- [x] Original P0/radius/global phase, positive critical transition inlet/active-flat alternatives, exact flat power with nonzero inherited memory, separate Rw/Rc background/correction/complete-own and live Rc source. Six scalar kernel evaluations reused18 times.
+- [ ] NEXT real Rc C1 source/integral oracle and five signed defect functions; then controls, contraction/Picard tail and corrected Rc..2Rc terminal identities. Current boundary ranges are not callable function values.
+- [ ] Genuine higher finite-N correction jets, sharp cancellation, global N/cone/heat and temporal n-recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z genuine same-N correction reaches Rd (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RD_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RD_FINITE_N_2026_10_09.md), checked source [02c9c0ec](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/02c9c0ec826ac0789dac0fb5994bb303011c2c10). Full reconstruction **ACTIVE / INCOMPLETE**.
