@@ -1,3 +1,9 @@
+# Successor: actual Rm full signed generic inputs
+
+Checked source [a38f648b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a38f648b11045271de0427c8086c29d6ee2cf101); evidence/tasks [CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md](CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md). The new live leading-patch owner now supplies full signed inertia/shear and relaxed numerators in its five canonical bases. Actual quotient/root/phase/density/integration, whole-Z, finite-N Rc/all24/global N and real n-recursion remain open. Historical text below is unchanged.
+
+---
+
 # Actual leading Rm patch mixed4 and closed radial source cells
 
 Checked source [e50bec23](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e50bec23330e72b21af3c2cfa6bfe1db87379de1). Full reconstruction **ACTIVE / INCOMPLETE**. The actual leading Rm patch now supplies physical velocity, pressure and all five primitives with mixed derivatives of total order<=4 in x=R/Rm, y=logR and R coordinates. Current-radius raw rows and closed radial cells include all three flat bump supports and the exact Rh endpoint. Native Z=0,.5 remain conditional source frames. Whole-axis, actual finite-N density integration/Rc repair/all24/global N and real n-recursion are still open.

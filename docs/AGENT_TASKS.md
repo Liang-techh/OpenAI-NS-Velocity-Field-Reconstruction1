@@ -1,3 +1,15 @@
+# Current handoff: actual Rm full signed generic inputs (2026-10-09)
+
+Checked source [a38f648b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a38f648b11045271de0427c8086c29d6ee2cf101); evidence/tasks [CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md](CURRENT_ORIGINAL_RM_GENERIC_INPUTS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **NEW ACTUAL Rm OWNER / FULL SIGNED GENERIC INPUTS:** preserve five canonical bases/offsets, same P0/current histories; recover full inertial linear/quadratic/pressure/meridional sectors and source relaxed numerators. 184 independent finite diagnostic comparisons, 244 native numerator coefficients and 368 staged dependency hashes PASS. Profiles/histories Z5; full inertia/Q Z4. Native0,.5 only.
+- [ ] **NEXT ACTUAL E/C QUOTIENTS AND q/dstar / EXACT ALL-N PHASE / A/B / FIVE C0/Z DENSITIES / dx/x RADIAL INTEGRALS:** bind the new live owner throughout. Never fall back to the old patch merely because family hashes match; never confuse logRa with the old fourth swirl factor.
+- [ ] **RESTORATION CELLS / WHOLE-Z / CONTINUOUS CORE-MICRO-RESHAPE / FINITE-N Rc / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm patch mixed4 and radial cells (2026-10-09)
 
 Checked source [e50bec23](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e50bec23330e72b21af3c2cfa6bfe1db87379de1); detailed evidence/tasks [CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md](CURRENT_ORIGINAL_RM_PATCH_MIXED4_CELLS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
