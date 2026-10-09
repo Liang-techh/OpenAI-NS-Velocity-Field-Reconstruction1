@@ -1,3 +1,16 @@
+# Current handoff: R100/R110 signed C1 functions (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_SWITCH_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_SWITCH_SIGNED_FUNCTIONS_2026_10_09.md), checked source [40e42dd7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40e42dd7ed3ba23a5a78607ddc020441f6dc492b). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] RC-INNER-SWITCH: three actual signed inverse C0/Z/phase charts, all 24 integral cells and genuine correction-only R100-to-R110 transport with positive microscopic widths and original incoming memories.
+- [x] Ten of seventeen current source charts now expose signed-function evaluation. All switch native domains, including second_switch, are [0,1]; its physical map retains the original one-plus-coordinate offset.
+- [ ] NEXT seven bridge/long charts, the complete source-integral graph and five Rc C1 defect functions; then actual controls, contraction tail and terminal identities.
+- [ ] Genuine higher finite-N jets, global N/cone/heat, temporal n-recursion, pulses and full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current whole-Z signed Rm/Rh functions and C1 correction transport
 
 Checked source [a89109f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a89109f310fc5db36c668c029afdb0ad1df3d18d). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
