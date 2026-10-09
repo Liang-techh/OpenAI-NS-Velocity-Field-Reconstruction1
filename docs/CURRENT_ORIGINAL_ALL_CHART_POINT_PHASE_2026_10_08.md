@@ -1,3 +1,9 @@
+# Successor: genuine reference/O2 point source callbacks
+
+Source [dae49982](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dae49982b9bd6ac22f113432871b272cc8ae754c) installs the first two chart C0/Z source leaf callbacks with actual defining data and errors. Follow [CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md](CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md) for current implementation tasks. The original17 phase module below remains accepted; all17 source coverage, certified integrals and full control evaluation remain open.
+
+---
+
 # Original17-chart exact-point phase with directed errors
 
 Checked source [504cdc78](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/504cdc789e2bb6921a5e61bfbe88a4a1ede0df62). Previous all-N C1 source work [CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md](CURRENT_ORIGINAL_CENTERED_ALL_N_C1_SOURCE_2026_10_08.md) remains accepted. Full reconstruction **ACTIVE / INCOMPLETE**.

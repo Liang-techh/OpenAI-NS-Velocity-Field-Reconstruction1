@@ -1,3 +1,15 @@
+# Current handoff: genuine reference/O2 point source leaves (2026-10-08)
+
+Checked source [dae49982](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dae49982b9bd6ac22f113432871b272cc8ae754c); evidence and ordered tasks [CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md](CURRENT_ORIGINAL_POINT_SOURCE_LEAVES_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **REFERENCE/O2 C0/Z POINT CALLBACKS:** nine genuine frames, 90 root-role dispatches, 80 ordinary directed intervals and 10 enormous derivatives retained factored. Actual new O2 defining point, original pressure/phase/errors, 120 independent scalar comparisons; 1143 staged exact hashes PASS.
+- [ ] **NEXT CERTIFIED SIGNED C0/Z INTEGRAL AND FULL ADAPTER:** begin with reference closed-source own-rate integrals, then O2 and other charts. Partial mode remains rejected by FunctionEvaluator; external-phase validation, parameter/integrate and O3 Rc_E remain open.
+- [ ] **ALL17 SOURCE / ALL24 INTEGRALS / CONTROLS / GLOBAL N / TERMINAL FUNCTIONS / HIGHER JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging AND retained exact N-dependent order -1/order -2 coefficient functions.
+
+Prior handoffs follow byte-for-byte unchanged. Mark DONE only with scoped evidence and a commit.
+
+---
+
 # Current handoff: original17 exact-point phase and source binding (2026-10-08)
 
 Checked source [504cdc78](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/504cdc789e2bb6921a5e61bfbe88a4a1ede0df62); evidence and ordered tasks [CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md](CURRENT_ORIGINAL_ALL_CHART_POINT_PHASE_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
