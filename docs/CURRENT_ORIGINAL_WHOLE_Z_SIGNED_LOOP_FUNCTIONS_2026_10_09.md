@@ -1,3 +1,16 @@
+# Current handoff: signed Rm/Rh C1 transport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_RH_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_RH_SIGNED_FUNCTIONS_2026_10_09.md), checked source [a89109f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a89109f310fc5db36c668c029afdb0ad1df3d18d). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] RC-ORACLE-1-PATCH: current actual_patch signed inverse C0/Z/phase functions, every original dx/x integral cell, genuine same-N correction-only Rm incoming, true suffix kernels and separate signed Rh/background/complete histories.
+- [x] Seven current source charts now expose real signed-function evaluation; accepted outer backend and same-N boundary prefix through Rc remain intact.
+- [ ] NEXT complete ten earlier inner charts, the full source-integral graph and five Rc C1 defect functions; then real controls/contraction tail and terminal identities.
+- [ ] Genuine higher finite-N jets, sharp global N/cone/heat and temporal n-recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current whole-Z signed inverse functions and local C1 integrals
 
 Checked source [d694e76a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d694e76aa26a57c3de55389271219f78e9d57f89). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
