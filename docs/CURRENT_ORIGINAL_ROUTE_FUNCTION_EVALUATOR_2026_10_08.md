@@ -1,3 +1,9 @@
+# Successor: radial-variable partial histories and true endpoint jets
+
+Source [b5aa6669](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5aa66692ef678298edbccc0ea6c44a6c80750d2) extends the accepted six-route operators to arbitrary native-coordinate prefixes/subintervals and true y/Z endpoint derivatives, preserving unknown incoming functions and original P0. Follow [CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md) for preceding source/actual-upstream tasks. The evaluator below remains accepted; full upstream histories, continuous-Z closure and control compatibility remain open.
+
+---
+
 # Genuine accepted-route graph evaluator and affine history operators
 
 Checked source [d07c2bfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d07c2bfc72ece694b93613b8f1f970fc79fc0481). The accepted reference and O2 source/integral services remain in use; previous milestone [CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md](CURRENT_ORIGINAL_O2_INTEGRAL_CALLBACK_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

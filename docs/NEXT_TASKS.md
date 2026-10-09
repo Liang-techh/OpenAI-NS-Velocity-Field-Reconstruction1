@@ -1,3 +1,15 @@
+# Current handoff: radial-variable histories and endpoint jets (2026-10-08)
+
+Checked source [b5aa6669](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5aa66692ef678298edbccc0ea6c44a6c80750d2); evidence and executable tasks [CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_PARTIAL_HISTORY_FUNCTIONS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ARBITRARY-RADIAL REFERENCE/O2 AFFINE HISTORIES:** exact subinterval/prefix kernels and masses, live source/phase covers, true endpoint y/Z derivatives;260 recorded C0/Z results and40 jet rows. Unknown original incoming functions remain; original P0 is unchanged. 1228 staged exact hashes PASS.
+- [ ] **NEXT GENUINE PRECEDING SOURCES / SOURCE-OWNED UPSTREAM DATA:** recover original preceding route C0/Z source functions/integrals and bind ten upstream root results with full provenance; replace current unknown functions only with actual source-owned data. One-sided Y=0 jet identity and continuous-Z remain open.
+- [ ] **ALL17 SOURCE / ALL24 INTEGRALS / ACTUAL CONTROLS / GLOBAL N / TERMINAL FUNCTIONS / JOINS / HEAT / ENERGY / STRESS / FLAT / ACTUAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Preserve complete-target N^-2 averaging and exact N-dependent order -1/order -2 functions.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: genuine route evaluator and affine histories (2026-10-08)
 
 Checked source [d07c2bfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d07c2bfc72ece694b93613b8f1f970fc79fc0481); evidence and executable tasks [CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md](CURRENT_ORIGINAL_ROUTE_FUNCTION_EVALUATOR_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
