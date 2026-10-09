@@ -1,3 +1,16 @@
+# Current handoff: true signed zero-inlet-to-Rc graph complete (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_FULL_SIGNED_TRANSPORT_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_FULL_SIGNED_TRANSPORT_2026_10_09.md), checked source [e2678a9f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e2678a9f7c43f9b89ebab7f80fb490bd62afea63). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] All 17 source charts and 228 original signed C0/Z integral cells now use current predecessor corrections from the defining zero inlet through Rc.
+- [x] Switch and patch stale correction inlets replaced explicitly; original measures, suffixes, memory and separate backgrounds retained. Independent graph fixture and scoped real replay PASS.
+- [ ] NEXT derive the original five Rc defect functions, normalize with positive A_rc=E_original(Rc), connect real controls and prove terminal identities.
+- [ ] Higher finite-N jets, global N/heat/cone, temporal n-recursion, pulses and full corrected NS remain unfinished.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: all 17 signed source charts available (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SIGNED_FUNCTIONS_2026_10_09.md), checked source [63273da9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/63273da91db184ecb7d775f47ac3af69206dd8c5). Full reconstruction **ACTIVE / INCOMPLETE**.
