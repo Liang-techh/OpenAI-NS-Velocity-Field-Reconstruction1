@@ -1,3 +1,16 @@
+# Current handoff: whole-Z finite-N prefix reaches R100 (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_R100_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_R100_FINITE_N_2026_10_09.md), checked source [4e03c518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4e03c518eae18082e352e9124e1ee3c39322f9d6). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-2a/2b-R100: actual source-owned finite-N corrections now cover all Z in[-1,1], with40 radial cells, original signed five C0/Z densities, true own-rate memory and separate R100 background/correction/complete-own incoming.
+- [x] One fresh common candidate N=2^3981 is derived from every live prefix exponent requirement. Existing N257,Z0,.5 Rc results remain separate.
+- [ ] NEXT ALLZ-2c: carry the same new N and whole-Z R100 incoming through first/second switches and post-power to R110, then reshape/implicit Rm controls/Rh/Rref/native O2/O3 to Rc.
+- [ ] Functional terminal repair, sharpness, global N/cone/heat, genuine scale recursion/pulses and full corrected forced NS remain unfinished.
+
+Read the latest source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z actual micro/macro functions (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_MICRO_MACRO_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_MICRO_MACRO_2026_10_09.md), checked source [9c4cfa00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9c4cfa0079a9d1d4496989836cf91527db48e8c9). Full reconstruction **ACTIVE / INCOMPLETE**.
