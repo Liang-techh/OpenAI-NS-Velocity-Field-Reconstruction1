@@ -1,3 +1,15 @@
+# Current handoff: whole-Z leading Rm..Rh closed-cell mixed4 functions installed (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_RH_MIXED4_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_RH_MIXED4_2026_10_09.md), checked source [b5f4cc76](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5f4cc76af0de6f1510916e414d4228859100d37). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-1e-PATCH: original actual leading velocity/pressure/five primitive functions now cover44 closed radial/axial source cells over all Z[-1,1],Rm..Rh, with physical/common-unit x/y/R derivatives through total order4, exact flat support edges and same independent P0.
+- [ ] NEXT ALLZ-2e: build patch-specific generic source/quotients using actual a=(E-2E_y)/E; reference a=.8 is invalid inside active bumps. Recompute signed drivers and carry the already available genuine N=2^3981 Rm correction incoming through true patch own-rate kernels to Rh.
+- [ ] Same-N whole-Z post-Rm/Rref/O2/O3/Rc corrections, high correction jets/final repair, global N/cone/heat and genuine n-dependent recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z source-centered leading Rm controls solved (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RM_CENTERED_CONTROLS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RM_CENTERED_CONTROLS_2026_10_09.md), checked source [3337b7d5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3337b7d52ee2bed5c9e78380ad9275eb1c6cb55f). Full reconstruction **ACTIVE / INCOMPLETE**.
