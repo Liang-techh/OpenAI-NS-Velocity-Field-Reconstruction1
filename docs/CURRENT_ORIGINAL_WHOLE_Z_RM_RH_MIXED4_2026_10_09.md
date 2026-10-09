@@ -1,3 +1,16 @@
+# Current handoff: whole-Z genuine same-N correction prefix reaches Rh (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RH_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RH_FINITE_N_2026_10_09.md), checked source [cee14413](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/cee144135bdc6ec400fdac30055a72f8242af2d0). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-2e-PATCH-SOURCE/DRIVERS/TRANSPORT: actual whole-Z Rm patch generic source, nonconstant correlated shear, full signed finite-N C0/Z drivers and genuine N=2^3981 correction incoming through all 44 closed cells to Rh.
+- [x] Separate actual Rh background, correction and complete-own packets; original own-rate memories and pressure memory exactly 1 are retained.
+- [ ] NEXT ALLZ-2e-Rref: build actual Rh restoration/reference source and carry the new genuine Rh correction to Rref at unchanged N, with actual P0/units/phase/source identities.
+- [ ] Whole-Z O2/O3/Rc corrections, high correction jets/final repair, global N/cone/heat and genuine n-dependent recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current whole-Z leading Rm..Rh patch has closed-cell mixed4 functions
 
 Checked source [b5f4cc76](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b5f4cc76af0de6f1510916e414d4228859100d37). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
