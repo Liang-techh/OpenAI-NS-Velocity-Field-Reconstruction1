@@ -1,3 +1,15 @@
+# Current handoff: original nonlinear frozen-macro F/V functions (2026-10-08)
+
+Checked source [a294374a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a294374adea538c6fe30d3e209f69c994b652934); detailed tasks/evidence [CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ORIGINAL FROZEN MACRO F/V DEFINING INTEGRALS:** native source frames0,.5, finite-width known comparison modes, actual anchored G/F0^2, Z0..5, signed nonlinear correction, complete nonzero exponential remainder and true micro inlet errors. 144 nonlinear kernel comparisons, 120 full product comparisons and 96 I/J quadratures pass; 304 staged exact dependency hashes PASS. Full bridge scope is not promoted.
+- [ ] **NEXT ACTUAL OWN SIX MOMENT FUNCTIONS / TRUE MICRO FUNCTIONS / WHOLE-Z CELLS / FIRST SWITCH / R110 HISTORIES:** use the same actual phi/V source functions and positive Volterra kernels, preserving signed products, core atom errors, P0 and microscopic displacement. Feed the exact R100 source endpoint into the original first-switch graph. Caps and comparison history substitutions cannot close these tasks.
+- [ ] **RESHAPE/RESTORATION / UNIQUE ACTIVE PATCH / ALL24 INTEGRALS / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Accepted finite reshape kernels, general Z calculus and terminal/reference/O2 partial histories remain reusable.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: original finite reshape terminal kernels (2026-10-08)
 
 Checked source [b8202edc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b8202edc168b821314e4763a5e62c2c2eb89e208); detailed tasks/evidence [CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md](CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.

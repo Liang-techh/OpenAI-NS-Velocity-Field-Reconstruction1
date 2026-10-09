@@ -1,3 +1,9 @@
+# Successor: original nonlinear frozen-macro bridge functions
+
+Source [a294374a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a294374adea538c6fe30d3e209f69c994b652934) adds genuine source-bound complete nonlinear macro F/V integrals, actual anchored G/F0^2 and nonzero errors. The three reshape terminal kernels below remain accepted. Follow [CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md) for actual own moments, micro functions, whole-Z cells and first-switch/R110 history completion. Full global N and real coefficient recursion remain open.
+
+---
+
 # Original complete finite long-reshape terminal kernels and upstream tasks
 
 Checked source [b8202edc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b8202edc168b821314e4763a5e62c2c2eb89e208). Full reconstruction **ACTIVE / INCOMPLETE**. This contribution installs enclosures of three original defining finite terminal kernel functions, including ordinary axial derivatives through order5 and nonzero errors. It does not close the source-owned R110 inlet histories. The accepted [general fixed-phase Z backend](CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md), [terminal-patch integrals](CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md), and reference/O2 partial histories remain in use.
