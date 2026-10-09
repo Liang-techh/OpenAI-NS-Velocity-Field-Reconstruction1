@@ -1,3 +1,9 @@
+# Successor: actual Rm active source atlas and known whole-patch contributions
+
+Checked source [58a422f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/58a422f3a86e4d2e7f2df547367696385c0714ab); evidence/tasks [CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md](CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md). Actual active source integration now completes local [1,e] C0/Z bounds at conditional Z=.5. Z=0 retains four explicit unknown flat-edge signed-u cells. Real incoming correction, sharp moment closure, whole-Z/global N and true n-recursion remain OPEN. Historical terminal evidence below is unchanged.
+
+---
+
 # Actual Rm whole terminal five-density C0/Z Duhamel integrals
 
 Checked source [a5057a30](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a5057a30f06a0d31f8f71c135d37dacf3842e7ff). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [source-bound Rm phase and five Z densities](CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md). The new actual Rm source now has signed local five-density C0/Z integral enclosures over the full terminal window x in [71/40,e], at the two conditional axial frames0,.5 and candidate N=257. Four closed radial cells per frame are transported to the same exact Rh=e. This is a source-function enclosure and affine inlet operator, not an evaluated complete finite-N prefix, corrected Rh history, five-terminal closure, global N or true n-recursion.

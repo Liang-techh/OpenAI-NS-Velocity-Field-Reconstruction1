@@ -1,3 +1,15 @@
+# Current handoff: actual Rm active density atlas and known contributions (2026-10-09)
+
+Checked source [58a422f3](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/58a422f3a86e4d2e7f2df547367696385c0714ab); evidence/tasks [CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md](CURRENT_ORIGINAL_RM_ACTIVE_DENSITY_ATLAS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-A1/A2 ACTUAL ACTIVE ATLAS / KNOWN INTEGRALS:** exact six support edges, 18 resolved source cells / 180 weighted C0/Z rows across conditional0,.5, correct dx/x and own-rate suffixes into the accepted terminal tail. At Z=.5, local [1,e] integration is complete; Z=0 has four explicit unknown cells. Candidate N=257. 240 exact finite comparisons and 1190 staged dependency hashes PASS.
+- [ ] **RM-A3..A5 NEXT FOUR Z=0 FLAT EDGE SIGNED-u CELLS:** [49/40,197/160], [203/160,51/40], [69/40,277/160], [283/160,71/40]. Original u interval spans zero; this is not an exact-root/singularity proof. Preserve actual p2/q Z rows, prove the original small/signed branches, then integrate all missing source terms. Delta<0/sigma1 is already proven, so no new q-cutoff adapter is needed for these frames.
+- [ ] **RM-A6..A14 SHARP BOUNDS / API DEPTH / REAL Rm PREFIX / Rc ALL24 / MIXED JETS / ACTUAL CONE AND FINITE-N REPAIR / WHOLE-Z HEAT ENERGY / STRESS FLAT / REAL n-RECURSION / PULSES CORRECTED NS:** OPEN. Rm incoming correction remains unsupplied; unknown source integrals are never zeroed.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm terminal five-density C0/Z integrals (2026-10-09)
 
 Checked source [a5057a30](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a5057a30f06a0d31f8f71c135d37dacf3842e7ff); evidence/tasks [CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
