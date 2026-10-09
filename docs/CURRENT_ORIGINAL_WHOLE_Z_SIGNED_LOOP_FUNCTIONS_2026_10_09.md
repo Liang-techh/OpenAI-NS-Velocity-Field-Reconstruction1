@@ -1,0 +1,45 @@
+# Current whole-Z signed inverse functions and local C1 integrals
+
+Checked source [d694e76a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d694e76aa26a57c3de55389271219f78e9d57f89). Full forced-NS reconstruction **ACTIVE / INCOMPLETE**.
+
+RC-ORACLE-1-OUTER is complete: actual inverse-defined signed loop functions now use the current whole-Z source, current N=2^3981 and original global radius phase on six outer charts. Their primitive C0/Z/phase derivatives and exact nonlinear C0/Z densities are evaluated directly. Local signed C1 integral enclosures use the original physical measure. The full inner-to-Rc oracle, five complete defect functions and terminal controls remain open. This is progress toward the function oracle; it does not complete temporal scale recursion.
+
+## Live function interface
+
+WholeZSignedLoopFunctions owns the checked current whole-Z O3/Rc source and preserves the original source family, independent P0, five-slot MacroFlow basis and N. query(ends, chart, left, right=None) accepts exact rational coordinates and evaluates the defining implicit inverse; local_integral(ends, chart, left, right) encloses its own-rate C0/Z integral. The four closed Z cells cover[-1,1]. Current callable charts are Rh_reference, O2_slope, O2_axial, O2_buffer, O3_transition and O3_power. No scalar field value is selected from a support cap, interval endpoint or midpoint.
+
+Source queries use fresh original leading-source packets from current checked owners. Original q/q_Z and roots a,t0,E,p2 with ordinary Z derivatives are retained. No ancestor contribution replay or old saved-label source owner is used. The admitted Z-only derivative body is reused unchanged with a conditional signed-u geometry; no y or mixed correction slots are fabricated.
+
+The genuine signed-u cover retains negative, central and positive alternatives, including zero-crossing geometry. Each conditional inverse and each supplied periodic phase piece is evaluated before the exact nonlinear density is formed. Alternatives are then unioned, not summed. The actual A/N condition is checked before exponentiation. A failure to enclose the inverse raises an error rather than substituting all-u support majorants.
+
+## Original global phase and integration measure
+
+Phase is frac(N*(logRm + chart_offset - logRa - hb*s_c/2)), using the existing actual Rm radius binding. The microscopic hb*s_c/2 error remains in that binding. Original outer offsets are 6+t on Rh/reference and O2 slope, 6+exp(40*t) on O2 axial, 6+exp(40)+t on O2 buffer, 17+exp(40)+t on O3 transition and 18+exp(40)+t on O3 power. Giant physical radii stay formal.
+
+An adaptive directed analytic precision greater than1200 digits resolves multiplication by the3982-bit N. Circular addition preserves both seam pieces; a full-period cover is used only when the actual image spans a period. Actual point phase covers remain narrow. Phase is not a supplied free angle and is not restarted at chart joins. Its ordinary Z derivative is exactly zero because these source radii are Z-independent.
+
+Local integrals apply exp(-rate*(y_right-y)) and the original dy exactly once. The axial physical width is exp(40*left)*expm1(40*(right-left)); other current outer widths are right-left. The original positive own-rate mass multiplies the live signed function extension. Ordinary Z differentiation passes under fixed Z-independent limits. These are directed rectangle enclosures of defined local integrals, not selected numerical integral values. No incoming correction is supplied or reset here; complete prefix transport still needs assembly.
+
+## Evidence
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_compliant_current_original_whole_Z_signed_loop_functions.py, .json.gz, _check.py, _check.json. Producer 178.859s; checker 186.094s; terminal PASS. Replay counts: {"actual_full_period_integral_phase_covers": 8, "actual_local_C1_integral_queries": 8, "actual_local_integral_C0_Z_rows": 80, "actual_source_function_queries": 32, "direct_signed_primitive_rows": 360, "exact_directed_interval_rows": 43926, "flat_inverse_alternatives": 14, "nonflat_directed_inverse_alternatives": 46, "nonlinear_signed_density_rows": 600, "typed_rejections": 8}. Staged dependency audit binds 1109 exact input hashes.
+
+Fresh replay covers24 actual point queries (six charts on four Z cells) and eight local integral queries. Independent original scalar inverse diagnostics include positive/negative Mobius, small-r and zero-crossing geometry,64 primitive/Z/phase/density comparisons. Thirty independent signed C0/Z integral comparisons exercise the true axial, slope and power measure. Scalar finite differences are diagnostics; directed inverse proofs and positive integral mass bounds supply the enclosure certificate. Wrong domains, coordinate types and zero-length integrals are rejected.
+
+The earlier same-N boundary/history prefix through Rc remains accepted. This new adapter does not claim that its own local integrals already reconstruct that whole prefix. actual_full_prefix_C1_defect_functions_installed, actual_terminal_controls_installed and actual_global_frequency_admitted remain false. Five-moment closure, exact heat exterior, global stress cone, temporal recursion and full corrected NS remain unfinished.
+
+## Ordered production tasks
+
+- [x] **ALLZ-1..4** Whole-Z original leading sources and genuine same-N boundary/history correction prefix through Rc; independent P0, actual radii, positive source mu, active/flat transition and quiet-power inherited memory.
+- [x] **RC-ORACLE-1-OUTER** Six current outer source charts expose genuine signed inverse C0/Z/phase functions, nonlinear densities and local signed C1 integral enclosures with the actual global phase and true Jacobian.
+- [ ] **RC-ORACLE-1-INNER** Extend the same adapter to every original inner-to-Rh chart. Reuse current whole-Z micro/macro, R100, R110, long/Rm and Rm-patch source queries; identify exact rational chart domains and original log-radius maps. Preserve live roots/q_Z/P0, the same source ledger/N and exact phase origin. Do not replace unavailable y derivatives by zero, replay ancestor contribution producers, or turn saved support covers into source values.
+- [ ] **RC-ORACLE-2-INTEGRATE** Build the complete original ordered cell graph from the live source queries. Integrate the actual signed nonlinear driver and its ordinary Z derivative on each cell using the original physical Jacobian and own-rate suffix kernel. Retain every incoming correction and rate-zero pressure memory exactly once. Include all real source cells, not only the24 point demonstrations. Bind current family/source/radius/P0/N and graph hashes explicitly.
+- [ ] **RC-C1-TARGETS** Export five callable signed C1(Z) defect functions at Rc. Normalize as N*(D_m/A, (D_k/A^2-D_m/A)/mu, D_h/A, D_e/A^2, D_p/A^2). Keep the mixed numerator jointly before division, preserve positive formal mu and the source amplitude/Z derivative. Prove subtraction of the same background/P0 if complete histories are used. Do not label boundary caps as five functions.
+- [ ] **RC-CONTROLS** Bind actual target functions to the original B(mu)h+d(Z)+Q(mu,h)/N=0 repair operator. Compute finite Picard controls, prove C1 contraction and a certified tail, then install unique terminal controls. A finite iterate or overlapping intervals cannot be declared terminal zero. Current N=2^3981 is a correction-prefix budget; prove one globally admitted N after all higher-jet/global requirements.
+- [ ] **RC-TERMINAL** Apply those controls on corrected Rc..2Rc functions and exact partial-band transport. Prove five terminal Z-function identities and first-Z identities, preserve independent analytic preheat P0, original joins and heat-tail compatibility. A few sampled Z values are insufficient.
+- [ ] **FINITE-N-JETS** Add genuine y/yZ/yy correction functions with D_y=f-rate*D, D_yZ=f_Z-rate*D_Z and D_yy=f_y_total-rate*D_y. Use actual loop/inverse/global phase derivatives. Preserve the N^0 higher-y sidecar. Leading axial5 and support bounds do not supply these correction jets.
+- [ ] **GLOBAL-BACKGROUND** Establish sharp cancellation/normalization, a single admitted N, exact heat exterior, finite energy and the complete admissible stress cone. Keep stress and flat remainder separate.
+- [ ] **TEMPORAL-RECURSION** Implement the paper's distinct n=1 and n>=2 recovery equations, per-order five-moment repair, divergence-preserving cutoffs, finite-order remainder and smooth summation. Picard control iterations and spatial scaling alone are not temporal coefficient recursion.
+- [ ] **OSCILLATORY/FULL-NS** Install two pulse families and averaged quadratic stress cancellation; then measure full forced-NS residual and physical core shrinkage, relative axial elongation and cumulative material winding.
+
+Mark each completed task with implementation, report, terminal receipt and source commit. Full reconstruction stays active.

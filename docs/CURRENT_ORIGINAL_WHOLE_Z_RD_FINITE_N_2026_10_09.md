@@ -1,3 +1,16 @@
+# Current handoff: whole-Z signed inverse functions (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_SIGNED_LOOP_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_SIGNED_LOOP_FUNCTIONS_2026_10_09.md), checked source [d694e76a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d694e76aa26a57c3de55389271219f78e9d57f89). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] RC-ORACLE-1-OUTER: six live outer source charts, actual N=2^3981 global radius phase, signed inverse C0/Z/phase functions, nonlinear densities and local C1 integral enclosures.24 point queries and eight local integrals replayed on four complete Z cells.
+- [x] Existing genuine same-N correction boundary/history prefix through Rc remains accepted. Support caps are not selected function values; no fabricated y jets or reset incoming histories.
+- [ ] NEXT extend genuine source/integral functions to inner-to-Rh charts, assemble complete five signed Rc C1 defect functions, then actual controls/contraction tail and corrected Rc..2Rc terminal identities.
+- [ ] Higher finite-N jets, sharp bounds, global N/cone/heat, temporal n-recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z genuine same-N correction reaches Rc (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RC_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RC_FINITE_N_2026_10_09.md), checked source [bb59cdea](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bb59cdea04aa69b89d93ed74032fd9af0e44a440). Full reconstruction **ACTIVE / INCOMPLETE**.
