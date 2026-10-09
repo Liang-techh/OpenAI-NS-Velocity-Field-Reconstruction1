@@ -1,3 +1,9 @@
+# Successor: original complete finite terminal reshape kernels
+
+Source [b8202edc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b8202edc168b821314e4763a5e62c2c2eb89e208) adds the three original finite terminal kernel functions with genuine whole-axis source bindings, ordinary Z0..5, nonzero errors and incoming decay. The general fixed-phase Z backend below remains accepted. Follow [CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md](CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md) for coupled actual bridge/first-switch/R110 history tasks and later active-patch completion. The six terminal transport formulas retain unknown R110 inlets; full controls, global N, recursion and corrected UVW remain open.
+
+---
+
 # General conditioned fixed-phase Z derivatives and active-patch source tasks
 
 Checked source [3d69b9ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3d69b9ef628c4ac923f427f72fc19c07b7282869). Accepted [terminal-patch integrals](CURRENT_ORIGINAL_PATCH_TERMINAL_INTEGRALS_2026_10_08.md), genuine terminal source points and original reference/O2 partial histories remain in use. Full reconstruction **ACTIVE / INCOMPLETE**.

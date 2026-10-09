@@ -1,3 +1,15 @@
+# Current handoff: original finite reshape terminal kernels (2026-10-08)
+
+Checked source [b8202edc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b8202edc168b821314e4763a5e62c2c2eb89e208); detailed tasks/evidence [CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md](CURRENT_ORIGINAL_RESHAPE_TERMINAL_KERNELS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **THREE ORIGINAL COMPLETE FINITE TERMINAL KERNEL FUNCTIONS:** theta, pressure and swirl enclosures with genuine whole-axis B(Z), frozen source T=400*Abar, ordinary Z0..5 and nonzero body/tail/incoming errors. 54 complete finite independent coefficient integrals, 36 tail-moment integrals, 18 native source containments and 12 guards pass; 323 staged exact dependency hashes PASS. Leading1/k remains main term plus error. Six terminal history formulas remain affine in unknown original R110 functions.
+- [ ] **NEXT: COUPLED ACTUAL BRIDGE F/V, THEN FIRST SWITCH AND R110 HISTORY FUNCTIONS:** recover defining signed source integrals with genuine F0(Z)^2, original pressure, tiny hb/log-radius phase and explicit integration/Z errors. Gbar, symmetric drive caps and prebounded packets are bounds, not selected field values. Bind the recovered R110 histories into the completed terminal kernels and actual Rsh/reference restoration; then recover the unique implicit active patch.
+- [ ] **ACTIVE SOURCE / FULL PATCH / CONTINUOUS Z / ALL17 SOURCES / ALL24 INTEGRALS / FIVE CONTROLS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Accepted terminal/reference/O2 partial integrals, affine histories and the general fixed-phase Z backend remain reusable. This contribution does not establish full velocity reconstruction or scale recursion.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: varying-shear fixed-phase Z backend (2026-10-08)
 
 Checked source [3d69b9ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3d69b9ef628c4ac923f427f72fc19c07b7282869); detailed tasks/evidence [CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md](CURRENT_GENERAL_CONDITIONED_SLOW_Z_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
