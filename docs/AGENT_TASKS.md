@@ -1,3 +1,16 @@
+# Current handoff: all 17 signed source charts available (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SIGNED_FUNCTIONS_2026_10_09.md), checked source [63273da9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/63273da91db184ecb7d775f47ac3af69206dd8c5). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Remaining three bridge signed functions and all 40 original true-measure integral cells from the source-defined zero correction inlet through R100.
+- [x] All seventeen current source charts expose actual signed-function evaluation, with background/correction/complete histories separate.
+- [ ] NEXT wire the newly computed bridge R100 -> switch R110 -> long Rm -> patch Rh -> outer Rc outputs, then produce five actual Rc C1 defects/controls/terminal identities.
+- [ ] Higher finite-N jets, global N/heat/cone, genuine temporal n-recursion, pulses and full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: long/reference signed C1 transport through Rm (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_LONG_RM_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_LONG_RM_SIGNED_FUNCTIONS_2026_10_09.md), checked source [596cc67e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/596cc67e67c86413a4d478fd11c3274417b41598). Full reconstruction **ACTIVE / INCOMPLETE**.
