@@ -1,3 +1,15 @@
+# Current handoff: actual second switch and two-frame R110 source functions (2026-10-09)
+
+Checked source [33e1fea2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/33e1fea2f6c8fe0497200d02e1b32aa7f1825e06); detailed evidence/tasks [CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md](CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL SECOND SWITCH / R110 TRANSPORT:** shifted original radius, sigma-weighted angular interpolation, exact V memory, six actual histories, nonzero R2 displacement, original post-power weights, physical Q/velocity/pressure and genuine anchored B. 144 second-switch moment, 168 post-power integral and 260 physical-unit comparisons; 323 staged dependency hashes PASS. Native0,.5; upstream micro and whole-Z closure remain open.
+- [ ] **NEXT TRUE-B LONG RESHAPE / ACTUAL TERMINAL HISTORIES / REFERENCE-RESTORATION:** bind these R110 fields, six inlets, V110/E and separate P0 into the accepted complete finite kernels with original T=400A and nonzero source/body/tail errors. Preserve inherited Rsh/Rm memory.
+- [ ] **MICRO / WHOLE-Z / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN. Accepted predecessors and downstream partial machinery remain reusable.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual original first-switch functions (2026-10-09)
 
 Checked source [0cbd7d97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0cbd7d97b1ab5b9c8306cf5efd0f1d94a4bb5f89); detailed evidence/tasks [CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_FIRST_SWITCH_FUNCTIONS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

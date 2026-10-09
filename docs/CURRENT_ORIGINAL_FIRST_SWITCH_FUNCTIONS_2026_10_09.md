@@ -1,3 +1,9 @@
+# Successor: actual second switch and source-owned R110 transport
+
+Source [33e1fea2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/33e1fea2f6c8fe0497200d02e1b32aa7f1825e06) adds the true shifted second switch, six-history transport through original power weights to105/110, physical pressure/velocity and anchored log B. The first-switch functions below remain accepted. Follow [CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md](CURRENT_ORIGINAL_SECOND_SWITCH_R110_2026_10_09.md) for actual long-reshape terminal histories, reference/restoration and remaining source/global tasks. Upstream micro, whole-Z, global N and real coefficient recursion remain open.
+
+---
+
 # Actual original first-switch field and six-history functions
 
 Checked source [0cbd7d97](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0cbd7d97b1ab5b9c8306cf5efd0f1d94a4bb5f89). Full reconstruction **ACTIVE / INCOMPLETE**. The original first switch R=100*exp(hb*s), 0<=s<=1, now has actual phi/V and six actual moment function enclosures, signed factored increments and their defining phase ODE rows. Complete weighted-sigma source integrals, current-radius comparison modes, microscopic geometry/Jacobian and nonzero remainders are retained. Native frames Z=0,.5 and exact rational phases are admitted. Second switch, R110, both original micro providers, whole-Z coverage and global reconstruction remain open.
