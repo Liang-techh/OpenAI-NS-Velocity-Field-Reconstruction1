@@ -1,3 +1,16 @@
+# Current handoff: original coupled microscopic background functions (2026-10-09)
+
+Checked source [2a3373a0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2a3373a0e1f515af9dcb78c96ed467ca93a78f57); details/tasks [CURRENT_ORIGINAL_MICRO_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_MICRO_FUNCTIONS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-W4a.2.2a/b CONDITIONAL SOURCE BASELINE:** both original Ra micro windows now provide whole-cell actual phi/V, radial derivatives and cumulative six core histories at Z=0,.5. Original chi acts in both equations; true hb measure and nonlinear errors remain. 16 cells / 128 independent ODE comparisons pass.
+- [ ] **NEXT RM-W4a.2.2c / .2.1 / .2.3a/b:** typed exact-source R0 join, true positive r_minus Section 11 input and actual first/second finite-N correction integration. Background source completeness does not supply the real R0 correction.
+- [ ] **RM-W4a.2.5 / .3 / W4b.4 / W4c.5:** actual R100/R110/Rm correction admission remains OPEN; accepted local downstream drivers await the real prefix.
+- [ ] **RM-W5..W11:** source correlations, Rc/all24, whole-Z/high jets, functional closure/cone/global N, heat/energy, stress/flat/actual recursion and corrected NS remain OPEN.
+
+1088 exact staged hashes PASS; one reused GPT-5.6 Luna/max read-only worker. Historical evidence below is unchanged.
+
+---
+
 # Current handoff: original frozen-macro finite-N local source complete (2026-10-09)
 
 Checked source [ee2d1a3b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ee2d1a3bdf7a2288ec9974ef259bb5751f713a2d); detailed evidence/tasks [CURRENT_ORIGINAL_MACRO_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_MACRO_FINITE_N_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

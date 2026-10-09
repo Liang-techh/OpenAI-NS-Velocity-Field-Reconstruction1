@@ -1,3 +1,9 @@
+# Successor: original Ra microscopic source functions implemented (2026-10-09)
+
+[Current original micro functions](CURRENT_ORIGINAL_MICRO_FUNCTIONS_2026_10_09.md) provides the first conditional RM-W4a.2.2a/b source baseline at Z=0,.5. It retains actual core histories and both original coupled controls. The true finite-N micro-exit correction is still missing; typed source-join/Section11 input and both micro density integrations remain required. Full reconstruction **ACTIVE / INCOMPLETE**. Historical macro evidence below is unchanged.
+
+---
+
 # Current original frozen-macro finite-N source
 
 Checked source [ee2d1a3b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ee2d1a3bdf7a2288ec9974ef259bb5751f713a2d). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [current original R100-to-R110 local drivers](CURRENT_ORIGINAL_SWITCH_FINITE_N_2026_10_09.md).
