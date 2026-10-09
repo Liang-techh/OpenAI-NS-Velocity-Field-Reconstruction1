@@ -1,3 +1,16 @@
+# Current handoff: whole-Z genuine same-N correction reaches Rd (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RD_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RD_FINITE_N_2026_10_09.md), checked source [02c9c0ec](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/02c9c0ec826ac0789dac0fb5994bb303011c2c10). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] ALLZ-3-O2-AXIAL/BUFFER: actual original turnoff functions, exact a2/Delta=b^2/2 and genuine N=2^3981 slope-exit incoming through all28 closed cells to Rd.
+- [x] True exponential axial lengths/full11-unit buffer, retained nonzero kernel/far-tail memory, original P0/global phase, separate axial/Rd background/correction/complete-own and live Rd source. Six kernel evaluations reused38 times.
+- [ ] NEXT whole-Z O3/Rc: current Rd background and correction adapter, source-bound positive mu/quiet margin, original transition/power kernels and true widths1/2.
+- [ ] High correction jets/final repair, sharp cancellation bounds, global N/cone/heat and genuine n-dependent recursion/pulses/full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: whole-Z genuine same-N correction reaches O2 slope exit (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_O2_SLOPE_FINITE_N_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_O2_SLOPE_FINITE_N_2026_10_09.md), checked source [bb307362](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bb30736259a3327a31d63eb0317f23813eb765ca). Full reconstruction **ACTIVE / INCOMPLETE**.
