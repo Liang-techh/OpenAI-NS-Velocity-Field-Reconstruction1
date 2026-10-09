@@ -1,3 +1,9 @@
+# Successor: original actual frozen-macro six moment functions
+
+Source [d3eb501b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3eb501b7573fbe00009ccb79fb67becdf921fdb) adds actual H/M/K/A/B/C finite integrals, signed quadratic source products, original micro inlet transport and complete nonzero errors. The original macro F/V functions below remain accepted. Follow [CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md) for the exact R100 adapter, switch/R110 functions, micro/whole-Z completion and downstream tasks. Global N and actual coefficient recursion remain open.
+
+---
+
 # Original complete nonlinear frozen-macro F/V functions
 
 Checked source [a294374a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a294374adea538c6fe30d3e209f69c994b652934). Full reconstruction **ACTIVE / INCOMPLETE**. The actual bridge's frozen macro segment now has a defining nonlinear F/V integral evaluator with signed source transport and explicit nonzero errors. Native source frames Z=0,.5 and exact rational macro fractions are admitted. This does not close the micro segments, actual own moments, first switch or whole-Z bridge.

@@ -1,3 +1,15 @@
+# Current handoff: actual original frozen-macro six moment functions (2026-10-08)
+
+Checked source [d3eb501b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d3eb501b7573fbe00009ccb79fb67becdf921fdb); detailed evidence/tasks [CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_MOMENTS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **ACTUAL MACRO H/M/K/A/B/C FUNCTIONS:** complete finite Volterra integrals of the original nonlinear phi/V, signed quadratic products, actual micro inlet transport and nonzero exponential/source errors, ordinary Z0..5 and radial ODE rows. 144 independent nonlinear history integrals, 144 ODE comparisons, 210 symbolic identities; 308 staged dependency hashes PASS. Native frames0,.5; complete bridge scope stays open.
+- [ ] **NEXT R100 ENDPOINT ADAPTER / FIRST SWITCH / SECOND SWITCH / TRUE R110 FUNCTIONS:** pass actual phi/V and H/M/K/A/B/C with Q, same-source F0 ratios and separate P0 into defining original switch equations. Preserve geometry, tiny phase displacement and nonzero source errors.
+- [ ] **MICRO FUNCTIONS / WHOLE-Z CELLS / RESHAPE-RESTORATION / UNIQUE ACTIVE PATCH / ALL24 / FIVE TERMINAL FUNCTIONS / GLOBAL N / JOINS / HEAT / ENERGY / STRESS / FLAT / REAL n-RECURSION / PULSES / CORRECTED UVW:** OPEN; accepted source functions and downstream partial machinery remain reusable.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: original nonlinear frozen-macro F/V functions (2026-10-08)
 
 Checked source [a294374a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a294374adea538c6fe30d3e209f69c994b652934); detailed tasks/evidence [CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md](CURRENT_ORIGINAL_BRIDGE_MACRO_FUNCTIONS_2026_10_08.md). Full reconstruction **ACTIVE / INCOMPLETE**.
