@@ -1,3 +1,16 @@
+# Current handoff: actual Rc relative defects/targets installed (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RC_RELATIVE_DEFECTS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RC_RELATIVE_DEFECTS_2026_10_09.md), checked source [394c5a67](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/394c5a6774243061a65191c5410951cb425fad57). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Callable same-input Section 11 Rc relative C1 defects, physical units, actual A_rc/mu normalization and first-Z rules installed. Narrow independent/real replay PASS; unchanged full integration reused explicitly.
+- [x] Actual fixed-N repair diagnostic computed. N=2^3981 fails the conservative sufficient C1 contraction bound; this is not a nonexistence proof.
+- [ ] NEXT derive sharp joint cancellation or actual uniform all-N bounds, justify finite N, and construct genuine controls/terminal identities.
+- [ ] Fixed input exterior closure, higher finite-N jets, global N/heat/cone, temporal n-recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: true signed zero-inlet-to-Rc graph complete (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_FULL_SIGNED_TRANSPORT_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_FULL_SIGNED_TRANSPORT_2026_10_09.md), checked source [e2678a9f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e2678a9f7c43f9b89ebab7f80fb490bd62afea63). Full reconstruction **ACTIVE / INCOMPLETE**.
