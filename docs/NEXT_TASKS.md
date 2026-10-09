@@ -1,3 +1,15 @@
+# Current handoff: actual Rm terminal five-density C0/Z integrals (2026-10-09)
+
+Checked source [a5057a30](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a5057a30f06a0d31f8f71c135d37dacf3842e7ff); evidence/tasks [CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] **RM-I1/I2 FULL TERMINAL LOCAL INTEGRALS / CONDITIONAL INLET TRANSPORT:** [71/40,e] at conditional Z=0,.5 and candidate N=257; true dx/x, own rates1,3/2,3/2,1,0 and every downstream suffix. 20 terminal C0/Z rows, 80 source-cell rows, 120 exact finite comparisons and 1186 staged dependency hashes PASS. Real finite-N incoming correction remains unsupplied; P0 and leading memories are separate.
+- [ ] **RM-I3..I6 NEXT SHARP TERMINAL BOUNDS, ACTIVE [1,71/40] SOURCE INTEGRALS, REAL PREFIX AND COMPLETE Rc/ALL24 FUNCTIONS:** retain phase/slow terms, both N levels, signed sources, incoming tails and all suffixes. Range bounds alone do not prove a small defect or five-moment closure.
+- [ ] **RM-I7..I11 GENUINE MIXED DERIVATIVES, ACTUAL dstar/CONE, FINITE-N UNIQUE REPAIR/WHOLE-Z/GLOBAL N, HEAT/ENERGY/STRESS/FLAT, REAL n-RECURSION, PULSES/CORRECTED UVW:** OPEN.
+
+Historical handoffs below remain unchanged. Mark DONE with scoped evidence and a commit.
+
+---
+
 # Current handoff: actual Rm conditioned spatial phase and five Z densities (2026-10-09)
 
 Checked source [74761b84](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/74761b8449cea232600811843a0c98aa895fe771); evidence/tasks [CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md](CURRENT_ORIGINAL_RM_PHASE_DENSITIES_2026_10_09.md). Full reconstruction **ACTIVE / INCOMPLETE**.

@@ -1,3 +1,9 @@
+# Successor: actual Rm whole terminal five-density C0/Z integrals
+
+Checked source [a5057a30](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a5057a30f06a0d31f8f71c135d37dacf3842e7ff); evidence/tasks [CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md](CURRENT_ORIGINAL_RM_TERMINAL_INTEGRALS_2026_10_09.md). Actual source-cell densities now give weighted dx/x local C0/Z integral enclosures over [71/40,e], with cell-to-Rh suffixes and explicit conditional incoming transport. Native0,.5 at candidate N=257. The real finite-N prefix remains unsupplied; sharp bounds, active-source integration, cumulative Rc/all24/repair/global N, whole-Z and real n-recursion remain OPEN. Historical text below is unchanged.
+
+---
+
 # Actual Rm source-bound conditioned phase and five signed Z densities
 
 Checked source [74761b84](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/74761b8449cea232600811843a0c98aa895fe771). Full reconstruction **ACTIVE / INCOMPLETE**. Predecessor: [whole radial positive quotients/q](CURRENT_ORIGINAL_RM_POSITIVE_QUOTIENTS_Q_2026_10_09.md). The new actual Rm owner now feeds the original conditioned phase inverse, A/B, first Z/phase derivatives and all five signed C0/Z density kernels, with its own exact radius phase at explicit candidate N=257. Native evidence covers active x=5/4, terminal x=2, exact Rh=e, one narrow active closed cell and the whole terminal cell [71/40,e], at the two conditional axial frames0,.5. This is a local source-function layer, not cumulative radial integration, finite-N moment repair, global frequency or stress-cone admission.
