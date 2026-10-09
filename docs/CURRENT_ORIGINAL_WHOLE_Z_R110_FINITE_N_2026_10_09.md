@@ -1,3 +1,16 @@
+# Current handoff: long/reference signed C1 transport through Rm (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_LONG_RM_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_LONG_RM_SIGNED_FUNCTIONS_2026_10_09.md), checked source [596cc67e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/596cc67e67c86413a4d478fd11c3274417b41598). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Four actual long/reference signed source charts, nested roots and adaptive source-bound phase; all 32 current cells with T/gap/1/1 measures and genuine current signed R110-to-Rm transport.
+- [x] Fourteen of seventeen current source charts expose signed-function evaluation. Background, signed correction and complete histories remain distinct.
+- [ ] NEXT three bridge source charts, then explicitly wire the complete inlet-to-Rc signed integral chain and produce five actual Rc C1 defects/controls/terminal identities.
+- [ ] Higher finite-N jets, global N/cone/heat, genuine temporal n-recursion, pulses and full corrected NS remain unfinished.
+
+Read this current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: R100/R110 signed C1 functions (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_SWITCH_SIGNED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_SWITCH_SIGNED_FUNCTIONS_2026_10_09.md), checked source [40e42dd7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/40e42dd7ed3ba23a5a78607ddc020441f6dc492b). Full reconstruction **ACTIVE / INCOMPLETE**.
