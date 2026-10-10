@@ -1,3 +1,17 @@
+# Current handoff: sharp bridge functions and new Rc transport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SHARP_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SHARP_FUNCTIONS_2026_10_09.md), checked source [a84dcb6c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a84dcb6c466b2887969ff077e1626d74b19b4a73). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Same-function signed magnitude intersection now retains the bounding source scale and tiny tails.
+- [x] Two dependent Poisson products and five original q² sites use collected genuine Z derivatives; original linear q/q_Z unchanged.
+- [x] All four-Z bridge cells rebuilt and new incoming histories propagated through Rc.
+- [ ] NEXT connect an actual source-bound functional control map, while retaining joint source-Z/integral relations and proving uniform all-N bounds. Conservative target enclosure improvements alone do not close these gates.
+- [ ] Physical exterior/heat, higher finite-N jets, admissible stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: correlated bridge arithmetic and new Rc retransport (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_CORRELATED_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_CORRELATED_FUNCTIONS_2026_10_09.md), checked source [2c73c998](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2c73c998fd0e305bf3a0fac419770d2ff4d2c6c0). Full reconstruction **ACTIVE / INCOMPLETE**.
