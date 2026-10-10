@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual third axial source and five-target functions
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_SOURCE_AND_TARGET_FUNCTIONS_2026_10_10.md) first. Source [4fa0e4c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4fa0e4c663dd775f6cc90e12dd2597e0d71fa05b) installs ordinary C3 roots/P0, the same phase inverse, signed full exponential densities, own-rate histories and five target functions across all 17 charts, with 228 native cells and all four Z cells replayed. All C2 handles are retained. Next: quantitative C3 target bounds, same-limit third repair controls and repaired histories, then radial velocity recovery. Complete physical/Cartesian field and temporal scale recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual C2 repaired-band mixed profiles and histories
 
 Read [the latest handoff](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md) first. Source [844cb3a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/844cb3a26519377c1d3276f4521463e63cb90cfa) installs genuine C2 normalized E/V on the original reserved band, with radial y orders 0,1,2; signed partial/complete histories, independent P0, relative terminal five-moment identities and directed four-cell bounds. All original C1 handles and source units are retained. Next: genuine C3 target/control/history rows, needed because the unchanged radial/inertial recovery consumes one extra axial derivative. C2 Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal recursion remain ACTIVE / INCOMPLETE.
