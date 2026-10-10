@@ -1,3 +1,16 @@
+# Current handoff: repaired absolute quiet power through Rp (2026-10-09)
+
+Read [CURRENT_LIMIT_POWER_TO_RP_2026_10_09.md](CURRENT_LIMIT_POWER_TO_RP_2026_10_09.md), source [2155cb8f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2155cb8fb85a0fbd11d7354c47d4b18ee245a401). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Same repaired source now defines all five complete C1 histories and physical u,v,w,p on 2Rc..Rp, with original P0 and radius frame.
+- [x] Exact native pulse input units and true amplitude-Z derivatives are connected.
+- [ ] NEXT prove current-to-native Rp FUNCTION identity, then install actual O4/flatten/preheat source; the earlier patched Rh canonical join also needs a function-level proof.
+- [ ] Actual numeric field evaluation, absolute exterior/heat closure, high mixed jets/global stress, true temporal recursion and full NS remain open.
+
+Earlier headers and task wording below are historical.
+
+---
+
 # Current handoff: original repair-band physical field and absolute targets (2026-10-09)
 
 Read [CURRENT_LIMIT_BAND_PHYSICAL_RECOVERY_2026_10_09.md](CURRENT_LIMIT_BAND_PHYSICAL_RECOVERY_2026_10_09.md), source [05813df0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05813df0d39045ff0588167be6c766b46584929d). Full reconstruction **ACTIVE / INCOMPLETE**.
