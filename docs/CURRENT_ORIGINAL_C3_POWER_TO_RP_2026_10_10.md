@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): original C3 correction inlet bridge
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_TO_REPAIR_C3_BRIDGE_2026_10_10.md) first. Source [82162ec9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/82162ec9d7dc26c29b6a0f9ba38abdf237c9e886) closes the actual outer Rc N-scaled correction / N to genuine compact repair inlet identity for all five histories and ordinary Z0..3 rows, with the same Rc/N/absolute phase. Next: source leading-history ODE/seam identity, then the complete Rc interface and native selected pulse consumer. Current quiet y0..4/Z0..3 and Rp frame are accepted; full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.
+
+---
+
 # Actual compact-repaired C3 exit, quiet mixed flow and Rp frame (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [82771182](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8277118225a43c9c05e1e5f6d9a7838675633850) consumes the accepted original C3 compact-repair band at its genuine x=2 exit, constructs quiet power through Rp with ordinary y0..4/Z0..3 profile and complete-history functions, and exports the true C3 native pulse input frame. Four original axial cells have whole-quiet directed bounds and positive actual-swirl denominator bounds. This extends the earlier C1 quiet API using the current genuine C3 repaired functions. It does not admit the old selected native pulse constructor on this frame or the current outer-leading endpoint/band-seed function identity.
@@ -96,7 +102,7 @@ Installed quartet: `lei_ren_part1_paper_compliant_current_original_C3_power_to_R
 
 ## Next bounded tasks
 
-- [ ] **CURRENT-OUTER-CORRECTION-TO-BAND-INLET** Identify current O3 terminal N-scaled history/N with each actual repair-band correction inlet as functions through Z3 across the restored graph variants. Preserve the same selected N and original phase; do not use numeric range overlap as equality.
+- [x] **CURRENT-OUTER-CORRECTION-TO-BAND-INLET** Closed for all 20 ordinary rows by [82162ec9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/82162ec9d7dc26c29b6a0f9ba38abdf237c9e886); see [the correction inlet bridge](CURRENT_ORIGINAL_OUTER_TO_REPAIR_C3_BRIDGE_2026_10_10.md). Leading and complete interfaces remain open.
 - [ ] **CURRENT-OUTER-LEADING-TO-BAND-SEED** Prove the O2/O3 source-owned leading Duhamel histories at Rc equal the original same-provider O3 endpoint seeds. Use original frontend/history ODEs and every radius seam, or an independent same-source function theorem. The shared packet/provider and family hashes alone are insufficient.
 - [ ] **CURRENT-RP-NATIVE-FRAME-IDENTITY** Identify this true current C3 Rp frame with the native pulse constructor's canonical constants/functions, including q=1+Z squared, common Rw parent and original u/m1/m2/X/energy/Mp/P0. Prove that the actual selected constructor consumes this current frame; do not silently reuse older N257 constants.
 - [ ] **CURRENT-C2-EXTERIOR-SEGMENT-MEMORY** Once the input bridge is proved, extend actual selected pulse/flatten/postpulse/collar history functions through Z2, retaining predecessor memory, current phase, true Jacobians and original P0.

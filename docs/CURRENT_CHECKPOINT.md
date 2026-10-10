@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): original C3 correction inlet bridge
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_TO_REPAIR_C3_BRIDGE_2026_10_10.md) first. Source [82162ec9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/82162ec9d7dc26c29b6a0f9ba38abdf237c9e886) closes the actual outer Rc N-scaled correction / N to genuine compact repair inlet identity for all five histories and ordinary Z0..3 rows, with the same Rc/N/absolute phase. Next: source leading-history ODE/seam identity, then the complete Rc interface and native selected pulse consumer. Current quiet y0..4/Z0..3 and Rp frame are accepted; full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual C3 repaired exit to Rp
 
 Read [the latest handoff](CURRENT_ORIGINAL_C3_POWER_TO_RP_2026_10_10.md) first. Source [82771182](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8277118225a43c9c05e1e5f6d9a7838675633850) consumes the genuine compact-repair 2Rc exit and installs quiet y0..4/Z0..3 profile/history functions, native C3 Rp pulse inputs and four-cell directed positive-swirl bounds. O3 ends at Rc and must pass through the compact repair band. Next: outer leading/correction inlet identities and proof that the selected native pulse consumes this current Rp frame. Full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.
