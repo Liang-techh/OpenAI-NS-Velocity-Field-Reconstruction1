@@ -1,3 +1,11 @@
+# Latest: current original raw closed-heat seams (2026-10-10)
+
+Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source 274d5518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/274d5518b2844375aaae24b035c7ed832649f6d0) joins waiting phase=1 to the closed collar t=0 and the closed collar t=3 to the full Gamma exterior t=3. Ten raw velocity/pressure/history outputs retain their current repair, original analytic P0 and complete energy/pressure memories through total logR/Z order four. Two exact radius joins, 300 common-scale identities and 600 exact native Jacobian-power identities pass; interval diagnostics do not substitute for function equality.
+
+**Current handoff:** [closed heat mixed seams and detailed tasks](CURRENT_ORIGINAL_RP_CLOSED_HEAT_MIXED_SEAMS_2026_10_10.md). The three bounded closed-heat seam task IDs are complete. Next: six remaining postpulse joins, then the current original physical/time map and point/error delivery. Full numerical u/v/w, uniform/global norms, stress/remainder, true coefficient recursion and oscillatory cancellation remain open. Reuse the accepted current runtime and avoid replaying unchanged upstream source solves.
+
+---
+
 # Latest: five current pulse raw mixed seams (2026-10-10)
 
 Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source 62e80fed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/62e80fed0f1bea9a5f5bb27f49e8e81feaad7a7b) joins the five internal pulse chart functions and their ten raw velocity/pressure/history outputs through total logR/Z order four. The two reciprocal endpoints remain exact source functions; two callable supplemental routes cover legal rounding strips. The xi=10 forward/backward energy switch is explicitly identified as the same whole source function before derivatives.

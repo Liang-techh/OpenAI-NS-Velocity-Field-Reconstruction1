@@ -1,3 +1,9 @@
+# Update: two current original closed-heat source seams installed (2026-10-10)
+
+[Source 274d5518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/274d5518b2844375aaae24b035c7ed832649f6d0) completes the three bounded closed-heat function seam tasks below. Uniform/global norms and numerical physical point/time evaluation remain open. Read the [new detailed handoff](CURRENT_ORIGINAL_RP_CLOSED_HEAT_MIXED_SEAMS_2026_10_10.md) for current next tasks.
+
+---
+
 # Current five pulse raw mixed seams (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [62e80fed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/62e80fed0f1bea9a5f5bb27f49e8e81feaad7a7b) connects the five adjacent current pulse chart functions, their five raw cumulative histories, independent P0, absolute pressure and three velocity components through ordinary mixed logR/Z total order four. Formal reciprocal endpoints remain exact function nodes. Two callable supplemental native routes cover rounding strips without changing the original chart endpoints. This is a source-function seam interface with directed consistency bounds; uniform/global norms, physical-time point evaluation, stress/remainder, temporal coefficient recursion and oscillatory cancellation remain open.
@@ -72,9 +78,9 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 ## Next implementation tasks
 
-- [ ] **CURRENT-RP-WAITING-CLOSED-COLLAR-SEAM** Call current waiting phase=1 and closed collar t=0 on the same repair/future/P0. Identify exact raw angular, energy and pressure memory identities and mixed rows; keep closed coefficients and forward residual diagnostics separate.
-- [ ] **CURRENT-RP-CLOSED-COLLAR-EXTERIOR-SEAM** Join t=3 on both closed branches with full infinite Gamma rows. Prove raw histories, pressure, exact scales and logR/Z derivatives through four; compare native Jacobian powers explicitly.
-- [ ] **CURRENT-RP-CLOSED-HEAT-MIXED-SEAMS** Aggregate those two actual closed-heat joins and publish directed signed differences. Do not add a forward Cp residual back into the closed pressure.
+- [x] **CURRENT-RP-WAITING-CLOSED-COLLAR-SEAM** Call current waiting phase=1 and closed collar t=0 on the same repair/future/P0. Identify exact raw angular, energy and pressure memory identities and mixed rows; keep closed coefficients and forward residual diagnostics separate.
+- [x] **CURRENT-RP-CLOSED-COLLAR-EXTERIOR-SEAM** Join t=3 on both closed branches with full infinite Gamma rows. Prove raw histories, pressure, exact scales and logR/Z derivatives through four; compare native Jacobian powers explicitly.
+- [x] **CURRENT-RP-CLOSED-HEAT-MIXED-SEAMS** Aggregate those two actual closed-heat joins and publish directed signed differences. Do not add a forward Cp residual back into the closed pressure.
 - [ ] **CURRENT-RP-FLATTEN-POWER-SEAM** Match flatten t=100 and outer-power phase=0 with exact Ev0 normalization, nonzero angular/quadratic memories and the actual flatten terminal function.
 - [ ] **CURRENT-RP-POWER-ANGULAR-SEAM** Match power phase=1 and angular t=-4, including exact local radius and amplitude factors.
 - [ ] **CURRENT-RP-ANGULAR-STEEP-ENTRY-SEAM** Match angular t=0 and steep-entry phase=0 using the same repaired angular coefficients and complete future.
