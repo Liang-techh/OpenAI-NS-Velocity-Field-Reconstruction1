@@ -1,3 +1,16 @@
+# Current handoff: original repair-band physical field and absolute targets (2026-10-09)
+
+Read [CURRENT_LIMIT_BAND_PHYSICAL_RECOVERY_2026_10_09.md](CURRENT_LIMIT_BAND_PHYSICAL_RECOVERY_2026_10_09.md), source [05813df0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/05813df0d39045ff0588167be6c766b46584929d). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Exact mathematical Cartesian u,v,w,p on original Rc..2Rc, retaining P0, signed Z, implicit lambda and original units.
+- [x] Complete absolute five moments/Pi at 2Rc and necessary whole-future matching integrals; current mu-power and formal final heat reference remain distinct.
+- [ ] NEXT source-bound 2Rc-to-preheat continuation, actual absolute moment/pressure closure and final heat amplitude/bridge.
+- [ ] Actual numerical field values, full mixed/axis/global joins, admissible stress, real temporal recursion, pulses and full NS remain open.
+
+Earlier headers and task wording below are historical.
+
+---
+
 # Current source-bound C1 limit and actual original repair band (2026-10-09)
 
 Source commit: [5be89d45](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5be89d45022408a2802a96a716b6c7add377c23d). Full reconstruction **ACTIVE / INCOMPLETE**. Current definitive handoff; older headers below are historical.
