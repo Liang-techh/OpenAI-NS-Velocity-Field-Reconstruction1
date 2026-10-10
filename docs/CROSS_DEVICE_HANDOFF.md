@@ -1,3 +1,9 @@
+# Latest checkpoint — refined pulse physical factors, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_REFINED_PULSE_COEFFICIENTS_2026_10_10.md](CURRENT_ORIGINAL_RP_REFINED_PULSE_COEFFICIENTS_2026_10_10.md) first. Finer original pulse energy/history integrals now reduce the actual pulse u/v factor diameters to 0.0791% and w to 0.0341%, about 8x better. The accepted public u/v/w/p interface and focused independent source/operator checks pass. Of 144 rows, 53 nonzero factors meet an explicitly requested 0.1%; pressure sign and ordinary nonzero physical delivery remain open. U0 alone was already too narrow to dominate.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: exact singleton log arithmetic, pressure sign/error recovery, targeted auxiliary/all-chart refinement, general/global/axis fields, signed stress/flat remainder, genuine n-dependent recursion and oscillatory cancellation. Do not report this local accuracy result as scale recursion or full NS validation.
+
 # Latest checkpoint — exact-factor physical accuracy, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_PHYSICAL_ACCURACY_2026_10_10.md](CURRENT_ORIGINAL_RP_PHYSICAL_ACCURACY_2026_10_10.md) first. Actual physical rows now separate certified exact-scale factor widths, ordinary numeric scale error/materialization and signed coefficient/positive-tail variation. Across two current source queries, 89 nonzero rows pass an explicitly requested 1% factor-width target; ordinary numeric passes are 75 exact-zero rows only. Pulse u/v/w factors pass; total pressure sign/nonzero remains unresolved.
