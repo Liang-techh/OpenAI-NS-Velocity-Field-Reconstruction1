@@ -1,3 +1,11 @@
+# Latest: original-scale correlated physical source delivery (2026-10-10)
+
+Full reconstruction **ACTIVE / INCOMPLETE**. [Source c8808a2a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c8808a2aa3dfd4b6bb1ea95a7936db059a40e089) proves original implicit inverse identities for a restricted source-bound physical log-input family, preserves astronomical time/axial correlations, calls actual interval source functions on six families and returns 840 Cartesian spatial plus 24 fixed-x time rows in exact signed scale groups. These are not materialized physical u/v/w/p. General/global/axis fields, physical error/energy norms, stress, true recursion and oscillatory cancellation remain open.
+
+**Current handoff:** [correlated physical source API and next tasks](CURRENT_ORIGINAL_RP_CORRELATED_PHYSICAL_SOURCE_2026_10_10.md). Next: trusted original amplitude bindings → exact grouped physical scale evaluation → signed physical value/error materialization. Reuse accepted current runtime and preserve original root/native equality proofs.
+
+---
+
 # Latest: current original whole-box source callbacks (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source e9060cd4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e9060cd43351da8f95053a4633b55c5143fc216a) connects entire native/Z coordinate boxes to original pulse, postpulse and closed-heat algorithms on all fifteen current Rp-to-heat charts, retaining signed mixed rows and exact source scales/Jacobians. The bounded whole-box source callback task is complete. Physical numerical u/v/w/p, uniform accuracy, global/axis coverage, stress, real recursion and oscillatory correction remain open.
