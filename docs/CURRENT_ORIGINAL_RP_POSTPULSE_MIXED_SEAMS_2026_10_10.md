@@ -1,3 +1,9 @@
+# Update: original Rp physical/time source map installed (2026-10-10)
+
+[Source 5f4f9d0f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5f4f9d0f0d7cc2d83a15c190868ff19994dc05e1) completes the bounded physical/time task below on all fifteen Rp-to-heat charts, delivering signed scaled Cartesian spatial4/time1 rows. Arbitrary numerical physical points and global/axis coverage remain open. Read the [new handoff](CURRENT_ORIGINAL_RP_PHYSICAL_SOURCE_MAP_2026_10_10.md); next priority is physical inverse and point/error delivery.
+
+---
+
 # Current original raw postpulse function chain (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source d00208c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d00208c721b24f3765012803bd30f16302741dc9) completes the six remaining current raw postpulse function joins and exposes all eight postpulse joins through one accepted caller. Together with the five accepted pulse joins and the accepted Rv unit adapter, `evaluate_interface(name,Z)` dispatches all fourteen adjacent interfaces in the fifteen-chart current Rp-to-heat source chain. These are original defining-function joins through ordinary logR/Z total mixed order four, with directed consistency diagnostics. Uniform/global norms, resolved numerical physical u/v/w, stress/remainder, true temporal coefficient recursion and oscillatory cancellation remain open.
@@ -71,7 +77,7 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 ## Next tasks and acceptance
 
-- [ ] **CURRENT-PHYSICAL-TIME-MAPPING** Next implementation priority. Port the original similarity/physical map and its exact linear Cartesian and fixed-x time operators onto this actual original Rp expression graph. Keep absolute log origin/finite offsets separate, true N lazy, original radial/axial exponents, angle, pressure units and Ur sqrt(2) convention explicit. Publish callable scaled physical field rows with honest point/error scope.
+- [x] **CURRENT-PHYSICAL-TIME-MAPPING** Completed on the fifteen actual current Rp-to-heat charts: exact original physical coordinates, signed scaled Cartesian spatial4 and fixed-x time1 rows, separate pressure/velocity units, original N and no second Ur sqrt(2). See the latest physical source-map handoff. Arbitrary numerical point inverse and global/axis coverage remain open.
 - [ ] **CURRENT-RP-RAW-POINT-ERROR-UNITS** Supply admissible point/error contracts for quadrature, inverse-radius and phase inputs; propagate errors through real source amplitudes. Directed jets or ranges alone do not deliver arbitrary numerical physical point values.
 - [ ] **CURRENT-CARTESIAN-VELOCITY** Deliver callable [u(x,y,z,t),v(x,y,z,t),w(x,y,z,t)] using the admitted map and point/error interface. Treat axis limits and divergence from the same defining field.
 - [ ] **CURRENT-GLOBAL-MIXED-DERIVATIVES** Bind current core/transition/Rh/O2/O3/compact/quiet/Rp owners and their earlier interfaces to the same source graph; obtain actual quantitative norms. The fourteen Rp-to-heat interfaces do not complete these inner/global obligations.

@@ -1,3 +1,11 @@
+# Latest: current original physical Cartesian/time source map (2026-10-10)
+
+Full reconstruction **ACTIVE / INCOMPLETE**. [Source 5f4f9d0f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5f4f9d0f0d7cc2d83a15c190868ff19994dc05e1) installs the original physical coordinate and fixed-x time operators on all fifteen current Rp-to-heat charts: 2100 Cartesian spatial rows, 60 time rows, 31560 exact source/operator term identities. Signed scaled enclosures retain the exact radius/time graph, original delta/N, distinct velocity and pressure units, analytic P0 and full Gamma future. The bounded **CURRENT-PHYSICAL-TIME-MAPPING** task is complete at this outer chart-parametric scope.
+
+**Current handoff:** [physical source map and detailed next tasks](CURRENT_ORIGINAL_RP_PHYSICAL_SOURCE_MAP_2026_10_10.md). Next implementation priority: actual physical-coordinate inverse, native chart location and point/error delivery. Arbitrary numerical u/v/w, inner/global/axis coverage, uniform norms, stress/remainder, genuine temporal recursion and oscillatory cancellation remain open. Reuse the accepted current runtime; avoid replaying unchanged repairs and future solves.
+
+---
+
 # Latest: all eight current raw postpulse function joins (2026-10-10)
 
 Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source d00208c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d00208c721b24f3765012803bd30f16302741dc9) completes the six remaining raw postpulse joins and unifies all eight postpulse interfaces. With the accepted five pulse interfaces and Rv unit adapter, the caller dispatches all fourteen adjacent interfaces in the fifteen-chart current Rp-to-heat source chain, through ordinary logR/Z total mixed order four. Nonzero angular/pressure/energy memories and the analytic P0 are retained. Eight postpulse radius joins, 1200 common-scale identities and 2400 exact Jacobian-power identities pass; overlap remains a consistency diagnostic.
