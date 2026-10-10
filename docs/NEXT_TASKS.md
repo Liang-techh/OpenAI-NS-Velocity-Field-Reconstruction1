@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C3 repaired-band velocity and histories
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md) first. Source [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f) installs original repaired-band E/V through radial y0/y1/y2 and ordinary Z0/Z1/Z2/Z3, signed partial/complete five histories, independent P0, first-y rows, relative terminal identities and four-cell directed bounds. All accepted C2 handles and the same repair-only N are retained. Next: actual repaired radial/inertial recovery through Z2 with positive denominator margins. Higher radial rows, Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): quantitative C3 targets and same repaired limit
 
 Read [the latest handoff](CURRENT_ORIGINAL_C3_TARGET_RANGES_AND_LIMIT_CONTROLS_2026_10_10.md) first. Source [f9b108aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f9b108aa68ce29b1a94cd36496cef3fbf20f12ed) installs actual third target bounds over all four Z cells, 17 charts and 228 native cells, then genuine third derivatives of the same five-control limit with its quantitative C3 Picard tail. Same C2 handles, matrix, source ledger and repair-only N are retained. Next: C3 repaired-band profiles/histories and relative moments, then radial/inertial recovery. Complete physical/Cartesian field, cone and temporal recursion remain ACTIVE / INCOMPLETE.

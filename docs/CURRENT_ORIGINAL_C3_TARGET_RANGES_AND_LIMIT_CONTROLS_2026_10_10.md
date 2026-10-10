@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C3 repaired-band velocity and histories
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md) first. Source [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f) installs original repaired-band E/V through radial y0/y1/y2 and ordinary Z0/Z1/Z2/Z3, signed partial/complete five histories, independent P0, first-y rows, relative terminal identities and four-cell directed bounds. All accepted C2 handles and the same repair-only N are retained. Next: actual repaired radial/inertial recovery through Z2 with positive denominator margins. Higher radial rows, Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Actual C3 target ranges and same repaired limit (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [f9b108aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f9b108aa68ce29b1a94cd36496cef3fbf20f12ed) adds quantitative third axial derivative bounds to the already accepted signed C3 source/target functions, then installs genuine third derivatives of the same original five-control Banach limit and its quantitative third Picard convergence tail. The current repaired-band velocity/history layer still stops at C2. Extending that band to C3 is the immediate prerequisite for physical radial/inertial recovery. Complete Cartesian u/v/w, stress cone and temporal coefficient recursion remain open.
@@ -80,8 +86,8 @@ Installed quartets: `lei_ren_part1_paper_compliant_current_original_C3_target_ra
 
 ## Next tasks, in dependency order
 
-- [ ] **CURRENT-C3-REPAIR-BAND-PROFILES** Append genuine C3 amplitude/control rows to the existing normalized reserved-band E/V and y0/y1/y2 functions on x in[1,2]. Preserve every accepted C2 handle, compact bump support and existing beta/beta'/beta'' y formulas. Bumps are Z-independent; third Z does not require inventing a new bump. Keep the original t=2+log(x) reserved-band adapter and strict native O3_power t<=2 guard.
-- [ ] **CURRENT-C3-REPAIRED-HISTORIES** Extend signed density differences, partial own-rate integrals, source-owned leading and complete histories, first-y rows and independent P0 to ordinary third derivatives. Use the same incoming memories, S^-1 conversion for m/k once, and 6*Taylor coefficient[3] once. Prove all five relative endpoint identities in C3 using the newly admitted same-control third zeros, including angular R_M+mu*R_D. Supply whole-band third bounds and dedicated acceptance evidence.
+- [x] **CURRENT-C3-REPAIR-BAND-PROFILES** Completed by [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f); see [actual C3 repaired-band evidence](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md).
+- [x] **CURRENT-C3-REPAIRED-HISTORIES** Completed by [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f); see [actual C3 repaired-band evidence](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md).
 - [ ] **CURRENT-PATCHED-RECOVERY-SOURCE** Feed complete repaired histories/E/V/P0 and genuine third rows to the unchanged recovery equations. Their extra Z derivative is needed for Q_ZZ and inertial p2_ZZ. Retain radial/axial units, all mixed derivatives, source-dependent denominators and common P0; leading-only high rows cannot substitute for repaired high rows. Return actual source-bound radial/inertial function derivatives with their precise physical scope.
 - [ ] **CURRENT-C2-RH-CORRECTION-JOIN** Continue actual repaired second histories through Rh while preserving the same phase/radius and nonzero memory. Prove leading and correction continuation independently.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Install source-owned absolute exterior five identities through Z2, retaining the real heat amplitude, P0, future-integral FTC/Gamma tails and all endpoint cancellations. Relative band moments alone do not close this task.
