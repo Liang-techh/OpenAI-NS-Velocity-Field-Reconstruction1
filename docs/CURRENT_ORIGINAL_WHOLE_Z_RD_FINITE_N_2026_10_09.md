@@ -1,3 +1,16 @@
+# Current handoff: all-N repair integer and C1 control connection (2026-10-09)
+
+Read [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_CONTROL_CONNECTION_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_CONTROL_CONNECTION_2026_10_09.md), checked source [3e6e6c35](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6e6c35dc32a5ae1ddabc34cc9e189e09b01b6d). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Current 17-chart exact source/phase-inverse/57-cell integral graph feeds five direct N-scaled targets into the original control map.
+- [x] A strict exact integer expression now satisfies the repair-only directed frequency/image/positivity conditions; mathematical C1 control convergence/tails are bound to the same functions.
+- [ ] NEXT extend the actual original power source through the reserved repair band and connect the exact control limit/terminal identities.
+- [ ] Numerical controls/phase, global N, physical exterior/heat, stress, genuine temporal recursion, pulses and full NS remain open.
+
+Earlier headers and task wording below are historical.
+
+---
+
 # Current handoff: actual all-N outer source, Rc transport and relative targets (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_OUTER_RC_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_OUTER_RC_FUNCTIONS_2026_10_09.md), checked source [1582995f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1582995f9031222e6220fc1d467209bcaa27d229). Full reconstruction **ACTIVE / INCOMPLETE**.
