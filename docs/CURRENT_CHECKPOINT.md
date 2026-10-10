@@ -1,3 +1,16 @@
+# Current handoff update (2026-10-10): fifteen-chart mixed raw transport
+
+Read [the current mixed-transport handoff](CURRENT_ORIGINAL_RP_MIXED_TRANSPORT_2026_10_10.md) first. Source [69692731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6969273120a8fcbca390bb15d3bf3f0338fe1908) supplies 2250 ordinary logR/Z mixed rows and 2250 exact-native rows through total order four on all fifteen current pulse/postpulse routes, preserving five histories, independent P0, actual velocity sources and closed Gamma heat. Pressure derivatives use exact source amplitude units; native derivatives carry exact J^K scale functions. Full reconstruction remains **ACTIVE / INCOMPLETE**: quantitative/uniform/global seams, numerical physical u/v/w, stress/cone, temporal recursion and oscillatory cancellation remain open.
+
+- [x] **CURRENT-RP-RAW-HIGH-MIXED-TRANSPORT** All fifteen routes at directed logR/Z4 source scope in [69692731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6969273120a8fcbca390bb15d3bf3f0338fe1908); uniform/global and any higher stress/remainder orders remain separate.
+- [x] **CURRENT-RP-MIXED-VELOCITY-PRESSURE** Actual velocity rows and general density-derived pressure mixed rows installed.
+- [x] **CURRENT-RP-MIXED-NATIVE-JACOBIAN** Exact affine, Z-independent native J^K factors installed for all fifteen routes.
+- [ ] **Next: pulse-domain and closed-heat mixed seams**, then global/physical-time maps and actual point/error delivery. Read the detailed task IDs in the linked handoff.
+
+New-boundary checks and a fresh accepted Gamma call pass; 1305 input dependencies match Git. Scoped review: GPT-5.6 Luna / max. Historical sections below retain evidence and do not override this current queue.
+
+---
+
 # Current handoff update (2026-10-10): Rv common units and mixed logR/Z4 endpoint
 
 Read [the current Rv common-unit handoff](CURRENT_ORIGINAL_RP_COMMON_UNIT_SEAM_2026_10_10.md) first. Source [e445ee9b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e445ee9b23f5195fe9ef26a8ff729472663ffe3c) connects actual pulse_end(s=0) and flatten(t=0) with exact U0/Fv/Ev0 unit conversion, retained five histories/P0/pressure and 150 ordinary mixed derivative rows on each side through total order four. The same-source endpoint theorem is explicitly rebound; overlap diagnostics are not its proof. Pressure radial derivatives use exact Ev0^2. Full reconstruction remains **ACTIVE / INCOMPLETE**: all-chart/global mixed contracts, unrestricted numerical physical u/v/w, cone and true temporal recursion are open.
