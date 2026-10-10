@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): selected postpulse registry and full exterior history
+
+Read [the latest task handoff](CURRENT_LIMIT_SELECTED_POSTPULSE_REGISTRY_2026_10_10.md) first. Source commit [d7544f0d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7544f0d1dace15dfefadc915b5a88726bea8665) installs the repaired-limit selected pulse/future into every postpulse source owner, shares its unique repair/Gamma/pressure and replaces all fifteen route receipts with actual new provenance. Whole-function history/stress proofs transfer with only the accepted native parameter bridge changed. Fresh source calls retain positive energy and independent P0; full exterior theta/axial similarity stress mixed4 is source-closed. Next: all five absolute post-2Rc integral targets. Upstream joins, global physical assembly, admissible cone and true temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): selected future feeds current pulse and flatten
 
 Read [the latest task handoff](CURRENT_LIMIT_SELECTED_PULSE_FLATTEN_2026_10_10.md) first. Source commit [50a4f661](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50a4f6615ac9e6b0603ecb1a4dca4fe7aadb3fb4) injects the actual repaired-limit pressure branch into the checked C1/C4/C5 selected-energy adapter, then constructs a new flatten from that restricted pulse. Fresh Z=.371 calls preserve C4/C5 prefixes, positive selection, Rv/flatten complete future/2 and independent P0. Previous same-object preheat/pressure closure is retained. Next: register this new selected pulse/flatten in every later source owner and prove all five absolute exterior targets. Physical global assembly, upstream Rh seam, higher jets, admissible stress and actual temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
