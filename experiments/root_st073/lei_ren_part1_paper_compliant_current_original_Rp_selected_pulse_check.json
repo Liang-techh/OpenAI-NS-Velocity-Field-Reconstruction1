@@ -14,11 +14,14 @@
     "all_active_pulse_inputs_current": true,
     "same_current_C1_C4_C5_future": true,
     "same_current_angular_and_unique_repair": true,
+    "copied_current_angular_cache_owner": true,
+    "shared_future_and_angle_are_cache_free": true,
     "same_current_actual_P0_object": true,
     "actual_selection_callbacks_bound": true,
     "active_C4_C5_owner_links_current": true,
     "fixed_native_kernel_owner_preserved": true,
     "same_source_context": true,
+    "current_beta_provider_context": true,
     "copied_mutable_caches_separate": true,
     "old_selected_cache_contents_unmutated": true,
     "copied_native_pulse_used_for_all_routes": true,
@@ -39,6 +42,9 @@
     "old_high_constants",
     "old_flatten_pulse"
   ],
+  "active_beta_center_and_end_bump_use_current_context": true,
+  "current_angular_C4_cache_is_separate": true,
+  "shared_future_and_angle_are_cache_free": true,
   "original_selected_defining_equations_and_AST_proof": {
     "actual_algorithm_and_adapter_AST_bindings": {
       "compliant_future_energy_high_jets.future:f": true,
@@ -1481,9 +1487,9 @@
     "lei_ren_part1_paper_compliant_current_limit_native_pulse_bridge_check.json": "3271cf353802d8cf11c8c049b4056971155492d210882cd6108c006862c48704",
     "lei_ren_part1_paper_compliant_current_limit_heat_pressure_bridge.py": "7f5ace7b413c1d89692c9189239bd8898d819ae23e878ac44203023afaad6474",
     "lei_ren_part1_paper_compliant_current_original_Rp_interval_inlet_check.json": "36612b29288a42c191d39ddb51fe1038f578cd646656d907722cb9e59bdd9346",
-    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse.py": "2f1e3ab9d0f82d182e3db503793677b29a4afce7ea7f8570821079c9dc079983",
-    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse.json": "69bde7184ac615bf81541df43743b7f2c61d5864833a9683d2c2ca2a89259fbd",
-    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse_check.py": "5820f4d48b8629b0518ccb46a8c3dc4fa204aadddc97be6e56c1b7d361b44124"
+    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse.py": "8afc0b5d49717b28c2be6acd08eab0cbc363cf60af01adc9c7d2c626ce7cf37d",
+    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse.json": "f23f73a55ad03c393a3a3fbe787a3e19be71dab4e7033d471de946b100dd4a71",
+    "lei_ren_part1_paper_compliant_current_original_Rp_selected_pulse_check.py": "ea122a8e2a680b810e8e5854ad144ffee424bc53e39526c192e0bf94ef21b659"
   },
-  "execution_seconds": 1.1410000000614673
+  "execution_seconds": 1.3119999999180436
 }

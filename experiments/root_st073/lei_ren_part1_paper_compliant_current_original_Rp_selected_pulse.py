@@ -17,6 +17,7 @@ from lei_ren_part1_paper_compliant_current_native_pulse_source_dispatcher import
 from lei_ren_part1_paper_compliant_current_pulse_flatten_source import (
     CurrentFlattenMixedC4,current_terminal_source_binding)
 from lei_ren_part1_paper_compliant_pulse_high_jets import _SelectedSource
+from lei_ren_part1_paper_compliant_flat_pulse_derivatives import FlatPulseDerivatives
 from lei_ren_part1_paper_compliant_current_selected_energy_source_check import source_proof
 from lei_ren_part1_paper_compliant_switch_signed_integrals import source_precision
 
@@ -32,7 +33,8 @@ PENDING=('native_interval_inlet_callback_installed','current_numeric_point_field
 
 def caches(owner):
     return (owner.amplitude.cache,owner.energy4.cache,owner.axial4.cache,
-        owner.fifth.angular_cache,owner.fifth.energy_cache,owner.fifth.cache,owner.pulse.data_cache)
+        owner.fifth.angular_cache,owner.fifth.energy_cache,owner.fifth.cache,owner.pulse.data_cache,
+        owner.fifth.angular4.cache)
 
 
 class CurrentOriginalRpSelectedPulse(CurrentNativePulseSourceDispatcher):
@@ -57,11 +59,19 @@ class CurrentOriginalRpSelectedPulse(CurrentNativePulseSourceDispatcher):
         self.original_cache_snapshots=tuple((id(cache),tuple(cache.keys())) for cache in caches(seed))
         self.amplitude=copy.copy(seed.amplitude);self.amplitude.cache={}
         self.energy4=copy.copy(seed.energy4);self.energy4.cache={}
+        self.angular4=copy.copy(seed.fifth.angular4);self.angular4.cache={}
+        self.energy4.angular=self.angular4
         self.axial4=copy.copy(seed.axial4);self.axial4.energy=self.energy4;self.axial4.base=self.amplitude;self.axial4.cache={}
         self.fifth=copy.copy(seed.fifth);self.fifth.fourth=self.axial4
+        self.fifth.angular4=self.angular4
         self.fifth.angular_cache={};self.fifth.energy_cache={};self.fifth.cache={}
         self.pulse=copy.copy(seed.pulse);self.pulse.fifth=self.fifth;self.pulse.data_cache={}
         for owner in (self.amplitude,self.energy4,self.axial4,self.fifth,self.pulse):owner.ctx=c
+        self.angular4.ctx=c
+        self.pulse.flat=FlatPulseDerivatives(c)
+        if (self.pulse.flat.family,self.pulse.flat.source)!=(self.family,self.source):
+            raise ValueError('Current beta provider source differs')
+        inlet.add_hashes(self.hashes,self.pulse.flat.hashes)
         # The seed's pulse facade retains an older context while its current
         # energy/selection uses the future context. Rebox scalar enclosures;
         # copied Taylor consumers now agree on the actual branch context.
@@ -114,8 +124,11 @@ class CurrentOriginalRpSelectedPulse(CurrentNativePulseSourceDispatcher):
                 self.pulse.inlet_P is self.flatten.inlet.inlet_P and self.pulse.Xp is self.flatten.inlet.Xp,
             same_current_C1_C4_C5_future=self.future is self.amplitude.future is self.energy4.base is
                 self.fifth.fourth.energy.base,
-            same_current_angular_and_unique_repair=self.fifth.angular4 is self.energy4.angular is self.seed.exact.angular4
-                and self.future.repair is self.seed.exact.repair,
+            same_current_angular_and_unique_repair=self.fifth.angular4 is self.energy4.angular is self.angular4
+                and self.angular4.repair is self.future.repair is self.seed.exact.repair,
+            copied_current_angular_cache_owner=self.angular4 is not self.seed.fifth.angular4,
+            shared_future_and_angle_are_cache_free=not any('cache' in key for obj in
+                (self.future,self.future.angular,self.future.repair,self.future.heat) for key in vars(obj)),
             same_current_actual_P0_object=self.flatten.inlet.datum is self.datum is
                 self.pulse.selection.future.angular.initial.datum,
             actual_selection_callbacks_bound=self.pulse.high.select.__self__ is self.fifth and
@@ -125,6 +138,8 @@ class CurrentOriginalRpSelectedPulse(CurrentNativePulseSourceDispatcher):
                 self.axial4.base is self.pulse.high.base is self.amplitude and self.axial4.energy is self.energy4,
             fixed_native_kernel_owner_preserved=self.pulse.pulse is self.amplitude.pulse is self.seed.pulse.pulse,
             same_source_context=self.pulse.ctx is self.axial4.ctx is self.energy4.ctx is self.amplitude.ctx is self.ctx,
+            current_beta_provider_context=self.pulse.flat.ctx is self.angular4.ctx is self.ctx
+                and self.pulse.flat is not self.seed.pulse.flat,
             copied_mutable_caches_separate=not any(id(cache) in {entry[0] for entry in self.original_cache_snapshots}
                 for cache in caches(self)),
             old_selected_cache_contents_unmutated=self.original_cache_snapshots==tuple(
@@ -161,7 +176,8 @@ class CurrentOriginalRpSelectedPulse(CurrentNativePulseSourceDispatcher):
 def run(interval=None,seed=None):
     began=time.monotonic();owner=CurrentOriginalRpSelectedPulse(interval,seed,require_checked=False)
     Z='.371';views={}
-    for name,chart,coordinate in (('Rp_entrance','pulse_entrance',0),('Rv_terminal','pulse_end',0),('flatten_inlet','flatten',0)):
+    for name,chart,coordinate in (('Rp_entrance','pulse_entrance',0),('active_end_bump','pulse_end',-3),
+            ('Rv_terminal','pulse_end',0),('flatten_inlet','flatten',0)):
         views[name]=owner.evaluate(chart,Z,coordinate)
         print('Actual current Rp selected consumer:',name,flush=True)
     result=dict(source_family=owner.family_record,candidate_current_selected_consumer_constructed=True,

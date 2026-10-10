@@ -62,12 +62,20 @@ def run(owner=None):
     assert owner.flatten_binding['retained_canonical_identity_counts']==dict(functional=155,inlet_datum=34,endpoint=24)
     assert not owner.flatten_binding['interval_overlap_used_as_join_proof']
     assert not owner.flatten_binding['source_caps_used_as_defining_field_values']
+    assert type(owner.pulse.flat) is current.FlatPulseDerivatives
+    assert owner.pulse.flat.beta.__func__ is current.FlatPulseDerivatives.beta
+    beta=owner.pulse.flat.beta(0)
+    assert beta.ctx is owner.ctx and beta.order==4 and current.inlet.endpoints(beta[0])[0]>0
+    assert owner.fifth.angular4 is owner.energy4.angular is owner.angular4
+    assert owner.angular4.cache is not owner.seed.fifth.angular4.cache
     c=owner.ctx;Z=c.mpf('.371')
     selected,inlet,u,incoming_energy,incoming_moments=owner.pulse.data(Z)
     assert selected['incoming']['Z_independent_constant_definitions'] is owner.constants
     assert selected['incoming']['ordinary_Taylor_order']==5
     assert u.ctx is incoming_energy.ctx is incoming_moments[0].ctx is incoming_moments[1].ctx is c
     assert all(jet.ctx is c for jet in selected['selected_scaled_end_coefficient_Taylor'])
+    active=owner.evaluate('pulse_end',Z,-3)['source_packet']
+    assert active['Uz_over_Utheta'].ctx is c
     ap=selected['selected_ap_Taylor'];quad=selected['quadratic_coefficients']
     residual=ap*ap*quad['A2']+ap*quad['A1']+quad['A0']
     for n in range(6):
@@ -112,6 +120,8 @@ def run(owner=None):
     result=dict(all_passed=True,source_family=owner.family_record,**dict.fromkeys(current.GATES,True),
         actual_rebound_current_object_graph=owner.assert_graph(),unchanged_actual_native_methods=methods,
         stale_native_owner_mutations_rejected=rejected,
+        active_beta_center_and_end_bump_use_current_context=True,
+        current_angular_C4_cache_is_separate=True,shared_future_and_angle_are_cache_free=True,
         original_selected_defining_equations_and_AST_proof=owner.current_selection_source_proof,
         actual_same_selected_pulse_flatten_binding=owner.flatten_binding,
         actual_fresh_Z='.371',actual_Rp_entrance_Taylor_diagnostic_rows=count,
