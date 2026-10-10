@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): quantitative C3 targets and same repaired limit
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_TARGET_RANGES_AND_LIMIT_CONTROLS_2026_10_10.md) first. Source [f9b108aa](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f9b108aa68ce29b1a94cd36496cef3fbf20f12ed) installs actual third target bounds over all four Z cells, 17 charts and 228 native cells, then genuine third derivatives of the same five-control limit with its quantitative C3 Picard tail. Same C2 handles, matrix, source ledger and repair-only N are retained. Next: C3 repaired-band profiles/histories and relative moments, then radial/inertial recovery. Complete physical/Cartesian field, cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual third axial source and five-target functions
 
 Read [the latest handoff](CURRENT_ORIGINAL_C3_SOURCE_AND_TARGET_FUNCTIONS_2026_10_10.md) first. Source [4fa0e4c6](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4fa0e4c663dd775f6cc90e12dd2597e0d71fa05b) installs ordinary C3 roots/P0, the same phase inverse, signed full exponential densities, own-rate histories and five target functions across all 17 charts, with 228 native cells and all four Z cells replayed. All C2 handles are retained. Next: quantitative C3 target bounds, same-limit third repair controls and repaired histories, then radial velocity recovery. Complete physical/Cartesian field and temporal scale recursion remain ACTIVE / INCOMPLETE.
