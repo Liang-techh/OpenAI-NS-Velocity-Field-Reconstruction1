@@ -1,3 +1,12 @@
+# Current handoff update (2026-10-10): factorized raw postpulse histories
+
+Read [the current raw-history handoff](CURRENT_ORIGINAL_RP_RAW_HISTORY_TRANSPORT_2026_10_10.md) first. Source [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073) connects all nine postpulse charts to exact absolute R/Ev0/Pstar scale functions and live five-history enclosures, preserving P0 and nonzero heat memories. First native radial transport is callable with one coordinate Jacobian. Twenty current calls, exact scale/cumulative identities and directed error bounds pass. Next: same-existing-repair absolute heat/pressure closure, pulse raw histories and numerical point evaluation. Full Cartesian velocity, cone, temporal recursion and corrected residual remain ACTIVE / INCOMPLETE.
+
+- [x] **CURRENT-RP-FACTORIZED-POSTPULSE-FIVE-HISTORIES** Done at source-function/scaled-enclosure scope in [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073).
+- [x] **CURRENT-RP-FIRST-NATIVE-HISTORY-TRANSPORT** Done for first native radial derivative enclosures in [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073).
+
+---
+
 # Current handoff update (2026-10-10): absolute segmented source radii
 
 Read [the current radius handoff](CURRENT_ORIGINAL_RP_SEGMENTED_RADIUS_2026_10_10.md) first. Source [db621c96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db621c960aab022ef89e2c7ea9f68f4a443717af) installs 15 absolute source-radius functions/Jacobians and 14 exact geometry seams. Seventeen actual current calls attach this geometry, retaining true waiting integrals and the selected frequency. Short local increments survive the enormous origin. Next: raw physical five-moment transport and same-repair absolute heat/pressure closure. Numerical point radius, global field, cone and temporal recursion remain open; full reconstruction is ACTIVE / INCOMPLETE.

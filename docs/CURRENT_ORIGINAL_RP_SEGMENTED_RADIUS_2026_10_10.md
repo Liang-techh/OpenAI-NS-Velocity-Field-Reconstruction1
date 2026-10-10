@@ -1,3 +1,12 @@
+# Current handoff update (2026-10-10): factorized raw postpulse histories
+
+Read [the current raw-history handoff](CURRENT_ORIGINAL_RP_RAW_HISTORY_TRANSPORT_2026_10_10.md) first. Source [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073) connects all nine postpulse charts to exact absolute R/Ev0/Pstar scale functions and live five-history enclosures, preserving P0 and nonzero heat memories. First native radial transport is callable with one coordinate Jacobian. Twenty current calls, exact scale/cumulative identities and directed error bounds pass. Next: same-existing-repair absolute heat/pressure closure, pulse raw histories and numerical point evaluation. Full Cartesian velocity, cone, temporal recursion and corrected residual remain ACTIVE / INCOMPLETE.
+
+- [x] **CURRENT-RP-FACTORIZED-POSTPULSE-FIVE-HISTORIES** Done at source-function/scaled-enclosure scope in [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073).
+- [x] **CURRENT-RP-FIRST-NATIVE-HISTORY-TRANSPORT** Done for first native radial derivative enclosures in [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073).
+
+---
+
 # Current absolute segmented radius and native coordinate functions (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [db621c96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db621c960aab022ef89e2c7ea9f68f4a443717af) installs callable absolute source-radius maps for all 15 current pulse/flatten/postpulse routes. The same live postpulse owner now evaluates packets together with their absolute source geometry. This completes the function-level radius/caller handoff; numerical absolute point radius, raw physical five-moment assembly, heat terminal closure and global mixed/Cartesian contracts remain open.
