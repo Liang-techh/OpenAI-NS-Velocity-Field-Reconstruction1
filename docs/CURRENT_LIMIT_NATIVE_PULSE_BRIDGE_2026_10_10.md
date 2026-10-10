@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): same-object heat and pressure source runtime
+
+Read [the latest task handoff](CURRENT_LIMIT_HEAT_PRESSURE_BRIDGE_2026_10_10.md) first. Source commit [8682a556](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8682a5562c9cb969f0c68eced3731b81d650598b) installs the repaired-limit pulse/flatten objects through fifteen downstream routes and exact-native angular/pressure terminal closure. Existing fourteen-stage pressure mathematics is reused; only the old core parameter graph is replaced by a typed native-only source binding. Actual preheat/exterior calls and preserved independent P0 passed. Next: bind the exact complete future into selected pulse and close all five absolute exterior targets. Earlier Rh seam, higher jets, physical global assembly, numeric values, admissible stress and actual temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
+
+---
+
 # Current repaired limit: actual native pulse and flatten source bridge (2026-10-10)
 
 Source commit: [ce50f995](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce50f9955d25886272058033d6b74b4e9d0387a8). Full reconstruction **ACTIVE / INCOMPLETE**. This is the current handoff; older headers and task wording below it are historical.
