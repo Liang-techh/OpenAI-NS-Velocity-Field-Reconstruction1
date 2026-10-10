@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C2 functions through all five targets
+
+Read [the latest task handoff](CURRENT_ORIGINAL_C2_TARGET_FUNCTIONS_2026_10_10.md) first. Source [31885ad2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/31885ad2054f3243852a2f8d4563348df58c8eb5) installs current-source second Z derivative functions for all 17 charts, the original inverse/primitives, signed densities, own-rate radial transport and all five normalized terminal targets. Existing C1 function handles, predecessor memories, original phase and independent P0 remain intact. Dedicated source receipts and independent calculus/normalization checks passed. Next: quantitative current C2 ranges and actual implicit repair second derivatives. Physical/Cartesian field, stress cone and genuine temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): whole-Z Rh function join and retained correction
 
 Read [the latest task handoff](CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md) first. Source [845df526](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/845df526422def70c1369fab03fe6b8b232f44f9) proves the current patched leading background and Rh reference are the same functions, using the current unique whole-Z implicit owner and full-weight five-moment map. A callable C1 reference continuation preserves nonzero finite-N correction histories, own-rate memory, the independent P0 and original radius phase. The previous absolute five future-integral C1 closure remains accepted. Next: true second/higher correction and limit derivatives, then a complete physical/Cartesian field. Global cone, temporal recursion and full forced NS reconstruction remain ACTIVE / INCOMPLETE.
