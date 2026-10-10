@@ -1,3 +1,17 @@
+# Current handoff: actual all-N long/patch source and Rh transport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_LONG_PATCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_LONG_PATCH_FUNCTIONS_2026_10_09.md), checked source [4c381748](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4c38174806e70cab107c532143c0a7d7ebf95a86). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Original all-N bridge/switch normalized source chain through R110 retained.
+- [x] Thirty-two long and forty-four patch cells now carry the same normalized correction through Rm and Rh; original physical lengths, dx/x measure, independent P0 and pressure memory retained.
+- [ ] NEXT build the six outer all-N providers and transport this Rh incoming to Rc, then form actual relative targets, select common frequency and solve terminal controls.
+- [ ] Whole-Z long uses native nodes 0,1/2,1; the earlier four-cell handoff description concerned a different standalone producer.
+- [ ] N^-2 averaging, exterior/heat, higher jets, admissible stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Actual all-N switch functions and normalized R110 transport (2026-10-09)
 
 Source commit: [938938ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/938938ae5f2efdcd4b19fb638c2d1e26fea63895). Full reconstruction **ACTIVE / INCOMPLETE**. This is the current handoff; earlier headers are historical.
