@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): current postpulse source registry
+
+Read [the current postpulse handoff](CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md) first. Source [d16ec655](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d16ec6554234cc74f802c0f8b7605aebe7622c41) connects the accepted current selected pulse/flatten to all 15 native source routes, with the same unique repair and independent P0. Flatten and eight postpulse charts expose all five normalized source histories. Eighteen actual calls and 192 seam diagnostics pass. Absolute physical radii, raw physical histories, heat terminal closure and uniform/global mixed contracts remain open; full reconstruction is ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): current beta context and angular cache ownership
 
 Read [the selected consumer handoff](CURRENT_ORIGINAL_RP_SELECTED_CONSUMER_2026_10_10.md) first. Source [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da) completes the current-context beta provider and separates the copied angular-C4 cache. Four fresh actual calls include an active end bump; the current selected pulse/flatten receipt passes. Shared canonical future/angle/repair/heat owners are explicitly cache-free. Next: postpulse caller registry and absolute exterior histories; full reconstruction remains ACTIVE / INCOMPLETE.

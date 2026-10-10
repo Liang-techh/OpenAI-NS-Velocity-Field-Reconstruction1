@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): current postpulse source registry
+
+Read [the current postpulse handoff](CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md) first. Source [d16ec655](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d16ec6554234cc74f802c0f8b7605aebe7622c41) connects the accepted current selected pulse/flatten to all 15 native source routes, with the same unique repair and independent P0. Flatten and eight postpulse charts expose all five normalized source histories. Eighteen actual calls and 192 seam diagnostics pass. Absolute physical radii, raw physical histories, heat terminal closure and uniform/global mixed contracts remain open; full reconstruction is ACTIVE / INCOMPLETE.
+
+---
+
 # Complete current Rp inlet consumed by actual selected pulse and flatten (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da) installs the accepted complete Rp inlet in an actual copied selected pulse and same-object flatten consumer. The previous exact function and cached constant work now feeds active native algorithms. This closes restricted consumer ownership, not global Cartesian/heat/cone/temporal reconstruction.
@@ -55,14 +61,14 @@ Pass already accepted live interval/selected objects to `interval=` and `seed=` 
 
 ## Next: connect actual postpulse consumers
 
-- [ ] **CURRENT-RP-POSTPULSE-FACTORY** Add a downstream-only sibling factory receiving this accepted owner. Copy actual power/steep/waiting/heat/collar providers and connect their active callbacks to its same selected pulse/flatten and current future/repair. Do not simply add it beside the old registry. Preserve source family, pressure datum and accepted historical objects; reset copied caches.
+- [x] **CURRENT-RP-POSTPULSE-FACTORY** Completed source ownership by [d16ec655](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d16ec6554234cc74f802c0f8b7605aebe7622c41); details and remaining physical obligations: [CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md](CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md). Original task scope: Add a downstream-only sibling factory receiving this accepted owner. Copy actual power/steep/waiting/heat/collar providers and connect their active callbacks to its same selected pulse/flatten and current future/repair. Do not simply add it beside the old registry. Preserve source family, pressure datum and accepted historical objects; reset copied caches.
 - [ ] **CURRENT-RP-POSTPULSE-CALLER-PROOF** Record object identity and actual entry/exit calls for every replacement. Bind absolute Rv and following segmented radii to this owner's accepted logRp and exact source lengths. Keep the gigantic selected N representation lazy. A metadata radius handle alone does not install a physical chart.
 - [ ] **CURRENT-RP-POSTPULSE-FIVE-HISTORIES** Transport all five absolute histories plus independent P0 across flatten exit -> power -> steep -> waiting -> collar -> heat. Derive true source zeros, retain nonzero memories, and distinguish complete histories from relative repair.
 - [ ] **CURRENT-RP-UNIFORM-SELECTED-SEAMS** Recover and verify the changed consumer's required mixed derivative contracts across all six pulse charts and the full flatten/postpulse seams. Existing original-method functional theorems support local identities; they do not certify missing upstream/global derivative contracts.
 
 
 - [ ] **CURRENT-RP-INTERVAL-INLET** Provide six source-bound interval Taylor rows with the same underlying current analytic functions. Retain continuous kernel/error provenance and independent analytic P0. Do not convert magnitude caps into point values. Mark `native_interval_inlet_callback_installed` only after an actual caller invokes this callback.
-- [ ] **CURRENT-RP-POSTPULSE-REGISTRY** Connect the current selected pulse/flatten to actual postpulse callers. Record the exact calling objects and ensure all routes use the new owner rather than an unused adapter.
+- [x] **CURRENT-RP-POSTPULSE-REGISTRY** Completed source ownership by [d16ec655](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d16ec6554234cc74f802c0f8b7605aebe7622c41); details and remaining physical obligations: [CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md](CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md). Original task scope: Connect the current selected pulse/flatten to actual postpulse callers. Record the exact calling objects and ensure all routes use the new owner rather than an unused adapter.
 - [ ] **CURRENT-NATIVE-PULSE-C3-TRANSPORT** Continue actual pulse E/V and all five histories through Z3, with native-to-radial Jacobians and inherited complete memory. Keep required mixed-y derivatives explicit; local six-row analytic inlet data does not supply missing global derivative contracts.
 - [ ] **CURRENT-C2-EXTERIOR-SEGMENT-MEMORY** Close pulse/end/flatten/postpulse/heat collar histories through Z2, preserving lower-order aliases and source-consistent radii.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Close absolute Gamma/heat terminal identities, final heat amplitude and correct reference power. Relative repair zero does not establish absolute heat matching.
