@@ -1,3 +1,16 @@
+# Current handoff: actual all-N bridge source and R100 transport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_BRIDGE_SOURCE_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_BRIDGE_SOURCE_FUNCTIONS_2026_10_09.md), checked source [22a81139](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/22a81139e4d650a569b0309aa2e556f2372684c7). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Original bridge functions now expose epsilon=1/N, a full phase outer cover and genuine N-scaled five-driver C0/Z functions.
+- [x] All four-Z/40-cell bridge contributions and zero-inlet normalized histories rebuilt through R100; positive measures/P0/pressure memory retained.
+- [ ] NEXT extend actual all-N source functions through switch/long/patch/outer and normalize the completed Rc targets, then select frequency and solve controls.
+- [ ] N^-2 averaging, physical exterior/heat, higher jets, admissible stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Actual whole-Z Rc control map and finite C1 functions (2026-10-09)
 
 Source commit: [2223b9fb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2223b9fb125d2d8ee99b853fd90341cbe7ebabc8). Full reconstruction **ACTIVE / INCOMPLETE**. This is the current handoff; earlier headers are historical.
