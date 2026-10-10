@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): source-bound native Rp constants
+
+Read [the latest handoff](CURRENT_ORIGINAL_RP_NATIVE_CONSTANTS_2026_10_10.md) first. Source [c86b13ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c86b13efc603829a69216ecd66b7de80530efffe) proves 12 current constant functions equal actual native constructor functions, using seven actual buffer coefficients and original kernels. **CURRENT-RP-CACHED-CONSTANT-IDENTITY is done.** Next: directed interval constant view, actual copied pulse input ownership and flatten caller handshake. Full reconstruction remains ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): current Rp native inlet functions
 
 Read [the latest handoff](CURRENT_ORIGINAL_RP_NATIVE_C3_FRAME_2026_10_10.md) first. Source [da019491](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da0194911ec99f996921fc45aec8817c11558c18) identifies all eight complete Rp frame functions, their true native Z0..5 Taylor rows and original absolute Rw/Rp radii after restoring the nonzero microscopic phase origin. The complete adapter and frame inventory are done. Next: actual selected pulse/flatten caller injection and a source-bound interval inlet. Numerical physical-time u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
