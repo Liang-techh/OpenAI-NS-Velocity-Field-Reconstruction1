@@ -1,3 +1,9 @@
+# Latest checkpoint — analytic P0 numeric binding, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_P0_NUMERIC_BINDING_2026_10_10.md](CURRENT_ORIGINAL_RP_P0_NUMERIC_BINDING_2026_10_10.md) first. Both distinct actual current datum owners now bind all six original analytic P0 Taylor rows, preserving fourteen atoms, flatten Cauchy errors, a positive late tail and the lazy original pressure scale. The accepted supported u/v/w/p interface reports P0 source inclusion complete; nonzero ordinary physical accuracy remains open.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: original common-scale conditioning and physical error propagation, then wider chart/general/global/axis coverage, signed stress/flat remainder, genuine n-dependent recursion and oscillatory cancellation. Do not rerun P0 inventory or broad accepted validation without a new dependency change.
+
 # Latest checkpoint — signed supported physical u/v/w/p, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_SIGNED_PHYSICAL_VALUES_2026_10_10.md](CURRENT_ORIGINAL_RP_SIGNED_PHYSICAL_VALUES_2026_10_10.md) first. Current source/operator rows now yield signed common-scale u/v/w/p representations, exact zero/cancellation and retained positive ratio-tail bounds, with original physical coordinates and explicit accuracy/materialization state. Nonzero original-scale values in the tested cases remain factored/logarithmic; the ordinary numeric observations are exact zero rows only.
