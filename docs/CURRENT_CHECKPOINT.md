@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual outer C3 history chain
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_C3_CONTINUATION_2026_10_10.md) first. Source [2f5ea69f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f5ea69f0f02c6f54ca17a1f2a6e2a8c76c01916) extends actual correction/leading/complete histories through Z3 across O2_slope, O2_axial, O2_buffer, O3_transition and O3_power, with original dlogR Jacobian, nonzero incoming, shared P0, first-y/pressure functions and four-cell whole-native bounds. Next: explicit map to the final selected pulse/collar/heat registry and absolute matching. Corrected high-y seams, global time/Cartesian field, signed cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual Rh C3 continuation
 
 Read [the latest handoff](CURRENT_ORIGINAL_RH_C3_CONTINUATION_2026_10_10.md) first. Source [a40d1b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a40d1b6355a118fa067c682dc47836c5a0a42316) installs actual Rh reference partial correction/complete five histories through Z3, first-y FTC and pressure, with original nonzero incoming, P0, phase and selected repair N retained. Exact Rh geometry/source registry, direct/full partitioned integral endpoint identities and four-cell whole-reference bounds pass. Next: outer partial-history chain and absolute heat matching; corrected high-y Rh rows remain open. Full physical time/Cartesian field, signed cone and temporal scale recursion stay ACTIVE / INCOMPLETE.

@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual outer C3 history chain
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_C3_CONTINUATION_2026_10_10.md) first. Source [2f5ea69f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f5ea69f0f02c6f54ca17a1f2a6e2a8c76c01916) extends actual correction/leading/complete histories through Z3 across O2_slope, O2_axial, O2_buffer, O3_transition and O3_power, with original dlogR Jacobian, nonzero incoming, shared P0, first-y/pressure functions and four-cell whole-native bounds. Next: explicit map to the final selected pulse/collar/heat registry and absolute matching. Corrected high-y seams, global time/Cartesian field, signed cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Actual Rh C3 partial and complete history continuation (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [a40d1b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a40d1b6355a118fa067c682dc47836c5a0a42316) installs source-owned signed partial correction histories and complete five histories through ordinary Z3 on the whole Rh reference interval a[-5,0], with the same original pressure datum, selected repair N and incoming memory. Complete history first-y functions and four-cell directed whole-reference bounds are included. The earlier C2 Rh correction-continuation task is completed by this C3 extension. Higher profile/stress radial rows at Rh, the remaining exterior segment chain, absolute heat matching and the full physical time/Cartesian field remain open.
@@ -72,7 +78,7 @@ Installed quartet: `lei_ren_part1_paper_compliant_current_original_Rh_C3_continu
 
 ## Next bounded work
 
-- [ ] **CURRENT-C3-OUTER-PARTIAL-HISTORY-CHAIN** Extend the same portable partial-history construction through O2_slope, O2_axial, O2_buffer, O3_transition and O3_power. Use each original native coordinate/radius/Jacobian and cell partition. Pass the previous actual complete correction memory at every inlet, preserve P0 and the current phase, and install source-owned leading+correction functions plus directed whole-domain bounds. Never extend Rh past a=0 or reset a quiet chart's incoming memory.
+- [x] **CURRENT-C3-OUTER-PARTIAL-HISTORY-CHAIN** Completed by [2f5ea69f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f5ea69f0f02c6f54ca17a1f2a6e2a8c76c01916); see [actual outer C3 continuation evidence](CURRENT_ORIGINAL_OUTER_C3_CONTINUATION_2026_10_10.md).
 - [ ] **CURRENT-C2-EXTERIOR-SEGMENT-MEMORY** Connect the resulting high-row quiet-power, selected pulse, selected postpulse and collar histories to the accepted `current_limit_absolute_future_integrals.py` dependency chain. Distinguish the current original chart graph from the final selected native exterior registry, with explicit radius/phase/unit function identities.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Recover all five absolute terminal identities through Z2 with true final heat amplitude, native future-integral FTC/Gamma tails, original inlet cancellations and the correct final reference power. The Rh continuation does not itself close the heat exterior.
 - [ ] **CURRENT-C2-RH-INTERFACE-MIXED-ROWS** Value/Z/ZZ/ZZZ continuation and complete history first-y are installed. Supply the remaining actual finite-N profile/stress y rows required by the global physical operator and prove their interface function identities. Do not promote the leading mixed4 theorem to corrected mixed4.
