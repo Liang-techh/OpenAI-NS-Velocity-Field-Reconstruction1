@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C2 repaired-band mixed profiles and histories
+
+Read [the latest handoff](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md) first. Source [844cb3a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/844cb3a26519377c1d3276f4521463e63cb90cfa) installs genuine C2 normalized E/V on the original reserved band, with radial y orders 0,1,2; signed partial/complete histories, independent P0, relative terminal five-moment identities and directed four-cell bounds. All original C1 handles and source units are retained. Next: genuine C3 target/control/history rows, needed because the unchanged radial/inertial recovery consumes one extra axial derivative. C2 Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Actual current C2 target ranges and same-limit control derivatives (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [9e903dfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e903dfc7f5bad2b49cb53aefd204bed3e152a03) completes quantitative second-Z magnitude ranges on the current four axial cells and appends genuine second derivatives to the same original five-control Banach limit. The next blocker is carrying these controls into repaired-band velocity/history functions and then the absolute exterior/heat assembly. Complete physical/Cartesian field, stress cone, temporal coefficient recursion and oscillatory correction remain open.
@@ -75,9 +81,9 @@ Producer admission flags stay false. Dedicated receipts admit only their bounded
 
 ## Next tasks, in dependency order
 
-- [ ] **CURRENT-C2-REPAIR-BAND-PROFILES** Extend original compact-bump F/G, corrected E/V and their radial derivatives with h*_ZZ. Use the actual reserved x in[1,2], original normalized bump weights and amplitude_ZZ. Preserve C1 handles and flat support endpoint jets. Produce independent product/chain checks and an accepted receipt.
-- [ ] **CURRENT-C2-REPAIR-BAND-HISTORIES** Differentiate the original signed repaired-band densities and own-rate partial Duhamel functions twice. Keep all incoming correction histories and pressure rate-zero memory. Derive C2 relative terminal identities using the actual second control residual; do not turn relative closure into absolute exterior closure.
-- [ ] **CURRENT-C2-PATCHED-LEADING-SOURCE** Feed the genuine h*_ZZ and repaired-band histories into the actual source recovery for leading E/V and all histories/P0. Retain same radius, axial units and full inertial quotient recipes. Derive mixed radial/Z derivatives on the real patch; do not differentiate an enclosure endpoint or transplant leading-only mixed4.
+- [x] **CURRENT-C2-REPAIR-BAND-PROFILES** Completed by [844cb3a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/844cb3a26519377c1d3276f4521463e63cb90cfa); see the [current source evidence](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md).
+- [x] **CURRENT-C2-REPAIR-BAND-HISTORIES** Completed by [844cb3a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/844cb3a26519377c1d3276f4521463e63cb90cfa); see the [current source evidence](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md).
+- [ ] **CURRENT-C2-PATCHED-LEADING-SOURCE** C2 band profiles/histories are installed. The unchanged radial/inertial recovery requires genuine third-Z repaired histories for second-Z Q/p2. Complete the C3 target/control/history dependency before claiming this source recovery; see [CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md).
 - [ ] **CURRENT-C2-RH-CORRECTION-JOIN** Extend the existing correction-preserving Rh reference continuation with actual second incoming histories and non-reset own-rate transport. Establish the same leading identity plus correction C2 consistency, separately from global frequency admission.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Extend all selected-source absolute exterior target identities and the source-linked future-integral ledger to ordinary Z2, preserving actual heat amplitude and independent P0. Differentiate the true integrals and their Gamma/FTC tails; require new absolute source evidence.
 - [ ] **CURRENT-C2-PRESSURE-HEAT-ASSEMBLY** Install genuine second source rows in pressure restoration and exact heat-exterior assembly, with interface/axis regularity and independent pressure provenance. Keep heat source/amplitude identities separate from an unevaluated integral graph.

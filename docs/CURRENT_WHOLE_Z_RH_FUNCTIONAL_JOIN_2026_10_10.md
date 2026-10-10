@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C2 repaired-band mixed profiles and histories
+
+Read [the latest handoff](CURRENT_ORIGINAL_C2_REPAIRED_BAND_2026_10_10.md) first. Source [844cb3a2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/844cb3a26519377c1d3276f4521463e63cb90cfa) installs genuine C2 normalized E/V on the original reserved band, with radial y orders 0,1,2; signed partial/complete histories, independent P0, relative terminal five-moment identities and directed four-cell bounds. All original C1 handles and source units are retained. Next: genuine C3 target/control/history rows, needed because the unchanged radial/inertial recovery consumes one extra axial derivative. C2 Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): quantitative C2 targets and same repaired limit
 
 Read [the latest task handoff](CURRENT_ORIGINAL_C2_TARGET_RANGES_AND_LIMIT_CONTROLS_2026_10_10.md) first. Source [9e903dfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e903dfc7f5bad2b49cb53aefd204bed3e152a03) completes actual second-Z target magnitude ranges over four Z cells, all 17 charts and 228 native cells, then installs genuine second derivatives of the same original five-control Banach limit with its quantitative C2 Picard tail. Same pressure, target, weights, C1 limit and repair-only frequency are retained. Next: C2 repaired-band velocity/history installation and absolute exterior/heat derivatives. Complete physical/Cartesian field, cone and genuine temporal recursion remain ACTIVE / INCOMPLETE.
