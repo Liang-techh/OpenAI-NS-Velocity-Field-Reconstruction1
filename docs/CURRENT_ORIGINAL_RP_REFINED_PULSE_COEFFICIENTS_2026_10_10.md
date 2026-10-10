@@ -1,5 +1,7 @@
 # Original pulse coefficient and physical factor refinement — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md) completes fixed-logC centering and bounded elementary parameter arithmetic. Nonconstant products and ordinary nonzero delivery remain open. The next concrete source implementation is the missing pulse pressure tail.
+
 The supported original pulse query now delivers u/v/w factor enclosures below an explicitly requested **0.1% relative-diameter target**, about eight times narrower than the preceding coefficient view. The independent check and accepted public call pass. This is actual source-coefficient/physical-operator progress. The full goal stays **ACTIVE / INCOMPLETE**: ordinary nonzero physical numbers, pressure sign, general/global/axis coverage, admissible stress, genuine n-dependent recursion and oscillatory cancellation remain open.
 
 Source commit: [38b94cb1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/38b94cb1d0c1771307db60c66eb9c0a6eec39389). Source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_refined_pulse_coefficients.py`, `.json.gz`, `_check.py`, `_check.json`.

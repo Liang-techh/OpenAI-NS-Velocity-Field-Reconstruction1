@@ -1,3 +1,9 @@
+# Latest checkpoint — exact source-scale origins, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md) first. The original fixed logC term is now stored exactly and separated from residual error, with five same-source elementary enclosures refined. Across two supported queries, 213 nonzero rows carry exact centered identities; 159 still contain nonconstant logC products. The local pulse velocity factor widths remain about 0.0791%, 0.0791% and 0.0341%. Ordinary nonzero physical delivery and pressure sign remain open.
+
+Full goal **ACTIVE / INCOMPLETE**. Next concrete task: implement the original remaining pressure tail at pulse_exit and bind its correlated signed rows. Then address residual scale errors, all-chart/general/global/axis coverage, signed stress/flat remainder, genuine n-dependent recursion and oscillatory correction. Do not report this bounded arithmetic result as completed scale recursion or full NS validation.
+
 # Latest checkpoint — refined pulse physical factors, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_REFINED_PULSE_COEFFICIENTS_2026_10_10.md](CURRENT_ORIGINAL_RP_REFINED_PULSE_COEFFICIENTS_2026_10_10.md) first. Finer original pulse energy/history integrals now reduce the actual pulse u/v factor diameters to 0.0791% and w to 0.0341%, about 8x better. The accepted public u/v/w/p interface and focused independent source/operator checks pass. Of 144 rows, 53 nonzero factors meet an explicitly requested 0.1%; pressure sign and ordinary nonzero physical delivery remain open. U0 alone was already too narrow to dominate.
