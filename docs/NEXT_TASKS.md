@@ -1,3 +1,17 @@
+# Current handoff update (2026-10-10): six pulse histories and 15-chart closed exterior caller
+
+Read [the current pulse/closed exterior handoff](CURRENT_ORIGINAL_RP_RAW_PULSE_TRANSPORT_2026_10_10.md) first. Source [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82) restores factorized raw histories and Ur/Utheta/Uz on all six active pulse charts, retains nonzero axial terms and P0, applies the general five density equations with one native Jacobian, and joins all 15 current pulse/postpulse routes through a common caller with closed heat. All output scale parts use one current graph. Full reconstruction is **ACTIVE / INCOMPLETE**: unrestricted numeric physical u/v/w, uniform/global mixed contracts, cone and true temporal recursion remain open.
+
+- [x] **CURRENT-RP-RAW-PULSE-SCALE-FUNCTIONS** Done for six actual source charts in [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82).
+- [x] **CURRENT-RP-RAW-PULSE-FIVE-HISTORIES** Done at directed factorized source scope in [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82).
+- [x] **CURRENT-RP-RAW-PULSE-NATIVE-DERIVATIVES** General nonzero-Uz equations and one Jacobian installed in [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82).
+- [x] **CURRENT-RP-CLOSED-HEAT-CALLER-INTEGRATION** One 15-chart current source caller uses closed collar/exterior in [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82).
+- [ ] **Next: CURRENT-RP-COMMON-UNIT-SEAMS and CURRENT-RP-RAW-HIGH-MIXED-TRANSPORT** Convert pulse Fpulse/Pstar to postpulse Ev0 using exact U0, then transport required mixed rows and advance physical/time Cartesian and point-error delivery.
+
+This handoff supersedes older open entries for these scoped source tasks. Historical checkpoints below remain evidence, not the current pending queue.
+
+---
+
 # Current handoff update (2026-10-10): same-existing-repair absolute heat closure
 
 Read [the current closed heat handoff](CURRENT_ORIGINAL_RP_SAME_REPAIR_HEAT_CLOSURE_2026_10_10.md) first. Source [44336a96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/44336a96857b3d190a7e493995ecfab6ef551cd5) binds the existing current selected repair to the actual absolute radius/U0 source functions, eliminates Dtheta/Cp by the retained whole-Z function proofs, and supplies closed factorized raw histories plus first native radial derivatives on collar/Gamma exterior. The independent analytic P0 and forward constant enclosures remain present. No second repair or upstream replay occurs. Full reconstruction is **ACTIVE / INCOMPLETE**: unrestricted numerical Cartesian u/v/w, global mixed/cone contracts, temporal recursion and corrected NS remain open.
