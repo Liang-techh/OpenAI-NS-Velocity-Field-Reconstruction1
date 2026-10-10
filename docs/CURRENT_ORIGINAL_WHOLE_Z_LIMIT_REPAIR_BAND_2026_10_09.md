@@ -1,67 +1,69 @@
-# Current handoff: exact C1 limit and actual reserved repair band (2026-10-09)
+# Current source-bound C1 limit and actual original repair band (2026-10-09)
 
-Read [CURRENT_ORIGINAL_WHOLE_Z_LIMIT_REPAIR_BAND_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_LIMIT_REPAIR_BAND_2026_10_09.md), checked source [5be89d45](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5be89d45022408a2802a96a716b6c7add377c23d). Full reconstruction **ACTIVE / INCOMPLETE**.
+Source commit: [5be89d45](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5be89d45022408a2802a96a716b6c7add377c23d). Full reconstruction **ACTIVE / INCOMPLETE**. Current definitive handoff; older headers below are historical.
 
-- [x] Same current17 exact integral targets now feed genuine mathematical C1 limit functions on the original Rc..2Rc background, with all five leading histories and independent P0 retained.
-- [x] Original compact profiles, true radial/Z pairs and five relative terminal C0/Z moment identities are connected; the relative correction vanishes at 2Rc.
-- [ ] NEXT recover full physical velocity/pressure jets and close the original absolute exterior/preheat/heat targets. Source/parameter joins are not this full-field gate.
-- [ ] Numerical control/phase values, global N/stress, actual temporal scale recursion, pulses and full NS remain open.
+## Concrete advancement
 
-Earlier headers and task wording below are historical.
+The accepted current 17-chart exact source integrals now feed genuine mathematical C1 Banach limit function handles. The same limit is connected to the reserved original power background on **Rc <= R <= 2Rc**, not only to a terminal amplitude or finite Picard approximation. All five original leading histories and the independent pressure datum P0 are retained. Exact compact-bump correction fields, true ordinary-Z product rules, radial/Z field pairs, full relative Duhamel histories and the five terminal residual identities are implemented.
 
----
+This closes the **relative five-moment correction at 2Rc in C1(Z)**, for the selected repair-only exact integer expression N=2^(2^J), J=1358356628656378313. The background's absolute terminal histories generally remain nonzero. Numeric controls/velocity evaluation, full recovered field and pressure/heat joins, global admissibility, and real temporal scale recursion remain incomplete. Picard depth is a control solver iteration, not recursion order n.
 
-# Current all-N source functions, repair integer and C1 control connection (2026-10-09)
+## Actual original power source
 
-Source commit: [3e6e6c35](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6e6c35dc32a5ae1ddabc34cc9e189e09b01b6d). Full reconstruction **ACTIVE / INCOMPLETE**. This document supersedes prior handoff headers; earlier text remains historical.
+The historical original power[0,2] coordinate guard remains strict. A new explicit reserved-band API accepts exact rational x in[1,2], sets t=2+log(x), and retains every original background AST statement starting with the source-key selection. The unchanged suffix includes the same transition parent, formal mu, original all-five history arithmetic, P0, physical radius and radial/axial jet recipes. Its arithmetic mu cover remains an enclosure and never becomes a function parameter. The same original Tw and 2mu>=eta admission prove this continuation is inside the quiet power reservation; q and its ordinary-Z derivative remain zero locally. Incoming correction memory is still nonzero at Rc.
 
-## Concrete outcome
+The exact function graph uses the source-defined Rc histories and A=A_rc(Z), then the original semigroup, with s=log(x), alpha=1/2+mu:
 
-The current source family now has an exact integral/control graph for all **17 original charts**, using the original **57 native cells per Z / 228 accepted range cells across four Z cells**. The new graph starts at the source-owned symbolic inlet, keeps the original global fractional radius phase and every positive physical Jacobian, transports genuine N-scaled correction functions through Rc, and feeds five direct relative target functions into the original exact nonlinear control map. It is an exact mathematical recipe graph with original source-function leaves; it does not provide a numerical scalar oracle for those leaves or the phase.
+- E=A*x^(-alpha), V=0.
+- m_B=x^-1*m_B(Rc), k_B=x^-3/2*k_B(Rc).
+- h_B=x^-3/2*h_B(Rc)+A*x^-3/2*s*exprel((1-mu)*s).
+- e_B=x^-1*e_B(Rc)-A^2*x^-1*s*exprel(-2mu*s)/2.
+- p_B=p_B(Rc)+A^2*s*exprel(-(1+2mu)*s)/2.
 
-The repair-only common frequency is the strict finite integer expression **N=2^(2^J), J=1358356628656378313**. Neither inner power nor N is materialized. Its directed log(N) is represented by changing a binary exponent. This separately proved API does not silently pass legacy Python-int guards, set 1/N to zero, approximate N by a float, or claim a globally admissible reconstruction frequency.
+P0 is a separate original source-function handle. It is not reset or merged into p_B. Original radial equations are m_y=-m+V, h_y=-3h/2+E, k_y=-3k/2+E*V, e_y=-e+V^2-E^2/2, p_y=E^2/2. Genuine ordinary-Z derivatives follow from the same C1 pairs and keep A_Z and every incoming history jet. The original five ODEs, five semigroup identities, inlet Z traces and endpoint signed/Z identities were checked symbolically.
 
-The same source-bound C1 target now has a mathematical unique control limit in the original certified ball, with contraction at most 1/2, exact Picard recipes, an implicit first-Z equation and a factored iteration-tail bound. Numeric controls, actual repair-band joins and physical terminal/exterior closure are still open.
+## Exact limit and band connection
 
-## Function and source contract
+The current accepted graph is restored unchanged, including its exact integer expression, canonical parameters, original phases/inverse/source recipes and N-scaled targets. No earlier source integration or source producer is rerun. A generic original map template is built from exact B(mu), Q(mu,h), the same d=N*r and the same N. The vector node defines h*=lim_C1 h_j, h_0=0, h_next=-B^-1*(d+Q(h)/N), in the accepted source-bound contraction ball. Ten component handles supply the five unscaled limit functions and genuine first-Z derivatives. This is a mathematical function definition; numerical values remain uninstalled.
 
-Source leaves bind the actual current provider AST and quantity path, coordinate and Z variable. E/V come from common_velocity_E/V_axial5; a,t0,p2 use original_roots. Raw b and Delta use the original quotient proof, with chart-specific paths: long_reshape has exact b=t0=0 and Delta_axial5; reference/restoration/postrestore/Rh_reference use actual_nonzero_b_axial5; other general/collected branches use actual_b_axial5 and actual_Delta_axial5. Primitive A and B are distinct from shear a and raw b. A fresh witness checks every chart's live quantity paths, roots.E/generic.E identity, same source/P0/phase-Z and formal arithmetic context. Interval results stay ranges, never coefficient functions.
+The actual residual expressions B*h*+d+Q(h*)/N and their true Z derivatives are retained in the graph. Each derivative component directly references the actual implicit linear-system node (B+DQ(h*)/N)*h*_Z=-d_Z, its matrix/rhs handles, and the same half-contraction invertibility proof. Separate theorem nodes prove the residual C1 zero identities from the checked contraction and source-bound limit. The exported graph has no finite_picard_sequence or finite-terminal label for h*. The implementation does not insert zero as an input target or silently identify finite iterates with h*. Finite numerical error certification still needs a real source/phase/integral oracle.
 
-The exact original loop is rebuilt from those defining quantities: original lazy sigma/sqrt cutoff, p2*q/d_star geometry, angular integrals, monotone phase inverse, A=a/2*(phi-psi/(2pi)), and the original B angular primitive. True q_Z, inverse_Z, A_Z and B_Z keep the original chain rules. first_micro's source-owned collar is an explicit structured disjunctive flat predicate, not merely a label; it covers sc/2..3sc/4. The admitted O3 power has a hash-bound quiet proof q=q_Z=A=B=0, while predecessor histories continue through its nonzero width.
+With the original normalized compact log bumps g_i, the implemented correction profiles are F=sum(e_i*g_i)/N, G=(a0*g0+a2*g2)/N. Corrected fields are E_c=A*(x^-alpha+F), V_c=A*G. Their signed density differences are delta_m=A*G, delta_h=A*F, delta_k=A^2*(x^-alpha+F)*G, delta_e=A^2*(G^2-x^-alpha*F-F^2/2), delta_p=A^2*(x^-alpha*F+F^2/2).
 
-eta and d_star use shared canonical source parameter nodes. Actual O3, switch, long and patch owners must have identical eta_log/dstar_log source tuples, family and fixed N0. Bridge and switch widths retain separate hbB/hbS recipe nodes; names alone never merge them. T, logC, sc and the terminal positive amplitude retain the accepted source definitions and guards.
+Each relative history is D_j(x)=x^-r_j*(D_j(Rc)+integral_1^x t^(r_j-1)*delta_j(t)dt). The own rates are (1,3/2,3/2,1,0); the 1/t physical Jacobian appears once and pressure's incoming memory is exactly retained. At x=2:
 
-For every chart, phase=frac(N*(logR-logRa-hbB*sc/2)) is a genuine function node. No fixed-N tiny phase error is reused at the astronomical frequency. All 16 radius seams agree symbolically, including the original local second_switch shift, patch dx/x, axial 40*exp(40t) Jacobian, and exact Rc offset exp(40)+20 relative to Rm. The graph integrates the exact accepted native partitions; every cell has exact lower/upper and radius-offset nodes.
+- D_m=2^-1*A*res_M/N; D_h=2^-3/2*A*res_I/N.
+- D_e=2^-1*A^2*res_S/N; D_p=A^2*res_Cp/N.
+- D_k=2^-3/2*A^2*(res_M+mu*res_D)/N.
 
-Write U=E*A_primitive*exprel(A_primitive/N). The normalized density is the exact first-order coefficient plus its genuine N-dependent quadratic coefficient divided by N. The graph retains original exprel, the true U_Z formula, all cross terms and signed values. Each source cell uses exp(-rate*(chart_right-offset))*Jacobian once. Chart memories are exp(-rate*width), with pressure rate zero exactly one. The 228-cell/64-seam range induction binds the accepted four-stage source receipts and the exact same partitions, source recipes, normalized density identity and incoming/outgoing records to the new functions; no old fixed-N total is rescaled.
+These value and genuine-Z identities imply all five relative terminal rows vanish. The joint row remains (k-A*m)/(mu*A^2), formed before division. Since mu_Z=0 and A_Z need not vanish, the original product/quotient rules remain essential.
 
-At Rc, H=N*D is divided directly by the original positive A_rc and mu. The axial joint numerator H_k-A_rc*H_m is formed before mu division. All Z product/quotient rules remain. No second factor N is introduced, and original leading background/P0 remain separate.
+## Precisely scoped joins
 
-## Frequency and mathematical control limit
+The original bump supports in log(x) are [7,9]*log2/40, [19,21]*log2/40 and [31,33]*log2/40. They are disjoint and strictly interior. F,G and all radial derivatives vanish on neighborhoods of x=1 and x=2; their first ordinary-Z derivatives do too. Explicit first radial/Z profile handles use the original flat beta derivative and the normalization's 1/x derivative. E_c,y=-alpha*E_base+A*F_y uses the base power in its first term; the additive F correction does not gain an extra -alpha factor.
 
-The current target bounds are combined as **2*max_cell(sup_cell|d|+sup_cell|d_Z|)**. This bounds the original whole-domain C1 norm even when its two extrema occur in different Z cells. Fresh original compact-bump integral weights, divided axial matrix, inverse and quadratic bounds use the exact same positive mu. The directed sufficient repair/image/positivity log(N) threshold remains about 2.54*10^408906090034569677; this conservative magnitude has not been numerically reduced.
+At Rc, the corrected leading E/V profiles equal the preceding quiet power source and preserve incoming relative histories. At 2Rc, the relative histories and their first radial/Z equations agree with the original leading background because terminal D=0 and the local correction density vanishes. This supplies the parameter/history-level join. Full reconstructed physical velocity and pressure jets, the physical exterior/analytic preheat datum, exact heat solution and global stress cone still need their own implementation and acceptance. Do not mark them complete from this result.
 
-For a positive binary upper threshold L<2^E, choosing J>=E+2 and log(2)>1/2 proves log(N)=2^J*log(2)>L. J>=12 also gives N>N0=2^3981 without generating either power. The same chosen expression appears in every phase, exprel denominator, control quadratic denominator and finite-Picard band recipe.
+## Acceptance and routing
 
-With d the actual defining N-scaled target function, the original map is h_next=-B(mu)^-1*(d+Q(mu,h)/N), h0=0. Directed bounds prove contraction at most 1/2 and the original image/positivity conditions. Its exact C1 limit h* obeys B*h*+d+Q(h*)/N=0 and (B+DQ(h*)/N)*h*_Z=-d_Z. The control tail is bounded by radius*2^-n, and the preconditioned residual tail by 3*radius*2^(-n-1). Small dyadic factors are stored separately from the astronomical radius log so fixed precision cannot erase them.
+The bounded checker passed 6368 exact graph nodes, the unchanged current17 graph prefix, strict coordinate rejection, unchanged background AST suffix, explicit implicit-Z matrix/rhs bindings, original ODE/semigroup and signed terminal/Z identities, and four fresh live original reserved-power witnesses over the existing whole-Z cover. Each witness binds the same parent/P0, matches the Rc inlet rows exactly, checks actual generic history paths and original m/k normalization by S, queries the whole reserved cell, preserves nonzero exit amplitude and original radial/axial jets, and checks Tw/quiet-power admission. Leading history/P0 leaves also bind the exact current coordinate-2 provider call, unchanged frontend AST and original recovery/compiler AST hashes; actual ranges never become their values. Existing 228 source integrations were not replayed. Producer 1.375s; checker 141.250s.
 
-This is a mathematical iteration bound. It covers no scalar phase-oracle, quadrature or rounding error. Finite iterates and their repair profiles remain candidates until those errors and the actual source band are admitted. Global high-y derivative, join, stress and heat frequency conditions are not included in the repair-only selection.
-
-## Acceptance
-
-The terminal checker passed 5607 exact graph nodes, 16 symbolic radius seams, 17 fresh actual source recipe witnesses, the strict integer proof, original normalized density/Poisson/quotient identities, all 57 current native partitions and the uniform C1 contraction/tails. Existing 228 source integrations were not rerun. Producer 41.266s; checker 125.094s. The only worker remained **GPT-5.6 Luna / max**, static/read-only.
+The sole worker remained **GPT-5.6 Luna / max**, static/read-only. Root performed production, checks and Git synchronization. No additional worker or Astra child was spawned.
 
 ## Ordered tasks for agents
 
-Complete only with implementation, generated result, passing terminal receipt and source commit. Keep the full reconstruction goal open. Exact graph definitions, numerical realization, relative algebraic closure and physical exterior closure are distinct gates.
+Close a task only with source implementation, generated result, passing terminal receipt and source commit. Mathematical function definition, numerical evaluation, relative closure and physical absolute exterior closure are distinct gates. Continue the full reconstruction goal.
 
-- [x] **ALL-N-CAP-TO-FREQUENCY-CONDITIONS** Current four-Z target bounds feed fresh original weights/inverse/quadratic conditions, with the correct whole-domain C1 aggregation and same mu/log(N0).
-- [x] **ALL-N-INTEGER-SELECTION** Strict DoubleDyadicInteger API, exact definition, directed log proof, source-prefix proof and type rejection. This selects a repair-only expression; global N remains open.
-- [x] **CURRENT-17-CHART-INTEGRAL-CONTROL-GRAPH** Actual 17-chart source recipe/phase inverse/57-cell integration graph, zero inlet, true memories and five direct N-scaled target handles feed exact_control_graph.
-- [x] **CURRENT-C1-CONTROL-LIMIT-DEFINITION** Source-bound unique mathematical C1 limit, half contraction, implicit Z identity and factored Picard/residual tails at the same repair-only expression.
-- [ ] **CURRENT-POWER-BAND-SOURCE** Extend the original pure power background on t=2+log(x), x in[1,2], with original Tw reservation. Bind E=A_rc*x^(-1/2-mu), V=0, leading histories/P0 and original radial/Z jets. Use source functions throughout the band; terminal amplitude alone is insufficient. The old [0,2] guard must be extended explicitly for the reserved band.
-- [ ] **CURRENT-LIMIT-REPAIR-BAND** Replace finite Picard candidate handles by exact h* function handles with the same compact-bump normalization/supports and N denominators. Rebuild corrected E/V and true Z derivatives from the original band source, then derive all five terminal moment identities in the actual source frame.
-- [ ] **CURRENT-BAND-JOINS** Prove left/right neighborhoods are unchanged by compact supports and verify value/radial/Z/mixed jets at Rc and 2Rc. Preserve pressure/rate-zero memory. Do not infer joins from a finite iterate's small residual.
+- [x] **CURRENT-POWER-BAND-SOURCE** Explicit original coordinate-only extension over reserved Rc..2Rc, same actual parent/leading histories/P0/mu/radius, source-defined semigroup and genuine radial/Z rows.
+- [x] **CURRENT-LIMIT-REPAIR-BAND** Same current17 exact targets and selected N feed actual source-bound C1 limit component handles, original compact profiles, signed partial histories and all five relative terminal C0/Z identities.
+- [x] **CURRENT-PARAMETER-HISTORY-BAND-JOINS** Original support neighborhoods, E/V profile and first radial/Z pairs, leading-history semigroup and relative terminal/history jet identities. Scope is these source/parameter/history interfaces.
+- [ ] **CURRENT-RECOVERED-PHYSICAL-BAND-JOINS** Recover the actual physical u,v,w and pressure from repaired original parameters/histories using the paper's exact formulas and signed axial extension. Prove all required mixed/radial/Z jet joins at Rc and 2Rc; include denominators, independent P0 and each pressure/energy history. Bind this repaired source, not old finite Picard or native24 functions. This is the remaining full-field part of the earlier CURRENT-BAND-JOINS task.
+- [ ] **CURRENT-ABSOLUTE-EXTERIOR-TARGETS** Compute original absolute five histories and pressure source at 2Rc from the new leading plus corrected source. Compare each with the paper's actual exterior/preheat requirements; report surviving background terms. Never infer absolute zero from D=0. Identify the source-compatible exterior datum and its regularity/finite-energy conditions, then implement the connecting source.
+- [ ] **CURRENT-ANALYTIC-PREHEAT-EXACT-HEAT** Use the actual absolute exterior datum to construct the original analytic preheat/heat continuation, with actual pressure/P0, boundary jets and finite-energy tail. Bind input functions and prove exact heat exterior; preserve the distinction from interval witnesses or a toy heat model.
+- [ ] **CURRENT-LIMIT-GLOBAL-REGULARITY** Upgrade h* from C1(Z) to the paper's required higher Z/mixed regularity using derivatives of the same target and implicit system. Combine source high-y jets and repaired-band cone margins with every region's frequency restrictions. A repair-only C1 contraction proves neither these derivatives nor global stress admissibility.
+
+Remaining oracle, frequency, temporal-recursion, pulses and full-NS tasks retain their detailed instructions below.
+
 - [ ] **CURRENT-LEAF-POINT-ORACLE** Implement explicit scalar/original-source evaluation for the new current source leaf operations, canonical parameters, structured lazy branches, angle integrals, substitution and inverse. Return signed function values with directed errors; no range endpoint or cap becomes a field coefficient. Cover raw b/Delta special paths and the inlet collar.
 - [ ] **CURRENT-INTEGER-EVALUATION-SCOPE** Either build a real descriptor-aware directed phase/reciprocal oracle or sharpen the genuine source estimates enough to select a practical materialized integer. Keep legacy Python-int APIs strict. Exact N=2^(2^J) does not supply a usable numeric phase automatically.
 - [ ] **CURRENT-GENUINE-AVERAGING-SHARPENING** Derive original zero-mean primitive identities and slow-y derivatives to reduce the worst bounds. Retain physical Jacobians and genuine phase partial_y+N*partial_phi. Preserve signed joint axial cancellation before dividing by mu. Report numerical bound reductions only after independent interval proof.

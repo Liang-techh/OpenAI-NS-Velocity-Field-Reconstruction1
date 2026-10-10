@@ -1,3 +1,16 @@
+# Current handoff: exact C1 limit and actual reserved repair band (2026-10-09)
+
+Read [CURRENT_ORIGINAL_WHOLE_Z_LIMIT_REPAIR_BAND_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_LIMIT_REPAIR_BAND_2026_10_09.md), checked source [5be89d45](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5be89d45022408a2802a96a716b6c7add377c23d). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Same current17 exact integral targets now feed genuine mathematical C1 limit functions on the original Rc..2Rc background, with all five leading histories and independent P0 retained.
+- [x] Original compact profiles, true radial/Z pairs and five relative terminal C0/Z moment identities are connected; the relative correction vanishes at 2Rc.
+- [ ] NEXT recover full physical velocity/pressure jets and close the original absolute exterior/preheat/heat targets. Source/parameter joins are not this full-field gate.
+- [ ] Numerical control/phase values, global N/stress, actual temporal scale recursion, pulses and full NS remain open.
+
+Earlier headers and task wording below are historical.
+
+---
+
 # Current handoff: all-N repair integer and C1 control connection (2026-10-09)
 
 Read [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_CONTROL_CONNECTION_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_CONTROL_CONNECTION_2026_10_09.md), checked source [3e6e6c35](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/3e6e6c35dc32a5ae1ddabc34cc9e189e09b01b6d). Full reconstruction **ACTIVE / INCOMPLETE**.
