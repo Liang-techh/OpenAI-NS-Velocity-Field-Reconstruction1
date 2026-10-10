@@ -1,3 +1,11 @@
+# Latest: current original native chart locator (2026-10-10)
+
+Full reconstruction **ACTIVE / INCOMPLETE**. [Source ca93c2e7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ca93c2e7ea3a7e4cb7ed67b34664330d6f4dbb0a) adds exact affine inverse functions and directed radial location on all fifteen current Rp-to-heat charts, with source-bound logRp evaluation and common-factor cancellation before numeric arithmetic. Fifteen source-function anchors and fourteen boundaries pass; overlapping charts are retained. The bounded **CURRENT-RP-NATIVE-AFFINE-LOCATION** task is complete.
+
+**Current handoff:** [native locator and detailed next tasks](CURRENT_ORIGINAL_RP_NATIVE_CHART_LOCATOR_2026_10_10.md). Next priority: interval-native source/error delivery and correlated original-scale physical inputs, then grouped numerical u/v/w/p. Native seam source calls, global/axis coverage, uniform norms, stress/remainder, genuine recursion and oscillatory cancellation remain open. Reuse the accepted current runtime.
+
+---
+
 # Latest: current original directed physical inverse (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source 210c14c9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/210c14c91e8a40b51499e18d61037a773e209bf5) adds exact Cartesian/log cylindrical inverse function nodes and directed log-lambda/Z/logR/angle enclosures on the accepted current original Rp graph. Original delta/N, absolute source radius, P0 and full history are retained. The bounded **CURRENT-RP-DIRECTED-PHYSICAL-INVERSE** task is complete. Nine current cases, 89 exact coordinate identities and independent current delta-corner roots pass.
