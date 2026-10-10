@@ -1,65 +1,68 @@
-# Current handoff update (2026-10-10): absolute five future integrals, C1 source closure
+# Repaired limit: absolute five future integrals, C1 source closure (2026-10-10)
 
-Read [the latest task handoff](CURRENT_LIMIT_ABSOLUTE_FUTURE_INTEGRALS_2026_10_10.md) first. Source commit [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208) installs the actual final heat amplitude, all five absolute endpoint histories and four source-linked future integrals, including true first Z rows. Whole-function FTC and full Gamma limits close the post-2Rc targets on the repaired-limit selected source. Nonzero incoming M/J and independent P0 are retained. Next: patched upstream Rh function join and genuine higher limit jets for physical/Cartesian installation. Global physical assembly, cone, true temporal recursion and full NS reconstruction remain ACTIVE / INCOMPLETE.
+Source commit: [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208). Full reconstruction **ACTIVE / INCOMPLETE**. Read this handoff first; previous task headers are historical.
 
----
+## Result and exact scope
 
-# Repaired limit: selected pulse through full exterior source history (2026-10-10)
+The actual selected-source continuation now closes all five post-2Rc absolute integrals as source-function identities with the genuine first ordinary Z derivative:
 
-Source commit: [d7544f0d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7544f0d1dace15dfefadc915b5a88726bea8665). Full reconstruction **ACTIVE / INCOMPLETE**. Read this handoff first; older task headers are historical.
+`(-M2, -J2, -S2, I_power(2Rc)-I2, -Pi2)`.
 
-## Concrete progress
+This uses the same accepted repaired-limit selected pulse, complete future, unique angular repair, analytic pressure datum and full Gamma exterior. It is a C1 similarity-source result. Global physical assembly, patched upstream joining, uniform mixed C4 interfaces, total physical energy, admissible stress, time coefficient recursion and the full NS residual remain open. In particular `physical_original_exterior_five_targets_closed` stays false because that broader flag includes current physical owners and their joins.
 
-CURRENT-SELECTED-PULSE-LATER-SOURCE-REGISTRY is complete in the restricted similarity-source scope. The new CurrentLimitSelectedPostpulseRegistry injects the accepted repaired-limit selected owner into CurrentPostpulseEnergyHistory and then CurrentFullExteriorStress. The resulting flatten, outer power/angular, steep entry/power/exit, waiting and full Gamma heat sources all use the same selected pulse, C5 callback and replayed complete future. The heat owner shares that selected owner's existing unique repair and exact Gamma source. Its pressure is the actual accepted repaired-limit pressure object. No second repair or independent default pressure branch is constructed.
+The final reference amplitude is now the actual `c_infinity = Ev0 * theta_base * Rtail^((1+delta)/2)`. Its logarithm combines the same source factors before interval evaluation; inverse-mu pulse attenuation and radius growth are correlated algebraically. The old formal c_infinity variable in the original target graph is replaced by this positive, Z-independent source recipe using an explicit simultaneous substitution. The accepted graph prefix is preserved.
 
-The registry exposes fifteen original routes: six pulse charts, flatten, outer_power, outer_angular, steep_entry, steep_power, steep_exit, waiting, heat_collar and heat_exterior. Every route names its actual new owner path and new registry receipt, including pulse/flatten; copied historical native receipt provenance is replaced. Original domains are retained, steep entry/exit aliases are explicit, and Z is restricted to [-1,1].
+The four segment ledger is callable at fresh Z. It contains the absolute five endpoint primitives at 2Rc, Rp, Rv and Rtail, plus the final angular reference at all four endpoints. Each exact atom carries actual directed C1 coefficient rows and the positive scale `exp(finite + inverse_mu_coefficient/mu)`. Adjacent segments reuse the same atom IDs. Their exact differences telescope before huge scales are materialized. Coefficient boxes and cap endpoints never define exact field coefficients.
 
-The existing full postpulse energy/zero-meridional source proof is recomputed on the injected graph and is exactly equal to its accepted original proof. The full five-history/exterior proof is likewise unchanged except for the already accepted native parameter object bridge; every other nested proof component, including the angular and fourteen-stage independent P0/pressure proofs, is compared exactly. The unchanged mu/delta defining equations and actual native aliases are checked. Caps remain enclosures rather than selected coefficients.
+The quiet buffer retains nonzero incoming M/J and independent P0. Its original function-level Rp identity and power ODE give backward uniqueness to 2Rc. The native public phase API accepts only Fraction, so a narrow real-phase adapter executes the identical native power code with only phase acquisition rebound to the directed source `(2+log(2))/Tw`. Native files, globals and algorithms are unchanged. This avoids selecting a rational midpoint for a transcendental source phase. Native raw m/k receive one Pstar conversion.
 
-Fresh Z=.427 calls cover pulse end, the new downstream flatten inlet, angular terminal, waiting terminal, collar inlet and full exterior at t=4.23. They retain positive full future energy and the independent nonzero analytic P0. The full Gamma exterior now consumes all five histories on this same repaired-limit selected branch, with source-proved zero theta/axial similarity stress and thirty mixed derivatives through total order four. Numeric overlap is not the reason for those zero identities.
+The selected pulse includes those absolute incoming linear histories and cancels them through its two-row moment equations. M/J become zero only at Rv and remain zero under the downstream homogeneous FTC. Energy is the positive full remaining swirl integral divided by two. Angular and pressure histories retain the current original terminal proofs; neither is reset at a chart boundary. P0 is included exactly once.
 
-## Entry point
+Actual paper radial Jacobians connect native pulse and variable-rate pure-swirl ODEs to the five densities. The full Gamma expectation then gives uniform value/first-Z vanishing limits for angular minus final power, energy and absolute pressure. Radial majorants are integrated to infinity, with orders R^(-a), R^(-2a), and R^(-1-2a), a=delta/2>0. This uses the full H function, not a finite inverse-radius expansion or radial cutoff.
+
+## Entry point and evidence
 
 ```python
-from lei_ren_part1_paper_compliant_current_limit_selected_postpulse_registry import CurrentLimitSelectedPostpulseRegistry
-field = CurrentLimitSelectedPostpulseRegistry()
-angular = field.evaluate('outer_angular', '.427', 0)
-waiting = field.evaluate('waiting', '.427', 1)
-exterior = field.evaluate('heat_exterior', '.427', '4.23')
+from lei_ren_part1_paper_compliant_current_limit_absolute_future_integrals import CurrentLimitAbsoluteFutureIntegrals
+field = CurrentLimitAbsoluteFutureIntegrals()
+packet = field.future_integrals('.519')
+integrals = packet['absolute_future_integrals']
+ledger = packet['actual_four_segment_source_ledger']
 ```
 
-An already accepted CurrentLimitSelectedPulseFlatten can be supplied as selected_owner=. The default constructor requires its own dedicated checked receipt plus the accepted selected/history/exterior dependencies. Its downstream flatten is newly constructed by the unchanged native algorithm from that same selected pulse; the previous selected flatten and original admitted native graph are preserved.
-
-## Evidence and scope
+All five integral jets have value and true first ordinary Z rows. Declared positive units are M: R2*Pstar; J: sqrt(2)*R2^(3/2)*Pstar^2; S_energy: R2*Pstar^2; angular: sqrt(2)*R2^(3/2)*Pstar; pressure: Pstar^2. An accepted CurrentLimitSelectedPostpulseRegistry can be supplied as owner=, preserving one live graph.
 
 | Artifact | Purpose |
 | --- | --- |
-| current_limit_selected_postpulse_registry.py | Actual selected/history/exterior injection, exact proof transport, strict fifteen-route dispatcher |
-| current_limit_selected_postpulse_registry.json | Actual owner graph, whole-function proof transport and six fresh source calls |
-| current_limit_selected_postpulse_registry_check.py | Constructor AST, live owner identities, strict receipts/proof equality, domains, energy/P0 and exterior mixed4 |
-| current_limit_selected_postpulse_registry_check.json | Admission of the new selected source registry and its full exterior history/stress scope |
+| current_limit_absolute_future_integrals.py | Actual heat amplitude/target substitution, directed non-rational native phase, 24 source atoms and four segment integrals |
+| current_limit_absolute_future_integrals.json | Source proofs, installed graph extension, fresh Z=.519 and axis C1 endpoint ledgers |
+| current_limit_absolute_future_integrals_check.py | Source AST/owner binding, independent paper/reference scale algebra, nonzero incoming/P0, terminal linear zeros, C1 telescope and domain guards |
+| current_limit_absolute_future_integrals_check.json | Dedicated admission of the final reference and all five absolute C1 similarity-source future integrals |
 
-The producer's three installation gates remain false until the checker writes the receipt. This closes the source-chain gap from the copied selected pulse to the full exterior. It certifies the original similarity-source history and exterior theta/axial stress identities for the current repaired-limit branch. It does not establish the absolute five post-2Rc integral targets, the patched upstream Rh join, all physical/Cartesian owners, total physical kinetic energy, the global stress cone, true temporal coefficient recursion or the complete forced NS residual.
+The producer gates remain false until the checker issues the dedicated receipt. Fresh/axis calls and both value/first-Z target rows pass. The odd M value vanishes on the axis while its real Z derivative survives, ruling out a scalar-only replacement. Required targets and actual summed integrals are evaluated by separate paths after source-linked exact cancellation, not compared by numerical overlap.
 
-## Completed tasks
+## Completed here
 
-- [x] **CURRENT-RP-NATIVE-FUNCTION-IDENTITY** Repaired canonical Rp functions, five histories and independent P0 identified with the native inlet (prior accepted source work).
-- [x] **CURRENT-O4-TO-FLATTEN-CONTINUATION** Actual native pulse and same-pulse flatten source installed (prior accepted source work).
-- [x] **CURRENT-PREHEAT-PRESSURE-FRAME-IDENTITY** Original fourteen-stage P0/raw integral proof transported to current objects, retaining independent analytic P0 (8682a556).
-- [x] **CURRENT-LIMIT-DTHETA-CP-SOURCE-CLOSURE** Current angular/pressure source constants close by whole-function identities (8682a556).
-- [x] **CURRENT-EXACT-FUTURE-SELECTED-PULSE-BINDING** Current repaired-limit pressure feeds the original checked C1/C4/C5 future/selection adapter and copied pulse/new flatten (50a4f661).
-- [x] **CURRENT-SELECTED-PULSE-LATER-SOURCE-REGISTRY** Completed here: same selected source in every postpulse source owner; same unique repair/Gamma/pressure; actual fifteen-route provenance; strict controlled proof transport and fresh calls.
-- [x] **CURRENT-SELECTED-FULL-EXTERIOR-HISTORY-STRESS** Existing five-history and full Gamma exterior similarity-stress proof is installed on this actual repaired-limit selected source graph. Scope is postpulse source history and exterior theta/axial similarity stress, not all five absolute post-2Rc targets or global admissibility.
+- [x] **CURRENT-FINAL-HEAT-REFERENCE-AMPLITUDE** Actual positive c_infinity installed into the original five-target graph; true Z independence and source correlations retained.
+- [x] **CURRENT-EXTERIOR-ABSOLUTE-LEDGER** All five absolute endpoint functions, exact positive factored radii/scales, independent P0 and four signed segment differences are connected to actual source owners.
+- [x] **CURRENT-EXTERIOR-ABSOLUTE-FUNCTION-PROOF** Original quiet/pulse/postpulse FTC plus full Gamma C1 limits identify the entire post-2Rc future; physical Jacobians and all incoming contributions are retained.
+- [x] **CURRENT-EXTERIOR-ABSOLUTE-CLOSURE** Complete in the C1 similarity-source scope with a dedicated receipt. Broad physical/global flags remain false.
 
-## Immediate next actions
+## Next work, in dependency order
 
-- [ ] **CURRENT-EXTERIOR-ABSOLUTE-LEDGER** Read current_limit_band_physical_recovery.required_future_integrals and current_limit_Rp_native_identity. Map each required future target to its actual cumulative history, sign, radial Jacobian and source units. Record the absolute five values at 2Rc and at the native Rp/Rv frames. Use this new registry for every later contribution. Produce one typed source ledger rather than resetting histories at chart boundaries.
-- [ ] **CURRENT-EXTERIOR-ABSOLUTE-FUNCTION-PROOF** Bind quiet O3, selected pulse and every postpulse density to that ledger. Reuse the checked original FTC/integrating-factor/full Gamma proofs only after identifying actual current source functions. Show all five post-2Rc totals equal (-M2,-J2,-S2,I_power(2Rc)-I2,-Pi2). Preserve nonzero analytic P0 and genuine Z derivatives. Mark CURRENT-EXTERIOR-ABSOLUTE-CLOSURE complete only after a dedicated checked whole-function receipt.
-- [ ] **CURRENT-SELECTED-PULSE-PHYSICAL-INSTALLATION** Once uniform full pulse interfaces and higher genuine limit jets exist, install the selected pulse, downstream flatten and all later source owners into physical dispatch. Preserve Cartesian/time/radius transformations, compact supports, physical measures and every seam. Keep its broad physical/global flags false until those proofs pass.
+- [ ] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Resolve the independent upstream gap: project actual patched terminal and canonical Rh recipes into the same source variables. Prove E,V,m,h,k,e,p and P0 function identities including first Z rows. Keep independent nonzero P0 and genuine physical-radius predecessor memory. Reuse interval covers only for consistency diagnostics. Link a dedicated checked receipt before enabling global assembly.
+- [ ] **CURRENT-LIMIT-C2-SOURCE-JETS** Differentiate the same implicit repair controls and Picard limit, including derivatives of its actual target, inverse and nonlinear terms. Establish convergence of the second Z row on the original domain, retaining a quantitative tail. Produce a callable h*_ZZ/m_ZZ; do not differentiate an enclosure or fitted polynomial.
+- [ ] **CURRENT-RADIAL-Q-Z-RECOVERY** Consume that real m_ZZ in the original meridional formula, including d=1-Z^2, L=1-delta*Z^2 and all source scales. Restore Q_Z with directed errors and source-bound actual upstream/band seams. Add only the checks the new derivative needs.
+- [ ] **CURRENT-LIMIT-HIGHER-MIXED-JETS** Continue actual control/source differentiation to the order needed for spatial NS derivatives and uniform seam certificates. Keep C1 closure admitted while higher orders remain separate; carry current limit remainders through each chart.
+- [ ] **CURRENT-SELECTED-PULSE-UNIFORM-INTERFACES** Combine the current selected C5 coefficients with quantitative source remainders in entrance/main/gap/end mixed derivatives. Prove both sides of every boundary are the same function with the required uniform derivatives, then install current pulse and flatten physical owners.
+- [ ] **CURRENT-ABSOLUTE-LEDGER-PHYSICAL-INSTALLATION** Convert this actual five-row ledger through the original similarity/Cartesian/time map. Preserve positive viscosity, actual lambda, signed Z, R=r^2/(2nu*lambda^2), P0 and all moment scales. Require higher source jets and joins before changing physical_original_exterior_five_targets_closed.
+- [ ] **CURRENT-POINT-ORACLE-AND-FREQUENCY** Implement directed original-source leaves and phase evaluation for the common admitted frequency, or prove sharper bounds allowing a practical frequency. The double-dyadic descriptor is an exact mathematical integer, not a usable floating-point phase oracle. Expose actual u,v,w only after a complete value/integral/roundoff budget.
+- [ ] **CURRENT-HEAT-ENERGY-PHYSICAL-MEASURE** Use the actual final amplitude and full Gamma radial integral from this receipt; restore the physical volume/time Jacobian and axial domain. A finite radial swirl tail is not yet total physical kinetic energy.
+- [ ] **CURRENT-GLOBAL-CONE-AND-FLAT-REMAINDER** Assemble the background stress and flat remainder separately on the current graph. Prove cone signs/margins in core, transitions, selected pulse, flatten and collar with actual derivatives. Keep full NS residual goals for the corrected field.
+- [ ] **CURRENT-TRUE-TEMPORAL-RECURSION** After matched/admissible background admission, implement distinct n=1 and n>=2 coefficient equations, independent per-order moment repairs and streamfunction/vector-potential cutoffs before curl. Scale plots and Picard depth are not temporal recursion.
 
-The detailed remaining tasks below retain their dependency order. Their existing native formula results are inputs, not substitutes for current-owner installation:
+The remaining detailed handoff tasks below retain their dependency order. Earlier native certificates are inputs; current physical installation remains separate.
 
-- [ ] **CURRENT-EXTERIOR-ABSOLUTE-CLOSURE** Assemble all five actual post-2Rc contributions from quiet O3, selected O4 entrance/main/gap/end, flatten, power/angular, steep/waiting, collar and complete heat exterior. Compare against required_future_integrals (-M2,-J2,-S2,I_power(2Rc)-I2,-Pi2) from current_limit_band_physical_recovery. Pressure normalization is already source-closed here; linear zeros at Rv and relative zero at 2Rc do not alone prove all five absolute targets. Produce actual function equalities with genuine Z derivatives.
 - [ ] **CURRENT-ANALYTIC-PREHEAT-EXACT-HEAT** Use the installed typed source runtime, preserving original preheat datum, heat evolution, reference radius and c_infinity. Prove high-order boundary jets and finite-energy heat tail on the actual corrected source. Conditional native heat formulas and pressure-only closure do not complete exact corrected heat installation.
 - [ ] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Prove the full patched terminal functions equal the canonical Rh reference from the same implicit source/repair map, for E,V,all five histories,P0 and required jets. Existing interval-overlap consistency remains only a diagnostic. This is an independent upstream global-background blocker.
 - [ ] **CURRENT-LIMIT-HIGHER-Z-JETS** Derive true h*_ZZ and higher derivatives of the same implicit controls and target functions. Q_Z requires m_ZZ. Propagate real radial/mixed jets and all physical factors. C1 convergence does not imply C4 smoothness.

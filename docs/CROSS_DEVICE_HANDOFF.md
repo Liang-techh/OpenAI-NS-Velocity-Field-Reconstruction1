@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): absolute five future integrals, C1 source closure
+
+Read [the latest task handoff](CURRENT_LIMIT_ABSOLUTE_FUTURE_INTEGRALS_2026_10_10.md) first. Source commit [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208) installs the actual final heat amplitude, all five absolute endpoint histories and four source-linked future integrals, including true first Z rows. Whole-function FTC and full Gamma limits close the post-2Rc targets on the repaired-limit selected source. Nonzero incoming M/J and independent P0 are retained. Next: patched upstream Rh function join and genuine higher limit jets for physical/Cartesian installation. Global physical assembly, cone, true temporal recursion and full NS reconstruction remain ACTIVE / INCOMPLETE.
+
+---
+
 # Cross-device handoff — 2026-09-13 battery checkpoint
 
 Continue the full reconstruction goal in GOAL_OBJECTIVE.md. Read AGENTS.md, README.md, RECONSTRUCTION_PLAN.md, references/provenance_manifest.json, and recent reports. Do not mark Stage 1 or the full goal complete.

@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): absolute five future integrals, C1 source closure
+
+Read [the latest task handoff](CURRENT_LIMIT_ABSOLUTE_FUTURE_INTEGRALS_2026_10_10.md) first. Source commit [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208) installs the actual final heat amplitude, all five absolute endpoint histories and four source-linked future integrals, including true first Z rows. Whole-function FTC and full Gamma limits close the post-2Rc targets on the repaired-limit selected source. Nonzero incoming M/J and independent P0 are retained. Next: patched upstream Rh function join and genuine higher limit jets for physical/Cartesian installation. Global physical assembly, cone, true temporal recursion and full NS reconstruction remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): selected postpulse registry and full exterior history
 
 Read [the latest task handoff](CURRENT_LIMIT_SELECTED_POSTPULSE_REGISTRY_2026_10_10.md) first. Source commit [d7544f0d](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d7544f0d1dace15dfefadc915b5a88726bea8665) installs the repaired-limit selected pulse/future into every postpulse source owner, shares its unique repair/Gamma/pressure and replaces all fifteen route receipts with actual new provenance. Whole-function history/stress proofs transfer with only the accepted native parameter bridge changed. Fresh source calls retain positive energy and independent P0; full exterior theta/axial similarity stress mixed4 is source-closed. Next: all five absolute post-2Rc integral targets. Upstream joins, global physical assembly, admissible cone and true temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
