@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): absolute segmented source radii
+
+Read [the current radius handoff](CURRENT_ORIGINAL_RP_SEGMENTED_RADIUS_2026_10_10.md) first. Source [db621c96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/db621c960aab022ef89e2c7ea9f68f4a443717af) installs 15 absolute source-radius functions/Jacobians and 14 exact geometry seams. Seventeen actual current calls attach this geometry, retaining true waiting integrals and the selected frequency. Short local increments survive the enormous origin. Next: raw physical five-moment transport and same-repair absolute heat/pressure closure. Numerical point radius, global field, cone and temporal recursion remain open; full reconstruction is ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): current postpulse source registry
 
 Read [the current postpulse handoff](CURRENT_ORIGINAL_RP_POSTPULSE_SOURCE_2026_10_10.md) first. Source [d16ec655](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d16ec6554234cc74f802c0f8b7605aebe7622c41) connects the accepted current selected pulse/flatten to all 15 native source routes, with the same unique repair and independent P0. Flatten and eight postpulse charts expose all five normalized source histories. Eighteen actual calls and 192 seam diagnostics pass. Absolute physical radii, raw physical histories, heat terminal closure and uniform/global mixed contracts remain open; full reconstruction is ACTIVE / INCOMPLETE.
