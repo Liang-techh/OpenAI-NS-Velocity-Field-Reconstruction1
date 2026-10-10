@@ -1,3 +1,11 @@
+# Latest: all eight current raw postpulse function joins (2026-10-10)
+
+Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source d00208c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d00208c721b24f3765012803bd30f16302741dc9) completes the six remaining raw postpulse joins and unifies all eight postpulse interfaces. With the accepted five pulse interfaces and Rv unit adapter, the caller dispatches all fourteen adjacent interfaces in the fifteen-chart current Rp-to-heat source chain, through ordinary logR/Z total mixed order four. Nonzero angular/pressure/energy memories and the analytic P0 are retained. Eight postpulse radius joins, 1200 common-scale identities and 2400 exact Jacobian-power identities pass; overlap remains a consistency diagnostic.
+
+**Current handoff:** [complete raw postpulse function chain and next tasks](CURRENT_ORIGINAL_RP_POSTPULSE_MIXED_SEAMS_2026_10_10.md). The flatten/power, power/angular, angular/entry and three steep phase seam tasks are complete at source-function scope. Next priority: original physical-coordinate/time map and point/error delivery. Uniform/global norms, actual numerical u/v/w, stress/remainder, true temporal recursion and oscillatory cancellation remain open. Reuse the current accepted runtime.
+
+---
+
 # Latest: current original raw closed-heat seams (2026-10-10)
 
 Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source 274d5518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/274d5518b2844375aaae24b035c7ed832649f6d0) joins waiting phase=1 to the closed collar t=0 and the closed collar t=3 to the full Gamma exterior t=3. Ten raw velocity/pressure/history outputs retain their current repair, original analytic P0 and complete energy/pressure memories through total logR/Z order four. Two exact radius joins, 300 common-scale identities and 600 exact native Jacobian-power identities pass; interval diagnostics do not substitute for function equality.

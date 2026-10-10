@@ -1,3 +1,9 @@
+# Update: remaining six raw postpulse function joins installed (2026-10-10)
+
+[Source d00208c7](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d00208c721b24f3765012803bd30f16302741dc9) completes the four bounded task IDs below covering six interfaces, and aggregates all eight postpulse function joins. The broader quantitative/uniform task remains open. Read the [new handoff](CURRENT_ORIGINAL_RP_POSTPULSE_MIXED_SEAMS_2026_10_10.md); next priority is physical/time and point/error delivery.
+
+---
+
 # Current original raw closed-heat seams (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source 274d5518](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/274d5518b2844375aaae24b035c7ed832649f6d0) installs the two same-current raw function joins: waiting phase=1 to closed collar t=0, and closed collar t=3 to full Gamma exterior t=3. Both sides retain the original analytic P0, full energy/pressure histories, unique repair, complete infinite Gamma future and exact absolute radius/amplitude functions. Ordinary logR/Z derivatives have total order at most four. This is a source-function interface with directed consistency bounds; numerical physical u/v/w, uniform/global norms, stress/remainder, genuine temporal coefficient recursion and oscillatory cancellation remain open.
@@ -52,10 +58,10 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 ## Next tasks and acceptance
 
-- [ ] **CURRENT-RP-FLATTEN-POWER-SEAM** Join flatten t=100 and outer-power phase=0 on the accepted mixed caller. Instantiate the existing full-future flatten theorem, preserve nonzero angular/quadratic histories, prove exact radii/Ev0 scales and raw mixed4 transfer. Publish actual signed differences.
-- [ ] **CURRENT-RP-POWER-ANGULAR-SEAM** Join power phase=1 and angular t=-4. Use the current repaired angular source and full future. Require exact local radius and amplitude equality before comparing fifteen derivative rows per output.
-- [ ] **CURRENT-RP-ANGULAR-STEEP-ENTRY-SEAM** Join angular t=0 and steep-entry phase=0. Consume the original arbitrary-function theorem on the current repair and retained analytic P0; keep actual history memory intact.
-- [ ] **CURRENT-RP-STEEP-PHASE-SEAMS** Join entry phase=1 / steep-power phase=0, steep-power phase=1 / exit phase=0, and exit phase=1 / waiting phase=0. Keep exact Ts/W Jacobian powers; compare ordinary y rows rather than unequal native coordinates.
+- [x] **CURRENT-RP-FLATTEN-POWER-SEAM** Join flatten t=100 and outer-power phase=0 on the accepted mixed caller. Instantiate the existing full-future flatten theorem, preserve nonzero angular/quadratic histories, prove exact radii/Ev0 scales and raw mixed4 transfer. Publish actual signed differences.
+- [x] **CURRENT-RP-POWER-ANGULAR-SEAM** Join power phase=1 and angular t=-4. Use the current repaired angular source and full future. Require exact local radius and amplitude equality before comparing fifteen derivative rows per output.
+- [x] **CURRENT-RP-ANGULAR-STEEP-ENTRY-SEAM** Join angular t=0 and steep-entry phase=0. Consume the original arbitrary-function theorem on the current repair and retained analytic P0; keep actual history memory intact.
+- [x] **CURRENT-RP-STEEP-PHASE-SEAMS** Join entry phase=1 / steep-power phase=0, steep-power phase=1 / exit phase=0, and exit phase=1 / waiting phase=0. Keep exact Ts/W Jacobian powers; compare ordinary y rows rather than unequal native coordinates.
 - [ ] **CURRENT-RP-POSTPULSE-QUANTITATIVE-SEAMS** Aggregate the six remaining postpulse joins with these two heat joins. Establish function identities and exact unit maps plus signed bounds. State separately which bounds are finite observations and which are uniform over full domains.
 - [ ] **CURRENT-GLOBAL-MIXED-DERIVATIVES** Connect current core/transition/Rh/O2/O3/compact/quiet/Rp owners to the admitted mixed caller. Preserve one original defining source family; supply quantitative norm contracts across the additional joins.
 - [ ] **CURRENT-PHYSICAL-TIME-MAPPING** Implement the original similarity-to-physical coordinate/time functions on this current original-radius graph. Preserve the huge origin/finite offset separation, true N, moving radial/axial chain rules, fixed-x time derivative and axis limits. Convert published Ur coefficient by sqrt(2) where the generic recovery convention requires it.
