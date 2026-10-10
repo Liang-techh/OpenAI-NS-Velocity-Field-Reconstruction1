@@ -1,3 +1,9 @@
+# Latest checkpoint — exact-factor physical accuracy, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_PHYSICAL_ACCURACY_2026_10_10.md](CURRENT_ORIGINAL_RP_PHYSICAL_ACCURACY_2026_10_10.md) first. Actual physical rows now separate certified exact-scale factor widths, ordinary numeric scale error/materialization and signed coefficient/positive-tail variation. Across two current source queries, 89 nonzero rows pass an explicitly requested 1% factor-width target; ordinary numeric passes are 75 exact-zero rows only. Pulse u/v/w factors pass; total pressure sign/nonzero remains unresolved.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: inject the already proved narrow exact U0 enclosure into a separate same-source coefficient view, preserve exact singleton log arithmetic, then auxiliary/pressure error tightening, broader chart/general/global/axis fields, signed stress, true recursion and oscillatory cancellation. Neither factor accuracy nor affine scale algebra completes recursion or corrected NS validation.
+
 # Latest checkpoint — analytic P0 numeric binding, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_P0_NUMERIC_BINDING_2026_10_10.md](CURRENT_ORIGINAL_RP_P0_NUMERIC_BINDING_2026_10_10.md) first. Both distinct actual current datum owners now bind all six original analytic P0 Taylor rows, preserving fourteen atoms, flatten Cauchy errors, a positive late tail and the lazy original pressure scale. The accepted supported u/v/w/p interface reports P0 source inclusion complete; nonzero ordinary physical accuracy remains open.
