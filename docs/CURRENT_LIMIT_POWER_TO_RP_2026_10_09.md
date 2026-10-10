@@ -1,3 +1,16 @@
+# Current handoff: repaired limit connected to actual native pulse / flatten (2026-10-10)
+
+Read [CURRENT_LIMIT_NATIVE_PULSE_BRIDGE_2026_10_10.md](CURRENT_LIMIT_NATIVE_PULSE_BRIDGE_2026_10_10.md), source [ce50f995](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce50f9955d25886272058033d6b74b4e9d0387a8). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Current-to-native Rp FUNCTION identity: actual O2/O3 velocity/five histories, independent analytic P0, genuine Z rows and correct pulse units.
+- [x] Actual same-object native pulse (six charts) and flatten source owner installed; live Rp/Rv/flatten inlet handshakes passed.
+- [ ] NEXT actual preheat pressure/frame bridge and complete exterior/heat absolute closure. Earlier patched Rh FUNCTION join also remains open.
+- [ ] Numeric original velocity oracle, higher corrected-source mixed jets/global stress, actual temporal recursion and full NS remain open.
+
+Earlier headers and task wording below are historical.
+
+---
+
 # Current repaired source: complete quiet power to Rp (2026-10-09)
 
 Source commit: [2155cb8f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2155cb8fb85a0fbd11d7354c47d4b18ee245a401). Full reconstruction **ACTIVE / INCOMPLETE**. This is the current handoff; older headers and task wording are historical.
