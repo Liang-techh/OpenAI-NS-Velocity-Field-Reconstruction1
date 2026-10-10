@@ -1,3 +1,16 @@
+# Current handoff update (2026-10-10): Rv common units and mixed logR/Z4 endpoint
+
+Read [the current Rv common-unit handoff](CURRENT_ORIGINAL_RP_COMMON_UNIT_SEAM_2026_10_10.md) first. Source [e445ee9b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e445ee9b23f5195fe9ef26a8ff729472663ffe3c) connects actual pulse_end(s=0) and flatten(t=0) with exact U0/Fv/Ev0 unit conversion, retained five histories/P0/pressure and 150 ordinary mixed derivative rows on each side through total order four. The same-source endpoint theorem is explicitly rebound; overlap diagnostics are not its proof. Pressure radial derivatives use exact Ev0^2. Full reconstruction remains **ACTIVE / INCOMPLETE**: all-chart/global mixed contracts, unrestricted numerical physical u/v/w, cone and true temporal recursion are open.
+
+- [x] **CURRENT-RP-COMMON-UNIT-SEAMS** Rv pulse-to-post conversion and defining-function join done in [e445ee9b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e445ee9b23f5195fe9ef26a8ff729472663ffe3c); other pulse-domain and quantitative/global seams remain separate.
+- [x] **CURRENT-RP-RV-MIXED-LOGR-Z4** Rv histories/velocities/pressure mixed endpoint rows done in [e445ee9b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e445ee9b23f5195fe9ef26a8ff729472663ffe3c).
+- [ ] **Next: CURRENT-RP-RAW-HIGH-MIXED-TRANSPORT** Extend actual source derivative rows to all fifteen routes, then complete their bounded pulse and closed-heat seams.
+- [ ] **Then: CURRENT-RP-RAW-POINT-ERROR-UNITS / CURRENT-PHYSICAL-TIME-MAPPING / CURRENT-CARTESIAN-VELOCITY** Deliver usable physical u/v/w with the actual selected source and phase/error contract.
+
+Evidence: exact scale/product-rule identities, fresh point/cell calls, accepted fresh caller and 1301 index-bound dependencies pass. Scoped review: GPT-5.6 Luna / max. Detailed checked/unchecked task list is in the linked handoff. Historical sections below are evidence, not the current unmet queue.
+
+---
+
 # Current handoff update (2026-10-10): six pulse histories and 15-chart closed exterior caller
 
 Read [the current pulse/closed exterior handoff](CURRENT_ORIGINAL_RP_RAW_PULSE_TRANSPORT_2026_10_10.md) first. Source [b7ac3996](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b7ac39966ab599c96f806fb687e97780af3cea82) restores factorized raw histories and Ur/Utheta/Uz on all six active pulse charts, retains nonzero axial terms and P0, applies the general five density equations with one native Jacobian, and joins all 15 current pulse/postpulse routes through a common caller with closed heat. All output scale parts use one current graph. Full reconstruction is **ACTIVE / INCOMPLETE**: unrestricted numeric physical u/v/w, uniform/global mixed contracts, cone and true temporal recursion remain open.

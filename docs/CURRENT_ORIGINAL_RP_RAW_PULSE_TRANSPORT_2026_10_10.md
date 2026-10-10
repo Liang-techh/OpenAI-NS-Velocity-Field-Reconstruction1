@@ -100,7 +100,7 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 ## Next bounded implementation work
 
-- [ ] **CURRENT-RP-COMMON-UNIT-SEAMS** Convert pulse `(R,Fpulse,Pstar)` and postpulse `(R,Ev0,Pstar)` using the exact U0/Rv identity before comparing derivative/history rows. Prove defining-function continuity at pulse-end/flatten; retain diagnostic enclosures without promoting overlap to a high mixed proof.
+- [x] **CURRENT-RP-COMMON-UNIT-SEAMS** Rv exact unit conversion and same-current function join are done in [e445ee9b](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e445ee9b23f5195fe9ef26a8ff729472663ffe3c); see [CURRENT_ORIGINAL_RP_COMMON_UNIT_SEAM_2026_10_10.md](CURRENT_ORIGINAL_RP_COMMON_UNIT_SEAM_2026_10_10.md). Rv total-order-four rows are callable. Other pulse-domain, quantitative/global and physical seams remain open.
 - [ ] **CURRENT-RP-RAW-PULSE-DOMAIN-SEAMS** Keep original six guards and supplemental reciprocal gap coverage. Complete source/physical derivative seams for entrance/main/exit/gap/gap-end/end; do not replace s=-1/mu with an interval endpoint as a defining boundary.
 - [ ] **CURRENT-RP-RAW-HIGH-MIXED-TRANSPORT** Factor actual native y/Z derivative rows through required total orders for pulse and postpulse. Differentiate every radial amplitude and coordinate scale. Ur's C4 recovery needs its own error/remainder contract.
 - [ ] **CURRENT-RP-CLOSED-HEAT-MIXED-SEAMS** Use the same closed Gamma branch to prove waiting/collar and collar/exterior derivative joins, including pressure and energy. Source Cp/Dtheta identities alone do not close quantitative mixed joins.
