@@ -1,3 +1,18 @@
+# Current handoff: actual all-N outer source, Rc transport and relative targets (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_OUTER_RC_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_OUTER_RC_FUNCTIONS_2026_10_09.md), checked source [1582995f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1582995f9031222e6220fc1d467209bcaa27d229). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Checked all-N bridge/switch/long/patch normalized chain through Rh retained.
+- [x] All six outer charts now carry the same normalized correction through Rc, with 88 original cells, genuine physical measures and pressure memory.
+- [x] Five direct uniform N-scaled relative target C0/Z functions now use the same terminal amplitude/positive mu and joint axial numerator. No saved fixed-N target is rescaled.
+- [ ] NEXT connect the uniform targets to common frequency inequalities and the exact control operator, then prove contraction/tail and terminal identities.
+- [ ] Rh reference has six nodes/five cells; the older six-cell description is corrected by the current source/receipt.
+- [ ] N^-2 averaging, actual input exterior/heat, higher jets, stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: actual all-N long/patch source and Rh transport (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_LONG_PATCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_LONG_PATCH_FUNCTIONS_2026_10_09.md), checked source [4c381748](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4c38174806e70cab107c532143c0a7d7ebf95a86). Full reconstruction **ACTIVE / INCOMPLETE**.
