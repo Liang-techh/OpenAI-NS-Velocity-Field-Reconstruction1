@@ -1,3 +1,16 @@
+# Current handoff: actual Rc control map and finite C1 functions (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_RC_CONTROL_OPERATOR_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_RC_CONTROL_OPERATOR_2026_10_09.md), checked source [2223b9fb](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2223b9fb125d2d8ee99b853fd90341cbe7ebabc8). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Current actual whole-Z five target functions connected to the exact original five-control map; source family, N, P0 and incoming memories preserved.
+- [x] Three finite C1 iterations and four-Z supported trial-band enclosures installed, with exact endpoint agreement and separate finite residuals.
+- [ ] NEXT implement an actual all-N parameterized source adapter and uniform estimates, then prove contraction/tail and solved terminal functions. Finite iterates do not close these gates.
+- [ ] Physical exterior/heat, higher jets, admissible stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: sharp bridge functions and new Rc transport (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SHARP_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_BRIDGE_SHARP_FUNCTIONS_2026_10_09.md), checked source [a84dcb6c](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a84dcb6c466b2887969ff077e1626d74b19b4a73). Full reconstruction **ACTIVE / INCOMPLETE**.
