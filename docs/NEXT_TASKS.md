@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): repaired mixed radial recovery
+
+Read [the latest handoff](CURRENT_ORIGINAL_MIXED_REPAIRED_RECOVERY_2026_10_10.md) first. Source [fe535e00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fe535e003f37a32051ecb05fa41f9a76f0225af1) installs corrected profiles/complete five histories y0..4/Z0..3, velocity/pressure y0..4/Z0..2 and six physical inertial/shear sectors y0..3/Z0..2. Original beta derivatives, signed FTC, physical radial/inertial/shear shifts, generic recovery equivalence and four-cell directed bounds pass. Same source, repair-only N, P0, radius and all lower handles are retained. Next: C2 Rh correction continuation and absolute heat matching. Global time/Cartesian field, signed cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): repaired radial/inertial C2 recovery
 
 Read [the latest handoff](CURRENT_ORIGINAL_C2_REPAIRED_RECOVERY_2026_10_10.md) first. Source [e92a8ab5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e92a8ab54c692fc9d94baa34d6406968cc67531f) installs actual repaired Q/Q_y, full signed inertial sectors/numerators/quotients and original cylindrical velocity/pressure functions through Z2, consuming the accepted third history rows. Same-source whole-band L/E/C positivity, exact delta branch, Rc*x radius and four-cell directed recovery bounds pass. Next: radial y0..4 and mixed recovery, plus C2 Rh/absolute heat matching. Complete physical Cartesian field, stress cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
