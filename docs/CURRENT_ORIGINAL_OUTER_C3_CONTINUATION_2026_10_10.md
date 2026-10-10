@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C3 repaired exit to Rp
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_POWER_TO_RP_2026_10_10.md) first. Source [82771182](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8277118225a43c9c05e1e5f6d9a7838675633850) consumes the genuine compact-repair 2Rc exit and installs quiet y0..4/Z0..3 profile/history functions, native C3 Rp pulse inputs and four-cell directed positive-swirl bounds. O3 ends at Rc and must pass through the compact repair band. Next: outer leading/correction inlet identities and proof that the selected native pulse consumes this current Rp frame. Full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.
+
+---
+
 # Actual O2/O3 C3 partial and complete history chain (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [2f5ea69f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f5ea69f0f02c6f54ca17a1f2a6e2a8c76c01916) extends the accepted original Rh history functions through all five subsequent current-native charts. Signed correction and leading histories, complete histories, original absolute pressure and first-y history rows are installed through ordinary Z3. Four original axial cells cover every native partial endpoint. This completes `CURRENT-C3-OUTER-PARTIAL-HISTORY-CHAIN`; it does not close the final selected pulse/postpulse/collar/heat registry or implement temporal scale recursion.
@@ -69,7 +75,7 @@ Installed quartet: `lei_ren_part1_paper_compliant_current_original_outer_C3_cont
 
 ## Next bounded tasks in dependency order
 
-- [ ] **CURRENT-EXTERIOR-REGISTRY-MAP** Read `current_limit_absolute_future_integrals.py` and its accepted source dependencies. Map the current original O3_power endpoint to the final selected quiet-power/pulse/postpulse/collar registry using explicit coordinate, radius, phase, amplitude, normalization and N identities. Record any distinct source function or unit conversion; matching labels or range overlaps do not prove an identity.
+- [x] **CURRENT-EXTERIOR-REGISTRY-MAP** Mapped by [82771182](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8277118225a43c9c05e1e5f6d9a7838675633850); see [actual compact-repaired exit and quiet Rp frame](CURRENT_ORIGINAL_C3_POWER_TO_RP_2026_10_10.md). Interface function identities remain open.
 - [ ] **CURRENT-EXTERIOR-INLET-FUNCTION-IDENTITY** Once that map is explicit, transfer all five complete incoming functions through Z2 and original P0 into the final native registry. Prove normalization/radius factors and incoming cancellations as signed function identities. Preserve the unmodified current O2/O3 graph as a separate accepted prefix.
 - [ ] **CURRENT-C2-EXTERIOR-SEGMENT-MEMORY** Extend genuine quiet-power, selected-pulse, selected-postpulse and collar partial histories through Z2. Each segment consumes the preceding complete incoming; use its actual source radius/Jacobian, selected phase and same P0. Do not substitute older fixed-N257 exploratory data for the accepted current source.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Restore the five absolute terminal identities with true final heat amplitude, correct final reference power and full native FTC/Gamma tails. Keep relative repaired moment zeros separate from absolute heat matching. Supply bounds for every final pulse/collar/future endpoint.

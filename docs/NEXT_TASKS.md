@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual C3 repaired exit to Rp
+
+Read [the latest handoff](CURRENT_ORIGINAL_C3_POWER_TO_RP_2026_10_10.md) first. Source [82771182](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8277118225a43c9c05e1e5f6d9a7838675633850) consumes the genuine compact-repair 2Rc exit and installs quiet y0..4/Z0..3 profile/history functions, native C3 Rp pulse inputs and four-cell directed positive-swirl bounds. O3 ends at Rc and must pass through the compact repair band. Next: outer leading/correction inlet identities and proof that the selected native pulse consumes this current Rp frame. Full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual outer C3 history chain
 
 Read [the latest handoff](CURRENT_ORIGINAL_OUTER_C3_CONTINUATION_2026_10_10.md) first. Source [2f5ea69f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f5ea69f0f02c6f54ca17a1f2a6e2a8c76c01916) extends actual correction/leading/complete histories through Z3 across O2_slope, O2_axial, O2_buffer, O3_transition and O3_power, with original dlogR Jacobian, nonzero incoming, shared P0, first-y/pressure functions and four-cell whole-native bounds. Next: explicit map to the final selected pulse/collar/heat registry and absolute matching. Corrected high-y seams, global time/Cartesian field, signed cone and temporal recursion remain ACTIVE / INCOMPLETE.
