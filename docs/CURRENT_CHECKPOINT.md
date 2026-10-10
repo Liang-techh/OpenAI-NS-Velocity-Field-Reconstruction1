@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): whole-Z Rh function join and retained correction
+
+Read [the latest task handoff](CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md) first. Source [845df526](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/845df526422def70c1369fab03fe6b8b232f44f9) proves the current patched leading background and Rh reference are the same functions, using the current unique whole-Z implicit owner and full-weight five-moment map. A callable C1 reference continuation preserves nonzero finite-N correction histories, own-rate memory, the independent P0 and original radius phase. The previous absolute five future-integral C1 closure remains accepted. Next: true second/higher correction and limit derivatives, then a complete physical/Cartesian field. Global cone, temporal recursion and full forced NS reconstruction remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): absolute five future integrals, C1 source closure
 
 Read [the latest task handoff](CURRENT_LIMIT_ABSOLUTE_FUTURE_INTEGRALS_2026_10_10.md) first. Source commit [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208) installs the actual final heat amplitude, all five absolute endpoint histories and four source-linked future integrals, including true first Z rows. Whole-function FTC and full Gamma limits close the post-2Rc targets on the repaired-limit selected source. Nonzero incoming M/J and independent P0 are retained. Next: patched upstream Rh function join and genuine higher limit jets for physical/Cartesian installation. Global physical assembly, cone, true temporal recursion and full NS reconstruction remain ACTIVE / INCOMPLETE.

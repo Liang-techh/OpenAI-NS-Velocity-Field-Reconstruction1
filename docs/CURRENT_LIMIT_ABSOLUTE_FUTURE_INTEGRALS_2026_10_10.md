@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): whole-Z Rh function join and retained correction
+
+Read [the latest task handoff](CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md) first. Source [845df526](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/845df526422def70c1369fab03fe6b8b232f44f9) proves the current patched leading background and Rh reference are the same functions, using the current unique whole-Z implicit owner and full-weight five-moment map. A callable C1 reference continuation preserves nonzero finite-N correction histories, own-rate memory, the independent P0 and original radius phase. The previous absolute five future-integral C1 closure remains accepted. Next: true second/higher correction and limit derivatives, then a complete physical/Cartesian field. Global cone, temporal recursion and full forced NS reconstruction remain ACTIVE / INCOMPLETE.
+
+---
+
 # Repaired limit: absolute five future integrals, C1 source closure (2026-10-10)
 
 Source commit: [81529425](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/81529425ee73a8a0e60568668a3508b55ac26208). Full reconstruction **ACTIVE / INCOMPLETE**. Read this handoff first; previous task headers are historical.
@@ -50,7 +56,7 @@ The producer gates remain false until the checker issues the dedicated receipt. 
 
 ## Next work, in dependency order
 
-- [ ] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Resolve the independent upstream gap: project actual patched terminal and canonical Rh recipes into the same source variables. Prove E,V,m,h,k,e,p and P0 function identities including first Z rows. Keep independent nonzero P0 and genuine physical-radius predecessor memory. Reuse interval covers only for consistency diagnostics. Link a dedicated checked receipt before enabling global assembly.
+- [x] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Completed for the current leading background plus C1 correction-preserving reference continuation; see [CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md](CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md). Higher finite-N mixed4 and global physical assembly remain open.
 - [ ] **CURRENT-LIMIT-C2-SOURCE-JETS** Differentiate the same implicit repair controls and Picard limit, including derivatives of its actual target, inverse and nonlinear terms. Establish convergence of the second Z row on the original domain, retaining a quantitative tail. Produce a callable h*_ZZ/m_ZZ; do not differentiate an enclosure or fitted polynomial.
 - [ ] **CURRENT-RADIAL-Q-Z-RECOVERY** Consume that real m_ZZ in the original meridional formula, including d=1-Z^2, L=1-delta*Z^2 and all source scales. Restore Q_Z with directed errors and source-bound actual upstream/band seams. Add only the checks the new derivative needs.
 - [ ] **CURRENT-LIMIT-HIGHER-MIXED-JETS** Continue actual control/source differentiation to the order needed for spatial NS derivatives and uniform seam certificates. Keep C1 closure admitted while higher orders remain separate; carry current limit remainders through each chart.
@@ -64,7 +70,7 @@ The producer gates remain false until the checker issues the dedicated receipt. 
 The remaining detailed handoff tasks below retain their dependency order. Earlier native certificates are inputs; current physical installation remains separate.
 
 - [ ] **CURRENT-ANALYTIC-PREHEAT-EXACT-HEAT** Use the installed typed source runtime, preserving original preheat datum, heat evolution, reference radius and c_infinity. Prove high-order boundary jets and finite-energy heat tail on the actual corrected source. Conditional native heat formulas and pressure-only closure do not complete exact corrected heat installation.
-- [ ] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Prove the full patched terminal functions equal the canonical Rh reference from the same implicit source/repair map, for E,V,all five histories,P0 and required jets. Existing interval-overlap consistency remains only a diagnostic. This is an independent upstream global-background blocker.
+- [x] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Completed for the current leading background plus C1 correction-preserving reference continuation; see [CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md](CURRENT_WHOLE_Z_RH_FUNCTIONAL_JOIN_2026_10_10.md). Higher finite-N mixed4 and global physical assembly remain open.
 - [ ] **CURRENT-LIMIT-HIGHER-Z-JETS** Derive true h*_ZZ and higher derivatives of the same implicit controls and target functions. Q_Z requires m_ZZ. Propagate real radial/mixed jets and all physical factors. C1 convergence does not imply C4 smoothness.
 - [ ] **CURRENT-NATIVE-PULSE-UNIFORM-MIXED-JOINS** Connect selected pulse coefficients and fifth/sixth remainders to uniform y/Z mixed bounds on every entrance/main/gap/end chart. Keep full_pulse_C4_installed false until the original full interface certificate passes. Then install flatten physical ownership with the same exact pulse.
 - [ ] **CURRENT-RECOVERED-PHYSICAL-BAND-JOINS** Prove corrected physical/radial/Z/mixed joins at Rc,2Rc,Rp and downstream seams after genuine higher limit jets exist. Preserve independent P0, signed Z, lambda and all moment factors. A downstream source owner is not a physical global join.
