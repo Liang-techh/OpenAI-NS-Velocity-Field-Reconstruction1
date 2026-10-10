@@ -1,3 +1,16 @@
+# Current handoff: actual all-N switch source and R110 transport (2026-10-09)
+
+Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_SWITCH_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_SWITCH_FUNCTIONS_2026_10_09.md), checked source [938938ae](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/938938ae5f2efdcd4b19fb638c2d1e26fea63895). Full reconstruction **ACTIVE / INCOMPLETE**.
+
+- [x] Original all-N bridge source and normalized correction through R100 retained.
+- [x] Actual all-N switch source functions and 24 fresh integration cells now carry nonzero normalized incoming through R110, retaining P0, positive widths and pressure memory.
+- [ ] NEXT build long/patch/outer all-N providers and propagate the same normalized chain to Rc, then form relative target functions, select frequency and solve controls.
+- [ ] N^-2 averaging, exterior/heat, higher jets, admissible stress, genuine temporal recursion, pulses and full corrected NS remain open.
+
+Read the current source/task document before historical checkpoints below.
+
+---
+
 # Current handoff: actual all-N bridge source and R100 transport (2026-10-09)
 
 Latest source/tasks: [CURRENT_ORIGINAL_WHOLE_Z_ALL_N_BRIDGE_SOURCE_FUNCTIONS_2026_10_09.md](CURRENT_ORIGINAL_WHOLE_Z_ALL_N_BRIDGE_SOURCE_FUNCTIONS_2026_10_09.md), checked source [22a81139](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/22a81139e4d650a569b0309aa2e556f2372684c7). Full reconstruction **ACTIVE / INCOMPLETE**.
