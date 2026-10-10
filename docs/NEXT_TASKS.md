@@ -1,3 +1,13 @@
+# Latest: five current pulse raw mixed seams (2026-10-10)
+
+Full reconstruction remains **ACTIVE / INCOMPLETE**. [Source 62e80fed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/62e80fed0f1bea9a5f5bb27f49e8e81feaad7a7b) joins the five internal pulse chart functions and their ten raw velocity/pressure/history outputs through total logR/Z order four. The two reciprocal endpoints remain exact source functions; two callable supplemental routes cover legal rounding strips. The xi=10 forward/backward energy switch is explicitly identified as the same whole source function before derivatives.
+
+The five joins supply 750 common-unit mixed comparisons and 1500 exact native Jacobian scale checks. Current repair, selected C5 source, full future and analytic P0 are unchanged. These are source functions and directed consistency bounds; full numerical physical u/v/w, uniform/global norms, stress/remainder, true temporal coefficient recursion and oscillatory cancellation remain open.
+
+**Current handoff:** [five pulse mixed seams](CURRENT_ORIGINAL_RP_PULSE_MIXED_SEAMS_2026_10_10.md). Completed: the five `CURRENT-RP-PULSE-*` internal seam tasks and the bounded raw pulse-domain function/coverage aggregate. Next: same-owner waiting/closed-collar and collar/exterior mixed joins, remaining postpulse seams, then physical/time and point/error contracts. Use the existing accepted runtime; avoid replaying unchanged selection/repair proofs.
+
+---
+
 # Current handoff update (2026-10-10): fifteen-chart mixed raw transport
 
 Read [the current mixed-transport handoff](CURRENT_ORIGINAL_RP_MIXED_TRANSPORT_2026_10_10.md) first. Source [69692731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6969273120a8fcbca390bb15d3bf3f0338fe1908) supplies 2250 ordinary logR/Z mixed rows and 2250 exact-native rows through total order four on all fifteen current pulse/postpulse routes, preserving five histories, independent P0, actual velocity sources and closed Gamma heat. Pressure derivatives use exact source amplitude units; native derivatives carry exact J^K scale functions. Full reconstruction remains **ACTIVE / INCOMPLETE**: quantitative/uniform/global seams, numerical physical u/v/w, stress/cone, temporal recursion and oscillatory cancellation remain open.

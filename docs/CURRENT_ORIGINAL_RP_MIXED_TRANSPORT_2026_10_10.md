@@ -1,3 +1,9 @@
+# Update: five internal pulse source seams installed (2026-10-10)
+
+[Source 62e80fed](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/62e80fed0f1bea9a5f5bb27f49e8e81feaad7a7b) implements the five pulse raw mixed4 function joins and exact reciprocal boundary/rounded-coverage interfaces. The six matching task scopes below are complete in that bounded source-function sense. Uniform/global quantitative norms and physical point/time evaluation remain open. See the [new detailed handoff](CURRENT_ORIGINAL_RP_PULSE_MIXED_SEAMS_2026_10_10.md).
+
+---
+
 # Current fifteen-chart raw mixed transport (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [69692731](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6969273120a8fcbca390bb15d3bf3f0338fe1908) supplies ordinary mixed log similarity R / axial Z derivatives through total order four for the current velocities, pressure and all five raw cumulative histories on all fifteen actual pulse/postpulse charts. Native-coordinate derivatives carry exact Jacobian powers as separate lazy scale functions. This completes the bounded all-chart mixed source interface; uniform/global seams, numerical physical u/v/w, stress/cone/remainder, true temporal recursion and oscillatory cancellation remain open.
@@ -83,12 +89,12 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 ## Detailed next tasks
 
-- [ ] **CURRENT-RP-PULSE-ENTRANCE-MAIN-SEAM** Join t=.02/mu and xi=.02 as defining functions, preserving the lazy boundary and conversion between native derivatives. Use the new ordinary logR grid as the shared comparison coordinate.
-- [ ] **CURRENT-RP-PULSE-MAIN-EXIT-SEAM** At xi=10, prove primitive, velocity and pressure total-order-four joins using the actual flat source and incoming memories.
-- [ ] **CURRENT-RP-PULSE-EXIT-GAP-SEAM** At xi=11, prove flat support termination while retaining nonzero cumulative memories and their scaled derivatives.
-- [ ] **CURRENT-RP-PULSE-GAP-GAPEND-SEAM** Join xi=12 and the formal s=-1/mu boundary, keeping defining geometry separate from outward legal coverage. Do not substitute a rounded reciprocal bound.
-- [ ] **CURRENT-RP-PULSE-GAPEND-END-SEAM** At s=-4, join actual backward source functions and compact support derivatives, retaining future energy and pressure memory.
-- [ ] **CURRENT-RP-RAW-PULSE-DOMAIN-SEAMS** Aggregate the preceding five source/derivative/coverage joins. Rv is already admitted; all pulse-domain coverage is not.
+- [x] **CURRENT-RP-PULSE-ENTRANCE-MAIN-SEAM** Join t=.02/mu and xi=.02 as defining functions, preserving the lazy boundary and conversion between native derivatives. Use the new ordinary logR grid as the shared comparison coordinate.
+- [x] **CURRENT-RP-PULSE-MAIN-EXIT-SEAM** At xi=10, prove primitive, velocity and pressure total-order-four joins using the actual flat source and incoming memories.
+- [x] **CURRENT-RP-PULSE-EXIT-GAP-SEAM** At xi=11, prove flat support termination while retaining nonzero cumulative memories and their scaled derivatives.
+- [x] **CURRENT-RP-PULSE-GAP-GAPEND-SEAM** Join xi=12 and the formal s=-1/mu boundary, keeping defining geometry separate from outward legal coverage. Do not substitute a rounded reciprocal bound.
+- [x] **CURRENT-RP-PULSE-GAPEND-END-SEAM** At s=-4, join actual backward source functions and compact support derivatives, retaining future energy and pressure memory.
+- [x] **CURRENT-RP-RAW-PULSE-DOMAIN-SEAMS** Aggregate the preceding five source/derivative/coverage joins. Rv is already admitted; all pulse-domain coverage is not.
 - [ ] **CURRENT-RP-CLOSED-HEAT-MIXED-SEAMS** Use the same closed Gamma branch to establish waiting/collar and collar/exterior quantitative mixed joins, including pressure and energy.
 - [ ] **CURRENT-RP-POSTPULSE-QUANTITATIVE-SEAMS** Connect flatten/power/angular/steep/waiting using explicit source-scale units, derivative errors and positive widths. Reuse existing exact defining identities.
 - [ ] **CURRENT-RP-UNIFORM-SELECTED-SEAMS** Extend local derivative interfaces to whole-domain quantitative contracts, including narrow bump supports and flatten. Finite source rows alone do not close this gate.
