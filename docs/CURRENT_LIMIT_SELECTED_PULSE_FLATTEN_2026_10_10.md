@@ -1,61 +1,55 @@
-# Current handoff update (2026-10-10): selected future feeds current pulse and flatten
+# Repaired limit: current selected future, pulse and flatten (2026-10-10)
 
-Read [the latest task handoff](CURRENT_LIMIT_SELECTED_PULSE_FLATTEN_2026_10_10.md) first. Source commit [50a4f661](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50a4f6615ac9e6b0603ecb1a4dca4fe7aadb3fb4) injects the actual repaired-limit pressure branch into the checked C1/C4/C5 selected-energy adapter, then constructs a new flatten from that restricted pulse. Fresh Z=.371 calls preserve C4/C5 prefixes, positive selection, Rv/flatten complete future/2 and independent P0. Previous same-object preheat/pressure closure is retained. Next: register this new selected pulse/flatten in every later source owner and prove all five absolute exterior targets. Physical global assembly, upstream Rh seam, higher jets, admissible stress and actual temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
+Source commit: [50a4f661](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50a4f6615ac9e6b0603ecb1a4dca4fe7aadb3fb4). Full reconstruction **ACTIVE / INCOMPLETE**. Read this handoff first; earlier task headers are historical.
 
----
+## Concrete progress
 
-# Repaired limit: same-object preheat / heat / pressure runtime (2026-10-10)
+Two source integration gaps are now closed. The previous current_limit_heat_pressure_bridge installs the same repaired-limit native pulse/flatten through fifteen original downstream routes and source-proved angular/pressure terminal closure. The present current_limit_selected_pulse_flatten feeds that ACTUAL pressure/repair object into the existing checked CurrentSelectedEnergySource adapter, then constructs a NEW flatten from its copied restricted pulse.
 
-Source commit: [8682a556](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8682a5562c9cb969f0c68eced3731b81d650598b). Full reconstruction **ACTIVE / INCOMPLETE**. This is the current handoff; older task headers below it are historical.
+The copied pulse now owns the replayed complete C1/C4/C5 future, current angular branch, selected positive amplitude and both end coefficients, with fresh independent caches. Its selection callback and the new flatten's future-energy callable resolve to the same current fifth-jet source. The earlier admitted native pulse/flatten/pressure graph is preserved. This is an actual object injection; the default old pressure constructor is never used for the selected adapter.
 
-## Actual advancement
+At fresh nonzero Z=.371, current energy and selected amplitude C5 preserve their C4 prefixes, the amplitude stays in the original positive bracket, and the root denominator stays positive. Actual calls at Rv and the new flatten inlet use the same complete future/2, retain exact meridional support zeros, and preserve the independent nonzero P0. The dedicated check passed, reusing the existing selected quadratic/linear-equation and source-integral proof.
 
-The repaired-limit Rp inlet now feeds the SAME actual native pulse and flatten objects through the original power/angular, steep-entry/power/exit/waiting, collar and complete Gamma exterior algorithms. There are fifteen downstream routes: six pulse routes, flatten, two power/angular routes, four steep/waiting routes and two heat routes. The pressure runtime takes those objects explicitly instead of rebuilding the old core/interface graph.
-
-The runtime then constructs the exact-native angular/pressure repair, current collar stress companion, angular terminal closure, quadratic pressure balance, raw pressure operator and terminal pressure closure on that same chain. Actual calls at preheat t=0 and exterior t=3 retain the independent nonzero analytic P0 and use the proved Dtheta=Cp=0 source identities. No interval overlap is used to set either constant to zero.
-
-The fourteen-stage P0/raw pressure identity already existed and was checked in current_pressure_terminal_closure. This work REUSES that mathematics. The new contribution is the actual repaired-limit object injection and the source proof needed to transport it. All original pressure-proof components are exactly unchanged except common_exact_parameter_function_bridge: the old core compatibility graph is replaced by an actual typed native-only parameter graph, with unchanged exact mu/delta formulas and source hashes. The new companion reuses only the old forward-pressure, constant-stress and pressure-split formula evidence; its old common-core ownership claim is not imported.
-
-## Public entry point and evidence
-
-Use experiments/root_st073/lei_ren_part1_paper_compliant_current_limit_heat_pressure_bridge.py:
+## Entry point
 
 ```python
-from lei_ren_part1_paper_compliant_current_limit_heat_pressure_bridge import CurrentLimitHeatPressureBridge
-field = CurrentLimitHeatPressureBridge()
-packet = field.evaluate('heat_collar', 0, 0)
-packet = field.evaluate('heat_exterior', 0, 3)
+from lei_ren_part1_paper_compliant_current_limit_selected_pulse_flatten import CurrentLimitSelectedPulseFlatten
+field = CurrentLimitSelectedPulseFlatten()
+rv = field.evaluate('pulse_end', '.371', 0)
+flat = field.evaluate('flatten', '.371', 0)
 ```
 
-The constructor requires the new checked receipt by default. An optional already checked CurrentLimitNativePulseBridge can be supplied as bridge=; its exact pulse and flatten identities are preserved through all downstream layers. The evaluator accepts original Z in [-1,1], collar t in [0,3] and exterior t>=3. Outputs are directed native source enclosures, not selected numeric point values.
+The default constructor requires the new receipt, the accepted repaired-limit heat/pressure receipt and the unchanged selected-energy receipt. An already accepted current_limit_heat_pressure_bridge can be passed as field=. Six original strict pulse routes and flatten [0,100] are available. Returned values are directed source enclosures; no point coefficient is selected from a cap or range midpoint.
 
-The producer records its own acceptance gate as false until the checker creates the receipt. The checker independently constructs a supplied inlet and inspects the live object chain, pins original receipt dependencies, binds every new constructor injection by AST, checks all fifteen route registrations, verifies only the admitted parameter-proof component changed, and checks the two actual heat/pressure handshakes. It does not rerun historical inner solvers or reprove existing fourteen-stage algebra.
+## Evidence and exact scope
 
 | Evidence | Purpose |
 | --- | --- |
-| current_limit_heat_pressure_bridge.py | Actual downstream-only source graph and typed pressure-proof transport |
-| current_limit_heat_pressure_bridge.json | Source graph, original formula evidence, proof transport and actual preheat/exterior calls |
-| current_limit_heat_pressure_bridge_check.py | Independent live identity and constructor/source checks |
-| current_limit_heat_pressure_bridge_check.json | Accepted installation gate and exact dependency hashes |
+| current_limit_selected_pulse_flatten.py | Explicit current-pressure injection, copied selected pulse and actual same-source flatten |
+| current_limit_selected_pulse_flatten.json | Actual owner graphs, unchanged original source theorem and fresh selected/Rv/flatten calls |
+| current_limit_selected_pulse_flatten_check.py | Constructor AST, receipt hashes, fresh C4/C5/positivity and future-half/P0 checks |
+| current_limit_selected_pulse_flatten_check.json | Accepted new restricted-source installation gate |
 
-## Scope and next blocker
+The producer leaves its gate false until the checker creates the receipt. The selected C5 source theorem and its actual implicit energy/linear equations already existed; this work connects them to the repaired-limit runtime and its new flatten. No old core alias or full physical-owner claim is imported.
 
-This installs the downstream SOURCE runtime and pressure normalization after the repaired canonical Rp frame. It does not complete all five absolute exterior moment targets, bind the earlier patched Rh function seam, install the replayed exact complete future into the selected pulse, provide a global physical C4 field, construct admissible stress, implement actual temporal recursion, or evaluate a full numerical 3D forced NS solution. These flags remain false.
+This closes the restricted source ownership portion of CURRENT-EXACT-FUTURE-SELECTED-PULSE-BINDING. It does not yet replace every later power/angular/steep/heat source owner with the NEW selected pulse/flatten, install all native physical owners, or prove all five absolute exterior targets. The prior fifteen-route graph remains an admitted reference; the new copied restricted source is an additional correctly bound owner. Global source/physical assembly, patched Rh seam, higher limit derivatives, admissible stress, actual temporal recursion and full numerical u,v,w remain open.
 
-The immediate downstream obligation is the complete energy/future and selected-pulse binding, followed by all-five absolute exterior closure. The original pressure and angular terminal identities now have an actual same-object runtime; they should not be repeated as the next open task.
+## Completed source tasks
 
-## Completed tasks
+- [x] **CURRENT-RP-NATIVE-FUNCTION-IDENTITY** Repaired canonical Rp functions, five histories and independent P0 identified with the native inlet (prior accepted work).
+- [x] **CURRENT-O4-TO-FLATTEN-CONTINUATION** Actual native pulse and same-pulse flatten input installed (prior accepted work).
+- [x] **CURRENT-PREHEAT-PRESSURE-FRAME-IDENTITY** Original fourteen-stage analytic P0/raw integral proof transported to current objects, without cap/box identity or pressure reset (8682a556).
+- [x] **CURRENT-PREHEAT-WAITING-SOURCE** Original angular/steep/waiting/heat sources installed on the current downstream graph (8682a556).
+- [x] **CURRENT-LIMIT-DTHETA-CP-SOURCE-CLOSURE** Current angular and pressure terminal source constants close by accepted function identities (8682a556).
+- [x] **CURRENT-EXACT-FUTURE-SELECTED-PULSE-BINDING** Restricted source portion completed here: existing CurrentSelectedEnergySource receives pressure=source_field.pressure, owns current C1/C4/C5 future and selection, and drives the copied pulse plus new same-source flatten. Whole physical/global owner installation remains below.
 
-- [x] **CURRENT-RP-NATIVE-FUNCTION-IDENTITY** Exact repaired-limit canonical Rp defining functions and independent P0 identified with the native inlet (prior accepted work).
-- [x] **CURRENT-O4-TO-FLATTEN-CONTINUATION** Same real native pulse supplies all six original routes and the actual Rv history/future adapter feeding flatten (prior accepted work).
-- [x] **CURRENT-PREHEAT-PRESSURE-FRAME-IDENTITY** Current inlet, actual same flatten, exact Ev2/pressure log factors and original fourteen-stage analytic P0/raw pressure function are linked in the new pressure runtime. Reused accepted original pressure proof; no cap or interval equality substitutes for defining functions.
-- [x] **CURRENT-PREHEAT-WAITING-SOURCE** Actual same pulse/flatten graph feeds original angular, steep and waiting source constructors; original kernels, parameters, waiting-root source and complete histories are retained. Global physical joins remain separate.
-- [x] **CURRENT-LIMIT-HEAT-PRESSURE-SAME-OBJECT** New downstream-only companion explicitly feeds current exact repair, collar, angular, balance, raw and pressure closure. Supplied inlet identity, formula-only evidence, actual two calls and unchanged P0 passed the dedicated checker.
-- [x] **CURRENT-LIMIT-DTHETA-CP-SOURCE-CLOSURE** Original whole-Z source theorems for angular and pressure constants are transported to the new object chain. This closes those terminal constants only, not all five complete exterior moments or global stress.
+## Immediate next task
 
-## Next tasks in dependency order
+- [ ] **CURRENT-SELECTED-PULSE-LATER-SOURCE-REGISTRY** Rebuild/register CurrentLimitPowerSource, CurrentLimitSteepSource and CurrentLimitHeatSource using the newly accepted CurrentLimitSelectedPulseFlatten as the preceding source. It has the same metadata/pulse/flatten/route interface required by CurrentLimitHeatPressureBridge's optional bridge= input, but do not admit transport just from matching numeric boxes or a truthy acceptance flag. Bind its checked repaired Rp provenance, selected-energy proof and exact branch; update route receipt provenance to the new selected source. Prove all later current power/angular, waiting and Gamma source data consume its current C5 callback, angular coefficients and exact heat source. Construct exact-repair/angular/pressure layers with explicit injections and retain P0. Demonstrate actual current angular endpoint and heat calls. Keep all physical-owner and all-five absolute-target flags false until their own proofs exist.
+- [ ] **CURRENT-SELECTED-PULSE-PHYSICAL-INSTALLATION** After uniform full pulse interfaces and global limit jets are available, install the copied selected pulse/flatten into native physical dispatchers and every later physical owner. Preserve Cartesian/time/radius transforms and supports, and update precise dependency receipts. The restricted selected pulse's callable mixed4 grids alone do not certify all global interfaces.
 
-- [ ] **CURRENT-EXACT-FUTURE-SELECTED-PULSE-BINDING** Inspect CurrentExactRepairBranch.replay_future versus pulse.fifth.fourth.energy.base and pulse.selection.future. Bind the replayed exact Xv*, waiting, radius, Gamma, angular coefficients and complete future as ONE defining function, using the accepted unique branch theorem. If new source functions differ, implement the actual coupled future/selection adapter; do not copy intervals or relabel the old selected pulse. Preserve positivity, original supports, all incoming histories, P0 and first-Z through required high derivatives. Emit strict proof/receipt and keep current_selected_complete_future_energy_installed_in_pulse false until it passes.
+Remaining absolute closure, exact corrected heat, upstream/global jets, numeric evaluation and actual recursion tasks retain their detailed specifications:
+
 - [ ] **CURRENT-EXTERIOR-ABSOLUTE-CLOSURE** Assemble all five actual post-2Rc contributions from quiet O3, selected O4 entrance/main/gap/end, flatten, power/angular, steep/waiting, collar and complete heat exterior. Compare against required_future_integrals (-M2,-J2,-S2,I_power(2Rc)-I2,-Pi2) from current_limit_band_physical_recovery. Pressure normalization is already source-closed here; linear zeros at Rv and relative zero at 2Rc do not alone prove all five absolute targets. Produce actual function equalities with genuine Z derivatives.
 - [ ] **CURRENT-ANALYTIC-PREHEAT-EXACT-HEAT** Use the installed typed source runtime, preserving original preheat datum, heat evolution, reference radius and c_infinity. Prove high-order boundary jets and finite-energy heat tail on the actual corrected source. Conditional native heat formulas and pressure-only closure do not complete exact corrected heat installation.
 - [ ] **CURRENT-PATCHED-RH-REFERENCE-FUNCTION-JOIN** Prove the full patched terminal functions equal the canonical Rh reference from the same implicit source/repair map, for E,V,all five histories,P0 and required jets. Existing interval-overlap consistency remains only a diagnostic. This is an independent upstream global-background blocker.

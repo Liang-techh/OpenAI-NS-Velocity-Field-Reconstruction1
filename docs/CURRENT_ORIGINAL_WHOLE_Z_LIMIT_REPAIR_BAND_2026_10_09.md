@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): selected future feeds current pulse and flatten
+
+Read [the latest task handoff](CURRENT_LIMIT_SELECTED_PULSE_FLATTEN_2026_10_10.md) first. Source commit [50a4f661](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/50a4f6615ac9e6b0603ecb1a4dca4fe7aadb3fb4) injects the actual repaired-limit pressure branch into the checked C1/C4/C5 selected-energy adapter, then constructs a new flatten from that restricted pulse. Fresh Z=.371 calls preserve C4/C5 prefixes, positive selection, Rv/flatten complete future/2 and independent P0. Previous same-object preheat/pressure closure is retained. Next: register this new selected pulse/flatten in every later source owner and prove all five absolute exterior targets. Physical global assembly, upstream Rh seam, higher jets, admissible stress and actual temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): same-object heat and pressure source runtime
 
 Read [the latest task handoff](CURRENT_LIMIT_HEAT_PRESSURE_BRIDGE_2026_10_10.md) first. Source commit [8682a556](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8682a5562c9cb969f0c68eced3731b81d650598b) installs the repaired-limit pulse/flatten objects through fifteen downstream routes and exact-native angular/pressure terminal closure. Existing fourteen-stage pressure mathematics is reused; only the old core parameter graph is replaced by a typed native-only source binding. Actual preheat/exterior calls and preserved independent P0 passed. Next: bind the exact complete future into selected pulse and close all five absolute exterior targets. Earlier Rh seam, higher jets, physical global assembly, numeric values, admissible stress and actual temporal recursion remain open. Full goal ACTIVE / INCOMPLETE.
