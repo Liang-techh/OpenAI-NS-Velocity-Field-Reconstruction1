@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): current beta context and angular cache ownership
+
+Read [the selected consumer handoff](CURRENT_ORIGINAL_RP_SELECTED_CONSUMER_2026_10_10.md) first. Source [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da) completes the current-context beta provider and separates the copied angular-C4 cache. Four fresh actual calls include an active end bump; the current selected pulse/flatten receipt passes. Shared canonical future/angle/repair/heat owners are explicitly cache-free. Next: postpulse caller registry and absolute exterior histories; full reconstruction remains ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual selected Rp consumer
 
 Read [the latest handoff](CURRENT_ORIGINAL_RP_SELECTED_CONSUMER_2026_10_10.md) first. Source [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965) supplies the source-bound directed interval inlet and installs current cached constants in the actual copied selected pulse and same-pulse flatten. Fresh Rp/Rv/flatten calls and current C5 selection passed. Next: postpulse registry, complete absolute exterior histories and global mixed/physical contracts. Full u/v/w, heat/cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.

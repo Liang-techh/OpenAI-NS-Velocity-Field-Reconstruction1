@@ -1,6 +1,6 @@
 # Complete current Rp inlet consumed by actual selected pulse and flatten (2026-10-10)
 
-Full reconstruction **ACTIVE / INCOMPLETE**. Source [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965) installs the accepted complete Rp inlet in an actual copied selected pulse and same-object flatten consumer. The previous exact function and cached constant work now feeds active native algorithms. This closes restricted consumer ownership, not global Cartesian/heat/cone/temporal reconstruction.
+Full reconstruction **ACTIVE / INCOMPLETE**. Source [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da) installs the accepted complete Rp inlet in an actual copied selected pulse and same-object flatten consumer. The previous exact function and cached constant work now feeds active native algorithms. This closes restricted consumer ownership, not global Cartesian/heat/cone/temporal reconstruction.
 
 ```
 actual patch -> Rh -> O2/O3 -> complete Rc C3 inlet
@@ -14,11 +14,11 @@ actual patch -> Rh -> O2/O3 -> complete Rc C3 inlet
 
 `CurrentOriginalRpIntervalInlet` keeps directed source enclosures of all 12 identified constant functions. Its checker proves whole-Z h=H/q and p=Pin/q^2, then replays actual H/Pin/Xp extraction at the exact Z=1/2 buffer sample. The sample is hash-bound and source-family matched. Original td/Tw/B_squared_mass and the nonzero far tail remain intact. At axis, fresh Z=.371 and the cell [.370,.372], the actual native power method calls this current interval inlet. All 144 true Taylor rows agree with independent analytic derivative diagnostics; exact source identities establish function equality independently of interval overlap.
 
-`CurrentOriginalRpSelectedPulse` copies an accepted `CurrentSelectedEnergySource`, installs one fresh constants dictionary in axial4/fifth/pulse, and binds H/Pin/Xp to active pulse inputs. Mutable selection and inlet caches are separate. The seed pulse context differs from the current energy/selection context; all copied Taylor consumers now use `seed.future.ctx`, with complete directed scalar boxes reboxed there. Original seed objects and their directly tracked cache contents remain intact.
+`CurrentOriginalRpSelectedPulse` copies an accepted `CurrentSelectedEnergySource`, installs one fresh constants dictionary in axial4/fifth/pulse, and binds H/Pin/Xp to active pulse inputs. All eight directly tracked selection, inlet and current angular-C4 caches are separate. The shared canonical future, angle, repair and heat objects have no cache attributes; this is checked explicitly. The copied angular-C4 provider retains the same unique repair while owning a fresh cache. A new same-source FlatPulseDerivatives provider binds beta Taylor rows to the current context. The seed pulse context differs from the current energy/selection context; all copied Taylor consumers now use `seed.future.ctx`, with complete directed scalar boxes reboxed there. Original seed objects and their directly tracked cache contents remain intact.
 
 The current complete future, angular repair, positive selected root and C4/C5 equations retain their original algorithms. Runtime P0 is the current selected/future datum object; the independent saved inlet datum supplies source evidence only. Raw M/K receive their original Pstar convention exactly once. Native data actually reads the fresh cached constants, rather than an unused buffer callback.
 
-- Three fresh actual calls at Z=.371: Rp entrance, Rv terminal and flatten t=0.
+- Four fresh actual calls at Z=.371: Rp entrance, active end-bump center (-3), Rv terminal and flatten t=0. The active beta center is positive and its Taylor rows use the same current context.
 - 42 Rp entrance Taylor diagnostics preserve all histories and independent P0.
 - Six selected C5 quadratic residual rows contain zero, with positive inverse denominator and signed end controls retained.
 - 42 Rv/flatten diagnostics include 12 terminal linear-zero checks from the existing exact empty-support theorem; flatten publishes angular and energy under its own canonical names.
@@ -45,13 +45,13 @@ Pass already accepted live interval/selected objects to `interval=` and `seed=` 
 
 ## Completed bounded tasks
 
-- [x] **CURRENT-RP-INTERVAL-CONSTANT-VIEW** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-INTERVAL-CALLER-HANDSHAKE** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-NATIVE-FRAME-IDENTITY** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-PULSE-INPUT-OWNERSHIP** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-SELECTED-FUTURE-OWNERSHIP** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-SIX-PULSE-ROUTES** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
-- [x] **CURRENT-RP-FLATTEN-CALLER** Completed by [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965); see the checked quartets and scope above.
+- [x] **CURRENT-RP-INTERVAL-CONSTANT-VIEW** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-INTERVAL-CALLER-HANDSHAKE** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-NATIVE-FRAME-IDENTITY** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-PULSE-INPUT-OWNERSHIP** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-SELECTED-FUTURE-OWNERSHIP** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-SIX-PULSE-ROUTES** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
+- [x] **CURRENT-RP-FLATTEN-CALLER** Completed by [701b2e9a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/701b2e9a6bc8fb78d1878496451f8915118b49da); see the checked quartets and scope above.
 
 ## Next: connect actual postpulse consumers
 
