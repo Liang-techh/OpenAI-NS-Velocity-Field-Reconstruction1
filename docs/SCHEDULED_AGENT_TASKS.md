@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual selected Rp consumer
+
+Read [the latest handoff](CURRENT_ORIGINAL_RP_SELECTED_CONSUMER_2026_10_10.md) first. Source [a797b6f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a797b6f0cb0a1bff0ff22786488cc66bec4fb965) supplies the source-bound directed interval inlet and installs current cached constants in the actual copied selected pulse and same-pulse flatten. Fresh Rp/Rv/flatten calls and current C5 selection passed. Next: postpulse registry, complete absolute exterior histories and global mixed/physical contracts. Full u/v/w, heat/cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): source-bound native Rp constants
 
 Read [the latest handoff](CURRENT_ORIGINAL_RP_NATIVE_CONSTANTS_2026_10_10.md) first. Source [c86b13ef](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c86b13efc603829a69216ecd66b7de80530efffe) proves 12 current constant functions equal actual native constructor functions, using seven actual buffer coefficients and original kernels. **CURRENT-RP-CACHED-CONSTANT-IDENTITY is done.** Next: directed interval constant view, actual copied pulse input ownership and flatten caller handshake. Full reconstruction remains ACTIVE / INCOMPLETE.
