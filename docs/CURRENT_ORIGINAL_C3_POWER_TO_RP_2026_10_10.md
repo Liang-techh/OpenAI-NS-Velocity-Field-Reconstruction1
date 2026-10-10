@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): exact original leading C3 source
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_LEADING_C3_SOURCE_2026_10_10.md) first. Source [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef) installs exact original Rh/O2/O3 kernels, ordinary Z0..3 functions, 120 five-ODE rows, 240 state/own-y seam rows and actual radius/Jacobian identities. Next: bind old provider/Duhamel leaves to these explicit functions, identify all 20 Rc leading seed rows, then close the complete Rc interface and native Rp consumer. The correction inlet bridge and quiet y0..4/Z0..3 frame remain accepted. Numeric global field, heat, cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): original C3 correction inlet bridge
 
 Read [the latest handoff](CURRENT_ORIGINAL_OUTER_TO_REPAIR_C3_BRIDGE_2026_10_10.md) first. Source [82162ec9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/82162ec9d7dc26c29b6a0f9ba38abdf237c9e886) closes the actual outer Rc N-scaled correction / N to genuine compact repair inlet identity for all five histories and ordinary Z0..3 rows, with the same Rc/N/absolute phase. Next: source leading-history ODE/seam identity, then the complete Rc interface and native selected pulse consumer. Current quiet y0..4/Z0..3 and Rp frame are accepted; full heat/time/Cartesian/cone/temporal layers remain ACTIVE / INCOMPLETE.

@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): exact original leading C3 source
+
+Read [the latest handoff](CURRENT_ORIGINAL_OUTER_LEADING_C3_SOURCE_2026_10_10.md) first. Source [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef) installs exact original Rh/O2/O3 kernels, ordinary Z0..3 functions, 120 five-ODE rows, 240 state/own-y seam rows and actual radius/Jacobian identities. Next: bind old provider/Duhamel leaves to these explicit functions, identify all 20 Rc leading seed rows, then close the complete Rc interface and native Rp consumer. The correction inlet bridge and quiet y0..4/Z0..3 frame remain accepted. Numeric global field, heat, cone and temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Original outer Rc to compact repair: C3 correction interface (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [82162ec9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/82162ec9d7dc26c29b6a0f9ba38abdf237c9e886) closes the correction part of the actual O3 Rc exit / original compact repair inlet interface. All five histories m/h/k/e/p and ordinary Z0..3 rows are source-owned functions with the original phase, selected N, signed densities, true Jacobians and predecessor memory retained. The complete leading-history interface and native selected pulse constructor remain open.
@@ -51,8 +57,8 @@ inlet = bridge.correction_inlet_functions()  # real original repair graph C3 han
 ## Next action: leading function identity
 
 - [ ] **CURRENT-OUTER-LEADING-TO-BAND-SEED** Prove the outer leading Duhamel endpoint at Rc equals the original O3 source-owned leading endpoint seeds as functions. Shared providers or range covers do not close this task.
-- [ ] **LEADING-SOURCE-ODE-MAP** Identify the actual original history frontend used by each Rh/O2/O3 provider. Extract the defining equations for m/h/k/e/p and exact inlet data; retain ordinary Z0..3 normalization and P0 independently.
-- [ ] **LEADING-SEAM-DATA** At each Rh->O2_slope->O2_axial->O2_buffer->O3_transition->O3_power seam, prove equality of source-owned complete leading histories and radial coordinates. Use the true O2 axial coordinate change and Jacobian.
+- [x] **LEADING-SOURCE-ODE-MAP** Explicit source functions completed by [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef); see [the exact leading source handoff](CURRENT_ORIGINAL_OUTER_LEADING_C3_SOURCE_2026_10_10.md). Old opaque provider/Duhamel/repair-seed identity remains open.
+- [x] **LEADING-SEAM-DATA** Explicit source functions completed by [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef); see [the exact leading source handoff](CURRENT_ORIGINAL_OUTER_LEADING_C3_SOURCE_2026_10_10.md). Old opaque provider/Duhamel/repair-seed identity remains open.
 - [ ] **LEADING-DUHAMEL-UNIQUENESS** Independently connect each source frontend to the accepted leading Duhamel function by the common first-order own-rate ODE and common inlet values. Preserve nonzero predecessor data and p memory one.
 - [ ] **LEADING-RC-TWENTY-ROWS** Compare the actual outer O3 right endpoint with repair-band leading x=1 or the canonical same-provider endpoint seeds for all 20 ordinary rows. Bind source projection ASTs and actual defining functions; do not select enclosure values.
 - [ ] **COMPLETE-RC-INTERFACE** Only after leading identity, combine it with this accepted correction identity to close the complete Rc history interface, including independent P0 and pressure. Leave the gate false until both terms are proved.
