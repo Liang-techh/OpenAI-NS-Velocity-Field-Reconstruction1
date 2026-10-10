@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual Rh C3 continuation
+
+Read [the latest handoff](CURRENT_ORIGINAL_RH_C3_CONTINUATION_2026_10_10.md) first. Source [a40d1b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a40d1b6355a118fa067c682dc47836c5a0a42316) installs actual Rh reference partial correction/complete five histories through Z3, first-y FTC and pressure, with original nonzero incoming, P0, phase and selected repair N retained. Exact Rh geometry/source registry, direct/full partitioned integral endpoint identities and four-cell whole-reference bounds pass. Next: outer partial-history chain and absolute heat matching; corrected high-y Rh rows remain open. Full physical time/Cartesian field, signed cone and temporal scale recursion stay ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): repaired mixed radial recovery
 
 Read [the latest handoff](CURRENT_ORIGINAL_MIXED_REPAIRED_RECOVERY_2026_10_10.md) first. Source [fe535e00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fe535e003f37a32051ecb05fa41f9a76f0225af1) installs corrected profiles/complete five histories y0..4/Z0..3, velocity/pressure y0..4/Z0..2 and six physical inertial/shear sectors y0..3/Z0..2. Original beta derivatives, signed FTC, physical radial/inertial/shear shifts, generic recovery equivalence and four-cell directed bounds pass. Same source, repair-only N, P0, radius and all lower handles are retained. Next: C2 Rh correction continuation and absolute heat matching. Global time/Cartesian field, signed cone and temporal scale recursion remain ACTIVE / INCOMPLETE.

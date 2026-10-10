@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): actual Rh C3 continuation
+
+Read [the latest handoff](CURRENT_ORIGINAL_RH_C3_CONTINUATION_2026_10_10.md) first. Source [a40d1b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a40d1b6355a118fa067c682dc47836c5a0a42316) installs actual Rh reference partial correction/complete five histories through Z3, first-y FTC and pressure, with original nonzero incoming, P0, phase and selected repair N retained. Exact Rh geometry/source registry, direct/full partitioned integral endpoint identities and four-cell whole-reference bounds pass. Next: outer partial-history chain and absolute heat matching; corrected high-y Rh rows remain open. Full physical time/Cartesian field, signed cone and temporal scale recursion stay ACTIVE / INCOMPLETE.
+
+---
+
 # Actual repaired mixed radial recovery (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [fe535e00](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fe535e003f37a32051ecb05fa41f9a76f0225af1) extends the same accepted repaired band to ordinary y0..4/Z0..3 profiles and complete five histories, then recovers cylindrical velocity/pressure through y0..4/Z0..2 and all four inertial plus two shear sectors through y0..3/Z0..2. All four axial cells have directed whole-band magnitude bounds. Existing source family, selected repair N, original pressure, lower handles and exact radius are retained. Next: C2 Rh correction continuation and absolute heat matching. The global Cartesian/time field, signed stress cone and temporal coefficient recursion remain open.
@@ -80,7 +86,7 @@ Installed quartet: `lei_ren_part1_paper_compliant_current_original_mixed_repaire
 
 ## Next tasks in dependency order
 
-- [ ] **CURRENT-C2-RH-CORRECTION-JOIN** Own a new C2 companion to `current_original_whole_Z_Rh_functional_join.py`. Reuse its accepted leading whole-function identity and the same `WholeZAllNOuterRcFunctions` live owner. Supply actual corrected Z2 incoming functions and own-rate Duhamel reference continuation, with original nonzero memory, P0 and global phase. Do not substitute the old C1 range endpoints for high-row function values. Admit all four axial cells with source geometry and derivative contracts.
+- [x] **CURRENT-C2-RH-CORRECTION-JOIN** Completed through C3 by [a40d1b63](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a40d1b6355a118fa067c682dc47836c5a0a42316); see [actual Rh continuation evidence](CURRENT_ORIGINAL_RH_C3_CONTINUATION_2026_10_10.md).
 - [ ] **CURRENT-C2-RH-INTERFACE-MIXED-ROWS** Use the same leading patched Rh radius Rm*exp(1), reference Rref*exp(-5), and phase identity. Prove corrected value/Z/ZZ interface equality and required ordinary-y rows as functions; directed overlap alone is not equality. Preserve leading/correction separation and add correction once.
 - [ ] **CURRENT-C2-EXTERIOR-SEGMENT-MEMORY** Extend the accepted source-owned quiet-power, selected-pulse, selected-postpulse and collar cumulative histories through Z2. Use `current_limit_absolute_future_integrals.py` as the dependency map. Each segment takes the previous complete incoming function; keep exact units, source radius, current phase and the original independent P0.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Recover the five absolute exterior terminal identities through Z2 with true final heat amplitude, native future-integral FTC and full Gamma tails. Keep final reference power distinct from the current mu power. Prove original incoming cancellations; relative repaired-band terminal zeros alone do not close the absolute exterior.
