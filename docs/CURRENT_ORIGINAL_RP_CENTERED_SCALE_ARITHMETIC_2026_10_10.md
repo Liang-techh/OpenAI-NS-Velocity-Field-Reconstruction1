@@ -1,5 +1,7 @@
 # Exact original scale origins and directed residual error — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md](CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md) completes the exact remaining pressure tail and signed rows at the supported pulse_exit point. The pressure-tail checkboxes below record this earlier checkpoint; the new checkpoint is authoritative for completed scope. Ordinary nonzero delivery, general/global coverage, stress and true recursion remain open.
+
 The supported physical error view now keeps the fixed original `logC` as an exact rational binary expression and computes uncertainty only in the remaining log-scale expression. The original scale and parameters are unchanged. This removes a source of artificial rounding width and refines five elementary parameter enclosures using the same defining functions. It does **not** yet deliver ordinary nonzero physical numbers or resolve pressure sign. Full goal **ACTIVE / INCOMPLETE**.
 
 Source commit: [b6eb8820](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b6eb8820e6aff4ba5523ef45b58c509128f6b967). Source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_centered_scale_arithmetic.py`, `.json.gz`, `_check.py`, `_check.json`.

@@ -1,3 +1,9 @@
+# Latest checkpoint — original remaining pulse pressure, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md](CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md) first. At the supported pulse_exit point, all 144 physical derivative rows now have resolved signs, recovering 6 previously unresolved rows. Nonzero factored 0.1% target passes increased from 53 to 59; base pressure is negative. Original P0, all positive late atoms, infinite tail, scales and velocity rows are retained. Ordinary nonzero physical delivery remains open.
+
+Full goal **ACTIVE / INCOMPLETE**. The exact pressure-tail and signed-point tasks are complete in the stated scope. Next: nonconstant logC residual representation / nonzero delivery, pressure end-layer and off-center coverage, then all-chart/general/global/axis field, signed stress/flat remainder, genuine n-dependent recursion and oscillatory correction. No scale-recursion or full NS completion claim is made.
+
 # Latest checkpoint — exact source-scale origins, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_CENTERED_SCALE_ARITHMETIC_2026_10_10.md) first. The original fixed logC term is now stored exactly and separated from residual error, with five same-source elementary enclosures refined. Across two supported queries, 213 nonzero rows carry exact centered identities; 159 still contain nonconstant logC products. The local pulse velocity factor widths remain about 0.0791%, 0.0791% and 0.0341%. Ordinary nonzero physical delivery and pressure sign remain open.
