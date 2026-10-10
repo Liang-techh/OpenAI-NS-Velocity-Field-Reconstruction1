@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): quantitative C2 targets and same repaired limit
+
+Read [the latest task handoff](CURRENT_ORIGINAL_C2_TARGET_RANGES_AND_LIMIT_CONTROLS_2026_10_10.md) first. Source [9e903dfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9e903dfc7f5bad2b49cb53aefd204bed3e152a03) completes actual second-Z target magnitude ranges over four Z cells, all 17 charts and 228 native cells, then installs genuine second derivatives of the same original five-control Banach limit with its quantitative C2 Picard tail. Same pressure, target, weights, C1 limit and repair-only frequency are retained. Next: C2 repaired-band velocity/history installation and absolute exterior/heat derivatives. Complete physical/Cartesian field, cone and genuine temporal recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual C2 functions through all five targets
 
 Read [the latest task handoff](CURRENT_ORIGINAL_C2_TARGET_FUNCTIONS_2026_10_10.md) first. Source [31885ad2](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/31885ad2054f3243852a2f8d4563348df58c8eb5) installs current-source second Z derivative functions for all 17 charts, the original inverse/primitives, signed densities, own-rate radial transport and all five normalized terminal targets. Existing C1 function handles, predecessor memories, original phase and independent P0 remain intact. Dedicated source receipts and independent calculus/normalization checks passed. Next: quantitative current C2 ranges and actual implicit repair second derivatives. Physical/Cartesian field, stress cone and genuine temporal recursion remain ACTIVE / INCOMPLETE.
