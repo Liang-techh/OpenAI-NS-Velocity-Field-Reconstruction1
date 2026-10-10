@@ -1,3 +1,11 @@
+# Latest: current original directed physical inverse (2026-10-10)
+
+Full reconstruction **ACTIVE / INCOMPLETE**. [Source 210c14c9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/210c14c91e8a40b51499e18d61037a773e209bf5) adds exact Cartesian/log cylindrical inverse function nodes and directed log-lambda/Z/logR/angle enclosures on the accepted current original Rp graph. Original delta/N, absolute source radius, P0 and full history are retained. The bounded **CURRENT-RP-DIRECTED-PHYSICAL-INVERSE** task is complete. Nine current cases, 89 exact coordinate identities and independent current delta-corner roots pass.
+
+**Current handoff:** [physical inverse and detailed next tasks](CURRENT_ORIGINAL_RP_PHYSICAL_INVERSE_2026_10_10.md). Next priority: current native chart location and interval/error source delivery, then numerical u/v/w/p. Global/axis coverage, uniform norms, stress/remainder, genuine coefficient recursion and oscillatory cancellation remain open. Reuse the accepted runtime and do not replay unchanged upstream solves. The broader inverse/source-domain contract remains open until chart admission exists.
+
+---
+
 # Latest: current original physical Cartesian/time source map (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source 5f4f9d0f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5f4f9d0f0d7cc2d83a15c190868ff19994dc05e1) installs the original physical coordinate and fixed-x time operators on all fifteen current Rp-to-heat charts: 2100 Cartesian spatial rows, 60 time rows, 31560 exact source/operator term identities. Signed scaled enclosures retain the exact radius/time graph, original delta/N, distinct velocity and pressure units, analytic P0 and full Gamma future. The bounded **CURRENT-PHYSICAL-TIME-MAPPING** task is complete at this outer chart-parametric scope.

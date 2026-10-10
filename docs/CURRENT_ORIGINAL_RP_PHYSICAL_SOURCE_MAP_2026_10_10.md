@@ -1,3 +1,9 @@
+# Update: current original directed physical inverse installed (2026-10-10)
+
+[Source 210c14c9](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/210c14c91e8a40b51499e18d61037a773e209bf5) completes the bounded coordinate inverse on this current physical graph. Read the [new handoff](CURRENT_ORIGINAL_RP_PHYSICAL_INVERSE_2026_10_10.md). Native chart admission and source point-error delivery remain open, so the broader inverse contract below is still unchecked. Numerical u/v/w/p and global/axis coverage are not yet delivered.
+
+---
+
 # Current original Rp physical Cartesian/time source map (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. [Source 5f4f9d0f](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5f4f9d0f0d7cc2d83a15c190868ff19994dc05e1) installs the direct original physical-coordinate and fixed-physical-x time map on the accepted current fifteen-chart Rp-to-heat source chain. Each chart delivers 140 signed scaled Cartesian spatial rows through total order four and four first-time rows. The exact absolute radius, original delta, source amplitudes, analytic P0, complete Gamma future and original finite correction integer remain unchanged. Arbitrary numerical [u(x,y,z,t),v(x,y,z,t),w(x,y,z,t)], axis limits, global norms, stress/remainder, genuine coefficient recursion and oscillatory cancellation remain open.
@@ -86,7 +92,7 @@ Files: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp
 
 Priority is point/error delivery and global source coverage. Reuse accepted current owners and the pure operators; do not replay unchanged selection/repair solves merely to refresh a receipt.
 
-- [ ] **CURRENT-RP-PHYSICAL-INVERSE-CONTRACT** Define inputs for numerical physical x/y/z/t and a log-radius/log-tau form that preserves near-critical scales. Separate representable doubles from exact/log-scaled inputs. Solve lambda^2-lambda^(2delta)z^2=tau with a monotonicity/bracketing proof, then compute Z, logR and theta with directed error. Require source-domain admission and report inverse errors; do not use an arbitrary lambda or replace the source radius with an endpoint.
+- [ ] **CURRENT-RP-PHYSICAL-INVERSE-CONTRACT** Partial: exact current Cartesian/log cylindrical inverse and directed coordinates are installed. The broader task remains open for native chart admission and interval/error source consumption. See the latest physical inverse handoff; do not replay the completed pure inverse implementation.
 - [ ] **CURRENT-RP-NATIVE-CHART-LOCATION** Locate the inverse logR in the actual fifteen-chart registry. Keep logRp, inverse-mu length and short offsets separate and compare differences before arithmetic. Recover rational/interval native coordinates with true (Lrel-4), Ts or integral-defined W Jacobians. Handle exact boundaries by the accepted same-function seam callers, with left/right unit conversions explicit.
 - [ ] **CURRENT-RP-RAW-POINT-ERROR-UNITS** Give each actual source evaluation an error budget in its true amplitude units: phase inversion, signed quadrature, narrow beta supports, coefficient recovery and Gamma tail. Propagate interval width through each physical scale group. An existing directed jet is an enclosure, not a selected value or automatically a sufficiently accurate physical point.
 - [ ] **CURRENT-RP-PHYSICAL-ROW-MATERIALIZER** Consume exact FunctionRefs plus an admitted source oracle to evaluate finite grouped physical rows. Combine correlated log factors before exponentiation, preserve signs/cancellation, include the operator-angle errors and expose absolute/relative directed error. Avoid midpoint selection and practical smaller N. Support the new sin/cos and signed integer-power graph nodes.
