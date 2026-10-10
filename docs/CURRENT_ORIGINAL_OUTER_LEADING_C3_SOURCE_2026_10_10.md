@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): complete original Rc C3 interface
+
+Read [the latest handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md) first. Source [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14) identifies actual original leading source recipes and all five outer Duhamel functions through Z3, closes all 20 canonical Rc leading seeds and all 20 complete compact-band inlet rows, and preserves the independent P0 and nonzero correction memory. Previous claims that the leading/complete Rc interface is open are superseded by this checked bridge. Next: a downstream adapter and actual selected-native consumption of the current Rp frame. Numeric u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
+
+---
+
 # Exact original leading source kernels, C3 ODEs and seams (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef) installs explicit mathematical leading functions for Rh_reference, O2_slope, O2_axial, O2_buffer, O3_transition and O3_power. These functions use the original defining integrals, actual parameters and complete predecessor memory. The independent checker establishes their ordinary Z0..3 derivatives, all five own-rate ODEs, all source state/radius seams and the true x=2 Rc endpoint. It does **not** yet identify the old opaque outer Duhamel/provider leaves with these explicit functions or close the repair-band leading inlet identity.
@@ -67,12 +73,12 @@ These are exact formal function handles, not a numeric point field. Installed qu
 
 ## Immediate next task: close the old leading interface
 
-- [ ] **LEADING-PROVIDER-RECIPE-FUNCTION-BINDING** For each accepted current leading leaf, bind its quantity path and original pure frontend projection to this module's explicit function. Inspect actual Rh/slope/axial-buffer/O3 background assignments and normalized recovery. A matching AST hash or shared source family alone does not prove function identity.
-- [ ] **LEADING-RH-INLET-TWENTY-ROWS** Identify the accepted original Rh leading packet at y=-5 with the explicit source inlet for all m/h/k/e/p Z0..3 rows. Preserve the independent P0 guard.
-- [ ] **LEADING-DUHAMEL-UNIQUENESS** Bind actual leading densities E/V and each accepted Duhamel incoming history to the explicit source. Use the checked common own-rate ODEs and inlet data for uniqueness, segment by segment, with the true native-to-physical Jacobian. Do not zero predecessor memory.
-- [ ] **LEADING-RC-TWENTY-ROWS** Identify the accepted outer O3 leading right endpoint at x=2 with this explicit source endpoint, then with the genuine compact band's leading x=1 seeds for all 20 ordinary rows. Bind the canonical source endpoint and actual amplitude definition, not an archived magnitude cover.
-- [ ] **CURRENT-OUTER-LEADING-TO-BAND-SEED** Enable the leading gate only when all actual leaf/Duhamel/seed function identities above are independently proved.
-- [ ] **COMPLETE-RC-INTERFACE** Combine that leading identity with the already accepted correction Q/N identity. Prove complete histories and independent pressure/P0 in the genuine Rc inlet units before enabling the complete interface.
+- [x] **LEADING-PROVIDER-RECIPE-FUNCTION-BINDING** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
+- [x] **LEADING-RH-INLET-TWENTY-ROWS** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
+- [x] **LEADING-DUHAMEL-UNIQUENESS** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
+- [x] **LEADING-RC-TWENTY-ROWS** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
+- [x] **CURRENT-OUTER-LEADING-TO-BAND-SEED** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
+- [x] **COMPLETE-RC-INTERFACE** Actual source/Duhamel/Rc function identity completed by [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14); see [the complete Rc handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md).
 
 ## Subsequent tasks
 

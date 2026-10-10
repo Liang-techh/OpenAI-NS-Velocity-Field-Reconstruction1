@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): complete original Rc C3 interface
+
+Read [the latest handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md) first. Source [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14) identifies actual original leading source recipes and all five outer Duhamel functions through Z3, closes all 20 canonical Rc leading seeds and all 20 complete compact-band inlet rows, and preserves the independent P0 and nonzero correction memory. Previous claims that the leading/complete Rc interface is open are superseded by this checked bridge. Next: a downstream adapter and actual selected-native consumption of the current Rp frame. Numeric u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): exact original leading C3 source
 
 Read [the latest handoff](CURRENT_ORIGINAL_OUTER_LEADING_C3_SOURCE_2026_10_10.md) first. Source [ad0c9c4a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad0c9c4a7ad11e1e38fdf65dbb25315d96051bef) installs exact original Rh/O2/O3 kernels, ordinary Z0..3 functions, 120 five-ODE rows, 240 state/own-y seam rows and actual radius/Jacobian identities. Next: bind old provider/Duhamel leaves to these explicit functions, identify all 20 Rc leading seed rows, then close the complete Rc interface and native Rp consumer. The correction inlet bridge and quiet y0..4/Z0..3 frame remain accepted. Numeric global field, heat, cone and temporal recursion remain ACTIVE / INCOMPLETE.
