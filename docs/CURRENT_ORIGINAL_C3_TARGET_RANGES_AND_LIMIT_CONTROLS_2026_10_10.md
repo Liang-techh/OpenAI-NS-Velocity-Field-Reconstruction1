@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): repaired radial/inertial C2 recovery
+
+Read [the latest handoff](CURRENT_ORIGINAL_C2_REPAIRED_RECOVERY_2026_10_10.md) first. Source [e92a8ab5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e92a8ab54c692fc9d94baa34d6406968cc67531f) installs actual repaired Q/Q_y, full signed inertial sectors/numerators/quotients and original cylindrical velocity/pressure functions through Z2, consuming the accepted third history rows. Same-source whole-band L/E/C positivity, exact delta branch, Rc*x radius and four-cell directed recovery bounds pass. Next: radial y0..4 and mixed recovery, plus C2 Rh/absolute heat matching. Complete physical Cartesian field, stress cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): actual C3 repaired-band velocity and histories
 
 Read [the latest handoff](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md) first. Source [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f) installs original repaired-band E/V through radial y0/y1/y2 and ordinary Z0/Z1/Z2/Z3, signed partial/complete five histories, independent P0, first-y rows, relative terminal identities and four-cell directed bounds. All accepted C2 handles and the same repair-only N are retained. Next: actual repaired radial/inertial recovery through Z2 with positive denominator margins. Higher radial rows, Rh/absolute heat assembly, complete physical/Cartesian field, cone and temporal scale recursion remain ACTIVE / INCOMPLETE.
@@ -88,7 +94,7 @@ Installed quartets: `lei_ren_part1_paper_compliant_current_original_C3_target_ra
 
 - [x] **CURRENT-C3-REPAIR-BAND-PROFILES** Completed by [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f); see [actual C3 repaired-band evidence](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md).
 - [x] **CURRENT-C3-REPAIRED-HISTORIES** Completed by [89908412](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/89908412dfde3855892b82fb660121cda327142f); see [actual C3 repaired-band evidence](CURRENT_ORIGINAL_C3_REPAIRED_BAND_2026_10_10.md).
-- [ ] **CURRENT-PATCHED-RECOVERY-SOURCE** Feed complete repaired histories/E/V/P0 and genuine third rows to the unchanged recovery equations. Their extra Z derivative is needed for Q_ZZ and inertial p2_ZZ. Retain radial/axial units, all mixed derivatives, source-dependent denominators and common P0; leading-only high rows cannot substitute for repaired high rows. Return actual source-bound radial/inertial function derivatives with their precise physical scope.
+- [x] **CURRENT-PATCHED-RECOVERY-SOURCE** Completed by [e92a8ab5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e92a8ab54c692fc9d94baa34d6406968cc67531f); see [actual C2 repaired recovery evidence](CURRENT_ORIGINAL_C2_REPAIRED_RECOVERY_2026_10_10.md).
 - [ ] **CURRENT-C2-RH-CORRECTION-JOIN** Continue actual repaired second histories through Rh while preserving the same phase/radius and nonzero memory. Prove leading and correction continuation independently.
 - [ ] **CURRENT-C2-ABSOLUTE-FUTURE-INTEGRALS** Install source-owned absolute exterior five identities through Z2, retaining the real heat amplitude, P0, future-integral FTC/Gamma tails and all endpoint cancellations. Relative band moments alone do not close this task.
 - [ ] **CURRENT-C2-PRESSURE-HEAT-ASSEMBLY** Assemble signed pressure restoration and exact/controlled heat exterior with axis/interface regularity and actual finite-energy tail bounds.
