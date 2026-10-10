@@ -1,3 +1,16 @@
+# Current handoff update (2026-10-10): same-existing-repair absolute heat closure
+
+Read [the current closed heat handoff](CURRENT_ORIGINAL_RP_SAME_REPAIR_HEAT_CLOSURE_2026_10_10.md) first. Source [44336a96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/44336a96857b3d190a7e493995ecfab6ef551cd5) binds the existing current selected repair to the actual absolute radius/U0 source functions, eliminates Dtheta/Cp by the retained whole-Z function proofs, and supplies closed factorized raw histories plus first native radial derivatives on collar/Gamma exterior. The independent analytic P0 and forward constant enclosures remain present. No second repair or upstream replay occurs. Full reconstruction is **ACTIVE / INCOMPLETE**: unrestricted numerical Cartesian u/v/w, global mixed/cone contracts, temporal recursion and corrected NS remain open.
+
+- [x] **CURRENT-RP-SAME-REPAIR-PRESSURE-CLOSURE** Done at source/enclosure scope in [44336a96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/44336a96857b3d190a7e493995ecfab6ef551cd5).
+- [x] **CURRENT-RP-ABSOLUTE-HEAT-CLOSURE** Done at absolute source-function scope in [44336a96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/44336a96857b3d190a7e493995ecfab6ef551cd5); numerical/global physical admission remains separate.
+- [x] **CURRENT-RP-CLOSED-HEAT-RAW-HISTORIES** Closed collar/exterior five-history and first derivative API is callable in [44336a96](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/44336a96857b3d190a7e493995ecfab6ef551cd5).
+- [ ] **Next: CURRENT-RP-RAW-PULSE-SCALE-FUNCTIONS and CURRENT-RP-RAW-PULSE-FIVE-HISTORIES** Extend to all six active pulse charts with their true pulse radius terms, nonzero histories, incoming memory and P0. Then integrate the closed heat caller and advance numerical/mixed/Cartesian delivery.
+
+The current handoff supersedes earlier open entries for these three scoped source tasks. Older checkpoints below remain historical evidence.
+
+---
+
 # Current factorized raw postpulse histories and radial transport (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [80e83353](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/80e83353c21e2713aaabe1016b3bdb0490e29073) connects the accepted absolute source geometry to actual five-history outputs on all nine postpulse charts. It supplies callable factorized raw source enclosures and first native radial derivatives. Unrestricted numerical absolute point values, absolute heat terminal closure, all-chart mixed contracts, Cartesian u/v/w and temporal recursion remain open.
