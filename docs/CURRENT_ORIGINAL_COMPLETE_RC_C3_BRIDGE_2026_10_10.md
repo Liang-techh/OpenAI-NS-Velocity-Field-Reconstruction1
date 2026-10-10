@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): current Rp native inlet functions
+
+Read [the latest handoff](CURRENT_ORIGINAL_RP_NATIVE_C3_FRAME_2026_10_10.md) first. Source [da019491](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da0194911ec99f996921fc45aec8817c11558c18) identifies all eight complete Rp frame functions, their true native Z0..5 Taylor rows and original absolute Rw/Rp radii after restoring the nonzero microscopic phase origin. The complete adapter and frame inventory are done. Next: actual selected pulse/flatten caller injection and a source-bound interval inlet. Numerical physical-time u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
+
+---
+
 # Complete original Rc C3 inlet bridge (2026-10-10)
 
 Full reconstruction **ACTIVE / INCOMPLETE**. Source [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14) closes the current original outer leading and complete-history interface at Rc. The accepted old outer Duhamel histories are identified with the actual defining Rh/O2/O3 source functions. All five histories, each through ordinary Z0..3, agree with the genuine compact repair band's x=1 inlet after retaining the accepted correction divided by the same original N once. The independent pressure datum P0 remains separate.
@@ -71,8 +77,8 @@ Installed quartet: `lei_ren_part1_paper_compliant_current_original_outer_leading
 
 ## Immediate work: native Rp consumer
 
-- [ ] **CURRENT-RP-COMPLETE-ADAPTER** Add a new downstream adapter requiring both this complete Rc bridge receipt and the existing `current_original_C3_power_to_Rp` receipt. Preserve old accepted modules/receipts. Do not make the old quiet module require this bridge: this bridge already depends on quiet, so that would create a circular acceptance/hash dependency. Bind the same source family, selected N, complete Rc data, genuine compact band, 2Rc exit and actual Rp radius.
-- [ ] **CURRENT-RP-NATIVE-FRAME-INVENTORY** Identify the exact selected-native pulse constructor and its Rw/Rp parent. Map all expected inputs to `actual_C3_pulse_input_frame`: u, m1, m2, X, energy, Mp, P0, pressure and all ordinary Z0..3 derivatives. Record every actual caller; an unused adapter does not close the gate.
+- [x] **CURRENT-RP-COMPLETE-ADAPTER** Completed by [da019491](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da0194911ec99f996921fc45aec8817c11558c18); see [the Rp native handoff](CURRENT_ORIGINAL_RP_NATIVE_C3_FRAME_2026_10_10.md).
+- [x] **CURRENT-RP-NATIVE-FRAME-INVENTORY** Completed by [da019491](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da0194911ec99f996921fc45aec8817c11558c18); see [the Rp native handoff](CURRENT_ORIGINAL_RP_NATIVE_C3_FRAME_2026_10_10.md).
 - [ ] **CURRENT-RP-NATIVE-FRAME-IDENTITY** Prove actual native consumption of the current compact-repaired quiet frame. Compare actual amplitudes and quotient derivatives, same Mp and independent P0, actual radius/coordinate maps and original fixed source units. Rebuild an incompatible native branch from this actual frame instead of asserting equality between different parent data. Enable `selected_native_pulse_constructor_consumes_current_C3_frame` only after the constructor/caller identity is checked.
 - [ ] **CURRENT-NATIVE-PULSE-C3-TRANSPORT** Continue the actual selected pulse E/V and five histories with true native-to-radial Jacobians and complete incoming memory. Retain lower-order accepted handles exactly; implement missing Z2/Z3 source terms without zeroing them.
 

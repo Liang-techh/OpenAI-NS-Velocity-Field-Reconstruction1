@@ -1,3 +1,9 @@
+# Current handoff update (2026-10-10): current Rp native inlet functions
+
+Read [the latest handoff](CURRENT_ORIGINAL_RP_NATIVE_C3_FRAME_2026_10_10.md) first. Source [da019491](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da0194911ec99f996921fc45aec8817c11558c18) identifies all eight complete Rp frame functions, their true native Z0..5 Taylor rows and original absolute Rw/Rp radii after restoring the nonzero microscopic phase origin. The complete adapter and frame inventory are done. Next: actual selected pulse/flatten caller injection and a source-bound interval inlet. Numerical physical-time u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
+
+---
+
 # Current handoff update (2026-10-10): complete original Rc C3 interface
 
 Read [the latest handoff](CURRENT_ORIGINAL_COMPLETE_RC_C3_BRIDGE_2026_10_10.md) first. Source [8fcee7f0](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/8fcee7f025eb165ff63fffa6da04c88cea945e14) identifies actual original leading source recipes and all five outer Duhamel functions through Z3, closes all 20 canonical Rc leading seeds and all 20 complete compact-band inlet rows, and preserves the independent P0 and nonzero correction memory. Previous claims that the leading/complete Rc interface is open are superseded by this checked bridge. Next: a downstream adapter and actual selected-native consumption of the current Rp frame. Numeric u/v/w, absolute heat, stress cone, temporal recursion and oscillatory cancellation remain ACTIVE / INCOMPLETE.
