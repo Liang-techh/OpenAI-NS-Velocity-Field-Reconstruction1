@@ -1,3 +1,9 @@
+# Latest checkpoint — signed supported physical u/v/w/p, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_SIGNED_PHYSICAL_VALUES_2026_10_10.md](CURRENT_ORIGINAL_RP_SIGNED_PHYSICAL_VALUES_2026_10_10.md) first. Current source/operator rows now yield signed common-scale u/v/w/p representations, exact zero/cancellation and retained positive ratio-tail bounds, with original physical coordinates and explicit accuracy/materialization state. Nonzero original-scale values in the tested cases remain factored/logarithmic; the ordinary numeric observations are exact zero rows only.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: independent analytic P0 row inclusion, tighter nonzero physical accuracy, then all-chart/general/global/axis coverage, stress/flat remainder, genuine coefficient recursion and oscillatory cancellation. No unrestricted x/y/z/t API or full physical error certification is claimed.
+
 # Latest checkpoint — current U0 amplitude and physical log scales, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_AMPLITUDE_BINDING_2026_10_10.md](CURRENT_ORIGINAL_RP_AMPLITUDE_BINDING_2026_10_10.md) first. Exact current U0 now has direct source-bound numeric inclusion in both full production U boxes, guarded logU0 identity/bounds and original elementary amplitude parameter bindings. Fresh pulse/heat physical operators deliver 288 rows and 442 signed groups with evaluated scale logarithms. No source owner or original parameter was changed.
