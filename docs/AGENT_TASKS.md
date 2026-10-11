@@ -1,3 +1,9 @@
+# Latest checkpoint — original derivative and correlated linear fields, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md](CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md) first. The supported original pulse_exit now exposes all 144 spatial4/time1 derivative values and 13 source-correlated linear fields (divergence, vorticity, strain, velocity Laplacians). Exact source operators cancel before interval evaluation. omega_x/y signs are bounded; omega_z's remaining source derivative cancellation is open. Inherited accuracy remains 26/144 total 0.1% passes and zero ordinary nonzero absolute materializations.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: exact original omega_z source law and paired original stress/remainder operator rebinding, then off-center/time/all-chart/general/global/axis coverage, cone/flatness, genuine n-dependent recursion and oscillatory correction. Use the detailed completed/open tasks; do not restart broad legacy validation or claim completed scale recursion.
+
 # Latest checkpoint — nonzero original source-scale operations, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md) first. The actual supported pulse_exit u/v/w/p now have nonzero source-scale handles, exact inverse-mu partitions, finite u/v ratio arithmetic, comparisons and rational multiplication. Shared scales cancel by original source identities. Absolute width/materialization flags are unchanged: 26 of 144 rows meet the 0.1% total width target, u/v absolute widths remain open, and no ordinary nonzero absolute physical number is expanded.

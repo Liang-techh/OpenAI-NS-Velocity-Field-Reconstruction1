@@ -1,5 +1,7 @@
 # Nonzero original physical source-scale operations — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md](CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md) completes all 144 source-scale derivative handles and 13 correlated linear point fields. The all-row point task is completed there; broader query/global coverage and nonlinear stress/flat/recursion scope remain open.
+
 The supported pulse_exit u/v/w/p values now have an executable nonzero source-scale interface. It exports the unchanged original scales and signed coefficient enclosures, computes a finite u/v interval by cancelling their exact common scale, supports exact rational multiples and ordered comparisons, and retains positive ratio tails. Ordinary absolute numeric materialization and u/v absolute relative-width accuracy remain open. Full goal **ACTIVE / INCOMPLETE**.
 
 Source commit: [92e8995a](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92e8995a). Source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_scale_value_arithmetic.py`, `.json.gz`, `_check.py`, `_check.json`.
