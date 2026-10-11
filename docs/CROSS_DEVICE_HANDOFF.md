@@ -1,3 +1,12 @@
+# Latest checkpoint — original n1 own five cumulative moments, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_CUMULATIVE_MOMENTS_2026_10_11.md](CURRENT_ORIGINAL_N1_CUMULATIVE_MOMENTS_2026_10_11.md) first. All five genuine temporal n1 partial cumulative moments now have value/Z1 enclosures over the original core/selected actual collar. Exact own-mean/full-pressure endpoint identities are combined with correlated analytic core primitives and genuine radial-cell residual ranges. Every original nonlinear, pressure/inertial and remaining feedback error is retained, along with core history and the actual hb/rho Jacobian.
+
+Four nonaxis receipt queries each pass all 10 partial-moment value/Z1 width rows. At the selected inner exit, m11/m13 are positive and m12/m14/m15 negative; these are nonzero partial defects, not terminal repair identities. The independent physical-R fixture and Bessel/pressure primitive checks pass. The zero axis is separate from relative-width accuracy.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: bind the completed leading continuation/I2/cut/support charts, extend n1 with compatible own mean/pressure and the current cumulative inlet data, compute full-support defects, then its own 2+3 bump repair. Axis remainder/full derivative joins and genuine n2 remain open. Full-inner, solved coefficient, full-support repair, temporal recursion, global and corrected NS gates stay false. Use the linked detailed task list; earlier sections are historical.
+
+
 # Latest checkpoint — original n1 second radial function jets, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_SECOND_RADIAL_2026_10_11.md](CURRENT_ORIGINAL_N1_SECOND_RADIAL_2026_10_11.md) first. A new adapter binds original leading rho3/Z2 and Q rho3/Z1 data, differentiates the actual prescribed-shear collar with hb^-1/hb^-2 sectors, and supplies six-row second-x/second-rho mixed Z1 jets with separate finite-axis limits. Own n1 mean/Q/V second-radial recovery uses the same coefficient function.
