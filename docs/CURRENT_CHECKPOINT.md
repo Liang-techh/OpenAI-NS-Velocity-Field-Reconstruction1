@@ -1,10 +1,10 @@
-# Latest checkpoint — n=1 original local dispatch and component budgets, 2026-10-11
+# Latest checkpoint — n=1 weighted potential propagator and source integrals, 2026-10-11
 
-Read [CURRENT_ORIGINAL_N1_LOCAL_DISPATCH_COMPONENT_BUDGET_2026_10_11.md](CURRENT_ORIGINAL_N1_LOCAL_DISPATCH_COMPONENT_BUDGET_2026_10_11.md) first. The corrected common inner interval now executes the original unchanged-left leading branch, binds actual eta/sc and retains total background velocity, P0 and cumulative moments. Only later modification increments vanish. The new local identification gate is accepted; the complete global support gate remains false.
+Read [CURRENT_ORIGINAL_N1_WEIGHTED_PROPAGATOR_2026_10_11.md](CURRENT_ORIGINAL_N1_WEIGHTED_PROPAGATOR_2026_10_11.md) first. The actual original regular system now uses S=diag(F0*Lambda,1,1,1,F0*Lambda,1), with the unknown derivative gauge added once. The leading -2chi potential and kinematic rows are solved in a signed radial propagator on the original analytic tube; both are removed from the remaining feedback matrix.
 
-A new source-sector budget API separates the signed first coupled prefix from the remaining-series tail and reports 16 component/derivative rows at the corrected exit. 0/16 meet the 0.1% total relative-width target. Uz1/K1/P1 prefix widths are about 20.4%/39.8%/13.3%; mean1 is about 111%. F1 requires an F0-sector analytic tail; current unweighted tail is too coarse. These are enclosure widths, not measured exact-solution errors. Directed endpoint precision is repaired and independently checked.
+The new initial source integral covers the axis and actual corrected exit, using 16 core/four actual collar cells and physical Z1 transformation. Its four source-normalized swirl kernel-tail bounds are about 2.3e-17 to 7.2e-16. These bound the potential-kernel truncation only, not the full coupled solution. Signed source/quadrature enclosures still cross zero; the earlier old-prefix 0/16 full accuracy result remains unchanged.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: sector-preserving tail with the correct F0 axial gauge and tighter attributed/correlated prefix bounds; then complete same-source support coverage, inner equations/whole-Z derivatives, n=1's own five-moment repair and n=2. Full-inner, coefficient-solved, completed-leading-support and repair gates remain false. Read the linked ordered task list; earlier sections are historical.
+Full goal **ACTIVE / INCOMPLETE**. Next: original weighted residual majorants and actual B0star/B1star feedback with a compatible full series tail, plus tighter correlated source integration; then complete support/whole-Z/equation contracts, n=1's own repair and n=2. Solved/full-inner, completed-leading-support and repair gates remain false. Read the linked ordered task list; earlier sections are historical.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 
