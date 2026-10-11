@@ -1,3 +1,20 @@
+# Latest checkpoint — n=1 correlated source through the actual collar, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_CORRELATED_INNER_SOURCE_2026_10_11.md](CURRENT_ORIGINAL_N1_CORRELATED_INNER_SOURCE_2026_10_11.md) first. Analytic dominant core integration now connects to the actual normalized prescribed-shear collar source. Three Lambda sectors are extracted before F0 dressing, inverse hb cancels in the integration measure, and homogeneous core-to-exit transport is bounded separately.
+
+At Z=371/1000 and the corrected Rin (source phase sc/4), all four swirl initial-integral width targets now pass (0.001), including physical ordinary Z1 transfer. Previously these four source/quadrature enclosures crossed zero. This is an initial source integral; the old coupled-prefix 0/16 full-width result remains unchanged.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: typed original collar axial epsilon factor, weighted residual majorants and actual coupled feedback/full tail, then axial/pressure correlations, whole-Z/support/equation coverage, n1 own repair and n2. All solved/full-inner/global/repair gates stay false. Follow the linked detailed checklist; earlier sections are historical.
+
+
+# Latest checkpoint — n=1 correlated analytic core source, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_SOURCE_2026_10_11.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_SOURCE_2026_10_11.md) first. The dominant original normalized swirl source is now integrated analytically as `(d*Gprime/L)^2*partial_chi B(chi*rho/2)`. Genuine nonlinear core correction, both lower-Lambda forcing sectors, infinite tails and physical ordinary Z1 transfer are bounded separately.
+
+At Z=371/1000 and rho=2,4, all four normalized core initial-integral width targets pass (0.001); the physical derivative targets also pass. The axis is exactly zero. This is a core initial source integral, not the solved coupled n1 coefficient or a model replacement for the actual first collar. The older 0/16 full coupled-width result remains unchanged.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: correlated actual collar source/derivatives, core-to-collar propagation, the original epsilon-factored axial correction and weighted residual-feedback majorants/tail; then whole-Z/support/equation coverage, n1 own repair and n2. All solved/full-inner/global/repair gates stay false. Follow the linked detailed checklist; earlier sections are historical.
+
 # Latest checkpoint — n=1 weighted potential propagator and source integrals, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_WEIGHTED_PROPAGATOR_2026_10_11.md](CURRENT_ORIGINAL_N1_WEIGHTED_PROPAGATOR_2026_10_11.md) first. The actual original regular system now uses S=diag(F0*Lambda,1,1,1,F0*Lambda,1), with the unknown derivative gauge added once. The leading -2chi potential and kinematic rows are solved in a signed radial propagator on the original analytic tube; both are removed from the remaining feedback matrix.
