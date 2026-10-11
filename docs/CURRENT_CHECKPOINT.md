@@ -1,3 +1,12 @@
+# Latest checkpoint — original axial epsilon factor and remaining swirl gauge, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_AXIAL_EPSILON_FACTOR_2026_10_11.md](CURRENT_ORIGINAL_N1_AXIAL_EPSILON_FACTOR_2026_10_11.md) first. The actual collar correction is now represented as `Uz-uaxis=epsilon*Psi_actual`, with pressure sectors and the genuine collar FTC/Jacobian retained. Executable original three-scale drive controls and the common-core theorem are bound. The remaining swirl gauge and Z1 have absolute bounds on the original eta/2 and eta/4 tubes.
+
+The four narrow correlated swirl initial-source rows at corrected Rin remain available. This new gauge bound removes the near-equal H subtraction, but does not bound the entire residual matrix or solve the coupled coefficient. The old coupled-prefix 0/16 full-width result is unchanged.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: complete source-normalized matrix bounds, a full tail for the resummed propagator allowing all derivative words, and actual weighted feedback; then axial/pressure correlations, whole-Z/support/equation coverage, n1 own repair and n2. All solved/full-inner/global/repair gates remain false. Follow the linked detailed checklist; earlier sections are historical.
+
+
 # Latest checkpoint — n=1 correlated source through the actual collar, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_CORRELATED_INNER_SOURCE_2026_10_11.md](CURRENT_ORIGINAL_N1_CORRELATED_INNER_SOURCE_2026_10_11.md) first. Analytic dominant core integration now connects to the actual normalized prescribed-shear collar source. Three Lambda sectors are extracted before F0 dressing, inverse hb cancels in the integration measure, and homogeneous core-to-exit transport is bounded separately.
