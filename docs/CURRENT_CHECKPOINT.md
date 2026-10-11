@@ -1,3 +1,12 @@
+# Latest checkpoint — full n1 weighted feedback bound and selected coupled swirl, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_FULL_WEIGHTED_FEEDBACK_2026_10_11.md](CURRENT_ORIGINAL_N1_FULL_WEIGHTED_FEEDBACK_2026_10_11.md) first. All residual matrix entries now have source-normalized uniform bounds. The new all-word Volterra/Cauchy tail includes every remaining coupling among six rows, with genuine source M0 on eta/4, value tail on eta/8 and Z1 tail on eta/16. The original outer tube is preserved.
+
+The total feedback bound is consumed by the actual core-plus-collar swirl enclosures. At Z=371/1000 and corrected Rin, four normalized and four physical F1/d_x_F1 value/Z1 width rows pass 0.001 with remaining feedback included. The selected swirl result now goes beyond initial-integral-only accuracy. Axial/pressure/mean/Q relative accuracy and the full solved n1 function contracts remain open.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: expose the leading own mean's epsilon/Psi factor, derive natural axial/pressure component scales and correlated signed source integrals, and admit their component tails; then full equations/common interval, n1 own repair and genuine n2 recursion. All full-solved/full-inner/global/repair gates remain false. Follow the detailed linked task list; earlier sections are historical.
+
+
 # Latest checkpoint — original axial epsilon factor and remaining swirl gauge, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_AXIAL_EPSILON_FACTOR_2026_10_11.md](CURRENT_ORIGINAL_N1_AXIAL_EPSILON_FACTOR_2026_10_11.md) first. The actual collar correction is now represented as `Uz-uaxis=epsilon*Psi_actual`, with pressure sectors and the genuine collar FTC/Jacobian retained. Executable original three-scale drive controls and the common-core theorem are bound. The remaining swirl gauge and Z1 have absolute bounds on the original eta/2 and eta/4 tubes.
