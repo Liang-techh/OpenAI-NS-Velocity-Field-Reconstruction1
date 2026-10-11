@@ -1,3 +1,12 @@
+# Latest checkpoint — original n1 second radial function jets, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_SECOND_RADIAL_2026_10_11.md](CURRENT_ORIGINAL_N1_SECOND_RADIAL_2026_10_11.md) first. A new adapter binds original leading rho3/Z2 and Q rho3/Z1 data, differentiates the actual prescribed-shear collar with hb^-1/hb^-2 sectors, and supplies six-row second-x/second-rho mixed Z1 jets with separate finite-axis limits. Own n1 mean/Q/V second-radial recovery uses the same coefficient function.
+
+The independent symbolic source/matrix fixture passes 88 rows. Seven receipt queries and an additional checked-owner collar query execute the new interface; the core/actual inlet sources and derivative packets agree. No new second-derivative relative-width target or full axis Taylor remainder is claimed.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: n1's own cumulative five moments, genuine radial-cell integral enclosures, axis remainder/derivative joins and full-support continuation/repair; then genuine n2 forcing. Exact m11 and m13 identities and the paper's 2+3 repair/support contract are in the linked detailed task list. Full-inner, solved coefficient, own repair, temporal recursion, global and corrected NS gates remain false. Earlier sections are historical.
+
+
 # Latest checkpoint — original n1 common-inner regular function, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_REGULAR_FUNCTION_2026_10_11.md](CURRENT_ORIGINAL_N1_REGULAR_FUNCTION_2026_10_11.md) first. The six-component n1 coefficient has one regular Volterra-series definition, true matrix/source callbacks and an interval function interface over the original core/selected actual first collar. The full remaining feedback is enclosed in a weighted axis-regular space. Pointwise core g4/x, g5 and g6 bounds are explicitly bound before applying the initial weighted norm.
