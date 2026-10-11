@@ -53,8 +53,8 @@ This checkpoint supplies the actual operator and finite starting coefficients. I
 
 - 54 exact rational polynomial rows solve the direct paper equations independently and check all available radial/Z coefficients, including varying F0 amplitude and pressure feedback.
 - 96 directed coefficient rows replay the canonical original source at 800 digits, over the whole axis and at Z=0 and .371.
-- 57 independent explicit slope, second-coefficient and third-order pressure-feedback checks agree with the producer.
-- 48 uncollected paper-equation contractions check the full regular operator on the whole real core, axis, inner point and beyond R_a. Formal amplitude test values check algebra only and are never selected as original field amplitudes.
+- 57 independent explicit slope, second-coefficient and third-order pressure-feedback comparisons use interval overlap as a consistency diagnostic. They are separate from the directed replay's containment checks.
+- 48 uncollected paper-equation contractions compare the full regular operator on the whole real core, axis, inner point and beyond R_a. These interval-overlap comparisons are consistency diagnostics; they do not alone prove equality or tightness. Formal amplitude test values check algebra only and are never selected as original field amplitudes.
 - Owner-issued packet identity, source/context/family guards, out-of-domain input, mutation, and unavailable derivative controls pass. The source quartet and inherited inputs are hash-bound. The public accepted constructor/axis/operator API is exercised separately.
 
 The common holomorphic extension, full n=1 inner solution, radial Taylor remainder, five-moment repair, temporal recursion, regional stress, flat remainder and full corrected NS gates remain false. Do not evaluate this degree-three polynomial on the entire core or assert convergence from its finite coefficients. The existing original pressure 4C/first-interface proof remains closed and is not a new blocker.

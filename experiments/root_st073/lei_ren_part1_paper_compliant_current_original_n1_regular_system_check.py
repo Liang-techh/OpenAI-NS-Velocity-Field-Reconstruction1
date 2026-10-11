@@ -226,6 +226,16 @@ def run(owner,axes,systems):
         owner.family={}
         controls['changed_owner_source_family']=rejected(lambda:owner.axis('0'))
     finally:owner.family=saved
+    saved=owner.source
+    try:
+        owner.source=copy.copy(saved)
+        controls['changed_owner_source_identity']=rejected(lambda:owner.report(first))
+    finally:owner.source=saved
+    saved=owner.hashes
+    try:
+        owner.hashes={}
+        controls['changed_owner_hash_snapshot']=rejected(lambda:owner.report(first))
+    finally:owner.hashes=saved
     # A finite order-zero jet cannot acquire a fictitious first Z derivative.
     controls['missing_derivative_not_zero_padded']=rejected(lambda:current.Sectors.one(owner.c,1,0).dz())
     assert all(controls.values())
@@ -235,6 +245,7 @@ def run(owner,axes,systems):
         directed_800_digit_axis_coefficient_rows=rows_checked,
         independent_explicit_axis_slope_second_coefficient_and_pressure_feedback_rows=explicit_checked,
         independent_uncollected_paper_matrix_action_rows=matrix_checked,
+        explicit_axis_and_matrix_overlap_checks_are_consistency_diagnostics=True,
         derivative_block_zero_product_checked_by_exact_support=True,
         matrix_action_test_amplitudes_are_formal_indeterminates_not_original_F0=True,
         finite_axis_scope_only=True,positive_order_axis_initialization_completed=True,

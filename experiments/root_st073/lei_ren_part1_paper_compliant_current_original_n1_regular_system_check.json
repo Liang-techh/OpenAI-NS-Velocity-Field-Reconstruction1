@@ -11,6 +11,7 @@
   "directed_800_digit_axis_coefficient_rows": 96,
   "independent_explicit_axis_slope_second_coefficient_and_pressure_feedback_rows": 57,
   "independent_uncollected_paper_matrix_action_rows": 48,
+  "explicit_axis_and_matrix_overlap_checks_are_consistency_diagnostics": true,
   "derivative_block_zero_product_checked_by_exact_support": true,
   "matrix_action_test_amplitudes_are_formal_indeterminates_not_original_F0": true,
   "finite_axis_scope_only": true,
@@ -22,6 +23,8 @@
     "changed_hierarchy_order": true,
     "changed_owner_interval_context": true,
     "changed_owner_source_family": true,
+    "changed_owner_source_identity": true,
+    "changed_owner_hash_snapshot": true,
     "missing_derivative_not_zero_padded": true
   },
   "input_hashes": {
@@ -1296,9 +1299,9 @@
     "lei_ren_part1_paper_compliant_current_original_core_hierarchy_source.json.gz": "7929ba3e0a18d3988b948e757ab8175247fc8ef5bc9cad1d5a7ad205706c27a3",
     "lei_ren_part1_paper_compliant_current_original_core_hierarchy_source_check.py": "949f419625010af0ce99f621f423dc7001e79bb80befcc683658acbb89469102",
     "lei_ren_part1_paper_compliant_current_original_core_hierarchy_source_check.json": "6aafbabba74d7a2609be5063eae181a123423e3dc2cb6caa632bf98e3f7e1928",
-    "lei_ren_part1_paper_compliant_current_original_n1_regular_system.py": "0868584a361b26f3a79549958256ee5e3e54b22482f6cc5e867f4c4ac0b8337f",
-    "lei_ren_part1_paper_compliant_current_original_n1_regular_system.json.gz": "2c49e3cd6979e87ac822dc6dffbf0d60e7a1d087cda46fd5f77cd9a99504ac82",
-    "lei_ren_part1_paper_compliant_current_original_n1_regular_system_check.py": "a763d23c81c604b3ebb1d8de76a3e0f45e2eeba50e36c3fedb4fb2ffcf7f484d"
+    "lei_ren_part1_paper_compliant_current_original_n1_regular_system.py": "76ef840817cccbc1b1278e57dfab827478f2b3f644a9a852cc5db6163aba8bde",
+    "lei_ren_part1_paper_compliant_current_original_n1_regular_system.json.gz": "8473f0355e4c3ea4233787b9b29ba445d0f963aeeefa55d567a5e29092087720",
+    "lei_ren_part1_paper_compliant_current_original_n1_regular_system_check.py": "9d7591521036f6700d84c7b2afb58adc63a9a37bf5bbbd3f4a9a7aa358a0ac76"
   },
   "current_original_n1_regular_system_and_coupled_axis_jets_installed": true,
   "coefficient_F1_Uz1_P1_solved": false,
@@ -1310,5 +1313,5 @@
   "full_corrected_Navier_Stokes_solution": false,
   "n1_full_inner_interval_solution_certified": false,
   "n1_radial_Taylor_remainder_certified": false,
-  "execution_seconds": 3.765000000130385
+  "execution_seconds": 3.7659999998286366
 }

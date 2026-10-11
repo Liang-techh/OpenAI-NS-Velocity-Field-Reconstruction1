@@ -225,10 +225,12 @@ class CurrentOriginalN1RegularSystem:
                 if sha(name)!=digest:raise ValueError('N1 input changed '+name)
                 parent.original.bind(self.hashes,name,digest)
             self.acceptance_loaded=True
+        self._hash_snapshot=copy.deepcopy(self.hashes)
 
     def assert_graph(self):
         if (self.source is not self._source or self.c is not self._context or self.c is not self.source.ctx
-                or self.family!=self._family or self.family!=self.source.family or not self.source.acceptance_loaded):
+                or self.family!=self._family or self.family!=self.source.family or not self.source.acceptance_loaded
+                or self.hashes!=self._hash_snapshot):
             raise ValueError('N1 owner source, interval context or admitted family changed')
         return self.source.assert_graph()
 
