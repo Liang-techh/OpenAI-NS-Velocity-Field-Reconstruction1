@@ -1,10 +1,10 @@
-# Latest checkpoint — n=1 radial velocity and corrected common inner interval, 2026-10-11
+# Latest checkpoint — n=1 original local dispatch and component budgets, 2026-10-11
 
-Read [CURRENT_ORIGINAL_N1_RADIAL_RECOVERY_2026_10_11.md](CURRENT_ORIGINAL_N1_RADIAL_RECOVERY_2026_10_11.md) first. Genuine leading mixed rows now extend to total order four, forcing/g to Z2 and matrices to Z3. Wbase has Z2; the first coupled prefix has Z1. The exact temporal n=1 formula now recovers mean1/Q1/V1, with a compatible Cauchy derivative tail and exact zero axis traces.
+Read [CURRENT_ORIGINAL_N1_LOCAL_DISPATCH_COMPONENT_BUDGET_2026_10_11.md](CURRENT_ORIGINAL_N1_LOCAL_DISPATCH_COMPONENT_BUDGET_2026_10_11.md) first. The corrected common inner interval now executes the original unchanged-left leading branch, binds actual eta/sc and retains total background velocity, P0 and cumulative moments. Only later modification increments vanish. The new local identification gate is accepted; the complete global support gate remains false.
 
-The original later-shear start is r_-=Ra*exp(hb*sc/2), which lies INSIDE the earlier phase-1/2 Rin. A new same-source API selects Rkeep=Ra*exp(hb*sc/8) and Rin=Ra*exp(hb*sc/4), retains positive offsets and the exact original sc, proves Rm>Rin using the correct 14*logPstar gap, and computes the actual coupled field at the corrected exit. The earlier broader interval concerns the canonical unrepaired problem only.
+A new source-sector budget API separates the signed first coupled prefix from the remaining-series tail and reports 16 component/derivative rows at the corrected exit. 0/16 meet the 0.1% total relative-width target. Uz1/K1/P1 prefix widths are about 20.4%/39.8%/13.3%; mean1 is about 111%. F1 requires an F0-sector analytic tail; current unweighted tail is too coarse. These are enclosure widths, not measured exact-solution errors. Directed endpoint precision is repaired and independently checked.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: executable completed-leading support/zero-extension dispatch on the corrected interval and useful separated source/integration/component errors; then whole inner equations/derivatives, n=1's own five-moment repair and n=2. Full-inner, coefficient-solved, completed-leading-support and repair gates remain false. Use the detailed completed/open task list in the linked checkpoint; earlier sections are historical.
+Full goal **ACTIVE / INCOMPLETE**. Next: sector-preserving tail with the correct F0 axial gauge and tighter attributed/correlated prefix bounds; then complete same-source support coverage, inner equations/whole-Z derivatives, n=1's own five-moment repair and n=2. Full-inner, coefficient-solved, completed-leading-support and repair gates remain false. Read the linked ordered task list; earlier sections are historical.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 
