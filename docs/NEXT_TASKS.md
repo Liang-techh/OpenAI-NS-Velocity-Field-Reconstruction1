@@ -1,3 +1,9 @@
+# Latest checkpoint — nonzero original source-scale operations, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md) first. The actual supported pulse_exit u/v/w/p now have nonzero source-scale handles, exact inverse-mu partitions, finite u/v ratio arithmetic, comparisons and rational multiplication. Shared scales cancel by original source identities. Absolute width/materialization flags are unchanged: 26 of 144 rows meet the 0.1% total width target, u/v absolute widths remain open, and no ordinary nonzero absolute physical number is expanded.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: all-row and off-center source-value coverage, cross-query scale operations and controlled scientific export; then endpoint/all-chart/general/global/axis coverage, signed stress/flat remainder, genuine n-dependent recursion and oscillatory correction. Read the detailed completed/open checkboxes; do not restart broad legacy validation or claim completed scale recursion.
+
 # Latest checkpoint — original source-product scale width, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md) first. At the supported pulse_exit point, physical coefficient-plus-scale 0.1% width passes increased from 0 to 26 of 144 rows, including w and pressure base values. All 144 signs remain resolved; 59 nonzero factor target passes are retained. Original delta/mu relations are now recomputed with bounded directed arithmetic. u/v scale width and ordinary nonzero numeric delivery remain open.

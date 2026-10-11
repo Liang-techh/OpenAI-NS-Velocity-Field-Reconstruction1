@@ -1,5 +1,7 @@
 # Original source products and physical scale width — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SCALE_VALUE_ARITHMETIC_2026_10_10.md) implements genuine nonzero source-scale value operations and exact u/v common-scale ratio cancellation at the supported point. It retains all absolute-width and materialization flags. Read the later checkpoint for completed representation scope and executable next tasks.
+
 At the supported pulse_exit point, 26 of 144 physical derivative rows now meet the explicit 0.1% relative-width target after accounting for both coefficient and scale uncertainty. The preceding view had 0 such rows. This includes the w and pressure base values; u/v base values still fail the scale-width target. No ordinary nonzero physical numbers have been materialized. Full goal **ACTIVE / INCOMPLETE**.
 
 Source commit: [305259bf](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/305259bf). Matching source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_source_product_arithmetic.py`, `.json.gz`, `_check.py`, `_check.json`.
