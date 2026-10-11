@@ -1,3 +1,5 @@
+> Subsequent progress: [the first coupled n=1 step](CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md) now computes B0 pressure feedback and B1 derivative feedback, with a new nested-radius tail enclosing the remaining canonical inner series. Higher-Z/radial-velocity recovery, completed-leading support binding and positive-order repair remain open.
+
 > Subsequent progress: [actual operator and computed initial regular integrals](CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md) now supplies source-owned actual inputs and Wbase=(I+J)Gg enclosures. The older bounds/axis scope below remains accepted. A full coupled n=1 field is still open.
 
 # Genuine n=1: actual inner collar, common analytic bounds and integral tail

@@ -1,3 +1,5 @@
+> Subsequent progress: [the first coupled n=1 step](CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md) now computes B0 pressure feedback and B1 derivative feedback, with a new nested-radius tail enclosing the remaining canonical inner series. Higher-Z/radial-velocity recovery, completed-leading support binding and positive-order repair remain open.
+
 # Genuine n=1: actual inner operator and computed initial regular integrals
 
 The actual first-collar operator inputs and the first regular source-integral field are now computed. This advances beyond the preceding analytic majorants: source-owned interval integration returns F1, Uz1, K1, P1, d_x F1 and d_x Uz1 at the canonical core exit and the actual inner collar endpoint. The long-term reconstruction goal remains **ACTIVE / INCOMPLETE**. These are initial iterates, not the complete coupled n=1 solution.

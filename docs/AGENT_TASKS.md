@@ -1,8 +1,8 @@
-# Latest checkpoint — actual n=1 operator and computed initial regular field, 2026-10-10
+# Latest checkpoint — computed n=1 pressure/derivative feedback and analytic tail, 2026-10-11
 
-Read [CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md](CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md) first. Actual core/first-collar mixed inputs, genuine forcing and B0/B1/g are installed. Wbase=(I+J)Gg is now computed by entire-cell interval integration at the core exit and actual inner collar endpoint, delivering all six initial components and first Z derivatives. Microscopic inverse width cancels before integration enclosure; actual own means and independent pressure remain in the source.
+Read [CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md](CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md) first. The canonical core and actual first collar now have a computed first coupled iteration Wbase+H Wbase, including 2F0F1 pressure feedback and B1 partial_Z W. Whole-cell initial functions include axis cells without singular division. A new radius-aware preconditioned tail bounds every omitted inner series term and is added to the value enclosures; the old 64-term tail is not reused.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support guard, sharper/separate source and integration errors, genuine higher-Z initial function and coupled B0/B1 iteration prefix with compatible full-field error. Then solve/repair n=1 before n=2. This computed initial field is not a certified full n=1 solution; the existing 64-term tail cannot be attached as its error. Earlier checkpoint sections are historical and the new detailed task list takes precedence.
+Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support binding, genuine extra Z derivatives, n=1 radial-velocity recovery and useful separated source/integration/component errors. Then certify the complete inner field and its own five-moment repair before n=2. Current results concern the unrepaired canonical inner problem; full-inner, coefficient-solved and repair gates remain false. Earlier checkpoint sections are historical and the new detailed task list takes precedence.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 
