@@ -1,3 +1,12 @@
+# Latest checkpoint — original n1 common-inner regular function, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_REGULAR_FUNCTION_2026_10_11.md](CURRENT_ORIGINAL_N1_REGULAR_FUNCTION_2026_10_11.md) first. The six-component n1 coefficient has one regular Volterra-series definition, true matrix/source callbacks and an interval function interface over the original core/selected actual first collar. The full remaining feedback is enclosed in a weighted axis-regular space. Pointwise core g4/x, g5 and g6 bounds are explicitly bound before applying the initial weighted norm.
+
+Function Z3 bounds, first radial mixed Z2 jets and own mean/Q/V recovery are callable. All six nonaxis receipt samples and an additional checked-owner interior query pass 12/12 component value/Z1 width targets. Core/actual inlet function, first radial and equation packets agree. Higher Z jets use analytic bounds where signed centers are not computed; no numerical feedback prefix is claimed.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: second radial source/matrix jets, finite axis Taylor/remainder and full derivative joins; then n1's own cumulative moments/repair and genuine n2 sources. The full-inner, solved coefficient, own repair, temporal recursion, global and corrected NS gates remain false. Use the linked completed/remaining task list; earlier sections are historical.
+
+
 # Latest checkpoint — original n1 natural component enclosures, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_NATURAL_COMPONENTS_2026_10_11.md](CURRENT_ORIGINAL_N1_NATURAL_COMPONENTS_2026_10_11.md) first. The original own mean now exposes mean-uaxis=epsilon*meanPsi from its genuine core/collar history, and leading Q retains the same epsilon/pressure sectors. The n1 system has natural axial/pressure weights, newly derived all-six-row feedback bounds and ordinary Z2 error control on explicit original-eta sub-tubes.
