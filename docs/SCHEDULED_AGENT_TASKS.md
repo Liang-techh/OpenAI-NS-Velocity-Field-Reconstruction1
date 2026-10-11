@@ -1,8 +1,8 @@
-# Latest checkpoint — genuine n=1 actual-collar analytic bounds and integral tail, 2026-10-10
+# Latest checkpoint — actual n=1 operator and computed initial regular field, 2026-10-10
 
-Read [CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md](CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md) first. Same-source core and actual first-collar complex bounds, original-pressure/nozero guards, explicit radial majorants through order four, width-integrated n=1 forcing and a regular Neumann-series tail majorant are installed. The inverse hb in the source cancels against the actual phase integration measure. The tail after operator indices 0..64 is bounded by about 3.95e-52 times the initial Gg bound; the iteration prefix itself is not computed.
+Read [CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md](CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md) first. Actual core/first-collar mixed inputs, genuine forcing and B0/B1/g are installed. Wbase=(I+J)Gg is now computed by entire-cell interval integration at the core exit and actual inner collar endpoint, delivering all six initial components and first Z derivatives. Microscopic inverse width cancels before integration enclosure; actual own means and independent pressure remain in the source.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support guard and actual-collar operator functions, controlled Gg/iteration prefix, solved full-inner n=1 field, then per-order five-moment repair and n=2. The old rho<=4.1 API is an analytic-core extension; beyond Ra it is a comparison field and cannot stand in for the actual matched background. The finite axis solution remains valid. Earlier checkpoint sections below are historical; this source scope and the new task list take precedence.
+Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support guard, sharper/separate source and integration errors, genuine higher-Z initial function and coupled B0/B1 iteration prefix with compatible full-field error. Then solve/repair n=1 before n=2. This computed initial field is not a certified full n=1 solution; the existing 64-term tail cannot be attached as its error. Earlier checkpoint sections are historical and the new detailed task list takes precedence.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 

@@ -1,3 +1,5 @@
+> Subsequent progress: [actual operator and computed initial regular integrals](CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md) now supplies source-owned actual inputs and Wbase=(I+J)Gg enclosures. The older bounds/axis scope below remains accepted. A full coupled n=1 field is still open.
+
 # Genuine n=1 regular operator and coupled axis solution — 2026-10-10
 
 **2026-10-10 source-scope update:** Read [CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md](CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md). The analytic core at rho>4 is the comparison extension; actual matched leading uses the prescribed-shear bridge for every positive collar phase. Existing core/axis calculations remain valid, but R_in=4.1/Lambda must not be interpreted as the actual assembled-leading interval. New actual-prefix bounds use formal Rin=Ra*exp(hb/2); completed-leading support binding and the computed full n=1 solution remain open.
