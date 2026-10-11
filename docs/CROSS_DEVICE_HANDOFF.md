@@ -1,3 +1,9 @@
+# Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
+
+Read [CURRENT_ORIGINAL_CORE_N1_SOURCES_2026_10_10.md](CURRENT_ORIGINAL_CORE_N1_SOURCES_2026_10_10.md) first. The canonical original core now has a typed real-function/derivative API on rho[0,4.1], Z[-1,1], including the axis and a radial interval beyond R_a. Actual original N1theta/N1z/N1p forcing enclosures are installed and independently checked. Independent P0, epsilon_core versus pressure epsilon, Lambda powers, original delta and anchored F0 are retained.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: common holomorphic-domain binding, n=1 regular axis initialization and coupled solve, then five-moment repair and n=2. Known forcing and leading radial Taylor coefficients are not solved hierarchy coefficients. Regional cone, flatness, measured core/winding, global/axis physical support and oscillatory correction remain open.
+
 # Latest checkpoint — actual three-time path and finite remainder ratios, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md](CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md) first. Original pulse_exit xi=21/2, Z=371/1000 now has actual field/axial/stress/cone packets at time offsets 1/5, -4/5, -9/5. All three point cones pass. Five finite remainder indicators retain complete lambda and positive tails; measured source-time ratios and fitted exponents retain coefficient uncertainty. This is an actual fixed-similarity path, with no core-width, material-winding, flatness or recursion promotion.
