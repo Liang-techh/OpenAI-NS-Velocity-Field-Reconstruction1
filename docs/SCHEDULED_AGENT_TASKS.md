@@ -1,3 +1,9 @@
+# Latest checkpoint — original strict stress cone at supported point, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_STRESS_CONE_2026_10_10.md](CURRENT_ORIGINAL_RP_STRESS_CONE_2026_10_10.md) first. The original current pulse_exit now passes the actual two-component admissible stress cone at the supported point: a, Utheta and H0/H1/H2 are strictly positive with independent 800-digit shared-source bounds. The accepted full background tensor/divergence/remainder/residual remains available (30 outputs, 5 exact zeros). Incoming histories, P0, pressure and exact original mu/scales are retained.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: relative remainder scale cancellation, controlled off-center/time cone observations, physical width and all-chart coverage; then regional cone/flatness, general/global/axis, genuine n-dependent recursion and oscillatory correction. One admitted cone point is not completed regional stress admissibility or scale recursion.
+
 # Latest checkpoint — original full background stress and remainder, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_BACKGROUND_STRESS_2026_10_10.md](CURRENT_ORIGINAL_RP_BACKGROUND_STRESS_2026_10_10.md) first. The actual supported pulse_exit now returns a completed symmetric stress tensor, its divergence, a separate remainder and full background momentum residual in cylindrical and Cartesian coordinates. All 30 signs/zeros are bounded (5 exact zeros, 25 strictly signed outputs). Independent Cartesian NS source assembly and 377 collected shared-source product checks pass. Original radial recovery, incoming histories, P0 and absolute pressure are retained.
