@@ -1,3 +1,12 @@
+# Latest checkpoint — original n1 natural component enclosures, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_NATURAL_COMPONENTS_2026_10_11.md](CURRENT_ORIGINAL_N1_NATURAL_COMPONENTS_2026_10_11.md) first. The original own mean now exposes mean-uaxis=epsilon*meanPsi from its genuine core/collar history, and leading Q retains the same epsilon/pressure sectors. The n1 system has natural axial/pressure weights, newly derived all-six-row feedback bounds and ordinary Z2 error control on explicit original-eta sub-tubes.
+
+At Z=371/1000, the core exit, actual first inlet and corrected selected inner exit each pass all 14 normalized and 14 physical value/Z1 width targets for Uz1, K1, P1, d_x_Uz1, mean1, Q1 and V1. Exact pressure FTC and axis-forced axial seeds include all nonseed source errors and remaining feedback. The prior four coupled swirl value/Z1 targets remain available separately. Pressure Z2 may cross zero and has no relative-width admission. Original physical parameters are unchanged.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: publish the common-inner n1 coefficient functions and full six-equation/mixed-derivative contracts; then compute n1's own moments/repair, chart extension and true n-dependent n2 forcing. Selected-point width results do not close the full function, repair, recursion, time-sum or corrected NS residual gates. Follow the linked detailed task list; earlier sections are historical.
+
+
 # Latest checkpoint — full n1 weighted feedback bound and selected coupled swirl, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_FULL_WEIGHTED_FEEDBACK_2026_10_11.md](CURRENT_ORIGINAL_N1_FULL_WEIGHTED_FEEDBACK_2026_10_11.md) first. All residual matrix entries now have source-normalized uniform bounds. The new all-word Volterra/Cauchy tail includes every remaining coupling among six rows, with genuine source M0 on eta/4, value tail on eta/8 and Z1 tail on eta/16. The original outer tube is preserved.
