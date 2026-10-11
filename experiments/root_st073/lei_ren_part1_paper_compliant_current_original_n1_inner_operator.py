@@ -92,7 +92,7 @@ def known_forcing(algebra,rows,z,rho,delta):
     radial=q[0]*(q[0]/2+qr)
     transport=w[0]*(-q[0]*(z*2)+dz(q[0])*d-qr*(z*2))/L
     pressure=-(time+radial+transport)/2+algebra.shift(q[1]*2+q[2]*rho,(0,0,0,1))
-    return dict(N1theta=truncate(theta,1),N1z=truncate(axial,1),N1p=truncate(pressure,1))
+    return dict(N1theta=truncate(theta,2),N1z=truncate(axial,2),N1p=truncate(pressure,2))
 
 
 def matrix(algebra,rows,forcing,z,rho,delta):
@@ -121,8 +121,8 @@ def matrix(algebra,rows,forcing,z,rho,delta):
     g={'4':eps(forcing['N1p']*(2*x)),
        '5':eps(forcing['N1theta']*2),
        '6':eps(forcing['N1z']*2)-eps(eps(forcing['N1p']*(z*(4*rho))/L))}
-    return dict(B0={k:truncate(v,2) for k,v in B0.items()},
-                B1={k:truncate(v,2) for k,v in B1.items()},g=g,D=(0,0,2,0,3,1))
+    return dict(B0={k:truncate(v,3) for k,v in B0.items()},
+                B1={k:truncate(v,3) for k,v in B1.items()},g=g,D=(0,0,2,0,3,1))
 
 
 def recover_Q(w,mean,z,delta):
@@ -130,15 +130,15 @@ def recover_Q(w,mean,z,delta):
 
 
 def first_rows(algebra,core,raw,inputs,rho,phase,delta):
-    """Actual FV/own moments + exact core comparison ODE, through total3."""
+    """Actual FV/own moments + exact core comparison ODE, through total4."""
     c=algebra.ctx;lift=algebra.lift
     phi=lift(Jet(c,raw['actual_phi_axial5']))
     w0=lift(Jet(c,raw['actual_raw_V_axial5']))
     m0=lift(Jet(c,raw['actual_own_six_moments_axial5']['M']))
     pc=[Jet(c,[core['Phi'][domain.parent.parent.core_module.gridkey(i,k)]/math.factorial(k)
-               for k in range(4-i)]) for i in range(3)]
+               for k in range(5-i)]) for i in range(3)]
     wc=[Jet(c,[core['Uz'][domain.parent.parent.core_module.gridkey(i,k)]/math.factorial(k)
-               for k in range(4-i)]) for i in range(3)]
+               for k in range(5-i)]) for i in range(3)]
     A=pc[1]/pc[0];Ar=pc[2]/pc[0]-A*A
     sigma=domain.sigma_jets(c,phase)
     chi=lift(1-sigma[0])+algebra.width(sigma[0])
@@ -149,7 +149,7 @@ def first_rows(algebra,core,raw,inputs,rho,phase,delta):
     wr=ratio*chi*wc[1]
     wrr=ratio*(chir*wc[1]+chi*(chi-1)*A*wc[1]+chi*wc[2])
     mr=(w0-m0)/rho;mrr=(wr-mr*2)/rho
-    z=lift(Jet.variable(c,raw['Z'],3))
+    z=lift(Jet.variable(c,raw['Z'],4))
     phirows=[phi,pr,prr];wrows=[w0,wr,wrr];mrows=[m0,mr,mrr]
     ratioF=Jet(c,[inputs['F0_ratios'][k]/math.factorial(k) for k in range(6)])
     frows=[algebra.shift(value*ratioF,(0,1,0,0)) for value in phirows]
@@ -163,14 +163,14 @@ def first_rows(algebra,core,raw,inputs,rho,phase,delta):
 def core_rows(algebra,profile,Z):
     c=algebra.ctx;g=profile['ordinary_mixed_profile_grids'];key=domain.parent.parent.core_module.gridkey
     def jets(label):
-        return [algebra.lift(Jet(c,[g[label][key(i,k)]/math.factorial(k) for k in range(4-i)])) for i in range(3)]
+        return [algebra.lift(Jet(c,[g[label][key(i,k)]/math.factorial(k) for k in range(5-i)])) for i in range(3)]
     f=[algebra.shift(v,(0,1,0,0)) for v in jets(domain.parent.parent.core_module.F)]
     w=jets(domain.parent.parent.core_module.V);q=jets(domain.parent.parent.core_module.Q)
     mean=[algebra.lift(Jet(c,[profile['radial_average_Uz_derivatives'][key(i,k)]/math.factorial(k)
-                            for k in range(4-i)])) for i in range(3)]
-    pd=algebra.lift(Jet(c,[g[domain.parent.parent.core_module.PD][key(0,k)]/math.factorial(k) for k in range(4)]))
-    pi=algebra.lift(Jet(c,[g[domain.parent.parent.core_module.PI][key(0,k)]/math.factorial(k) for k in range(4)]))
-    return dict(F=f,Uz=w,Q=q,mean=mean,P0=algebra.shift(pd,(0,0,1,0))+algebra.shift(pi,(0,2,0,-1))),algebra.lift(Jet.variable(c,Z,3))
+                            for k in range(5-i)])) for i in range(3)]
+    pd=algebra.lift(Jet(c,[g[domain.parent.parent.core_module.PD][key(0,k)]/math.factorial(k) for k in range(5)]))
+    pi=algebra.lift(Jet(c,[g[domain.parent.parent.core_module.PI][key(0,k)]/math.factorial(k) for k in range(5)]))
+    return dict(F=f,Uz=w,Q=q,mean=mean,P0=algebra.shift(pd,(0,0,1,0))+algebra.shift(pi,(0,2,0,-1))),algebra.lift(Jet.variable(c,Z,4))
 
 
 @dataclass(frozen=True,eq=False)
@@ -248,9 +248,9 @@ class CurrentOriginalN1InnerOperator:
             source_log_basis_names=['hb','F0_anchor','Pstar_squared','Lambda'],source_log_bases=list(algebra.logs),
             ordinary_leading_rho_rows={name:[export(v) for v in rows[name]] for name in ('F','Uz','Q','mean')},
             independent_actual_pressure=export(rows['P0']),
-            genuine_n1_known_forcing={name:export(v,1) for name,v in forcing.items()},
-            regular_system=dict(D=list(system['D']),B0={key:export(v,2) for key,v in system['B0'].items()},
-                B1={key:export(v,2) for key,v in system['B1'].items()},g={key:export(v,1) for key,v in system['g'].items()},
+            genuine_n1_known_forcing={name:export(v,2) for name,v in forcing.items()},
+            regular_system=dict(D=list(system['D']),B0={key:export(v,3) for key,v in system['B0'].items()},
+                B1={key:export(v,3) for key,v in system['B1'].items()},g={key:export(v,2) for key,v in system['g'].items()},
                 equation='d_x W + D W/x = B0 W + B1 d_Z W + g',x='sqrt(rho)',
                 unknowns=['F1','Uz1','K1','P1','d_x_F1','d_x_Uz1']),
             amplitude_anchor_fixed_during_jet_algebra=True,ordinary_Z_amplitude_derivatives_in_coefficients=True,

@@ -42,8 +42,8 @@ def exact_fixture(c):
     algebra=current.N1LogAlgebra(c,(c.mpf(0),)*4,[])
     def lift_expression(expr,order):
         return algebra.lift(current.Jet(c,[rational(s.diff(expr,z,k).subs({r:rr,z:zz}))/math.factorial(k) for k in range(order+1)]))
-    rows={name:[lift_expression(s.diff(expr,r,i),3-i) for i in range(3)] for name,expr in (('F',f),('Uz',w),('Q',q))}
-    zj=algebra.lift(current.Jet.variable(c,rational(zz),3));de=rational(delta)
+    rows={name:[lift_expression(s.diff(expr,r,i),4-i) for i in range(3)] for name,expr in (('F',f),('Uz',w),('Q',q))}
+    zj=algebra.lift(current.Jet.variable(c,rational(zz),4));de=rational(delta)
     forcing=current.known_forcing(algebra,rows,zj,c.mpf(int(rr)),de)
     matrix=current.matrix(algebra,rows,forcing,zj,c.mpf(int(rr)),de)
     # These small rational bases belong ONLY to this exact synthetic fixture.
@@ -58,7 +58,7 @@ def exact_fixture(c):
             want=rational(s.diff(expression,z,k).subs({r:rr,z:zz}))
             assert contains(got,want),(k,current.ep(got),current.ep(want))
             count+=1
-    for name,expr in (('N1theta',theta),('N1z',axial),('N1p',pressure)):check(forcing[name],expr,1)
+    for name,expr in (('N1theta',theta),('N1z',axial),('N1p',pressure)):check(forcing[name],expr,2)
     F,U,K,P,YF,YU=s.symbols('F U K P YF YU');Fz,Uz,Kz,Pz=s.symbols('Fz Uz Kz Pz')
     H=(1-delta)*z/2+d*w;B=q+(1-2*z*w)/L;E=z*w-s.Rational(1,2)
     vn=((1-delta)*z*U-(1+delta)*z*K-d*(Uz+Kz))/L
@@ -72,8 +72,8 @@ def exact_fixture(c):
         for row in range(1,7):
             for col,var in enumerate(variables,1):
                 expr=s.Integer(0) if var==0 else s.diff(direct[row],var)
-                check(matrix[label].get(f'{row},{col}',algebra.lift(0)),expr,2)
-    for row in (4,5,6):check(matrix['g'][str(row)],direct[row].subs({var:0 for var in unknown+zunknown if var!=0}),1)
+                check(matrix[label].get(f'{row},{col}',algebra.lift(0)),expr,3)
+    for row in (4,5,6):check(matrix['g'][str(row)],direct[row].subs({var:0 for var in unknown+zunknown if var!=0}),2)
     return dict(independent_direct_paper_operator_and_forcing_rows=count,
         nonconstant_amplitude_ordinary_Z_derivatives_checked=True,pressure_gradient_feedback_checked=True)
 
@@ -114,7 +114,7 @@ def run(owner,packets):
         ('outside_common_inner_collar',lambda:owner.evaluate('.371','.51','first')),
         ('foreign_chart',lambda:owner.evaluate('.371','0','macro')),
         ('foreign_packet',lambda:owner.report(current.OriginalN1InnerOperatorPacket())),
-        ('missing_Z_source_derivative',lambda:current.truncate(owner._packets[id(packets['first_interior'])][3]['N1p'],2)))}
+        ('missing_Z_source_derivative',lambda:current.truncate(owner._packets[id(packets['first_interior'])][3]['N1p'],3)))}
     frame=owner.frame('.371');oldlogs=frame[1].logs;frame[1].logs=(c.mpf(0),)*4
     try:checks['amplitude_frame_mutation_rejected']=rejected(lambda:owner.frame('.371'))
     finally:frame[1].logs=oldlogs

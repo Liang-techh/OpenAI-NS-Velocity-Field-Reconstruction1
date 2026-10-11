@@ -34,7 +34,7 @@ def normalized_kernels(c,t,endpoint):
                 P1=c.mpf(1),d_x_F1=t**3,d_x_Uz1=t)
 
 
-def weighted(algebra,rhs,weights,measure,collar=False,order=1):
+def weighted(algebra,rhs,weights,measure,collar=False,order=2):
     out={}
     for field,row in (('F1','5'),('Uz1','6'),('K1','6'),('P1','4'),('d_x_F1','5'),('d_x_Uz1','6')):
         value=rhs[row]*weights[field]*measure
@@ -46,7 +46,7 @@ def weighted(algebra,rhs,weights,measure,collar=False,order=1):
 
 def feedback(algebra,system,base):
     """Off-kinematic rows, separately collecting B0 and genuine B1 d_Z."""
-    zero=algebra.lift(0,0);out=[]
+    zero=algebra.lift(0,1);out=[]
     for label in ('B0','B1'):
         rhs={str(row):zero for row in (4,5,6)}
         for row in (4,5,6):
@@ -57,6 +57,14 @@ def feedback(algebra,system,base):
                     rhs[str(row)]=rhs[str(row)]+entry*value
         out.append(rhs)
     return tuple(out)
+
+
+def recover_radial(algebra,state,Z,rho,delta):
+    """Exact n=1 mean/Q/V recovery from genuine ordinary Z derivatives."""
+    z=algebra.lift(op.Jet.variable(algebra.ctx,Z,1));d=1-z*z;L=1-z*z*delta
+    mean=state['Uz1']+state['K1']
+    q=(state['Uz1']*(z*(1-delta))-state['K1']*(z*(1+delta))-op.dz(mean)*d)/L
+    return dict(mean1=mean,Q1=q,V1=algebra.shift(q*rho,(0,0,0,-1)))
 
 
 def perturbation_bound(c,b,epsilon,delta,eta,rho_max,Lmin):
@@ -152,7 +160,7 @@ class CurrentOriginalN1CoupledFirstStep:
             if ep(coordinate)[0]<0 or ep(coordinate)[1]>.5:raise ValueError('Actual first-collar interval in[0,1/2] required')
             _,end=self._system(z,coordinate,'first');X=c.sqrt(end['geometry']['rho_enclosure_only']);core_end=c.mpf(2);phase=coordinate
         else:raise ValueError('Actual core/first chart required')
-        totals={name:algebra.lift(0,1) for name in FIELDS}
+        totals={name:algebra.lift(0,2) for name in FIELDS}
         if ep(core_end)[1]>0:
             for j in range(core_cells):
                 t=partition(c,j,core_cells)
@@ -202,7 +210,7 @@ class CurrentOriginalN1CoupledFirstStep:
             _,end=self._system(z,coordinate,chart);X=c.sqrt(end['geometry']['rho_enclosure_only']);core_end=c.mpf(2);phase=coordinate
         else:raise ValueError('Only actual inner charts supported')
         began=time.monotonic();base=self._initial_range(z,coordinate,chart)
-        corrections=[{name:algebra.lift(0,0) for name in FIELDS} for _ in range(2)];ledger=[]
+        corrections=[{name:algebra.lift(0,1) for name in FIELDS} for _ in range(2)];ledger=[]
         if ep(core_end)[1]>0:
             for j in range(outer_core_cells):
                 t=partition(c,j,outer_core_cells);rho=coordinate*t*t if chart=='core' else 4*t*t
@@ -210,7 +218,7 @@ class CurrentOriginalN1CoupledFirstStep:
                 rhs=feedback(algebra,system,cellbase)
                 weights=normalized_kernels(c,t,X) if chart=='core' else initial.kernels(c,2*t,X)
                 for index in range(2):
-                    values=weighted(algebra,rhs[index],weights,core_end/outer_core_cells,order=0)
+                    values=weighted(algebra,rhs[index],weights,core_end/outer_core_cells,order=1)
                     corrections[index]={name:corrections[index][name]+values[name] for name in FIELDS}
                 ledger.append(dict(chart='core',rho_cell=rho,nested_initial_core_cells=16))
         if ep(phase)[1]>0:
@@ -219,23 +227,36 @@ class CurrentOriginalN1CoupledFirstStep:
                 system,view=self._system(z,s,'first');cell=c.sqrt(view['geometry']['rho_enclosure_only'])
                 rhs=feedback(algebra,system,cellbase)
                 for index in range(2):
-                    values=weighted(algebra,rhs[index],initial.kernels(c,cell,X),cell*phase/(2*outer_collar_cells),True,0)
+                    values=weighted(algebra,rhs[index],initial.kernels(c,cell,X),cell*phase/(2*outer_collar_cells),True,1)
                     corrections[index]={name:corrections[index][name]+values[name] for name in FIELDS}
                 ledger.append(dict(chart='first',phase_cell=s,nested_initial_core_cells=16,nested_initial_collar_cells=4))
-        total={name:op.truncate(base[name],0)+corrections[0][name]+corrections[1][name] for name in FIELDS}
+        total={name:op.truncate(base[name],1)+corrections[0][name]+corrections[1][name] for name in FIELDS}
         tail=self.tail()
-        error=tail['omitted_sum_bound'];error_box=c.mpf([-ep(error)[1],ep(error)[1]])
-        if chart=='core' and ep(coordinate)[1]==0:error_box=c.mpf(0)
-        series={name:total[name]+algebra.lift(error_box,0) for name in FIELDS}
+        error=tail['omitted_sum_bound'];derivative_margin=tail['solution_Z_radius']/2
+        derivative_error=domain.upper(c,error/derivative_margin)
+        errors=[c.mpf([-ep(v)[1],ep(v)[1]]) for v in (error,derivative_error)]
+        if chart=='core' and ep(coordinate)[1]==0:errors=[c.mpf(0),c.mpf(0)]
+        series={name:total[name]+algebra.lift(op.Jet(c,errors)) for name in FIELDS}
+        rho=coordinate if chart=='core' else end['geometry']['rho_enclosure_only']
+        radial_prefix=recover_radial(algebra,total,z,rho,self.source.core.delta)
+        radial_series=recover_radial(algebra,series,z,rho,self.source.core.delta)
         result=dict(source_family=self.family,Z=z,endpoint=dict(chart=chart,coordinate=coordinate,x_enclosure_only=X),
             computed_preconditioned_indices=[0,1],computed_equation='W=Wbase+H W; H=(I+J)G(B0-Akin+B1*d_Z)',
-            computed_prefix={name:op.export(value,0) for name,value in total.items()},
-            canonical_inner_series_value_enclosures={name:op.export(value,0) for name,value in series.items()},
+            computed_prefix={name:op.export(value,1) for name,value in total.items()},
+            canonical_inner_series_value_enclosures={name:op.export(value,1) for name,value in series.items()},
             canonical_inner_series_values_include_remaining_uniform_absolute_tail=True,
-            B0_feedback={name:op.export(value,0) for name,value in corrections[0].items()},
-            B1_derivative_feedback={name:op.export(value,0) for name,value in corrections[1].items()},
-            initial_function={name:op.export(value,1) for name,value in base.items()},
-            ordinary_Z_prefix_derivative_order=0,initial_Z_derivative_order=1,
+            B0_feedback={name:op.export(value,1) for name,value in corrections[0].items()},
+            B1_derivative_feedback={name:op.export(value,1) for name,value in corrections[1].items()},
+            initial_function={name:op.export(value,2) for name,value in base.items()},
+            ordinary_Z_prefix_derivative_order=1,initial_Z_derivative_order=2,
+            n1_radial_recovery_prefix={name:op.export(value) for name,value in radial_prefix.items()},
+            n1_radial_recovery_series_enclosures={name:op.export(value) for name,value in radial_series.items()},
+            radial_recovery_equations=dict(mean1='Uz1+K1',
+                Q1='[(1-delta)*Z*Uz1-(1+delta)*Z*K1-(1-Z^2)*d_Z(Uz1+K1)]/(1-delta*Z^2)',V1='rho*Lambda^-1*Q1'),
+            radial_recovery_uses_temporal_q1_equals_1_plus_delta=True,
+            derivative_tail=dict(value_norm_on_Z_radius=tail['solution_Z_radius'],
+                simultaneous_value_and_first_derivative_Z_radius=derivative_margin,
+                remaining_first_Z_derivative_norm_upper=derivative_error,Cauchy_gap=derivative_margin),
             actual_whole_cell_initial_function_used=True,normalized_axis_cells_without_singular_division=True,
             pressure_2F0F1_feedback_included=True,B1_derivative_terms_computed_not_zeroed=True,
             actual_mean_and_independent_pressure_retained=True,inverse_width_cancelled_before_enclosure=True,
@@ -244,7 +265,7 @@ class CurrentOriginalN1CoupledFirstStep:
             error_budget=dict(computed_prefix='combined source and entire-cell integration enclosure',
                 omitted_coupled_series='uniform absolute W norm bound in analytic_preconditioned_tail',
                 useful_component_relative_accuracy_not_certified=True),
-            completed_leading_support_binding_still_open=True,higher_prefix_derivatives_still_open=True,
+            completed_leading_support_binding_still_open=True,prefix_second_and_higher_Z_derivatives_still_open=True,
             whole_matched_positive_order_field_not_delivered=True,execution_seconds=time.monotonic()-began,**dict.fromkeys(OPEN,False))
         packet=OriginalN1CoupledFirstStepPacket()
         self._packets[id(packet)]=(packet,result,total,corrections,op.snapshot(result),op.snapshot((total,corrections)))

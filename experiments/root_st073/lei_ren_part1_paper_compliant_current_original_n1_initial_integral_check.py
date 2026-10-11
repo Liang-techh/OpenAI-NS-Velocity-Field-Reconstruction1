@@ -36,9 +36,9 @@ def exact_kernels():
 
 def polynomial_integration(c):
     algebra=op.N1LogAlgebra(c,(c.mpf(0),)*4,[])
-    J=op.Jet;z=algebra.lift(J.variable(c,c.mpf('.25'),1))
+    J=op.Jet;z=algebra.lift(J.variable(c,c.mpf('.25'),2))
     a=2+z;b=-3+z*2;v=1+z*z;endpoint=c.mpf(2);N=32
-    total={key:algebra.lift(0,1) for key in current.FIELDS}
+    total={key:algebra.lift(0,2) for key in current.FIELDS}
     for j in range(N):
         cell=c.mpf([c.mpf(j).a*2/N,c.mpf(j+1).b*2/N])
         values=current.integrate_cell(algebra,dict(g={'4':a*cell,'5':b,'6':v}),cell,endpoint,c.mpf(2)/N)
@@ -46,14 +46,14 @@ def polynomial_integration(c):
     expected=dict(F1=b/2,Uz1=v,K1=-v/2,P1=a*2,d_x_F1=b/2,d_x_Uz1=v)
     count=0
     for field,value in total.items():
-        for k in range(2):
+        for k in range(3):
             assert contains(value.terms[(0,0,0,0)][k],expected[field].terms[(0,0,0,0)][k]),field
             count+=1
     # A separate finite-width fixture checks measure cancellation against
     # independently integrated exact collar kernels. Its rational hb is
     # ONLY a test parameter, never a production source representative.
     hb=c.mpf(1)/7;phase=c.mpf('.5');endpoint=2*c.exp(hb*phase/2)
-    total={key:algebra.lift(0,1) for key in current.FIELDS}
+    total={key:algebra.lift(0,2) for key in current.FIELDS}
     for j in range(N):
         interval=c.mpf([c.mpf(j).a/(2*N),c.mpf(j+1).b/(2*N)])
         cell=2*c.exp(hb*interval/2)
@@ -66,7 +66,7 @@ def polynomial_integration(c):
         d_x_F1=b*((endpoint**4-16)/(4*hb*endpoint**3)),d_x_Uz1=v*((endpoint*endpoint-4)/(2*hb*endpoint)))
     for field,value in total.items():
         assert set(value.terms)=={(0,0,0,0)}
-        for k in range(2):
+        for k in range(3):
             assert contains(value.terms[(0,0,0,0)][k],expected[field].terms[(0,0,0,0)][k]),field
             count+=1
     return dict(exact_core_and_finite_width_collar_polynomial_integral_rows=count,
@@ -94,7 +94,7 @@ def run(owner,packets):
         assert view['rigorous_entire_cell_interval_integration'] and view['coupled_B0_B1_feedback_still_open']
         assert all(not view[key] for key in current.OPEN)
         for value in owner._packets[id(packet)][2].values():
-            assert value.order==1 and all(key[0]>=0 for key in value.terms)
+            assert value.order==2 and all(key[0]>=0 for key in value.terms)
             terms+=len(value.terms)
     checks['production_computed_field_source_sectors']=terms
     axis=owner.evaluate('.371','0');assert all(not value.terms for value in owner._packets[id(axis)][2].values())

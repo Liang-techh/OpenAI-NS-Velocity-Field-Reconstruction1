@@ -1,8 +1,10 @@
-# Latest checkpoint — computed n=1 pressure/derivative feedback and analytic tail, 2026-10-11
+# Latest checkpoint — n=1 radial velocity and corrected common inner interval, 2026-10-11
 
-Read [CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md](CURRENT_ORIGINAL_N1_COUPLED_FIRST_STEP_2026_10_11.md) first. The canonical core and actual first collar now have a computed first coupled iteration Wbase+H Wbase, including 2F0F1 pressure feedback and B1 partial_Z W. Whole-cell initial functions include axis cells without singular division. A new radius-aware preconditioned tail bounds every omitted inner series term and is added to the value enclosures; the old 64-term tail is not reused.
+Read [CURRENT_ORIGINAL_N1_RADIAL_RECOVERY_2026_10_11.md](CURRENT_ORIGINAL_N1_RADIAL_RECOVERY_2026_10_11.md) first. Genuine leading mixed rows now extend to total order four, forcing/g to Z2 and matrices to Z3. Wbase has Z2; the first coupled prefix has Z1. The exact temporal n=1 formula now recovers mean1/Q1/V1, with a compatible Cauchy derivative tail and exact zero axis traces.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support binding, genuine extra Z derivatives, n=1 radial-velocity recovery and useful separated source/integration/component errors. Then certify the complete inner field and its own five-moment repair before n=2. Current results concern the unrepaired canonical inner problem; full-inner, coefficient-solved and repair gates remain false. Earlier checkpoint sections are historical and the new detailed task list takes precedence.
+The original later-shear start is r_-=Ra*exp(hb*sc/2), which lies INSIDE the earlier phase-1/2 Rin. A new same-source API selects Rkeep=Ra*exp(hb*sc/8) and Rin=Ra*exp(hb*sc/4), retains positive offsets and the exact original sc, proves Rm>Rin using the correct 14*logPstar gap, and computes the actual coupled field at the corrected exit. The earlier broader interval concerns the canonical unrepaired problem only.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: executable completed-leading support/zero-extension dispatch on the corrected interval and useful separated source/integration/component errors; then whole inner equations/derivatives, n=1's own five-moment repair and n=2. Full-inner, coefficient-solved, completed-leading-support and repair gates remain false. Use the detailed completed/open task list in the linked checkpoint; earlier sections are historical.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 

@@ -116,7 +116,7 @@ class CurrentOriginalN1InitialIntegral:
             end=self.inputs.evaluate(z,coordinate,'first');view=self.inputs.report(end)
             endpoint=c.sqrt(view['geometry']['rho_enclosure_only']);core_end=c.mpf(2);phase=coordinate
         else:raise ValueError('Only actual core and first collar supported')
-        totals={name:algebra.lift(0,1) for name in FIELDS};ledger=[];began=time.monotonic()
+        totals={name:algebra.lift(0,2) for name in FIELDS};ledger=[];began=time.monotonic()
         if ep(core_end)[1]>0:
             for j in range(core_cells):
                 cell=core_end*c.mpf([c.mpf(j).a/core_cells,c.mpf(j+1).b/core_cells])
@@ -140,8 +140,8 @@ class CurrentOriginalN1InitialIntegral:
             temporal_hierarchy_order=1,computed_iterate='Wbase=(I+J)Gg',
             G='component i: integral_0^x (s/x)^D_i g_i(s,Z) ds',
             J='G times constant B0 kinematic rows (1,5)=1,(2,6)=1,(3,6)=-1; J^2=0',
-            initial_regular_field_enclosures={name:operator.export(value,1) for name,value in totals.items()},
-            ordinary_Z_derivative_order=1,source_log_basis_names=['hb','F0_anchor','Pstar_squared','Lambda'],
+            initial_regular_field_enclosures={name:operator.export(value,2) for name,value in totals.items()},
+            ordinary_Z_derivative_order=2,source_log_basis_names=['hb','F0_anchor','Pstar_squared','Lambda'],
             source_log_bases=list(algebra.logs),integration_cells=ledger,
             rigorous_entire_cell_interval_integration=True,midpoint_quadrature_used=False,
             inverse_width_cancelled_before_enclosure=True,actual_own_moment_enclosures_used=True,

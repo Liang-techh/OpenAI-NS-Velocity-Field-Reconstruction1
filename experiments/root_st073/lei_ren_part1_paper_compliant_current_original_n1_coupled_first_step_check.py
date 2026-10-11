@@ -29,13 +29,13 @@ def rejected(fn):
 
 def fixture(c):
     """Exact polynomial Wbase and direct B0/B1 feedback, with signed rows."""
-    algebra=op.N1LogAlgebra(c,(c.mpf(0),)*4,[]);z=algebra.lift(op.Jet.variable(c,c.mpf('.25'),1))
+    algebra=op.N1LogAlgebra(c,(c.mpf(0),)*4,[]);z=algebra.lift(op.Jet.variable(c,c.mpf('.25'),2))
     A=2+z;B=-3+z*2;C=1+z*z
     def base(x):return dict(F1=B*x*x/8,Uz1=C*x*x/4,K1=-C*x*x/8,
         P1=A*x*x/2,d_x_F1=B*x/4,d_x_Uz1=C*x/2)
-    zero=algebra.lift(0,0);counts=0
+    zero=algebra.lift(0,1);counts=0
     for bounds in ((0,0),(0,2),(1,2),(2,2)):
-        X=c.mpf(list(bounds));total={name:algebra.lift(0,1) for name in current.FIELDS}
+        X=c.mpf(list(bounds));total={name:algebra.lift(0,2) for name in current.FIELDS}
         for j in range(32):
             t=current.partition(c,j,32);x=X*t
             values=current.weighted(algebra,{'4':A*x,'5':B,'6':C},current.normalized_kernels(c,t,X),X/32)
@@ -43,7 +43,7 @@ def fixture(c):
         for point in set(bounds):
             for name,want in base(c.mpf(point)).items():
                 got=total[name].terms.get((0,0,0,0));target=want.terms.get((0,0,0,0))
-                for k in range(2):
+                for k in range(3):
                     assert contains(c.mpf(0) if got is None else got[k],c.mpf(0) if target is None else target[k]),(bounds,name,k)
                     counts+=1
     a=c.mpf(3)/7;b=c.mpf(-2)/9;p=c.mpf(5)/11;d=c.mpf(2)/13;e=c.mpf(-3)/17;f=c.mpf(7)/19
@@ -54,7 +54,7 @@ def fixture(c):
                     B1={'5,1':algebra.lift(d),'6,2':algebra.lift(e),'6,4':algebra.lift(f)})
         r0,r1=current.feedback(algebra,system,base(x))
         for index,rhs in enumerate((r0,r1)):
-            values=current.weighted(algebra,rhs,current.normalized_kernels(c,t,X),X/64,order=0)
+            values=current.weighted(algebra,rhs,current.normalized_kernels(c,t,X),X/64,order=1)
             total[index]={name:total[index][name]+values[name] for name in current.FIELDS}
     expected=[]
     for alpha,beta,gamma in ((A*0+B*(a/8),B*(b/4),A*(p/2)),(A*0,op.dz(B)*(d/8),op.dz(C)*(e/4)+op.dz(A)*(f/2))):
@@ -63,8 +63,9 @@ def fixture(c):
     for index in range(2):
         for name,want in expected[index].items():
             got=total[index][name].terms.get((0,0,0,0));target=want.terms.get((0,0,0,0))
-            assert contains(c.mpf(0) if got is None else got[0],c.mpf(0) if target is None else target[0]),(index,name)
-            counts+=1
+            for k in range(2):
+                assert contains(c.mpf(0) if got is None else got[k],c.mpf(0) if target is None else target[k]),(index,name,k)
+                counts+=1
     return dict(exact_normalized_axis_range_and_signed_coupled_polynomial_rows=counts,
                 B1_ordinary_Z_derivative_feedback_checked=True,pressure_unknown_F1_feedback_checked=True)
 
@@ -73,9 +74,32 @@ def structural():
     A=s.zeros(6);A[0,4]=1;A[1,5]=1;A[2,5]=-1
     D=s.diag(*s.symbols('d0:6'))
     assert A*D*A==s.zeros(6)
-    assert current.initial.operator.matrix.__name__=='matrix'
     return dict(kinematic_map_annihilates_through_every_diagonal_kernel=True,
                 diagonal_G_weights_nonnegative=[0,0,2,0,3,1],Akin_absolute_row_norm=1)
+
+
+def radial_checks(c):
+    """Recover from an independently integrated polynomial axial field."""
+    z,r,d=s.symbols('z r delta');u=r*(2+3*z+z*z)+r*r*(1-z)
+    mean=s.integrate(u,(r,0,r))/r;k=mean-u
+    expected=s.cancel(((1-d)*z*u-(1+d)*z*k-(1-z*z)*s.diff(mean,z))/(1-d*z*z))
+    algebra=op.N1LogAlgebra(c,(c.mpf(0),)*4,[]);counts=0
+    for zz,rr,dd in (('0','2','.1'),('.25','1.5','.2'),('-.4','3','.15')):
+        zj=algebra.lift(op.Jet.variable(c,c.mpf(zz),1));rho=c.mpf(rr);delta=c.mpf(dd)
+        uj=(2+3*zj+zj*zj)*rho+(1-zj)*(rho*rho)
+        mj=(2+3*zj+zj*zj)*(rho/2)+(1-zj)*(rho*rho/3)
+        result=current.recover_radial(algebra,dict(Uz1=uj,K1=mj-uj),c.mpf(zz),rho,delta)
+        substitutions={z:s.Rational(zz),r:s.Rational(rr),d:s.Rational(dd)}
+        for name,expr,power in (('mean1',mean,(0,0,0,0)),('Q1',expected,(0,0,0,0)),('V1',r*expected,(0,0,0,-1))):
+            value=result[name];assert set(value.terms)=={power}
+            exact=expr.subs(substitutions)
+            want=c.mpf(int(s.numer(exact)))/int(s.denom(exact))
+            assert contains(value.terms[power][0],want),(name,substitutions);counts+=1
+        # Leading-order q0 recovery has a different temporal coefficient.
+        leading=s.cancel((2*z*u-(1-d)*z*mean-(1-z*z)*s.diff(mean,z))/(1-d*z*z))
+        if zz!='0':assert (expected-leading).subs(substitutions)!=0
+    return dict(independent_radial_mean_Q1_V1_polynomial_rows=counts,
+                leading_q0_recovery_distinguished_from_temporal_q1=True)
 
 
 def tail_checks(c):
@@ -97,7 +121,7 @@ def tail_checks(c):
 @source_precision
 def run(owner,packets):
     began=time.monotonic();owner.assert_graph();c=owner.c
-    checks=dict(**fixture(c),**structural(),**tail_checks(c));prefix_terms=0
+    checks=dict(**fixture(c),**structural(),**radial_checks(c),**tail_checks(c));prefix_terms=0
     for name,packet in packets.items():
         view=owner.report(packet);assert all(not view[key] for key in current.OPEN)
         assert view['computed_preconditioned_indices']==[0,1]
@@ -106,10 +130,15 @@ def run(owner,packets):
         assert tail['initial_function_Z_radius']-tail['solution_Z_radius']==tail['total_available_Z_loss']
         assert all(ep(tail['off_kinematic_B0_norm_upper'])[1]>=ep(v)[1] for v in tail['off_kinematic_rows'])
         assert view['canonical_inner_series_values_include_remaining_uniform_absolute_tail']
+        derivative=view['derivative_tail'];gap=derivative['Cauchy_gap']
+        assert derivative['simultaneous_value_and_first_derivative_Z_radius']+gap==tail['solution_Z_radius']
+        assert contains(derivative['remaining_first_Z_derivative_norm_upper'],current.domain.upper(c,tail['omitted_sum_bound']/gap))
+        assert view['radial_recovery_uses_temporal_q1_equals_1_plus_delta']
+        assert set(view['n1_radial_recovery_series_enclosures'])=={'mean1','Q1','V1'}
         assert not owner._packets[id(packet)][3][1]['P1'].terms
         assert owner._packets[id(packet)][3][0]['P1'].terms
         for value in owner._packets[id(packet)][2].values():
-            assert value.order==0 and all(key[0]>=0 for key in value.terms)
+            assert value.order==1 and all(key[0]>=0 for key in value.terms)
             prefix_terms+=len(value.terms)
     checks['production_computed_prefix_source_sectors']=prefix_terms
     # This is a source/enclosure consistency check, not an equation proof.
@@ -118,12 +147,14 @@ def run(owner,packets):
     for field in current.FIELDS:
         assert values[field].terms.keys()==old_values[field].terms.keys()
         for key in values[field].terms:
-            for k in range(2):assert overlaps(values[field].terms[key][k],old_values[field].terms[key][k])
+            for k in range(3):assert overlaps(values[field].terms[key][k],old_values[field].terms[key][k])
     checks['accepted_point_initial_vs_normalized_range_consistency']=True
     axis=owner.evaluate('.371','0');view=owner.report(axis)
     assert all(not value.terms for value in owner._packets[id(axis)][2].values())
     assert all(not value['terms'] for value in view['canonical_inner_series_value_enclosures'].values())
+    assert all(not value['terms'] for value in view['n1_radial_recovery_series_enclosures'].values())
     checks['prefix_and_exact_inner_series_zero_axis_traces']=True
+    checks['radial_recovery_exact_zero_axis_and_Cauchy_derivative_tail_checked']=True
     checks['guards_rejected']={name:rejected(fn) for name,fn in (
         ('core_comparison_extension',lambda:owner.evaluate('.371','4.01')),
         ('outside_actual_inner_collar',lambda:owner.evaluate('.371','.51','first')),

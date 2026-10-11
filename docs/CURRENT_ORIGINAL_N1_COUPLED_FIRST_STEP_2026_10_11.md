@@ -1,3 +1,5 @@
+> Updated 2026-10-11: [radial recovery and corrected common-inner selection](CURRENT_ORIGINAL_N1_RADIAL_RECOVERY_2026_10_11.md) is authoritative. The phase-1/2 interval below is an unrepaired canonical diagnostic interval. Use Rin=Ra*exp(hb*sc/4) for the selected common inner interval; completed-leading dispatch remains open.
+
 # Genuine n=1: computed pressure/derivative feedback and analytic series tail
 
 The first coupled regular iteration is now computed on the canonical core and the actual first prescribed-shear collar. It includes the unknown-field pressure feedback 2F0F1 and genuine B1 partial_Z W terms. The previous initial integral has been extended internally to whole radial endpoint cells, including cells that touch the axis. The long-term goal remains **ACTIVE / INCOMPLETE**.
@@ -17,7 +19,7 @@ lei_ren_part1_paper_compliant_current_original_n1_coupled_first_step_check.json
 
 Accepted gate: `current_original_n1_first_coupled_regular_iteration_computed`.
 
-The API computes all six state values for a supported inner query: F1, Uz1, K1, P1, d_x F1 and d_x Uz1. Initial values have first Z derivatives; the coupled prefix currently has Z order zero. Queries use rho in [0,4] or actual collar phase s in [0,1/2], with rho=4 exp(hb*s). It retains the actual cumulative mean and the independent pressure datum. It never uses the analytic-core extension as the actual collar.
+The API computes all six state values for a supported inner query: F1, Uz1, K1, P1, d_x F1 and d_x Uz1. Initial values now have second Z derivatives; the coupled prefix now has first Z derivatives and temporal n=1 radial recovery. Queries use rho in [0,4] or actual collar phase s in [0,1/2], with rho=4 exp(hb*s). It retains the actual cumulative mean and the independent pressure datum. It never uses the analytic-core extension as the actual collar.
 
 The public report separates:
 
@@ -26,7 +28,7 @@ The public report separates:
 - `B1_derivative_feedback`: actual derivatives of the initial function;
 - `canonical_inner_series_value_enclosures`: the computed prefix plus a uniform absolute bound for every omitted coupled series term.
 
-The last values enclose the solution series of the **canonical unrepaired inner problem**. They do not certify the completed-leading support relation, higher-Z coefficient derivatives, repaired n=1 background, or useful relative error in every component. Inherited full-inner/coefficient-solved/positive-order-repair gates remain false. The older controlled-prefix gate is not promoted: its full source/integration and derivative budget remains open, and no original unpreconditioned 64-term prefix has been computed.
+The last values enclose the solution series of the **canonical unrepaired inner problem**. They do not certify the completed-leading support relation, second and higher Z coefficient derivatives, repaired n=1 background, or useful relative error in every component. Inherited full-inner/coefficient-solved/positive-order-repair gates remain false. The older controlled-prefix gate is not promoted: its full source/integration and derivative budget remains open, and no original unpreconditioned 64-term prefix has been computed.
 
 ## Actual coupled computation
 
@@ -42,7 +44,7 @@ Wprefix=Wbase+H Wbase.
 
 The exact nilpotent resummation keeps the kinematic rows while exposing the small remaining operator. It does not discard nonadjacent derivative words. B0 feedback and B1 feedback are integrated separately before being combined.
 
-For a core endpoint X that ranges over an entire interval, use s=X*t. The ratio s/X is exactly t, including at X=0 by continuous extension. Thus the initial kernels do not divide by an interval that contains zero. Sixteen nested entire-core cells enclose Wbase and its first Z derivative for each outer core cell.
+For a core endpoint X that ranges over an entire interval, use s=X*t. The ratio s/X is exactly t, including at X=0 by continuous extension. Thus the initial kernels do not divide by an interval that contains zero. Sixteen nested entire-core cells enclose Wbase and its second Z derivative for each outer core cell.
 
 Eight outer core cells integrate the feedback. Two actual outer phase cells each use four nested collar cells and the true measure
 
@@ -78,7 +80,7 @@ The positive guard beta_N<1 is required. For the computed N=1 prefix, beta_1 is 
 
 ## Focused checks and use
 
-Independent checks cover 84 exact normalized-axis/range and signed coupled polynomial rows, genuine Z-derivative feedback, the pressure unknown-field contribution, diagonal-kernel nilpotency, and 120 factorial/geometric tail comparisons. Prefix and full inner series traces vanish exactly at the axis. The accepted point initial adapter and normalized range adapter agree in their source enclosures. Owner/packet/range/chart/partition guards retain the scope and detect live prefix mutation.
+Independent checks cover 132 exact normalized-axis/range and signed coupled polynomial rows, plus nine independent mean/Q1/V1 rows, genuine Z-derivative feedback, the pressure unknown-field contribution, diagonal-kernel nilpotency, and 120 factorial/geometric tail comparisons. Prefix and full inner series traces vanish exactly at the axis. The accepted point initial adapter and normalized range adapter agree in their source enclosures. Owner/packet/range/chart/partition guards retain the scope and detect live prefix mutation.
 
 The single reused read-only worker remains **GPT-5.6 Luna / max**. It reviewed the nested-radius proof and confirmed its validity with the explicit row-norm, Volterra ordering and tube guards recorded above. No new worker or Astra child was spawned.
 
@@ -99,8 +101,8 @@ assert not view['n1_full_inner_interval_solution_certified']
 - [x] **CURRENT-RP-N1-FIRST-COUPLED-FEEDBACK** Compute H Wbase separately for B0 and B1, retaining actual pressure feedback, own means and source sectors. Publish genuine core and actual-collar samples with both contributions.
 - [x] **CURRENT-RP-N1-PRECONDITIONED-ANALYTIC-TAIL** Derive Cp row-wise, reserve nested Cauchy radii, include optional J integrations, prove the geometric guard and enclose every omitted H-series term. Keep the absolute W-norm tail separate from source/integration uncertainty and component relative accuracy.
 - [ ] **CURRENT-RP-N1-COMPLETED-LEADING-SUPPORT-GUARD** Bind the original completed-leading dispatch, Rm and r_minus to this source family and prove all later modifications lie outside Rin. Retain strict formal radial inequalities. The canonical prefix alone does not close Assumption 14.1.
-- [ ] **CURRENT-RP-N1-Z-DERIVATIVE-BUDGET-EXTENSION** Extend genuine leading mixed rows from total order three to the available total order four, forcing/g from Z1 to Z2 and matrix rows from Z2 to Z3, with matching derivative guards. Propagate Wbase Z2 and the first coupled prefix Z1. Verify ordinary F0 derivatives and own-mean derivatives; never add zero padding.
-- [ ] **CURRENT-RP-N1-RADIAL-VELOCITY-RECOVERY** With certified Uz1/K1 Z derivatives, recover Q1=[(1-delta)Z Uz1-(1+delta)Z K1-(1-Z^2)partial_Z(Uz1+K1)]/L and V1=R Q1. Derive a compatible derivative tail by an additional Cauchy margin. Verify the exact n=1 mean/axis relation and pressure, then provide the complete inner coefficient field API.
+- [x] **CURRENT-RP-N1-Z-DERIVATIVE-BUDGET-EXTENSION** Extend genuine leading mixed rows from total order three to the available total order four, forcing/g from Z1 to Z2 and matrix rows from Z2 to Z3, with matching derivative guards. Propagate Wbase Z2 and the first coupled prefix Z1. Verify ordinary F0 derivatives and own-mean derivatives; never add zero padding.
+- [x] **CURRENT-RP-N1-RADIAL-VELOCITY-RECOVERY** With certified Uz1/K1 Z derivatives, recover Q1=[(1-delta)Z Uz1-(1+delta)Z K1-(1-Z^2)partial_Z(Uz1+K1)]/L and V1=R Q1. Derive a compatible derivative tail by an additional Cauchy margin. Verify the exact n=1 mean/axis relation and pressure, then provide the complete inner coefficient field API.
 - [ ] **CURRENT-RP-N1-COMPONENT-ERROR-BUDGET** Separate source uncertainty from integration error and refine normalized cell widths. Preserve amplitude-sensitive sectors; a uniform unweighted norm tail may swamp a much smaller individual swirl component. Supply field/derivative bounds with useful widths and independently assembled equation diagnostics before promoting coefficient-solved/full-inner gates.
 - [ ] **CURRENT-RP-N1-FIVE-MOMENT-REPAIR** Compute five whole-Z defects of the solved n=1 field, apply its own original bump controls and pressure-compatible repair, truncate streamfunction/vector potential before curl, and verify joins/derivatives and finite-energy tail. Leading-order repair does not close this task.
 - [ ] **CURRENT-RP-N2-AFTER-REPAIRED-N1** Build the true n=2 products and n-dependent recovery from solved/repaired n=1 on the same interval, then solve and repair independently. Continue higher temporal orders only from admissible lower orders.
