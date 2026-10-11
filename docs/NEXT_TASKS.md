@@ -1,3 +1,9 @@
+# Latest checkpoint — genuine n=1 regular operator and coupled axis solution, 2026-10-10
+
+Read [CURRENT_ORIGINAL_N1_REGULAR_AXIS_2026_10_10.md](CURRENT_ORIGINAL_N1_REGULAR_AXIS_2026_10_10.md) first. Genuine temporal n=1 now has zero-axis initialization and coupled finite F1/Uz1/K1/P1 coefficients through rho^3, with recovered V1/R through rho^2. The original 2F0 F1 pressure term and its degree-three axial feedback are retained. The full six-coordinate regular operator is callable over the original real core, including the axis and beyond R_a.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: same-source common complex bounds, controlled full-interval Volterra/PDE solution and tail, then order-one five-moment repair and n=2. These finite axis jets have no certified radial remainder and must not be used as a whole-core field or completed temporal recursion.
+
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 
 Read [CURRENT_ORIGINAL_CORE_N1_SOURCES_2026_10_10.md](CURRENT_ORIGINAL_CORE_N1_SOURCES_2026_10_10.md) first. The canonical original core now has a typed real-function/derivative API on rho[0,4.1], Z[-1,1], including the axis and a radial interval beyond R_a. Actual original N1theta/N1z/N1p forcing enclosures are installed and independently checked. Independent P0, epsilon_core versus pressure epsilon, Lambda powers, original delta and anchored F0 are retained.

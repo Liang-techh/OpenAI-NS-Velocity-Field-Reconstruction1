@@ -90,10 +90,14 @@ For real-domain coverage use `evaluate(['0','4.1'], ['-1','1'])`. Report JSON ca
 
 ## Completed and next tasks
 
+The subsequent [genuine n=1 regular-axis checkpoint](CURRENT_ORIGINAL_N1_REGULAR_AXIS_2026_10_10.md) completes axis initialization, the full regular operator and finite coupled axis coefficients. Full-interval n=1 solve, common complex bounds and repair remain open.
+
+
+
 - [x] **CURRENT-ORIGINAL-CORE-REAL-FUNCTION-SOURCE** Bind canonical original parameters/P0, re-evaluate leading mixed derivative enclosures on a common real interval beyond R_a, expose Q regularly at R=0 and preserve pressure pieces.
 - [x] **CURRENT-RP-N1-FORCING-PACKET** Emit the actual original three known forcing enclosures with ordered weighted axial operators, original delta and regular pressure source. Source-only completion; no positive-order solution flag.
 - [ ] **CURRENT-RP-CORE-COMMON-HOLOMORPHIC-DOMAIN** Bind the existing analytic fixed-point/tube/Cauchy majorants to every required original leading radial derivative over this same interval. State the common complex neighborhood and original parameter dependence. Implement a complex source evaluator if the planned solve requires it. A real rectangle enclosure alone does not close Assumption 14.1.
-- [ ] **CURRENT-RP-N1-REGULAR-AXIS-INITIALIZATION** Use positive-order F1(0,Z)=Uz1(0,Z)=P1(0,Z)=0 to derive and expose the original first radial slope source data, and n=1 regular V1 recovery. Preserve the actual F0 factor/log scales and source functions over Z; do not insert arbitrary axis jets or confuse them with the leading radial Taylor rows.
+- [x] **CURRENT-RP-N1-REGULAR-AXIS-INITIALIZATION** Use positive-order F1(0,Z)=Uz1(0,Z)=P1(0,Z)=0 to derive and expose the original first radial slope source data, and n=1 regular V1 recovery. Preserve the actual F0 factor/log scales and source functions over Z; do not insert arbitrary axis jets or confuse them with the leading radial Taylor rows.
 - [ ] **CURRENT-RP-N1-COUPLED-SOLVE** Use this live hierarchy source to solve the paper's regular system for F1, Uz1, K1, P1 and xi derivatives, xi=sqrt(R), K1=Mz1/R-Uz1, on the same common interval. Preserve P1_R=2F0 F1+N1p and all n-dependent weights. Bound discretization/truncation and validate all three equations plus recovered V1. The known forcing alone is not a solution.
 - [ ] **CURRENT-RP-N1-FIVE-MOMENT-REPAIR** Derive actual order-one defects as Z functions, bind bump controls/conditioned inverse, cut streamfunction or vector potential before curl, verify all five repaired moments, joins and pressure compatibility. Only after repair build n=2 forcing/recovery on the same R_in.
 
