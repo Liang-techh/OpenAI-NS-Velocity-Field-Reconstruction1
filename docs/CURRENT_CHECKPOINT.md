@@ -1,3 +1,9 @@
+# Latest checkpoint — actual three-time path and finite remainder ratios, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md](CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md) first. Original pulse_exit xi=21/2, Z=371/1000 now has actual field/axial/stress/cone packets at time offsets 1/5, -4/5, -9/5. All three point cones pass. Five finite remainder indicators retain complete lambda and positive tails; measured source-time ratios and fitted exponents retain coefficient uncertainty. This is an actual fixed-similarity path, with no core-width, material-winding, flatness or recursion promotion.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: same-source regular core/common interval and genuine n=1 forcing/coupled solve/repair; also all-chart/regional cone, physical widths/norms, general/global/axis and oscillatory correction. Read the detailed task outputs/acceptance before marking completion.
+
 # Latest checkpoint — original strict stress cone at supported point, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_STRESS_CONE_2026_10_10.md](CURRENT_ORIGINAL_RP_STRESS_CONE_2026_10_10.md) first. The original current pulse_exit now passes the actual two-component admissible stress cone at the supported point: a, Utheta and H0/H1/H2 are strictly positive with independent 800-digit shared-source bounds. The accepted full background tensor/divergence/remainder/residual remains available (30 outputs, 5 exact zeros). Incoming histories, P0, pressure and exact original mu/scales are retained.

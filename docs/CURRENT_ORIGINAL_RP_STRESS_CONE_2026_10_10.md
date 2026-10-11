@@ -1,5 +1,7 @@
 # Original strict admissible stress cone at the supported point — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md](CURRENT_ORIGINAL_RP_MULTITIME_REMAINDER_2026_10_10.md) adds three actual time deliveries, finite remainder relative indicators and measured source-time fits. All three point cones pass; regional cone and genuine coefficient recursion remain open.
+
 The actual original pulse_exit background now satisfies the paper's two-component admissible stress cone **at the supported point**. Directed source bounds prove a>0, Utheta>0, v_s>2 and both strict signed cone margins positive. This is the first accepted current-Rp cone point, following the full stress/remainder decomposition. Full goal **ACTIVE / INCOMPLETE**; regional cone, flat remainder and genuine coefficient recursion remain open.
 
 Source commit: [e4a6bd56](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e4a6bd560a9e86fe4cca53d3ddcddc1390d93cfd). Source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_stress_cone.py`, `.json.gz`, `_check.py`, `_check.json`.
