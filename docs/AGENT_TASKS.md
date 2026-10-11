@@ -1,3 +1,9 @@
+# Latest checkpoint — original full background stress and remainder, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_BACKGROUND_STRESS_2026_10_10.md](CURRENT_ORIGINAL_RP_BACKGROUND_STRESS_2026_10_10.md) first. The actual supported pulse_exit now returns a completed symmetric stress tensor, its divergence, a separate remainder and full background momentum residual in cylindrical and Cartesian coordinates. All 30 signs/zeros are bounded (5 exact zeros, 25 strictly signed outputs). Independent Cartesian NS source assembly and 377 collected shared-source product checks pass. Original radial recovery, incoming histories, P0 and absolute pressure are retained.
+
+Full goal **ACTIVE / INCOMPLETE**. None of the 25 new nonzero outputs yet passes the 0.1% total physical-width target. Next: actual signed cone margins, relative remainder/scale cancellation and controlled time/query coverage; then endpoint/all-chart/general/global/axis, regional cone/flatness, genuine n-dependent recursion and oscillatory correction. A point momentum decomposition is not completed stress admissibility, scale recursion or full corrected NS validation.
+
 # Latest checkpoint — original signed axial vorticity, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md](CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md) first. Exact original theta source algebra now restores negative nonzero omega_z with a passing 0.1% total width at the supported pulse_exit delivery. All three vorticity signs are known at this point. The preceding 144-row derivative and 13-linear-field API remains accepted; its inherited 26/144 width count and zero ordinary nonzero absolute materializations are unchanged.
