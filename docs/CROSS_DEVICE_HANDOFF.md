@@ -1,8 +1,8 @@
-# Latest checkpoint — genuine n=1 regular operator and coupled axis solution, 2026-10-10
+# Latest checkpoint — genuine n=1 actual-collar analytic bounds and integral tail, 2026-10-10
 
-Read [CURRENT_ORIGINAL_N1_REGULAR_AXIS_2026_10_10.md](CURRENT_ORIGINAL_N1_REGULAR_AXIS_2026_10_10.md) first. Genuine temporal n=1 now has zero-axis initialization and coupled finite F1/Uz1/K1/P1 coefficients through rho^3, with recovered V1/R through rho^2. The original 2F0 F1 pressure term and its degree-three axial feedback are retained. The full six-coordinate regular operator is callable over the original real core, including the axis and beyond R_a.
+Read [CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md](CURRENT_ORIGINAL_N1_ACTUAL_COLLAR_DOMAIN_2026_10_10.md) first. Same-source core and actual first-collar complex bounds, original-pressure/nozero guards, explicit radial majorants through order four, width-integrated n=1 forcing and a regular Neumann-series tail majorant are installed. The inverse hb in the source cancels against the actual phase integration measure. The tail after operator indices 0..64 is bounded by about 3.95e-52 times the initial Gg bound; the iteration prefix itself is not computed.
 
-Full goal **ACTIVE / INCOMPLETE**. Next: same-source common complex bounds, controlled full-interval Volterra/PDE solution and tail, then order-one five-moment repair and n=2. These finite axis jets have no certified radial remainder and must not be used as a whole-core field or completed temporal recursion.
+Full goal **ACTIVE / INCOMPLETE**. Next: completed-leading support guard and actual-collar operator functions, controlled Gg/iteration prefix, solved full-inner n=1 field, then per-order five-moment repair and n=2. The old rho<=4.1 API is an analytic-core extension; beyond Ra it is a comparison field and cannot stand in for the actual matched background. The finite axis solution remains valid. Earlier checkpoint sections below are historical; this source scope and the new task list take precedence.
 
 # Latest checkpoint — original core functions and genuine n=1 sources, 2026-10-10
 
