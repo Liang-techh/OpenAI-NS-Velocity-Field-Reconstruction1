@@ -1,5 +1,7 @@
 # Original Cartesian derivatives and correlated linear fields — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md](CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md) restores negative nonzero omega_z and its passing 0.1% total width using the actual original theta radial law. The earlier unresolved direct-sum result remains historical; broader time/global/stress/recursion tasks remain open.
+
 The supported original pulse_exit field now exposes 140 spatial derivatives through total order four and four fixed-physical-position time derivatives as live nonzero source-scale handles. It also computes 13 signed linear differential fields from the actual shared source primitives: divergence, three vorticity components, three velocity Laplacians and six symmetric strain components. Full goal **ACTIVE / INCOMPLETE**.
 
 Source commit: [ff569e26](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ff569e26bacace902e5ec8366f75ec2b7744df9e). New source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_differential_field.py`, `.json.gz`, `_check.py`, `_check.json`.

@@ -1,3 +1,9 @@
+# Latest checkpoint — original signed axial vorticity, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md](CURRENT_ORIGINAL_RP_AXIAL_VORTICITY_2026_10_10.md) first. Exact original theta source algebra now restores negative nonzero omega_z with a passing 0.1% total width at the supported pulse_exit delivery. All three vorticity signs are known at this point. The preceding 144-row derivative and 13-linear-field API remains accepted; its inherited 26/144 width count and zero ordinary nonzero absolute materializations are unchanged.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: paired signed original stress/remainder source operators and controlled off-center/time vorticity/scale observations; then endpoint/all-chart/general/global/axis, cone/flatness, actual n-dependent recursion and oscillatory correction. Point vorticity sign/width does not establish growth, material winding or scale recursion.
+
 # Latest checkpoint — original derivative and correlated linear fields, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md](CURRENT_ORIGINAL_RP_DIFFERENTIAL_FIELD_2026_10_10.md) first. The supported original pulse_exit now exposes all 144 spatial4/time1 derivative values and 13 source-correlated linear fields (divergence, vorticity, strain, velocity Laplacians). Exact source operators cancel before interval evaluation. omega_x/y signs are bounded; omega_z's remaining source derivative cancellation is open. Inherited accuracy remains 26/144 total 0.1% passes and zero ordinary nonzero absolute materializations.
