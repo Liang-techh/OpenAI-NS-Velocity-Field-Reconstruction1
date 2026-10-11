@@ -1,5 +1,7 @@
 # Original remaining pulse pressure — 2026-10-10
 
+Later progress: [CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md) refines the actual original delta products and independently recovers 26 coefficient-plus-scale width gates at the supported point, including w and pressure base values. Numeric materialization and u/v scale-width tasks remain open. Read the later checkpoint for current task status.
+
 The supported pulse_exit point now uses the original pressure as a correlated negative remaining integral. All 144 physical derivative rows have resolved signs; the previous 6 unresolved rows are resolved. The nonzero factored enclosures meeting the explicit 0.1% relative-diameter target increased from 53 to 59. The base pressure is negative. No ordinary nonzero physical number, unrestricted xyz/t API, stress certificate or scale recursion is completed. Full goal **ACTIVE / INCOMPLETE**.
 
 Source commit: [6b0c1cd5](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/6b0c1cd547c3b4716bc86cef61bbdd235ca78f3d). Source quartet: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_remaining_pressure_tail.py`, `.json.gz`, `_check.py`, `_check.json`.

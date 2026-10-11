@@ -1,3 +1,9 @@
+# Latest checkpoint — original source-product scale width, 2026-10-10
+
+Read [CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md](CURRENT_ORIGINAL_RP_SOURCE_PRODUCT_ARITHMETIC_2026_10_10.md) first. At the supported pulse_exit point, physical coefficient-plus-scale 0.1% width passes increased from 0 to 26 of 144 rows, including w and pressure base values. All 144 signs remain resolved; 59 nonzero factor target passes are retained. Original delta/mu relations are now recomputed with bounded directed arithmetic. u/v scale width and ordinary nonzero numeric delivery remain open.
+
+Full goal **ACTIVE / INCOMPLETE**. Next executable task: source-aware u/v inverse-mu representation and controlled nonzero physical delivery, then endpoint/off-center/all-chart/general/global/axis coverage, signed stress/flat remainder, genuine n-dependent recursion and oscillatory correction. This is a bounded arithmetic result, not completed scale recursion or full NS validation.
+
 # Latest checkpoint — original remaining pulse pressure, 2026-10-10
 
 Read [CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md](CURRENT_ORIGINAL_RP_REMAINING_PRESSURE_TAIL_2026_10_10.md) first. At the supported pulse_exit point, all 144 physical derivative rows now have resolved signs, recovering 6 previously unresolved rows. Nonzero factored 0.1% target passes increased from 53 to 59; base pressure is negative. Original P0, all positive late atoms, infinite tail, scales and velocity rows are retained. Ordinary nonzero physical delivery remains open.
