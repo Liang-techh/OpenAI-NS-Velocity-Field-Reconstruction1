@@ -1,3 +1,12 @@
+# Latest checkpoint — finite-N corrected leading velocity/mean C3 interface, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_MODIFIED_LEADING_C3_2026_10_12.md](CURRENT_ORIGINAL_N1_MODIFIED_LEADING_C3_2026_10_12.md) first. The actual original finite-N E_N/V_N and velocity increments now have signed Z0…Z3 function handles, with directed C3 ranges and own axial mean increments at chart endpoints. Original N, common-S units, phase and predecessor memory are preserved. The two current micro endpoint queries and 24-row independent exact fixture are checked.
+
+The n1 cutoff's three velocity-support moments remain available. The other two pressure moments need actual finite-N leading sources after r_minus=sc/2. The prescribed-shear tail draft now refuses that modified region; its old phase-half route cannot supply the target field. New work: partial own-mean functions inside each chart, slow-y/phase mixed derivatives of B, Q_N and actual S/RS tail integrals, then full defects and the 2+3 repair.
+
+Full goal **ACTIVE / INCOMPLETE**. Endpoint mean increments are not a whole-cell mean oracle. Mixed radial/phase derivatives, complete Q/pressure tails, full n1 repair, axis remainder/joins, genuine n2 and global stress/corrected NS remain open. Their gates stay false. Follow the linked checklist; earlier sections are historical.
+
+
 # Latest checkpoint — original n1 radial cutoff and own recovery, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_RADIAL_CUTOFF_2026_10_11.md](CURRENT_ORIGINAL_N1_RADIAL_CUTOFF_2026_10_11.md) first. Paper §15.1's common radial cutoff is installed on F1/Uz1, with first/second rho jets through Z1, own M through Z2, recovered mean/K/V and local pressure. Three moments (m11/m12/m14) now include their complete velocity support and pass all six value/Z1 width rows at the named original query. Two fixed leading-pressure forcing tails (m13/m15) remain explicitly uncomputed.
