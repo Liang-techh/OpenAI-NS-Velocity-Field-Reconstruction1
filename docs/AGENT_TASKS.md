@@ -1,3 +1,12 @@
+# Latest checkpoint — original n1 radial cutoff and own recovery, 2026-10-11
+
+Read [CURRENT_ORIGINAL_N1_RADIAL_CUTOFF_2026_10_11.md](CURRENT_ORIGINAL_N1_RADIAL_CUTOFF_2026_10_11.md) first. Paper §15.1's common radial cutoff is installed on F1/Uz1, with first/second rho jets through Z1, own M through Z2, recovered mean/K/V and local pressure. Three moments (m11/m12/m14) now include their complete velocity support and pass all six value/Z1 width rows at the named original query. Two fixed leading-pressure forcing tails (m13/m15) remain explicitly uncomputed.
+
+Route correction: §15.1 cuts the two n1 velocities, adds its own 2+3 repair bumps, then reconstructs M/V/P. The older task to solve n1's inner six equations across every outer chart is superseded for this extension. Actual outer leading sources are still required for the two pressure tails and the positive power interval used by repair. V and P are recovered, not multiplied by the cutoff; V need not vanish before m11 is repaired.
+
+Full goal **ACTIVE / INCOMPLETE**. Next: compute the two same-family leading forcing tails, bind I2/Astar and normalized bump matrices, solve the n1 2+3 repair, and reconstruct/verify all five terminal identities and pressure compatibility. Axis remainder/derivative joins, completed outer leading support, genuine n2 and global stress/corrected NS remain open. The full-inner/solved/repair/recursion/global gates stay false. Follow the linked detailed checklist; earlier sections are historical.
+
+
 # Latest checkpoint — original n1 own five cumulative moments, 2026-10-11
 
 Read [CURRENT_ORIGINAL_N1_CUMULATIVE_MOMENTS_2026_10_11.md](CURRENT_ORIGINAL_N1_CUMULATIVE_MOMENTS_2026_10_11.md) first. All five genuine temporal n1 partial cumulative moments now have value/Z1 enclosures over the original core/selected actual collar. Exact own-mean/full-pressure endpoint identities are combined with correlated analytic core primitives and genuine radial-cell residual ranges. Every original nonlinear, pressure/inertial and remaining feedback error is retained, along with core history and the actual hb/rho Jacobian.
