@@ -1,3 +1,12 @@
+# Latest checkpoint — physical leading U/q and ten pressure moment inputs, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_PHYSICAL_PRESSURE_FIELDS_2026_10_12.md](CURRENT_ORIGINAL_N1_PHYSICAL_PRESSURE_FIELDS_2026_10_12.md) first. The original baseline own mean and actual finite-N partial mean now combine in physical units, with S=Pstar applied once. Leading U/m through Z3 and meridional q through Z2 supply ten honest value/Z1 nonradial pressure integrands and same-cell defining integrals/whole-cell magnitude bounds. Two actual micro queries, a 35-row independent smooth physical fixture and a checked-owner public query execute.
+
+Next extend actual partial mean and physical moments through the original 17 charts, then the genuine reserved repair band, quiet power, selected pulse and completed leading support. Accumulate the two reduced pressure tails with finite endpoint terms retained, close m13/m15 and perform the n1 2+3 repair. Internal radial/phase derivatives are not required for the ten interior integrands; finite-endpoint q_R remains required.
+
+Full goal **ACTIVE / INCOMPLETE**. This is local leading-field input to n1 forcing, with absolute magnitude envelopes. Signed full defects, complete pressure tails/leading support, full n1 repair, axis remainder/joins, genuine n2 and global stress/corrected NS remain open. Their gates stay false. Follow the linked checklist; earlier sections are historical.
+
+
 # Latest checkpoint — interior own mean/Q and reduced pressure-tail route, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_PARTIAL_MEAN_Q_2026_10_12.md](CURRENT_ORIGINAL_N1_PARTIAL_MEAN_Q_2026_10_12.md) first. The actual finite-N correction now has signed free-endpoint own-mean functions through Z3, mean_y through Z3 and Q increment through Z2. Original N, common S, phase, Jacobian and predecessor history are retained. Two actual micro whole-cell queries, 11 independent moving-endpoint rows and arbitrary-smooth-mean pressure integral identities pass; a checked-owner public query executes.
