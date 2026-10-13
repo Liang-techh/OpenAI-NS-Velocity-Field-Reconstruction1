@@ -1,3 +1,11 @@
+# Latest checkpoint — complete original pulse pressure C1 functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_FUNCTIONS_2026_10_13.md) first. Both actual complete Rp-to-Rv m13/m15 value and first-Z functions now consume the checked own main/gap/end fields. All ten signed products, exact physical measures, nonzero gap history and finite endpoint terms are retained. Exact selected-row identities telescope internal endpoints; the paper m15 minus sign is applied once. Independent direct original forcing and first-Z symbolic checks passed. The saved common graph has 35,558 nodes.
+
+Next bind the true twenty-term nonlinear core fixed point and its evaluation oracle, then lower-collar and inner-cutoff functions. Compose the five complete signed defects and select actual linear n1 repair; transfer the existing same-source pressure bounds as bounds. Run `python scripts/run_original_n1_pulse_pressure_functions.py` for checked restoration. Reuse saved ancestors and avoid pressure-grid rebuilds.
+
+Full original goal **ACTIVE / INCOMPLETE**. The complete pulse C1 function adapter is installed. Quantitative bound transfer for the new function bodies, full five-defect composition, repaired own M/V/P and terminal zeros, heat/stress, true temporal recursion, oscillatory cancellation and corrected NS validation remain separate open gates. Earlier entries are historical.
+
 # Latest checkpoint — original pulse C3 functions and own fields, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md) first. The actual selected ap/C1/C2 now have true ordinary Z2/Z3 functions. Physical main/gap/end fields retain both native cumulative mean histories, one Pstar scale, and genuine Q/Q_y/Ur through order two. Independent complete ODE, nonunit scale, two-row moment solve, join and terminal-support checks passed. The checked common graph has 34,295 nodes; finite fixture Q/Q_y/Ur differences are below 1.54e-10. These errors are not a uniform numerical accuracy claim for the microscopic original parameters.

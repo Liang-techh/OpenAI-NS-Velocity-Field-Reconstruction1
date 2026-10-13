@@ -1,5 +1,7 @@
 # Original n1 pulse C3 functions and own physical fields
 
+Current continuation: [complete original pulse pressure C1 functions](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_FUNCTIONS_2026_10_13.md). The four pressure function prerequisites below are now checked there. Bound transfer, true core/collar/cutoff functions and full five-defect repair remain open.
+
 The selected original pulse coefficients now have genuine ordinary axial
 derivatives through order three. They feed physical main, gap and end pulse
 fields with their own complete cumulative means and radial recovery. The
@@ -167,20 +169,20 @@ result archive, focused checker and checked receipt are committed together.
 Update the checkbox and link its concrete result; never mark a generated
 graph as accepted merely because it was saved.
 
-- [ ] `N1-PULSE-PRESSURE-INTEGRANDS`: call the existing
+- [x] `N1-PULSE-PRESSURE-INTEGRANDS`: call the existing
   `physical_nonradial_pressure_fields.nonradial_integrands` on each
   chart's genuine physical U C3 and auxiliary Q C2. Preserve all ten
   signed integrands and their true first-Z rows. Use Q_ZZ for derivatives
   of q_Z products; do not request or fabricate Q_ZZZ.
-- [ ] `N1-PULSE-PRESSURE-MEASURES`: install the full main/gap/end I0 and
+- [x] `N1-PULSE-PRESSURE-MEASURES`: install the full main/gap/end I0 and
   I1 integral bodies with `dR=(R/mu)*dxi` on main/gap and `dR=R*ds` on
   end. I1 uses one additional R. Keep huge radii as exact log bindings
   and retain all signed cross-products, including nonzero gap terms.
-- [ ] `N1-PULSE-PRESSURE-ENDPOINTS`: construct the actual finite
+- [x] `N1-PULSE-PRESSURE-ENDPOINTS`: construct the actual finite
   endpoints using the unchanged auxiliary Q convention. Telescope
   matching internal endpoints. Retain the native Rp data and signed
   viscous terms, and derive terminal zeros from empty support.
-- [ ] `N1-PULSE-PRESSURE-FUNCTIONS`: reuse
+- [x] `N1-PULSE-PRESSURE-FUNCTIONS`: reuse
   `preRp_moment_functions.pressure_functions` for both complete m13/m15
   C1 functions. Add a direct physical-integral fixture and independent
   axial derivative comparison. Keep base swirl pressure distinct.
