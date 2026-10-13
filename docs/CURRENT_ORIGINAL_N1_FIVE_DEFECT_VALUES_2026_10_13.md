@@ -60,21 +60,21 @@ A source inspection identified a useful exact gap between the existing leading r
 
 Evidence is in `current_original_whole_Z_limit_repair_band.py`, `current_native_repair_band_cone_budget.py`, `current_original_whole_Z_all_N_control_connection.py` and `current_limit_band_physical_recovery.py`. Before installing an n1 repair, bind the physical angular amplitude of the actual original family: if its physical convention is S*A_rc(Z)*(R/Rc)^(-alpha), then Astar=S*A_rc(Z)*(2Rc)^alpha. S and A_rc must come from that actual source, not a free normalization.
 
-The paper's prescribed old centers/shapes do not all fit this single gap. Narrower new n1 supports are an **autonomous support choice**, permitted for the staged reconstruction but requiring fresh bump normalization and determinant proofs. Do not call them the paper's original fixed bump set. A possible geometric layout uses log centers 12,13,14,15,16 times log(2)/40 and half-width log(2)/400; all five supports are strictly disjoint inside the reserved gap. This layout is a proposal, not an installed coefficient or support certificate.
+The paper's prescribed old centers/shapes do not all fit this single gap. Narrower new n1 supports are an **autonomous support choice**, permitted for the staged reconstruction but requiring fresh bump normalization and determinant proofs. Do not call them the paper's original fixed bump set. The subsequently checked [linear operator](CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md) uses log centers 12,13,14,15,16 times log(2)/40 and half-width log(2)/400; all five supports are strictly disjoint inside the reserved gap. Its support and normalization certificates are now installed; actual repaired coefficient functions remain open.
 
 ## Next repository tasks
 
 - [ ] Bind complete signed defect function handles and their genuine Z derivatives, retaining the source graph, N, mu, P0 and radius definitions. The current value interface is not a substitute for this function adapter.
 - [ ] Supply full pressure derivative enclosures from the original source integrals/endpoint equations; do not differentiate magnitude bounds or affine approximation errors.
-- [ ] Install a same-family reserved-gap source certificate for the actual leading velocities and their necessary derivatives; retain all nonlocal histories.
-- [ ] Bind actual physical Astar and Astar_Z, prove positivity on the required domain and preserve its logarithmic scale.
-- [ ] Choose and record the new n1 bump supports explicitly; verify they are inside the exact gap and mutually disjoint.
-- [ ] Compute each new positive normalization integral with physical dR/sqrt(2R), retaining its Rc powers and nonzero quadrature errors.
-- [ ] Construct the original axial two-by-two and angular three-by-three matrices from those actual normalized bumps.
-- [ ] Prove determinant/invertibility bounds from ordered positive supports and the distinct exponential powers; do not assume the old leading matrices apply.
+- [x] Install a same-family reserved-gap source certificate for the actual leading velocities and their necessary derivatives; retain all nonlocal histories.
+- [x] Bind actual physical Astar and Astar_Z, prove positivity on the required domain and preserve its logarithmic scale.
+- [x] Choose and record the new n1 bump supports explicitly; verify they are inside the exact gap and mutually disjoint.
+- [x] Compute each new positive normalization integral with physical dR/sqrt(2R), retaining its Rc powers and nonzero quadrature errors.
+- [x] Construct the original axial two-by-two and angular three-by-three matrices from those actual normalized bumps.
+- [x] Prove determinant/invertibility bounds from ordered positive supports and the distinct exponential powers; do not assume the old leading matrices apply.
 - [ ] Evaluate the axial divided-difference row stably when mu is tiny. Preserve the signed right-hand-side correlation before dividing by mu; do not subtract independently boxed nearly equal rows.
 - [ ] Construct alpha(Z) and beta(Z) as linear operators on the genuine signed full defects. Interval coefficient ranges are diagnostics, not a choice of fields.
-- [ ] Check the paper moment-map signs with a separate nonunit finite-scale fixture, especially m13's factor two and m15's sign.
+- [x] Check the paper moment-map signs with a separate nonunit finite-scale fixture, especially m13's factor two and m15's sign.
 - [ ] Add the new corrections to the correct F1/Uz1 family and recover its own M/V/P on the complete physical support.
 - [ ] Verify all five terminal identities as full axial functions; keep repair closure false until these identities and source bindings are established.
 - [ ] Check axis regularity, high-order joins, exact support and analytic preheat/heat compatibility of the repaired family.

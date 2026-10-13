@@ -1,3 +1,11 @@
+# Latest checkpoint — original n1 physical linear repair operator, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md](CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md) first. The actual positive angular amplitude, original microscopic Rc identity, five fresh disjoint normalized supports and the correct positive-order axial/ angular matrices are now source-bound. Fresh determinant bounds and the physical C1 inverse-action API have passed independent nonunit physical-integral and derivative checks. The normalized positive determinant bounds are approximately .088345842 and 1.04078066e-5. Finite mu, all physical radius factors and nonzero quadrature errors remain explicit.
+
+Next bind complete genuine signed defect C1 functions, improve the pre-Rp q-Z2 or correlated derivative integrals, finish finite endpoint/outer-pulse C1 source bounds, then select the actual alpha/beta functions and recover repaired own M/V/P. Interval values and affine model centers are not coefficient functions. The new support geometry is an autonomous choice in an exact old-correction gap.
+
+Full original goal **ACTIVE / INCOMPLETE**. The linear operator is installed; full pressure C1 accuracy, actual repaired fields/terminal zeros, genuine temporal recursion, global stress and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — full pre-repair n1 five-moment values, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_FIVE_DEFECT_VALUES_2026_10_13.md](CURRENT_ORIGINAL_N1_FIVE_DEFECT_VALUES_2026_10_13.md) first. Actual cutoff moments have been evaluated on all four whole axial cells and combined with the complete Rin-to-infinity pressure tails. The three velocity moments preserve their signed physical sectors and Z1 budgets. Both pressure moments include their actual inner sectors and correct external signs in 512 continuous models, with maximum normalized absolute errors 1.72147e-5 / 2.30066e-5. All tiny inner contributions keep their signs and nonzero allowances.
