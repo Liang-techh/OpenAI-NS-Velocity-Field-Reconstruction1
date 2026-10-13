@@ -1,3 +1,11 @@
+# Latest checkpoint — true original n1 common-inner numerical enclosures, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_INNER_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_NUMERIC_BRIDGE_2026_10_13.md) first. The true unrepaired common-inner n1 now has a same-source directed numerical enclosure API. Original axis, core rho=2 and actual first-collar q=.625 queries have executed with all source errors and complete feedback tails. Both nonaxis queries pass all 12 value/Z1 natural-component budget rows; the maximum relative interval width is about 9.53e-29 in the core and 4.52e-10 in the first collar. Exact production formulas verify all 72 matrix entries, three forcing rows and ordinary amplitude jets under the original physical normalization.
+
+Next bind numerical even radial/cutoff and own-history moment ranges, transfer bounds through the selected five-coefficient inverse, extend required genuine derivatives and construct repaired own M/K/Q/V/P before closing five terminal zeros. Run `python scripts/run_original_n1_inner_numeric_bridge.py` for checked archive-only restoration, or add `--evaluate` for a new original query. Reuse live owners and saved ancestors. The linked detailed checklist is the current work queue.
+
+Full original goal **ACTIVE / INCOMPLETE**. Original numerical common-inner n1 queries are now executed; complete cut-and-repaired numerical fields, coefficient/high-derivative bounds, global matching/heat/stress, genuine n>=2 temporal recursion, oscillatory cancellation and corrected NS validation remain open. Pointwise natural-component interval widths are not NS residuals or uniform global accuracy. Earlier entries are historical.
+
 # Latest checkpoint — full original n1 C1 defects and selected linear coefficients, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md) first. All five true signed defect C1 functions now include the complete lower/preRp/pulse pressure partition and beyond-Rv zero-support theorem. They select actual two axial/three angular coefficient functions and physical compact C1 velocity patches in the same graph. All five algebraic response identities and their Z derivatives passed, with the original physical factors, Astar_Z and nonzero mu retained. The saved graph has 53,398 nodes.
