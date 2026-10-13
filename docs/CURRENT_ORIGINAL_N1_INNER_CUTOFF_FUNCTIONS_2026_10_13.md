@@ -157,6 +157,12 @@ remain unproved.
 
 ## Next executable tasks
 
+The full signed C1 defect functions, selected five C1 coefficients and
+physical C1 repair velocity patches are now installed in
+[CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md).
+The algebraic value/Z1 response identities passed; quantitative coefficient
+bounds, higher derivatives and repaired own terminal fields remain open.
+
 - [x] Recover true even n1 rho1/rho2 functions and regular axis limits.
 - [x] Apply the original flat cutoff to F1/Uz1 with complete rho jets.
 - [x] Recover own mean/M/K/Q/V and pressure, preserving incoming histories.
@@ -168,10 +174,10 @@ remain unproved.
   allowance; never define a field by enclosure centers.
 - [x] Replace the three velocity-support targets with true m11/m12/m14
   endpoint functions; do not consume serialized numeric signed sectors.
-- [ ] `N1-EXTERIOR-PRESSURE-FUNCTIONS`: bind the exact lower collar,
+- [x] `N1-EXTERIOR-PRESSURE-FUNCTIONS`: bind the exact lower collar,
   preRp active/compact/quiet and pulse main/gap/end m13/m15 functions,
   retaining the beyond-Rv zero-support proof and all physical measures.
-- [ ] `N1-FULL-FIVE-DEFECT-FUNCTIONS`: add these Rin functions to the lower,
+- [x] `N1-FULL-FIVE-DEFECT-FUNCTIONS`: add these Rin functions to the lower,
   preRp and full-pulse m13/m15 contributions once; beyond Rv is exact zero.
   Verify endpoint partition and original signs; do not negate m15 again.
 - [ ] Extend genuine pressure defect derivative functions beyond C1 where
@@ -179,7 +185,7 @@ remain unproved.
   factors and source Cauchy losses; do not differentiate source envelopes.
 - [ ] Transfer existing same-source pressure/C5 bounds to the actual new
   function bodies. Include nonzero source errors and higher axial losses.
-- [ ] `N1-LINEAR-REPAIR-FUNCTIONS`: solve the actual two axial/three angular
+- [x] `N1-LINEAR-REPAIR-FUNCTIONS`: solve the actual two axial/three angular C1
   coefficient functions with the reserved linear operator; use its true
   determinant/domain data and the complete signed defect functions.
 - [ ] Rebuild repaired own M/V/P, check zero axis data and prove all five

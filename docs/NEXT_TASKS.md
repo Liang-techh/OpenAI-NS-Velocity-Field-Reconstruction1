@@ -1,3 +1,11 @@
+# Latest checkpoint — full original n1 C1 defects and selected linear coefficients, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md) first. All five true signed defect C1 functions now include the complete lower/preRp/pulse pressure partition and beyond-Rv zero-support theorem. They select actual two axial/three angular coefficient functions and physical compact C1 velocity patches in the same graph. All five algebraic response identities and their Z derivatives passed, with the original physical factors, Astar_Z and nonzero mu retained. The saved graph has 53,398 nodes.
+
+Next attach a same-source directed complete-series evaluator, extend genuine defect/coefficient derivatives, transfer quantitative coefficient/C5 bounds and reconstruct repaired own M/V/P before proving terminal five zeros. Run `python scripts/run_original_n1_full_defect_linear_functions.py` for checked restoration; reuse the retained same-graph owners.
+
+Full original goal **ACTIVE / INCOMPLETE**. The new result is selected C1 functions plus algebraic linear-response identities. Original numerical n1 point evaluation, repaired own-field terminal closure, global matching/heat/stress, genuine n>=2 temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — true original n1 radial cutoff and five inner endpoints, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md) first. The complete regular n1 solution now supplies true even rho1/rho2 functions and exact axis limits. Its original flat cutoff cuts F1/Uz1 only, then recovers own mean/M/K/Q/V/pressure with the full incoming history. All five signed cumulative functions and Rin endpoints have actual bodies. Independent 122 radial/axis and 208 cutoff/history identities passed. Saved radial/cutoff graphs have 52,487/53,165 nodes.
