@@ -1,3 +1,12 @@
+# Latest checkpoint — continuous original lower pressure integrals, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_UNCHANGED_AXIAL_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_UNCHANGED_AXIAL_PRESSURE_2026_10_13.md) first. Original Rin-to-r_minus m13/m15 now have 512 interval affine models covering every real Z in [-1,1], with the genuine source, own mean, nonzero collar errors and original physical scales retained. The maximum absolute model error in a fixed source coefficient normalization is about 2.39045e-4, below 0.001, including at zeros. Continuous Z1 ranges are provided; uniform Z1 approximation accuracy and local relative accuracy remain uncertified. The standalone reproduction CLI supports checking saved models without recomputing cells.
+
+Next correct and accept the Rc-to-2Rc repair-band candidate, evaluate the other active pre-repair charts and Rp-to-Rv pulses, then compose complete signed pressure defects with the three velocity moments. Reuse the lower, O3 and quiet pieces once and exact zero support beyond Rv. Perform n1's original 2+3 repair and own M/V/P recovery before genuine n2/temporal recursion.
+
+Full goal **ACTIVE / INCOMPLETE**. This is uniform absolute precision for one source-normalized radial segment, not complete pressure-tail closure or corrected NS residual validation. All remaining five-moment/pressure/axis joins, higher recursion, global stress, oscillatory cancellation and flat remainder tasks remain open. Follow the linked checklist; earlier sections are historical.
+
+
 # Latest checkpoint — actual unchanged lower pressure integrals, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_UNCHANGED_PRESSURE_PREFIX_2026_10_13.md](CURRENT_ORIGINAL_N1_UNCHANGED_PRESSURE_PREFIX_2026_10_13.md) first. The original unchanged Rin to r_minus segment now has evaluated signed m13/m15 and ordinary Z1 enclosures at Z=0.211,0.371,0.639. All 12 source-normalized relative widths pass 0.001; maximum is about 5.402e-28. Original hb in both physical measures, actual own mean, pressure atoms and nonzero collar comparison errors are retained. A standalone reproduction script loads checked ancestors without rerunning their math suites.
