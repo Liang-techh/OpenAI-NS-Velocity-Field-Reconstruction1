@@ -1,5 +1,7 @@
 # True original n1 common-inner numerical enclosures
 
+Follow-on cutoff/own-history and five inner numerical ranges are now checked. Read [CURRENT_ORIGINAL_N1_CUTOFF_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_CUTOFF_NUMERIC_BRIDGE_2026_10_13.md) for the latest supported scope and next tasks.
+
 The accepted true Volterra functions now have a directed numerical
 enclosure interface. Three queries of the original source and parameters
 have executed: an axis point, an interior core point and an actual
@@ -159,12 +161,12 @@ rejected. Saved archive and receipt source identities and pins must agree.
 
 ## Next implementation queue
 
-- [ ] Bind numerical even rho2 F1/Uz1/mean1 rows to the accepted true radial functions. Away from the axis, use the exact equation and d_x components; do not differentiate numerical seed centers.
-- [ ] Bind second-even axis limits from the genuine forcing/equation jets, preserving ordinary factorials and the distinction between odd x and even rho derivatives.
-- [ ] Wrap the original F1/Uz1 cutoff numerically with q=s/(sc/4), retaining hb^-1/hb^-2 sectors in radial derivatives and the exact flat keep/zero branches.
-- [ ] Recover cutoff own mean/M/K/Q/V from its complete core-plus-collar history. Zero velocities outside support do not make the cumulative mean zero.
-- [ ] Recover cutoff own pressure from original P0/core inlet and the full N1p source. Do not discard pressure merely because cut velocities vanish.
-- [ ] Obtain interval endpoint and signed cumulative ranges for all five true inner moment functions at Rin. Preserve physical drho/dr conversion and all epsilon powers.
+- [x] Bind numerical even rho2 F1/Uz1/mean1 rows to the accepted true radial functions. Away from the axis, use the exact equation and d_x components; do not differentiate numerical seed centers.
+- [x] Bind second-even axis limits from the genuine forcing/equation jets, preserving ordinary factorials and the distinction between odd x and even rho derivatives.
+- [x] Wrap the original F1/Uz1 cutoff numerically with q=s/(sc/4), retaining hb^-1/hb^-2 sectors in radial derivatives and the exact flat keep/zero branches.
+- [x] Recover cutoff own mean/M/K/Q/V from its complete core-plus-collar history. Zero velocities outside support do not make the cumulative mean zero.
+- [x] Recover cutoff own pressure from original P0/core inlet and the full N1p source. Do not discard pressure merely because cut velocities vanish.
+- [x] Obtain interval endpoint and signed cumulative ranges for all five true inner moment functions at Rin. Preserve physical drho/dr conversion and all epsilon powers.
 - [ ] Transfer complete lower/preRp/pulse signed pressure bounds to the new genuine full defect functions, retaining all 17 active charts and all finite endpoint terms.
 - [ ] Transfer value/Z1 quantitative moment bounds through the actual stable five-by-five response inverse, keeping nonzero Astar, mu and the original physical normalizations.
 - [ ] Extend genuine full m13/m15 derivative functions from C1 to the needed C3 order by differentiating original field, integral and implicit definitions.
