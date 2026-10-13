@@ -1,3 +1,12 @@
+# Latest checkpoint — all-chart mean and exact pressure-tail reduction, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_PRESSURE_TAIL_REDUCTION_2026_10_12.md](CURRENT_ORIGINAL_N1_PRESSURE_TAIL_REDUCTION_2026_10_12.md) first. The actual finite-N own mean now admits all 17 original charts and their full native partition unions. The known n1 pressure forcing is exactly zero from actual Rv to infinity, including the upper boundary terms. The actual repaired quiet interval 2Rc to Rp has signed exact pressure primitives with q=-K/R and q_Z=0; retain its nonzero incoming mean.
+
+Next compose and accumulate signed physical pressure moments on the pre-repair charts, genuine Rc to 2Rc repair band and selected Rp to Rv pulse charts, plus the unchanged Rin to r_minus contribution. Use the exact quiet primitives and Rv support theorem, close m13/m15, then compute the original n1 2+3 repair. Actual repaired-exit and local Rp interval interfaces already exist; historical lower-stage missing-callback flags are not current blockers.
+
+Full goal **ACTIVE / INCOMPLETE**. All-chart mean envelopes do not certify full signed pressure defects or temporal recursion. Complete n1 repair, axis remainder/joins, genuine n2, global stress, flat remainder and corrected NS remain open. The linked detailed checklist distinguishes completed interfaces from the remaining construction. Earlier sections are historical.
+
+
 # Latest checkpoint — physical leading U/q and ten pressure moment inputs, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_PHYSICAL_PRESSURE_FIELDS_2026_10_12.md](CURRENT_ORIGINAL_N1_PHYSICAL_PRESSURE_FIELDS_2026_10_12.md) first. The original baseline own mean and actual finite-N partial mean now combine in physical units, with S=Pstar applied once. Leading U/m through Z3 and meridional q through Z2 supply ten honest value/Z1 nonradial pressure integrands and same-cell defining integrals/whole-cell magnitude bounds. Two actual micro queries, a 35-row independent smooth physical fixture and a checked-owner public query execute.
