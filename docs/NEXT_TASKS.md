@@ -1,3 +1,12 @@
+# Latest checkpoint — complete external original n1 pressure, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_EXTERNAL_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_EXTERNAL_PRESSURE_2026_10_13.md) first. Original m13/m15 external integrals now cover the actual Rin to infinity continuously for every real Z in [-1,1]. The accepted 512 lower collar cells and 256 upper models form 512 common cells. Maximum absolute errors in the fixed original pressure units are 1.72147e-5 / 2.30066e-5. Actual signed lower coefficients, positive uncertain scale ratios, both Taylor remainders and all nonzero source errors are retained. Existing model archives are reused without parent field reconstruction or re-integration.
+
+Next use the already checked n1 radial cutoff interface: evaluate(Z,"1","first",cells=4), then physical_cutoff_moment_values_at_Rin. Combine its actual signed m13/m15 with these external integrals (the external m15 already includes its minus sign), and join the three velocity moments. Preserve own M/V/P and the independent P0 datum. The linked checklist specifies full axial-cell coverage, derivative accuracy and original 2+3 repair before n2.
+
+Full original goal **ACTIVE / INCOMPLETE**. Complete external pressure values are available; inner cutoff moment composition, five functional defects/repair, full pressure derivatives, stress, true temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entry sections are historical.
+
+
 # Latest checkpoint — original r-minus-to-infinity pressure values, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_REMAINING_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_REMAINING_PRESSURE_2026_10_13.md) first. The 17 active pre-Rc charts now have 68 genuine full-chart value packets over all four Z cells, with exact original geometry and finite viscous endpoints. They are combined with the accepted compact/quiet pieces and whole outer pulse, plus exact meridional zero support beyond Rv. All 256 full-Z models now cover r_minus to infinity; fixed-source-normalized maximum errors remain 1.72147e-5 / 2.30066e-5. Every pre-Rp piece is proved below exp(-1000), retained as a nonzero error after symbolic shared-Rc cancellation.
