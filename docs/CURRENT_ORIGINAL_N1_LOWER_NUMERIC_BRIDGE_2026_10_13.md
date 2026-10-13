@@ -129,11 +129,11 @@ the repaired-family and recursion gates.
 - [x] Retain actual core/ratio/Psi/mean histories and all Cauchy comparison errors.
 - [x] Execute two original points and the full real-Z interval enclosure.
 - [x] Compose a same-source actual Rin packet through rminus for all five moments.
-- [ ] Bind pre-Rp active/compact/quiet histories and derivative enclosures to the true C1 functions. Family/hash equality alone is insufficient.
-- [ ] For active pre-Rp source, bind all 17 true charts, 68 numerical chart views and 228 native cells; compare the seven S0/nine S1 physical terms and both finite endpoint derivatives. At O3 retain q_y=-q and q_yZ=-q_Z.
-- [ ] For compact pre-Rp source, bind the actual repair-band C3 rows, selected N and repair integer, Pstar applied once, full incoming histories and `recover_Q_increment`; use the accepted `normalized_first_Z_upper` only as a symmetric derivative enclosure.
-- [ ] For quiet pre-Rp source, compare the exact K=Rp Pstar kappa recipe and signed value formulas; preserve their exact Z1=0 without zeroing other fields.
-- [ ] Convert pre-Rp magnitude bounds with `preRp_pressure_source.Rc_unit_log`, canceling common Rc first. Use physical power 1 for m13 and power 2 for m15. Magnitude caps do not supply signed centers.
+- [x] Bind pre-Rp active/compact/quiet histories and derivative enclosures to the true C1 functions using live exact function replay and all 228 original primitive handles. See [the pre-Rp numerical bridge](CURRENT_ORIGINAL_N1_PRERP_NUMERIC_BRIDGE_2026_10_13.md).
+- [x] For active pre-Rp source, bind all 17 true charts, 68 numerical chart views and 228 native cells; compare the seven S0/nine S1 physical terms and both finite endpoint derivatives. At O3 retain q_y=-q and q_yZ=-q_Z.
+- [x] For compact pre-Rp source, bind the actual repair-band C3 rows, selected N and repair integer, Pstar applied once, full incoming histories and `recover_Q_increment`; use the accepted `normalized_first_Z_upper` only as a symmetric derivative enclosure.
+- [x] For quiet pre-Rp source, compare the exact K=Rp Pstar kappa recipe and signed value formulas; preserve their exact Z1=0 without zeroing other fields.
+- [x] Convert pre-Rp magnitude bounds with `preRp_pressure_source.Rc_unit_log`, canceling common Rc first. Use physical power 1 for m13 and power 2 for m15. Magnitude caps do not supply signed centers.
 - [ ] Bind pulse main/gap/end rows, quadratic and viscous errors, selected finite N, incoming mean and energy histories to the true pulse FunctionRefs.
 - [ ] Compose lower/pre-Rp/pulse contributions exactly once; apply beyond-Rv zero support only to the pressure forcing integrals it covers.
 - [ ] Enclose all five complete true moment functions and their genuine first Z derivatives in common physical units.
