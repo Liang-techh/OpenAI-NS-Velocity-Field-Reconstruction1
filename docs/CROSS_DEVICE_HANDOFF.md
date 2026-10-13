@@ -1,3 +1,11 @@
+# Latest checkpoint — exact original pulse kernel functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_FUNCTION_KERNELS_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_FUNCTION_KERNELS_2026_10_13.md) first. Original finite-mu A/D, determinant, beta normalization, gp/main rows, Kpulse, incoming factors and nonzero end energy now have real integral bodies in the checked pre-Rp/linear repair graph. The actual native u/m1/m2/energy C1 functions, original conditional positive-root selector and direct bump-integral/nonconstant first-Z fixtures are installed. No kernel interval center or end-energy zero is selected as a source constant.
+
+Next bind the complete future-energy C1 function, prove the admitted positive branch, select actual pulse coefficients from the installed genuine native inlet, and build its own mean/q/full pressure functions. For the lower collar, first bind the true core fixed-point corrections; Bessel/linear core models and tiny cutoff caps are not those functions. The detailed checklist gives actual equations and measures. Reuse saved adapters; do not rerun pressure grids.
+
+Full original goal **ACTIVE / INCOMPLETE**. Full-pulse and inner/lower-collar function binding, actual full n1 corrections, five terminal identities, heat/stress, true temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier sections are historical.
+
 # Latest checkpoint — signed original n1 pre-Rp C1 functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PRE_RP_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_PRE_RP_FUNCTIONS_2026_10_13.md) first. Genuine active/compact/quiet m13/m15 value and first-Z functions now share the accepted n1 linear operator graph. All 17 active charts, actual finite-N histories, original physical units/Jacobians, lower true Uy/UyZ, upper q_y=-q, and exact quiet primitives are retained. The focused direct physical N1p/C1 fixture, 22,811 source-node relocation checks and archive-only restore passed. The restored graph has 31,222 nodes; these are function definitions, not selected full defect coefficient values.
