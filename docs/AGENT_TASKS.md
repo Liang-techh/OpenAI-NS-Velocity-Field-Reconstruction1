@@ -1,3 +1,11 @@
+# Latest checkpoint — actual original lower-collar functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md) first. The true nonlinear core now continues through Rin-to-r_minus by actual prescribed-shear integrals, retaining its own rho4 mean and pressure histories. Both signed n1 pressure C1 functions use exact nonzero hb/sc, physical measures and both viscous radial derivatives. Independent nonconstant ratio C3, own-history and direct physical-R pressure checks passed. The saved common graph has 36,594 nodes.
+
+Next bind the genuine regular six-row n1 Volterra solution, then its solenoidal inner cutoff and signed endpoint sectors; existing finite words plus tail enclosures are not selected functions. Complete the remaining signed lower targets, transfer quantitative bounds, compose all five defects and select actual linear n1 repair. Run `python scripts/run_original_n1_lower_collar_functions.py` for checked restoration. Reuse saved ancestors and the linked exact equation/task map.
+
+Full original goal **ACTIVE / INCOMPLETE**. Original collar point accuracy, complete five-defect binding, repaired own terminal identities, global matching/heat/stress, genuine temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — actual original nonlinear core functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md) first. The admitted true Phi/Psi/mean_Psi now share the complete pulse graph, with the actual twenty-term map, root-anchored G/F0 and same native P0. Exact parameter/source guards and a cold actual nonlinear oracle check passed. Numerical outputs are coefficient enclosures plus full analytic tails; no midpoint defines a source function. The saved common graph has 35,819 nodes.

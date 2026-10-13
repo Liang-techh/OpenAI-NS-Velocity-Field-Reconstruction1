@@ -136,7 +136,7 @@ complete three-dimensional corrected Navier–Stokes solution.
   and structural affine-row removal.
 - [x] Guard exact source/parameter identity and provide lazy restore
   and explicit numerical-enclosure commands.
-- [ ] `N1-LOWER-COLLAR-FUNCTIONS`: substitute rho=Lambda*R into
+- [x] `N1-LOWER-COLLAR-FUNCTIONS`: substitute rho=Lambda*R into
   these same functions on Rin<=R<=r_minus. Recover the prescribed
   collar velocity, cumulative mean and pressure without resetting
   incoming histories. Preserve physical/logarithmic Jacobians and
@@ -163,3 +163,7 @@ complete three-dimensional corrected Navier–Stokes solution.
   with fixed/restricted forcing and both norms below 1e-3.
 
 The complete goal and deliverables remain in [PROJECT_GOAL.md](PROJECT_GOAL.md).
+
+The lower-collar bridge is now checked; continue from
+[CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md),
+including the newly explicit true inner n1 Volterra prerequisite.
