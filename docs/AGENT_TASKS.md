@@ -1,3 +1,11 @@
+# Latest checkpoint — original n1 finite pressure endpoint C1, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_ENDPOINT_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_ENDPOINT_C1_2026_10_13.md) first. Genuine lower U_yZ/U_ZZ source rows and the upper q_yZ=-q_Z identity are now checked on all four axial cells. Signed finite boundary operators, original nonlocal histories and one physical Pstar scale remain retained. The new endpoint C1 quartet has passed its focused independent checks; complete pressure C1 and actual repair remain open.
+
+Next improve the same-source pre-Rp m_ZZZ/q_ZZ bound and consume it with these finite endpoint derivatives in the original reduced-S pressure integrals. Compose inner-cut, lower-collar and outer-pulse C1 data, then bind genuine signed defect functions to the installed n1 linear operator and compute actual repair coefficients. A scratch Fourier L2 estimate is not yet an accepted pressure result.
+
+Full original goal **ACTIVE / INCOMPLETE**. This local source dependency does not close repaired own M/V/P, the five terminal identities, temporal recursion, stress cancellation or corrected NS validation. Earlier entries are historical.
+
 # Latest checkpoint — original outer-pulse C1 pressure accuracy, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_C1_2026_10_13.md) first. The original Rp-to-Rv pressure now has checked first-Z derivative sources and a separate 4096-cell derivative grid across the full axial domain. Maximum normalized absolute errors are .0005117131891907913 (m13) and .0001210322320544479 (m15), below the local .001 threshold. Genuine C5 order-three energy inputs, all reduced-S coefficient derivatives, nonzero quadratic errors and the signed finite weighted endpoint derivative are retained. The first-derivative Taylor budget is linear in half-width; an independent polynomial fixture rejects the value-style squared-width estimate.
