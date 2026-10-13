@@ -1,3 +1,12 @@
+# Latest checkpoint — original end-pulse pressure values, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_END_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_END_PRESSURE_2026_10_13.md) first. Actual end-pulse m13/m15 now have 256 interval affine models covering every real Z in [-1,1], with maximum fixed-source-normalized absolute errors 2.46745e-5 and 2.30066e-5. The same original C5 coefficient functions, first-row cancellation, finite-mu X remainder, physical U/own-mean/q, nonzero quadratic sources and weighted viscous endpoint are retained. Original positive physical units are factored symbolically before huge exponent arithmetic.
+
+Next evaluate the remaining entrance/main/exit/gap/gap-end pulses and other active pre-repair charts using the same correlated source. Compose each accepted lower/O3/compact/quiet/end piece once, close complete m13/m15 with the three velocity moments, and perform n1's original 2+3 repair and own M/V/P restoration before genuine n2/temporal recursion. The linked checklist specifies source units, pressure measures, functional closure and completion evidence.
+
+Full goal **ACTIVE / INCOMPLETE**. This is pressure accuracy for the actual end radial segment. Complete signed tails, n1 repairs, full pressure derivative accuracy, global stress, temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Earlier sections are historical.
+
+
 # Latest checkpoint — actual refined original pulse coefficients, 2026-10-13
 
 Read [CURRENT_ORIGINAL_RP_REFINED_COEFFICIENTS_2026_10_13.md](CURRENT_ORIGINAL_RP_REFINED_COEFFICIENTS_2026_10_13.md) first. The refined original pulse integrals now enter the original divided inverse and positive quadratic branch. Actual ap/C1/C2 are evaluated through C5 on all four full axial cells plus Z=.371. Value relative widths are 5.67298e-6 for ap and 6.18983e-5 for both signed end coefficients, below .001. With one consistent minimum-absolute-endpoint normalization, the previous end widths were .0622706; the refinement is about 1006 times narrower. Genuine incoming and complete future energy, finite nonzero mu and end-energy terms are retained.
