@@ -150,6 +150,7 @@ identities and exact byte pins must agree.
 
 ## Next tasks
 
+- [x] Bind true lower-collar m13/m15 C1 numerical enclosures and compose the actual Rin history through rminus. See [the lower numerical bridge](CURRENT_ORIGINAL_N1_LOWER_NUMERIC_BRIDGE_2026_10_13.md); the remaining preRp/pulse pressure transfer stays open.
 - [ ] Attach the complete exterior pressure enclosers to the true lower/preRp/pulse C1 functions using the same source, original radii, native histories and actual finite-N fields.
 - [ ] Compose numerical ranges of all five complete true C1 defect functions, retaining both nonzero pressure tails and all errors.
 - [ ] Transfer these ranges through the physical reserved response inverse to the actual selected alpha/beta functions; do not choose interval centers as coefficients.
