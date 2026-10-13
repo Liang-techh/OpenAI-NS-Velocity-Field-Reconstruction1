@@ -1,3 +1,12 @@
+# Latest checkpoint — full pre-repair n1 five-moment values, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_FIVE_DEFECT_VALUES_2026_10_13.md](CURRENT_ORIGINAL_N1_FIVE_DEFECT_VALUES_2026_10_13.md) first. Actual cutoff moments have been evaluated on all four whole axial cells and combined with the complete Rin-to-infinity pressure tails. The three velocity moments preserve their signed physical sectors and Z1 budgets. Both pressure moments include their actual inner sectors and correct external signs in 512 continuous models, with maximum normalized absolute errors 1.72147e-5 / 2.30066e-5. All tiny inner contributions keep their signs and nonzero allowances.
+
+Next bind genuine signed defect function/Z handles and the actual positive angular amplitude, then implement Section 15's linear axial pair and angular triple repair. The leading nonlinear finite-N Rc control map is a distinct layer. An exact gap between its existing bump supports can host narrower new n1 bumps; that autonomous choice needs new support/normalization/determinant proofs. Preserve all nonlocal histories and recover the repaired family's own M/V/P.
+
+Full original goal **ACTIVE / INCOMPLETE**. Complete pre-repair five-moment value enclosures are available; full pressure derivatives, coefficient function selection/repair identities, repaired fields, stress, actual temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
+
 # Latest checkpoint — complete external original n1 pressure, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_EXTERNAL_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_EXTERNAL_PRESSURE_2026_10_13.md) first. Original m13/m15 external integrals now cover the actual Rin to infinity continuously for every real Z in [-1,1]. The accepted 512 lower collar cells and 256 upper models form 512 common cells. Maximum absolute errors in the fixed original pressure units are 1.72147e-5 / 2.30066e-5. Actual signed lower coefficients, positive uncertain scale ratios, both Taylor remainders and all nonzero source errors are retained. Existing model archives are reused without parent field reconstruction or re-integration.
