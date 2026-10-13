@@ -1,3 +1,12 @@
+# Latest checkpoint — actual unchanged lower pressure integrals, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_UNCHANGED_PRESSURE_PREFIX_2026_10_13.md](CURRENT_ORIGINAL_N1_UNCHANGED_PRESSURE_PREFIX_2026_10_13.md) first. The original unchanged Rin to r_minus segment now has evaluated signed m13/m15 and ordinary Z1 enclosures at Z=0.211,0.371,0.639. All 12 source-normalized relative widths pass 0.001; maximum is about 5.402e-28. Original hb in both physical measures, actual own mean, pressure atoms and nonzero collar comparison errors are retained. A standalone reproduction script loads checked ancestors without rerunning their math suites.
+
+Next correct the original absolute Rc binding and physical integration measures in the Rc to 2Rc repair-band candidate, then accept its actual pressure calculation. Evaluate remaining active pre-repair charts and Rp to Rv pulses, and extend absolute-error control across Z sign changes. Reuse the evaluated lower, O3 and quiet segments and exact zero support beyond Rv. Combine full m13/m15 defects with the three velocity moments, then perform n1's 2+3 repair. Finite-N high-derivative averaging bounds remain open.
+
+Full goal **ACTIVE / INCOMPLETE**. Named source-normalized point precision does not establish uniform axial accuracy, complete pressure defects or n1 repair. Axis/joins, genuine n2/temporal recursion, global stress, flat remainder and corrected NS remain open. Follow the linked completed/open checklist; earlier sections are historical.
+
+
 # Latest checkpoint — actual signed O3 pressure values on all four axial cells, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_O3_PRESSURE_VALUES_2026_10_12.md](CURRENT_ORIGINAL_N1_O3_PRESSURE_VALUES_2026_10_12.md) first. The complete original O3_power segment [Rc*exp(-2),Rc] now has evaluated signed m13/Rc and m15/Rc squared intervals on all four accepted axial cells covering Z in [-1,1]. The actual finite-N incoming mean is retained; its value error is below 1e-60 relative to the baseline, with a nonzero directed allowance. Maximum normalized relative width is about 0.0002803156569, below 0.001. Absolute Rc, N and signed source functions remain source-bound.
