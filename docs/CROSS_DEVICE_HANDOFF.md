@@ -1,3 +1,12 @@
+# Latest checkpoint — actual signed O3 pressure values on all four axial cells, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_O3_PRESSURE_VALUES_2026_10_12.md](CURRENT_ORIGINAL_N1_O3_PRESSURE_VALUES_2026_10_12.md) first. The complete original O3_power segment [Rc*exp(-2),Rc] now has evaluated signed m13/Rc and m15/Rc squared intervals on all four accepted axial cells covering Z in [-1,1]. The actual finite-N incoming mean is retained; its value error is below 1e-60 relative to the baseline, with a nonzero directed allowance. Maximum normalized relative width is about 0.0002803156569, below 0.001. Absolute Rc, N and signed source functions remain source-bound.
+
+The Z1 accuracy gate remains false because the third mean / Q_ZZ direct bound is coarse. Next compute unchanged Rin to r_minus, active pre-repair charts, the genuine Rc to 2Rc repair band and selected Rp to Rv pulses. Reuse the evaluated O3 and quiet segments and the exact zero tail beyond Rv; sum complete m13/m15 defects, then perform n1's 2+3 repair. The phase-averaging identity exists, but its genuine mixed slow-y numerical cap remains unavailable.
+
+Full goal **ACTIVE / INCOMPLETE**. Accurate segment values do not establish complete pressure defects or n1 repair. Axis/joins, genuine n2/temporal recursion, global stress, flat remainder and corrected NS remain open. Follow the linked completed/open checklist; earlier sections are historical.
+
+
 # Latest checkpoint — signed mean phase-averaging identity, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_PHASE_AVERAGING_2026_10_12.md](CURRENT_ORIGINAL_N1_PHASE_AVERAGING_2026_10_12.md) first. The original all-chart finite-N own mean now has source-bound Z0-Z3 periodic phase primitives and endpoint-retaining integration-by-parts functions. The predecessor memory, selected N, original phase and native Jacobian are retained; inner and outer integration variables are distinct. Four independent production identity rows and one genuine first_micro source query pass.
