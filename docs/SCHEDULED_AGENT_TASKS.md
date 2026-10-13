@@ -1,3 +1,12 @@
+# Latest checkpoint — actual signed quiet pressure contribution, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_QUIET_PRESSURE_SOURCE_2026_10_12.md](CURRENT_ORIGINAL_N1_QUIET_PRESSURE_SOURCE_2026_10_12.md) first. The actual native mean kernel is now evaluated with directed quadrature error and retained positive tails. Exact Pstar/logP and Rp/Tw cancellations give the signed quiet m13/m15 contribution as coefficients times the absolute original Rc/Rc squared source scales. Both normalized coefficient widths are below 0.001 (maximum 0.0002803156569). This covers the genuine repaired 2Rc to Rp quiet segment.
+
+Next accumulate the remaining actual pre-repair, Rc to 2Rc repair-band and Rp to Rv pulse pressure contributions, plus unchanged Rin to r_minus. The 17-chart mean atlas and exact zero pressure-forcing tail beyond Rv are already available. Combine all five defects and perform the n1 2+3 repair; preserve signed source correlations rather than replacing field values by caps.
+
+Full goal **ACTIVE / INCOMPLETE**. The quoted width is for normalized quiet coefficients, not full physical/global accuracy. Complete signed pressure tails, n1 repair, axis remainder/joins, genuine n2/temporal recursion, global stress, flat remainder and corrected NS remain open. Earlier sections are historical.
+
+
 # Latest checkpoint — all-chart mean and exact pressure-tail reduction, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_PRESSURE_TAIL_REDUCTION_2026_10_12.md](CURRENT_ORIGINAL_N1_PRESSURE_TAIL_REDUCTION_2026_10_12.md) first. The actual finite-N own mean now admits all 17 original charts and their full native partition unions. The known n1 pressure forcing is exactly zero from actual Rv to infinity, including the upper boundary terms. The actual repaired quiet interval 2Rc to Rp has signed exact pressure primitives with q=-K/R and q_Z=0; retain its nonzero incoming mean.
