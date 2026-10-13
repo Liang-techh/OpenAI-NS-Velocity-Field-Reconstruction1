@@ -1,5 +1,7 @@
 # Exact original Gamma future C1 functions, 2026-10-13
 
+The following adapter is now consumed by the checked [complete future and selected pulse coefficient functions](CURRENT_ORIGINAL_N1_COMPLETE_FUTURE_FUNCTIONS_2026_10_13.md). Read that newer checkpoint for current completed/open tasks; the queue below records the earlier dependency stage.
+
 The three complete Gamma heat-defect functions now have actual integral
 bodies and first axial derivatives in the original n1 repair graph. The
 adapter also imports the genuine native angular inlet and logRp, transports

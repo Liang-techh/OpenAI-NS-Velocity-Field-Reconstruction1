@@ -1,3 +1,11 @@
+# Latest checkpoint — actual complete future and pulse coefficient C1 functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_COMPLETE_FUTURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_COMPLETE_FUTURE_FUNCTIONS_2026_10_13.md) first. Genuine small angular coefficients and the complete future swirl energy now feed actual original ap/C1/C2 function selection in the same n1 graph. Explicit native-memory/flatten/Gamma source identities transfer the original bounds. A fresh whole-Z interval proof places ap approximately in [1.0100453347,1.0100510647] inside (.9,1.2), with positive derivative denominator and the original end-coefficient signs. Direct physical-energy and implicit-derivative fixtures passed; no interval centers define coefficients.
+
+Next extend true derivative functions where q/pressure requires them, build main/gap/end own velocity and cumulative mean, then both full pulse pressure C1 functions. Bind the true nonlinear core/lower collar and compose the five full defects for linear n1 repair. The linked checklist records exact equations, normalizations and limits. Reuse checked adapters; do not rerun pressure grids.
+
+Full original goal **ACTIVE / INCOMPLETE**. Full-pulse pressure, repaired own M/V/P and terminal identities, heat/stress closure, true temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — exact Gamma future C1 functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_GAMMA_FUTURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_GAMMA_FUTURE_FUNCTIONS_2026_10_13.md) first. The actual Gamma deficit and three complete future heat-defect C1 functions now share the accepted n1 graph, including the entire infinite exterior. Genuine native X/logRp, pulse memory, flatten/steep histories, scalar waiting and exact nonzero S=1/Rtail are retained. Direct Gamma, full-tail/first-Z, independent ODE and checked-restoration tests passed; numerical caps are not source values.
