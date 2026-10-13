@@ -1,3 +1,12 @@
+# Latest checkpoint — actual compact repair-band pressure values, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_REPAIR_BAND_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_REPAIR_BAND_PRESSURE_2026_10_13.md) first. Rc-to-2Rc m13/m15 are evaluated on all four original full axial cells: m13 positive, m15 negative, coefficient relative width about 2.80316e-4. The actual finite-N source, own mean, absolute Rc, correct x Jacobians, finite q_R endpoints and tiny delta are retained. Independent checks and a public evaluated query at default global precision passed. The previously published lower pressure segment already has continuous absolute models on every Z in [-1,1].
+
+Next refine the actual outer pulse saddle rows and preserve end-coefficient correlation, evaluate the other active pre-repair charts and Rp-to-Rv pulses, then compose full pressure defects with the three velocity moments. An actual pulse query currently gives about 5.862% width in scaled end coefficients; the same original source integrals need tighter evaluation before precise pulse pressure claims. Reuse lower/O3/compact-band/quiet segments once and exact zero support beyond Rv. Perform n1's original 2+3 repair and own M/V/P recovery before genuine n2/temporal recursion.
+
+Full goal **ACTIVE / INCOMPLETE**. The compact-band gate certifies pressure values for one radial segment. Uniform pressure derivative accuracy, full signed tails, n1 repairs, global stress, temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Follow the linked completed/open checklist; earlier sections are historical.
+
+
 # Latest checkpoint — continuous original lower pressure integrals, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_UNCHANGED_AXIAL_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_UNCHANGED_AXIAL_PRESSURE_2026_10_13.md) first. Original Rin-to-r_minus m13/m15 now have 512 interval affine models covering every real Z in [-1,1], with the genuine source, own mean, nonzero collar errors and original physical scales retained. The maximum absolute model error in a fixed source coefficient normalization is about 2.39045e-4, below 0.001, including at zeros. Continuous Z1 ranges are provided; uniform Z1 approximation accuracy and local relative accuracy remain uncertified. The standalone reproduction CLI supports checking saved models without recomputing cells.
