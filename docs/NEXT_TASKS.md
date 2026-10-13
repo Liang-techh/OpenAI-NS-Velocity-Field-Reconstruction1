@@ -1,4 +1,8 @@
-# Current queue — true pulse numerical transfer, 2026-10-13
+# Current queue — shared physical units and complete numerical five defects, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md). True pulse value/Z1 enclosure transfer is implemented with corrected nonlinear derivative-error units. Next compose inner/lower/pre-Rp/pulse in a shared physical log frame, then transfer five defects through the actual reserved inverse and reconstruct repaired own fields. Reuse retained owners; do not regenerate historical grids. Full original goal remains active and incomplete.
+
+# Earlier queue — true pulse numerical transfer, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md). Native scalar/callback/Taylor/factor source identity is complete. The next unchecked task is the main/gap/end true pressure C1 numerical bridge, followed by shared-unit complete five moments and actual reserved repair. Reuse retained source owners and checked archives; do not rerun historical grids. Keep the full original goal active and incomplete.
 

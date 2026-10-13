@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — true pulse numerical transfer, 2026-10-13
+# Current scheduled-agent queue — complete numerical moments and repair, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md) and take its next unchecked dependency: shared-unit complete five defects, then actual reserved repair. Preserve corrected C1 errors, physical scale recipes and full histories. Reuse accepted source owners and archives. Keep the full research goal incomplete until repair, matching/stress, recursion and corrected NS requirements are proven.
+
+# Earlier scheduled-agent queue — true pulse numerical transfer, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md) and take its next unchecked dependency. Native source identities are complete; pressure transfer, shared-unit full moments and actual repair are next. Mark a task checked only with its scoped evidence, commit the checkpoint, and retain the complete original research objective. Do not regenerate accepted 4096-cell or historical grids.
 

@@ -1,4 +1,8 @@
-# Latest checkpoint — exact native-to-numerical pulse source join, 2026-10-13
+# Latest checkpoint — true complete pulse C1 numerical enclosures, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md) first. Actual main/gap/end pressure functions now have directed value/Z1 enclosures in explicit reference*A*Rv powers, with exact scale and finite endpoint identities. The old extra A/reference factor in the nonlinear C1 error is removed. Point, common-boundary and whole-Z queries execute; all nonzero errors and signed m15 endpoints remain. Next combine the four pressure components in one physical log frame, compose five defects and transfer the actual reserved inverse. Full goal **ACTIVE / INCOMPLETE**; the linked checklist is authoritative.
+
+# Earlier checkpoint — exact native-to-numerical pulse source join, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md) first. Current native scalar functions, copied selected callbacks and all six incoming Taylor rows now have an exact production-source join. Energy Z4/Z6 and once-applied row factors are retained. Existing pulse numerical owners and the accepted 4096-cell C1 archive are live. Next transfer their pressure enclosures to main/gap/end true functions, then compose complete five defects and actual reserved repair. Full goal **ACTIVE / INCOMPLETE**; the linked checklist is authoritative. Earlier entries are historical.
 

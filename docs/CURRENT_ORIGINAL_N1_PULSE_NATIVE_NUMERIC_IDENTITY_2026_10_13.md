@@ -26,14 +26,16 @@ The retained interactive Python session is 55770. Live objects include `full_own
 
 ## Next work, in dependency order
 
-- [ ] Add the true pulse C1 numerical bridge requiring this accepted native identity and the retained `CurrentOriginalN1PulsePressureC1Source` as the enclosure provider.
-- [ ] Replay main/gap/end own fields and complete pressure integrals in the same true graph. Require original domains xi=[0,11], xi=[11,13−4mu], s=[−4,0], with measures R/mu, R/mu, R respectively.
-- [ ] Identify the numerical selected coefficient and full future-energy source with the accepted true finite-mu A/D/Pi/Gram/root recipes. Keep all end-energy and incoming-factor caps as enclosures of nonzero functions.
-- [ ] Execute the universal normalized linear moment reduction against actual pressure S0/S1 bodies, including ordinary first Z derivatives and the finite lower mean.
-- [ ] Retain the Fprime source, finite-mu Wplus and rho remainders, positive Kmain and Rp/Rv enclosures. Neither a tiny main contribution nor a finite lower endpoint is zero.
-- [ ] Retain every quadratic C0/C1 energy/Cauchy error, qZZ source bound and signed weighted viscous endpoint `-qinit*invRv/reference` and its derivative. m15's minus is already applied once.
-- [ ] Make the positive reference `10.99 sqrt(2pi)(exp(5)−exp(3))` explicit. The numerical pulse outputs are divided by reference*A*Rv (m13) or reference*A*Rv² (m15). Restore reference exactly once when composing physical components; do not apply Pstar or A twice.
-- [ ] Execute fresh original point, shared-cell-boundary and continuous whole-Z queries without choosing enclosure centers as function values.
+Update: the true pulse C1 bridge and corrected derivative-error units are now recorded in [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md). Its checklist is the current queue. The native source join below remains its checked prerequisite.
+
+- [x] Add the true pulse C1 numerical bridge requiring this accepted native identity and the retained `CurrentOriginalN1PulsePressureC1Source` as the enclosure provider.
+- [x] Replay main/gap/end own fields and complete pressure integrals in the same true graph. Require original domains xi=[0,11], xi=[11,13−4mu], s=[−4,0], with measures R/mu, R/mu, R respectively.
+- [x] Identify the numerical selected coefficient and full future-energy source with the accepted true finite-mu A/D/Pi/Gram/root recipes. Keep all end-energy and incoming-factor caps as enclosures of nonzero functions.
+- [x] Execute the universal normalized linear moment reduction against actual pressure S0/S1 bodies, including ordinary first Z derivatives and the finite lower mean.
+- [x] Retain the Fprime source, finite-mu Wplus and rho remainders, positive Kmain and Rp/Rv enclosures. Neither a tiny main contribution nor a finite lower endpoint is zero.
+- [x] Retain every quadratic C0/C1 energy/Cauchy error, qZZ source bound and signed weighted viscous endpoint `-qinit*invRv/reference` and its derivative. m15's minus is already applied once.
+- [x] Make the positive reference `10.99 sqrt(2pi)(exp(5)−exp(3))` explicit. The numerical pulse outputs are divided by reference*A*Rv (m13) or reference*A*Rv² (m15). Restore reference exactly once when composing physical components; do not apply Pstar or A twice.
+- [x] Execute fresh original point, shared-cell-boundary and continuous whole-Z queries without choosing enclosure centers as function values.
 - [ ] Convert inner/lower/pre-Rp/pulse pressure components to one shared physical logarithmic unit frame and compose complete signed five C1 defects.
 - [ ] Transfer complete defect enclosures through the actual two-axial/three-angular reserved inverse, retaining Astar_Z and nonzero mu. Report actual coefficient budgets.
 - [ ] Extend the needed genuine C3/C5 defect and coefficient bounds; do not claim uniform full pressure derivative accuracy from the old local grid alone.

@@ -1,4 +1,8 @@
-# Current agent queue — true pulse numerical transfer, 2026-10-13
+# Current agent queue — complete numerical five defects and actual repair, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md). Transfer is complete for pulse value/Z1; its corrected C1 error supersedes the old twice-normalized error. Combine all four pressure components with exact physical log units and reference once, then compute actual reserved coefficient bounds and repaired own M/K/Q/V/P. Five terminal zeros and genuine recursion remain open.
+
+# Earlier agent queue — true pulse numerical transfer, 2026-10-13
 
 Use the checked/open tasks in [CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md). The native provenance join is implemented; pressure enclosure transfer and complete five-moment repair remain open. Preserve directed errors, signed m15, full histories and exact original physical units. Reuse retained owners and archives. Do not mark recursion or corrected NS complete from a local source gate.
 
