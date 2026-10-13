@@ -1,3 +1,11 @@
+# Latest checkpoint — complete original n1 pressure-moment C1, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_COMPLETE_PRESSURE_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_COMPLETE_PRESSURE_C1_2026_10_13.md) first. Complete m13/m15 first-Z derivatives now include the inner cutoff and all Rin-to-infinity pieces on 4096 axial cells, with maximum errors approximately .0005117131891907913 / .0001210322320544479 in fixed original positive units, both below .001. Same-function Fourier C3 bounds have been consumed by the five targets, same implicit control branch, compact fields, active m_ZZZ/q_ZZ and pressure integrals. Original N, nonlocal histories, signed finite endpoints and nonzero source errors remain retained.
+
+Next bind genuine signed full five-defect C1 functions to the installed n1 linear operator and compute actual alpha/beta functions. Recover the repaired family's own M/V/P and terminal identities. Numerical enclosures and grid slopes are not selected coefficient functions; further derivative-grid refinement is not the next task.
+
+Full original goal **ACTIVE / INCOMPLETE**. Actual n1 repaired fields, terminal five zeros, heat/stress constraints, genuine temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — original n1 finite pressure endpoint C1, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_ENDPOINT_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_ENDPOINT_C1_2026_10_13.md) first. Genuine lower U_yZ/U_ZZ source rows and the upper q_yZ=-q_Z identity are now checked on all four axial cells. Signed finite boundary operators, original nonlocal histories and one physical Pstar scale remain retained. The new endpoint C1 quartet has passed its focused independent checks; complete pressure C1 and actual repair remain open.
