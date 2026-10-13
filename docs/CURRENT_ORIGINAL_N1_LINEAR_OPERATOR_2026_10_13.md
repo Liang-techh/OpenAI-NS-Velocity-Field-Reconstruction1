@@ -77,7 +77,7 @@ The checker independently integrates the physical bump measures with Rc=3.7, Ast
 - [x] Independently check nonunit physical weights, five-moment signs and C1 derivatives.
 - [ ] Bind complete signed defect functions and genuine Z derivatives; do not select current interval values as functions.
 - [ ] Complete full pressure C1 source enclosures. The existing pre-Rp q-Z2 magnitude archive is too wide to close this gate; use correlated signed derivative integrals or a sharper actual q-Z2 source.
-- [ ] Consume the bounded outer-pulse C1 adapter only after its actual source and independent reduced-S derivative checks pass.
+- [x] Consume the checked [outer-pulse C1 source and local derivative grid](CURRENT_ORIGINAL_N1_PULSE_C1_2026_10_13.md); full pressure derivative composition remains open.
 - [ ] Extend finite lower endpoint recovery using genuine U_yZ and U_ZZ rows.
 - [ ] Install actual alpha(Z)/beta(Z), add the corrections to F1/Uz1 and recover that family's own M/V/P.
 - [ ] Prove all five terminal identities as functions and check repaired support/joins/axis/heat compatibility.

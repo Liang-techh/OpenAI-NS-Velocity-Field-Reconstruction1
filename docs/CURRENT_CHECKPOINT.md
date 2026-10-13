@@ -1,3 +1,11 @@
+# Latest checkpoint — original outer-pulse C1 pressure accuracy, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_C1_2026_10_13.md) first. The original Rp-to-Rv pressure now has checked first-Z derivative sources and a separate 4096-cell derivative grid across the full axial domain. Maximum normalized absolute errors are .0005117131891907913 (m13) and .0001210322320544479 (m15), below the local .001 threshold. Genuine C5 order-three energy inputs, all reduced-S coefficient derivatives, nonzero quadratic errors and the signed finite weighted endpoint derivative are retained. The first-derivative Taylor budget is linear in half-width; an independent polynomial fixture rejects the value-style squared-width estimate.
+
+The [n1 physical linear operator](CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md) is already installed. Next compose the genuine inner-cut/lower-collar derivative data, improve the pre-Rp q-Z2 or correlated signed integrals, finish finite lower endpoint derivatives, then bind full signed defect C1 functions and select the actual repair coefficients. Do not substitute interval midpoint models for functions or reuse the leading nonlinear repair map as the n1 linear repair.
+
+Full original goal **ACTIVE / INCOMPLETE**. Local outer-pulse C1 accuracy is certified; full Rin-to-infinity derivative accuracy, repaired own M/V/P, five terminal zeros, genuine temporal recursion, global stress and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — original n1 physical linear repair operator, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md](CURRENT_ORIGINAL_N1_LINEAR_OPERATOR_2026_10_13.md) first. The actual positive angular amplitude, original microscopic Rc identity, five fresh disjoint normalized supports and the correct positive-order axial/ angular matrices are now source-bound. Fresh determinant bounds and the physical C1 inverse-action API have passed independent nonunit physical-integral and derivative checks. The normalized positive determinant bounds are approximately .088345842 and 1.04078066e-5. Finite mu, all physical radius factors and nonzero quadrature errors remain explicit.
