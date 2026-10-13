@@ -1,4 +1,8 @@
-# Latest checkpoint — true pre-Rp pressure C1 numerical source attachment, 2026-10-13
+# Current agent queue — true pulse numerical transfer, 2026-10-13
+
+Use the checked/open tasks in [CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NATIVE_NUMERIC_IDENTITY_2026_10_13.md). The native provenance join is implemented; pressure enclosure transfer and complete five-moment repair remain open. Preserve directed errors, signed m15, full histories and exact original physical units. Reuse retained owners and archives. Do not mark recursion or corrected NS complete from a local source gate.
+
+# Earlier checkpoint — true pre-Rp pressure C1 numerical source attachment, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PRERP_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PRERP_NUMERIC_BRIDGE_2026_10_13.md) first. Original active/compact/quiet m13/m15 C1 functions now replay from live checked field/native owners into the same retained graph. All 17 charts, 68 axial/chart views and 228 native C3 primitive handle dictionaries retain their exact source, selected N and full mean histories. Directed nonzero magnitude enclosures attach to value/Z1 in the original fixed pressure normalizations; quiet signs and exact Z1 zero remain. Point, shared-boundary and whole-Z queries execute. Magnitude caps are enclosures, never signed centers or defining functions.
 
