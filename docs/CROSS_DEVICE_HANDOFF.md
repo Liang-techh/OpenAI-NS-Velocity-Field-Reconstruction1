@@ -1,3 +1,12 @@
+# Latest checkpoint — original pulse basis and energy refinement, 2026-10-13
+
+Read [CURRENT_ORIGINAL_RP_PULSE_BASIS_ENERGY_2026_10_13.md](CURRENT_ORIGINAL_RP_PULSE_BASIS_ENERGY_2026_10_13.md) first. The original first/divided beta rows, negative determinant, positive energy Gram and Kpulse now have directed relative widths of about 9.46e-6 to 3.75e-5. Actual nonzero mu, source shapes, normalization and positive energy edges are retained. The accepted full saddle inputs, continuous lower pressure models and compact repair-band pressure values remain available.
+
+Next finish the refined selected-coefficient candidate using the original correlated positive branch and incoming/future energy, recover C0 through C5, then evaluate genuine remaining pulse pressure contributions. Selected coefficient precision is not yet accepted. The linked checklist specifies source binding, all-cell equations, pressure measures, complete n1 defects and the original 2+3 repair before genuine n2/temporal recursion.
+
+Full goal **ACTIVE / INCOMPLETE**. This gate refines input integrals only. Full signed pressure tails, n1 repairs, global stress, temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Earlier sections are historical.
+
+
 # Latest checkpoint — original pulse saddle input refinement, 2026-10-13
 
 Read [CURRENT_ORIGINAL_RP_PULSE_INPUT_PRECISION_2026_10_13.md](CURRENT_ORIGINAL_RP_PULSE_INPUT_PRECISION_2026_10_13.md) first. The two original full scaled pulse saddle integrals are now narrowed from about 3.81136% width to about 2e-60 while keeping actual nonzero mu, the original kernel, common source exponent and all positive tails. This refines input constants only; precise selected amplitudes/end coefficients and pulse pressure moments are not yet installed. Rc-to-2Rc signed pressure values and continuous lower-segment models remain accepted.
