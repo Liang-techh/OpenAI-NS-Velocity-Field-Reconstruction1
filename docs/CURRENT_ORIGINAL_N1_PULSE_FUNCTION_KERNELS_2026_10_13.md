@@ -95,7 +95,8 @@ chi=1+(hb-1)*sigma(s)
 log(Phi_actual/Phi_core)'=(chi-1)*Phi_core'/Phi_core
 Psi_actual'=(Phi_actual/Phi_core)*chi*Psi_core'
 rho*meanPsi_actual=4*meanPsi_core(4)+integral_4^rho Psi_actual drho
-U=Pstar*(4Z+j+epsilon*Psi), m=Pstar*(4Z+j+epsilon*meanPsi)
+epsilon_core=1/Lambda
+U=4Z+j+epsilon_core*Psi, m=4Z+j+epsilon_core*meanPsi
 q=[2ZU-(1-delta)Zm-(1-Z^2)m_Z]/(1-delta*Z^2)
 ```
 

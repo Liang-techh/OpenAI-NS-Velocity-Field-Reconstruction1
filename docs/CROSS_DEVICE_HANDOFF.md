@@ -1,3 +1,11 @@
+# Latest checkpoint — exact Gamma future C1 functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_GAMMA_FUTURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_GAMMA_FUTURE_FUNCTIONS_2026_10_13.md) first. The actual Gamma deficit and three complete future heat-defect C1 functions now share the accepted n1 graph, including the entire infinite exterior. Genuine native X/logRp, pulse memory, flatten/steep histories, scalar waiting and exact nonzero S=1/Rtail are retained. Direct Gamma, full-tail/first-Z, independent ODE and checked-restoration tests passed; numerical caps are not source values.
+
+Next solve the genuine small angular branch, compose the complete future energy C1 function, then select actual pulse coefficients and recover own mean/q/full pressure. The new detailed checklist gives the exact heat prefactor and normalization. Reuse saved adapters and source receipts; do not rerun pressure grids. Physical core Uz has no extra Pstar factor.
+
+Full original goal **ACTIVE / INCOMPLETE**. Actual n1 repaired fields and terminal identities, heat/stress closure, genuine temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — exact original pulse kernel functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_FUNCTION_KERNELS_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_FUNCTION_KERNELS_2026_10_13.md) first. Original finite-mu A/D, determinant, beta normalization, gp/main rows, Kpulse, incoming factors and nonzero end energy now have real integral bodies in the checked pre-Rp/linear repair graph. The actual native u/m1/m2/energy C1 functions, original conditional positive-root selector and direct bump-integral/nonconstant first-Z fixtures are installed. No kernel interval center or end-energy zero is selected as a source constant.
