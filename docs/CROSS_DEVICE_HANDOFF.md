@@ -1,3 +1,12 @@
+# Latest checkpoint — signed mean phase-averaging identity, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_PHASE_AVERAGING_2026_10_12.md](CURRENT_ORIGINAL_N1_PHASE_AVERAGING_2026_10_12.md) first. The original all-chart finite-N own mean now has source-bound Z0-Z3 periodic phase primitives and endpoint-retaining integration-by-parts functions. The predecessor memory, selected N, original phase and native Jacobian are retained; inner and outer integration variables are distinct. Four independent production identity rows and one genuine first_micro source query pass.
+
+The numerical averaging gate remains **false**: the actual fixed-phase slow-y mixed derivative bound is still missing, so the direct parent mean/Q enclosures remain the fallback. No tighter high-order pressure bound or complete repair is claimed. Next compute the actual zero-axial O3 pressure segment with its incoming finite-N mean, and implement the genuine slow-y source bound; then accumulate the remaining signed pressure defects and perform n1's 2+3 repair.
+
+Full goal **ACTIVE / INCOMPLETE**. Existing accurate quiet pressure coefficients and exact zero tail beyond Rv remain available. Complete n1 repair/joins, genuine n2/temporal recursion, global stress, flat remainder and corrected NS remain open. Follow the linked completed/open checklist; earlier sections are historical.
+
+
 # Latest checkpoint — physical pressure inputs on all 17 charts, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_ALL_CHART_PHYSICAL_PRESSURE_2026_10_12.md](CURRENT_ORIGINAL_N1_ALL_CHART_PHYSICAL_PRESSURE_2026_10_12.md) first. The actual finite-N mean atlas now supplies physical leading U/m Z3, q Z2 and ten value/Z1 pressure-moment input functions on every original pre-repair chart. All 17 full native-union numerical enclosures execute at Z in [0,1/2]. Nonconstant Jacobians are bound to the free query before outer integration, preserving the inner own-mean coordinate.
