@@ -1,3 +1,12 @@
+# Latest checkpoint — complete original outer-pulse pressure, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_COMBINED_PULSE_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_COMBINED_PULSE_PRESSURE_2026_10_13.md) first. The original entire Rp-to-Rv main/gap/end pulse now has 256 continuous full-Z absolute-error models. Maximum errors in fixed positive source units are 1.72147e-5 for m13 and 2.30066e-5 for m15. Actual finite-mu saddle index derivative, terminal own-mean identities, weighted main source, lower radius ratio, full-pulse nonlinear energy bounds and weighted viscous endpoint are retained.
+
+Next evaluate or rigorously enclose the remaining pre-Rp pressure contributions, compose each accepted radial piece once, close the complete five defects and perform n1's original 2+3 repair with its own M/V/P. Do not add the older isolated end result to the new combined pulse again. The linked detailed task list gives source units, power cancellation, continuous errors and later recursion tasks.
+
+Full original goal **ACTIVE / INCOMPLETE**. The outer pulse is accepted; complete signed tails, n1 repair, full pressure derivative accuracy, global stress, genuine coefficient/temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Earlier checkpoints below are historical.
+
+
 # Latest checkpoint — original end-pulse pressure values, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_END_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_END_PRESSURE_2026_10_13.md) first. Actual end-pulse m13/m15 now have 256 interval affine models covering every real Z in [-1,1], with maximum fixed-source-normalized absolute errors 2.46745e-5 and 2.30066e-5. The same original C5 coefficient functions, first-row cancellation, finite-mu X remainder, physical U/own-mean/q, nonzero quadratic sources and weighted viscous endpoint are retained. Original positive physical units are factored symbolically before huge exponent arithmetic.
