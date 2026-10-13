@@ -1,3 +1,12 @@
+# Latest checkpoint — interior own mean/Q and reduced pressure-tail route, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_PARTIAL_MEAN_Q_2026_10_12.md](CURRENT_ORIGINAL_N1_PARTIAL_MEAN_Q_2026_10_12.md) first. The actual finite-N correction now has signed free-endpoint own-mean functions through Z3, mean_y through Z3 and Q increment through Z2. Original N, common S, phase, Jacobian and predecessor history are retained. Two actual micro whole-cell queries, 11 independent moving-endpoint rows and arbitrary-smooth-mean pressure integral identities pass; a checked-owner public query executes.
+
+Pressure-tail route correction: integration by parts reduces the two S/RS integrals to ten moments involving U, U_Z, q and q_Z plus endpoint values. Internal radial/phase derivatives are no longer prerequisites for these integrated tails; finite-endpoint q_R remains required. Next combine genuine baseline own mean with the finite-N increment in physical units, integrate those moments across actual leading charts, bind actual zero-source support and close m13/m15, then the n1 2+3 repair.
+
+Full goal **ACTIVE / INCOMPLETE**. The checked numerical envelope covers the named micro cells; the exported Q is an increment. Complete physical Q/tails, leading support, signed full defects/repair, axis remainder/joins, genuine n2 and global stress/corrected NS remain open. Their gates stay false. Earlier sections are historical; follow the new linked checklist.
+
+
 # Latest checkpoint — finite-N corrected leading velocity/mean C3 interface, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_MODIFIED_LEADING_C3_2026_10_12.md](CURRENT_ORIGINAL_N1_MODIFIED_LEADING_C3_2026_10_12.md) first. The actual original finite-N E_N/V_N and velocity increments now have signed Z0…Z3 function handles, with directed C3 ranges and own axial mean increments at chart endpoints. Original N, common-S units, phase and predecessor memory are preserved. The two current micro endpoint queries and 24-row independent exact fixture are checked.
