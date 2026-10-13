@@ -1,3 +1,12 @@
+# Latest checkpoint — actual refined original pulse coefficients, 2026-10-13
+
+Read [CURRENT_ORIGINAL_RP_REFINED_COEFFICIENTS_2026_10_13.md](CURRENT_ORIGINAL_RP_REFINED_COEFFICIENTS_2026_10_13.md) first. The refined original pulse integrals now enter the original divided inverse and positive quadratic branch. Actual ap/C1/C2 are evaluated through C5 on all four full axial cells plus Z=.371. Value relative widths are 5.67298e-6 for ap and 6.18983e-5 for both signed end coefficients, below .001. With one consistent minimum-absolute-endpoint normalization, the previous end widths were .0622706; the refinement is about 1006 times narrower. Genuine incoming and complete future energy, finite nonzero mu and end-energy terms are retained.
+
+Next evaluate the actual end-pulse linear pressure inputs from these checked jets and their own mean, retain every quadratic/viscous source and finite lower endpoint, and preserve shared physical exponent correlations. Then evaluate remaining entrance/main/gap and active pre-repair charts, compose complete pressure defects, and perform n1's original 2+3 repair before genuine n2/temporal recursion. The linked checklist gives source/API, integration measure, sign-change and completion-evidence tasks.
+
+Full goal **ACTIVE / INCOMPLETE**. This is actual selected coefficient precision. Full signed pressure tails, n1 repairs, global stress, temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Earlier sections are historical.
+
+
 # Latest checkpoint — original pulse basis and energy refinement, 2026-10-13
 
 Read [CURRENT_ORIGINAL_RP_PULSE_BASIS_ENERGY_2026_10_13.md](CURRENT_ORIGINAL_RP_PULSE_BASIS_ENERGY_2026_10_13.md) first. The original first/divided beta rows, negative determinant, positive energy Gram and Kpulse now have directed relative widths of about 9.46e-6 to 3.75e-5. Actual nonzero mu, source shapes, normalization and positive energy edges are retained. The accepted full saddle inputs, continuous lower pressure models and compact repair-band pressure values remain available.
