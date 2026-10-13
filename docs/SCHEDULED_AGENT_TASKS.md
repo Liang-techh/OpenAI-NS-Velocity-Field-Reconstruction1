@@ -1,3 +1,12 @@
+# Latest checkpoint — physical pressure inputs on all 17 charts, 2026-10-12
+
+Read [CURRENT_ORIGINAL_N1_ALL_CHART_PHYSICAL_PRESSURE_2026_10_12.md](CURRENT_ORIGINAL_N1_ALL_CHART_PHYSICAL_PRESSURE_2026_10_12.md) first. The actual finite-N mean atlas now supplies physical leading U/m Z3, q Z2 and ten value/Z1 pressure-moment input functions on every original pre-repair chart. All 17 full native-union numerical enclosures execute at Z in [0,1/2]. Nonconstant Jacobians are bound to the free query before outer integration, preserving the inner own-mean coordinate.
+
+The repaired 2Rc to Rp quiet contribution has separately computed signed coefficients with width below 0.001 (maximum 0.0002803156569), and the future pressure forcing beyond Rv is exactly zero. Next evaluate signed/correlated pre-repair moments, unchanged Rin to r_minus, the genuine Rc to 2Rc band and selected Rp to Rv pulses. Close the two pressure defects, then the n1 2+3 repair. The unchanged lower-tail draft's missing hb factor is corrected, but its numerical receipt remains unaccepted.
+
+Full goal **ACTIVE / INCOMPLETE**. All-chart magnitude enclosures are not signed full pressure defects or global accuracy. Complete n1 repair, axis remainder/joins, genuine n2/temporal recursion, global stress, flat remainder and corrected NS remain open. Follow the linked completed/remaining checklist; earlier sections are historical.
+
+
 # Latest checkpoint — actual signed quiet pressure contribution, 2026-10-12
 
 Read [CURRENT_ORIGINAL_N1_QUIET_PRESSURE_SOURCE_2026_10_12.md](CURRENT_ORIGINAL_N1_QUIET_PRESSURE_SOURCE_2026_10_12.md) first. The actual native mean kernel is now evaluated with directed quadrature error and retained positive tails. Exact Pstar/logP and Rp/Tw cancellations give the signed quiet m13/m15 contribution as coefficients times the absolute original Rc/Rc squared source scales. Both normalized coefficient widths are below 0.001 (maximum 0.0002803156569). This covers the genuine repaired 2Rc to Rp quiet segment.

@@ -117,8 +117,10 @@ class CurrentOriginalN1LeadingForcingTailPrefix:
         for j in range(cells):
             phase=a+length*weighted.budget.coupled.partition(c,j,cells);cell=self.source_cell(Z,phase)
             sources.append(cell);rho=cell[2];value=cell[5]['S']
-            S+=algebra.width(algebra.shift(value*(rho*length/cells),(0,0,0,-1)))
-            RS+=algebra.width(algebra.shift(value*(rho*rho*length/cells),(0,0,0,-2)))
+            # rho=4*exp(hb*s): dR=Lambda^-1*hb*rho*ds.
+            # Keep the original hb once in both physical measures.
+            S+=algebra.width(algebra.shift(value*(rho*length/cells),(1,0,0,-1)))
+            RS+=algebra.width(algebra.shift(value*(rho*rho*length/cells),(1,0,0,-2)))
             records.append(dict(actual_first_phase_cell=phase,rho=rho,physical_S_Z1=op.export(value,1),
                 physical_measure='dR=epsilon*hb*rho*ds',weighted_physical_measure='R*dR=epsilon^2*hb*rho^2*ds'))
         integrals=reduce_integrals(S,RS,lower[5],upper[5]);totals,mp,mchange=self.cutoff.support_moments(Z)
