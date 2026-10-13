@@ -1,3 +1,11 @@
+# Latest checkpoint — true original n1 radial cutoff and five inner endpoints, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md) first. The complete regular n1 solution now supplies true even rho1/rho2 functions and exact axis limits. Its original flat cutoff cuts F1/Uz1 only, then recovers own mean/M/K/Q/V/pressure with the full incoming history. All five signed cumulative functions and Rin endpoints have actual bodies. Independent 122 radial/axis and 208 cutoff/history identities passed. Saved radial/cutoff graphs have 52,487/53,165 nodes.
+
+Next complete the exterior m13/m15 signed pressure contributions and compose the five full defect functions, transfer original quantitative bounds, and select actual linear n1 repair. Attach a same-source numerical complete-series evaluator with exact normalization/datum/coordinate guards. Run `python scripts/run_original_n1_inner_cutoff_functions.py` for checked restoration; reuse saved ancestors.
+
+Full original goal **ACTIVE / INCOMPLETE**. Original numerical n1 point evaluation, full five repair and terminal zeros, global matching/heat/stress, genuine n>=2 temporal recursion, oscillatory cancellation and corrected NS validation remain open. The new five functions stop at Rin; they do not establish global five-moment closure. Earlier entries are historical.
+
 # Latest checkpoint — true original n1 inner Volterra functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md) first. The actual raw six-row matrices, forcing and complete regular solution definitions now share the true core/collar graph. Every B0/B1 feedback term, continuous core-to-first Green path, regular axis condition and correct physical n1 mean/M/Q/V recovery is retained. Exact raw operator C3, independent Green/feedback and source-convergence checks passed. The saved common graph has 49,024 nodes.

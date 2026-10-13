@@ -132,10 +132,11 @@ prove uniform original collar accuracy or close five moments.
 
 ## Next executable tasks
 
-The full raw n1 function bridge is now installed in
-[CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md).
-Its focused checks passed; original numerical n1 evaluation and the inner
-cutoff remain open.
+The true even radial jets, original flat cutoff and all five signed inner
+endpoint functions are now installed in
+[CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md).
+Original numerical n1 evaluation, full exterior pressure composition and
+five-moment repair remain open.
 
 - [x] Bind the true core logarithmic/Psi collar ODEs and complete histories.
 - [x] Recover ordinary C3 velocity/mean/base pressure and C2 Q/radial rows.
@@ -148,17 +149,16 @@ cutoff remain open.
   matrices. Existing k=0,1 words plus symmetric tail boxes are enclosures,
   not selected F1/U1/K1/P1 functions. Recover its own M1 and Q1 with the
   correct physical rho/Lambda factors before constructing the cutoff.
-- [ ] `N1-INNER-CUTOFF-FUNCTIONS`: trace
+- [x] `N1-INNER-CUTOFF-FUNCTIONS`: trace
   `current_original_n1_radial_cutoff_extension.py` and
   `current_original_n1_five_defect_values.py` to construct the actual
   cutoff endpoint sectors at first-fraction q=1 (phase sc/4). The flat
   cutoff is zero after q=3/4, but own M/Q and cumulative pressure are
   retained. Use the same true core/collar histories; do not select
   values from `original_signed_Z1_sectors` error enclosures.
-- [ ] Bind the remaining three signed lower defect functions from the
-  genuine n1 forcing and own cumulative source, preserving boundary
-  sectors and physical units. Existing numerical five-target covers
-  are not selected coefficient functions.
+- [x] Bind the three signed velocity-support functions m11/m12/m14
+  and all five Rin cumulative functions from the actual cutoff source.
+  Exterior m13/m15 pressure contributions still require composition.
 - [ ] Transfer existing same-source pressure/C5 receipts as bounds to
   the complete function bodies, with all nonzero source errors.
 - [ ] Compose full five defects across inner cutoff, this collar,

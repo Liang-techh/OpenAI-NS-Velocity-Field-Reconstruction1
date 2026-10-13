@@ -141,6 +141,12 @@ contracts and complete matching remain separate open work.
 
 ## Next executable tasks
 
+The true even radial jets, original flat cutoff and all five signed inner
+endpoint functions are now installed in
+[CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_CUTOFF_FUNCTIONS_2026_10_13.md).
+Original numerical n1 evaluation, full exterior pressure composition and
+five-moment repair remain open.
+
 - [x] Bind the actual raw core/collar forcing and all six-row matrices.
 - [x] Install the full Green path, complete regular limit and B1 feedback.
 - [x] Store distinct finite W0/W1 words and the whole fixed-point RHS.
@@ -149,15 +155,16 @@ contracts and complete matching remain separate open work.
   functions. Reuse the existing regular-series encloser only after exact
   physical conjugation, parameter/datum and chart-coordinate guards.
   Keep complete tail and high-order Cauchy allowances; never select centers.
-- [ ] Build first/second radial function jets from the actual six-row
-  equation, preserving the finite even-component axis limits and each
-  odd-component radial domain. Bind the required mixed axial derivatives.
-- [ ] `N1-INNER-CUTOFF-FUNCTIONS`: apply the original flat cutoff to
+- [x] Build true F1/Uz1/own mean/K rho1/rho2 C3 functions and regular
+  axis limits, plus Q/V rho1/rho2 C2 and pressure rho1. Odd-component
+  rho-axis jets and the second pressure derivative remain separate.
+- [x] `N1-INNER-CUTOFF-FUNCTIONS`: apply the original flat cutoff to
   F1/Uz1 on first fraction q=s/(sc/4); recover M1 by its own integral,
   then K1/V1 and pressure. Keep cumulative history after the local
   cutoff becomes zero. Use the genuine five signed source integrands.
-- [ ] Bind all signed inner endpoint sectors and remaining lower target
-  functions; transfer original pressure/C5 bounds with nonzero errors.
+- [x] Bind all five signed inner cumulative and Rin endpoint functions.
+- [ ] Compose the exterior pressure contributions and transfer original
+  pressure/C5 bounds with their nonzero source errors.
 - [ ] Compose full five defects, select actual linear alpha/beta repair,
   recover repaired own M/V/P and prove terminal five zero identities.
 - [ ] Complete global matching, energy, heat and stress/remainder before
