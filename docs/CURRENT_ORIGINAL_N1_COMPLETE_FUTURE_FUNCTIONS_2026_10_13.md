@@ -1,5 +1,7 @@
 # Actual angular, complete future and pulse coefficient C1 functions, 2026-10-13
 
+Current continuation: [original pulse C3 functions and own fields](CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md). The true C3 and main/gap/end own-field prerequisites below are now checked there; full pulse pressure and subsequent repair remain open.
+
 The original small angular correction, complete future swirl energy and
 selected pulse coefficient functions now share the checked n1 repair graph.
 The full future target is supplied to the genuine native incoming functions;
@@ -134,17 +136,17 @@ itself is not a lower bound for nu and must not be selected as its value.
   derivative denominator and signed end coefficients over [-1,1].
 - [x] Pass direct normalized-bump, implicit-derivative, physical-energy,
   source-containment and checked-restoration checks.
-- [ ] `N1-PULSE-TRUE-C3-FUNCTIONS`: extend the same defining Gamma/future/
+- [x] `N1-PULSE-TRUE-C3-FUNCTIONS`: extend the same defining Gamma/future/
   coefficient bodies to ordinary Z2/Z3 functions where pressure recovery
   requires them. Reuse existing C5 enclosures as bounds of those same
   functions. Do not pad missing derivatives with zero or differentiate caps.
-- [ ] `N1-PULSE-OWN-FIELDS`: use
+- [x] `N1-PULSE-OWN-FIELDS`: use
   `Utheta=Ep*exp(-(.5+mu)*y)`,
   `Uz=Utheta*ap(Z)*gp(mu*y)` on the main chart, the two original normalized
   end bumps with nonzero cj, and actual zero-axial gaps. Carry native
   incoming histories through the main, gap and end charts. Use the correct
   incoming common normalization; no additional Pstar division.
-- [ ] Build each own partial mean by its defining forward integral or
+- [x] Build each own partial mean by its defining forward integral or
   selected backward equivalent, retaining nonzero past history. Recover
   q from this own mean with the original delta law. Distinguish zero local
   axial velocity from nonzero cumulative mean/radial velocity.

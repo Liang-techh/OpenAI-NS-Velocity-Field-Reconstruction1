@@ -1,3 +1,11 @@
+# Latest checkpoint — original pulse C3 functions and own fields, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md) first. The actual selected ap/C1/C2 now have true ordinary Z2/Z3 functions. Physical main/gap/end fields retain both native cumulative mean histories, one Pstar scale, and genuine Q/Q_y/Ur through order two. Independent complete ODE, nonunit scale, two-row moment solve, join and terminal-support checks passed. The checked common graph has 34,295 nodes; finite fixture Q/Q_y/Ur differences are below 1.54e-10. These errors are not a uniform numerical accuracy claim for the microscopic original parameters.
+
+Next build both complete pulse pressure C1 functions from these fields, actual radial measures and signed finite endpoints. The pressure API's q is this auxiliary Q=Ur/sqrt(R/2); no extra radial conversion belongs in that API. Then bind the true core/lower collar and inner cutoff, compose the full five defects and select the actual linear n1 repair. Run `python scripts/run_original_n1_pulse_own_fields.py` to restore the checked saved interface; reuse ancestors and avoid pressure-grid rebuilds.
+
+Full original goal **ACTIVE / INCOMPLETE**. Full-pulse n1 pressure, repaired own M/V/P and terminal five zeros, heat/stress, true temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — actual complete future and pulse coefficient C1 functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_COMPLETE_FUTURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_COMPLETE_FUTURE_FUNCTIONS_2026_10_13.md) first. Genuine small angular coefficients and the complete future swirl energy now feed actual original ap/C1/C2 function selection in the same n1 graph. Explicit native-memory/flatten/Gamma source identities transfer the original bounds. A fresh whole-Z interval proof places ap approximately in [1.0100453347,1.0100510647] inside (.9,1.2), with positive derivative denominator and the original end-coefficient signs. Direct physical-energy and implicit-derivative fixtures passed; no interval centers define coefficients.
