@@ -1,3 +1,12 @@
+# Latest checkpoint — original r-minus-to-infinity pressure values, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_REMAINING_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_REMAINING_PRESSURE_2026_10_13.md) first. The 17 active pre-Rc charts now have 68 genuine full-chart value packets over all four Z cells, with exact original geometry and finite viscous endpoints. They are combined with the accepted compact/quiet pieces and whole outer pulse, plus exact meridional zero support beyond Rv. All 256 full-Z models now cover r_minus to infinity; fixed-source-normalized maximum errors remain 1.72147e-5 / 2.30066e-5. Every pre-Rp piece is proved below exp(-1000), retained as a nonzero error after symbolic shared-Rc cancellation.
+
+Next convert and compose the already accepted Rin-to-r_minus models, recover the actual inner cut pressure moments, close the complete five defect functions and perform n1's original 2+3 repair with its own M/V/P. Full-pressure derivative accuracy is still open. The linked checklist gives exact source units, cutoff-family binding, repair coefficients and later recursion tasks.
+
+Full original goal **ACTIVE / INCOMPLETE**. Remaining active pressure values are included; complete n1 defects/repair, derivative closure, axis/joins, global stress, genuine temporal recursion, oscillatory cancellation, flat remainder and corrected NS validation remain unfinished. Earlier sections below are historical.
+
+
 # Latest checkpoint — complete original outer-pulse pressure, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_COMBINED_PULSE_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_COMBINED_PULSE_PRESSURE_2026_10_13.md) first. The original entire Rp-to-Rv main/gap/end pulse now has 256 continuous full-Z absolute-error models. Maximum errors in fixed positive source units are 1.72147e-5 for m13 and 2.30066e-5 for m15. Actual finite-mu saddle index derivative, terminal own-mean identities, weighted main source, lower radius ratio, full-pulse nonlinear energy bounds and weighted viscous endpoint are retained.
