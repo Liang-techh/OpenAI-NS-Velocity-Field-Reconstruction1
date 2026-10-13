@@ -133,7 +133,7 @@ milestone's handoff.
   original selected moment identities.
 - [x] Install complete m13/m15 C1 functions and pass direct independent
   physical forcing, derivative and checked-source tests.
-- [ ] `N1-CORE-FIXED-POINT-FUNCTIONS`: bind the admitted nonlinear core
+- [x] `N1-CORE-FIXED-POINT-FUNCTIONS`: bind the admitted nonlinear core
   fixed point to the actual twenty-term map, its analytic limit and
   enclosing evaluation oracle. Keep the anchored gauge primitive and
   `Uz=4Z+j+epsilon_core*Psi` without extra Pstar.
@@ -159,3 +159,6 @@ milestone's handoff.
 
 The detailed later-stage queue remains in
 [the own-field handoff](CURRENT_ORIGINAL_N1_OWN_PULSE_FIELDS_2026_10_13.md).
+
+The true core bridge is now checked; continue from
+[CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md).

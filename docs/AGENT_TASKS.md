@@ -1,3 +1,11 @@
+# Latest checkpoint — actual original nonlinear core functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_CORE_FIXED_POINT_FUNCTIONS_2026_10_13.md) first. The admitted true Phi/Psi/mean_Psi now share the complete pulse graph, with the actual twenty-term map, root-anchored G/F0 and same native P0. Exact parameter/source guards and a cold actual nonlinear oracle check passed. Numerical outputs are coefficient enclosures plus full analytic tails; no midpoint defines a source function. The saved common graph has 35,819 nodes.
+
+Next bind Rin-to-r_minus lower-collar and solenoidal inner-cutoff functions with their own cumulative M/V/P and signed pressure C1 data. Then compose all five signed defects and select the actual linear n1 repair. Run `python scripts/run_original_n1_core_fixed_point_functions.py` for checked archive-only restoration, or add `--evaluate` for directed component ranges. Reuse saved ancestors; do not rerun historical pressure grids.
+
+Full original goal **ACTIVE / INCOMPLETE**. Complete core/collar/cutoff five-defect binding, transferred quantitative bounds, repaired own terminal identities, global matching/heat/stress, genuine temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — complete original pulse pressure C1 functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_FUNCTIONS_2026_10_13.md) first. Both actual complete Rp-to-Rv m13/m15 value and first-Z functions now consume the checked own main/gap/end fields. All ten signed products, exact physical measures, nonzero gap history and finite endpoint terms are retained. Exact selected-row identities telescope internal endpoints; the paper m15 minus sign is applied once. Independent direct original forcing and first-Z symbolic checks passed. The saved common graph has 35,558 nodes.
