@@ -1,3 +1,12 @@
+# Latest checkpoint — original pulse saddle input refinement, 2026-10-13
+
+Read [CURRENT_ORIGINAL_RP_PULSE_INPUT_PRECISION_2026_10_13.md](CURRENT_ORIGINAL_RP_PULSE_INPUT_PRECISION_2026_10_13.md) first. The two original full scaled pulse saddle integrals are now narrowed from about 3.81136% width to about 2e-60 while keeping actual nonzero mu, the original kernel, common source exponent and all positive tails. This refines input constants only; precise selected amplitudes/end coefficients and pulse pressure moments are not yet installed. Rc-to-2Rc signed pressure values and continuous lower-segment models remain accepted.
+
+Next refine the same beta matrix/energy Gram and Kpulse, replay the original correlated positive amplitude/end-coefficient equations, then evaluate remaining nonzero pulse pressure contributions. A genuine source query previously showed about 5.862% width in scaled end coefficients. The linked checklist gives exact bulk/edge, divided-difference, own-mean/Fubini and physical scale tasks. Reuse all accepted radial pieces exactly once, compose complete pressure defects, and perform n1's original 2+3 repair before genuine n2/temporal recursion.
+
+Full goal **ACTIVE / INCOMPLETE**. The new gate is for source integral inputs. Full signed pressure tails, n1 repairs, global stress, temporal recursion, oscillatory cancellation, flat remainder and corrected NS residual validation remain open. Earlier sections are historical.
+
+
 # Latest checkpoint — actual compact repair-band pressure values, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_REPAIR_BAND_PRESSURE_2026_10_13.md](CURRENT_ORIGINAL_N1_REPAIR_BAND_PRESSURE_2026_10_13.md) first. Rc-to-2Rc m13/m15 are evaluated on all four original full axial cells: m13 positive, m15 negative, coefficient relative width about 2.80316e-4. The actual finite-N source, own mean, absolute Rc, correct x Jacobians, finite q_R endpoints and tiny delta are retained. Independent checks and a public evaluated query at default global precision passed. The previously published lower pressure segment already has continuous absolute models on every Z in [-1,1].
