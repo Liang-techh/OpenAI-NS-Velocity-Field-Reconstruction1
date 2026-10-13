@@ -132,11 +132,16 @@ prove uniform original collar accuracy or close five moments.
 
 ## Next executable tasks
 
+The full raw n1 function bridge is now installed in
+[CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md).
+Its focused checks passed; original numerical n1 evaluation and the inner
+cutoff remain open.
+
 - [x] Bind the true core logarithmic/Psi collar ODEs and complete histories.
 - [x] Recover ordinary C3 velocity/mean/base pressure and C2 Q/radial rows.
 - [x] Preserve exact nonzero hb/sc and original physical measures/support.
 - [x] Export signed m13/m15 C1 and compare independent physical forcing.
-- [ ] `N1-TRUE-INNER-VOLTERRA-FUNCTIONS`: bind the actual regular six-row
+- [x] `N1-TRUE-INNER-VOLTERRA-FUNCTIONS`: bind the actual regular six-row
   solution from `current_original_n1_regular_series_function.py` and
   `current_original_n1_coupled_first_step.py`. Preserve the Green
   integral, complete Volterra series, true leading forcing and feedback

@@ -1,3 +1,11 @@
+# Latest checkpoint — true original n1 inner Volterra functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_INNER_VOLTERRA_FUNCTIONS_2026_10_13.md) first. The actual raw six-row matrices, forcing and complete regular solution definitions now share the true core/collar graph. Every B0/B1 feedback term, continuous core-to-first Green path, regular axis condition and correct physical n1 mean/M/Q/V recovery is retained. Exact raw operator C3, independent Green/feedback and source-convergence checks passed. The saved common graph has 49,024 nodes.
+
+Next attach the same-source complete-series numerical encloser, construct radial jets and the original solenoidal inner cutoff at the common-inner Rin endpoint (first phase sc/4), then bind signed endpoint sectors and all five defects for actual linear repair. Run `python scripts/run_original_n1_inner_volterra_functions.py` for checked restoration. Reuse saved ancestors and the linked detailed task map.
+
+Full original goal **ACTIVE / INCOMPLETE**. This milestone installs exact functions and the admitted full series; it does not execute an original numerical n1 field. Full cutoff/five repair, global matching/heat/stress, genuine n>=2 temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier entries are historical.
+
 # Latest checkpoint — actual original lower-collar functions, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_LOWER_COLLAR_FUNCTIONS_2026_10_13.md) first. The true nonlinear core now continues through Rin-to-r_minus by actual prescribed-shear integrals, retaining its own rho4 mean and pressure histories. Both signed n1 pressure C1 functions use exact nonzero hb/sc, physical measures and both viscous radial derivatives. Independent nonconstant ratio C3, own-history and direct physical-R pressure checks passed. The saved common graph has 36,594 nodes.
