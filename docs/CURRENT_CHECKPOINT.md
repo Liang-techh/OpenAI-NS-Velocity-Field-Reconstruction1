@@ -1,3 +1,11 @@
+# Latest checkpoint — signed original n1 pre-Rp C1 functions, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PRE_RP_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_PRE_RP_FUNCTIONS_2026_10_13.md) first. Genuine active/compact/quiet m13/m15 value and first-Z functions now share the accepted n1 linear operator graph. All 17 active charts, actual finite-N histories, original physical units/Jacobians, lower true Uy/UyZ, upper q_y=-q, and exact quiet primitives are retained. The focused direct physical N1p/C1 fixture, 22,811 source-node relocation checks and archive-only restore passed. The restored graph has 31,222 nodes; these are function definitions, not selected full defect coefficient values.
+
+Next restore SavedCurrentOriginalN1PreRpMomentFunctions without rebuilding ancestors. Build the missing genuine inner-cutoff, Rin-to-r_minus collar and full-pulse C1 adapters in its common graph; compose all five full defects once; then compute alpha/beta, repaired own M/V/P and terminal identities. Do not refine the derivative grid or choose numerical enclosure centers as functions. The linked detailed checklist is the current work queue.
+
+Full original goal **ACTIVE / INCOMPLETE**. Complete signed five-defect binding, selected n1 corrected fields, terminal zeros, heat/stress, genuine temporal recursion, oscillatory cancellation and corrected NS validation remain open. Earlier sections are historical.
+
 # Latest checkpoint — complete original n1 pressure-moment C1, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_COMPLETE_PRESSURE_C1_2026_10_13.md](CURRENT_ORIGINAL_N1_COMPLETE_PRESSURE_C1_2026_10_13.md) first. Complete m13/m15 first-Z derivatives now include the inner cutoff and all Rin-to-infinity pieces on 4096 axial cells, with maximum errors approximately .0005117131891907913 / .0001210322320544479 in fixed original positive units, both below .001. Same-function Fourier C3 bounds have been consumed by the five targets, same implicit control branch, compact fields, active m_ZZZ/q_ZZ and pressure integrals. Original N, nonlocal histories, signed finite endpoints and nonzero source errors remain retained.
