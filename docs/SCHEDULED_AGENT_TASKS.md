@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — compact Rc-to-2Rc C5, then quiet Rp, 2026-10-14
+# Current scheduled-agent queue — actual quiet Rp extension and full pressure join, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md), inspect `python scripts/run_original_true_compact_C5_functions.py`, and execute its first unchecked dependency. Reuse checked owners/archives without replaying accepted ancestors. Compact C5 functions and signed pressure C3 now reach2Rc. Construct quiet2Rc-to-Rp C5/pressure C3 from the actual exit; preserve finite mu, P0, original rminus boundary and all cumulative pressure. Then establish required joins and add lower pressure for complete preRp C3. Continue quantitative/mixed bounds and global frequency, complete n1 repair, heat/stress, genuine recursion and corrected Cartesian NS. Mark only scoped tasks complete and save each milestone. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — compact Rc-to-2Rc C5, then quiet Rp, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md), inspect `python scripts/run_original_true_outer_C6_C5_functions.py`, and execute its first unchecked dependency. Reuse checked owners/archives and source bindings; do not rebuild accepted ancestors. The six outer charts terminate at Rc. Build genuine Rc compact-inlet/normalized-target/control C5 functions and original repair band through2Rc; retain nonzero corrections and S0/S1 with one selected-N factor. Then build quiet2Rc-to-Rp and join lower pressure for full preRp C3. Continue numerical/mixed bounds, global N, complete n1 repair, heat/stress, genuine recursion and restricted corrected NS. Save scoped checkpoints; mark only supported tasks complete. Full goal **ACTIVE / INCOMPLETE**.
 

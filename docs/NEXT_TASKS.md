@@ -1,4 +1,8 @@
-# Current queue — compact C5 at Rc, quiet Rp and complete pressure, 2026-10-14
+# Current queue — quiet 2Rc-to-Rp and complete preRp pressure, 2026-10-14
+
+Use the13 next tasks in [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Actual compact C5 controls/profiles/history/radial and pressure C3 now reach2Rc, with five relative terminal C5 identities. Begin quiet2Rc-to-Rp from the actual compact exit and nonzero cumulative S0/S1; lengthTw-2-log2, Rp=Rc*exp(Tw-2). Join retained lower-collar pressure and establish required seams before complete preRp C3. Then actual second-radial/mixed functions, quantitative high-order norms/global N, complete n1 repair, heat/stress, genuine n>=2 and corrected NS. Source construction does not close numerical bounds. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — compact C5 at Rc, quiet Rp and complete pressure, 2026-10-14
 
 Use the22 detailed tasks in [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md). Six outer/all17 sources and signed pressure C3 now reach Rc. First build the actual Rc compact inlet, genuine normalized C4/C5 targets and same-J compact controls; lift original repair-band functions to C5 on[1,2]. Carry actual nonzero histories and S0/S1 to2Rc, then quiet2Rc-to-Rp using lengthTw-2-log2. Join retained lower pressure before complete preRp C3. Follow with direct second radial/mixed rows, quantitative high-order bounds/global N, complete n1 C3 repair, heat/stress, genuine n>=2 and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
 

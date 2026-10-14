@@ -74,15 +74,17 @@ Completed within function scope:
 
 Execute the next tasks in dependency order. Mark a task complete only with its actual artifact, command and scoped evidence; retain open numerical/global gates.
 
-1. [ ] Build a true Rc compact-repair inlet adapter from `public_outer65.Rc`, preserving actual leading fields, five nonzero selected-N corrections, P0 and S0/S1. Bind leading seed equality by the original source theorem. Do not consume old C3 range records as field functions.
-2. [ ] Use `current_original_outer_to_repair_C3_bridge.py` (`compare_functions`, `correction_inlet_functions`) as the original convention reference. Extend the five-history interface from Z0..3 to genuine Z0..5. Account for one division by selected N only; current actual correction already includes its N factor.
-3. [ ] Produce genuine all17 normalized target C4/C5 and D4/D5 source functions needed by the compact five-control solve. Keep original signs, physical angular/axial scales and inherited pressure datum.
-4. [ ] Differentiate the original compact same-J implicit solve through C5, including all ordinary amplitude and inverse cross terms. Preserve original Hessian factors4,3 and5,10; a padded row or interval derivative is not an input.
-5. [ ] Lift `current_original_C3_repair_band.py` (`profiles_C3`, `signed_density_C3`, `leading_C3`, `build`) into a separate checked C5 provider on x=R/Rc in[1,2], using the actual Rc inlet and genuine control rows.
-6. [ ] Carry compact E/V and all five signed densities C5 with every linear/quadratic cross term. Preserve the original profile supports and flat endpoint behavior.
-7. [ ] Carry complete compact correction histories C5 with log decay, dt/t measure and pressure rate-zero memory. Expose an actual 2Rc endpoint; do not zero incoming memory in quiet subregions.
-8. [ ] Recover compact modified total radial U/U_y/mean C5 and Q/Q_y C4 with the actual native chain rule and fast terms where present. Preserve leading1-delta and positive-order own1+delta conventions separately.
-9. [ ] Carry signed compact pressure C3 from Rc to2Rc, inheriting this S0/S1 and the original rminus boundary, with exactly one R/R^2 measure.
+Tasks1..9 are complete within the [actual compact C5/2Rc milestone](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Numerical norms/global frequency and full preRp remain open; task10 is the next dependency.
+
+1. [x] Build a true Rc compact-repair inlet adapter from `public_outer65.Rc`, preserving actual leading fields, five nonzero selected-N corrections, P0 and S0/S1. Bind leading seed equality by the original source theorem. Do not consume old C3 range records as field functions.
+2. [x] Use `current_original_outer_to_repair_C3_bridge.py` (`compare_functions`, `correction_inlet_functions`) as the original convention reference. Extend the five-history interface from Z0..3 to genuine Z0..5. Account for one division by selected N only; current actual correction already includes its N factor.
+3. [x] Produce genuine all17 normalized target C4/C5 and D4/D5 source functions needed by the compact five-control solve. Keep original signs, physical angular/axial scales and inherited pressure datum.
+4. [x] Differentiate the original compact same-J implicit solve through C5, including all ordinary amplitude and inverse cross terms. Preserve original Hessian factors4,3 and5,10; a padded row or interval derivative is not an input.
+5. [x] Lift `current_original_C3_repair_band.py` (`profiles_C3`, `signed_density_C3`, `leading_C3`, `build`) into a separate checked C5 provider on x=R/Rc in[1,2], using the actual Rc inlet and genuine control rows.
+6. [x] Carry compact E/V and all five signed densities C5 with every linear/quadratic cross term. Preserve the original profile supports and flat endpoint behavior.
+7. [x] Carry complete compact correction histories C5 with log decay, dt/t measure and pressure rate-zero memory. Expose an actual 2Rc endpoint; do not zero incoming memory in quiet subregions.
+8. [x] Recover compact modified total radial U/U_y/mean C5 and Q/Q_y C4 with the actual native chain rule and fast terms where present. Preserve leading1-delta and positive-order own1+delta conventions separately.
+9. [x] Carry signed compact pressure C3 from Rc to2Rc, inheriting this S0/S1 and the original rminus boundary, with exactly one R/R^2 measure.
 10. [ ] Feed the genuine compact2Rc endpoint into the original `current_original_C3_power_to_Rp.py` power convention. Use s=log(R/(2Rc)), lengthTw-2-log2 and Rp=Rc*exp(Tw-2), retaining finite-mu memory and independent P0.
 11. [ ] Construct the required quiet2Rc-to-Rp field/history C5 and pressure C3 projections. Differentiate actual functions; do not infer pressure zeros from small relative correction or flat local density.
 12. [ ] Establish actual joins at Rc,2Rc andRp, including required radial/axial rows and all pressure endpoint terms. Join the retained lower-collar C3 at rminus; only then expose complete preRp C3.

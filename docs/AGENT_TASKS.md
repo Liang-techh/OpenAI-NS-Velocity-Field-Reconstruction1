@@ -1,4 +1,8 @@
-# Current agent queue — actual compact C5 from checked Rc endpoint, 2026-10-14
+# Current agent queue — quiet Rp from actual compact exit, 2026-10-14
+
+Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Consume `public_compact5.terminal`, keeping actual leading histories/P0, correction expressions and S0/S1. Build quiet2Rc-to-Rp C5/pressure C3 with the original finite-mu power laws and lengthTw-2-log2. Relative correction zeros do not zero absolute fields or physical pressure. Establish actual required Rc/2Rc/Rp/rminus joins and the retained lower collar before full preRp C3. Continue quantitative norms/global N, complete n1, heat/stress, genuine recursion and NS. Save scoped evidence and mark only supported tasks complete.
+
+# Earlier agent queue — actual compact C5 from checked Rc endpoint, 2026-10-14
 
 Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md). Consume `public_outer65.Rc`, actual corrections and cumulative pressure integrals. The next provider is genuine compact Rc-to-2Rc C5, using original targets/implicit solve/profile functions; old repair-band C3 enclosures do not define higher rows. Preserve all original N/phase/P0, finite-mu and pressure memories and one N factor. Continue quiet2Rc-to-Rp only from its actual compact exit. Scope completion separately from numerical norms, global n1 and scale recursion. Mark tasks complete with artifacts and evidence; save each bounded milestone.
 

@@ -1,4 +1,8 @@
-# Latest recoverable checkpoint — six outer/all17 C6/C5 and pressure to Rc, 2026-10-14
+# Latest recoverable checkpoint — compact C5 and signed pressure to 2Rc, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Branch `codex/st073-transition-next`. Inspect `python scripts/run_original_true_compact_C5_functions.py`. Actual Rc targets/same-branch compact controls, complete compact C5 profiles/history/radial and signed pressure C3 to2Rc are saved, including five relative terminal C5 identities and original mu/N/C3-prefix provenance. Original host: reuse session55770/cache26, `public_outer65`, `compact5_owner`, `compact5_receipt`, `public_compact5` and preceding owners. Other hosts can inspect pinned archives; live memory is host-local. Next quiet2Rc-to-Rp and full lower/preRp joins, then remaining quantitative/mixed/global n1/heat/stress/genuine recursion/NS work. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable checkpoint — six outer/all17 C6/C5 and pressure to Rc, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md). Branch `codex/st073-transition-next`. Inspect `python scripts/run_original_true_outer_C6_C5_functions.py`; source-pinned archive/receipt preserve actual original six-chart C6/C5 and signed rminus-to-Rc pressure C3. On the original host reuse session55770/cache26, `public_Rm_finite5`, `public_Rm_patch6`, `outer65_owner`, `outer65_receipt`, `public_outer65` and preceding owners. Other hosts can inspect saved archives; live Python memory is not synced between computers. Next actual compact Rc-to-2Rc C5, quiet2Rc-to-Rp and lower-collar join, followed by remaining norms/global n1/heat/stress/genuine recursion/NS. Stream interruption is not a mathematical stopping condition; resume from this milestone. Full goal **ACTIVE / INCOMPLETE**.
 

@@ -1,4 +1,8 @@
-# Latest checkpoint — all17 C6/C5 sources and signed pressure C3 to Rc, 2026-10-14
+# Latest checkpoint — actual compact C5 repair and pressure to 2Rc, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md) first. Actual Rc amplitude/corrections now feed normalized C5 targets and the same original unique compact C5 control branch. Exact bumps, signed densities, complete background/correction/modified histories and radial C5 continue to2Rc; modified generic C4 and signed rminus-to-2Rc pressure C3 are saved. Original mu/N and accepted C3 normalization prefixes match. Relative five C5 terminal identities retain absolute leading/P0/pressure functions. Next quiet2Rc-to-Rp and lower-collar join, followed by quantitative high-order/mixed norms/global N, complete n1 repair, heat/stress, genuine scale recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — all17 C6/C5 sources and signed pressure C3 to Rc, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md) first. Six actual outer prescribed C6/generic C5 and selected-N loop/density/history/modified C5 sources now reach Rc; all17 source charts have those function orders. Original Rh leading identity, all nonzero memories, exponential O2 measure, mu/N/global phase/P0, total radial C5/generic C4 and signed rminus-to-Rc pressure C3 are retained. Next construct actual compact Rc-to-2Rc C5 controls/fields/pressure, then quiet2Rc-to-Rp and lower-collar join for complete preRp C3. Higher/mixed numerical norms, global frequency, n1, heat/stress, genuine scale recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**. Older six-chart-to-Rp shorthand is superseded by the explicit Rc/compact/quiet sequence.
 
