@@ -1,4 +1,8 @@
-# Current agent queue — carry true bridge C6 beyond R100, 2026-10-14
+# Current agent queue — Rm source exports and actual modified composition, 2026-10-14
+
+Use [CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md) and claim its first unchecked dependency. Prescribed background fields and all six own histories are now C6 functions through all seven R100-to-Rm charts, with full generic C5. Construct quantitative source enclosures or versioned seven-row Rm background exports next; retain old axial4 outputs. Then extend actual loop q/inverse/A/B C5, five finite-N densities and full signed correction transport, composing them with the true background at original phase origins/N. Preserve P0, nonzero background memory, zero correction inlet, physical factors and original flat predicates. Complete all17 sources, C4/C5 targets and same-J/N compact controls with factors4,3 and5,10. Mark exact checklist items complete with scoped artifacts. Global n1, genuine recursion and corrected NS remain open.
+
+# Earlier agent queue — carry true bridge C6 beyond R100, 2026-10-14
 
 Use [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md). True prescribed background functions now reach R100 with C7 known comparison sources, C6 actual field/own moments and C5 full Q/inertial/p2. Claim quantitative C6/C7 transfer or actual R100/R110/reference/reshape source propagation to Rm. Keep this background separate from the finite-N modified velocity and signed correction histories; preserve their original nonzero memories and distinct zero correction inlet. Then complete actual loop/inverse/A/B, all17 sources, C4/C5 targets and same-J/N compact controls. Do not use comparison covers, caps or Qpad as function values. Global n1, genuine recursion and corrected NS remain open.
 

@@ -1,4 +1,8 @@
-# Latest checkpoint — true prescribed micro/macro bridge C6, 2026-10-14
+# Latest checkpoint — true prescribed background C6 through Rm, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md) first. Seven original downstream charts now carry true prescribed field/six own histories C6 and full Q/inertial/p2 C5 from R100 to Rm. Original finite T, reference offsets, independent P0, complete nonzero incoming memories and distinct bridge/switch width tags remain. Shared upstream/K1 identity proves their equal physical widths; original radius ordering and endpoint calculus pass. Checked archive restoration also passes. Next add quantitative C6/C7 containment and versioned Rm sources, then actual finite-N loop/correction composition and all17 targets/controls. Global n1, genuine n>=2 recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — true prescribed micro/macro bridge C6, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) first. Actual analytic comparison/moment/P0 C7 now supplies the known direction C6, true prescribed background phi/V and six own histories C6 across both micro windows and macro to R100, and full Q/inertial/p2 C5. Nonzero incoming memories, both chi controls, original physical measures and pressure/swirl scales remain. Next transfer quantitative C6/C7 containment, propagate the prescribed source through R100/R110/restoration/reshape to Rm, then compose actual finite-N loop/correction histories and all17 sources/compact controls. Global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

@@ -1,5 +1,7 @@
 # True prescribed background bridge C6 functions, 2026-10-14
 
+Continuation: [the true prescribed R100-to-Rm C6 functions are now constructed and checked](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md). The bridge result below remains valid. Quantitative C6/C7 containment and actual finite-N modified composition remain open.
+
 The genuine rho4 inlet is now propagated through the two microscopic smoothing windows and full macro bridge to R100 by original integral functions. The known comparison data has C7 functions, the prescribed background field and all six own moment histories have C6 functions, and full Q/inertial/p2 has C5 functions. This is the prescribed background before the finite-N loop modification. Modified fields, R100-to-Rm propagation and all17-chart sources remain unfinished. Full goal **ACTIVE / INCOMPLETE**.
 
 Inspect `python scripts/run_original_prescribed_bridge_C6_functions.py`. It reads source-pinned archives and does not rebuild ancestors. On the original host reuse session55770/cache26, `public_inlet6`, `bridge6_owner`, `bridge6_receipt`, `hier` and existing lower/pulse/terminal owners. The [preceding inlet milestone](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) remains valid.
@@ -66,7 +68,7 @@ Completed:
 Next tasks:
 
 1. [ ] Transfer same-source quantitative C6/C7 enclosures through the actual comparison and prescribed field integrals. Use complete analytic tails and original physical log bases; existing comparison axial6 boxes do not define actual C6 fields.
-2. [ ] Propagate this prescribed background through the actual R100 switch to R110, reference extension/restoration and long reshape to Rm, retaining pressure datum, all six incoming histories and original coordinate/radius maps.
+2. [x] Propagate this prescribed background through the actual R100 switch to R110, reference extension/restoration and long reshape to Rm, retaining pressure datum, all six incoming histories and original coordinate/radius maps. Completed in the linked R100-to-Rm milestone within true prescribed-function scope; modified fields and quantitative containment remain open.
 3. [ ] Implement versioned Rm axial6 source exports and six-row Q/inertial/p2 axial5 outputs. Preserve the old axial4 outputs and never promote Qpad.
 4. [ ] Extend the actual loop/inverse/A/B and finite-N five-density functions through C5/C6 as required. Preserve original flat support predicates, phase origins, selected N and positive Jacobian. Compose the modified velocity and signed correction-history transport with this true background.
 5. [ ] Complete all17-chart actual sources, normalized C4/C5 targets and source-derived D4/D5 bounds. Extend the same compact-control branch with the original Jacobian/N and factors4,3 and5,10.

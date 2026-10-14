@@ -1,4 +1,8 @@
-# Current queue — prescribed R100-to-Rm C6 and modified-source composition, 2026-10-14
+# Current queue — quantitative Rm sources and finite-N composition, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md). True prescribed C6 fields/six histories and C5 full generic outputs now reach Rm through original switches, finite long reshape and reference/restoration. The next unchecked tasks are quantitative C6/C7 containment, versioned actual Rm source exports and genuine loop q/inverse/A/B C5. Extend five finite-N density/correction histories and combine them with the retained background. Then complete all17 normalized targets/controls, full pre-Rp pressure C3, complete defects/coefficient derivatives and required mixed/global bounds. Keep matching/heat/stress, true n>=2 recursion, oscillatory cancellation and final Cartesian NS requirements. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — prescribed R100-to-Rm C6 and modified-source composition, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md). The true unmodified prescribed micro/macro field and six histories are now C6 functions through R100, with C5 full generic outputs. Complete original-scale quantitative containment and propagate true R100/R110/reference/reshape backgrounds to Rm; then compose finite-N modified fields and signed correction histories with actual higher loop functions. Continue through all17 sources, compact targets/controls, pre-Rp C3 pressure and complete defects/coefficient derivatives. Full goal **ACTIVE / INCOMPLETE**.
 

@@ -1,4 +1,10 @@
-# Latest recoverable checkpoint — true prescribed bridge C6 through R100, 2026-10-14
+# Latest recoverable checkpoint — true prescribed background C6 through Rm, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md) and `CURRENT_CHECKPOINT.md`. Branch `codex/st073-transition-next`. Seven original R100-to-Rm charts now have true prescribed field/six own histories C6 and full Q/inertial/p2 C5 functions, original finite T/reference offsets and exact width-source guards. Inspect `python scripts/run_original_prescribed_R100_Rm_C6_functions.py`. On the original host reuse session55770/cache26, `public_bridge6`, `Rm6_owner`, `Rm6_receipt`, `public_Rm6` and existing admitted owners; checked public restoration passed. Other hosts can inspect pinned archives. Quantitative C6/C7 containment, Rm/all17 source exports, actual finite-N modified composition, global n1 and genuine recursion remain unfinished. Full goal **ACTIVE / INCOMPLETE**.
+
+Reply-stream failure is distinct from saved project state. The retained diagnostic records show early stream closure during compaction/generation, but do not establish the backend cause for request ID `c985edb3-6c8a-43d6-9580-ded1325339ae`. Resume from the saved artifacts and the next unchecked task; do not repeat accepted construction. Publish small milestones to preserve cross-device recovery.
+
+# Earlier recoverable checkpoint — true prescribed bridge C6 through R100, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) and `CURRENT_CHECKPOINT.md`. Branch `codex/st073-transition-next`. Exact comparison C7, actual prescribed field/six own histories C6 and full generic C5 functions are saved through R100. Inspect `python scripts/run_original_prescribed_bridge_C6_functions.py`. On the original host reuse session55770/cache26, `public_inlet6`, `bridge6_owner`, `bridge6_receipt` and existing admitted owners. Other hosts can inspect pinned archives. Quantitative C6 containment, modified finite-N branch, R100-to-Rm/all17 propagation, genuine recursion and corrected NS remain unfinished. Full goal **ACTIVE / INCOMPLETE**.
 
