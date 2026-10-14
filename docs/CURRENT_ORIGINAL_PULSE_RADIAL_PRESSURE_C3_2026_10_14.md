@@ -1,6 +1,6 @@
 # Actual current pulse second radial derivatives and pressure FTC, 2026-10-14
 
-Scope: actual current Rp inputs now define leading main/gap/end `U_yy` C5, `Q_yy` C4, `N1p` C3 and signed partial pressure primitives. This is a source-function milestone. Total Rp/Rv own radial-pressure joins, higher mixed matching, numerical bounds and global n1 remain open. The full goal is **ACTIVE / INCOMPLETE**.
+Scope: actual current Rp inputs now define leading main/gap/end `U_yy` C5, `Q_yy` C4, `N1p` C3 and signed partial pressure primitives. This is a source-function milestone. Subsequent Rp/Rv radial-pressure source joins and canonical/current partial-provider equivalence are accepted in [CURRENT_ORIGINAL_N1_OUTER_RADIAL_PRESSURE_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_N1_OUTER_RADIAL_PRESSURE_SOURCE_JOINS_2026_10_14.md); tasks6..9 below are complete within that scope. Higher mixed matching, combined outer acceptance, numerical bounds and global n1 remain open. The full goal is **ACTIVE / INCOMPLETE**.
 
 ## Implemented construction
 
@@ -55,10 +55,10 @@ The immediate Rp target is quiet `true_quiet_Rp_C5_C3_bindings.Rp_endpoint.physi
 3. [x] Construct leading N1p/P1_y C3 with all signed reduced-density terms.
 4. [x] Construct actual current-query signed partial pressure primitives and physical-y FTC, preserving named binders, finite lower tensors and complete preceding charts.
 5. [x] Save scoped source acceptance and a source-only recovery entry point.
-6. [ ] Bind Rp main-start Q/Q_y/Q_yy to the actual quiet Rp C5 frame. Use the accepted 48-row inlet and 146-row consumer substitution identity; retain the actual nonzero mean and the proved physical radius identity.
-7. [ ] Prove all four total own pressure-y Z0..3 joins at Rp: compose the same incoming own pressure history with the new fixed leading N1p. Do not infer this from the 68 ordinary Rp tuple rows.
-8. [ ] Prove all four total own pressure-y Z0..3 joins at Rv. Consume the actual flat axial pulse, empty backward leading histories and specified own tail; preserve absolute leading/swirl pressure.
-9. [ ] Compare the new current-input partial pressure provider with the existing canonical partial pressure body using the accepted current Rp source substitution and old/current radius identity. Bind actual integrands and finite endpoints before claiming a common source accessor.
+6. [x] Bind Rp main-start Q/Q_y/Q_yy to the actual quiet Rp C5 frame. Use the accepted 48-row inlet and 146-row consumer substitution identity; retain the actual nonzero mean and the proved physical radius identity.
+7. [x] Prove all four total own pressure-y Z0..3 joins at Rp: compose the same incoming own pressure history with the new fixed leading N1p. Direct source pressure matching and recorded FTC/endpoint composition are accepted in the newer scoped receipt.
+8. [x] Prove all four total own pressure-y Z0..3 joins at Rv. Consume the actual flat axial pulse, empty backward leading histories and specified own tail; preserve absolute leading/swirl pressure and m13/m15 endpoint continuity.
+9. [x] Compare the new current-input partial pressure provider with the existing canonical partial pressure body using the accepted current Rp source substitution and old/current radius identity. Actual integrands and finite tensors are bound before pressure outputs are compared. A checked combined outer accessor still requires tasks10..12.
 10. [ ] Establish main/gap and gap/end leading radial-pressure/mixed joins with the true original domains and full gp/beta flatness. Keep the nonzero gap mean.
 11. [ ] Determine and construct the required additional physical-y/Z mixed rows for the complete outer own seam theorem. Newly available U_yy/Q_yy does not itself finish every mixed row.
 12. [ ] Publish the combined 2Rc/Rp/Rv own seam receipt only after all ordinary, radial-pressure and required mixed joins pass. Then enable its checked accessor; keep require_checked=False until that receipt exists.
