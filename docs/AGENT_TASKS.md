@@ -1,4 +1,8 @@
-# Current agent queue — actual field join and repaired own C3 transport, 2026-10-14
+# Current agent queue — actual joins and intermediate own fields, 2026-10-14
+
+Use [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md). Reserved own C3 histories/QV C2, actual terminal five C3 identities and specified tails are saved, including new defining-basis source checks. Take the first unchecked construction dependency: actual lower/active same-source join and inlet/P0/zero-collar theorem; full current Rp frame consumption by native pulse C5; or intermediate lower/active/quiet/pulse own-field transport. Preserve nonzero histories and1+delta own versus1-delta leading recovery. Reuse checked compact/quiet Qyy, then finish other-chart mixed rows, quantitative norms/global N and full n1/heat/stress/recursion/NS. Save scoped milestones and mark only supported tasks complete.
+
+# Earlier agent queue — actual field join and repaired own C3 transport, 2026-10-14
 
 Take the first unchecked dependency in [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md). Complete signed C3 defects, selected coefficients and compact repair functions are saved. Reuse existing inner cutoff C3 endpoints; the numerical C1 bridge is a separate scope. Bind the genuine twenty-term core direction identities to actual lower/bridge FunctionRefs with original sc/hb/epsilon/Pstar/P0 and zero modification collar. Then transport new C3 repaired own histories and prove their actual terminal integrals, followed by native pulse C5 consumption and original-scale/mixed bounds. Keep global n1/heat/stress/recursion/NS open. Save each scoped milestone and mark only its actual tasks complete.
 

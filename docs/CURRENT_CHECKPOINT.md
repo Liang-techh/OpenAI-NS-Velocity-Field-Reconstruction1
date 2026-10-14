@@ -1,4 +1,8 @@
-# Latest checkpoint — complete signed n1 C3 partition and selected repair, 2026-10-14
+# Latest checkpoint — actual repaired own C3 and terminal integral identities, 2026-10-14
+
+Read [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md) first. Actual signed reserved histories now give M/mean/K/P C3 and own Q/V C2 from mean_Z3. New25 physical basis integrals and75 density derivative rows identify the20 actual terminal functions with the selected response; all five C3 identities and specified mass/pressure tails vanish. Compact direct Qyy C4 and total P1_y C3 are saved. Next actual lower/active joins, full native pulse C5 bridge, own fields on intermediate charts and quantitative/mixed/global-N admission. Global n1, heat/stress, true recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — complete signed n1 C3 partition and selected repair, 2026-10-14
 
 Read [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md) first. Existing inner cutoff C3 endpoints now feed five complete signed C3 functions, the selected finite-mu inverse and compact repair Uz/Utheta/F C3. All20 algebraic physical response rows cancel. Earlier wording that inner C3 was absent confused function scope with numerical C1 bounds; do not rebuild the existing inner source. Next bind the actual lower/active field seam, construct repaired own C3 histories/terminal identities and install full native pulse C5 consumption. Original-scale norms/global N, global n1, heat/stress, true recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

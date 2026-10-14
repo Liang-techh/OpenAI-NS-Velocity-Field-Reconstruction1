@@ -1,4 +1,8 @@
-# Current queue — lower/active join and actual repaired own C3 fields, 2026-10-14
+# Current queue — global joins and remaining actual n1 fields, 2026-10-14
+
+Follow the20 tasks in [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md). Actual reserved own M/mean/K/P C3, Q/V C2, terminal five C3 integral identities, tails, compact Qyy C4 and total P1_y C3 are complete within their regional function scope. Next actual lower/active join, full native pulse C5 inlet bridge and own-field/pressure transport over intermediate charts, then quantitative/mixed norms and one global N. Global n1/energy/preheat/exact heat/stress/flat remainder, genuine n>=2 and corrected NS remain open. Do not rebuild the existing inner C3 or new terminal proofs.
+
+# Earlier queue — lower/active join and actual repaired own C3 fields, 2026-10-14
 
 Use the20 tasks in [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md). The complete signed C3 partition, original selected inverse and repair velocities are installed; existing inner C3 endpoints were reused. Next bind actual lower/active field identities and shared inlet/zero-collar theorem, then construct repaired own C3 histories/terminal zeros and full native C5 pulse consumption. Quantitative C3/high-order/mixed norms, common global N, global n1, exact heat/stress/flat remainder, genuine n>=2 recursion and corrected NS remain open. Do not infer terminal physical closure from algebraic response cancellation.
 

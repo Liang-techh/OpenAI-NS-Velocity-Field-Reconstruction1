@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — actual field join and repaired own C3, 2026-10-14
+# Current scheduled-agent queue — actual joins and intermediate n1 transport, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md), inspect `python scripts/run_original_n1_repaired_own_C3_terminal_functions.py`, and complete its first available unchecked construction dependency. Reuse accepted owners/archives. Reserved C3 histories/QV C2, actual terminal five C3 identities and specified tails are saved; remaining work is actual lower/active joins, full native pulse C5 inlet consumption and intermediate own-field transport, followed by quantitative/mixed/global-N admission and full heat/stress/recursion/NS. Preserve every pressure/history component, physical scale and phase. Save/publish scoped milestones and mark only corresponding tasks complete. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — actual field join and repaired own C3, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md), inspect `python scripts/run_original_n1_complete_C3_defect_repair_functions.py`, and complete its first unchecked construction dependency. Reuse accepted owners/archives; inner cutoff C3 already exists and must not be rebuilt. Five complete signed C3 functions, selected finite-mu inverse, repair velocities and algebraic response identities are saved. Next actual lower/active same-source seam, repaired own C3 histories/physical terminal identities and full native C5 pulse bridge. Then quantitative/mixed bounds/global N, global joins/heat/stress, genuine recursion and corrected NS. Save and publish every scoped milestone; full goal **ACTIVE / INCOMPLETE**.
 
