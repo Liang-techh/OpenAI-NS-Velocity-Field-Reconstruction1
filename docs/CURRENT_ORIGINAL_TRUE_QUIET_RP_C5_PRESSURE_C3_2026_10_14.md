@@ -1,5 +1,7 @@
 # Actual quiet Rp C5 and rminus-to-Rp pressure C3, 2026-10-14
 
+Follow-up: [complete signed C3 partition and selected repair](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md) supersedes this page's earlier statement that inner C3 functions were missing. The inner cutoff already had admitted ordinary Z0..3 endpoints; only its numerical bridge was C1. Those functions are now reused in the complete C3 composer and selected inverse. Quantitative bounds and physical field joins remain open.
+
 Actual compact2Rc fields and complete histories now feed the original finite-mu quiet power flow through Rp. Modified fields/history C5 and physical radial orders0..4 are genuine functions; the separate leading flow retains C6. Direct quiet Q_yy C4/N1p C3 and signed pressure C3 complete the **rminus-to-Rp pressure component**. The compact-derived scalar K is identified with the original native-frame `Rp*Pstar*kappa` using actual source nodes and the original turnoff integral. General pressure equals the original closed quiet primitive. Lower-collar C3 and this component also form a partitioned Rin-to-Rp sum. Inner0-to-Rin C3, the complete lower/active field seam, selected native-pulse full C5 consumption, quantitative high-order/mixed norms and global n1/recursion/NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
 Inspect `python scripts/run_original_true_quiet_Rp_C5_pressure_C3_functions.py` without rebuilding ancestors. Original host: reuse session55770/cache26, `public_compact5`, `public_core_lower_C3`, `quiet5_owner`, `quiet5_receipt`, `public_quiet5` and preceding owners. Another host can inspect source-pinned archives; live Python memory is host-local. The [compact milestone](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md) remains valid.
@@ -8,7 +10,7 @@ The original pressure partition must remain explicit:
 
 | Component | Physical interval | Current scope |
 | --- | --- | --- |
-| Inner n1 cutoff endpoint | 0 to Rin | Retained C1; full C3 remains open |
+| Inner n1 cutoff endpoint | 0 to Rin | Existing genuine C3, now reused by the follow-up composer |
 | Lower collar | Rin to rminus | Actual pressure C3 |
 | preRp provider | rminus to Rp | Actual pressure C3, now including the quiet segment |
 | Pulse | Rp to Rv | Earlier actual pulse pressure C3 |
@@ -63,9 +65,9 @@ Completed within function scope:
 Next tasks:
 
 1. [ ] Prove the full lower-collar upper and active first_micro lower `U,m,Q,Q_y` function tuple at rminus, through required axial/radial orders. Use the same true core, original sc/hb and finite-N zero collar. Matching ranges alone do not prove identity.
-2. [ ] Extend the actual inner n1 coupled Volterra/regular solution, cutoff and five cumulative endpoints through genuine Z2/Z3. Retain the0-to-Rin pressure datum, original N1p forcing, own nonlocal means and1+delta recovery.
-3. [ ] Assemble complete five n1 C3 defects using inner endpoint plus separate lower/preRp/pulse components. Prove no omitted/double-counted pressure interval or finite boundary; retain Astar and finite-mu divided differences.
-4. [ ] Differentiate the actual selected reserved inverse through Z2/Z3, then recover repaired own mean_ZZ/Q/V Z1 and required high-order/mixed norms. Preserve existing C1 terminal identities.
+2. [x] Reuse the already admitted inner n1 coupled/regular/cutoff five endpoints through Z3; no extension was needed. Preserve the0-to-Rin pressure datum, original N1p forcing, own means and1+delta recovery. Numerical C3 admission remains open.
+3. [x] Assemble complete five n1 C3 functions from separate inner/lower/preRp/pulse components, counting signed intervals once and retaining Astar/finite-mu divided differences. Physical field joins remain open.
+4. [ ] Selected reserved inverse and repair velocities through Z3 are now constructed in the follow-up. Still recover actual repaired own mean/Q/V/pressure and terminal C3 identities, and transfer required quantitative/high-order/mixed bounds. Preserve existing C1 identities.
 5. [ ] Install the current Rp frame into the selected native pulse C5 owner using all eight true frame functions and consistent physical scales, phase and P0. K identity alone is insufficient for this task.
 6. [ ] Construct direct second total radial/mixed functions over the other active charts; quiet Q_yy alone does not close global norms.
 7. [ ] Transfer original-scale core/leading/control C6, comparison C7, loop/modified/history C5 and pressure C3 bounds, including all body/tail, conditioning, phase and physical/log bases. Complete quantitative high-order control/Picard tails.

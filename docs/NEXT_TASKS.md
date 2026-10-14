@@ -1,4 +1,8 @@
-# Current queue — lower/active seam and inner n1 C3 endpoints, 2026-10-14
+# Current queue — lower/active join and actual repaired own C3 fields, 2026-10-14
+
+Use the20 tasks in [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md). The complete signed C3 partition, original selected inverse and repair velocities are installed; existing inner C3 endpoints were reused. Next bind actual lower/active field identities and shared inlet/zero-collar theorem, then construct repaired own C3 histories/terminal zeros and full native C5 pulse consumption. Quantitative C3/high-order/mixed norms, common global N, global n1, exact heat/stress/flat remainder, genuine n>=2 recursion and corrected NS remain open. Do not infer terminal physical closure from algebraic response cancellation.
+
+# Earlier queue — lower/active seam and inner n1 C3 endpoints, 2026-10-14
 
 Use the13 tasks in [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Quiet C5 and signed rminus-to-Rp pressure C3 are complete within function scope. Next prove the lower-collar upper/first_micro lower U,m,Q,Q_y tuple, and lift the actual inner coupled solution/cutoff/five endpoints to Z2/Z3. Compose complete defects from separate inner+lower+preRp+pulse entries; keep the new partitioned Rin-to-Rp sum out of the old preRp composer entry. Then actual reserved inverse derivatives/own recovery, current native pulse C5 frame consumption, quantitative/mixed bounds/global N, heat/stress, genuine recursion and corrected NS.
 

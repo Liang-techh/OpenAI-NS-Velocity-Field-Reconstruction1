@@ -1,4 +1,8 @@
-# Latest checkpoint — quiet Rp C5 and rminus-to-Rp pressure C3, 2026-10-14
+# Latest checkpoint — complete signed n1 C3 partition and selected repair, 2026-10-14
+
+Read [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md) first. Existing inner cutoff C3 endpoints now feed five complete signed C3 functions, the selected finite-mu inverse and compact repair Uz/Utheta/F C3. All20 algebraic physical response rows cancel. Earlier wording that inner C3 was absent confused function scope with numerical C1 bounds; do not rebuild the existing inner source. Next bind the actual lower/active field seam, construct repaired own C3 histories/terminal identities and install full native pulse C5 consumption. Original-scale norms/global N, global n1, heat/stress, true recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — quiet Rp C5 and rminus-to-Rp pressure C3, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md) first. Actual compact exit now feeds finite-mu quiet C5 and leading C6 flow through Rp, with radial0..4 C5/direct Qyy C4/N1p C3. Actual K matches the original native-frame source by exact turnoff-kernel correspondence; general pressure equals the closed quiet primitive. The complete original rminus-to-Rp pressure component is C3. Lower pressure is kept separate and a partitioned Rin-to-Rp sum is exposed. Inner0-to-Rin C3, lower/active field seam, full selected native pulse C5 bridge, quantitative norms/global N, complete n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

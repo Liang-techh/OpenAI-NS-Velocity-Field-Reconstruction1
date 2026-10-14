@@ -1,4 +1,8 @@
-# Current agent queue — true inner C3 and lower/active source seam, 2026-10-14
+# Current agent queue — actual field join and repaired own C3 transport, 2026-10-14
+
+Take the first unchecked dependency in [CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md](CURRENT_ORIGINAL_N1_COMPLETE_C3_DEFECT_REPAIR_2026_10_14.md). Complete signed C3 defects, selected coefficients and compact repair functions are saved. Reuse existing inner cutoff C3 endpoints; the numerical C1 bridge is a separate scope. Bind the genuine twenty-term core direction identities to actual lower/bridge FunctionRefs with original sc/hb/epsilon/Pstar/P0 and zero modification collar. Then transport new C3 repaired own histories and prove their actual terminal integrals, followed by native pulse C5 consumption and original-scale/mixed bounds. Keep global n1/heat/stress/recursion/NS open. Save each scoped milestone and mark only its actual tasks complete.
+
+# Earlier agent queue — true inner C3 and lower/active source seam, 2026-10-14
 
 Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Reuse public_quiet5/public_compact5/public_core_lower_C3 and earlier owners. Quiet K source and signed pressure signs/finite boundaries are checked. Prove full lower/active U,m,Q,Q_y seam with original sc/hb and zero modification collar; extend actual inner n1 Volterra/regular/cutoff endpoints to C3 using genuine source derivatives and1+delta own recovery. Complete five C3 defects without merging the lower interval into the existing preRp entry. Preserve source units/P0/phase and save scoped evidence; global norms/n1/recursion/NS remain open.
 
