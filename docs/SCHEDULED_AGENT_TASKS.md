@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — actual coefficient bounds and repaired fields, 2026-10-13
+# Current scheduled-agent queue — genuine derivatives and own-field terminal closure, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md) and take its first unchecked dependency. All five actual C0/C1 coefficient bounds are saved; required higher derivatives/mixed norms and repaired own-field terminal zeros are next. Preserve source histories, true finite-mu scalar bodies and actual physical units. Mark tasks complete with their scoped receipts, save checkpoints, and retain matching/stress, genuine n>=2 recursion, oscillatory correction and final restricted NS requirements.
+
+# Earlier scheduled-agent queue — actual coefficient bounds and repaired fields, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md) and take its next unchecked dependency. Full signed five value/Z1 numerical composition is complete. Transfer the actual reserved inverse with nonzero mu, Astar_Z, original radius powers and source correlations; then construct repaired own fields and prove actual terminal identities. Mark tasks complete only with their scoped source evidence, save a checkpoint, and preserve the full research goal through matching/stress, genuine n>=2 recursion, oscillatory cancellation and independent corrected NS validation.
 

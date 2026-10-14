@@ -1,4 +1,8 @@
-# Current queue — actual reserved coefficient bounds and repaired own fields, 2026-10-13
+# Current queue — genuine repair derivatives and repaired own-field closure, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md). All five actual coefficient C0/C1 bounds now execute from complete true moments, with exact Arc/radius/parameter identities and preserved physical log units. Next restore genuine complete defect/coefficient derivatives and required mixed/radial repair bounds, then reconstruct own M/K/Q/V/P and prove terminal zeros. Reuse source owners, kernel archives and matrix quadrature; do not treat C1 or a local normalized range as C3/C5 or corrected NS evidence. The full goal remains active and incomplete.
+
+# Earlier queue — actual reserved coefficient bounds and repaired own fields, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md). Shared-unit complete five C0/C1 defects now execute on the original point and continuous whole-Z domain. The next unchecked dependency is numerical alpha/beta bounds from the actual reserved inverse. Reuse its accepted matrix rows, determinants and amplitude source cells; retain Astar_Z and correlation before division by nonzero mu. Then construct repaired own M/K/Q/V/P and prove the five terminal identities. The linked document records the exact inverse map and sixteen remaining dependency tasks. Full original goal remains active and incomplete.
 

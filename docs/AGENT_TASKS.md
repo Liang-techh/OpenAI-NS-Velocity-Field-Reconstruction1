@@ -1,4 +1,8 @@
-# Current agent queue — numerical reserved inverse and n1 own-field repair, 2026-10-13
+# Current agent queue — complete genuine derivatives and n1 own-field closure, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md). Physical two-axial/three-angular C0/C1 bound transfer is complete. Take the next actual derivative dependency: complete source Z2/Z3 and required mixed/radial bounds, followed by reconstructed own histories and five terminal zero functions. Keep the exact finite-mu Arc body, independent alpha/beta units, actual Astar derivatives, physical radius factors and all source errors. No ancestor/grid/quadrature regeneration or numerical center selection.
+
+# Earlier agent queue — numerical reserved inverse and n1 own-field repair, 2026-10-13
 
 Use [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md). Complete signed five C0/C1 numerical defects and their actual physical unit identities are implemented. Take its first unchecked dependency: explicit coefficient units, correlated divided axial inversion and angular inversion with actual Astar/Astar_Z. Use y0 as the first normalized inverse input and the positive +(1+mu)L exponent for theta1. Reuse source owners and quadrature; do not substitute scalar matrix bounds for selected functions. Then extend derivatives and reconstruct repaired own fields before terminal closure.
 

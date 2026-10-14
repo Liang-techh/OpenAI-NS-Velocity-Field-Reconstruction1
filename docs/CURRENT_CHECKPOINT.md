@@ -1,4 +1,8 @@
-# Latest checkpoint — complete true signed five C1 numerical defects, 2026-10-13
+# Latest checkpoint — actual reserved five coefficient C1 numerical bounds, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md) first. Complete true five defects now feed directed alpha1/alpha2 and beta1/beta2/beta3 value/Z1 ranges in their own fixed original physical log units. Exact Arc source, actual mu/Pstar/Rc recipes, ten selected graph identities and the whole continuous Z domain pass, retaining Astar_Z and nonzero source terms. Next extend genuine required derivative/mixed repair bounds and construct repaired own M/K/Q/V/P before proving terminal five zeros. Full goal **ACTIVE / INCOMPLETE**; the linked checked/open task list is authoritative.
+
+# Earlier checkpoint — complete true signed five C1 numerical defects, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md) first. All five unrepaired n1 moments now have same-source ordinary value/Z1 enclosures: the three velocity moments retain physical signed log sectors, and m13/m15 include inner/lower/pre-Rp/pulse in the original fixed reference*A*Rv powers. Actual scalar/scale ASTs and graph unit handles agree; signs and nonzero errors remain. The original point and continuous whole-Z queries passed. Next transfer these defects through the actual reserved inverse, including Astar_Z and the correlated nonzero-mu divided difference, then reconstruct repaired own fields and terminal zeros. Full goal **ACTIVE / INCOMPLETE**; the linked checked/open task list is authoritative.
 

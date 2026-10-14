@@ -79,12 +79,12 @@ The first input to `inverse_normalized_action` is `y0`; its local variable is mi
 
 Next tasks, in dependency order:
 
-1. [ ] Reuse the accepted reserved operator's divided axial rows, angular rows and determinant enclosures. Do not recompute its quadrature.
-2. [ ] Choose explicit fixed positive physical log units for alpha1/alpha2 and beta1/beta2/beta3; bind them to the actual coefficient FunctionRefs.
-3. [ ] Rebase each complete moment term into those units, retaining source signs, correlations and all nonzero errors.
-4. [ ] Transfer the actual two-row axial inverse with nonzero mu and the actual Astar value/Z1; include the derivative of inverse Astar.
-5. [ ] Transfer the three-row angular inverse with the original physical radius powers and the signed m15 response.
-6. [ ] Execute ordinary C0/C1 coefficient queries on the original point and continuous full Z domain; report directed bounds and their exact physical units.
+1. [x] Reuse the accepted reserved operator's divided axial rows, angular rows and determinant enclosures. No quadrature was recomputed; see [the actual coefficient C1 checkpoint](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md).
+2. [x] Choose explicit fixed positive physical log units for alpha1/alpha2 and beta1/beta2/beta3; bind them to the actual coefficient FunctionRefs.
+3. [x] Rebase each complete moment term into those units, retaining source signs, correlations and all nonzero errors.
+4. [x] Transfer the actual two-row axial inverse with nonzero mu and the actual Astar value/Z1; include the derivative of inverse Astar.
+5. [x] Transfer the three-row angular inverse with the original physical radius powers and the signed m15 response.
+6. [x] Execute ordinary C0/C1 coefficient queries on the original point and continuous full Z domain; report directed bounds and their exact physical units.
 7. [ ] Extend genuine moment/coefficient bounds to the derivative orders required by the paper's n1 estimates; do not treat a C1 enclosure as C3/C5 evidence.
 8. [ ] Insert the actual reserved compact velocity patches and reconstruct their own cumulative M, mean, K, Q, V and pressure. Retain the leading and n1 histories across every support.
 9. [ ] Verify the n1 mean weight `1+delta`, divide physical swirl by `sqrt(2R)` exactly once, and preserve the actual ordinary Astar derivatives.
@@ -96,4 +96,4 @@ Next tasks, in dependency order:
 15. [ ] Implement oscillatory pulse/mean correction and verify averaged quadratic stress cancellation.
 16. [ ] Validate the final corrected Cartesian NS residual independently in physical Linf and volume-L2 norms, then compare with 1e-3.
 
-Actual coefficient norm bounds, repaired own-field terminal zeros, n1 repair closure, n>=2 recursion, stress/oscillatory closure and the full corrected NS target remain open.
+Actual C0/C1 coefficient bounds are now saved in the linked coefficient checkpoint. Higher derivative/mixed repair bounds, repaired own-field terminal zeros, n1 repair closure, n>=2 recursion, stress/oscillatory closure and the full corrected NS target remain open.
