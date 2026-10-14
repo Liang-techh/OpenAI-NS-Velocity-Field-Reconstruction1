@@ -1,4 +1,8 @@
-# Current queue — quantitative Rm sources and finite-N composition, 2026-10-14
+# Current queue — modified recovery and complete all17 source orders, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md). The true prescribed ten-chart source now has genuine loop/inverse/A/B and finite-N modified fields/density/history C5 from rminus through Rm. Next recover modified Q C4, required mixed physical-y/Z rows and quantitative original-source bounds; then extend the actual Rm patch/six outer charts and all17 normalized targets/compact controls. Preserve original N/phase/eta/d_star, pressure datum and full correction/background memories. Continue to complete pre-Rp C3 pressure, five C3 defects/reserved derivatives and global mixed bounds before heat/stress, genuine n>=2 recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — quantitative Rm sources and finite-N composition, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_R100_RM_C6_FUNCTIONS_2026_10_14.md). True prescribed C6 fields/six histories and C5 full generic outputs now reach Rm through original switches, finite long reshape and reference/restoration. The next unchecked tasks are quantitative C6/C7 containment, versioned actual Rm source exports and genuine loop q/inverse/A/B C5. Extend five finite-N density/correction histories and combine them with the retained background. Then complete all17 normalized targets/controls, full pre-Rp pressure C3, complete defects/coefficient derivatives and required mixed/global bounds. Keep matching/heat/stress, true n>=2 recursion, oscillatory cancellation and final Cartesian NS requirements. Full goal **ACTIVE / INCOMPLETE**.
 

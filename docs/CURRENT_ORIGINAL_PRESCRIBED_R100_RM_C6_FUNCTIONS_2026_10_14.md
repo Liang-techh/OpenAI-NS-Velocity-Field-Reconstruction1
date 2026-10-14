@@ -1,5 +1,7 @@
 # True prescribed R100-to-Rm C6 functions, 2026-10-14
 
+Continuation: [true prescribed-source loop and finite-N correction histories C5 are now constructed through ten charts to Rm](CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md). The C6 background below is preserved. Full modified C6/mixed bounds, numerical containment and all17/global work remain open.
+
 The prescribed background now continues from the true R100 inlet through seven original downstream charts to Rm: first switch, second switch, post-switch power, finite long reshape, reference continuation, axial restoration and post-restoration. Fields and all six complete own histories have C6 functions; full Q/inertial/p2 has C5 functions. Every incoming memory and the independent pressure datum remain. Finite-N modified fields/correction histories and quantitative original-scale C6 containment are still separate unfinished work. Full goal **ACTIVE / INCOMPLETE**.
 
 Inspect `python scripts/run_original_prescribed_R100_Rm_C6_functions.py` without rebuilding ancestors. On the original host reuse session55770/cache26, `public_bridge6`, `Rm6_owner`, `Rm6_receipt` and the admitted core/lower/pulse/terminal owners. The [preceding prescribed bridge milestone](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) remains valid.
@@ -69,8 +71,8 @@ Next tasks:
 
 1. [ ] Transfer actual C6/C7 numerical enclosures through core comparison, bridge, switches, full finite reshape and restoration. Use original source log bases and every analytic/density/body/tail error. Existing lower-order interval boxes do not define higher function values.
 2. [ ] Add versioned seven-row background source exports at Rm and within the real Rm patch. Attach them to the accepted source geometry and ledger; preserve old axial4 outputs and never expose Qpad as row5.
-3. [ ] Extend actual generic loop q/inverse/A/B to C5, using these full signed Q/inertial/p2 C5 inputs and original support predicates. Retain each true nonzero scalar sector and positive Jacobian.
-4. [ ] Extend five finite-N density functions and their complete Duhamel correction histories. Compose modified velocity/mean with this prescribed background at the original phase origins and selected N. Zero correction inlet must not reset background history.
+3. [x] Extend actual generic loop q/inverse/A/B to C5, using these full signed Q/inertial/p2 C5 inputs and original support predicates. Retain each true nonzero scalar sector and positive Jacobian. Completed for the ten prescribed source charts in the linked loop milestone; the actual Rm patch/six outer charts and quantitative admission remain open.
+4. [x] Extend five finite-N density functions and their complete Duhamel correction histories. Compose modified velocity/mean with this prescribed background at the original phase origins and selected N. Zero correction inlet must not reset background history. Completed through C5 for the ten-chart original rminus-to-Rm function chain; mixed/global bounds remain open.
 5. [ ] Complete all17 actual chart sources and genuine normalized C4/C5 target functions with source-derived D4/D5 bounds. Extend the same compact implicit-control branch/Jacobian/N, preserving quadratic factors4,3 and5,10.
 6. [ ] Build full pre-Rp signed pressure C3 and all five complete C3 defects. Differentiate the actual reserved inverse, including Astar derivatives and finite-mu divided differences; recover repaired own mean_ZZ and Q/V Z1 with weight1+delta.
 7. [ ] Supply required mixed/radial norm containment and all global joins, compatible preheat/finite-energy/exact heat matching, admissible stress and flat remainder.
