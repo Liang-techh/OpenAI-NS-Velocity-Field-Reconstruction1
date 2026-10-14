@@ -87,7 +87,7 @@ Next tasks, in order:
 4. [ ] Transfer the paper's required mixed/radial C5 repair bounds through the explicit compact bump derivatives and physical radius factors.
 5. [ ] Complete global repaired mean/M/K/Q/V/P with the required derivatives and joins. The reserved-band C1 mean/M/K/P and value-only Q/V construction is now implemented; see [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md).
 6. [ ] Keep the source histories across core, cutoff and reserved supports, and preserve the n1 recovery weight 1+delta.
-7. [ ] Establish every own-field terminal identity from its actual integral/recovery definition, then prove all five repaired terminal moments vanish as functions.
+7. [ ] Complete terminal identities at all required derivative orders. Actual integral/recovery C1 five-moment and tail identities now pass; see [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md). Higher derivatives/norms and global joins remain open.
 8. [ ] Establish the required axis, support endpoint and inner-to-outer smooth joins.
 9. [ ] Attach the repaired analytic pressure datum, finite-energy radial tail and exact heat exterior.
 10. [ ] Construct admissible stress and flat remainder for the same background; report cone margins and physical norms separately.

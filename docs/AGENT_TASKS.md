@@ -1,4 +1,8 @@
-# Current agent queue — prove integral terminals and complete own-field derivatives, 2026-10-13
+# Current agent queue — extend genuine derivatives beyond proved C1 terminal repair, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md). Actual transported five value/Z1 zeros and mass/pressure tail recovery are complete within C1 scope. Claim genuine complete source Z2/Z3 and selected inverse derivatives next, then actual mean_ZZ/Q/V Z1, mixed/radial C3/C5 containment and required global joins. Do not pad derivative rows, differentiate interval endpoints or redefine the fields around easier bounds. Preserve source histories and original finite scales; keep global n1, heat/stress, true n>=2 recursion and corrected NS open until their actual requirements pass.
+
+# Earlier agent queue — prove integral terminals and complete own-field derivatives, 2026-10-13
 
 Use [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) and its checked/open tasks. Selected patches now enter actual signed C1 histories and own mean/M/K/P; Q/V values use mean_Z. First prove exact terminal integral/response equivalence from the physical bump densities, then five transported terminal zero functions. Extend genuine coefficient derivatives for Q/V Z1 and required mixed/radial norms. Keep pressure data, fixed N1p and global continuation histories intact. Mark completion only within the tested scope; n1/global matching, heat/stress, true n>=2 recursion and corrected NS remain open.
 

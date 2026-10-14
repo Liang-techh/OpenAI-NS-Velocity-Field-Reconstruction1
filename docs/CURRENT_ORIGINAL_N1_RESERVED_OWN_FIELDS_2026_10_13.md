@@ -62,8 +62,8 @@ Completed tasks:
 
 Next tasks:
 
-1. [ ] Reduce the actual terminal patch integrals by exact translated-bump changes of variables, then identify them with the accepted physical response matrix. Keep this as a proof about the integral fields, not merely the already-zero linear response expressions.
-2. [ ] Prove all five transported terminal cumulative functions and their ordinary Z1 rows vanish. Derive the resulting mean/M/K/Q/V and pressure terminal statements only after those integral identities.
+1. [x] Reduce the actual terminal patch integrals by exact translated-bump changes of variables and identify the physical response matrix; see [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md).
+2. [x] Prove all five transported terminal cumulative values/Z1 rows vanish; recover own mass/mean/K C1 and Q/V values after 2Rc, and own pressure C1 after Rv. Required interior derivatives and global joins remain separate.
 3. [ ] Extend genuine complete defect and selected coefficient Z2/Z3 functions, preserving existing C1 handles and all original source/forcing histories.
 4. [ ] Upgrade own mean derivatives and recover Q/V Z1 from genuine mean_ZZ. Do not differentiate numerical interval endpoints.
 5. [ ] Bind the complete pressure radial derivative to the same original N1p source plus patch contribution; retain the actual pressure gauge and finite endpoints.

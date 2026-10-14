@@ -1,4 +1,8 @@
-# Current queue — actual integral terminal identities and genuine derivatives, 2026-10-13
+# Current queue — genuine n1 derivatives and global closure after C1 terminal repair, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md). The actual five terminal integral values/Z1 rows and their mass/pressure tail consequences are proved. Take the first missing derivative dependency: genuine complete defect Z2/Z3, selected inverse derivatives and mean_ZZ for interior Q/V Z1, followed by source-bound mixed/radial C3/C5 norms and global joins. Preserve every fixed pressure/forcing history and existing C1 handle; reuse source owners and numerical archives. C1 moment closure is not complete n1, global stress or scale recursion.
+
+# Earlier queue — actual integral terminal identities and genuine derivatives, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md). Actual reserved C1 mean/M/K/P and value-only Q/V are constructed with complete incoming histories. Take the next dependency: exact translated-bump reduction of their actual terminal integrals, followed by genuine coefficient Z2/Z3 and required mixed/radial bounds. Preserve fixed leading N1p, the original pressure datum, the leading 1-delta versus n1 1+delta recovery weights, physical measures and the strict chart domain. Reuse the retained owners; do not rerun ancestors or infer terminal field zeros from the previous linear-response gate. Full goal remains active and incomplete.
 

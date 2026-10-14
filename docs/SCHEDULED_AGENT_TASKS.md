@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — actual terminal integrals and own-field completion, 2026-10-13
+# Current scheduled-agent queue — genuine derivatives, norms and joins after C1 terminal closure, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md) and take its first unchecked derivative dependency. Actual integral-to-response and ten terminal zero identities are proved. Extend genuine complete source/coefficient Z2/Z3, own Q/V Z1 and required mixed/radial C3/C5 bounds, preserving all current C1 source handles. Reuse live session 55770 or source-pinned archives, record scoped evidence and mark the detailed task complete. Global n1, heat/stress, true higher-order recursion and corrected Cartesian NS remain required.
+
+# Earlier scheduled-agent queue — actual terminal integrals and own-field completion, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) and claim its first unchecked dependency. The actual C1 histories/mean/M/K/P and C0 Q/V branch are built. Reduce their true terminal integrals to the accepted physical matrix before proving field zeros; then add genuine Z2/Z3 and C3/C5 mixed bounds, Q/V Z1 and global joins. Reuse live session 55770 or source-pinned archives, save each accepted milestone and mark only the relevant detailed tasks completed. Retain the full matching/heat/stress, genuine n>=2, oscillatory and restricted Cartesian NS objectives.
 

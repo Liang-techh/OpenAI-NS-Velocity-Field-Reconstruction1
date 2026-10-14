@@ -1,4 +1,8 @@
-# Latest checkpoint — actual repaired reserved own histories and Q/V values, 2026-10-13
+# Latest checkpoint — actual transported five n1 terminal C1 zeros, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md) first. Exact translated physical bump integrals now identify the actual transported terminal functions with the selected response, preserving the complete pressure partition and core datum. All five value and ordinary Z1 terminal identities vanish. Own mass/mean/K C1 and Q/V value tails vanish after 2Rc; own pressure C1 vanishes after Rv, retaining leading angular/heat pressure. Next extend genuine defect/coefficient Z2/Z3, own Q/V Z1 and required C3/C5 norms/joins. Full goal **ACTIVE / INCOMPLETE**; complete n1 and true n>=2 recursion remain open.
+
+# Earlier checkpoint — actual repaired reserved own histories and Q/V values, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) first. The selected physical alpha/beta patches now have genuine signed integral histories and C1 own mean/M/K/P, with C0 Q/V recovered from the full mean_Z. Original core/lower/active pressure data and fixed leading N1p remain; the partial compact pressure prefix reproduces the accepted full graph exactly. Public queries enforce Rc <= R <= 2Rc. Next prove the actual integral terminal identities and extend genuine coefficient derivatives for Q/V Z1 and required mixed norms. Full goal **ACTIVE / INCOMPLETE**; terminal zeros and global n1 closure remain open.
 
