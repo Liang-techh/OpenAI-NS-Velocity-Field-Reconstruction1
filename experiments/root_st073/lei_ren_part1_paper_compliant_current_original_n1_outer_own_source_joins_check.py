@@ -357,7 +357,202 @@ def own_2Rc_source_join_proof(owner,radius_proof,quiet_proof):
         full_own_trace_outputs_not_bound_to_common_values=True,
         fixed_actual_reserved_normalization_integrals=sorted(set(normalizers)),
         actual_flat_source_nodes=sorted(alg.evidence['flat_bumps']),
-        remaining_actual_seams=['Rp','Rv'],full_seam_acceptance_not_claimed=True)
+        other_seams_not_checked_by_this_proof=['Rp','Rv'],full_seam_acceptance_not_claimed=True)
+
+
+def accepted_intermediate_seam_facts(owner):
+    """Consume exact, pinned source theorems without replaying ancestors."""
+    module=current.intermediate;rec=current.parent.linear.read(module.RECEIPT)
+    assert owner.hashes[module.RECEIPT]==current.sha(module.RECEIPT)
+    assert rec['all_passed'] and rec['source_family']==owner.family
+    assert all(rec[k] for k in module.GATES) and not any(rec[k] for k in module.OPEN)
+    for name,digest in rec['input_hashes'].items():assert owner.hashes[name]==digest==current.sha(name)
+    checks=rec['checks'];endpoint=checks['actual_pulse_endpoints'];partition=checks['actual_terminal_partition']
+    transfer=checks['partial_endpoint_transfer']
+    assert endpoint['passed'] and endpoint['native_rational_whole_function_source_identity_consumed']
+    assert endpoint['startup_native_mean_not_zeroed'] and endpoint['actual_gp_startup_flatness_and_end_beta_support_used']
+    assert transfer['passed'] and transfer['actual_complete_pulse_endpoints_use_same_original_physical_integrands_and_limits']
+    assert transfer['fixed_Z_integral_C3_commutation_not_zero_whole_row_padding']
+    assert partition['passed'] and partition['actual_end_flatness_and_complete_same_integrand_C3_identity_consumed']
+    assert partition['inner_lower_active_compact_quiet_main_gap_end_counted_once']
+    assert set(partition['actual_new_pulse_exit_equals_checked_terminal_rows'])=={
+        key+'_Z'+str(n) for key in ('m11','m12','m13','m14','m15') for n in range(4)}
+    return dict(receipt=module.RECEIPT,receipt_sha256=current.sha(module.RECEIPT),
+        startup_endpoint_rows=endpoint['actual_current_startup_and_terminal_endpoint_rows'],
+        terminal_cumulative_rows=partition['actual_new_pulse_exit_equals_checked_terminal_rows'],
+        actual_same_integrand_limits_measures_and_C3_commutation=True)
+
+
+def radius_context(owner,proof):
+    assert proof['passed'];projection=proof['selected_parameter_source_projection']
+    C=sy.Symbol('actual_selected_logCstar',real=True);mu=sy.Symbol('mu',positive=True)
+    mu_node=owner.inlet.geometry['mu'].node;logmu=owner.g.nodes[mu_node]['argument']
+    return {projection['old_parameter_node']:C,projection['true_parameter_node']:C,
+        mu_node:mu,logmu:sy.log(mu),owner.delta.node:sy.Symbol('delta',positive=True),
+        owner.g.symbol('Z').node:sy.Symbol('Z',real=True)}
+
+
+def endpoint_bindings(g,bindings,coordinate,value):
+    X=sy.Symbol(g.nodes[coordinate]['name'],real=True)
+    return {**{i:v.subs(X,value) if hasattr(v,'subs') else v for i,v in bindings.items()},coordinate:value}
+
+
+def free_query_dependency(owner,node,query):
+    """Respect substitution and integral binders in a closed source graph."""
+    g=owner.g;name=g.nodes[query]['name'];cache={}
+    def at(i):
+        if i in cache:return cache[i]
+        row=g.nodes[i];op=row['operation']
+        if op=='bound_variable':result=i==query
+        elif op=='function_substitution':
+            result=at(row['value']) or (row['variable']!=query and at(row['expression']))
+        elif op=='definite_integral':
+            result=at(row['lower']) or at(row['upper']) or (row['variable']!=name and at(row['integrand']))
+        else:result=any(at(j) for j in current.source_operands(row))
+        cache[i]=result;return result
+    return at(node)
+
+
+def compare_own_source_traces(owner,seam,bindings):
+    packet=owner.joins[seam];alg=EndpointSourceAlgebra(owner.g,bindings);checked=[]
+    for group in ('fields','cumulative'):
+        assert set(packet['left'][group])==set(packet['right'][group])
+        for key,left in packet['left'][group].items():
+            right=packet['right'][group][key]
+            assert len(current.rows(left))==len(current.rows(right))
+            for n,(l,r) in enumerate(zip(current.rows(left),current.rows(right))):
+                try:assert sy.simplify(alg.at(l)-alg.at(r))==0,(seam,group,key,n)
+                except AssertionError as error:raise AssertionError((seam,group,key,n,error.args)) from error
+                checked.append(group+'_'+key+'_Z'+str(n))
+    assert sy.simplify(alg.at(packet['left']['radius'])-alg.at(packet['right']['radius']))==0
+    assert len(checked)==68
+    return checked,alg
+
+
+def actual_upper_endpoint_source_rows(owner,name,binding):
+    """Rebuild the saved tensor inputs from the actual leading field rows."""
+    module=current.previous.pulse5;raw=current.parent.linear.read(module.NAME)
+    assert owner.hashes[module.NAME]==current.sha(module.NAME) and raw['source_family']==owner.family
+    p=raw['C5_pulse_C3_pressure_bindings'];fields=p['leading_fields'][name]
+    g=owner.g;a=current.Algebra(g,3);x=owner.ref(binding['coordinate']);value=owner.ref(binding['value'])
+    chart=owner.inputs[current.intermediate.NAME]['charts']['pulse_'+name]
+    U,Q,Qy=[a.trim(a.at(owner.jet(fields[k]),x,value)) for k in ('U','Q','Q_y')]
+    R=a.at(a.fixed(owner.ref(chart['radius'])),x,value).value;r=a.fixed(R);r2=a.mul(r,r)
+    actual=dict(R_q=a.mul(r,Q),R_squared_q=a.mul(r2,Q),R_q_squared=a.mul(r,a.mul(Q,Q)),
+        R_squared_q_squared=a.mul(r2,a.mul(Q,Q)),R_U_squared=a.mul(r,a.mul(U,U)),
+        R_squared_U_squared=a.mul(r2,a.mul(U,U)),q_plus_q_y=a.add(Q,Qy),R_q_y=a.mul(r,Qy))
+    assert current.encode(actual)==binding['upper']
+    assert binding['lower']=={k:ids[:4] for k,ids in p['global_endpoints'][0].items()}
+    owner.assert_graph()
+    return [name+'_'+key+'_Z'+str(n) for key,ids in binding['upper'].items() for n in range(len(ids))]
+
+
+def own_Rp_source_join_proof(owner,radius_proof):
+    """Actual zero startup pressure increment from its integrals and tensors."""
+    owner.assert_graph();facts=accepted_intermediate_seam_facts(owner)
+    g=owner.g;i=owner.inputs[current.intermediate.NAME];binding=i['pulse_bindings']['main']
+    chart=i['charts']['pulse_main'];x=chart['coordinate'];X=sy.Symbol(g.nodes[x]['name'],real=True);Z=sy.Symbol('Z',real=True)
+    assert chart['domain'][0]==0 and binding['coordinate']==binding['value']==x
+    assert binding['preceding_complete_charts']==[]
+    assert all(current.encode(owner.joins['Rp']['left']['cumulative'][k])==ids for k,ids in i['Rp_cumulative'].items())
+    bindings=radius_context(owner,radius_proof);bindings[x]=X
+    actual_upper=actual_upper_endpoint_source_rows(owner,'main',binding)
+    for key,ids in i['Rp_cumulative'].items():bind(bindings,owner.jet(ids),sy.Function('actual_Rp_'+key)(Z),Z)
+    quiet=i['charts']['quiet'];s=quiet['coordinate'];S=sy.Symbol(g.nodes[s]['name'],real=True)
+    L=SourceAlgebra(g,bindings).at(quiet['domain'][1]);bindings[s]=S
+    for key,ids in quiet['cumulative'].items():
+        T=sy.Function('actual_Rp_'+key)(Z)
+        for n,(j,t) in enumerate(zip(ids,i['Rp_cumulative'][key])):
+            row=g.nodes[t]
+            assert row==dict(operation='function_substitution',expression=j,variable=s,
+                value=quiet['domain'][1],Z_independent_substitution=True)
+            if key not in ('m13','m15'):
+                assert not free_query_dependency(owner,j,s);body=sy.diff(T,Z,n)
+            else:body=sy.diff(T+(S-L)*sy.Function('actual_quiet_pressure_difference_'+key)(S,Z),Z,n)
+            if j in bindings:assert sy.simplify(bindings[j]-body)==0
+            else:bindings[j]=body
+    startup=[]
+    # These are leading endpoint tensor INPUTS to the signed pressure map.
+    # Their actual startup values are supplied by the pinned 32-row theorem.
+    # A smooth endpoint difference is X*H(X); no own trace output is bound.
+    for key,upper in binding['upper'].items():
+        lower=binding['lower'][key]
+        for n,(u,l) in enumerate(zip(upper,lower)):
+            label='main_'+key+'_Z'+str(n);assert label in facts['startup_endpoint_rows']
+            row=g.nodes[l]
+            if row['operation']=='exact_rational':value=sy.Rational(row['numerator'],row['denominator'])
+            else:value=bindings.setdefault(l,sy.Symbol('actual_startup_tensor_'+str(l),real=True))
+            if u in (0,1):assert value==u
+            elif u==l:assert bindings[u]==value
+            else:
+                body=value+X*sy.Function('actual_startup_tensor_difference_'+str(u))(X)
+                if u in bindings:assert sy.simplify(bindings[u]-body)==0
+                else:bindings[u]=body
+            startup.append(label)
+    start=EndpointSourceAlgebra(g,endpoint_bindings(g,bindings,x,sy.Integer(0)));empty=[]
+    for key,ids in binding['current_integrals'].items():
+        for n,j in enumerate(ids):
+            row=g.nodes[j]
+            assert row['operation']=='definite_integral' and row['lower']==0 and row['upper']==x
+            assert row['endpoint_independent_of_Z'] and row['ordinary_slow_Z_derivative_order']==n
+            assert row['physical_Pstar_not_reapplied']
+            assert row['measure']==('(R/mu)*dxi' if key.startswith('I0_') else '(R^2/mu)*dxi')
+            assert start.at(j)==0;empty.append(key+'_Z'+str(n))
+    increment=[]
+    for key,ids in chart['fixed_pressure'].items():
+        for n,j in enumerate(ids):
+            assert sy.simplify(start.at(j))==0,(key,n)
+            increment.append(key+'_Z'+str(n))
+    checked,_=compare_own_source_traces(owner,'Rp',bindings)
+    assert owner.charts['quiet']['physical_log_radius_jacobian']==g.one
+    assert owner.charts['pulse_main']['physical_log_radius_jacobian']==owner.inlet.geometry['mu']
+    return dict(passed=True,actual_own_Rp_field_and_cumulative_trace_rows=checked,
+        actual_empty_startup_partial_integral_rows=empty,accepted_actual_startup_endpoint_tensor_rows=startup,
+        actual_startup_signed_pressure_increment_zero_rows=increment,
+        actual_leading_upper_endpoint_tensor_source_rows=actual_upper,
+        actual_quiet_prequery_to_Rp_primitive_source_substitutions_checked=True,
+        accepted_same_source_facts=facts,actual_Rp_cumulative_retained_without_zero_reset=True,
+        actual_physical_y_recovery_and_quiet_one_main_mu_Jacobians=True,
+        both_actual_radius_recipes_retained=True,
+        leading_endpoint_input_theorem_consumed_before_pressure_evaluation=True,
+        whole_own_field_or_pressure_trace_outputs_not_bound=True,
+        radial_pressure_and_higher_mixed_matching_not_claimed=True)
+
+
+def own_Rv_source_join_proof(owner,radius_proof):
+    """Recover both actual traces from the proved common terminal primitives."""
+    owner.assert_graph();facts=accepted_intermediate_seam_facts(owner)
+    g=owner.g;i=owner.inputs[current.intermediate.NAME];b=owner.inputs[current.intermediate.previous.NAME]
+    chart=i['charts']['pulse_end'];x=chart['coordinate'];X=sy.Symbol(g.nodes[x]['name'],real=True);Z=sy.Symbol('Z',real=True)
+    assert chart['domain'][1]==0 and current.encode(owner.tail['cumulative'])==b['terminal']
+    actual_upper=actual_upper_endpoint_source_rows(owner,'end',i['pulse_bindings']['end'])
+    bindings=radius_context(owner,radius_proof);bindings[x]=X
+    for key,ids in b['terminal'].items():bind(bindings,owner.jet(ids),sy.Function('actual_terminal_'+key)(Z),Z)
+    # The accepted same-integrand partition proves each actual source
+    # primitive at X=0 equals this terminal function. Recovery is then
+    # checked for arbitrary terminal data, with no whole field replacement.
+    for key,ids in chart['cumulative'].items():
+        for n,(j,t) in enumerate(zip(ids,b['terminal'][key])):
+            label=key+'_Z'+str(n);assert label in facts['terminal_cumulative_rows']
+            terminal=sy.diff(sy.Function('actual_terminal_'+key)(Z),Z,n)
+            assert t not in (0,1) and bindings[t]==terminal
+            if j==t:continue
+            if key not in ('m13','m15'):
+                assert not free_query_dependency(owner,j,x);body=terminal
+            else:body=terminal+X*sy.Function('actual_terminal_primitive_difference_'+str(j))(X)
+            if j in bindings:assert sy.simplify(bindings[j]-body)==0
+            else:bindings[j]=body
+    checked,_=compare_own_source_traces(owner,'Rv',bindings)
+    assert owner.charts['pulse_end']['physical_log_radius_jacobian']==g.one
+    return dict(passed=True,actual_own_Rv_field_and_cumulative_trace_rows=checked,
+        accepted_same_source_facts=facts,actual_terminal_cumulative_identity_consumed_before_recovery=True,
+        actual_leading_upper_endpoint_tensor_source_rows=actual_upper,
+        arbitrary_nonzero_terminal_functions_and_derivative_rows_retained=True,
+        original_tail_mass_coordinate_logRv_minus_log2Rc_and_both_radius_recipes_used=True,
+        own_one_plus_delta_recovery_and_physical_y_tail_derivatives=True,
+        whole_field_or_pressure_trace_outputs_not_bound=True,
+        leading_angular_and_heat_pressure_not_zeroed=True,
+        radial_pressure_and_higher_mixed_matching_not_claimed=True)
 
 
 def radial_source_proof(owner):
@@ -439,21 +634,24 @@ def save_construction_check(owner):
     assert raw['exact_graph_nodes']==owner.g.nodes[:len(raw['exact_graph_nodes'])]
     proof=radial_source_proof(owner);radii=radius_source_proof(owner);quiet=quiet_start_source_proof(owner)
     seam=own_2Rc_source_join_proof(owner,radii,quiet)
+    Rp=own_Rp_source_join_proof(owner,radii);Rv=own_Rv_source_join_proof(owner,radii)
     assert len(seam['actual_own_2Rc_field_and_cumulative_trace_rows'])==68
     assert len(seam['actual_2Rc_radial_pressure_trace_rows'])==4
     receipt=dict(construction_only=True,source_radial_calculus_passed=proof['passed'],
         full_seam_acceptance_passed=False,source_family=owner.family,
         checks={'actual_reserved_radial_source':proof,'actual_old_current_radius_sources':radii,
-            'actual_quiet_start_source':quiet,'actual_own_2Rc_source_join':seam},
+            'actual_quiet_start_source':quiet,'actual_own_2Rc_source_join':seam,
+            'actual_own_Rp_source_join':Rp,'actual_own_Rv_source_join':Rv},
         actual_own_2Rc_source_join_passed=True,actual_2Rc_radial_pressure_C3_join_passed=True,
-        actual_own_Rp_source_join_passed=False,actual_own_Rv_source_join_passed=False,
+        actual_own_Rp_source_join_passed=True,actual_own_Rv_source_join_passed=True,
+        all_three_ordinary_axial_trace_identities_passed=True,ordinary_own_field_and_cumulative_trace_rows=204,
         **dict.fromkeys(current.GATES+current.OPEN,False),
         input_hashes={**owner.hashes,current.NAME:current.sha(current.NAME),Path(__file__).name:current.sha(Path(__file__).name)},
-        remaining_actual_seams=['Rp','Rv'],radial_pressure_FTC_joins_not_admitted=True,
+        remaining_actual_seams=[],remaining_radial_pressure_seams=['Rp','Rv'],radial_pressure_FTC_joins_not_admitted=True,
         radial_pressure_all_seams_not_admitted=True,execution_seconds=time.monotonic()-began)
     owner.assert_graph()
     (current.HERE/current.CONSTRUCTION_RECEIPT).write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8',newline='\n')
-    print('ACTUAL_2RC_SOURCE_JOIN_68_ROWS_AND_PRESSURE_Y_4_ROWS_CHECKED_RP_RV_OPEN',flush=True)
+    print('ACTUAL_2RC_RP_RV_SOURCE_TRACES_204_ROWS_CHECKED_RADIAL_PRESSURE_AND_MIXED_OPEN',flush=True)
     return receipt
 
 
