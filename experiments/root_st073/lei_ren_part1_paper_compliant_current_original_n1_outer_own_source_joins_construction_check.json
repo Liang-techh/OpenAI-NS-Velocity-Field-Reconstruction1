@@ -37,13 +37,353 @@
         24983
       ],
       "actual_mass_FTC_M_y_equals_R_U_consumed": true,
+      "actual_mass_FTC_source_primitive_and_field_rows": [
+        "M1_y_Z0",
+        "M1_y_Z1",
+        "M1_y_Z2",
+        "M1_y_Z3"
+      ],
       "exact_bump_derivative_source_not_global_caps": true,
       "actual_outside_support_lazy_flat_branches_checked": 2,
       "beta_boundary_derivatives_zero_by_original_smooth_compact_extension": true,
       "own_one_plus_delta_recovery": true,
       "seam_identities_and_radial_pressure_matching_not_claimed": true
+    },
+    "actual_old_current_radius_sources": {
+      "passed": true,
+      "selected_parameter_source_projection": {
+        "passed": true,
+        "old_parameter_node": 6,
+        "true_parameter_node": 35560,
+        "canonical_datum": "lei_ren_part1_paper_compliant_physical_norm_family.json",
+        "canonical_datum_sha256": "e8b97192b8d026a8fa2b22848bb07bae38bc876261d909fb70419b4898efb7e5",
+        "canonical_datum_key": "selected_logCstar",
+        "actual_source_assignments": [
+          {
+            "module": "lei_ren_part1_paper_compliant_current_original_whole_Z_long_Rm_finite_N.py",
+            "module_sha256": "dd5830925de6befe08254e4954cb25e4a3ec1d5dec448cf6684e3c6fade87c2d",
+            "class_name": "WholeZLongRmFiniteN",
+            "function": "__init__",
+            "AST_sha256": "ccbcff7ea37243b26ef62fca3331407b22577129d369fd7e83fdee46366930d1",
+            "actual_assignments": {
+              "params": "json.loads((HERE / kernels.PARAMS).read_bytes())",
+              "self.logC": "read(c, params['selected_logCstar'])"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_current_original_reshape_terminal_kernels.py",
+            "module_sha256": "a846be160da9a9e4e14296d5a47da235ce899101191ca23f1da7290b4888b5bc",
+            "class_name": null,
+            "function": null,
+            "AST_sha256": "7718b28f605bbe5abe9c57e14a6bd619eceb2f6e84b3cc34bf3c29f4c94b6188",
+            "actual_assignments": {
+              "PARAMS": "PREFIX + 'physical_norm_family.json'"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_current_original_whole_Z_long_Rm_finite_N.py",
+            "module_sha256": "dd5830925de6befe08254e4954cb25e4a3ec1d5dec448cf6684e3c6fade87c2d",
+            "class_name": "WholeZLongRmFiniteN",
+            "function": "owner",
+            "AST_sha256": "8139c3859c2b0ba51090c7c9e6770dd5c247ecb4e39070b71b5c424dd80eb8f2",
+            "actual_assignments": {
+              "ref": "background.ActualReferenceRestoreFunctions(f, z, source.core.delta, terminal['actual_terminal_normalized_six_history_shapes'], fields['V'], P0, self.T, self.logC, self.provider)"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_current_original_reference_restore_functions.py",
+            "module_sha256": "a86da4ef8791c65ce678a067a999f1f24945ac7c1ca0673f6bafc8c8969702b7",
+            "class_name": "ActualReferenceRestoreFunctions",
+            "function": "__init__",
+            "AST_sha256": "0219b5224273ec6ee3e22d8d524637cdabadf3e8ada9061c7bae7d85153b6380",
+            "actual_assignments": {
+              "self.logC": "c.mpf(logC)"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_current_original_whole_Z_long_Rm_signed_functions.py",
+            "module_sha256": "071f7978fb9c5e29b91d11763c0bbf4beaedc19a7f2d6b133ed1d97a9b2ae033",
+            "class_name": "CurrentLongRadiusPhase",
+            "function": "__init__",
+            "AST_sha256": "2fe00a905b473d920d60a8c4bf0de29fcf492d2ca9187bef8909dca2797da160",
+            "actual_assignments": {
+              "self.logC": "long_owner.reference.logC"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_current_core_common_fixed_point.py",
+            "module_sha256": "dd44110f48fb40fee715b358801dd6b8944bda5e6d5c0054eefa63c66f82255f",
+            "class_name": "CurrentCoreCommonFixedPoint",
+            "function": "__init__",
+            "AST_sha256": "9a30ab6417a3b7dab13ae5afcc193ff290fb22de8082beaff219b48bdc4c033f",
+            "actual_assignments": {
+              "self.core": "self.source.core"
+            }
+          },
+          {
+            "module": "lei_ren_part1_paper_compliant_core_physical_field.py",
+            "module_sha256": "19acdd5f7a506e7582427f004be8e2cd7ae22771eafc76b66ee44d053b9aec54",
+            "class_name": "CompliantCorePhysicalField",
+            "function": "__init__",
+            "AST_sha256": "97db8ff5f248a806fdf30ba5fb76c92542ae9b787986f4174cf193c128afd4df",
+            "actual_assignments": {
+              "norm": "self.records['physical_norm_family']",
+              "self.logC": "read(norm, 'selected_logCstar')"
+            }
+          }
+        ],
+        "accepted_true_core_parameter_identity_consumed": true,
+        "same_selected_scalar_recipe_not_interval_overlap_or_new_common_radius": true
+      },
+      "actual_old_logRc_node": 24956,
+      "actual_current_Rc_node": 251066,
+      "actual_six_seam_radius_sources": [
+        {
+          "seam": "2Rc",
+          "side": "left",
+          "actual_radius_node": 280426
+        },
+        {
+          "seam": "2Rc",
+          "side": "right",
+          "actual_radius_node": 265675
+        },
+        {
+          "seam": "Rp",
+          "side": "left",
+          "actual_radius_node": 263349
+        },
+        {
+          "seam": "Rp",
+          "side": "right",
+          "actual_radius_node": 34420
+        },
+        {
+          "seam": "Rv",
+          "side": "left",
+          "actual_radius_node": 35101
+        },
+        {
+          "seam": "Rv",
+          "side": "right",
+          "actual_radius_node": 280428
+        }
+      ],
+      "original_mu_recipe": "exp(-4*(exp(40)+11))/1000",
+      "actual_logRc": "log(110)+10*logCstar+11*logPstar+3",
+      "actual_logRp": "logRc-2-60*log(mu)",
+      "actual_logRv": "logRp+13/mu",
+      "mass_and_pressure_tail_origins_matched": true,
+      "independent_radii_not_bound_to_a_manufactured_common_symbol": true
+    },
+    "actual_quiet_start_source": {
+      "passed": true,
+      "actual_compact_flat_velocity_radial_rows": [
+        "V_Z0",
+        "V_Z1",
+        "V_Z2",
+        "V_Z3",
+        "V_Z4",
+        "V_Z5",
+        "V_y_Z0",
+        "V_y_Z1",
+        "V_y_Z2",
+        "V_y_Z3",
+        "V_y_Z4",
+        "V_y_Z5",
+        "V_yy_Z0",
+        "V_yy_Z1",
+        "V_yy_Z2",
+        "V_yy_Z3",
+        "V_yy_Z4",
+        "V_yy_Z5"
+      ],
+      "actual_empty_quiet_primitive_rows": [
+        "S0_Z0",
+        "S0_Z1",
+        "S0_Z2",
+        "S0_Z3",
+        "S1_Z0",
+        "S1_Z1",
+        "S1_Z2",
+        "S1_Z3"
+      ],
+      "actual_source_boundary_integral_pressure_join_rows": [
+        "integrals_S0_Z0",
+        "integrals_S0_Z1",
+        "integrals_S0_Z2",
+        "integrals_S0_Z3",
+        "integrals_S1_Z0",
+        "integrals_S1_Z1",
+        "integrals_S1_Z2",
+        "integrals_S1_Z3",
+        "boundary_Q_plus_Q_y_Z0",
+        "boundary_Q_plus_Q_y_Z1",
+        "boundary_Q_plus_Q_y_Z2",
+        "boundary_Q_plus_Q_y_Z3",
+        "boundary_R_Q_y_Z0",
+        "boundary_R_Q_y_Z1",
+        "boundary_R_Q_y_Z2",
+        "boundary_R_Q_y_Z3",
+        "pressure_m13_Z0",
+        "pressure_m13_Z1",
+        "pressure_m13_Z2",
+        "pressure_m13_Z3",
+        "pressure_m15_Z0",
+        "pressure_m15_Z1",
+        "pressure_m15_Z2",
+        "pressure_m15_Z3"
+      ],
+      "actual_quiet_pressure_increment_zero_rows": [
+        "m13_Z0",
+        "m13_Z1",
+        "m13_Z2",
+        "m13_Z3",
+        "m15_Z0",
+        "m15_Z1",
+        "m15_Z2",
+        "m15_Z3"
+      ],
+      "actual_quiet_and_compact_radius_identity": true,
+      "nonzero_incoming_integrals_and_initial_finite_boundary_terms_retained": true,
+      "actual_pressure_outputs_and_boundary_outputs_not_bound": true,
+      "fixed_actual_compact_normalization_integrals": [
+        4991
+      ],
+      "flat_source_nodes": [
+        260189,
+        260209,
+        260210,
+        260255,
+        260275,
+        260276
+      ],
+      "empty_source_integral_nodes": [
+        265125,
+        265126,
+        265127,
+        265128,
+        265142,
+        265143,
+        265144,
+        265145
+      ],
+      "own_full_tuple_and_radial_pressure_matching_not_yet_claimed": true
+    },
+    "actual_own_2Rc_source_join": {
+      "passed": true,
+      "actual_own_2Rc_field_and_cumulative_trace_rows": [
+        "fields_Uz1_Z0",
+        "fields_Uz1_Z1",
+        "fields_Uz1_Z2",
+        "fields_Uz1_Z3",
+        "fields_Utheta1_Z0",
+        "fields_Utheta1_Z1",
+        "fields_Utheta1_Z2",
+        "fields_Utheta1_Z3",
+        "fields_F1_Z0",
+        "fields_F1_Z1",
+        "fields_F1_Z2",
+        "fields_F1_Z3",
+        "fields_M1_Z0",
+        "fields_M1_Z1",
+        "fields_M1_Z2",
+        "fields_M1_Z3",
+        "fields_mean1_Z0",
+        "fields_mean1_Z1",
+        "fields_mean1_Z2",
+        "fields_mean1_Z3",
+        "fields_K1_Z0",
+        "fields_K1_Z1",
+        "fields_K1_Z2",
+        "fields_K1_Z3",
+        "fields_P1_Z0",
+        "fields_P1_Z1",
+        "fields_P1_Z2",
+        "fields_P1_Z3",
+        "fields_Q1_Z0",
+        "fields_Q1_Z1",
+        "fields_Q1_Z2",
+        "fields_V1_Z0",
+        "fields_V1_Z1",
+        "fields_V1_Z2",
+        "fields_M1_y_Z0",
+        "fields_M1_y_Z1",
+        "fields_M1_y_Z2",
+        "fields_M1_y_Z3",
+        "fields_mean1_y_Z0",
+        "fields_mean1_y_Z1",
+        "fields_mean1_y_Z2",
+        "fields_mean1_y_Z3",
+        "fields_Q1_y_Z0",
+        "fields_Q1_y_Z1",
+        "fields_Q1_y_Z2",
+        "fields_V1_y_Z0",
+        "fields_V1_y_Z1",
+        "fields_V1_y_Z2",
+        "cumulative_m11_Z0",
+        "cumulative_m11_Z1",
+        "cumulative_m11_Z2",
+        "cumulative_m11_Z3",
+        "cumulative_m12_Z0",
+        "cumulative_m12_Z1",
+        "cumulative_m12_Z2",
+        "cumulative_m12_Z3",
+        "cumulative_m13_Z0",
+        "cumulative_m13_Z1",
+        "cumulative_m13_Z2",
+        "cumulative_m13_Z3",
+        "cumulative_m14_Z0",
+        "cumulative_m14_Z1",
+        "cumulative_m14_Z2",
+        "cumulative_m14_Z3",
+        "cumulative_m15_Z0",
+        "cumulative_m15_Z1",
+        "cumulative_m15_Z2",
+        "cumulative_m15_Z3"
+      ],
+      "actual_2Rc_radial_pressure_trace_rows": [
+        "P1_y_Z0",
+        "P1_y_Z1",
+        "P1_y_Z2",
+        "P1_y_Z3"
+      ],
+      "actual_both_radius_recipes_retained": true,
+      "both_actual_physical_log_radius_Jacobians_equal_one": true,
+      "arbitrary_nonzero_own_mass_and_pressure_primitives_retained": true,
+      "actual_flat_reserved_velocity_derivatives_and_compact_leading_velocity_consumed": true,
+      "quiet_zero_start_signed_pressure_identity_consumed": true,
+      "fixed_leading_N1p_and_own_one_plus_delta_not_confused": true,
+      "full_own_trace_outputs_not_bound_to_common_values": true,
+      "fixed_actual_reserved_normalization_integrals": [
+        24983
+      ],
+      "actual_flat_source_nodes": [
+        25153,
+        25163,
+        25172,
+        25181,
+        25189,
+        260189,
+        260209,
+        260210,
+        260255,
+        260275,
+        260276,
+        280203,
+        280230
+      ],
+      "remaining_actual_seams": [
+        "Rp",
+        "Rv"
+      ],
+      "full_seam_acceptance_not_claimed": true
     }
   },
+  "actual_own_2Rc_source_join_passed": true,
+  "actual_2Rc_radial_pressure_C3_join_passed": true,
+  "actual_own_Rp_source_join_passed": false,
+  "actual_own_Rv_source_join_passed": false,
   "current_original_n1_2Rc_Rp_Rv_actual_own_C3_QV_C2_trace_joins_installed": false,
   "current_original_n1_reserved_to_pulse_own_source_accessor_installed": false,
   "n1_complete_signed_defect_C1_function_adapter_installed": false,
@@ -1915,12 +2255,13 @@
     "lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source_check.py": "5ab222a2a0b963632abbdfcf5327dedc7f050a2af8c2dc91ddba718d64192719",
     "lei_ren_part1_paper_compliant_current_original_n1_outer_own_source_joins.py": "815dad5da08eeca7d790943e63231bc56965300e8a2723e4b7db1bff5208f214",
     "lei_ren_part1_paper_compliant_current_original_n1_outer_own_source_joins.json.gz": "5c4412f67399659e466312ff9f6c102774cf24832d5aecca7cc901b9fe1ebe3e",
-    "lei_ren_part1_paper_compliant_current_original_n1_outer_own_source_joins_check.py": "1dfd2955ccd76f0a81d03ecca12d9c0a8aec66b8ee6fce84fc6256437a6cbfa7"
+    "lei_ren_part1_paper_compliant_current_original_n1_outer_own_source_joins_check.py": "3c40b04c2d6a92262355e19a653d9af74384933b9ad64dbe87bfdc8cce1fc4af"
   },
   "remaining_actual_seams": [
-    "2Rc",
     "Rp",
     "Rv"
   ],
-  "radial_pressure_FTC_joins_not_admitted": true
+  "radial_pressure_FTC_joins_not_admitted": true,
+  "radial_pressure_all_seams_not_admitted": true,
+  "execution_seconds": 47.78099999995902
 }
