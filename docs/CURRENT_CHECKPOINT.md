@@ -1,4 +1,8 @@
-# Latest checkpoint — true core inlet axial6 and generic fifth source, 2026-10-13
+# Latest checkpoint — true prescribed micro/macro bridge C6, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) first. Actual analytic comparison/moment/P0 C7 now supplies the known direction C6, true prescribed background phi/V and six own histories C6 across both micro windows and macro to R100, and full Q/inertial/p2 C5. Nonzero incoming memories, both chi controls, original physical measures and pressure/swirl scales remain. Next transfer quantitative C6/C7 containment, propagate the prescribed source through R100/R110/restoration/reshape to Rm, then compose actual finite-N loop/correction histories and all17 sources/compact controls. Global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — true core inlet axial6 and generic fifth source, 2026-10-13
 
 Read [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) first. Same nonlinear rho4 core now supplies all eight genuine C6 generic inputs, complete six-moment histories, independent P0 C6 and full signed Q/inertial/p2 C5. Actual whole-Z and point3/8 enclosures retain all density tails. This is inlet-only. Next propagate actual axial6 through the bridge/Rm and seventeen downstream charts, then construct active/compact C5 controls, pre-Rp C3 pressure and complete defects/coefficient derivatives. Earlier lower/pulse C3 and terminal C1 zeros remain. Global n1, true n>=2 recursion and corrected NS are open. Full goal **ACTIVE / INCOMPLETE**.
 

@@ -1,4 +1,8 @@
-# Current agent queue — propagate genuine core inlet axial6, 2026-10-13
+# Current agent queue — carry true bridge C6 beyond R100, 2026-10-14
+
+Use [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md). True prescribed background functions now reach R100 with C7 known comparison sources, C6 actual field/own moments and C5 full Q/inertial/p2. Claim quantitative C6/C7 transfer or actual R100/R110/reference/reshape source propagation to Rm. Keep this background separate from the finite-N modified velocity and signed correction histories; preserve their original nonzero memories and distinct zero correction inlet. Then complete actual loop/inverse/A/B, all17 sources, C4/C5 targets and same-J/N compact controls. Do not use comparison covers, caps or Qpad as function values. Global n1, genuine recursion and corrected NS remain open.
+
+# Earlier agent queue — propagate genuine core inlet axial6, 2026-10-13
 
 Use [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) and claim the first unchecked dependency. Core rho4 C6 inputs and full Q/inertial/p2 C5 are complete, with executable P0 derivative projections and actual whole-Z/point3/8 source enclosures. Propagate actual fields and complete histories through micro/macro bridge, Rm and the seventeen active charts. Comparison axial6 data and internal Qpad are not actual derivatives. Preserve old axial4 outputs; export seven genuine source rows/six output rows with original units, context, bases, ledger, P0 and finite N. Then complete actual active/compact C5 targets/controls, pre-Rp C3 pressure and complete defect/coefficient derivatives. Keep global n1/recursion/NS open.
 

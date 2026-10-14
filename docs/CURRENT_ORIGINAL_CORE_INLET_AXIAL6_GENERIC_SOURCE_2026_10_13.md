@@ -1,5 +1,7 @@
 # True core inlet axial6 and generic fifth derivatives, 2026-10-13
 
+Continuation: [true prescribed micro/macro bridge C6](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) now propagates this inlet's background functions and six histories through R100. Quantitative C6 containment, R100-to-Rm and modified finite-N/all17 sources remain open.
+
 Status: the same admitted nonlinear core now supplies genuine C6 source functions and directed seven-row numerical enclosures at its rho=4 inlet. Full signed Q, angular/axial inertial sectors and p2 have six genuine Taylor entries through order5. This is the core inlet; the seventeen downstream active charts still require their own higher-order construction. The full goal remains **ACTIVE / INCOMPLETE**.
 
 Use `python scripts/run_original_core_inlet_axial6_generic_source.py` to inspect the sealed source archive. It does not rebuild the core or pressure ancestors. On the original host, reuse retained Python session55770, cache26, `public_core_lower_C3`, `public_pulse_C3_pressure`, `hier`, and the new `inlet6_owner`. Checked archive restoration is available as `CurrentOriginalCoreInletAxial6GenericSource(public_core_lower_C3,hier)` when those admitted source owners are already restored.
@@ -60,7 +62,7 @@ Completed within this scope:
 
 Next tasks, in dependency order:
 
-1. [ ] Propagate actual Phi/U/mean and six moment C6 source kernels from rho4 through the real micro/macro bridge. Differentiate the complete source equations; the comparison bridge's axial6 data does not certify actual axial6 fields.
+1. [x] Propagate prescribed background Phi/U/mean and six moment C6 source functions from rho4 through both real micro windows and macro bridge to R100. The linked continuation differentiates original equations and retains histories; its quantitative containment and modified branch remain open.
 2. [ ] Implement an actual versioned axial6 source on the Rm patch. Preserve original pressure datum, family, coordinate map, context, five log bases and ledger. Require seven rows for every E/V/m/h/k/e/p/P0 input before differentiating.
 3. [ ] Recover Rm Q and all signed inertial/p2 axial5 outputs using the unchanged generic equations. Export six real entries under new keys. Preserve axial4 exports and the internal Qpad convention separately.
 4. [ ] Carry the new actual sources into switch, reference-restore and long-reshape finite-N producers. Retain both linear and quadratic sectors, actual Pstar and one physical radius. Apply fifth-row factorial120 exactly once.

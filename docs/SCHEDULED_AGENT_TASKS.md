@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — true axial6 downstream propagation, 2026-10-13
+# Current scheduled-agent queue — propagate prescribed bridge C6 past R100, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md). Inspect sealed sources with `python scripts/run_original_prescribed_bridge_C6_functions.py`, reuse retained owners and complete its first unchecked dependency. Actual prescribed background C6 functions and full generic C5 now reach R100. Transfer quantitative bounds or construct R100/R110/reference/reshape source propagation to Rm, then actual finite-N loop/higher correction transport and all17 sources. Keep known comparison direction distinct from actual histories, and background memory distinct from zero correction inlet. Preserve physical units, phase origins, selected N and flat predicates. Commit scoped results and mark exact checklist items complete. Global n1/recursion/NS remain open; full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — true axial6 downstream propagation, 2026-10-13
 
 Start at [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md). Inspect sealed archives with `python scripts/run_original_core_inlet_axial6_generic_source.py`; reuse admitted owners and numeric caches. Complete the first unchecked dependency: actual micro/macro bridge axial6, then versioned Rm/17-chart seven-input/six-output sources. Preserve all source histories and units; comparison bounds/zero padding do not define actual derivatives. Next active/compact C5 targets/controls, pre-Rp C3 pressure, complete defects and selected coefficient derivatives. Commit scoped work and mark the exact checklist items complete. Global n1, genuine n>=2 recursion and corrected NS remain open; the original goal is **ACTIVE / INCOMPLETE**.
 

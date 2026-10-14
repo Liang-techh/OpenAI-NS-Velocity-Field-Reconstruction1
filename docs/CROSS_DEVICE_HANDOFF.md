@@ -1,4 +1,8 @@
-# Latest recoverable checkpoint — core inlet axial6/generic fifth source, 2026-10-13
+# Latest recoverable checkpoint — true prescribed bridge C6 through R100, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md) and `CURRENT_CHECKPOINT.md`. Branch `codex/st073-transition-next`. Exact comparison C7, actual prescribed field/six own histories C6 and full generic C5 functions are saved through R100. Inspect `python scripts/run_original_prescribed_bridge_C6_functions.py`. On the original host reuse session55770/cache26, `public_inlet6`, `bridge6_owner`, `bridge6_receipt` and existing admitted owners. Other hosts can inspect pinned archives. Quantitative C6 containment, modified finite-N branch, R100-to-Rm/all17 propagation, genuine recursion and corrected NS remain unfinished. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable checkpoint — core inlet axial6/generic fifth source, 2026-10-13
 
 Read [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) and `CURRENT_CHECKPOINT.md` first. Branch: `codex/st073-transition-next`. Genuine nonlinear rho4 C6 fields/moments/P0 and full signed Q/inertial/p2 C5 are saved with actual whole-Z and point3/8 enclosures. Inspect them with `python scripts/run_original_core_inlet_axial6_generic_source.py`. Reuse session55770/cache26 on the original host; another host can read sealed source archives and the twelve-step task list. All17 downstream charts, compact C5 targets/controls and genuine recursion remain open. Goal **ACTIVE / INCOMPLETE**.
 

@@ -1,4 +1,8 @@
-# Current queue — extend actual axial6 beyond the core inlet, 2026-10-13
+# Current queue — prescribed R100-to-Rm C6 and modified-source composition, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_BRIDGE_C6_FUNCTIONS_2026_10_14.md). The true unmodified prescribed micro/macro field and six histories are now C6 functions through R100, with C5 full generic outputs. Complete original-scale quantitative containment and propagate true R100/R110/reference/reshape backgrounds to Rm; then compose finite-N modified fields and signed correction histories with actual higher loop functions. Continue through all17 sources, compact targets/controls, pre-Rp C3 pressure and complete defects/coefficient derivatives. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — extend actual axial6 beyond the core inlet, 2026-10-13
 
 Read [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md). Genuine core-inlet C6 inputs, complete histories, P0 derivatives and Q/inertial/p2 C5 are built and numerically produced. Next extend actual bridge/Rm/active chart sources, preserving each signed sector, physical scale and incoming memory, then active/compact C5 control functions and complete pre-Rp pressure C3. Use the linked twelve-step checklist and mark only its completed scope. Full goal **ACTIVE / INCOMPLETE**.
 
