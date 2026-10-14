@@ -1,4 +1,8 @@
-# Latest recoverable source — O3 high source and own Rc joining, 2026-10-14
+# Latest recoverable source — own Rin finite derivative joining, 2026-10-14
+
+Read [CURRENT_ORIGINAL_N1_RIN_SOURCE_JOIN_2026_10_14.md](CURRENT_ORIGINAL_N1_RIN_SOURCE_JOIN_2026_10_14.md), then run `python scripts/run_original_n1_Rin_source_join.py --restore-source`. The296133-node archive preserves the accepted Rc/outer provider and adds actual Rin state y2/QV C2 and pressure/moment y1 C3 joining, with138 actual node pairs. The common leading N1p identity, original flat cutoff, retained nonzero histories, signed physical measures and empty lower inlet are checked. The next source gap is genuine leading Q radial3/4 and N_rho/N_rhorho; full Rin246 rows, own rminus/other joins and global n1 remain open. No previous live process or numerical ancestor replay is required for source recovery. Numerical/common N/heat/stress/genuine recursion/corrected NS are unfinished. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable source — O3 high source and own Rc joining, 2026-10-14
 
 Read [CURRENT_ORIGINAL_N1_RC_MIXED_SOURCE_JOIN_2026_10_14.md](CURRENT_ORIGINAL_N1_RC_MIXED_SOURCE_JOIN_2026_10_14.md), then run `python scripts/run_original_n1_Rc_mixed_source_join.py --restore-source`. The295856-node archive retains actual O3/background/correction/pressure inputs, its new high radial source and both246-row Rc traces. Original pressure constants and signed moments remain. The source composes the accepted whole reserved/compact radius theorem and the canonical mu/eta guard; it does not require the previous live Python process or numerical ancestor replay. New task9 is the actual own Rin cutoff/lower join; task10 is the lower/first-micro own rminus join. Then complete other intermediate joins and checked global n1. Source handles remain distinct from numerical oracles; original-scale/common N/heat/stress/true recursion/corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
