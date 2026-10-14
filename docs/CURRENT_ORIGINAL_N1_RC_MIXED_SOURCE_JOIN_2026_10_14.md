@@ -67,7 +67,7 @@ Use `CurrentOriginalN1RcMixedSourceJoin()`. `leading` retains the actual O3 pack
 7. [x] Admit the new Rc source only after source pins, endpoint independence and complete finite row coverage pass.
 8. [x] Run public independent restoration, query both adjoining sources and publish the artifacts and task queue. The fresh process restores the same295856-node source, verifies acceptance and queries both actual O3 and reserved-band packets without numerical ancestor replay.
 9. [x] Finish the finite own Rin join: inner cutoff endpoint -> lower left. The [actual lower radial4 / Rin246 source](CURRENT_ORIGINAL_LOWER_HIGHER_RADIAL_RIN_JOIN_2026_10_14.md) supplies genuine Q radial3/4, N_rho/N_rhorho, whole-flat own recovery/FTC and all246 contracted mixed rows. Original sc/hb/radius, nonzero pressure/moments and1+delta own recovery remain. Quantitative/all-order bounds are still open.
-10. [ ] Finish own rminus: lower right -> first-micro left. Consume the actual leading common-source/gauge theorem, but derive own recovery and pressure from own histories and signed integrands; leading1-delta Q is a different function.
+10. [x] Finish the finite own rminus246 join in [the actual active high/rminus source](CURRENT_ORIGINAL_N1_RMINUS_MIXED_SOURCE_JOIN_2026_10_14.md). The actual common source/gauge, nonzero own histories, distinct1+delta recovery and original signed pressure integrands are retained; scope is the original first-micro flat collar.
 11. [ ] Enumerate and finish all other required intermediate own joins and chart coordinate conventions. Preserve the complete pressure/inner/lower prefix at every chart boundary; regional packet availability alone does not prove a global join.
 12. [ ] Assemble a checked global n1 source and Cartesian coefficient export across inner/cutoff/lower/intermediate/reserved/pulse/tail domains. Keep the leading background and the n1 coefficient distinct; use the same source family, N, gauge and coordinate maps.
 13. [ ] Restore original-scale numerical evaluation and derivative enclosures for the analytic, implicit, Volterra and integral sources. Keep exact source handles, comparison bounds and numerical evaluations separate; use scale-aware arithmetic.
@@ -79,7 +79,7 @@ Use `CurrentOriginalN1RcMixedSourceJoin()`. `leading` retains the actual O3 pack
 19. [ ] Construct the smooth coefficient sum, mean correction and two-family oscillatory pulses; prove averaged quadratic momentum-flux cancellation of the admissible stress.
 20. [ ] Independently validate the corrected Cartesian field with fixed forcing, Linf and physical-volume L2 residuals below1e-3. Measure critical-time radial contraction, relative axial elongation, amplitude/vorticity scaling and material winding.
 
-The finite own Rin join is complete in the new source linked above. Current first construction dependency: own rminus and the other required intermediate joins, then global n1 assembly. Genuine coefficient recursion and the final corrected Navier–Stokes reconstruction are unfinished.
+The finite own Rin and rminus joins are complete in the sources linked above. Current first construction dependency: the remaining required intermediate joins, then global n1 assembly. Genuine coefficient recursion and the final corrected Navier–Stokes reconstruction are unfinished.
 
 ## Concrete Rin source route for task9
 

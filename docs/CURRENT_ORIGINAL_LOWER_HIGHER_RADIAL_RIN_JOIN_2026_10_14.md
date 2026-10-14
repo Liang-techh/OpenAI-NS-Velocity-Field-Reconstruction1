@@ -70,8 +70,8 @@ Use `CurrentOriginalLowerHigherRadialRinJoin()`. `core_radial`, `radial`, `N`, `
 ## Next tasks
 
 1. [x] Save the final six-group receipt, independently restore and publish this actual lower/high-pressure/Rin246 source and task queue. The public fresh process restores the same298770-node source and successfully queries lower fractions0,1/2,1 with source-only and all scoped acceptance flags.
-2. [ ] Finish own rminus: lower right -> first-micro left. Consume the actual leading common-source/gauge theorem in `current_original_lower_active_common_source_join_functions.py`, now together with the genuine high lower radial source. Identify the exact physical radius, coordinate orientation, core/Phi/Psi/mean history and empty finite-N startup correction.
-3. [ ] Derive the first-micro own pressure derivative and higher source rows from its actual signed primitives and local loop support. Preserve the full lower pressure anchor and signed m15 history; leading Q cannot replace positive-order own recovery. Prove the full own rminus mixed contract before marking this seam complete.
+2. [x] Finish own rminus: lower right -> first-micro left. Completed in [the actual active high/rminus246 source](CURRENT_ORIGINAL_N1_RMINUS_MIXED_SOURCE_JOIN_2026_10_14.md), consuming the exact common IVP/selector, physical radius/Jacobian, actual micro primitives and flat startup correction.
+3. [x] Derive actual first-micro high radial/pressure sources and prove the complete246-row finite own rminus mixed contract. The signed pressure primitives, nonzero lower anchor/m15 history, original own support/recovery and first-y rows are retained. Scope is the original active flat collar; global n1 and quantitative bounds remain open.
 4. [ ] Enumerate every other required intermediate own join, including both sides' physical y conversion and actual incoming histories. Existing regional packets and leading axial traces alone do not establish a global own coefficient.
 5. [ ] Assemble the checked global n1 source across core/cutoff/lower/intermediate/reserved/pulse/tail and export the same Cartesian coefficient functions. Keep leading background, own coefficient and repaired terminal moments distinct.
 6. [ ] Restore original-scale numerical evaluation and enclosures of analytic, Volterra, implicit and integral sources. Preserve scale-aware arithmetic and separate exact definitions, evaluated values and bounds.
@@ -85,4 +85,4 @@ Use `CurrentOriginalLowerHigherRadialRinJoin()`. `core_radial`, `radial`, `N`, `
 14. [ ] Independently validate the corrected Cartesian field with fixed forcing and Linf/physical-volume L2 residuals below1e-3.
 15. [ ] Measure physical-time radial contraction, relative axial elongation, swirl/axial/vorticity scaling and material-line winding separately. Coordinate scaling alone is not evidence of genuine coefficient recursion or accumulated winding.
 
-The first remaining construction is own rminus, followed by the remaining intermediate joins and global n1. Numerical/common N/heat/stress/genuine n>=2/smooth sum/oscillatory/final NS gates remain open.
+The first remaining construction is first_micro -> second_micro at1, followed by second_micro -> frozen_macro at2 ->0, the remaining intermediate joins and global n1. Numerical/common N/heat/stress/genuine n>=2/smooth sum/oscillatory/final NS gates remain open.

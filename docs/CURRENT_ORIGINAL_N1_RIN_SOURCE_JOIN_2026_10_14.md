@@ -66,7 +66,7 @@ Use `CurrentOriginalN1RinSourceJoin()`. `left` and `right` retain the chart sour
    Prove the same result by differentiating the physical-R pressure form. Keep all leading U, Q and Q_Z terms in S.
 4. [x] Extend actual own state to y3/y4 on the flat cutoff neighborhood by the original support theorem and mean/history FTC. The whole-flat-source proof checks K/Q1+delta/V/M and the independent mean flow while retaining the nonzero leading pressure.
 5. [x] Build P1_yy=R(N+rho N_rho), P1_yyy=R(N+3rho N_rho+rho^2 N_rhorho), and the corresponding signed m15 rows. All246 finite Rin rows now match in the new source above.
-6. [ ] Finish own rminus from the lower right endpoint to first-micro left, with actual empty first-micro increments and the same leading/own pressure gauge. Reuse the accepted leading source theorem without replacing own recovery by leading Q.
+6. [x] Finish the finite own rminus246 source join in [the actual active high/rminus source](CURRENT_ORIGINAL_N1_RMINUS_MIXED_SOURCE_JOIN_2026_10_14.md). Actual empty startup increments, original own recovery, nonzero pressure/five-moment histories and the same source/gauge are retained. Active-loop continuation and global n1 remain open.
 7. [ ] Enumerate and join the remaining own intermediate charts; compose a checked global n1 source and Cartesian coefficient export. Regional source availability is insufficient for a global field.
 8. [ ] Restore actual original-scale numerical evaluation and derivative enclosures for the analytic, Volterra, implicit and integral sources. Keep evaluated values, exact source handles and comparison bounds distinct.
 9. [ ] Establish common global N, quantitative mixed bounds, axis regularity, physical-volume energy and radial-tail diagnostics.
@@ -76,7 +76,7 @@ Use `CurrentOriginalN1RinSourceJoin()`. `left` and `right` retain the chart sour
 13. [ ] Construct mean corrections and two-family oscillatory pulses and their averaged quadratic stress cancellation.
 14. [ ] Independently validate the corrected Cartesian field with fixed forcing and both Linf and physical-volume L2 residuals below1e-3. Measure critical-time scale laws, anisotropic core contraction, vorticity growth and material winding separately.
 
-Tasks2..5 are complete in [the new actual lower/high-pressure/Rin246 source](CURRENT_ORIGINAL_LOWER_HIGHER_RADIAL_RIN_JOIN_2026_10_14.md). The next construction is own rminus (task6), followed by other joins/global n1. The implemented recurrence below remains the mathematical source route; numerical and quantitative bounds remain open.
+Tasks2..5 are complete in [the actual lower/high-pressure/Rin246 source](CURRENT_ORIGINAL_LOWER_HIGHER_RADIAL_RIN_JOIN_2026_10_14.md); task6 is complete in the rminus246 source linked above. The next construction is the remaining intermediate joins/global n1. The implemented recurrence below remains the mathematical source route; numerical and quantitative bounds remain open.
 
 ## Implemented exact radial recurrence for tasks2..5
 
