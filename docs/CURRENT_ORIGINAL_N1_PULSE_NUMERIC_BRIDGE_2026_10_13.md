@@ -32,8 +32,8 @@ The old source artifacts remain preserved and pinned as input providers. Their d
 
 Run `python scripts/run_original_n1_pulse_numeric_bridge.py` to inspect the accepted checkpoint without rebuilding ancestors. The interactive Python session 55770 retains `public_pulse_bridge`, `public_pulse_bridge_packet`, `public_pulse_bridge_view`, all three bridge packets, the checked numerical providers and the inner/lower/pre-Rp owners.
 
-- [ ] Convert inner/lower/pre-Rp/pulse components to a shared physical logarithmic frame. Use the actual normalization functions and cancel inverse-mu powers before boxing; never exponentiate original physical scales.
-- [ ] Compose all five signed defect value/Z1 enclosures, including the complete pressure support and the beyond-Rv pressure-zero theorem. The three velocity moments already cover their support.
+- [x] Convert inner/lower/pre-Rp/pulse components to a shared physical logarithmic frame. Completed by the source-recipe and graph identities in [the complete five C1 checkpoint](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md); inverse-mu powers combine before boxing and no original physical scale is exponentiated numerically.
+- [x] Compose all five signed defect value/Z1 enclosures, including the complete pressure support and the beyond-Rv pressure-zero theorem. Original point and continuous whole-Z queries pass in the complete five C1 checkpoint; the three velocity moments retain their full-support signed physical sectors.
 - [ ] Transfer those enclosures through the actual two-axial/three-angular reserved inverse, retaining Astar_Z and nonzero mu. Report physical coefficient bounds and source-normalized budgets.
 - [ ] Extend required genuine C3/C5 defect and repair coefficient bounds. Revisit local pressure derivative accuracy with the corrected nonlinear remainder before promoting any accuracy gate.
 - [ ] Reconstruct repaired own M/K/Q/V/P from the actual repaired velocity, preserving full radial histories. Prove five terminal zero functions and all joins.

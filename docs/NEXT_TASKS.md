@@ -1,4 +1,8 @@
-# Current queue — shared physical units and complete numerical five defects, 2026-10-13
+# Current queue — actual reserved coefficient bounds and repaired own fields, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md). Shared-unit complete five C0/C1 defects now execute on the original point and continuous whole-Z domain. The next unchecked dependency is numerical alpha/beta bounds from the actual reserved inverse. Reuse its accepted matrix rows, determinants and amplitude source cells; retain Astar_Z and correlation before division by nonzero mu. Then construct repaired own M/K/Q/V/P and prove the five terminal identities. The linked document records the exact inverse map and sixteen remaining dependency tasks. Full original goal remains active and incomplete.
+
+# Earlier queue — shared physical units and complete numerical five defects, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md). True pulse value/Z1 enclosure transfer is implemented with corrected nonlinear derivative-error units. Next compose inner/lower/pre-Rp/pulse in a shared physical log frame, then transfer five defects through the actual reserved inverse and reconstruct repaired own fields. Reuse retained owners; do not regenerate historical grids. Full original goal remains active and incomplete.
 

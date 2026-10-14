@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — complete numerical moments and repair, 2026-10-13
+# Current scheduled-agent queue — actual coefficient bounds and repaired fields, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md) and take its next unchecked dependency. Full signed five value/Z1 numerical composition is complete. Transfer the actual reserved inverse with nonzero mu, Astar_Z, original radius powers and source correlations; then construct repaired own fields and prove actual terminal identities. Mark tasks complete only with their scoped source evidence, save a checkpoint, and preserve the full research goal through matching/stress, genuine n>=2 recursion, oscillatory cancellation and independent corrected NS validation.
+
+# Earlier scheduled-agent queue — complete numerical moments and repair, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md) and take its next unchecked dependency: shared-unit complete five defects, then actual reserved repair. Preserve corrected C1 errors, physical scale recipes and full histories. Reuse accepted source owners and archives. Keep the full research goal incomplete until repair, matching/stress, recursion and corrected NS requirements are proven.
 

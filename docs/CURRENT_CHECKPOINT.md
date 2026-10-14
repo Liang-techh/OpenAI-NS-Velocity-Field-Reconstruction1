@@ -1,4 +1,8 @@
-# Latest checkpoint — true complete pulse C1 numerical enclosures, 2026-10-13
+# Latest checkpoint — complete true signed five C1 numerical defects, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md) first. All five unrepaired n1 moments now have same-source ordinary value/Z1 enclosures: the three velocity moments retain physical signed log sectors, and m13/m15 include inner/lower/pre-Rp/pulse in the original fixed reference*A*Rv powers. Actual scalar/scale ASTs and graph unit handles agree; signs and nonzero errors remain. The original point and continuous whole-Z queries passed. Next transfer these defects through the actual reserved inverse, including Astar_Z and the correlated nonzero-mu divided difference, then reconstruct repaired own fields and terminal zeros. Full goal **ACTIVE / INCOMPLETE**; the linked checked/open task list is authoritative.
+
+# Earlier checkpoint — true complete pulse C1 numerical enclosures, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md) first. Actual main/gap/end pressure functions now have directed value/Z1 enclosures in explicit reference*A*Rv powers, with exact scale and finite endpoint identities. The old extra A/reference factor in the nonlinear C1 error is removed. Point, common-boundary and whole-Z queries execute; all nonzero errors and signed m15 endpoints remain. Next combine the four pressure components in one physical log frame, compose five defects and transfer the actual reserved inverse. Full goal **ACTIVE / INCOMPLETE**; the linked checklist is authoritative.
 

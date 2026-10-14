@@ -1,4 +1,8 @@
-# Current agent queue — complete numerical five defects and actual repair, 2026-10-13
+# Current agent queue — numerical reserved inverse and n1 own-field repair, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_FIVE_NUMERIC_BRIDGE_2026_10_13.md). Complete signed five C0/C1 numerical defects and their actual physical unit identities are implemented. Take its first unchecked dependency: explicit coefficient units, correlated divided axial inversion and angular inversion with actual Astar/Astar_Z. Use y0 as the first normalized inverse input and the positive +(1+mu)L exponent for theta1. Reuse source owners and quadrature; do not substitute scalar matrix bounds for selected functions. Then extend derivatives and reconstruct repaired own fields before terminal closure.
+
+# Earlier agent queue — complete numerical five defects and actual repair, 2026-10-13
 
 Use [CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_NUMERIC_BRIDGE_2026_10_13.md). Transfer is complete for pulse value/Z1; its corrected C1 error supersedes the old twice-normalized error. Combine all four pressure components with exact physical log units and reference once, then compute actual reserved coefficient bounds and repaired own M/K/Q/V/P. Five terminal zeros and genuine recursion remain open.
 
