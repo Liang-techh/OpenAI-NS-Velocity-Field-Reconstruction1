@@ -49,6 +49,8 @@ The next own seam adapter reuses `current_original_n1_intermediate_own_C3_chart_
 
 Next construction tasks, in dependency order:
 
+Work in progress: [CURRENT_ORIGINAL_N1_OUTER_OWN_SOURCE_CONSTRUCTION_2026_10_14.md](CURRENT_ORIGINAL_N1_OUTER_OWN_SOURCE_CONSTRUCTION_2026_10_14.md) saves both outer own trace groups and18 checked reserved radial rows. Complete seam/pressure/radius proof is still pending. Tasks1..6 below remain unchecked.
+
 1. [ ] Build the own2Rc join first: the repaired `band_endpoint` must equal the intermediate `endpoints['quiet']['left']`. Compare M1/mean1/K1/P1 C3 and Q1/V1 C2, exact radii, log-radius Jacobian and pressure derivative. Consume the actual terminal five identities and flat patch support; keep leading background pressure separate.
 2. [ ] Build the own Rp join from intermediate `endpoints['quiet']['right']` / `Rp_cumulative` to `endpoints['pulse_main']['left']`. Use this full eight-function leading source bridge, but prove continuity of the distinct own C3/QV C2 functions and signed pressure primitive.
 3. [ ] Build the own Rv join from intermediate `endpoints['pulse_end']['right']` through repaired `terminal['m13'/'m15']` to `pressure_tail` / `tail_at_ratio('pressure',ratio)`. Consume the actual exit identities. Own pressure zero does not zero the leading angular/heat pressure; preserve fixed leading N1p and finite Q/Q_y boundary terms.
