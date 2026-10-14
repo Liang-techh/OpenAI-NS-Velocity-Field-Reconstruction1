@@ -55,8 +55,8 @@ Use `CurrentOriginalN1RinSourceJoin()`. `left` and `right` retain the chart sour
 ## Next construction tasks
 
 1. [x] Admit the actual Rin pressure-source identity, original FTC and complete138-row join, then independently restore and publish the finite source and task queue. All five scoped groups pass, and the fresh public process restores the same296133-node source with exit code0.
-2. [ ] Construct the missing genuine leading Q_rhorhorho and Q_rhorhorhorho from the same analytic core and lower ratio/Psi/mean transport. Preserve the accepted radial0..2 prefix. Differentiate actual source functions, including the original sigma, hb, rho and all history terms; comparison bounds cannot define these derivatives.
-3. [ ] Derive the actual pressure source derivatives, including the derivative of1/R. In the regular rho form,
+2. [x] Construct the missing genuine leading Q_rhorhorho and Q_rhorhorhorho from the same analytic core and lower ratio/Psi/mean transport. Completed by [the actual lower radial4 / Rin246 source](CURRENT_ORIGINAL_LOWER_HIGHER_RADIAL_RIN_JOIN_2026_10_14.md), preserving the accepted radial0..2 prefix, original sigma/hb/rho and histories.
+3. [x] Derive the actual pressure source derivatives, including the derivative of1/R. The new source independently differentiates the original pressure operator. In the regular rho form,
 
    ```text
    N_rho = -S_rho/2 + Lambda (3 Q_rhorho + rho Q_rhorhorho)
@@ -64,8 +64,8 @@ Use `CurrentOriginalN1RinSourceJoin()`. `left` and `right` retain the chart sour
    ```
 
    Prove the same result by differentiating the physical-R pressure form. Keep all leading U, Q and Q_Z terms in S.
-4. [ ] Extend actual own state to y3/y4 on the flat cutoff neighborhood by the original support theorem and mean/history FTC. Preserve the nonzero mean with mean_y=-mean and the own1+delta recovery. A flat velocity patch does not flatten the leading pressure.
-5. [ ] Build P1_yy=R(N+rho N_rho), P1_yyy=R(N+3rho N_rho+rho^2 N_rhorho), and the corresponding signed m15 rows. Match the full246-row Rin contract before marking the earlier Rin task complete.
+4. [x] Extend actual own state to y3/y4 on the flat cutoff neighborhood by the original support theorem and mean/history FTC. The whole-flat-source proof checks K/Q1+delta/V/M and the independent mean flow while retaining the nonzero leading pressure.
+5. [x] Build P1_yy=R(N+rho N_rho), P1_yyy=R(N+3rho N_rho+rho^2 N_rhorho), and the corresponding signed m15 rows. All246 finite Rin rows now match in the new source above.
 6. [ ] Finish own rminus from the lower right endpoint to first-micro left, with actual empty first-micro increments and the same leading/own pressure gauge. Reuse the accepted leading source theorem without replacing own recovery by leading Q.
 7. [ ] Enumerate and join the remaining own intermediate charts; compose a checked global n1 source and Cartesian coefficient export. Regional source availability is insufficient for a global field.
 8. [ ] Restore actual original-scale numerical evaluation and derivative enclosures for the analytic, Volterra, implicit and integral sources. Keep evaluated values, exact source handles and comparison bounds distinct.
@@ -76,9 +76,9 @@ Use `CurrentOriginalN1RinSourceJoin()`. `left` and `right` retain the chart sour
 13. [ ] Construct mean corrections and two-family oscillatory pulses and their averaged quadratic stress cancellation.
 14. [ ] Independently validate the corrected Cartesian field with fixed forcing and both Linf and physical-volume L2 residuals below1e-3. Measure critical-time scale laws, anisotropic core contraction, vorticity growth and material winding separately.
 
-The next mathematical source gap is Q radial3/4 and thus N_rho/N_rhorho. Continue with tasks2..5; do not rerun accepted outer or numerical ancestor suites.
+Tasks2..5 are complete in [the new actual lower/high-pressure/Rin246 source](CURRENT_ORIGINAL_LOWER_HIGHER_RADIAL_RIN_JOIN_2026_10_14.md). The next construction is own rminus (task6), followed by other joins/global n1. The implemented recurrence below remains the mathematical source route; numerical and quantitative bounds remain open.
 
-## Exact radial recurrence for tasks2..5
+## Implemented exact radial recurrence for tasks2..5
 
 Implement a new derived leading-only radial provider. In `current_original_n1_analytic_core_lower_pressure_C3_functions.py`, `d.extend(...,5)` extends ordinary Z rows, not radial order. Its accepted radial arrays still stop at2. `inner_radial_functions.CoreRhoDerivative` handles the separate n1 even system and axis and does not supply these leading collar rows.
 
