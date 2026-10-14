@@ -1,4 +1,8 @@
-# Latest recoverable source — Rp/Rv radial-pressure C3 source joins, 2026-10-14
+# Latest recoverable source — internal pulse radial source joins, 2026-10-14
+
+Read [CURRENT_ORIGINAL_PULSE_INTERNAL_RADIAL_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_PULSE_INTERNAL_RADIAL_SOURCE_JOINS_2026_10_14.md), then `python scripts/run_original_pulse_internal_radial_source_joins.py --restore-source`. This command passes in a fresh process:286356-node source,24 first radial-pressure/density C3 rows,16 retained m13/m15 internal primitive rows and90 own second radial recovery rows. Consume the actual kernel/selector and ordinary derivative receipts; no numerical ancestor replay. Next construct genuine third/fourth radial forcing/velocity/Q sources and pressure second/third derivatives before full mixed seam admission. Higher mixed/combined outer/other own/global n1, numerical, heat/stress, true recursion and corrected NS remain open. Files are authoritative; no live session is required. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable source — Rp/Rv radial-pressure C3 source joins, 2026-10-14
 
 Read [CURRENT_ORIGINAL_N1_OUTER_RADIAL_PRESSURE_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_N1_OUTER_RADIAL_PRESSURE_SOURCE_JOINS_2026_10_14.md), then `python scripts/run_original_n1_outer_radial_pressure_source_joins.py --restore-source`. Saved source/receipt/archive restore actual Rp/Rv P1_y/N1p C3 joins, the canonical/current partial-provider identity and retained current own pressure histories. Endpoint m13/m15 continuity follows by explicitly recorded whole-function composition with the accepted predecessor endpoint theorem. Reuse204 ordinary traces. All higher mixed/combined outer/other own/global n1, numerical, heat/stress, true recursion and corrected NS dependencies remain open. No live session or old numerical ancestor replay is required. Full goal **ACTIVE / INCOMPLETE**.
 

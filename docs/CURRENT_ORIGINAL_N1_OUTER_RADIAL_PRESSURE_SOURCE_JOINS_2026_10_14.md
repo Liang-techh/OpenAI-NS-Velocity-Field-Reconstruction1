@@ -2,6 +2,8 @@
 
 The current quiet-to-pulse Rp source and pulse-to-tail Rv source now match total own `P1_y` and leading `N1p` through ordinary Z3. The current partial pressure provider is identified with its canonical predecessor as a function, so the retained own cumulative pressure can use the new actual Rp inputs. The earlier 204 ordinary outer trace rows are reused. This is a source-function milestone; the full goal remains **ACTIVE / INCOMPLETE**.
 
+Subsequent internal pulse first radial-pressure/retained primitive joins and own second radial recovery are accepted in [CURRENT_ORIGINAL_PULSE_INTERNAL_RADIAL_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_PULSE_INTERNAL_RADIAL_SOURCE_JOINS_2026_10_14.md). Task6 below is complete; tasks7..9 retain the full mixed/combined scope, including still-missing pressure second/third radial sources.
+
 ## Construction and evidence
 
 At Rp the original native family has `u=A/(1+Z^2)` and nonzero normalized mean `m=B*Z`, with cubic `m1=m/u`. The accepted actual inlet quotient and compact mass identity supply this family; arbitrary independent swirl/mean test functions would violate the original source. Physical mean is `Pstar*m`, applied once. Recover leading `Q`, `Q_y`, and `Q_yy` from the actual quiet and pulse formulas before comparing pressure. Absolute leading pressure is a distinct quantity.
@@ -53,9 +55,9 @@ Take the first unchecked dependency. Mark an item complete only with scoped sour
 3. [x] Identify canonical/current products, partial/complete primitives, chart radii and pressure map.
 4. [x] Compose the current own pressure FTC and Rp/Rv cumulative m13/m15 endpoints with accepted source theorems.
 5. [x] Save scoped receipts, fresh archive and source-only recovery entry point.
-6. [ ] Construct main/gap and gap/end leading radial-pressure joins. Use actual chart boundary values, full gp/beta flatness and the nonzero gap mean; distinguish leading and own fields.
+6. [x] Construct main/gap and gap/end leading first radial-pressure C3 source joins. Actual full kernel/selected C5 inputs, gp/beta flatness, nonzero gap mean and retained m13/m15 primitives are bound in the subsequent receipt; leading and own fields remain distinct.
 7. [ ] List the precise physical-y/Z mixed derivative rows required by the outer own seam theorem. Locate their defining equations and source owners; do not infer all mixed rows from U_yy/Q_yy availability.
-8. [ ] Construct those missing mixed rows from actual gp/beta, compact and quiet functions. Preserve physical Jacobians and ordinary derivative conventions, and compare both actual seam traces.
+8. [ ] Construct those missing mixed rows from actual gp/beta, compact and quiet functions. The90 actual own second radial C3/QV C2 rows are now available; pressure second/third radial sources and full mixed traces still need construction. Preserve physical Jacobians and ordinary derivative conventions.
 9. [ ] Publish the combined 2Rc/Rp/Rv own seam receipt and enable its checked accessor only after the full required ordinary/radial/mixed theorem passes. The predecessor combined receipt remains absent and its gates remain false.
 10. [ ] Complete actual own Rin/rminus/Rc seams using the admitted nonlinear core, lower collar, finite-N modification and reserved repair. Retain original inlet/gauge/P0 and signed histories.
 11. [ ] Assemble the checked global n1 source provider only after all source joins have their own accepted evidence. Keep leading `1-delta` and own `1+delta` recovery separate.
