@@ -1,4 +1,8 @@
-# Current agent queue — actual Rm patch and seven-chart pressure completion, 2026-10-14
+# Current agent queue — actual patch corrections and outer continuation, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md) and take its first unchecked dependency. The true leading patch C6/generic C5 and original unique implicit-control C6 functions are checked. Add actual Section11 loop/density/correction C5 using the nonzero Rm correction inlet and original N/global phase. In x=R/Rm, use log(x)-log(t) decay and dt/t; preserve pressure rate0 memory. Then total radial U_y/mean C5, Q/Q_y C4 and signed pressure C3, followed by six outer charts to Rp. Do not reset background/correction memories. Complete numerical norms, all17 compact targets/J/N controls, global frequency, n1 repair, heat/stress, true recursion and corrected NS with separate evidence. Mark only supported tasks complete.
+
+# Earlier agent queue — actual Rm patch and seven-chart pressure completion, 2026-10-14
 
 Use [CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md) and claim its first unchecked dependency. Ten charts already have modified generic Q/inertial C4, true total U_y/mean C5, Q/Q_y C4 and signed reduced pressure C3 through Rm. Build actual Rm-patch C6/generic C5 sources from true Rm data and original leading controls, then extend the six outer charts and their actual loop/density/history/total-radial/pressure functions to Rp. Preserve background/correction histories, original global N/phase, P0, signed density sectors, physical scales and finite endpoints. Complete full preRp C3 only after joining the retained lower collar. Quantitative high-order/mixed bounds, direct second radial derivatives, all17 normalized targets/compact J/N controls and global n1/recursion/NS remain open.
 

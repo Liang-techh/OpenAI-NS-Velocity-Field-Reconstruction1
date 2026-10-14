@@ -1,4 +1,8 @@
-# Current queue — complete Rm patch/outer high-order pressure sources, 2026-10-14
+# Current queue — finite-N Rm patch and six outer charts, 2026-10-14
+
+Use [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md), which contains20 detailed next tasks. Leading five-control C6, true patch fields/radial C6 and generic C5 are complete within function scope. Next build actual patch loop/density/history C5 with nonzero `public_loop5.Rm_correction`, same N/global phase and dt/t log transport; carry total radial/pressure functions and extend Rh_reference plus five O2/O3 charts. Join the retained lower collar before complete preRp C3. Quantitative norms, all17 compact targets/controls, global n1, heat/stress and genuine recursion/corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — complete Rm patch/outer high-order pressure sources, 2026-10-14
 
 Read [CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md). Ten true charts now have modified Q/inertial C4, total radial C5, physical U/mean C5 and signed pressure C3 to Rm. Next construct actual Rm-patch C6 background/generic C5 and extend six outer charts, loop/density/history and total radial/pressure functions. Join retained lower-collar data for complete preRp C3; then complete five C3 defects/reserved derivatives. Transfer original-scale quantitative containment, direct second radial/mixed rows, all17 targets/compact controls and global-frequency conditions before heat/stress, genuine recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
 

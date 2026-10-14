@@ -73,7 +73,7 @@ Completed:
 
 Next tasks:
 
-1. [ ] Build versioned actual Rm-patch background C6 and generic C5 sources from the true Rm endpoint, original leading patch controls and support functions. Keep old axial4 outputs and original P0; retain separate background and correction histories.
+1. [x] Build versioned actual Rm-patch background C6 and generic C5 sources from the true Rm endpoint, original leading patch controls and support functions. Completed within function scope in [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md). Old axial4 outputs and P0 remain; background and finite-N correction histories remain separate. New C6 numerical norms and patch correction transport remain open.
 2. [ ] Extend the actual Rm patch plus Rh_reference/O2_slope/O2_axial/O2_buffer/O3_transition/O3_power sources, loops, finite-N densities and complete correction histories to the required genuine orders. Preserve one original N/global phase, the O2_axial exponential physical Jacobian and quiet O3 incoming memory.
 3. [ ] Carry total U_y C5, Q/Q_y C4 and reduced signed pressure C3 through those seven charts to Rp; join with the retained actual lower-collar contribution at rminus. Preserve every signed source term, finite endpoint and physical Pstar/R/R^2 factor. Only then claim complete preRp C3 pressure.
 4. [ ] Derive genuine second total radial derivatives and direct Q_yy/N1p functions where direct diagnostics or the required mixed/radial norms consume them. Retain slow-y, phase-y and mixed terms; never pad a missing radial source or treat U_y as U_yy.

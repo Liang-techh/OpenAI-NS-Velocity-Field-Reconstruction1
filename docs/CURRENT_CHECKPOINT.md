@@ -1,4 +1,8 @@
-# Latest checkpoint — modified Q C4 and signed pressure C3 through Rm, 2026-10-14
+# Latest checkpoint — original leading Rm patch C6 functions, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md) first. True prescribed Rm C6 input now feeds original leading five-control C6 functions, leading Rm-to-Rh fields/E_y/V_y C6 and full signed generic C5. Exact beta integral/source normalization and raw-normalized map/Jacobian identities bind the same admitted unique branch. Scoped calculus, archive and public restoration pass. Next propagate actual finite-N patch corrections from the nonzero Rm inlet with log-coordinate1/x transport, then six outer charts and complete preRp pressure C3. Original-scale numerical norms, all17 targets/controls, global n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — modified Q C4 and signed pressure C3 through Rm, 2026-10-14
 
 Read [CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md) first. Ten true modified charts now supply full Q/signed inertial C4, total radial E_y/V_y/mean_y C5, physical U/U_y/m C5 and Q/Q_y C4, and complete signed m13/m15 pressure component C3 from original rminus to Rm. Original moving integral limits, implicit inverse derivatives, A_phi/B_phi fast terms, Pstar/R/R^2 factors, finite boundaries and predecessor histories remain. Scoped source/native/phase/generic/pressure checks pass. Next complete actual Rm patch/six outer charts and join the retained lower-collar component for full preRp C3 pressure; transfer quantitative bounds and direct second radial/mixed rows. All17 targets/compact controls, global n1, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
