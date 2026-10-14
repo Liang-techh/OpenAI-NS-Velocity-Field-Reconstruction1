@@ -1,4 +1,8 @@
-# Latest checkpoint — actual repaired own C3 and terminal integral identities, 2026-10-14
+# Latest checkpoint —22 actual intermediate own C3 charts, 2026-10-14
+
+Read [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md) first. Lower plus17 pre-Rc, quiet and three pulse charts now carry actual own M/mean/K/pressure C3 and Q/V C2. Genuine partial pulse bodies retain all measures, startup mean and preceding charts; the actual new20 exit rows equal the checked terminal integral zeros. Reserved/inner/tail providers are reused. Next actual lower/active same-source field seam and common inlet/P0/zero collar, full current Rp-frame native C5 consumption and global own joins. Quantitative/mixed/global-N admission, global n1, heat/stress, true recursion and corrected NS remain open. Inspect `python scripts/run_original_n1_intermediate_own_C3_chart_functions.py`. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — actual repaired own C3 and terminal integral identities, 2026-10-14
 
 Read [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md) first. Actual signed reserved histories now give M/mean/K/P C3 and own Q/V C2 from mean_Z3. New25 physical basis integrals and75 density derivative rows identify the20 actual terminal functions with the selected response; all five C3 identities and specified mass/pressure tails vanish. Compact direct Qyy C4 and total P1_y C3 are saved. Next actual lower/active joins, full native pulse C5 bridge, own fields on intermediate charts and quantitative/mixed/global-N admission. Global n1, heat/stress, true recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

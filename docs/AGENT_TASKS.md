@@ -1,4 +1,8 @@
-# Current agent queue — actual joins and intermediate own fields, 2026-10-14
+# Current agent queue — actual leading seam and global own joins, 2026-10-14
+
+Use the20 tasks in [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md). The22 intermediate own C3/QV C2 chart functions and actual partial-pressure/terminal transfer are installed. Claim the first unchecked dependency: actual nonlinear lower/active seam with original rho4/six histories/P0 and finite-N zero collar; full eight-function Rp native C5 inlet consumption; or global own join maps. Reuse all checked regional/inner/reserved/tail functions, retain1+delta own versus1-delta leading recovery, and preserve fixed leading N1p. Then construct missing mixed rows, quantitative norms/common global N and the full heat/stress/recursion/NS path. Mark only scoped tasks complete and publish each milestone.
+
+# Earlier agent queue — actual joins and intermediate own fields, 2026-10-14
 
 Use [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md). Reserved own C3 histories/QV C2, actual terminal five C3 identities and specified tails are saved, including new defining-basis source checks. Take the first unchecked construction dependency: actual lower/active same-source join and inlet/P0/zero-collar theorem; full current Rp frame consumption by native pulse C5; or intermediate lower/active/quiet/pulse own-field transport. Preserve nonzero histories and1+delta own versus1-delta leading recovery. Reuse checked compact/quiet Qyy, then finish other-chart mixed rows, quantitative norms/global N and full n1/heat/stress/recursion/NS. Save scoped milestones and mark only supported tasks complete.
 

@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — actual joins and intermediate n1 transport, 2026-10-14
+# Current scheduled-agent queue — actual seam and global own joining, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md), inspect `python scripts/run_original_n1_intermediate_own_C3_chart_functions.py`, and complete its first available unchecked construction dependency. Reuse accepted owners/archives. Lower plus17 pre-Rc and quiet/pulse own C3/QV C2 functions, true partial pressure and20 actual regional exit identities are saved. Remaining priority: actual lower/active common-source seam, full eight-function native C5 inlet consumption and global own join maps; then mixed/numeric/global-N and full n1/heat/stress/recursion/NS. Preserve every physical measure, phase, pressure gauge and nonzero datum. Save/publish scoped milestones and mark only corresponding tasks complete. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — actual joins and intermediate n1 transport, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md), inspect `python scripts/run_original_n1_repaired_own_C3_terminal_functions.py`, and complete its first available unchecked construction dependency. Reuse accepted owners/archives. Reserved C3 histories/QV C2, actual terminal five C3 identities and specified tails are saved; remaining work is actual lower/active joins, full native pulse C5 inlet consumption and intermediate own-field transport, followed by quantitative/mixed/global-N admission and full heat/stress/recursion/NS. Preserve every pressure/history component, physical scale and phase. Save/publish scoped milestones and mark only corresponding tasks complete. Full goal **ACTIVE / INCOMPLETE**.
 

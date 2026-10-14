@@ -1,4 +1,8 @@
-# Current queue — global joins and remaining actual n1 fields, 2026-10-14
+# Current queue — actual seam, native C5 bridge and global n1 joins, 2026-10-14
+
+Follow the20 tasks in [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md). Own intermediate fields are now constructed on22 charts; do not rebuild them or the actual terminal integral proof. Next bind the actual nonlinear lower/active field seam/common six-history inlet/P0/zero collar, install full native C5 Rp-frame consumption and glue the existing actual own providers. Then missing mixed functions, original-scale norms/common global N, global n1/energy/preheat/exact heat/stress/flat remainder, genuine n>=2 and corrected Cartesian NS. Regional source identities do not establish global quantitative admission. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — global joins and remaining actual n1 fields, 2026-10-14
 
 Follow the20 tasks in [CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md](CURRENT_ORIGINAL_N1_REPAIRED_OWN_C3_TERMINAL_2026_10_14.md). Actual reserved own M/mean/K/P C3, Q/V C2, terminal five C3 integral identities, tails, compact Qyy C4 and total P1_y C3 are complete within their regional function scope. Next actual lower/active join, full native pulse C5 inlet bridge and own-field/pressure transport over intermediate charts, then quantitative/mixed norms and one global N. Global n1/energy/preheat/exact heat/stress/flat remainder, genuine n>=2 and corrected NS remain open. Do not rebuild the existing inner C3 or new terminal proofs.
 
