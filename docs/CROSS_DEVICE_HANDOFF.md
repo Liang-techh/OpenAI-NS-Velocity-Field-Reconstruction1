@@ -1,4 +1,8 @@
-# Latest recoverable checkpoint — compact C5 and signed pressure to 2Rc, 2026-10-14
+# Latest recoverable checkpoint — quiet Rp C5 and signed preRp component C3, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Branch `codex/st073-transition-next`. Inspect `python scripts/run_original_true_quiet_Rp_C5_pressure_C3_functions.py`. Original host: reuse session55770/cache26, public_quiet5/quiet5_owner/quiet5_receipt, public_compact5/public_core_lower_C3 and earlier owners. Other hosts can inspect pinned archives; live memory is host-local. Quiet C5 and rminus-to-Rp pressure C3 are complete, with original K/native identity and equivalent closed primitive. Lower+preRp is only a partitioned Rin-to-Rp sum; inner C3/lower-active seam and full native pulse C5 bridge remain open. Next complete those genuine inputs before complete n1 C3 defects/repair, norms, heat/stress, recursion and NS. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable checkpoint — compact C5 and signed pressure to 2Rc, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Branch `codex/st073-transition-next`. Inspect `python scripts/run_original_true_compact_C5_functions.py`. Actual Rc targets/same-branch compact controls, complete compact C5 profiles/history/radial and signed pressure C3 to2Rc are saved, including five relative terminal C5 identities and original mu/N/C3-prefix provenance. Original host: reuse session55770/cache26, `public_outer65`, `compact5_owner`, `compact5_receipt`, `public_compact5` and preceding owners. Other hosts can inspect pinned archives; live memory is host-local. Next quiet2Rc-to-Rp and full lower/preRp joins, then remaining quantitative/mixed/global n1/heat/stress/genuine recursion/NS work. Full goal **ACTIVE / INCOMPLETE**.
 

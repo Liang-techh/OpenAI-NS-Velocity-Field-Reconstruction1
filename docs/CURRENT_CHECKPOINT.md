@@ -1,4 +1,8 @@
-# Latest checkpoint — actual compact C5 repair and pressure to 2Rc, 2026-10-14
+# Latest checkpoint — quiet Rp C5 and rminus-to-Rp pressure C3, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md) first. Actual compact exit now feeds finite-mu quiet C5 and leading C6 flow through Rp, with radial0..4 C5/direct Qyy C4/N1p C3. Actual K matches the original native-frame source by exact turnoff-kernel correspondence; general pressure equals the closed quiet primitive. The complete original rminus-to-Rp pressure component is C3. Lower pressure is kept separate and a partitioned Rin-to-Rp sum is exposed. Inner0-to-Rin C3, lower/active field seam, full selected native pulse C5 bridge, quantitative norms/global N, complete n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — actual compact C5 repair and pressure to 2Rc, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md) first. Actual Rc amplitude/corrections now feed normalized C5 targets and the same original unique compact C5 control branch. Exact bumps, signed densities, complete background/correction/modified histories and radial C5 continue to2Rc; modified generic C4 and signed rminus-to-2Rc pressure C3 are saved. Original mu/N and accepted C3 normalization prefixes match. Relative five C5 terminal identities retain absolute leading/P0/pressure functions. Next quiet2Rc-to-Rp and lower-collar join, followed by quantitative high-order/mixed norms/global N, complete n1 repair, heat/stress, genuine scale recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
 

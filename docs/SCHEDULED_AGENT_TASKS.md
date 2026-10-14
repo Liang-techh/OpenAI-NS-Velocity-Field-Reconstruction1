@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — actual quiet Rp extension and full pressure join, 2026-10-14
+# Current scheduled-agent queue — inner C3 and full pressure partition, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md), inspect `python scripts/run_original_true_quiet_Rp_C5_pressure_C3_functions.py`, and execute its first unchecked dependency. Reuse accepted owners/archives; do not replay ancestors. Quiet C5/direct Qyy C4/N1p C3 and the complete rminus-to-Rp pressure component are saved. Next lower/active field seam, actual inner n1 C3 endpoint functions, then complete five C3 defects with separate inner/lower/preRp/pulse intervals and actual reserved inverse derivatives. Continue native C5 pulse consumption, quantitative/mixed bounds/global N, global joins/heat/stress, genuine recursion and corrected NS. Save each milestone; full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — actual quiet Rp extension and full pressure join, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md), inspect `python scripts/run_original_true_compact_C5_functions.py`, and execute its first unchecked dependency. Reuse checked owners/archives without replaying accepted ancestors. Compact C5 functions and signed pressure C3 now reach2Rc. Construct quiet2Rc-to-Rp C5/pressure C3 from the actual exit; preserve finite mu, P0, original rminus boundary and all cumulative pressure. Then establish required joins and add lower pressure for complete preRp C3. Continue quantitative/mixed bounds and global frequency, complete n1 repair, heat/stress, genuine recursion and corrected Cartesian NS. Mark only scoped tasks complete and save each milestone. Full goal **ACTIVE / INCOMPLETE**.
 

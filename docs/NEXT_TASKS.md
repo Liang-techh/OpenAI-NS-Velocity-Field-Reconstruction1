@@ -1,4 +1,8 @@
-# Current queue — quiet 2Rc-to-Rp and complete preRp pressure, 2026-10-14
+# Current queue — lower/active seam and inner n1 C3 endpoints, 2026-10-14
+
+Use the13 tasks in [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Quiet C5 and signed rminus-to-Rp pressure C3 are complete within function scope. Next prove the lower-collar upper/first_micro lower U,m,Q,Q_y tuple, and lift the actual inner coupled solution/cutoff/five endpoints to Z2/Z3. Compose complete defects from separate inner+lower+preRp+pulse entries; keep the new partitioned Rin-to-Rp sum out of the old preRp composer entry. Then actual reserved inverse derivatives/own recovery, current native pulse C5 frame consumption, quantitative/mixed bounds/global N, heat/stress, genuine recursion and corrected NS.
+
+# Earlier queue — quiet 2Rc-to-Rp and complete preRp pressure, 2026-10-14
 
 Use the13 next tasks in [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Actual compact C5 controls/profiles/history/radial and pressure C3 now reach2Rc, with five relative terminal C5 identities. Begin quiet2Rc-to-Rp from the actual compact exit and nonzero cumulative S0/S1; lengthTw-2-log2, Rp=Rc*exp(Tw-2). Join retained lower-collar pressure and establish required seams before complete preRp C3. Then actual second-radial/mixed functions, quantitative high-order norms/global N, complete n1 repair, heat/stress, genuine n>=2 and corrected NS. Source construction does not close numerical bounds. Full goal **ACTIVE / INCOMPLETE**.
 

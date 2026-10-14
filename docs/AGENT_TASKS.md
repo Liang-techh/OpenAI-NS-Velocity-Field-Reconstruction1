@@ -1,4 +1,8 @@
-# Current agent queue — quiet Rp from actual compact exit, 2026-10-14
+# Current agent queue — true inner C3 and lower/active source seam, 2026-10-14
+
+Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Reuse public_quiet5/public_compact5/public_core_lower_C3 and earlier owners. Quiet K source and signed pressure signs/finite boundaries are checked. Prove full lower/active U,m,Q,Q_y seam with original sc/hb and zero modification collar; extend actual inner n1 Volterra/regular/cutoff endpoints to C3 using genuine source derivatives and1+delta own recovery. Complete five C3 defects without merging the lower interval into the existing preRp entry. Preserve source units/P0/phase and save scoped evidence; global norms/n1/recursion/NS remain open.
+
+# Earlier agent queue — quiet Rp from actual compact exit, 2026-10-14
 
 Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_COMPACT_C5_FUNCTIONS_2026_10_14.md). Consume `public_compact5.terminal`, keeping actual leading histories/P0, correction expressions and S0/S1. Build quiet2Rc-to-Rp C5/pressure C3 with the original finite-mu power laws and lengthTw-2-log2. Relative correction zeros do not zero absolute fields or physical pressure. Establish actual required Rc/2Rc/Rp/rminus joins and the retained lower collar before full preRp C3. Continue quantitative norms/global N, complete n1, heat/stress, genuine recursion and NS. Save scoped evidence and mark only supported tasks complete.
 

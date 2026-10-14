@@ -76,8 +76,10 @@ Completed within function scope:
 
 Next tasks, in dependency order:
 
-1. [ ] Build quiet2Rc-to-Rp C5 from the actual compact exit, preserving leading histories/P0 and the actual correction endpoint expressions. Use s=log(R/(2Rc)), lengthTw-2-log2 and Rp=Rc*exp(Tw-2).
-2. [ ] Carry signed quiet pressure C3 from actual compact S0/S1 with finite mu and the original rminus boundary. Relative five-moment zeros do not make the physical pressure integrals zero.
+Tasks1..2 are complete within the [quiet Rp C5/rminus-to-Rp pressure milestone](CURRENT_ORIGINAL_TRUE_QUIET_RP_C5_PRESSURE_C3_2026_10_14.md). Task3 remains open for the full field seam; the original preRp component itself spans rminus-to-Rp, and the complete0-to-Rp C3 prefix still requires inner endpoints.
+
+1. [x] Build quiet2Rc-to-Rp C5 from the actual compact exit, preserving leading histories/P0 and the actual correction endpoint expressions. Use s=log(R/(2Rc)), lengthTw-2-log2 and Rp=Rc*exp(Tw-2).
+2. [x] Carry signed quiet pressure C3 from actual compact S0/S1 with finite mu and the original rminus boundary. Relative five-moment zeros do not make the physical pressure integrals zero.
 3. [ ] Establish required actual field/radial/pressure joins at Rc,2Rc,Rp and rminus; join retained lower-collar pressure C3 before claiming complete preRp C3.
 4. [ ] Construct genuine second total radial/direct Q_yy/N1p and mixed derivatives over the other charts. Compact second velocity rows alone do not supply global mixed norms.
 5. [ ] Transfer original-scale core/leading/control C6, comparison C7, loop/modified/history C5 and pressure C3 bounds including body/tail, inverse conditioning, phase and physical/log bases. Obtain quantitative fourth/fifth target/control bounds and Picard tails.
