@@ -64,15 +64,17 @@ Completed:
 
 Next tasks:
 
-1. [ ] Build actual Rh_reference prescribed C6/generic C5 from the checked leading Rh endpoint and original interpolation profiles. Retain all six leading memories and independent P0.
-2. [ ] Add Rh_reference loop/density/correction C5 from `public_Rm_finite5.Rh_correction`; preserve original phase origin and all five incoming rows.
-3. [ ] Build O2_slope C6/generic C5 with the original physical radial map; propagate full corrections and actual endpoints.
-4. [ ] Build O2_axial C6/generic C5 and loop/history C5 with its original exponential physical Jacobian. Use genuine integrated log widths, not a constant-Jacobian shortcut.
-5. [ ] Build O2_buffer C6/generic C5 and its complete nonzero leading/correction memory.
-6. [ ] Build O3_transition with original quiet-loop predicate and complete nonzero incoming correction. A zero local density does not reset history.
-7. [ ] Build O3_power through original Rp, retaining pressure rate0 and all decaying incoming histories.
-8. [ ] Supply total radial U_y/mean C5, Q/Q_y C4 and signed pressure C3 on each remaining chart with its actual Jacobian and both boundary terms.
-9. [ ] Join all six outer pressure components with this rminus-to-Rh source and retained lower-collar C3 at rminus; only then claim complete preRp C3.
+Tasks1..8 are now complete within the [six-chart Rc function milestone](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md). Its terminal is Rc; the previous task7 Rp shorthand is corrected below. Compact and quiet continuation remain open.
+
+1. [x] Build actual Rh_reference prescribed C6/generic C5 from the checked leading Rh endpoint and original interpolation profiles. Retain all six leading memories and independent P0.
+2. [x] Add Rh_reference loop/density/correction C5 from `public_Rm_finite5.Rh_correction`; preserve original phase origin and all five incoming rows.
+3. [x] Build O2_slope C6/generic C5 with the original physical radial map; propagate full corrections and actual endpoints.
+4. [x] Build O2_axial C6/generic C5 and loop/history C5 with its original exponential physical Jacobian. Use genuine integrated log widths, not a constant-Jacobian shortcut.
+5. [x] Build O2_buffer C6/generic C5 and its complete nonzero leading/correction memory.
+6. [x] Build O3_transition with original quiet-loop predicate and complete nonzero incoming correction. A zero local density does not reset history.
+7. [x] Build O3_power through its original terminal Rc, retaining pressure rate0 and all decaying incoming histories.
+8. [x] Supply total radial U_y/mean C5, Q/Q_y C4 and signed pressure C3 on each of these six charts with its actual Jacobian and both boundary terms.
+9. [ ] Build compact Rc-to-2Rc C5 controls/fields/pressure and quiet2Rc-to-Rp continuation, then join retained lower-collar C3 at rminus; only then claim complete preRp C3.
 10. [ ] Construct genuine second total radial/mixed derivatives and direct Q_yy/N1p where diagnostics or required norms need them. Current gamma first/second seeds supply the first total radial layer; do not pad further sources.
 11. [ ] Transfer actual original-scale leading/control C6, comparison C7, loop/modified/history C5 and pressure C3 numerical norms, including all core/density/body/tail errors, inverse conditioning, phase and physical source bases.
 12. [ ] Complete all17 normalized targets C4/C5 and D4/D5 bounds, same-branch compact J/N controls and original Hessian factors4,3 and5,10. Admit one common N for all higher/stress/heat conditions.

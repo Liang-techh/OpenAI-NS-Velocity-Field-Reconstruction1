@@ -1,4 +1,8 @@
-# Current agent queue — six original outer sources and continuation, 2026-10-14
+# Current agent queue — actual compact C5 from checked Rc endpoint, 2026-10-14
+
+Take the first unchecked dependency in [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md). Consume `public_outer65.Rc`, actual corrections and cumulative pressure integrals. The next provider is genuine compact Rc-to-2Rc C5, using original targets/implicit solve/profile functions; old repair-band C3 enclosures do not define higher rows. Preserve all original N/phase/P0, finite-mu and pressure memories and one N factor. Continue quiet2Rc-to-Rp only from its actual compact exit. Scope completion separately from numerical norms, global n1 and scale recursion. Mark tasks complete with artifacts and evidence; save each bounded milestone.
+
+# Earlier agent queue — six original outer sources and continuation, 2026-10-14
 
 Take the first unchecked item in [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md). The actual Rm patch is complete within C5 function/total-radial/pressure C3 scope. Build Rh_reference C6/generic C5 and carry the actual leading background plus nonzero Rh correction from separate owners. Continue all six outer charts with original N/phase, physical measures and memories; O2_axial requires exponential Jacobian and O3 quiet loops retain incoming corrections. Then full preRp C3 with lower collar, original-scale numerical/mixed norms, all17 compact J/N controls/frequency, complete n1 repair, heat/stress, genuine n>=2 and corrected NS. Mark only scoped supported tasks complete.
 

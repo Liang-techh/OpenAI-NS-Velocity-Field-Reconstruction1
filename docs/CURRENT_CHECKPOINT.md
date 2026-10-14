@@ -1,4 +1,8 @@
-# Latest checkpoint — actual finite-N Rm patch C5 and pressure to Rh, 2026-10-14
+# Latest checkpoint — all17 C6/C5 sources and signed pressure C3 to Rc, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md) first. Six actual outer prescribed C6/generic C5 and selected-N loop/density/history/modified C5 sources now reach Rc; all17 source charts have those function orders. Original Rh leading identity, all nonzero memories, exponential O2 measure, mu/N/global phase/P0, total radial C5/generic C4 and signed rminus-to-Rc pressure C3 are retained. Next construct actual compact Rc-to-2Rc C5 controls/fields/pressure, then quiet2Rc-to-Rp and lower-collar join for complete preRp C3. Higher/mixed numerical norms, global frequency, n1, heat/stress, genuine scale recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**. Older six-chart-to-Rp shorthand is superseded by the explicit Rc/compact/quiet sequence.
+
+# Earlier checkpoint — actual finite-N Rm patch C5 and pressure to Rh, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md) first. Actual patch loop/inverse/A/B, finite-N densities and complete nonzero-inlet correction/modified functions C5 now reach Rh. Original dx/x kernels, pressure rate0 memory, N/global phase/P0 remain. Total radial C5, modified generic C4 and signed rminus-to-Rh pressure C3 pass source, seam and independent calculus checks. Next construct six original outer C6/generic C5 sources and loop/history/radial/pressure continuation to Rp, then join lower-collar data for complete preRp C3. Numerical norms, all17 controls, global n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — six outer charts from true Rh inlet, 2026-10-14
+# Current scheduled-agent queue — compact Rc-to-2Rc C5, then quiet Rp, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_OUTER_C6_C5_FUNCTIONS_2026_10_14.md), inspect `python scripts/run_original_true_outer_C6_C5_functions.py`, and execute its first unchecked dependency. Reuse checked owners/archives and source bindings; do not rebuild accepted ancestors. The six outer charts terminate at Rc. Build genuine Rc compact-inlet/normalized-target/control C5 functions and original repair band through2Rc; retain nonzero corrections and S0/S1 with one selected-N factor. Then build quiet2Rc-to-Rp and join lower pressure for full preRp C3. Continue numerical/mixed bounds, global N, complete n1 repair, heat/stress, genuine recursion and restricted corrected NS. Save scoped checkpoints; mark only supported tasks complete. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — six outer charts from true Rh inlet, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md), inspect `python scripts/run_original_true_Rm_patch_finite_N_C5_functions.py`, and execute the first unchecked dependency. Reuse accepted owners/archives. Actual loop/density/history/modified C5, total radial C5/generic C4 and signed pressure C3 now reach Rh. Extend the six original outer C6/generic C5 sources, nonzero corrections and pressure to Rp. Keep N/global phase/P0, original O2 exponential measure, quiet O3 memory and finite boundaries. Join lower collar before complete preRp C3; retain numerical/mixed norms, all17 controls/global frequency, n1 repair, heat/stress, true recursion and corrected NS requirements. Save scoped checkpoints and mark only corresponding tasks complete.
 
