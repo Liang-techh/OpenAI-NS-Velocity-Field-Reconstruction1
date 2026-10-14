@@ -61,6 +61,8 @@ Completed within this scope:
 - [x] Extend the signed pulse pressure integrals, endpoint functions and eight pressure functions through C3.
 - [x] Save source-pinned scoped acceptance and a lightweight archive entry point.
 
+Next accepted dependency: [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) supplies actual analytic core C5 and lower pressure C3. The active/compact branch requires a genuine radial/inertial p2_Z5 source first: existing axial4 keys contain only five entries, and internal Qpad zero must not be exported as a fifth derivative. Other complete-defect/coefficient and numerical gates stay open.
+
 Next tasks, in dependency order:
 
 1. [ ] Expose genuine leading active-chart U/mean Z4/Z5 FunctionRefs from the actual unprojected source rows. Bind context, family, native coordinates, AST/source hashes and factorial conversion; magnitude axial5 rows alone are insufficient.

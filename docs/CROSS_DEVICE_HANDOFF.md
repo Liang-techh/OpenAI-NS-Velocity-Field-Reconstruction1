@@ -1,3 +1,9 @@
+# Latest recoverable checkpoint — analytic core/lower pressure C3, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+Working branch: `codex/st073-transition-next`. Inspect `python scripts/run_original_n1_analytic_core_lower_pressure_C3_functions.py` without rebuilding ancestors. On the original host, reuse live session 55770/cache26 and checked source owners; other hosts can inspect source-pinned archives.
+
 # Latest recoverable checkpoint — pulse pressure C3, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) and `CURRENT_CHECKPOINT.md` first. The full long-term goal remains active and incomplete. Actual C1 terminal five zeros and tail recovery are preserved; genuine native/Gamma C5 and signed main/gap/end/total pulse pressure C3 are now added. Next work is actual active/compact high-order sources and other pressure C3 segments, followed by complete defects and selected coefficient derivatives.

@@ -1,3 +1,7 @@
+# Current queue — fill p2_Z5 before full active/compact C5, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
 # Current queue — genuine active/compact C4/C5 and complete pressure C3, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md). The pulse branch now exposes true native/Gamma C5, U/mean C5, Q C4 and pressure C3; old source handles and all histories are retained. Take its first unchecked task: source-proven active Z4/Z5, actual compact implicit C4/C5 and quantitative tails, followed by other pressure segments and complete five-defect C3. Extend the selected inverse and n1 recovery only after genuine complete inputs exist. Do not pad higher rows, differentiate interval endpoints or promote local C3 to numerical/global closure. Full goal remains active and incomplete.
