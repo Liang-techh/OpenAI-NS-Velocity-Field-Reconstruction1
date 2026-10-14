@@ -1,4 +1,10 @@
-# Latest checkpoint —22 actual intermediate own C3 charts, 2026-10-14
+# Latest checkpoint — actual lower/active common-source field join, 2026-10-14
+
+The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
+
+Read [CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md](CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md) first. The actual leading rminus seam now binds the unique nonlinear core, six true inlet histories, exact original sc singleton, normalized/physical pressure units and finite-N zero collar. Physical U/Uy/mean/mean_y/swirl C5, Q/Qy C4 and absolute pressure C3 share44 actual trace identities. Existing22 intermediate own charts and reserved/inner/tail functions are reused. Next full eight-function Rp native C5 inlet consumption, other global own joins and actual mixed/numeric/global-N admission. Global n1, heat/stress, genuine recursion and corrected NS remain open. Inspect `python scripts/run_original_lower_active_common_source_join_functions.py`. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint —22 actual intermediate own C3 charts, 2026-10-14
 
 Read [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md) first. Lower plus17 pre-Rc, quiet and three pulse charts now carry actual own M/mean/K/pressure C3 and Q/V C2. Genuine partial pulse bodies retain all measures, startup mean and preceding charts; the actual new20 exit rows equal the checked terminal integral zeros. Reserved/inner/tail providers are reused. Next actual lower/active same-source field seam and common inlet/P0/zero collar, full current Rp-frame native C5 consumption and global own joins. Quantitative/mixed/global-N admission, global n1, heat/stress, true recursion and corrected NS remain open. Inspect `python scripts/run_original_n1_intermediate_own_C3_chart_functions.py`. Full goal **ACTIVE / INCOMPLETE**.
 

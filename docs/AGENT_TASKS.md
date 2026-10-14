@@ -1,4 +1,10 @@
-# Current agent queue — actual leading seam and global own joins, 2026-10-14
+# Current agent queue — full Rp native C5 frame and remaining global own joins, 2026-10-14
+
+The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
+
+Use the20 tasks in [CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md](CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md). Actual lower/active leading C5/Q4/pressure C3 source joining, exact sc, six inlet histories and pressure normalization are installed. Claim full eight-function Rp-frame consumption by the selected native C5 provider or the remaining positive-order own Rin/rminus/Rc/2Rc/Rp/Rv joins. Reuse the new leading seam and existing22 own charts/inner/reserved/tails. Keep own1+delta and leading1-delta separate, and fixed leading N1p distinct from own velocity. Then missing radial/mixed functions, quantitative norms/common global N and full n1/heat/stress/recursion/NS. Save scoped milestones and mark only supported tasks complete.
+
+# Earlier agent queue — actual leading seam and global own joins, 2026-10-14
 
 Use the20 tasks in [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md). The22 intermediate own C3/QV C2 chart functions and actual partial-pressure/terminal transfer are installed. Claim the first unchecked dependency: actual nonlinear lower/active seam with original rho4/six histories/P0 and finite-N zero collar; full eight-function Rp native C5 inlet consumption; or global own join maps. Reuse all checked regional/inner/reserved/tail functions, retain1+delta own versus1-delta leading recovery, and preserve fixed leading N1p. Then construct missing mixed rows, quantitative norms/common global N and the full heat/stress/recursion/NS path. Mark only scoped tasks complete and publish each milestone.
 

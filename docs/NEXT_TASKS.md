@@ -1,4 +1,10 @@
-# Current queue — actual seam, native C5 bridge and global n1 joins, 2026-10-14
+# Current queue — native C5 pulse inlet and remaining own joins, 2026-10-14
+
+The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
+
+Follow the20 tasks in [CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md](CURRENT_ORIGINAL_LOWER_ACTIVE_COMMON_SOURCE_JOIN_2026_10_14.md). The actual leading lower/active source seam is installed, including exact sc, true six-history inlet, physical pressure normalization and finite-N collar. Do not rebuild it or22 intermediate own charts. Next full current Rp native C5 consumption and global own joins with actual radial pressure derivatives; then remaining mixed source functions, original-scale norms/common global N, global n1/energy/preheat/exact heat/stress/flat remainder, genuine n>=2 and corrected Cartesian NS. Function equality does not admit quantitative mixed bounds. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — actual seam, native C5 bridge and global n1 joins, 2026-10-14
 
 Follow the20 tasks in [CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md](CURRENT_ORIGINAL_N1_INTERMEDIATE_OWN_C3_CHARTS_2026_10_14.md). Own intermediate fields are now constructed on22 charts; do not rebuild them or the actual terminal integral proof. Next bind the actual nonlinear lower/active field seam/common six-history inlet/P0/zero collar, install full native C5 Rp-frame consumption and glue the existing actual own providers. Then missing mixed functions, original-scale norms/common global N, global n1/energy/preheat/exact heat/stress/flat remainder, genuine n>=2 and corrected Cartesian NS. Regional source identities do not establish global quantitative admission. Full goal **ACTIVE / INCOMPLETE**.
 
