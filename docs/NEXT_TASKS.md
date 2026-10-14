@@ -1,4 +1,8 @@
-# Current queue — modified recovery and complete all17 source orders, 2026-10-14
+# Current queue — complete Rm patch/outer high-order pressure sources, 2026-10-14
+
+Read [CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md). Ten true charts now have modified Q/inertial C4, total radial C5, physical U/mean C5 and signed pressure C3 to Rm. Next construct actual Rm-patch C6 background/generic C5 and extend six outer charts, loop/density/history and total radial/pressure functions. Join retained lower-collar data for complete preRp C3; then complete five C3 defects/reserved derivatives. Transfer original-scale quantitative containment, direct second radial/mixed rows, all17 targets/compact controls and global-frequency conditions before heat/stress, genuine recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — modified recovery and complete all17 source orders, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md). The true prescribed ten-chart source now has genuine loop/inverse/A/B and finite-N modified fields/density/history C5 from rminus through Rm. Next recover modified Q C4, required mixed physical-y/Z rows and quantitative original-source bounds; then extend the actual Rm patch/six outer charts and all17 normalized targets/compact controls. Preserve original N/phase/eta/d_star, pressure datum and full correction/background memories. Continue to complete pre-Rp C3 pressure, five C3 defects/reserved derivatives and global mixed bounds before heat/stress, genuine n>=2 recursion and corrected NS. Full goal **ACTIVE / INCOMPLETE**.
 

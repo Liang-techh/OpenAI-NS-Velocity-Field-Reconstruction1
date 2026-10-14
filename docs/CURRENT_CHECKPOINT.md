@@ -1,4 +1,8 @@
-# Latest checkpoint — true ten-chart loop and correction transport C5, 2026-10-14
+# Latest checkpoint — modified Q C4 and signed pressure C3 through Rm, 2026-10-14
+
+Read [CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md) first. Ten true modified charts now supply full Q/signed inertial C4, total radial E_y/V_y/mean_y C5, physical U/U_y/m C5 and Q/Q_y C4, and complete signed m13/m15 pressure component C3 from original rminus to Rm. Original moving integral limits, implicit inverse derivatives, A_phi/B_phi fast terms, Pstar/R/R^2 factors, finite boundaries and predecessor histories remain. Scoped source/native/phase/generic/pressure checks pass. Next complete actual Rm patch/six outer charts and join the retained lower-collar component for full preRp C3 pressure; transfer quantitative bounds and direct second radial/mixed rows. All17 targets/compact controls, global n1, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — true ten-chart loop and correction transport C5, 2026-10-14
 
 Read [CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_PRESCRIBED_LOOP_C5_FUNCTIONS_2026_10_14.md) first. True C6 prescribed sources now feed genuine q/inverse/A/B C5, finite-N E/V/five density C5 and complete correction-history C5 through ten original charts from rminus to Rm. Modified E/V/m/h/k/e/p/P0/pressure C5 combines the retained background and corrections. Original common N/eta/d_star, global phase, microscopic collar, quadratic cross terms and nonzero incoming memories remain. Source/implicit calculus/density/Duhamel/flat checks pass. Next recover modified Q C4 and mixed radial rows, transfer quantitative high-order containment, then complete actual Rm patch/six outer charts and all17 targets/controls. Global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
