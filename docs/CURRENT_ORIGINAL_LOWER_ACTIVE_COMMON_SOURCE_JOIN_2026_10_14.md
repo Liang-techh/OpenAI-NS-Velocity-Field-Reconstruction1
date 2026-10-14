@@ -1,5 +1,7 @@
 # Actual lower/active common-source field join, 2026-10-14
 
+Update: the eight-function Rp native C5 source bridge is now accepted in [CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md](CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md). Its source callback and146 pulse output rows are installed; the separate interval-selected numerical callback remains open. The earlier open inlet wording below is superseded by this update. Continue with actual own joins.
+
 The actual lower collar and first modified active chart now share a source-proved rminus field join. Physical U/U_y/mean/mean_y/swirl have matching ordinary axial rows Z0..5, Q/Q_y have Z0..4, and absolute background pressure has Z0..3. All44 saved two-sided trace rows consume the same defining-function identities. The current nonlinear core, six true rho4 inlet histories, original pressure gauge, nonconstant chi and finite-N zero collar are retained. Quantitative mixed bounds, the full selected native C5 pulse bridge, other global own joins, common global N, global n1, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
 Inspect `python scripts/run_original_lower_active_common_source_join_functions.py`. Branch `codex/st073-transition-next`. The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. This is a leading-background seam. Its Q recovery uses1-delta; positive-order own recovery uses1+delta in its separate provider.
@@ -69,7 +71,7 @@ Completed in this milestone:
 
 Next construction tasks:
 
-1. [ ] Install all eight current Rp-frame functions into the selected native pulse C5 provider: u,m1,m2,X,energy,Mp,P0,pressure. Preserve phase, scaling, pressure gauge and nonzero histories; accepted K correspondence alone is insufficient.
+1. [x] Install all eight current Rp-frame functions into the selected native pulse C5 source provider: u,m1,m2,X,energy,Mp,P0,pressure. Completed by the current Rp native C5 source archive/receipt, all48 actual inlet identities and146 pulse consumer rows. Phase, scaling, P0+Mp and nonzero histories are retained; the interval-selected numerical callback is a separate open task.
 2. [ ] Glue positive-order own providers at Rin/rminus/Rc/2Rc/Rp/Rv using the existing inner,22 regional, reserved and tail functions. Keep own1+delta and leading1-delta recovery distinct. Reuse the new leading rminus seam.
 3. [ ] Construct actual own radial pressure-derivative joins with the fixed leading N1p and signed patch terms. Preserve partial integrals and finite Q/Q_y boundaries rather than zeroing the pressure inlet.
 4. [ ] Build direct second total radial/mixed source functions on remaining active charts. Reuse checked compact/quiet Q_yy and the new common lower/active function identities; include implicit inverse and phase terms elsewhere.

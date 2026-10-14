@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — full native frame and remaining own joins, 2026-10-14
+# Current scheduled-agent queue — actual own field joins after Rp C5 source connection, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md](CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md), inspect `python scripts/run_original_Rp_native_C5_pulse_source.py`, and complete its first available unchecked construction dependency. Prioritize actual own2Rc/Rp/Rv source joins, then Rin/rminus/Rc and global n1 assembly. Reuse the saved repaired/intermediate/inner source handles, full leading Rp C5 callback and accepted lower/active seam. Preserve physical measures, own1+delta/leading1-delta recovery, fixed leading N1p, incoming history and pressure gauge. Use checked source restoration with `--restore-source`; do not replay historical numerical suites or require ended session55770/cache26. Numerical callback/bounds, mixed/common-global-N, full n1/energy/heat/stress, genuine recursion and corrected NS remain open. Publish each scoped milestone and update only its corresponding task status. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — full native frame and remaining own joins, 2026-10-14
 
 The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
 

@@ -1,4 +1,8 @@
-# Latest checkpoint — actual lower/active common-source field join, 2026-10-14
+# Latest checkpoint — actual current Rp native C5 pulse source, 2026-10-14
+
+Read [CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md](CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md) first. All eight current Rp C5 functions now feed the selected source consumer:48 actual inlet rows,146 selected coefficient/field/signed-pressure rows and12 absolute background pressure C3 rows. Actual30 full-bump terminal integrals and the same original branch/25 IFT residual derivative rows close the compact correction as functions. Source-only restoration is available through `python scripts/run_original_Rp_native_C5_pulse_source.py --restore-source`. Numerical oracles/interval-selected callback and original-scale bounds are not restored. The old session55770/cache26 ended; older reuse instructions below are superseded. Next actual own2Rc/Rp/Rv joins, then Rin/rminus/Rc joins and a checked global n1 source provider. Mixed/numeric/common-global-N, energy/axis/preheat/exact heat/stress, genuine n>=2 recursion/oscillatory sum and corrected Cartesian NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — actual lower/active common-source field join, 2026-10-14
 
 The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
 

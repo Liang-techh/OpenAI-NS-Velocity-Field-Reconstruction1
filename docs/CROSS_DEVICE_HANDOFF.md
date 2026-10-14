@@ -1,4 +1,8 @@
-# Latest recoverable checkpoint — actual lower/active common-source join, 2026-10-14
+# Latest recoverable checkpoint — actual current Rp native C5 pulse source, 2026-10-14
+
+Branch `codex/st073-transition-next`. Read [CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md](CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md) and run `python scripts/run_original_Rp_native_C5_pulse_source.py --restore-source`. Pinned archives reconstruct all eight current Rp C5 inlet functions and the selected pulse source consumer without numerical ancestor replay. The saved graph has280182 nodes; acceptance has four proof groups,48 inlet rows,146 pulse consumer rows,12 absolute pressure C3 rows,30 actual terminal integral projections and25 actual IFT residual derivative identities. Historical session55770/cache26 ended. Source-only recovery does not restore numerical oracles or interval-selected numerical callbacks; older instructions to reuse that runtime are superseded. Next actual own2Rc/Rp/Rv joins, then Rin/rminus/Rc/global n1 and the remaining mixed/numeric/common-global-N/energy/preheat/heat/stress/recursion/oscillatory/NS layers. Keep own1+delta, leading1-delta and fixed leading N1p distinct. Stream errors require inspection of saved outcomes before repeating work. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier recoverable checkpoint — actual lower/active common-source join, 2026-10-14
 
 The old Python session55770/PID55176 has exited and cache26 is unavailable. Saved code, exact graphs and receipts remain intact. Use `python scripts/run_original_lower_active_common_source_join_functions.py --restore-source` for checked source-only recovery on any host; it restores the273594-node graph and seam views without replaying numerical ancestors. Numerical oracle services are not restored. Any instructions below to reuse session55770/cache26 are historical and superseded by this recovery notice.
 
