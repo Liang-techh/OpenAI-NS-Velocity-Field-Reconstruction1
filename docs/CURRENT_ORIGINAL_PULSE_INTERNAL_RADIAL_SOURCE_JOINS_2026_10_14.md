@@ -63,13 +63,13 @@ Use `CurrentOriginalPulseInternalRadialSourceJoins()`. Source/checker/archive/re
 2. [x] Construct main/gap and gap/end leading first radial-pressure source joins with retained nonzero mean.
 3. [x] Identify retained own m13/m15 pressure primitives and first radial derivatives at both internal seams.
 4. [x] Expose actual own second radial C3/QV C2 recovery after establishing real mass constancy.
-5. [ ] Construct genuine sigma/beta third and fourth physical radial source derivatives, keeping flat support branches and original normalization. Existing flat Taylor source formulas contain the ordinary third/fourth rows; do not use interval bounds as function values.
-6. [ ] Construct leading U_yyy/m_yyy/Q_yyy, then differentiate the complete P1_y density to obtain own P1_yy through ordinary Z3. Preserve derivatives of R and all signed density terms.
-7. [ ] Construct U_yyyy/m_yyyy/Q_yyyy and P1_yyy when needed. A second radial pressure derivative needs Q_yyy; a third needs Q_yyyy. Current Q_yy availability alone does not supply them.
-8. [ ] Establish the corresponding true Rp/Rv and2Rc higher radial/mixed source joins. Retain both sides and the saved pressure values; a zero relative correction does not zero the leading background.
+5. [x] Construct genuine sigma/beta third and fourth physical radial source derivatives, keeping flat support branches and original normalization. Completed in [CURRENT_ORIGINAL_PULSE_HIGHER_RADIAL_PRESSURE_C3_2026_10_14.md](CURRENT_ORIGINAL_PULSE_HIGHER_RADIAL_PRESSURE_C3_2026_10_14.md); actual interior bodies and support guards are checked.
+6. [x] Construct leading U_yyy/m_yyy/Q_yyy and complete P1_yy through ordinary Z3, preserving all R derivatives and signed terms. See the higher-source receipt and public recovery command in the successor document.
+7. [x] Construct U_yyyy/m_yyyy/Q_yyyy and P1_yyy, with actual ordinary rows and no repeated factorial conversion. See the same successor document.
+8. [ ] Establish the corresponding true Rp/Rv and2Rc higher radial/mixed source joins. Rp/Rv higher pressure C3 and both internal seams are complete in the successor receipt;2Rc higher pressure and the broader own mixed contract remain open. Retain both sides and saved pressure values.
 9. [ ] Complete the full required outer own mixed theorem before publishing its combined receipt/accessor. The paper's smoothness assertion is qualitative for arbitrary orders; finite checked rows and quantitative bounds must have distinct scopes.
 10. [ ] Finish actual own Rin/rminus/Rc joins and a checked global n1 provider. Then original-scale numerical containment/common global N, axis/energy/preheat/exact heat/stress, genuine n>=2 recursion/smooth sum and oscillatory corrected Cartesian NS.
 
 Paper reference map: supplied Lei-Ren Part I §13.4 (13.8)-(13.19), (13.23), (13.26), and §15.1-15.2 (15.5)-(15.18) provide physical-y operators, signed histories and positive-order recovery. The qualitative smoothness statement (15.42) does not supply missing derivative arrays or numerical bounds.
 
-Higher pressure radial derivatives, full outer mixed acceptance/accessor, other own seams, numerical bounds/global N, global n1, heat/stress, true recursion and corrected NS remain open.
+Pulse higher pressure radial derivatives and internal/Rp/Rv pressure C3 joins are installed in the successor checkpoint. The2Rc higher seam, full outer own mixed acceptance/accessor, other own seams, numerical bounds/global N, global n1, heat/stress, true recursion and corrected NS remain open.
