@@ -1,4 +1,8 @@
-# Current queue — genuine repair derivatives and repaired own-field closure, 2026-10-13
+# Current queue — actual integral terminal identities and genuine derivatives, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md). Actual reserved C1 mean/M/K/P and value-only Q/V are constructed with complete incoming histories. Take the next dependency: exact translated-bump reduction of their actual terminal integrals, followed by genuine coefficient Z2/Z3 and required mixed/radial bounds. Preserve fixed leading N1p, the original pressure datum, the leading 1-delta versus n1 1+delta recovery weights, physical measures and the strict chart domain. Reuse the retained owners; do not rerun ancestors or infer terminal field zeros from the previous linear-response gate. Full goal remains active and incomplete.
+
+# Earlier queue — genuine repair derivatives and repaired own-field closure, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md). All five actual coefficient C0/C1 bounds now execute from complete true moments, with exact Arc/radius/parameter identities and preserved physical log units. Next restore genuine complete defect/coefficient derivatives and required mixed/radial repair bounds, then reconstruct own M/K/Q/V/P and prove terminal zeros. Reuse source owners, kernel archives and matrix quadrature; do not treat C1 or a local normalized range as C3/C5 or corrected NS evidence. The full goal remains active and incomplete.
 

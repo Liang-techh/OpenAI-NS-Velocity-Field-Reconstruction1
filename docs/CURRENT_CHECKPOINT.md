@@ -1,4 +1,8 @@
-# Latest checkpoint — actual reserved five coefficient C1 numerical bounds, 2026-10-13
+# Latest checkpoint — actual repaired reserved own histories and Q/V values, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) first. The selected physical alpha/beta patches now have genuine signed integral histories and C1 own mean/M/K/P, with C0 Q/V recovered from the full mean_Z. Original core/lower/active pressure data and fixed leading N1p remain; the partial compact pressure prefix reproduces the accepted full graph exactly. Public queries enforce Rc <= R <= 2Rc. Next prove the actual integral terminal identities and extend genuine coefficient derivatives for Q/V Z1 and required mixed norms. Full goal **ACTIVE / INCOMPLETE**; terminal zeros and global n1 closure remain open.
+
+# Earlier checkpoint — actual reserved five coefficient C1 numerical bounds, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md) first. Complete true five defects now feed directed alpha1/alpha2 and beta1/beta2/beta3 value/Z1 ranges in their own fixed original physical log units. Exact Arc source, actual mu/Pstar/Rc recipes, ten selected graph identities and the whole continuous Z domain pass, retaining Astar_Z and nonzero source terms. Next extend genuine required derivative/mixed repair bounds and construct repaired own M/K/Q/V/P before proving terminal five zeros. Full goal **ACTIVE / INCOMPLETE**; the linked checked/open task list is authoritative.
 

@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — genuine derivatives and own-field terminal closure, 2026-10-13
+# Current scheduled-agent queue — actual terminal integrals and own-field completion, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) and claim its first unchecked dependency. The actual C1 histories/mean/M/K/P and C0 Q/V branch are built. Reduce their true terminal integrals to the accepted physical matrix before proving field zeros; then add genuine Z2/Z3 and C3/C5 mixed bounds, Q/V Z1 and global joins. Reuse live session 55770 or source-pinned archives, save each accepted milestone and mark only the relevant detailed tasks completed. Retain the full matching/heat/stress, genuine n>=2, oscillatory and restricted Cartesian NS objectives.
+
+# Earlier scheduled-agent queue — genuine derivatives and own-field terminal closure, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md) and take its first unchecked dependency. All five actual C0/C1 coefficient bounds are saved; required higher derivatives/mixed norms and repaired own-field terminal zeros are next. Preserve source histories, true finite-mu scalar bodies and actual physical units. Mark tasks complete with their scoped receipts, save checkpoints, and retain matching/stress, genuine n>=2 recursion, oscillatory correction and final restricted NS requirements.
 

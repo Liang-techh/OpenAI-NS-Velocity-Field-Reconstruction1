@@ -85,7 +85,7 @@ Next tasks, in order:
 2. [ ] Extend numerical containment to those ordinary derivatives with full feedback/kernel tails. Do not differentiate interval endpoints or use C1 ranges as C3 proof.
 3. [ ] Extend the selected physical inverse to the required coefficient derivative orders with actual Astar derivatives and nonzero mu.
 4. [ ] Transfer the paper's required mixed/radial C5 repair bounds through the explicit compact bump derivatives and physical radius factors.
-5. [ ] Insert the actual alpha/beta patches into the reserved supports and reconstruct their own mean, M, K, Q, V and P functions.
+5. [ ] Complete global repaired mean/M/K/Q/V/P with the required derivatives and joins. The reserved-band C1 mean/M/K/P and value-only Q/V construction is now implemented; see [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md).
 6. [ ] Keep the source histories across core, cutoff and reserved supports, and preserve the n1 recovery weight 1+delta.
 7. [ ] Establish every own-field terminal identity from its actual integral/recovery definition, then prove all five repaired terminal moments vanish as functions.
 8. [ ] Establish the required axis, support endpoint and inner-to-outer smooth joins.

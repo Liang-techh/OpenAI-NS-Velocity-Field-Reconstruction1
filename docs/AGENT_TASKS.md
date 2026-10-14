@@ -1,4 +1,8 @@
-# Current agent queue — complete genuine derivatives and n1 own-field closure, 2026-10-13
+# Current agent queue — prove integral terminals and complete own-field derivatives, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_OWN_FIELDS_2026_10_13.md) and its checked/open tasks. Selected patches now enter actual signed C1 histories and own mean/M/K/P; Q/V values use mean_Z. First prove exact terminal integral/response equivalence from the physical bump densities, then five transported terminal zero functions. Extend genuine coefficient derivatives for Q/V Z1 and required mixed/radial norms. Keep pressure data, fixed N1p and global continuation histories intact. Mark completion only within the tested scope; n1/global matching, heat/stress, true n>=2 recursion and corrected NS remain open.
+
+# Earlier agent queue — complete genuine derivatives and n1 own-field closure, 2026-10-13
 
 Use [CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md](CURRENT_ORIGINAL_N1_RESERVED_COEFFICIENT_ENCLOSURES_2026_10_13.md). Physical two-axial/three-angular C0/C1 bound transfer is complete. Take the next actual derivative dependency: complete source Z2/Z3 and required mixed/radial bounds, followed by reconstructed own histories and five terminal zero functions. Keep the exact finite-mu Arc body, independent alpha/beta units, actual Astar derivatives, physical radius factors and all source errors. No ancestor/grid/quadrature regeneration or numerical center selection.
 
