@@ -1,4 +1,8 @@
-# Current agent queue — genuine radial/inertial fifth source row, 2026-10-13
+# Current agent queue — propagate genuine core inlet axial6, 2026-10-13
+
+Use [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) and claim the first unchecked dependency. Core rho4 C6 inputs and full Q/inertial/p2 C5 are complete, with executable P0 derivative projections and actual whole-Z/point3/8 source enclosures. Propagate actual fields and complete histories through micro/macro bridge, Rm and the seventeen active charts. Comparison axial6 data and internal Qpad are not actual derivatives. Preserve old axial4 outputs; export seven genuine source rows/six output rows with original units, context, bases, ledger, P0 and finite N. Then complete actual active/compact C5 targets/controls, pre-Rp C3 pressure and complete defect/coefficient derivatives. Keep global n1/recursion/NS open.
+
+# Earlier agent queue — genuine radial/inertial fifth source row, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

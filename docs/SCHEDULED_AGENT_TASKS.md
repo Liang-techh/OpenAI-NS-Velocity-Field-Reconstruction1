@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — higher true sources and full n1 derivatives, 2026-10-13
+# Current scheduled-agent queue — true axial6 downstream propagation, 2026-10-13
+
+Start at [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md). Inspect sealed archives with `python scripts/run_original_core_inlet_axial6_generic_source.py`; reuse admitted owners and numeric caches. Complete the first unchecked dependency: actual micro/macro bridge axial6, then versioned Rm/17-chart seven-input/six-output sources. Preserve all source histories and units; comparison bounds/zero padding do not define actual derivatives. Next active/compact C5 targets/controls, pre-Rp C3 pressure, complete defects and selected coefficient derivatives. Commit scoped work and mark the exact checklist items complete. Global n1, genuine n>=2 recursion and corrected NS remain open; the original goal is **ACTIVE / INCOMPLETE**.
+
+# Earlier scheduled-agent queue — higher true sources and full n1 derivatives, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

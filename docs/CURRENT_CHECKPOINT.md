@@ -1,4 +1,8 @@
-# Latest checkpoint — analytic core C5 and lower pressure C3, 2026-10-13
+# Latest checkpoint — true core inlet axial6 and generic fifth source, 2026-10-13
+
+Read [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) first. Same nonlinear rho4 core now supplies all eight genuine C6 generic inputs, complete six-moment histories, independent P0 C6 and full signed Q/inertial/p2 C5. Actual whole-Z and point3/8 enclosures retain all density tails. This is inlet-only. Next propagate actual axial6 through the bridge/Rm and seventeen downstream charts, then construct active/compact C5 controls, pre-Rp C3 pressure and complete defects/coefficient derivatives. Earlier lower/pulse C3 and terminal C1 zeros remain. Global n1, true n>=2 recursion and corrected NS are open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — analytic core C5 and lower pressure C3, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

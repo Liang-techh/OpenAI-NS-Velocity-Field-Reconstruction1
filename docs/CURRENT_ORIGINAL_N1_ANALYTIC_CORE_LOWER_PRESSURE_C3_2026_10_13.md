@@ -1,5 +1,7 @@
 # Actual analytic core C5 and lower pressure C3, 2026-10-13
 
+Continuation: [true core inlet axial6/generic fifth source](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md) now constructs the missing high-order inputs and p2_Z5 at rho4 only. Propagation through actual bridge/Rm and all17 charts is still open; use that newer detailed queue.
+
 Status: required derivatives of the same admitted analytic nonlinear core now feed original lower-collar U/mean C5, Q/Q_y/Q_yy C4, and signed m13/m15 C3 integral functions. All earlier C3/C2/C1 source handles and original histories remain. Together with the [pulse pressure C3 milestone](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md), this removes another real dependency for complete five-defect/coefficient derivatives. Full goal remains **ACTIVE / INCOMPLETE**.
 
 The higher core components use the already admitted unique analytic solution of the actual ten angular and ten axial nonlinear terms with the same Green inverse. Only ordinary slow-Z derivative order changes; quantity, rho, radial order, family, source providers, axis conditions and nonlinear definition are guarded. Phi/Psi/mean_Psi radial orders 0, 1 and 2 expose Z0..Z5, preserving all existing C3 handles. An altered component definition is rejected. No second core solution or numerical enclosing center is selected.

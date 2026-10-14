@@ -1,4 +1,8 @@
-# Current queue — fill p2_Z5 before full active/compact C5, 2026-10-13
+# Current queue — extend actual axial6 beyond the core inlet, 2026-10-13
+
+Read [CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md](CURRENT_ORIGINAL_CORE_INLET_AXIAL6_GENERIC_SOURCE_2026_10_13.md). Genuine core-inlet C6 inputs, complete histories, P0 derivatives and Q/inertial/p2 C5 are built and numerically produced. Next extend actual bridge/Rm/active chart sources, preserving each signed sector, physical scale and incoming memory, then active/compact C5 control functions and complete pre-Rp pressure C3. Use the linked twelve-step checklist and mark only its completed scope. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier queue — fill p2_Z5 before full active/compact C5, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_ANALYTIC_CORE_LOWER_PRESSURE_C3_2026_10_13.md) first. Same admitted analytic core C5 now feeds original lower U/mean C5, Q/Q_y/Q_yy C4 and signed pressure C3. Earlier pulse C3 and terminal C1 five zeros remain. Next construct genuine radial/inertial p2_Z5: existing axial4 arrays have only rows0..4, and Qpad zero is not row5. Then complete active loop/target C5, same-J/N compact controls, pre-Rp pressure C3 and five-defect/coefficient derivatives. Preserve every source history and physical unit. Quantitative higher containment/mixed norms, global n1, true n>=2 and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
