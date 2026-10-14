@@ -1,3 +1,7 @@
+# Current queue — genuine active/compact C4/C5 and complete pressure C3, 2026-10-13
+
+Start with [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md). The pulse branch now exposes true native/Gamma C5, U/mean C5, Q C4 and pressure C3; old source handles and all histories are retained. Take its first unchecked task: source-proven active Z4/Z5, actual compact implicit C4/C5 and quantitative tails, followed by other pressure segments and complete five-defect C3. Extend the selected inverse and n1 recovery only after genuine complete inputs exist. Do not pad higher rows, differentiate interval endpoints or promote local C3 to numerical/global closure. Full goal remains active and incomplete.
+
 # Current queue — genuine n1 derivatives and global closure after C1 terminal repair, 2026-10-13
 
 Start with [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md). The actual five terminal integral values/Z1 rows and their mass/pressure tail consequences are proved. Take the first missing derivative dependency: genuine complete defect Z2/Z3, selected inverse derivatives and mean_ZZ for interior Q/V Z1, followed by source-bound mixed/radial C3/C5 norms and global joins. Preserve every fixed pressure/forcing history and existing C1 handle; reuse source owners and numerical archives. C1 moment closure is not complete n1, global stress or scale recursion.

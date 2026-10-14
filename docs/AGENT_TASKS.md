@@ -1,3 +1,7 @@
+# Current agent queue — complete non-pulse high-order sources after pulse C3, 2026-10-13
+
+Use [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) and take the first unchecked dependency. Native/Gamma C5, leading pulse U/mean C5, Q C4 and eight pulse pressure C3 functions are complete within function scope. Next bind actual active source Z4/Z5 and compact implicit-control C4/C5 with the same Jacobian/selected N; then build pre-Rp and inner/lower pressure C3 and complete five defects/coefficient derivatives. Reuse live source owners and archives. Preserve old handles, physical scales and history, leading 1-delta versus n1 1+delta weights. Numerical containment, global n1 and genuine recursion require their own remaining evidence.
+
 # Current agent queue — extend genuine derivatives beyond proved C1 terminal repair, 2026-10-13
 
 Use [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md). Actual transported five value/Z1 zeros and mass/pressure tail recovery are complete within C1 scope. Claim genuine complete source Z2/Z3 and selected inverse derivatives next, then actual mean_ZZ/Q/V Z1, mixed/radial C3/C5 containment and required global joins. Do not pad derivative rows, differentiate interval endpoints or redefine the fields around easier bounds. Preserve source histories and original finite scales; keep global n1, heat/stress, true n>=2 recursion and corrected NS open until their actual requirements pass.

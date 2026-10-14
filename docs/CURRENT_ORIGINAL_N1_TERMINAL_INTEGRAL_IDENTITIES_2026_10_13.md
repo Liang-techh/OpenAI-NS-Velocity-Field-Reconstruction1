@@ -67,6 +67,8 @@ Completed tasks:
 - [x] Bind the original Rv radius and fixed N1p support, and recover the own n1 pressure C1 tail after Rv.
 - [x] Retain the original terminal source functions and enforce checked, domain-restricted tail queries.
 
+Pulse-branch progress: [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) completes native/Gamma C5, leading pulse U/mean C5 and Q C4, and signed pulse pressure C3. Task 1 below remains open for the other pressure segments and complete defect composition. Numerical/global derivative gates remain open.
+
 Next tasks:
 
 1. [ ] Extend genuine complete defect Z2/Z3 functions from the original inner/lower/pre-Rp/pulse source bodies; preserve existing C1 handles and all radial/forcing histories.

@@ -1,3 +1,7 @@
+# Latest checkpoint — actual native/Gamma C5 and pulse pressure C3, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) first. Genuine native/Gamma C5 now feeds complete main/gap/end leading U/mean C5, auxiliary Q C4 and signed pulse pressure C3. Actual source identities, Gamma kernels and fixed physical measures/endpoints are retained. Existing C1 terminal five zeros remain proved. Next extend active/compact leading high-order source/control functions and inner/lower/pre-Rp pressure C3, compose complete defects, then differentiate the actual selected inverse. Numerical C3 containment, mixed/radial norms, global n1, true n>=2 recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
 # Latest checkpoint — actual transported five n1 terminal C1 zeros, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md) first. Exact translated physical bump integrals now identify the actual transported terminal functions with the selected response, preserving the complete pressure partition and core datum. All five value and ordinary Z1 terminal identities vanish. Own mass/mean/K C1 and Q/V value tails vanish after 2Rc; own pressure C1 vanishes after Rv, retaining leading angular/heat pressure. Next extend genuine defect/coefficient Z2/Z3, own Q/V Z1 and required C3/C5 norms/joins. Full goal **ACTIVE / INCOMPLETE**; complete n1 and true n>=2 recursion remain open.

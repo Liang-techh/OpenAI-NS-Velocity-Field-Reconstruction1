@@ -1,3 +1,7 @@
+# Current scheduled-agent queue — non-pulse higher sources and full n1 derivatives, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) and claim the first unchecked dependency. Pulse function C3 and its native/Gamma C5 inputs are now saved. Construct actual active Z4/Z5 and compact control C4/C5 from the original target system, then complete pre-Rp and inner/lower pressure C3 and five-defect/coefficient C3. Reuse live session 55770 or source-pinned archives; retain original scales, measures and full histories. Mark only scoped completed tasks. Quantitative derivative containment, mixed norms, global n1 joins, matching/stress, true n>=2, oscillatory corrections and restricted Cartesian NS remain required.
+
 # Current scheduled-agent queue — genuine derivatives, norms and joins after C1 terminal closure, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md](CURRENT_ORIGINAL_N1_TERMINAL_INTEGRAL_IDENTITIES_2026_10_13.md) and take its first unchecked derivative dependency. Actual integral-to-response and ten terminal zero identities are proved. Extend genuine complete source/coefficient Z2/Z3, own Q/V Z1 and required mixed/radial C3/C5 bounds, preserving all current C1 source handles. Reuse live session 55770 or source-pinned archives, record scoped evidence and mark the detailed task complete. Global n1, heat/stress, true higher-order recursion and corrected Cartesian NS remain required.

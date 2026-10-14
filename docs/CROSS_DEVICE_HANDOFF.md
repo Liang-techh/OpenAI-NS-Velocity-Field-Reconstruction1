@@ -1,3 +1,9 @@
+# Latest recoverable checkpoint — pulse pressure C3, 2026-10-13
+
+Read [CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md](CURRENT_ORIGINAL_N1_PULSE_PRESSURE_C3_2026_10_13.md) and `CURRENT_CHECKPOINT.md` first. The full long-term goal remains active and incomplete. Actual C1 terminal five zeros and tail recovery are preserved; genuine native/Gamma C5 and signed main/gap/end/total pulse pressure C3 are now added. Next work is actual active/compact high-order sources and other pressure C3 segments, followed by complete defects and selected coefficient derivatives.
+
+Working branch: `codex/st073-transition-next`. Inspect `python scripts/run_original_n1_pulse_pressure_C3_functions.py` without rebuilding ancestors. If the retained Python session 55770 exists on the original host, reuse checked source owners/cache26; another host should use the source-pinned archives. A reply-stream disconnect is not evidence that Git commits or saved research results are lost. The observed connection failures do not establish the supplied request ID's server-side cause.
+
 # Latest checkpoint — full original n1 C1 defects and selected linear coefficients, 2026-10-13
 
 Read [CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md](CURRENT_ORIGINAL_N1_FULL_DEFECT_LINEAR_FUNCTIONS_2026_10_13.md) first. All five true signed defect C1 functions now include the complete lower/preRp/pulse pressure partition and beyond-Rv zero-support theorem. They select actual two axial/three angular coefficient functions and physical compact C1 velocity patches in the same graph. All five algebraic response identities and their Z derivatives passed, with the original physical factors, Astar_Z and nonzero mu retained. The saved graph has 53,398 nodes.
