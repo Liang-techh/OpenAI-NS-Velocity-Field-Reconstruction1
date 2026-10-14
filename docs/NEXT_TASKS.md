@@ -1,4 +1,8 @@
-# Current queue — finite-N Rm patch and six outer charts, 2026-10-14
+# Current queue — six outer charts and full preRp pressure, 2026-10-14
+
+Use [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md). Actual finite-N Rm patch corrections/modified C5, total radial C5/generic C4 and signed pressure C3 now reach Rh. Begin Rh_reference C6/generic C5 with the actual leading Rh endpoint; propagate nonzero `public_Rm_finite5.Rh_correction`, then O2_slope/O2_axial/O2_buffer/O3_transition/O3_power. Preserve the original exponential O2 measure, quiet O3 memory, N/global phase/P0 and both signed pressure boundaries. Complete preRp C3 only after lower-collar join. Numerical norms, all17 controls, global n1, heat/stress, genuine recursion and corrected NS remain open.
+
+# Earlier queue — finite-N Rm patch and six outer charts, 2026-10-14
 
 Use [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md), which contains20 detailed next tasks. Leading five-control C6, true patch fields/radial C6 and generic C5 are complete within function scope. Next build actual patch loop/density/history C5 with nonzero `public_loop5.Rm_correction`, same N/global phase and dt/t log transport; carry total radial/pressure functions and extend Rh_reference plus five O2/O3 charts. Join the retained lower collar before complete preRp C3. Quantitative norms, all17 compact targets/controls, global n1, heat/stress and genuine recursion/corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 

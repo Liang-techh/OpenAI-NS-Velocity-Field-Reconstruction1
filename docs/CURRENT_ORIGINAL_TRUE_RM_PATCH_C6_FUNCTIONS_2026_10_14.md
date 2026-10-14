@@ -1,5 +1,7 @@
 # Original leading Rm patch C6 functions, 2026-10-14
 
+The [finite-N continuation milestone](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md) now completes patch correction/modified C5, total radial functions and signed pressure C3 to Rh. The leading-only construction described below remains valid; its first six follow-up tasks are completed within function scope.
+
 The true prescribed Rm inlet now supplies the original five leading implicit control functions through Z6, actual Rm-to-Rh background E/V/m/h/k/e/p/P0/pressure and E_y/V_y C6, and full signed Q/inertial/p2 C5. The map uses exact original finite bump integrals and the same uniquely admitted leading branch. Exact source normalization, raw-to-normalized map/Jacobian conjugacy and the inherited nonzero-J theorem are checked. This extends the leading background function construction. Finite-N patch corrections, six outer charts, complete preRp pressure C3 and new original-scale numerical containment remain open. Full goal **ACTIVE / INCOMPLETE**.
 
 Inspect `python scripts/run_original_true_Rm_patch_C6_functions.py` without rebuilding ancestors. On the original host reuse session55770/cache26, `public_modified4`, `Rm_patch6_owner`, `Rm_patch6_receipt`, `public_Rm_patch6`, and the checked core/lower/pulse/terminal owners. The [preceding ten-chart modified Q/pressure milestone](CURRENT_ORIGINAL_MODIFIED_Q4_PRESSURE_C3_FUNCTIONS_2026_10_14.md) remains valid.
@@ -61,12 +63,12 @@ Completed within this function scope:
 
 Next tasks, in dependency order:
 
-1. [ ] Add actual Section11 loop functions on this prescribed patch. Use its genuine C5 generic roots, same original N/eta/d_star, periodic inverse and original global phase. Keep leading control values distinct from finite-N repair controls.
-2. [ ] Implement log-coordinate transport on x. For rate r use x^-r*incoming plus int_1^x exp(-r*(log(x)-log(t)))*density(t)*dt/t. The existing constant-Jacobian transport helper cannot be used unchanged with1/x.
-3. [ ] Carry every nonzero `public_loop5.Rm_correction` row through the patch, with separate background and correction histories. Pressure correction has rate0 and retains its full inlet constant.
-4. [ ] Recover finite-N E/V, five signed density increments, modified moment/pressure functions C5, and actual Rh correction/modified endpoints. Include all cross/quadratic terms and complete amplitude derivatives.
-5. [ ] Add native slow derivatives of gamma/full implicit controls and moving partial weights. Seed Z-only control values as radial constants, respect exact compact beta branches, and include the original x-Jacobian and fast phase terms.
-6. [ ] Recover total U_y/mean C5 and Q/Q_y C4, reduced S C3 and signed pressure contribution C3 on the patch. In x use R*Jacobian=Rm and R^2*Jacobian=Rm^2*x, each once. Retain incoming S0/S1 and both physical boundary terms.
+1. [x] Add actual Section11 loop functions on this prescribed patch. Completed within function scope in [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md); genuine roots, original N/eta/d_star/global phase and separate leading controls remain.
+2. [x] Implement original log-coordinate dt/t transport, with x^-r incoming and exact log suffixes. The variable1/x measure is retained.
+3. [x] Carry every nonzero `public_loop5.Rm_correction` row through the patch, separately from background history; pressure rate0 retains its inlet.
+4. [x] Recover finite-N E/V, five signed densities, modified moments/pressure C5 and actual Rh endpoints with all cross/quadratic amplitude terms.
+5. [x] Supply required native slow derivatives with original gamma first/second rows, Z-only implicit controls, full moment ODEs, moving-integral endpoint rule, x-Jacobian and explicit fast phase terms. Further mixed/second-radial sources and numerical norms remain open.
+6. [x] Recover total U_y/mean C5, Q/Q_y C4, reduced S C3 and signed pressure contribution to Rh, with Rm/Rm^2*x measures, nonzero S0/S1 and original rminus boundary. Complete preRp C3 remains open.
 7. [ ] Construct Rh_reference prescribed C6/generic C5 with the actual patch endpoint and original interpolation functions. Preserve all six leading background memories and independent P0.
 8. [ ] Construct O2_slope C6/generic C5 from its original physical profile and exact endpoint data; retain original radius/phase origins.
 9. [ ] Construct O2_axial C6/generic C5 with the original exponential physical Jacobian. Do not replace its logarithmic radial measure by a constant interval width.

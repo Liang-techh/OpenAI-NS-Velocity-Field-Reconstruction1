@@ -1,4 +1,8 @@
-# Current scheduled-agent queue — finite-N patch transport and six outer charts, 2026-10-14
+# Current scheduled-agent queue — six outer charts from true Rh inlet, 2026-10-14
+
+Start at [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md), inspect `python scripts/run_original_true_Rm_patch_finite_N_C5_functions.py`, and execute the first unchecked dependency. Reuse accepted owners/archives. Actual loop/density/history/modified C5, total radial C5/generic C4 and signed pressure C3 now reach Rh. Extend the six original outer C6/generic C5 sources, nonzero corrections and pressure to Rp. Keep N/global phase/P0, original O2 exponential measure, quiet O3 memory and finite boundaries. Join lower collar before complete preRp C3; retain numerical/mixed norms, all17 controls/global frequency, n1 repair, heat/stress, true recursion and corrected NS requirements. Save scoped checkpoints and mark only corresponding tasks complete.
+
+# Earlier scheduled-agent queue — finite-N patch transport and six outer charts, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md), inspect `python scripts/run_original_true_Rm_patch_C6_functions.py`, and complete the first unchecked task in its20-item queue. Reuse accepted sources and original-host owners. Leading patch C6/generic C5 and same original implicit control C6 functions are complete; actual finite-N patch transport is next. Keep `public_loop5.Rm_correction` nonzero, the physical1/x Jacobian, one N/global phase, P0, signed density terms and all finite endpoints. Continue six outer charts and full preRp C3 with the retained lower collar. Save source-pinned scoped milestones; mark only corresponding tasks completed. Original-scale norms, all17 targets/controls, global n1, heat/stress, genuine recursion and corrected NS remain required. Full goal **ACTIVE / INCOMPLETE**.
 

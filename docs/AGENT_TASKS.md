@@ -1,4 +1,8 @@
-# Current agent queue — actual patch corrections and outer continuation, 2026-10-14
+# Current agent queue — six original outer sources and continuation, 2026-10-14
+
+Take the first unchecked item in [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md). The actual Rm patch is complete within C5 function/total-radial/pressure C3 scope. Build Rh_reference C6/generic C5 and carry the actual leading background plus nonzero Rh correction from separate owners. Continue all six outer charts with original N/phase, physical measures and memories; O2_axial requires exponential Jacobian and O3 quiet loops retain incoming corrections. Then full preRp C3 with lower collar, original-scale numerical/mixed norms, all17 compact J/N controls/frequency, complete n1 repair, heat/stress, genuine n>=2 and corrected NS. Mark only scoped supported tasks complete.
+
+# Earlier agent queue — actual patch corrections and outer continuation, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md) and take its first unchecked dependency. The true leading patch C6/generic C5 and original unique implicit-control C6 functions are checked. Add actual Section11 loop/density/correction C5 using the nonzero Rm correction inlet and original N/global phase. In x=R/Rm, use log(x)-log(t) decay and dt/t; preserve pressure rate0 memory. Then total radial U_y/mean C5, Q/Q_y C4 and signed pressure C3, followed by six outer charts to Rp. Do not reset background/correction memories. Complete numerical norms, all17 compact targets/J/N controls, global frequency, n1 repair, heat/stress, true recursion and corrected NS with separate evidence. Mark only supported tasks complete.
 

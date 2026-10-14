@@ -1,4 +1,8 @@
-# Latest checkpoint — original leading Rm patch C6 functions, 2026-10-14
+# Latest checkpoint — actual finite-N Rm patch C5 and pressure to Rh, 2026-10-14
+
+Read [CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_FINITE_N_C5_2026_10_14.md) first. Actual patch loop/inverse/A/B, finite-N densities and complete nonzero-inlet correction/modified functions C5 now reach Rh. Original dx/x kernels, pressure rate0 memory, N/global phase/P0 remain. Total radial C5, modified generic C4 and signed rminus-to-Rh pressure C3 pass source, seam and independent calculus checks. Next construct six original outer C6/generic C5 sources and loop/history/radial/pressure continuation to Rp, then join lower-collar data for complete preRp C3. Numerical norms, all17 controls, global n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+# Earlier checkpoint — original leading Rm patch C6 functions, 2026-10-14
 
 Read [CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md](CURRENT_ORIGINAL_TRUE_RM_PATCH_C6_FUNCTIONS_2026_10_14.md) first. True prescribed Rm C6 input now feeds original leading five-control C6 functions, leading Rm-to-Rh fields/E_y/V_y C6 and full signed generic C5. Exact beta integral/source normalization and raw-normalized map/Jacobian identities bind the same admitted unique branch. Scoped calculus, archive and public restoration pass. Next propagate actual finite-N patch corrections from the nonzero Rm inlet with log-coordinate1/x transport, then six outer charts and complete preRp pressure C3. Original-scale numerical norms, all17 targets/controls, global n1, heat/stress, genuine recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
 
