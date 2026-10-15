@@ -1,3 +1,11 @@
+# Current checkpoint — original normalized core numerical approximation, 2026-10-15
+
+Read [CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md) first. `OriginalCoreNumeric` now computes nonzero numerical approximations of leading Phi/Psi/mean_Psi/Uz/Q and compatible P0/Pstar^2, with directed error bounds relative to the same original admitted core and current n1 source family. It recomputes j exactly as 1/5721363714816000000000 and calls the original coupled production recurrence. Numerical proxies and actual-source enclosures are kept separate; no source midpoint is selected.
+
+A 7.937 s run passes 72 comparisons across two precision/quadrature/degree levels and 12 independent Bessel comparisons at 12 core locations. The error branch retains all 14 pressure atoms in aggregates, the nonzero implicit swirl source and admitted infinite nonlinear tails. At Z=0.3,rho=2, Phi is approximately 0.5767248077568733872. Profile error bounds are not NS residuals. Exact F0, full physical velocity, n0+n1 assembly and numerical regular n1 remain unavailable.
+
+Task 15 is IN PROGRESS; tasks 13/14 remain open. Next recover usable original logarithmic amplitude data, actual regular n1 values/histories and the physical assembly; close remaining interfaces and chart selection. Do not treat point-proxy S=0 as an original source choice. Full goal ACTIVE / INCOMPLETE. Earlier checkpoints below are historical where superseded.
+
 # Current checkpoint — axis-regular Cartesian n1 core, 2026-10-15
 
 Read [CURRENT_ORIGINAL_N1_CARTESIAN_CORE_2026_10_15.md](CURRENT_ORIGINAL_N1_CARTESIAN_CORE_2026_10_15.md) first. `OriginalN1CartesianCoreSource` exports the closed original core disk in physical x,y and paper Z,tau, including its exact regular axis. Cartesian velocity uses A*x-B*y, A*y+B*x with no radial division or azimuth. It retains the original equation-derived axial transverse curvature and the Z-dependent coordinate pullback. This is still a source-only n1 coefficient, without leading assembly or evaluated nonzero original field values.

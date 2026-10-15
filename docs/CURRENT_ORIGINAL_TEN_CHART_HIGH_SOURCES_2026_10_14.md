@@ -196,9 +196,14 @@ rebuild the ten high-source packets to address an interface-only task.
     Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
     State normalization, viscosity, domain, support and forcing separately.
-15. [ ] Restore numerical evaluators of the actual nonlinear core, compatible
-    datum, lifted phase inverse and full histories. A source DAG or interval
-    midpoint is not a computed original field value.
+15. [ ] **IN PROGRESS, 2026-10-15:** [original normalized core numerical approximation](CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md)
+    computes Phi/Psi/mean_Psi/Uz/Q and compatible normalized axis pressure,
+    with exact source j, production recurrence and directed actual-source
+    error bounds. Both precision/truncation levels and independent Bessel
+    comparisons pass. F0, full physical field, original regular n1, lifted
+    phase inverse and nonzero histories still require numerical recovery.
+    A source DAG, point proxy or interval midpoint is not an exact source
+    oracle. Keep actual nonzero S and all pressure atoms in error propagation.
 16. [ ] Establish original-scale numerical error budgets for truncation,
     quadrature and differentiation independently; use logarithmic/arbitrary-
     precision scales where ordinary floating point underflows.
