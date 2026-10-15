@@ -1,3 +1,5 @@
+> Successor: [actual second/post-power values and six histories to R110](CURRENT_ORIGINAL_R110_NUMERIC_2026_10_15.md) now reaches exact R110. This first-switch document remains the accepted prerequisite; next work starts at the genuine finite long reshape.
+
 # Actual original-N first-switch velocity and retained history — 2026-10-15
 
 `OriginalFirstSwitchNumeric.evaluate(Z,s,...)` continues actual modified

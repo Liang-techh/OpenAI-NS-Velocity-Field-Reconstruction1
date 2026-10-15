@@ -306,9 +306,17 @@ rebuild the ten high-source packets to address an interface-only task.
     Actual macro values/mean and all correction/n1 histories are retained.
     Ten packets,24 independent source/Z3/mean/geometry checks,63 R100 seams
     and69 incoming/terminal-memory checks pass.
-    **Next:** actual second_switch with the original angular blend and
-    unchanged unmodified U; selected-N B/N still evolves. Then post_power
-    to R110 with length log(11/10)-2hbS and all inherited histories. Derive
+    [Actual second/post-power values and six histories to R110](CURRENT_ORIGINAL_R110_NUMERIC_2026_10_15.md)
+    now reach exact R110, retaining both original angular weights, finite
+    post length, local selected-N fields and all correction/n1 memories.
+    Six unmodified leading own-history Z2 enclosures retain actual core
+    atoms, uniform full bridge sources and exact finite post ODE kernels;
+    these are proxies with complete errors, separate from corrections.
+    Twenty packets,54 independent control/six-ODE/geometry/measure checks,
+    126 field coefficient seams and54 six-history seams pass.
+    **Next:** genuine finite long reshape from actual unmodified R110,
+    original T=400*A/B/anchored G, log/factored Phi and all six histories.
+    Keep the selected-N source/phase and T*dq measure. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
