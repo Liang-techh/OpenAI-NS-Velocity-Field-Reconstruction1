@@ -1,3 +1,11 @@
+# Current checkpoint — original coupled n1 radial coefficients, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md) first. `OriginalN1CoreNumeric` now computes degree16 finite radial prefixes of the actual temporal n1 core, using the same original leading source family. All raw B0/B1, axial derivatives, pressure and nonzero F0-squared feedback are retained in directed coefficient bounds. This is coefficient/prefix computation; the infinite radial remainder and a full nonzero-radius n1 point oracle remain open.
+
+An 89.469 s run exits 0: 30 exact raw-matrix identities, 36 exact mixed coefficient comparisons, 72 cross-precision prefix comparisons and 2040 directed coefficient slots (1824 nonzero point slots). A separate saved-report inspection exits 0 in 2.135 s. At Z=0.3,rho=2, normalized f is approximately -0.18941311938863450413; the degree12->16 change is 1.28e-20, which is an observed difference, not a remainder proof. The new solver corrects a missing direct feedback term in the older three-row axis shortcut; do not reuse its rho3 axial row as numerical truth.
+
+Task 15 remains IN PROGRESS. Next establish a valid radial remainder or execute the actual full Volterra iteration/quadrature with its own word tail, then transport actual histories and assemble n0+n1 through one streamfunction. Do not apply a Volterra-word tail to a radial Taylor polynomial. Tasks 13/14, global physical/heat/stress layers and genuine n>=2 recursion stay open. Full goal ACTIVE / INCOMPLETE. Earlier checkpoints are historical where superseded.
+
 # Current checkpoint — original logarithmic amplitude and leading velocity terms, 2026-10-15
 
 Read [CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md](CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md) first. `OriginalCoreLogAmplitude` now computes global G approximations with certified-pole errors, original local relative-amplitude values, and physical coordinate/u,v,w signed exponential-sum packets from the same numerical leading core. It preserves the original binary-singleton logCstar and keeps tiny root offsets separate. At xi=1, F0/F0(anchor) is approximately 0.105399224561864337. This is leading n0 only, not n0+n1 or a floating-point full velocity field.

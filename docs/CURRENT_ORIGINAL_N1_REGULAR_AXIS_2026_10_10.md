@@ -1,3 +1,5 @@
+> **2026-10-15 correction:** the legacy `axis_solve()` and its archived/checker rho3 axial rows omit the direct raw B0[6,1] feedback. Uz1_rho3 and K1_rho3 must not be treated as original coefficient truth. The full raw operator includes the term. The new [coupled original n1 numerical recurrence](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md) retains it and passes independent raw-equation extraction with nonconstant F0/g. Stored P1 through rho3 and Q through rho2 do not acquire this omitted term at these orders. Current Cartesian first curvature and equation-derived positive-radius source paths do not consume the stale axis rows. Historical checks below do not certify the missing term; the full goal remains incomplete.
+
 > Subsequent progress: [actual operator and computed initial regular integrals](CURRENT_ORIGINAL_N1_INITIAL_INTEGRAL_2026_10_10.md) now supplies source-owned actual inputs and Wbase=(I+J)Gg enclosures. The older bounds/axis scope below remains accepted. A full coupled n=1 field is still open.
 
 # Genuine n=1 regular operator and coupled axis solution — 2026-10-10

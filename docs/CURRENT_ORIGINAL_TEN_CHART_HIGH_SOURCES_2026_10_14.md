@@ -204,7 +204,16 @@ rebuild the ten high-source packets to address an interface-only task.
     now add numerical G, resolved relative-amplitude values and coordinate/u,v,w
     exponential-sum packets, including on-demand points. Absolute F0 is kept
     tagged; global relative-amplitude control, a float physical vector, actual
-    regular n1, lifted phase inverse and nonzero histories remain open.
+    full regular n1, lifted phase inverse and nonzero histories remain open.
+    [Original coupled n1 radial coefficients](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md)
+    now computes degree16 finite prefixes, all B0/B1 and pressure feedback,
+    with 2040 directed mixed slots and 72 cross-precision comparisons.
+    The full radial Taylor remainder remains unproved; this does not complete
+    a full nonzero-radius n1 evaluation. The old axis rho3 axial shortcut
+    omits direct F0-squared feedback and must not be a numerical truth source.
+    Next implement actual full Volterra quadrature/iteration with its own
+    accepted word tail, or independently prove a radial Taylor remainder;
+    retain pressure, all Z derivatives and nonzero source histories.
     A source DAG, point proxy or interval midpoint is not an exact source
     oracle. Keep actual nonzero S and all pressure atoms in error propagation.
 16. [ ] Establish original-scale numerical error budgets for truncation,
