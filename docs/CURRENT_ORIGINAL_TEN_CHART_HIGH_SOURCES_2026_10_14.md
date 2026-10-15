@@ -140,16 +140,17 @@ rebuild the ten high-source packets to address an interface-only task.
    The same checkpoint records the other 246 own rows and full nonzero
    incoming histories. Five groups pass in 132.219s; archive-only source
    recovery exits 0 with four endpoint queries. Numerical bounds stay open.
-5. [ ] Close post_power1 -> long_reshape0 at R110. Consume the original B
-   coefficient, anchored G, finite T and all actual endpoint values. Keep
-   the distinct post length/T Jacobians.
-6. [ ] Close long_reshape1 -> reference0. Use original finite-T sigma flat
-   endpoints and exact reference length; prove high mixed source rows,
-   rather than only matching endpoint swirl values.
-7. [ ] Close reference1 -> restoration0 at the exact Rref*exp(-8) radius.
-   Keep the original axial E datum, full pressure history and source support.
-8. [ ] Close restoration1 -> postrestore0. Prove the original axial value
-   becomes 4Z with the required flat derivative jets; preserve all histories.
+5. [x] DONE — post_power1 -> long_reshape0 at R110, preserving actual B,
+   anchored G/F0 cancellation and distinct post-length/T Jacobians. See
+   [CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md).
+6. [x] DONE — long_reshape1 -> reference0, retaining original finite T,
+   exact reference length and sigma-prime flatness through fourth order.
+7. [x] DONE — reference1 -> restoration0, using the exact radius offset -8,
+   original axial E and complete nonzero pressure/correction histories.
+8. [x] DONE — restoration1 -> postrestore0, with exact 4Z and original offset
+   -7. These four interfaces have 984 actual own mixed row pairs; six groups
+   pass in 409.484s. Source-only archive recovery exits 0 with eight endpoint
+   queries. Numerical/global n1/temporal recursion gates remain open.
 9. [ ] Construct genuine high source packets for the original Rm angular
    patch. Include actual patch derivatives, support, leading Q and signed
    pressure; use the accepted current branch rather than an enclosure center.

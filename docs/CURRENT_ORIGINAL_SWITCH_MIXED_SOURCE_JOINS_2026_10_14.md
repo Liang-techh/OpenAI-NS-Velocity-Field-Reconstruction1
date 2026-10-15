@@ -101,13 +101,14 @@ the published bytes; no phase origin or original field datum was changed.
    services remain unavailable.
 3. [x] DONE — checkpoint and reproduction entry recorded; tasks 3/4 in the
    ten-chart queue are updated with this source evidence.
-4. [ ] Continue with task 5 in
-   [CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md):
-   actual post_power1 -> long_reshape0 at R110. Preserve the nonconstant
-   actual R110 B coefficient, anchored G, finite T and nonzero histories;
-   use the distinct post length/T Jacobians.
+4. [x] DONE — original post_power1 -> long_reshape0 and the three following
+   reshape/reference/restoration interfaces are now accepted in
+   [CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md),
+   with 984 actual own pairs and six scoped groups. Continue with tasks
+   9/10 of the ten-chart queue: genuine Rm patch high physical-y source
+   functions and both interfaces; retain the complete nonzero histories.
 
-The remaining original queue tasks 6..28 retain their detailed scope:
+The remaining original queue tasks 9..28 retain their detailed scope:
 reshape/reference/restoration interfaces, genuine Rm-patch high sources and
 both patch interfaces, remaining preRc joins, checked global n1, physical
 coordinate and numerical field recovery, original-scale error budgets,

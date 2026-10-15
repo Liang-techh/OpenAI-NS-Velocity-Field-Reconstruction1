@@ -162,15 +162,15 @@ history, the common core/datum/frequency, and actual source bytes.
    mixed rows and the actual -2/5 power slope, retaining the separate
    post-length Jacobian. The shared five-group receipt and independent
    four-endpoint archive recovery are recorded in the same checkpoint.
-7. [ ] Close post_power -> long_reshape. Complete long_reshape high sources
-   are already delivered; retain genuine controls and separate Jacobians.
-8. [ ] Close long_reshape -> reference with pressure and all five histories
-   as Z functions. Complete reference high sources are already delivered.
-9. [ ] Close reference -> restoration and retain the unchanged original
-   terminal-repair branch. Complete restoration high sources are delivered.
-10. [ ] Close restoration -> postrestore. Complete postrestore high sources
-    are delivered; identify exact Rm endpoint histories without replacing
-    them by interval centers or forcing target values.
+7. [x] DONE — post_power -> long_reshape with original controls/Jacobians
+   and nonconstant B/anchored G. See [CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md).
+8. [x] DONE — long_reshape -> reference, including physical high mixed
+   rows, full pressure and all five cumulative histories.
+9. [x] DONE — reference -> restoration, with original E and radius/source
+   histories retained.
+10. [x] DONE — restoration -> postrestore, with exact 4Z and nonzero
+    histories. The four interfaces match 984 actual own pairs in a six-group
+    receipt; archive-only recovery exits 0 with eight endpoint queries.
 11. [ ] Extend the original Rm patch to genuine y4/C3 state and y3/C3
     pressure rows; prove both patch interfaces with its actual angular
     correction, support and nonzero moment data.
