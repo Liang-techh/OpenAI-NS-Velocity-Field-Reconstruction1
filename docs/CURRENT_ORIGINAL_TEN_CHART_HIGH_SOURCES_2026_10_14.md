@@ -300,8 +300,15 @@ rebuild the ten high-source packets to address an interface-only task.
     decay; all five correction memories and primitive/current_rho survive.
     Thirteen packets,60 independent kernel/Volterra/mean/measure checks,
     63 coefficient seams and84 retained-history/relaxation checks pass.
-    **Next:** actual first_switch from R100 with original sigma control,
-    actual endpoint Phi/U, own histories and all five correction memories. Derive
+    [Actual first-switch velocity and histories](CURRENT_ORIGINAL_FIRST_SWITCH_NUMERIC_2026_10_15.md)
+    now reaches R1=100*exp(hbS). Its angular weight1 and axial1-sigma
+    remain distinct, with both original width factors and all drive sectors.
+    Actual macro values/mean and all correction/n1 histories are retained.
+    Ten packets,24 independent source/Z3/mean/geometry checks,63 R100 seams
+    and69 incoming/terminal-memory checks pass.
+    **Next:** actual second_switch with the original angular blend and
+    unchanged unmodified U; selected-N B/N still evolves. Then post_power
+    to R110 with length log(11/10)-2hbS and all inherited histories. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

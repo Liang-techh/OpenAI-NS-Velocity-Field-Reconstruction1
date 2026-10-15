@@ -1,3 +1,5 @@
+> Successor: [actual original-N first-switch values](CURRENT_ORIGINAL_FIRST_SWITCH_NUMERIC_2026_10_15.md) now continue R100 through R1 with unequal original controls and retained histories. This macro document remains the accepted prerequisite; next work starts at second_switch.
+
 # Actual original-N macro velocity, radius and own mean — 2026-10-15
 
 `OriginalMacroNumeric.evaluate(Z,q,...)` continues actual modified leading+n1
