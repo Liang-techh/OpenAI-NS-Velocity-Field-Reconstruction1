@@ -272,8 +272,15 @@ rebuild the ten high-source packets to address an interface-only task.
     Fifteen inner/nine lower packets, 108 exact zero coefficient slots,
     186 seams and 90 precision comparisons pass. Raw phase extension to1
     is auxiliary, not the actual next matched-field step.
-    **Next:** assemble the actual cut/own physical field and width sectors,
-    then use actual modified leading charts beyond r_minus. Complete
+    [Actual selected cut/own physical velocity, gradient and vorticity](CURRENT_ORIGINAL_SELECTED_GRADIENT_2026_10_15.md)
+    now assembles inner fractions0..1 and lower fractions1..2 through
+    r_minus. Forty-three terms retain fourteen original log atoms, including
+    six separate inverse-hb/inverse-phase gradient terms. Thirty independent
+    finite-width physical comparisons, 144 native overlaps, 48 divergence
+    sector enclosures, 80 core/Rin seams and 112 precision/log comparisons
+    pass. The terminal primitive remains shared after the velocities vanish.
+    **Next:** numerically evaluate actual modified leading charts starting
+    at r_minus, retaining original common-N/control/source definitions. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.

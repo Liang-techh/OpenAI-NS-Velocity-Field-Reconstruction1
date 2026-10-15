@@ -1,5 +1,9 @@
 # Actual original n1 cutoff and retained lower-collar history — 2026-10-15
 
+Subsequent progress: [actual selected cut/own physical velocity, gradient and vorticity](CURRENT_ORIGINAL_SELECTED_GRADIENT_2026_10_15.md)
+now consumes these states and width sectors. The raw uncut physical APIs retain
+their original scope. Read the newer document for current physical coverage.
+
 ## Evaluated original field and coordinates
 
 `OriginalN1CutoffNumeric` now consumes the numerical original core and
