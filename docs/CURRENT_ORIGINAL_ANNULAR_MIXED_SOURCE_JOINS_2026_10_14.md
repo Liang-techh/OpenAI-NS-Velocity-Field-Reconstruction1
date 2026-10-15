@@ -3,7 +3,7 @@
 Status: **ACCEPTED four finite source interfaces**. Six focused groups pass
 in **409.484 seconds**, with **984 actual own mixed row pairs** and a
 **1522284-node** archive. Independent archive-only recovery exits 0 with
-eight endpoint source queries. Full-owner fresh recovery remains pending.
+eight endpoint source queries. Independent full-owner fresh recovery also exits 0.
 The accepted ten high-source charts and two switch interfaces are reused
 from `599c8dc4`. The full goal remains **ACTIVE / INCOMPLETE**.
 
@@ -100,18 +100,20 @@ rows, 24 leading mean C5 inlet rows and 984 own mixed pairs. It explicitly
 checks 384 pressure output references remain unbound. Source/checker/archive
 bytes and inherited inputs are pinned. Independent `--restore-source`
 execution exits 0 with eight endpoint queries and no numerical oracle.
-Full-owner fresh-process recovery is running separately. The accepted
-interface scope and independently restored endpoint archive are complete;
-full-owner recovery is a separate pending portability check.
+Independent `--restore-owner` execution also exits 0 with
+`full_owner_restored=true`, restoring the complete 1522284-node owner and
+its accepted snapshot. This is source-object recovery; numerical services,
+global n1 and temporal recursion remain unavailable.
 
 ## Next-agent actions
 
 1. [x] DONE — root, branch `codex/st073-transition-next`, start `599c8dc4`.
    Six scoped groups pass in 409.484s with 984 actual own mixed rows;
    delivered in this checkpoint's containing commit.
-2. [ ] Complete independent source-owner recovery. Endpoint archive-only
-   recovery already exits 0 with eight source queries. Record full-owner
-   exit separately; numerical services remain unavailable.
+2. [x] DONE — independent endpoint archive recovery exits 0 with eight
+   source queries; independent `--restore-owner` execution separately exits
+   0 with `full_owner_restored=true`. The two paths restore source objects
+   and explicitly retain `numerical_oracle_available=false`.
 3. [x] DONE — checkpoint recorded; tasks 5..8 in the ten-chart queue carry
    the actual source evidence and scope.
 4. [ ] Continue with tasks 9/10 in
