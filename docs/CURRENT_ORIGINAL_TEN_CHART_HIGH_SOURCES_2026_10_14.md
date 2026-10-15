@@ -258,9 +258,16 @@ rebuild the ten high-source packets to address an interface-only task.
     centered width variation and bounded W_ZZZ regular remainder. Ten packets,
     18 raw-source/measure identities, 69 core Z2 seam comparisons, 126 accepted
     Z1 overlaps and 156 precision comparisons pass. q_ZZ remains unavailable.
-    **Next:** consume q_Z and native mixed rows in physical derivative
-    assembly and establish quantitative Cartesian joins; q_ZZ requires Z3.
-    Finish physical joins, remaining collars, own cutoff/moment repair,
+    [Physical first gradient and vorticity](CURRENT_ORIGINAL_FIRST_COLLAR_GRADIENT_2026_10_15.md)
+    now consume q_Z/first radial rows, original F0/delta derivatives and
+    the fixed-time coordinate chain. Cartesian rotations include the
+    cylindrical connection terms. Twenty-seven independent manufactured
+    checks, 111 core-boundary coefficient seams and 144 precision/log
+    comparisons pass. Physical Hessians/full Cartesian C2 remain open.
+    **Next:** admit/evaluate the remaining first collar, then second/lower
+    collars, using regenerated source/feedback/all-word bounds. The current
+    half-phase source measure must not be extended by a runtime guard alone.
+    Finish physical joins, own cutoff/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary

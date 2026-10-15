@@ -1,5 +1,10 @@
 # Full original n1 first-half collar axial Z2 and q_Z — 2026-10-15
 
+Subsequent progress: [physical first gradient and vorticity](CURRENT_ORIGINAL_FIRST_COLLAR_GRADIENT_2026_10_15.md)
+are now evaluated on the admitted first-half collar with original
+coordinate/F0/delta factors and a core-boundary first-derivative seam.
+Physical second derivatives and complete Cartesian C2 joins remain open.
+
 ## Evaluated interface
 
 `OriginalFirstCollarAxial2.evaluate(Z,s)` extends the complete original

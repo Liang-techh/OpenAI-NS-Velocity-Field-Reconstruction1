@@ -1,5 +1,10 @@
 # Actual first-collar radial derivatives and core seam — 2026-10-15
 
+Subsequent progress: [physical first gradient and vorticity](CURRENT_ORIGINAL_FIRST_COLLAR_GRADIENT_2026_10_15.md)
+are now evaluated on the admitted first-half collar with original
+coordinate/F0/delta factors and a core-boundary first-derivative seam.
+Physical second derivatives and complete Cartesian C2 joins remain open.
+
 Subsequent progress: [full original first-half collar Z2, q_Z and q_rho_Z](CURRENT_ORIGINAL_FIRST_COLLAR_AXIAL2_2026_10_15.md)
 are now evaluated through a separate native API on 0<=s<=1/2. Physical
 mixed-derivative assembly and complete Cartesian C2 joins remain open.

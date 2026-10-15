@@ -1,5 +1,10 @@
 # Physical leading+n1 first-collar velocity — 2026-10-15
 
+Subsequent progress: [physical first gradient and vorticity](CURRENT_ORIGINAL_FIRST_COLLAR_GRADIENT_2026_10_15.md)
+are now evaluated on the admitted first-half collar with original
+coordinate/F0/delta factors and a core-boundary first-derivative seam.
+Physical second derivatives and complete Cartesian C2 joins remain open.
+
 Subsequent progress: [actual native radial derivatives and core source seam](CURRENT_ORIGINAL_FIRST_COLLAR_DERIVATIVES_2026_10_15.md)
 are now evaluated on the same admitted first-half collar. Complete physical
 Cartesian C2 joins and higher n1 axial numerical data remain open.
