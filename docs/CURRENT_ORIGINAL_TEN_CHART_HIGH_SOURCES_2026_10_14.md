@@ -170,7 +170,12 @@ rebuild the ten high-source packets to address an interface-only task.
     compact/quiet and main-gap/gap-end/Rv joins remain in the same inherited
     source family. Six scoped groups pass; independent archive recovery
     exits 0 with 14 endpoint views. Global dispatcher task 13 stays open.
-13. [ ] Build one checked global n1 source dispatcher with complete interval
+13. [ ] **IN PROGRESS, 2026-10-15:** the regional entry point is installed;
+    see [regional dispatcher](CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md).
+    27 views, 6318 mixed slots / 18954 actual source queries, 18 rejection checks
+    and five core operator identities pass in 11.437 s. Inner high radial rows,
+    lower high interval contract and axis recovery are still open.
+    Build one checked global n1 source dispatcher with complete interval
     coverage, explicit axis/tail behavior and every required interface
     receipt. Reject missing intervals and unsupported derivative requests.
 14. [ ] Export physical-coordinate source recovery for u_r,u_theta,u_z,p

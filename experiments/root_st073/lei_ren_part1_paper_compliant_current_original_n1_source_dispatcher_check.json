@@ -1,0 +1,68 @@
+{
+  "source_only_restored": true,
+  "full_owner_restored": false,
+  "archived_graph_nodes": 2232772,
+  "regional_charts": [
+    "first_micro",
+    "second_micro",
+    "frozen_macro",
+    "first_switch",
+    "second_switch",
+    "post_power",
+    "long_reshape",
+    "reference",
+    "restoration",
+    "postrestore",
+    "Rm_patch",
+    "Rh_reference",
+    "O2_slope",
+    "O2_axial",
+    "O2_buffer",
+    "O3_transition",
+    "O3_power",
+    "reserved",
+    "quiet",
+    "main",
+    "gap",
+    "end",
+    "tail",
+    "inner_first",
+    "lower",
+    "inner_core",
+    "inner_flat"
+  ],
+  "coverage": {
+    "regional_source_dispatcher": true,
+    "original_preRc_charts": 17,
+    "axis_included": false,
+    "axis_regular_Cartesian_recovery": false,
+    "uniform_global_y4_pressure_y3_contract": false,
+    "global_n1_numerical_field": false,
+    "numerical_oracle_available": false,
+    "physical_coordinate_velocity_export": false,
+    "temporal_recursion": false,
+    "full_corrected_Navier_Stokes_solution": false,
+    "unresolved": [
+      "axis and Cartesian regularity",
+      "inner high radial derivatives outside the flat collar",
+      "complete lower high derivative interval contract",
+      "original numerical evaluation/bounds",
+      "physical recovery and genuine n>=2 temporal recursion"
+    ]
+  },
+  "checks": {
+    "passed": true,
+    "regional_charts": 27,
+    "finite_mixed_scalar_slots": 6318,
+    "source_queries": 18954,
+    "rejected_unsupported_queries": 18,
+    "independent_core_physical_operator_identities": 5
+  },
+  "execution_seconds": 11.437,
+  "implementation_hashes": {
+    "scripts/run_original_n1_source_dispatcher.py": "91b887194b04c602cc00a46558a387bc2bc448f3eae54c9f295d426b1959a0fc",
+    "src/openai_ns_reconstruction/original_n1_source_dispatcher.py": "fa73004d21a41cdd378f1ac6ebc9d8904973ffabc61ca41d0387ea487b8f1c16",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_source_dispatcher.json": "8f69ecedee1756f524650364d3abb39b744d097f49c19ef5ea6480f9197fd54b"
+  },
+  "artifact_serialization": "LF; normalized after focused checks; source expressions and query/check logic unchanged"
+}

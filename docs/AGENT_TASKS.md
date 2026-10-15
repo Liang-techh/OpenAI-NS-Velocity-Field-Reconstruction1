@@ -1,3 +1,13 @@
+# Current checkpoint — regional n1 source dispatcher, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md](CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md) first. `OriginalN1SourceDispatcher` restores 27 regional views directly from accepted source archives, without rebuilding ancestor owners. A single 11.437 s focused run checked 6318 admitted mixed slots at three native parameters (18954 source queries), 18 rejected unsupported requests and five independent core operator identities. These are source-adapter checks, not numerical velocity values or new NS evidence.
+
+Task 13 is **IN PROGRESS**: the regional query entry point works, but the uniform global high-derivative contract is incomplete. Inner core/first/lower retain state y0..2 and pressure/moments y0..1; the 24 outer/overlapping flat views retain state y0..4 and pressure/moments y0..3. Q/V ordinary Z ends at 2, other fields/moments at 3. The axis is rejected. Preserve all original histories and native domains.
+
+Next construct genuine high inner radial rows and pressure/moment lifts outside the flat collar, complete the lower high interval contract, then regular axis/Cartesian and original physical-coordinate recovery. Numerical evaluation/bounds/common N, preheat/exact heat, stress/flat remainder, genuine n>=2 recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**.
+
+Stream recovery: old exec session 84468 is unavailable. Continue from files with `python scripts/run_original_n1_source_dispatcher.py`; do not rebuild checked ancestors or rely on old in-memory owners. Earlier instructions below are historical where superseded.
+
 # Current checkpoint - seven Rm/outer source interfaces closed, 2026-10-14
 
 Read [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md) first. Actual postrestore -> Rm_patch -> Rh_reference -> O2_slope -> O2_axial -> O2_buffer -> O3_transition -> O3_power interfaces now pass all six focused groups: **1722 own mixed pairs, 175 unbound leading-Q pairs, 84 unbound pressure-density N pairs and 42 actual mean inlet rows**. Original unique Rm branch, Rh normalization, nonconstant physical Jacobians, periodic phase and nonzero signed/correction histories are retained. Actual inverse/finite-N sources and all 240 high-U producer bindings are checked. Of the own pairs, 1717 pass direct actual-source algebra; five final m15 rows follow checked original source wiring and already proved actual pressure rows. Source definitions and finite germs remain distinct from numerical values/bounds.
