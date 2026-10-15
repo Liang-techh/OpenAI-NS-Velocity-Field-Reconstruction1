@@ -145,31 +145,32 @@ history, the common core/datum/frequency, and actual source bytes.
    receipt. `python scripts/run_original_micro_macro_mixed_source_join.py
    --restore-source` passes in a fresh process with exit0 and six two-sided
    source queries. Global n1 and numerical gates remain false.
-2. [ ] Expose complete second_micro `[1,2]` and frozen_macro `[0,1]` source
-   accessors using the same derivative factories. Consume original source
-   domains and all smooth branch hypotheses; distinguish function coverage
-   from quantitative bounds and from endpoint matching.
-3. [ ] Construct genuine first_switch high U/mean/Q and N pressure sources.
-   Differentiate the original moving controls and integrals with its own
-   physical measure; retain every predecessor history.
-4. [ ] Close frozen_macro -> first_switch at the actual original radius.
-   Prove background/root/lifted-loop jets and all 246 own rows with the two
-   actual coordinate maps, including signed m15 pressure memory.
-5. [ ] Construct second_switch high source rows and close the actual
-   first_switch -> second_switch seam. Preserve the original flat-control
-   endpoints and all incoming signed correction densities.
-6. [ ] Construct post_power high source rows and the second_switch exit
-   seam. Keep actual power exponents, radius derivatives and mean ODE; do not
-   reuse O3 coefficients merely because both charts are powers.
-7. [ ] Construct long_reshape high source rows and post_power matching.
-   Track each genuine control derivative and physical Jacobian separately.
-8. [ ] Construct reference high source rows and close long_reshape ->
-   reference, with pressure and all five histories as Z functions.
-9. [ ] Construct restoration high sources, prove the reference entry
-   and retain the unchanged original terminal-repair branch.
-10. [ ] Construct postrestore high sources and its entry seam. Identify the
-    exact Rm endpoint field/pressure histories without replacing them by
-    interval centers or forcing target values.
+2. [x] DONE — complete second_micro `[1,2]` and frozen_macro `[0,1]` source
+   accessors are delivered by [CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md),
+   along with all ten full original domains. Seven groups pass; original
+   phase/Jacobian sources are retained. Quantitative bounds remain open.
+3. [x] DONE — genuine first_switch high U/mean/Q and N/pressure sources are
+   delivered in the same ten-chart checkpoint with its original moving
+   controls, physical measure and complete predecessor histories.
+4. [x] DONE — macro1 -> first_switch0 at radius 100 now matches all 246 own
+   mixed row pairs. Actual coordinate maps and distinct width nodes consume
+   the shared K1 source theorem. Signed m15 pressure memory is retained.
+5. [ ] Close the actual first_switch -> second_switch seam. Complete
+   second_switch high sources are already delivered in the ten-chart
+   checkpoint; reuse them and preserve original flat-control endpoints and
+   all incoming signed correction densities.
+6. [ ] Close second_switch -> post_power. Complete post_power high sources
+   are already delivered; retain actual power exponents, radius derivatives
+   and mean ODE. Do not reuse O3 coefficients based on a similar chart name.
+7. [ ] Close post_power -> long_reshape. Complete long_reshape high sources
+   are already delivered; retain genuine controls and separate Jacobians.
+8. [ ] Close long_reshape -> reference with pressure and all five histories
+   as Z functions. Complete reference high sources are already delivered.
+9. [ ] Close reference -> restoration and retain the unchanged original
+   terminal-repair branch. Complete restoration high sources are delivered.
+10. [ ] Close restoration -> postrestore. Complete postrestore high sources
+    are delivered; identify exact Rm endpoint histories without replacing
+    them by interval centers or forcing target values.
 11. [ ] Extend the original Rm patch to genuine y4/C3 state and y3/C3
     pressure rows; prove both patch interfaces with its actual angular
     correction, support and nonzero moment data.
