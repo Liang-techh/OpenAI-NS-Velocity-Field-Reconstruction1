@@ -1,5 +1,9 @@
 # Original finite-width n1 first-collar transport — 2026-10-15
 
+Subsequent progress: [full original first-half collar Z2, q_Z and q_rho_Z](CURRENT_ORIGINAL_FIRST_COLLAR_AXIAL2_2026_10_15.md)
+are now evaluated through a separate native API on 0<=s<=1/2. Physical
+mixed-derivative assembly and complete Cartesian C2 joins remain open.
+
 Subsequent progress: [actual native radial derivatives and core source seam](CURRENT_ORIGINAL_FIRST_COLLAR_DERIVATIVES_2026_10_15.md)
 are now evaluated on the same admitted first-half collar. Complete physical
 Cartesian C2 joins and higher n1 axial numerical data remain open.

@@ -1,5 +1,9 @@
 # Full original n1 core axial Z2 and recovered q_Z — 2026-10-15
 
+Subsequent progress: [full original first-half collar Z2, q_Z and q_rho_Z](CURRENT_ORIGINAL_FIRST_COLLAR_AXIAL2_2026_10_15.md)
+are now evaluated through a separate native API on 0<=s<=1/2. Physical
+mixed-derivative assembly and complete Cartesian C2 joins remain open.
+
 ## Evaluated interface
 
 `OriginalN1CoreAxial2.evaluate(Z,rho)` returns complete-error numerical

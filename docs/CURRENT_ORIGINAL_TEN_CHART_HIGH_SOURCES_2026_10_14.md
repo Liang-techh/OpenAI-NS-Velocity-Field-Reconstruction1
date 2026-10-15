@@ -253,9 +253,13 @@ rebuild the ten high-source packets to address an interface-only task.
     q has two. Twelve core points per level pass 276 full-error comparisons
     and 42 accepted Z1 comparisons. No missing nominal feedback derivative
     is padded with zero; the full feedback is enclosed from principal origin.
-    **Next:** transport the new Z2 inlet through the actual admitted first
-    collar with its additional source/regular-operator derivative bounds.
-    Recover collar q_Z and physical mixed derivatives; q_ZZ requires Z3.
+    [Full original first-half collar axial Z2, q_Z and q_rho_Z](CURRENT_ORIGINAL_FIRST_COLLAR_AXIAL2_2026_10_15.md)
+    now transports the genuine inlet through s<=1/2 with leading Z5 sources,
+    centered width variation and bounded W_ZZZ regular remainder. Ten packets,
+    18 raw-source/measure identities, 69 core Z2 seam comparisons, 126 accepted
+    Z1 overlaps and 156 precision comparisons pass. q_ZZ remains unavailable.
+    **Next:** consume q_Z and native mixed rows in physical derivative
+    assembly and establish quantitative Cartesian joins; q_ZZ requires Z3.
     Finish physical joins, remaining collars, own cutoff/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.

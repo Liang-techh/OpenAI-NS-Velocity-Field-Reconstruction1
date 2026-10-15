@@ -1,5 +1,9 @@
 # Actual first-collar radial derivatives and core seam — 2026-10-15
 
+Subsequent progress: [full original first-half collar Z2, q_Z and q_rho_Z](CURRENT_ORIGINAL_FIRST_COLLAR_AXIAL2_2026_10_15.md)
+are now evaluated through a separate native API on 0<=s<=1/2. Physical
+mixed-derivative assembly and complete Cartesian C2 joins remain open.
+
 Subsequent progress: [full n1 core Z2 and q_Z numerical data](CURRENT_ORIGINAL_N1_CORE_AXIAL2_2026_10_15.md)
 are now available through a separate core-only API. Transporting them
 through the actual collar and complete physical mixed derivatives remain open.
