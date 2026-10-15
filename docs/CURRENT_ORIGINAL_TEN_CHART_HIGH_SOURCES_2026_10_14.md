@@ -192,8 +192,13 @@ rebuild the ten high-source packets to address an interface-only task.
     fixed-physical-coordinate divergence checks pass; independent restore exits 0.
     [Physical leading+n1 core assembly](CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md)
     now supplies numerical signed-exponential u,v,w functions and a guarded
-    Cartesian/time inverse on the core. Global germs, outer chart selection
-    and numerical values outside the regular core remain open. Complete assembled
+    Cartesian/time inverse on the core. [Physical leading+n1 first-half
+    collar assembly](CURRENT_ORIGINAL_FIRST_COLLAR_VELOCITY_2026_10_15.md)
+    now supplies actual native-phase Cartesian u,v,w for 0<=s<=1/2,
+    with original width, leading increments and natural n1 increments
+    separate. Ten native packets and 60 independent core value-seam
+    comparisons pass. Its direct Cartesian inverse and the remaining
+    numerical outer field/chart selection remain open. Complete assembled
     physical axis regularity belongs to task 20 and is still unproved.
     Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
@@ -231,11 +236,15 @@ rebuild the ten high-source packets to address an interface-only task.
     the full common-inner solution norm covers regular feedback. Nine packets,
     12 independent formula identities and 78 full-error precision comparisons
     pass; normalized pressure changes by about -2.68133 at Z=0.3,s=0.5.
-    **Next:** establish quantitative derivative joins from the nonzero core
-    histories, then extend/admit the remaining first/second/lower collars.
-    Apply the source-owned cutoff and reserved moment repair, then extend
-    the same physical assembly beyond the core. Preserve tiny contributions
-    in factored sums; width expansion is not temporal n>=2 recursion.
+    [Physical leading+n1 first-half collar velocity](CURRENT_ORIGINAL_FIRST_COLLAR_VELOCITY_2026_10_15.md)
+    now evaluates the corresponding u,v,w through shared-streamfunction
+    recovery and exact width/geometry factors. Native phase is required;
+    neither the actual width nor F0 is selected/materialized.
+    **Next:** establish quantitative first/second derivative joins from the
+    nonzero core histories, then extend/admit the remaining collars and
+    apply the source-owned cutoff and reserved moment repair. Complete the
+    remaining physical/chart assembly. Add explicit tagged-log readers
+    before plotting/materialization. Width expansion is not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
     full physical vector remain open. The core inverse is implemented.
     A source DAG or interval midpoint is not an exact original point oracle;

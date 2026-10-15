@@ -1,5 +1,9 @@
 # Original finite-width n1 first-collar transport — 2026-10-15
 
+Subsequent progress: [physical leading+n1 velocity is now assembled](CURRENT_ORIGINAL_FIRST_COLLAR_VELOCITY_2026_10_15.md)
+on this same admitted first-half collar, using native phase and separate
+original width/geometry factors.
+
 ## Evaluated interface
 
 `OriginalFirstCollarTransport.evaluate(Z,s)` transports the complete-error
