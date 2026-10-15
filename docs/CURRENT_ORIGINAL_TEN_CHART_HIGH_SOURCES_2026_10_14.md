@@ -294,8 +294,14 @@ rebuild the ten high-source packets to address an interface-only task.
     Qpsi Z0..1 because the incoming mean_Z3 cap remains unresolved.
     Thirty-seven independent source/third-derivative/memory comparisons,
     57 first/second coefficient seams and 63 history checks pass.
-    **Next:** actual R0 macro inlet, original frozen-comparison controls and
-    length log(100/Ra)-2hb with retained endpoint fields/histories. Derive
+    [Actual macro velocity and own history to R100](CURRENT_ORIGINAL_MACRO_NUMERIC_2026_10_15.md)
+    now carries original selected-N values through the full macro radius
+    expansion. The mean uses its actual nonzero micro inlet and original
+    decay; all five correction memories and primitive/current_rho survive.
+    Thirteen packets,60 independent kernel/Volterra/mean/measure checks,
+    63 coefficient seams and84 retained-history/relaxation checks pass.
+    **Next:** actual first_switch from R100 with original sigma control,
+    actual endpoint Phi/U, own histories and all five correction memories. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

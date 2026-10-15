@@ -1,3 +1,5 @@
+> Successor: [actual original-N macro numeric values](CURRENT_ORIGINAL_MACRO_NUMERIC_2026_10_15.md) now reach R100 with true radius and own-mean decay. This second-micro document remains the accepted prerequisite; next work starts at first_switch.
+
 # Actual selected-N second-micro velocity and local axial Z3 — 2026-10-15
 
 ## Evaluated domain and source
