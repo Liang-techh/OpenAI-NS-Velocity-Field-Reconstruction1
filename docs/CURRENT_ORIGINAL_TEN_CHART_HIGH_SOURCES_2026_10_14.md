@@ -190,9 +190,10 @@ rebuild the ten high-source packets to address an interface-only task.
     now covers the closed core disk, exact axis values and source-bound axial
     transverse curvature, with no r/R division. The actual Q source and
     fixed-physical-coordinate divergence checks pass; independent restore exits 0.
-    Leading-plus-coefficient assembly, global germs, physical z inversion,
-    outer chart selection and numerical values outside the regular core
-    remain open. Complete assembled
+    [Physical leading+n1 core assembly](CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md)
+    now supplies numerical signed-exponential u,v,w functions and a guarded
+    Cartesian/time inverse on the core. Global germs, outer chart selection
+    and numerical values outside the regular core remain open. Complete assembled
     physical axis regularity belongs to task 20 and is still unproved.
     Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
@@ -211,12 +212,17 @@ rebuild the ten high-source packets to address an interface-only task.
     solver does not substitute a word bound for a radial Taylor remainder.
     The legacy axis rho3 axial shortcut omits direct F0-squared feedback;
     use the new full-coupled implementation rather than those stale rows.
+    [Physical leading+n1 core velocity](CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md)
+    now combines the core through one streamfunction and original time weights,
+    with direct physical x,y,z,t queries and a directed input-containment guard.
+    Leading corrections and all original amplitude/time scales stay factored;
+    first-two-order swirl comparisons are available without materializing F0.
     **Next:** extend numerical evaluation to actual first/lower collars,
     carry all nonzero inlet and pressure/moment histories, apply the source-
-    owned cutoff and reserved moment repair, and assemble n0+n1 with one
-    streamfunction and the original physical/time weights. Preserve tiny
-    contributions in factored sums. Global relative-F0 accuracy, physical
-    z/phase inverses and an ordinary full physical vector remain open.
+    owned cutoff and reserved moment repair, then extend the same physical
+    assembly beyond the core. Preserve tiny contributions in factored sums.
+    Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
+    full physical vector remain open. The core inverse is implemented.
     A source DAG or interval midpoint is not an exact original point oracle;
     keep nonzero implicit swirl and all pressure atoms in error propagation.
 16. [ ] Establish original-scale numerical error budgets for truncation,
