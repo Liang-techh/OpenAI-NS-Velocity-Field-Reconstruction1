@@ -171,12 +171,12 @@ history, the common core/datum/frequency, and actual source bytes.
 10. [x] DONE — restoration -> postrestore, with exact 4Z and nonzero
     histories. The four interfaces match 984 actual own pairs in a six-group
     receipt; archive-only recovery exits 0 with eight endpoint queries.
-11. [ ] Prove both original Rm-patch interfaces with actual angular
-    correction, support and nonzero moment data. Its genuine high radial
-    state and pressure source component is DONE in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
-12. [ ] Close remaining preRc outer source joins. The five remaining complete
-    outer high-source packets are DONE in the same checkpoint. Reuse these
-    and accepted O3/Rc/compact/pulse/outer receipts; interfaces stay open.
+11. [x] DONE - both original Rm-patch interfaces, with actual unique branch,
+    angular support and nonzero histories, pass in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md).
+12. [x] DONE - remaining five preRc outer source joins pass in the same
+    seven-interface receipt: 1722 own pairs, 175 actual Q and 84 actual N
+    pairs. Independent14-endpoint recovery exits0. Existing O3/Rc/compact/
+    quiet/pulse/outer source receipts are reused; global task 13 stays open.
 13. [ ] Assemble a single checked global n1 source provider. Enumerate every
     original interval and interface, reject uncovered queries, and require
     actual row pairs for every derivative contract.

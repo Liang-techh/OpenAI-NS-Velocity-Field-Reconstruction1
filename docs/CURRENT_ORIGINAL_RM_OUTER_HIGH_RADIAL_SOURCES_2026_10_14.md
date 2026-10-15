@@ -69,8 +69,9 @@ Each chart exposes the complete original native interval with
 for physical U/mean/Q y0..4, N y0..2, pressure/m15 y1..3 and own state plus
 all five cumulative moments. They report `numerical_oracle_available=false`.
 
-This is source coverage. No new 246-row interface is declared closed by
-this checkpoint, and global n1, evaluated numerical fields, mixed bounds,
+This checkpoint provides source coverage. The seven finite source joins
+are now separately accepted in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md).
+Global n1, evaluated numerical fields, mixed bounds,
 admissible stress and temporal n>=2 recursion remain open.
 
 ## Focused checks and recovery
@@ -117,28 +118,30 @@ read-only reviewer used `gpt-5.6-luna` at `max` and found no material blocker.
    recovery is not claimed.
 3. [x] DONE - checkpoint and handoff updated; source-coverage tasks 9/11 in
    the ten-chart queue are done. Interface tasks 10/12 remain open.
-4. [ ] Close postrestore native1 -> Rm_patch native1 at Rm. Use the actual
+4. [x] DONE - Close postrestore native1 -> Rm_patch native1 at Rm. Use the actual
    Rm inlet, shared normalization and flat leading bumps/finite-N loop
    sources; preserve all incoming pressure and correction memories.
-5. [ ] Close Rm_patch exp(1) -> Rh_reference -5 at Rh. Consume the original
+5. [x] DONE - Close Rm_patch exp(1) -> Rh_reference -5 at Rh. Consume the original
    unique implicit branch and exact terminal leading-moment identity;
    leading normalization and finite-N correction histories stay separate.
-6. [ ] Close Rh_reference0 -> O2_slope0 with actual E slope 1/10, original
+6. [x] DONE - Close Rh_reference0 -> O2_slope0 with actual E slope 1/10, original
    sigma entry flatness, constant leading V and all 246 own mixed rows.
-7. [ ] Close O2_slope1 -> O2_axial0 with angular slope -1/2 and axial cutoff
+7. [x] DONE - Close O2_slope1 -> O2_axial0 with angular slope -1/2 and axial cutoff
    entry flatness. Retain J=1 versus J=40 exp(40x) in physical jets.
-8. [ ] Close O2_axial1 -> O2_buffer0 with actual flat axial turnoff and
+8. [x] DONE - Close O2_axial1 -> O2_buffer0 with actual flat axial turnoff and
    original exponential distance exp(40)-1, preserving every history.
-9. [ ] Close O2_buffer11 -> O3_transition0 at the exact radius and slope
+9. [x] DONE - Close O2_buffer11 -> O3_transition0 at the exact radius and slope
    -1/2. Keep the original mu control and nonzero endpoint histories.
-10. [ ] Close O3_transition1 -> existing O3_power0 with slope -(1/2+mu),
+10. [x] DONE - Close O3_transition1 -> existing O3_power0 with slope -(1/2+mu),
     exact source mu/eta admission and all 246 own rows. Reuse the accepted
     O3_power/Rc interface; do not rebuild compact or quiet transport.
 11. [ ] Assemble a checked global n1 source dispatcher from the complete
     actual interval cover and accepted joins, rejecting uncovered domains
     and unsupported derivative requests. State finite source scope clearly.
 
-Seven new interfaces target 1722 actual own mixed row pairs. The remaining
+Seven interfaces are now closed with 1722 actual own mixed row pairs in
+[CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md). Six focused groups and independent14-endpoint archive recovery
+pass. The remaining task here is the checked global n1 source dispatcher. The remaining
 original queue tasks 14..28 retain physical-coordinate/numerical recovery,
 original-scale error budgets/common global N, independent moment/axis/
 energy/preheat/heat diagnostics, admissible stress/flat remainder, genuine

@@ -1,3 +1,16 @@
+# Current checkpoint - seven Rm/outer source interfaces closed, 2026-10-14
+
+Read [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md) first. Actual postrestore -> Rm_patch -> Rh_reference -> O2_slope -> O2_axial -> O2_buffer -> O3_transition -> O3_power interfaces now pass all six focused groups: **1722 own mixed pairs, 175 unbound leading-Q pairs, 84 unbound pressure-density N pairs and 42 actual mean inlet rows**. Original unique Rm branch, Rh normalization, nonconstant physical Jacobians, periodic phase and nonzero signed/correction histories are retained. Actual inverse/finite-N sources and all 240 high-U producer bindings are checked. Of the own pairs, 1717 pass direct actual-source algebra; five final m15 rows follow checked original source wiring and already proved actual pressure rows. Source definitions and finite germs remain distinct from numerical values/bounds.
+
+`python scripts/run_original_Rm_outer_mixed_source_joins.py --restore-source` independently restores 14 endpoint source views with exit code 0. The archive has 2232772 nodes. This is source-only recovery, with `full_owner_restored=false` and `numerical_oracle_available=false`. No passed ancestor suite was rerun. Source-coverage and before-Rc interface tasks 9..12 in the [28-task queue](CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md) are done; **task 13, the checked global n1 source dispatcher, is next**.
+
+1. Assemble the complete original-domain n1 source atlas from accepted inner/lower, all17 intermediate, compact/quiet, pulse/tail sources and interface receipts. Reject uncovered domains and unsupported derivatives; keep numerical/global physical claims separate.
+2. Export physical-coordinate velocity/pressure source recovery through the original similarity map, preserving structural divergence constraints.
+3. Restore actual nonlinear-core, compatible datum, implicit-control and phase-inverse numerical evaluators, then quantitative common-N and error budgets.
+4. Continue independent five-moment, axis, physical energy, preheat/exact heat, admissible stress/flat remainder, genuine n>=2 recursion and repair, smooth summation, oscillatory cancellation, measured contraction/elongation/material winding and final fixed-forcing Cartesian NS validation.
+
+Full goal **ACTIVE / INCOMPLETE**. Global n1 numerical fields, quantitative bounds, genuine temporal recursion and complete corrected NS remain open. Earlier instructions below are historical where superseded.
+
 # Current checkpoint - six Rm/outer high radial source charts accepted, 2026-10-14
 
 Read [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md) first. Rm_patch, Rh_reference, O2_slope, O2_axial, O2_buffer and O3_transition now provide complete original-domain U/mean y4 C5, leading Q y4 C4, N y2 C3 and signed pressure y3 C3 sources. Six focused groups pass in 82.25s with 108 actual derivative requests and 2229727 archived nodes. Repeated physical differentiation includes derivatives of the nonconstant Jacobians J=1/x and J=40 exp(40x). Original unique controls, signed pressure and all five nonzero correction histories are retained.

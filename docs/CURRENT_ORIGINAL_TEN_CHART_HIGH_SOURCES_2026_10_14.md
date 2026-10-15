@@ -156,15 +156,20 @@ rebuild the ten high-source packets to address an interface-only task.
    Six scoped groups pass in 82.25s across six complete original charts;
    108 actual derivative requests and variable-J calculus are checked.
    The original unique implicit branch and nonzero histories are retained.
-10. [ ] Close postrestore1 -> Rm_patch entry and the patch exit. Check both
-    radius maps, all nonzero histories, own recovery and finite mixed rows.
+10. [x] DONE - postrestore1 -> Rm_patch1 and Rm_patch exp(1) ->
+    Rh_reference -5 are closed in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md). Both actual radius maps,
+    original unique branch, nonzero histories and 246 own pairs per seam
+    are retained. The seven-interface receipt checks 1722 own pairs.
 11. [x] DONE - Rh_reference, O2_slope, O2_axial, O2_buffer and O3_transition
     high source packets are delivered in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
     Existing O3_power/Rc and compact/quiet/combined-outer sources are reused.
     Independent archive recovery exits 0 with 18 full-chart source queries.
     This completes source coverage only; remaining interfaces are task 12.
-12. [ ] Close the remaining before-Rc source interfaces and bind the accepted
-    Rc/2Rc/Rp/main-gap/gap-end/Rv joins into the common source family.
+12. [x] DONE - all five remaining outer interfaces from Rh_reference
+    through O3_power entry are closed in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md). Accepted O3/Rc,
+    compact/quiet and main-gap/gap-end/Rv joins remain in the same inherited
+    source family. Six scoped groups pass; independent archive recovery
+    exits 0 with 14 endpoint views. Global dispatcher task 13 stays open.
 13. [ ] Build one checked global n1 source dispatcher with complete interval
     coverage, explicit axis/tail behavior and every required interface
     receipt. Reject missing intervals and unsupported derivative requests.

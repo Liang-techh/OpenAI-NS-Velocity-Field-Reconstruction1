@@ -116,19 +116,18 @@ global n1 and temporal recursion remain unavailable.
    and explicitly retain `numerical_oracle_available=false`.
 3. [x] DONE — checkpoint recorded; tasks 5..8 in the ten-chart queue carry
    the actual source evidence and scope.
-4. [ ] Continue with task 10 in the
-   [ten-chart queue](CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md):
-   both actual Rm-patch interfaces remain open. Its high-source component
-   (task 9) is DONE in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
-   Preserve original angular correction, support, complete incoming histories,
-   leading Q/N pressure operators and physical radius maps.
+4. [x] DONE - both actual Rm-patch interfaces and five remaining outer
+   source interfaces are closed in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md). Actual angular support,
+   unique branch, complete histories, fixed Q/N pressure operators and
+   original radius maps are retained. Next build the checked global n1
+   source dispatcher (task 13 of the ten-chart queue).
 
 The former high-radial gap on Rm_patch, Rh_reference, O2_slope,
 O2_axial, O2_buffer and O3_transition is now closed at source level in
 [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md): actual U/mean/Q physical y2..4,
-N1p_y/N1p_yy and pressure y2/y3 are available. Seven own interfaces remain
-open, targeting 1722 mixed pairs. Reuse these high sources and the accepted
-compact/Rc/quiet/combined-outer sources; do not reconstruct them.
+N1p_y/N1p_yy and pressure y2/y3 are available. All seven finite own interfaces
+now pass with 1722 mixed pairs in [CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_MIXED_SOURCE_JOINS_2026_10_14.md). Reuse these high sources and
+accepted compact/Rc/quiet/combined-outer sources for the global dispatcher.
 
 For Rm_patch, native x is in [1,exp(1)], R=Rm*x and J=1/x; hence D_y=x D_x.
 For O2_axial, J=40 exp(40x). Repeated physical differentiation must include
