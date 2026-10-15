@@ -1,0 +1,123 @@
+{
+  "source_only": true,
+  "physical_source": {
+    "chart": "inner_core_cartesian",
+    "coordinates": {
+      "x": 2280764,
+      "y": 2280765,
+      "z": 2280815,
+      "t": 2280817,
+      "R": 2280770,
+      "rho": 2280771,
+      "Z": 20,
+      "tau": 2280758,
+      "lambda_source": 2280763
+    },
+    "source_inputs": {
+      "raw_core": {
+        "F1": 43300,
+        "Uz1": 43304,
+        "mean1": 48909,
+        "Q1": 51946,
+        "P1": 43312
+      },
+      "bound_profiles": {
+        "F1": 2280772,
+        "Uz1": 2280773,
+        "mean1": 2280774,
+        "Q1": 2280775,
+        "P1": 2280776
+      },
+      "delta": 25220,
+      "epsilon": 35565,
+      "original_axial_rho_axis": 49037
+    },
+    "transverse_velocity_factors": {
+      "ur_over_r": 2280782,
+      "utheta_over_r": 2280786
+    },
+    "velocity": {
+      "u": 2280790,
+      "v": 2280793,
+      "w": 2280797
+    },
+    "pressure": 2280800,
+    "streamfunction": 2280804,
+    "axis_limits": {
+      "u": 0,
+      "v": 0,
+      "w": 0,
+      "pressure": 0,
+      "streamfunction": 0,
+      "all_first_Cartesian_velocity_derivatives": 0,
+      "axial_transverse_hessian": {
+        "xx": 2280810,
+        "yy": 2280810,
+        "xy": 0
+      }
+    },
+    "parameter_domain": {
+      "tau": "0 < tau <= 1",
+      "Z": "-1 < Z < 1",
+      "spatial": "0 <= rho=(x*x+y*y)/(2*lambda^2*epsilon) <= 4"
+    },
+    "definition": {
+      "coefficient_order": 1,
+      "normalized_viscosity": 1,
+      "normalized_blowup_time": 1,
+      "source_only": true,
+      "axis_included": true,
+      "physical_xy_coordinates": true,
+      "transverse_formula_has_no_radius_division": true,
+      "no_azimuth_required": true,
+      "same_original_streamfunction_recovery": true,
+      "axis_values_from_original_regular_solution": true,
+      "free_time_variable": true,
+      "source_domain_must_be_honored": true,
+      "physical_z_inverse_available": false,
+      "automatic_outer_chart_selection": false,
+      "includes_leading_background": false,
+      "includes_higher_temporal_coefficients": false,
+      "original_numeric_field_values_evaluated": false,
+      "numerical_oracle_available": false,
+      "globally_joined_physical_field": false,
+      "full_corrected_Navier_Stokes_solution": false
+    }
+  },
+  "graph_prefix_nodes": 2280758,
+  "query_suffix_nodes": 60,
+  "checks": {
+    "passed": true,
+    "actual_regular_axis_source_rows": 16,
+    "actual_cutoff_core_rows_identical_to_guarded_source": 16,
+    "original_even_radial_axis_derivative_sources": 8,
+    "actual_derived_mean_Q_axis_zero_rows": 7,
+    "actual_cartesian_export_and_rotation_identities": 8,
+    "actual_original_Q_recovery_body_identity": true,
+    "independent_fixed_Cartesian_divergence_identity": true,
+    "physical_pullback_retains_Z_dependent_radius": true,
+    "actual_original_axial_rho_axis_node": 49037,
+    "exact_axis_values_and_first_derivatives": true,
+    "original_source_bound_axial_transverse_curvature": true,
+    "rejected_requests": 5,
+    "symbolic_operator_checks_only": true,
+    "original_numeric_field_values_evaluated": false,
+    "global_interface_germs_proved": false
+  },
+  "archive_sha256": "3958952ef2794b633e54bae0de6ff764095c549cdaa8b31f381dc2e31fb78469",
+  "implementation_hashes": {
+    "scripts/run_original_n1_cartesian_core_source.py": "15a4d1d75a616d3f1e4949e722efdf2436f08272ac9e47c513e559c8425810c2",
+    "src/openai_ns_reconstruction/original_n1_cartesian_core_source.py": "bc65a55d79df9812c404a856c8afd0d3a250c0ec6511ea87f50dc80f4546199e",
+    "src/openai_ns_reconstruction/original_n1_physical_source.py": "542178f6a71dd20e7091dc5f76f115c78274717fd4cce5be391e4c2dbd1158bb"
+  },
+  "lossless_source_export_roundtrip": true,
+  "execution_seconds": 9.5,
+  "independent_source_restore": {
+    "terminal_exit_code": 0,
+    "execution_seconds": 8.875,
+    "physical_source_root_references": 5,
+    "query_suffix_nodes": 60,
+    "axis_included": true,
+    "numerical_oracle_available": false
+  }
+}

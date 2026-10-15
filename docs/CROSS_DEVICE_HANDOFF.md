@@ -1,3 +1,11 @@
+# Current checkpoint — axis-regular Cartesian n1 core, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_CARTESIAN_CORE_2026_10_15.md](CURRENT_ORIGINAL_N1_CARTESIAN_CORE_2026_10_15.md) first. `OriginalN1CartesianCoreSource` exports the closed original core disk in physical x,y and paper Z,tau, including its exact regular axis. Cartesian velocity uses A*x-B*y, A*y+B*x with no radial division or azimuth. It retains the original equation-derived axial transverse curvature and the Z-dependent coordinate pullback. This is still a source-only n1 coefficient, without leading assembly or evaluated nonzero original field values.
+
+A 9.500 s focused check passes 16 original regular-axis rows, seven derived mean/Q axis-zero rows, eight export/rotation identities, the actual Q source-body comparison, independent Cartesian divergence and five invalid requests. A fresh process restores the 60-node export suffix in 8.875 s with exit 0. Existing physical export and archived ancestors are unchanged.
+
+Tasks 13/14 remain IN PROGRESS. The n1 core axis-source recovery is implemented; higher inner interfaces, physical z inversion/outer chart selection, original numerical evaluation, leading-plus-coefficient assembly and complete physical layers remain open. Next prioritize actual interfaces and numerical solvers rather than replaying accepted suites. Full goal ACTIVE / INCOMPLETE. Earlier checkpoints below are historical where superseded.
+
 # Current checkpoint — regional physical n1 source export, 2026-10-15
 
 Read [CURRENT_ORIGINAL_N1_PHYSICAL_SOURCE_2026_10_15.md](CURRENT_ORIGINAL_N1_PHYSICAL_SOURCE_2026_10_15.md) first. `OriginalN1PhysicalSource().regional_function(chart)` now exports u1,v1,w1,p1 and one streamfunction with free original radial, Z, azimuth and time parameters. All 27 views retain the original source family. Normalization is nu=1, T=1; R>0 and |Z|<1. This is a single n=1 source coefficient, not evaluated values, a global joined field or a full NS solution.

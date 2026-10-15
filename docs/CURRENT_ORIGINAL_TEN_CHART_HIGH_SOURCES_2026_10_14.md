@@ -186,8 +186,13 @@ rebuild the ten high-source packets to address an interface-only task.
     now supplies complete parametric regional u1,v1,w1,p1 functions and
     a single streamfunction. Mass-source, coordinate/velocity and structural
     divergence identities pass; the small export restores independently.
-    Leading-plus-coefficient assembly, global germs, axis, inverse Cartesian
-    chart selection and numerical values remain open.
+    [Axis-regular Cartesian n1 core](CURRENT_ORIGINAL_N1_CARTESIAN_CORE_2026_10_15.md)
+    now covers the closed core disk, exact axis values and source-bound axial
+    transverse curvature, with no r/R division. The actual Q source and
+    fixed-physical-coordinate divergence checks pass; independent restore exits 0.
+    Leading-plus-coefficient assembly, global germs, physical z inversion,
+    outer chart selection and numerical values remain open. Complete assembled
+    physical axis regularity belongs to task 20 and is still unproved.
     Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
     State normalization, viscosity, domain, support and forcing separately.
