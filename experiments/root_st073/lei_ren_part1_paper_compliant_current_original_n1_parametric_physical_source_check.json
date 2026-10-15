@@ -1,0 +1,120 @@
+{
+  "source_only": true,
+  "physical_source": {
+    "chart": "inner_first",
+    "exact_native_parameter": null,
+    "exact_tau": null,
+    "exact_Z": null,
+    "exact_azimuth": null,
+    "coordinates": {
+      "x": 2280814,
+      "y": 2280815,
+      "z": 2280777,
+      "t": 2280817,
+      "r": 2280771,
+      "R": 35852,
+      "Z": 20,
+      "lambda_source": 2280767,
+      "tau": 2280759,
+      "azimuth": 2280758
+    },
+    "source_inputs": {
+      "M1": 53003,
+      "M1_y": 295908,
+      "M1_Z": 53004,
+      "Utheta1": 295925,
+      "Uz1": 52641,
+      "Q1": 52859,
+      "P1": 52756,
+      "delta": 25220
+    },
+    "streamfunction": 2280789,
+    "velocity": {
+      "u": 2280807,
+      "v": 2280810,
+      "w": 2280802,
+      "ur": 2280800,
+      "utheta": 2280803,
+      "uz": 2280802
+    },
+    "pressure": 2280813,
+    "parameter_domain": {
+      "native_coordinate": 35848,
+      "native_domain": [
+        0,
+        35824
+      ],
+      "native_lower_open": false,
+      "tau": "0 < tau <= 1",
+      "Z": "-1 < Z < 1",
+      "azimuth": "all real angles (radians)"
+    },
+    "direct_profile_recovery": {
+      "uz": 2280818,
+      "ur": 2280821
+    },
+    "definition": {
+      "coefficient_order": 1,
+      "normalized_viscosity": 1,
+      "normalized_blowup_time": 1,
+      "source_only": true,
+      "parametric_physical_coordinates": true,
+      "complete_regional_spatial_source": true,
+      "free_time_variable": true,
+      "M1_is_original_cumulative_m11": true,
+      "radial_axial_velocity_from_one_streamfunction": true,
+      "divergence_structure": "u_r=-(1/r) psi_z; u_z=(1/r) psi_r",
+      "includes_leading_background": false,
+      "includes_higher_temporal_coefficients": false,
+      "includes_oscillatory_correction": false,
+      "axis_included": false,
+      "inverse_Cartesian_chart_selection_available": false,
+      "numerical_oracle_available": false,
+      "globally_joined_physical_field": false,
+      "full_corrected_Navier_Stokes_solution": false
+    }
+  },
+  "graph_prefix_nodes": 2280758,
+  "query_suffix_nodes": 64,
+  "checks": {
+    "passed": true,
+    "regional_physical_packets": 27,
+    "actual_mass_cumulative_source_rows": 108,
+    "complete_regional_spacetime_source_exports": 27,
+    "direct_mass_source_identities": 104,
+    "capture_free_tail_mass_source_identities": 4,
+    "actual_export_algebra_identities": 12,
+    "independent_streamfunction_chain_identities": 2,
+    "independent_axisymmetric_divergence_identity": true,
+    "own_Q_radial_scaling_identity": true,
+    "rejected_invalid_or_axis_requests": 10,
+    "mathematical_source_fixtures_only": true,
+    "original_numeric_field_values_evaluated": false,
+    "global_interface_germs_proved": false
+  },
+  "implementation_hashes": {
+    "scripts/run_original_n1_physical_source.py": "23666c00650617c07798d351e78ec2b2ff443fef371adb5c9081bafd5fab94f6",
+    "src/openai_ns_reconstruction/original_n1_physical_source.py": "542178f6a71dd20e7091dc5f76f115c78274717fd4cce5be391e4c2dbd1158bb"
+  },
+  "archive_sha256": "7f3ca54d2698ef2aae80fadd3d926b2fd49755cc8dce1f166f44c3f139c5844b",
+  "source_graph_chain": [
+    {
+      "archive": "lei_ren_part1_paper_compliant_current_original_Rm_outer_mixed_source_joins.json.gz",
+      "sha256": "27510c39da6e84293c2eaa2355ce36d1c5622c39839c33a3b907739b85580a8c"
+    },
+    {
+      "archive": "lei_ren_part1_paper_compliant_current_original_n1_inner_high_source_functions.json.gz",
+      "sha256": "3a9d89cf8acedab8efe591edce3e8646b2723860d82b6026504aca64293dd7d3"
+    }
+  ],
+  "lossless_source_export_roundtrip": true,
+  "execution_seconds": 10.672,
+  "independent_source_restore": {
+    "terminal_exit_code": 0,
+    "execution_seconds": 8.953,
+    "actual_physical_source_root_references": 8,
+    "query_suffix_nodes": 64,
+    "full_owner_restored": false,
+    "numerical_oracle_available": false
+  }
+}

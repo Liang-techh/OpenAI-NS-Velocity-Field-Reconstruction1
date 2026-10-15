@@ -173,7 +173,7 @@ rebuild the ten high-source packets to address an interface-only task.
 13. [ ] **IN PROGRESS, 2026-10-15:** the regional entry point is installed;
     see [regional dispatcher](CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md).
     27 views, 6318 mixed slots / 18954 actual source queries, 18 rejection checks
-    and five core operator identities pass in 11.437 s. Inner high radial rows,
+    and five core operator identities pass in 11.437 s.
     [Inner high sources](CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md)
     now provide the three full positive-radius inner/lower interval contracts;
     414 lower rows are unchanged, 2214 queries and the actual equation checks
@@ -182,7 +182,13 @@ rebuild the ten high-source packets to address an interface-only task.
     Build one checked global n1 source dispatcher with complete interval
     coverage, explicit axis/tail behavior and every required interface
     receipt. Reject missing intervals and unsupported derivative requests.
-14. [ ] Export physical-coordinate source recovery for u_r,u_theta,u_z,p
+14. [ ] **IN PROGRESS, 2026-10-15:** [regional physical n1 source export](CURRENT_ORIGINAL_N1_PHYSICAL_SOURCE_2026_10_15.md)
+    now supplies complete parametric regional u1,v1,w1,p1 functions and
+    a single streamfunction. Mass-source, coordinate/velocity and structural
+    divergence identities pass; the small export restores independently.
+    Leading-plus-coefficient assembly, global germs, axis, inverse Cartesian
+    chart selection and numerical values remain open.
+    Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
     State normalization, viscosity, domain, support and forcing separately.
 15. [ ] Restore numerical evaluators of the actual nonlinear core, compatible

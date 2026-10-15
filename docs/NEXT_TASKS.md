@@ -1,3 +1,11 @@
+# Current checkpoint — regional physical n1 source export, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_PHYSICAL_SOURCE_2026_10_15.md](CURRENT_ORIGINAL_N1_PHYSICAL_SOURCE_2026_10_15.md) first. `OriginalN1PhysicalSource().regional_function(chart)` now exports u1,v1,w1,p1 and one streamfunction with free original radial, Z, azimuth and time parameters. All 27 views retain the original source family. Normalization is nu=1, T=1; R>0 and |Z|<1. This is a single n=1 source coefficient, not evaluated values, a global joined field or a full NS solution.
+
+The meridional components both come from psi1=lambda^(1+delta) M1, so divergence is structurally zero within each smooth region. A 10.672 s focused run checks 108 actual mass-source identities, 12 actual export algebra identities, independent Jacobian/divergence/Q-scaling identities, 27 complete regional functions and 10 invalid requests. A fresh process exits 0 in 8.953 s restoring the 64-node physical export suffix on the accepted 2280758-node source chain.
+
+Tasks 13/14 stay **IN PROGRESS**. Higher inner interface germs were investigated but not certified this turn; axis and automatic inverse Cartesian chart selection remain open. Next close those actual interfaces, then prioritize original numerical solvers/evaluation and leading-plus-coefficient assembly. Do not relabel source expressions or symbolic fixtures as field values or temporal recursion. Full goal **ACTIVE / INCOMPLETE**. Older checkpoints below are historical where superseded.
+
 # Current checkpoint — inner high source intervals, 2026-10-15
 
 Read [CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md](CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md) first. `OriginalN1SourceDispatcher().extend_inner_high_sources()` now restores inner-core/first/lower state y4, P1 and all five cumulative moments y3 on their original positive-radius intervals (ordinary Z3, Q/V Z2). It expands the actual six-row Volterra equation and retains every previous lower row and nonzero history. New dependencies are regular Z5 and the same analytic nonlinear core rho4/Z6, not evaluated values or certified norms.
