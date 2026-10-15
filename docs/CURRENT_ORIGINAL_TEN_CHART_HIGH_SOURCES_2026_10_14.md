@@ -240,11 +240,18 @@ rebuild the ten high-source packets to address an interface-only task.
     now evaluates the corresponding u,v,w through shared-streamfunction
     recovery and exact width/geometry factors. Native phase is required;
     neither the actual width nor F0 is selected/materialized.
-    **Next:** establish quantitative first/second derivative joins from the
-    nonzero core histories, then extend/admit the remaining collars and
-    apply the source-owned cutoff and reserved moment repair. Complete the
-    remaining physical/chart assembly. Add explicit tagged-log readers
-    before plotting/materialization. Width expansion is not temporal n>=2 recursion.
+    [Actual native radial derivatives](CURRENT_ORIGINAL_FIRST_COLLAR_DERIVATIVES_2026_10_15.md)
+    now recover leading rho1/rho2 Z1, full n1 f/u/k rho2 values, and
+    n1 pressure/q rho1 from the local equation, preserving hb^-1 and
+    finite sectors. Thirty-three independent core-source/leading radial
+    seam checks and 105 precision comparisons pass. Complete Cartesian
+    C2 gluing and pressure rho2 remain open.
+    **Next:** extend full n1 numerical axial jets to W_ZZ with honest
+    source/kernel/all-word errors, then recover q_Z and physical mixed
+    derivatives. Do not zero-pad the missing axial data. Finish physical
+    joins, remaining collar admission/transport, own cutoff and reserved
+    moment repair. Complete global physical/chart assembly and explicit
+    tagged-log readers. Width powers are not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
     full physical vector remain open. The core inverse is implemented.
     A source DAG or interval midpoint is not an exact original point oracle;

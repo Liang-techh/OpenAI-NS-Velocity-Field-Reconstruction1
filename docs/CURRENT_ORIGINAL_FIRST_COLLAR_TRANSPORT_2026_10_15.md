@@ -1,5 +1,9 @@
 # Original finite-width n1 first-collar transport — 2026-10-15
 
+Subsequent progress: [actual native radial derivatives and core source seam](CURRENT_ORIGINAL_FIRST_COLLAR_DERIVATIVES_2026_10_15.md)
+are now evaluated on the same admitted first-half collar. Complete physical
+Cartesian C2 joins and higher n1 axial numerical data remain open.
+
 Subsequent progress: [physical leading+n1 velocity is now assembled](CURRENT_ORIGINAL_FIRST_COLLAR_VELOCITY_2026_10_15.md)
 on this same admitted first-half collar, using native phase and separate
 original width/geometry factors.
