@@ -58,11 +58,10 @@
     "rejected_unsupported_queries": 18,
     "independent_core_physical_operator_identities": 5
   },
-  "execution_seconds": 11.437,
+  "execution_seconds": 9.422,
   "implementation_hashes": {
     "scripts/run_original_n1_source_dispatcher.py": "91b887194b04c602cc00a46558a387bc2bc448f3eae54c9f295d426b1959a0fc",
-    "src/openai_ns_reconstruction/original_n1_source_dispatcher.py": "fa73004d21a41cdd378f1ac6ebc9d8904973ffabc61ca41d0387ea487b8f1c16",
+    "src/openai_ns_reconstruction/original_n1_source_dispatcher.py": "b6f66bf59c9e605713790166dacfd319970015d19c1734e3db9a0bddb6c12525",
     "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_source_dispatcher.json": "8f69ecedee1756f524650364d3abb39b744d097f49c19ef5ea6480f9197fd54b"
-  },
-  "artifact_serialization": "LF; normalized after focused checks; source expressions and query/check logic unchanged"
+  }
 }

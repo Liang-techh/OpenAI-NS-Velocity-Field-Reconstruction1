@@ -1,3 +1,5 @@
+> Update: [inner high source intervals](CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md) now extend the three inner/lower views through state y4 and pressure/moments y3. Use `source.extend_inner_high_sources()` before queries to restore the checked suffix. The base API and historical checks below retain their weaker contract. Higher inner interface germs, axis, numerical and physical completion remain open.
+
 # Original n1 regional source dispatcher — 2026-10-15
 
 ## Delivered

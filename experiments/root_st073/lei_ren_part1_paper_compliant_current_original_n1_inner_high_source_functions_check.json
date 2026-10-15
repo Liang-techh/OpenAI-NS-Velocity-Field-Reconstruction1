@@ -1,0 +1,59 @@
+{
+  "source_family": {
+    "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+  },
+  "graph_prefix_nodes": 2232772,
+  "constructed_graph_nodes": 2280758,
+  "coverage": {
+    "regional_source_dispatcher": true,
+    "original_preRc_charts": 17,
+    "axis_included": false,
+    "axis_regular_Cartesian_recovery": false,
+    "uniform_global_y4_pressure_y3_contract": false,
+    "global_n1_numerical_field": false,
+    "numerical_oracle_available": false,
+    "physical_coordinate_velocity_export": false,
+    "temporal_recursion": false,
+    "full_corrected_Navier_Stokes_solution": false,
+    "unresolved": [
+      "axis and Cartesian regularity",
+      "higher inner interface germ comparisons",
+      "original numerical evaluation/bounds",
+      "physical recovery and genuine n>=2 temporal recursion"
+    ],
+    "positive_radius_inner_high_source_functions": true,
+    "uniform_positive_radius_finite_derivative_slots": true,
+    "inner_high_interface_germs_checked": false
+  },
+  "checks": {
+    "passed": true,
+    "unchanged_lower_scalar_rows": 414,
+    "actual_six_row_equation_identities": 12,
+    "actual_retained_second_derivative_comparisons": 16,
+    "independent_partial_Leibniz_fixtures": 5,
+    "original_sigma_interior_derivative_identities": 4,
+    "inner_mixed_source_queries": 2214,
+    "regular_radial_derivatives_expanded_from_equation": 104,
+    "regular_source_max_Z": 5,
+    "unadmitted_source_requests_rejected": 3,
+    "analytic_core_max_radial": 4,
+    "analytic_core_max_Z": 6
+  },
+  "implementation_hashes": {
+    "scripts/run_original_n1_inner_high_sources.py": "d1539944730460e141627e152a09397605ebb7349ca3409f9f933d800c45eb72",
+    "src/openai_ns_reconstruction/original_n1_inner_high_sources.py": "40b28ef36c5d4c47d088f34fb9610e3835333eeac2cd12a0e5854088fd563333",
+    "src/openai_ns_reconstruction/original_n1_source_dispatcher.py": "b6f66bf59c9e605713790166dacfd319970015d19c1734e3db9a0bddb6c12525"
+  },
+  "archive_sha256": "3a9d89cf8acedab8efe591edce3e8646b2723860d82b6026504aca64293dd7d3",
+  "source_archive_roundtrip": true,
+  "execution_seconds": 12.75,
+  "independent_source_restore": {
+    "terminal_exit_code": 0,
+    "actual_restored_source_queries": 84,
+    "execution_seconds": 8.89,
+    "full_owner_restored": false,
+    "numerical_oracle_available": false
+  }
+}

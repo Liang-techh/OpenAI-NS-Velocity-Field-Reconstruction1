@@ -81,6 +81,13 @@ class _QueryGraph:
     def neg(self, value):
         return 0 if value == 0 else self.node("negative", argument=value)
 
+    def quotient(self, numerator, denominator, certificate="same checked nonzero source denominator"):
+        if denominator == 0:
+            raise ValueError("Zero source denominator")
+        return 0 if numerator == 0 else numerator if denominator == 1 else self.node(
+            "positive_quotient", numerator=numerator, denominator=denominator,
+            source_positive_certificate=certificate)
+
     def unary(self, name, argument):
         return self.node("analytic_unary", name=name, argument=argument)
 
@@ -180,6 +187,7 @@ class OriginalN1SourceDispatcher:
         high = packets["lower_higher_radial_Rin_join"]
         self._install("inner_flat", dict(coordinate=rin["coordinate"], radius=rin["radius"],
                       domain=high["flat_domain"]), high["left"], "lower_higher_radial_Rin_join")
+        self._inner_inputs = dict(rin=rin, high=high)
         self.coverage = dict(regional_source_dispatcher=True, original_preRc_charts=17,
             axis_included=False, axis_regular_Cartesian_recovery=False,
             uniform_global_y4_pressure_y3_contract=False, global_n1_numerical_field=False,
@@ -193,8 +201,24 @@ class OriginalN1SourceDispatcher:
 
     def _install(self, name, geometry, own, source):
         self.charts[name] = dict(coordinate=geometry["coordinate"], radius=geometry["radius"],
-            domain=list(geometry["domain"]), fields=own["fields"], cumulative=own["cumulative"],
+            domain=list(geometry["domain"]),
+            fields={key:[list(jet) for jet in jets] for key,jets in own["fields"].items()},
+            cumulative={key:[list(jet) for jet in jets] for key,jets in own["cumulative"].items()},
             source=source, lower_open=False)
+
+    def extend_inner_high_sources(self, *, from_archive=True):
+        """Construct positive-radius high rows from the original regular equation.
+
+        This extends regional source definitions. It does not admit the axis,
+        certify numerical bounds or close higher inner interface germs.
+        """
+        if not hasattr(self, "inner_high_calculus") and not getattr(self, "inner_high_source_restored", False):
+            from .original_n1_inner_high_sources import install_inner_high_sources, restore_inner_high_sources
+            if from_archive:
+                restore_inner_high_sources(self)
+            else:
+                install_inner_high_sources(self)
+        return self
 
     def _install_inner_core(self, rin):
         """Lift the saved core rho rows with D_y=rho D_rho, without division at rho=0."""

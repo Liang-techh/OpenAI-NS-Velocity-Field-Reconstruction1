@@ -1,3 +1,11 @@
+# Current checkpoint — inner high source intervals, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md](CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md) first. `OriginalN1SourceDispatcher().extend_inner_high_sources()` now restores inner-core/first/lower state y4, P1 and all five cumulative moments y3 on their original positive-radius intervals (ordinary Z3, Q/V Z2). It expands the actual six-row Volterra equation and retains every previous lower row and nonzero history. New dependencies are regular Z5 and the same analytic nonlinear core rho4/Z6, not evaluated values or certified norms.
+
+Focused checks pass in 12.750 s: 414 retained lower rows, 12 actual matrix-equation identities, 16 actual retained second-derivative comparisons, five Leibniz/capture fixtures, four sigma identities, 2214 mixed queries and three source-guard rejections. A separate archive-only process exits 0 in 8.890 s with 84 queries, no historical owner replay. The combined graph has 2280758 nodes; the saved suffix has 47986 nodes.
+
+Task 13 stays **IN PROGRESS**. Next compare actual higher inner interface germs (core/first, inner-flat overlap, Rin and rminus), then regular axis/Cartesian and physical-coordinate recovery. The axis is still rejected. Numerical values/bounds/common N, physical energy/preheat/exact heat/stress, genuine n>=2 recursion and corrected NS remain open. Full goal **ACTIVE / INCOMPLETE**. Earlier instructions below are historical where superseded.
+
 # Current checkpoint — regional n1 source dispatcher, 2026-10-15
 
 Read [CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md](CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md) first. `OriginalN1SourceDispatcher` restores 27 regional views directly from accepted source archives, without rebuilding ancestor owners. A single 11.437 s focused run checked 6318 admitted mixed slots at three native parameters (18954 source queries), 18 rejected unsupported requests and five independent core operator identities. These are source-adapter checks, not numerical velocity values or new NS evidence.

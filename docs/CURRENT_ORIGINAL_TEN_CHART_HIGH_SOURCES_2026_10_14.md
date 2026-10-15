@@ -174,7 +174,11 @@ rebuild the ten high-source packets to address an interface-only task.
     see [regional dispatcher](CURRENT_ORIGINAL_N1_SOURCE_DISPATCHER_2026_10_15.md).
     27 views, 6318 mixed slots / 18954 actual source queries, 18 rejection checks
     and five core operator identities pass in 11.437 s. Inner high radial rows,
-    lower high interval contract and axis recovery are still open.
+    [Inner high sources](CURRENT_ORIGINAL_N1_INNER_HIGH_SOURCES_2026_10_15.md)
+    now provide the three full positive-radius inner/lower interval contracts;
+    414 lower rows are unchanged, 2214 queries and the actual equation checks
+    pass. Higher inner interface comparisons, axis and numerical/physical
+    recovery remain open; task 13 is not DONE.
     Build one checked global n1 source dispatcher with complete interval
     coverage, explicit axis/tail behavior and every required interface
     receipt. Reject missing intervals and unsupported derivative requests.
