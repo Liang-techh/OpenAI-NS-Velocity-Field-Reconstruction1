@@ -1,5 +1,10 @@
 # Original physical first gradient and vorticity, first-half collar — 2026-10-15
 
+Subsequent progress: [actual selected n1 cutoff and own lower history](CURRENT_ORIGINAL_N1_CUTOFF_NUMERIC_2026_10_15.md)
+are now numerically evaluated through Rin and r_minus. The older API below
+is the uncut/unrepaired regular-profile interface. Actual cut/own physical
+assembly and later modified-chart continuation remain open.
+
 ## Evaluated interface
 
 `OriginalFirstCollarGradient.evaluate(Z,s,...)` now computes the physical
@@ -150,30 +155,14 @@ error was found.
 
 Tasks 14/15 remain IN PROGRESS. Full goal ACTIVE / INCOMPLETE.
 
-1. Admit/evaluate the rest of the original first collar, then the second
-   and lower collars. Leading coverage through s=1 alone does not admit
-   the n1 solution there. This coverage is the next priority. The existing
-   read-only worker traces the concrete admission changes below.
-
-   - `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_inner_analytic_domain.py`
-     limits collar source bounds to s<=1/2. Its `collar_radial_bounds`
-     uses a half-interval sigma hull; integrated forcing uses
-     `row.shift(1)*sqrt(rho_max)/4`. A full phase requires a fresh [0,1]
-     sigma hull and `sqrt(rho_max)/2`, plus an explicit geometry check
-     `4exp(cap)<4.1` instead of only `4exp(cap/2)<4.1`.
-   - `..._current_original_n1_weighted_feedback_bound.py` likewise uses
-     `algebra.width(v)*a/4`; extend the source measure to `a/2` in a
-     separate same-family full-phase receipt. Propagate its enlarged
-     M0/C0/C1 through natural-component and regular-series/all-word bounds.
-   - The current |rho|<5 geometry and rho_max=4.1 appear to leave room,
-     but the complete original complex-floor, contraction and Cauchy-gap
-     guards must pass with the regenerated source bounds. Keep accepted
-     half-phase receipts unchanged and use a new scope-specific receipt;
-     the original function/parameter family must remain the same.
-   - Only after that admission may a separate full-first-collar numerical
-     transport/physical interface accept s<=1. Relaxing the existing guard
-     without new source and feedback bounds is unsupported.
-2. Apply source-owned cutoff and own five-moment repair, complete global
+1. The actual selected cutoff and Rin-to-r_minus own history are now
+   numerical in the successor above. Next assemble the actual cut/own
+   physical field, then consume actual modified leading charts beyond
+   r_minus. The selected q=phase/(sc/4) is distinct from raw phase0..1/2.
+   Raw phase extension to1 is an auxiliary analytic task and is not the
+   next actual matched-field requirement; do not relax the raw guard or
+   substitute the unmodified first bridge for the later modified field.
+2. Complete remaining signed five-defect/own moment repair and global
    physical/chart assembly, and establish quantitative mixed bounds and
    remaining joins. Physical Hessians and a complete Cartesian C2 join
    remain open; q_ZZ would require mean Z3.

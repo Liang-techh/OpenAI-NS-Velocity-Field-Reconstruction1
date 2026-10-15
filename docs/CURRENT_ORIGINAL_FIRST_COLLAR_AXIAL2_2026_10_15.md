@@ -1,5 +1,10 @@
 # Full original n1 first-half collar axial Z2 and q_Z — 2026-10-15
 
+Subsequent progress: [actual selected n1 cutoff and own lower history](CURRENT_ORIGINAL_N1_CUTOFF_NUMERIC_2026_10_15.md)
+are now numerically evaluated through Rin and r_minus. The older API below
+is the uncut/unrepaired regular-profile interface. Actual cut/own physical
+assembly and later modified-chart continuation remain open.
+
 Subsequent progress: [physical first gradient and vorticity](CURRENT_ORIGINAL_FIRST_COLLAR_GRADIENT_2026_10_15.md)
 are now evaluated on the admitted first-half collar with original
 coordinate/F0/delta factors and a core-boundary first-derivative seam.

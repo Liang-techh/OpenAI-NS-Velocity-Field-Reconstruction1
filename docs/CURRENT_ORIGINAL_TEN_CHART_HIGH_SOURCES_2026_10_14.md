@@ -264,10 +264,17 @@ rebuild the ten high-source packets to address an interface-only task.
     cylindrical connection terms. Twenty-seven independent manufactured
     checks, 111 core-boundary coefficient seams and 144 precision/log
     comparisons pass. Physical Hessians/full Cartesian C2 remain open.
-    **Next:** admit/evaluate the remaining first collar, then second/lower
-    collars, using regenerated source/feedback/all-word bounds. The current
-    half-phase source measure must not be extended by a runtime guard alone.
-    Finish physical joins, own cutoff/moment repair,
+    [Actual selected n1 cutoff and own lower history](CURRENT_ORIGINAL_N1_CUTOFF_NUMERIC_2026_10_15.md)
+    now computes selected q=phase/(sc/4) through Rin and fractions1..2 to
+    r_minus. Only f/u are cut, while terminal primitive, mean/k/q and
+    pressure retain their own histories. The exact original sc singleton,
+    Z2 own mean/q_Z, and inverse-hb/inverse-phase radial sectors are kept.
+    Fifteen inner/nine lower packets, 108 exact zero coefficient slots,
+    186 seams and 90 precision comparisons pass. Raw phase extension to1
+    is auxiliary, not the actual next matched-field step.
+    **Next:** assemble the actual cut/own physical field and width sectors,
+    then use actual modified leading charts beyond r_minus. Complete
+    physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
