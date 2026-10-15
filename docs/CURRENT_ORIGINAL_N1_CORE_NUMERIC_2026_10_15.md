@@ -1,3 +1,5 @@
+> Subsequent progress: [full original n1 core numerical values](CURRENT_ORIGINAL_N1_CORE_VOLTERRA_NUMERIC_2026_10_15.md) now include complete absolute errors through the accepted principal Volterra and all-word route. This finite-prefix API and its saved errors retain their finite-only semantics. No radial Taylor remainder is inferred from the newer word bound.
+
 # Original fully coupled n1 radial coefficients — 2026-10-15
 
 ## Delivered and scope

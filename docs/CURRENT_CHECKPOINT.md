@@ -1,3 +1,11 @@
+# Current checkpoint — original full n1 core numerical errors, 2026-10-15
+
+Read [CURRENT_ORIGINAL_N1_CORE_VOLTERRA_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_N1_CORE_VOLTERRA_NUMERIC_2026_10_15.md) first. `OriginalN1CoreVolterraNumeric` now returns normalized original regular n1 core values and first Z derivatives with complete absolute errors. It analytically integrates original forcing polynomials with the accepted Kchi principal inverse, computes a nominal full feedback iterate and separately covers leading-source, potential-kernel and all-word feedback tails. This is a full n1 core approximation; it is not a finite unknown Taylor prefix or an exact point oracle.
+
+A 34.672 s run exits 0 with 12 exact source-difference checks, 24 exact principal-equation checks, 168 cross-precision full-error comparisons at 12 original core points per level and 90 nonzero nominal feedback components. The exact regular axis is included. Sample maximum refined value relative errors are 2.75e-29 for normalized f, 1.53e-28 for fx and 2.77e-27 for p. At Z=0.3,rho=2, f is approximately -0.18941311938863450413 with error below 2.48e-36. Value and derivative errors remain separate. Saved-report inspection exits 0 in 2.077 s without owners.
+
+Task 15 remains IN PROGRESS: actual first/lower collar values, nonzero histories, cutoff/moment repair and n0+n1 physical/time assembly are next. Tasks 13/14, common global N, global physical/heat/stress layers and genuine n>=2 recursion stay open. Full goal ACTIVE / INCOMPLETE. Older checkpoint claims that numerical full-core n1 values are unavailable are superseded by this interface; their finite-only APIs keep their original scope.
+
 # Current checkpoint — original coupled n1 radial coefficients, 2026-10-15
 
 Read [CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md) first. `OriginalN1CoreNumeric` now computes degree16 finite radial prefixes of the actual temporal n1 core, using the same original leading source family. All raw B0/B1, axial derivatives, pressure and nonzero F0-squared feedback are retained in directed coefficient bounds. This is coefficient/prefix computation; the infinite radial remainder and a full nonzero-radius n1 point oracle remain open.

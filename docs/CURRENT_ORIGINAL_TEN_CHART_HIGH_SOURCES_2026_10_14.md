@@ -191,31 +191,34 @@ rebuild the ten high-source packets to address an interface-only task.
     transverse curvature, with no r/R division. The actual Q source and
     fixed-physical-coordinate divergence checks pass; independent restore exits 0.
     Leading-plus-coefficient assembly, global germs, physical z inversion,
-    outer chart selection and numerical values remain open. Complete assembled
+    outer chart selection and numerical values outside the regular core
+    remain open. Complete assembled
     physical axis regularity belongs to task 20 and is still unproved.
     Export physical-coordinate source recovery for u_r,u_theta,u_z,p
     through the original similarity map and streamfunction/vector potential.
     State normalization, viscosity, domain, support and forcing separately.
-15. [ ] **IN PROGRESS, 2026-10-15:** [original normalized core numerical approximation](CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md)
-    computes Phi/Psi/mean_Psi/Uz/Q and compatible normalized axis pressure,
-    with exact source j, production recurrence and directed actual-source
-    error bounds. Both precision/truncation levels and independent Bessel
-    comparisons pass. [Original log amplitude and leading physical terms](CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md)
-    now add numerical G, resolved relative-amplitude values and coordinate/u,v,w
-    exponential-sum packets, including on-demand points. Absolute F0 is kept
-    tagged; global relative-amplitude control, a float physical vector, actual
-    full regular n1, lifted phase inverse and nonzero histories remain open.
-    [Original coupled n1 radial coefficients](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md)
-    now computes degree16 finite prefixes, all B0/B1 and pressure feedback,
-    with 2040 directed mixed slots and 72 cross-precision comparisons.
-    The full radial Taylor remainder remains unproved; this does not complete
-    a full nonzero-radius n1 evaluation. The old axis rho3 axial shortcut
-    omits direct F0-squared feedback and must not be a numerical truth source.
-    Next implement actual full Volterra quadrature/iteration with its own
-    accepted word tail, or independently prove a radial Taylor remainder;
-    retain pressure, all Z derivatives and nonzero source histories.
-    A source DAG, point proxy or interval midpoint is not an exact source
-    oracle. Keep actual nonzero S and all pressure atoms in error propagation.
+15. [ ] **IN PROGRESS, 2026-10-15:** [original normalized leading-core values](CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md),
+    [original log amplitude and leading physical terms](CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md),
+    [finite n1 radial coefficients](CURRENT_ORIGINAL_N1_CORE_NUMERIC_2026_10_15.md)
+    and [full n1 core numerical values/errors](CURRENT_ORIGINAL_N1_CORE_VOLTERRA_NUMERIC_2026_10_15.md)
+    are delivered. The full-core solver uses the accepted Kchi principal
+    inverse, computes a nominal feedback iterate and separately bounds
+    the leading-source, potential-kernel and all-word feedback remainders.
+    Twelve original core points per level pass 168 cross-precision full-error
+    comparisons; the exact axis is included. This closes numerical original
+    regular-core n1 absolute-error recovery, not a matched global field.
+    The finite-prefix API still has finite-only errors; the new full-core
+    solver does not substitute a word bound for a radial Taylor remainder.
+    The legacy axis rho3 axial shortcut omits direct F0-squared feedback;
+    use the new full-coupled implementation rather than those stale rows.
+    **Next:** extend numerical evaluation to actual first/lower collars,
+    carry all nonzero inlet and pressure/moment histories, apply the source-
+    owned cutoff and reserved moment repair, and assemble n0+n1 with one
+    streamfunction and the original physical/time weights. Preserve tiny
+    contributions in factored sums. Global relative-F0 accuracy, physical
+    z/phase inverses and an ordinary full physical vector remain open.
+    A source DAG or interval midpoint is not an exact original point oracle;
+    keep nonzero implicit swirl and all pressure atoms in error propagation.
 16. [ ] Establish original-scale numerical error budgets for truncation,
     quadrature and differentiation independently; use logarithmic/arbitrary-
     precision scales where ordinary floating point underflows.
