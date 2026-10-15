@@ -1,5 +1,9 @@
 # Original first-collar axial jets, own-mean Q and pressure — 2026-10-15
 
+Update: [finite-width n1 transport is now evaluated](CURRENT_ORIGINAL_FIRST_COLLAR_TRANSPORT_2026_10_15.md)
+on the admitted first-half collar s<=1/2. The leading jets below keep their
+original wider domain and derivative orders.
+
 ## Delivered and API
 
 `OriginalFirstCollarJets` extends the evaluated actual leading first collar
