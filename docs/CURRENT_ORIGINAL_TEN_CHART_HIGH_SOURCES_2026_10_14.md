@@ -217,10 +217,16 @@ rebuild the ten high-source packets to address an interface-only task.
     with direct physical x,y,z,t queries and a directed input-containment guard.
     Leading corrections and all original amplitude/time scales stay factored;
     first-two-order swirl comparisons are available without materializing F0.
-    **Next:** extend numerical evaluation to actual first/lower collars,
-    carry all nonzero inlet and pressure/moment histories, apply the source-
-    owned cutoff and reserved moment repair, then extend the same physical
-    assembly beyond the core. Preserve tiny contributions in factored sums.
+    [Actual leading first-collar values and six own histories](CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md)
+    are now evaluated with original-width-factored nonzero increments and
+    directed full finite-collar source errors, through s=1. The numerical
+    inlet integral normalizations and exact raw-history ODE split pass.
+    **Next:** differentiate these normalized histories/fields in Z with
+    actual source errors, recover Q/pressure, then transport n1 through the
+    first/second/lower collars from the existing nonzero core histories.
+    Apply the source-owned cutoff and reserved moment repair, then extend
+    the same physical assembly beyond the core. Preserve tiny contributions
+    in factored sums; width expansion is not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
     full physical vector remain open. The core inverse is implemented.
     A source DAG or interval midpoint is not an exact original point oracle;

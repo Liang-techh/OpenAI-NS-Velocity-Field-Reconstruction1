@@ -1,3 +1,5 @@
+Subsequent progress: [actual leading first-collar values and six histories](CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md) are now evaluated. The physical velocity API below remains core-only until the collar axial jets, Q and n1 transport are available.
+
 # Original physical leading+n1 core velocity — 2026-10-15
 
 ## Delivered

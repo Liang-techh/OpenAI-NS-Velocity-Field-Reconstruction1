@@ -1,3 +1,11 @@
+# Current checkpoint — actual leading first-collar numerical fields, 2026-10-15
+
+Read [CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md) first. `OriginalFirstCollarNumeric.evaluate(Z,s)` now computes original leading Phi/Uz and six actual own cumulative histories through the full first micro-flat collar, s in [0,1]. It returns inlet and nonzero increments per original hb separately, with directed finite-width source errors; tiny axial corrections remain split in epsilon. The unchanged actual comparison-directed source retains hydro, pressure and nonzero swirl. No midpoint, cap-selected width or comparison-history replacement defines a field.
+
+A 57.307 s run exits 0: 16 sample packets at four Z values, six exact history-split ODE identities, 24 independent Gaussian inlet integrals, 256 degree16/22 comparisons, 768 original log-product bounds and five invalid-input rejections. At Z=0.3,s=0.5, the Phi increment per hb is approximately -0.229869518383453019 with error below 1.116e-8; at the first exit it is approximately -0.239764041075505351 with error below 6.880e-39. The sampled nonaxis Phi/Psi increment relative errors are below 4.854e-8. A tiny normalized Kpsi increment remains unresolved; its full interval is retained. Fresh saved-report inspection exits 0 in 1.594 s.
+
+Task 15 remains IN PROGRESS: first-collar leading values and histories are evaluated, but their axial derivative jets, Q/pressure recovery and n1 collar transport are next. Second/lower collars, source-owned cutoff/moment repair, global physical assembly, heat/stress and genuine n>=2 recursion remain open. The core physical velocity API retains its current core domain. Full goal ACTIVE / INCOMPLETE.
+
 # Current checkpoint — physical leading+n1 core velocity, 2026-10-15
 
 Read [CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md) first. `OriginalCoreVelocity.evaluate(Z,rho,...)`, `.cartesian(x,y,z,log_tau=...)` and `.at_time(x,y,z,t)` now return physical core u,v,w as signed exponential sums with original coefficient/log errors. The leading and full n1 numerical fields share one streamfunction; tiny leading corrections, temporal orders and delta*time terms stay separate. Cartesian inversion is directed and must fit inside both source backends' input boxes.
