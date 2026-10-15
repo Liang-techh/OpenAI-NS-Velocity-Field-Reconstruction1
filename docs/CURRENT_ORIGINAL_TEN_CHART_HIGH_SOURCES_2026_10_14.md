@@ -131,12 +131,15 @@ rebuild the ten high-source packets to address an interface-only task.
    `python scripts/run_original_prescribed_high_radial_sources.py
    --restore-source`, exit code 0 and 30 complete-chart fraction queries.
    `source_only_restored=true`; numerical and global n1 gates remain false.
-3. [ ] Close first_switch1 -> second_switch0 using the actual full-current-
-   radius comparison functions and flat axial/angular controls. Transfer
-   background y5, leading y4 and all 246 own rows with the original hbS.
-4. [ ] Close second_switch1 -> post_power0. Prove the angular control tends
-   to the exact -2/5 power slope with sufficient flat derivatives; retain
-   nonzero actual moments and signed pressure/correction histories.
+3. [x] DONE — first_switch1 -> second_switch0, using actual current-radius
+   comparison functions, flat axial/angular controls and unchanged hbS.
+   Background y5, leading y4 and all 246 own rows are closed by
+   [CURRENT_ORIGINAL_SWITCH_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_SWITCH_MIXED_SOURCE_JOINS_2026_10_14.md).
+4. [x] DONE — second_switch1 -> post_power0, with exact -2/5 angular slope,
+   flat control derivatives and distinct original post-length Jacobian.
+   The same checkpoint records the other 246 own rows and full nonzero
+   incoming histories. Five groups pass in 132.219s; archive-only source
+   recovery exits 0 with four endpoint queries. Numerical bounds stay open.
 5. [ ] Close post_power1 -> long_reshape0 at R110. Consume the original B
    coefficient, anchored G, finite T and all actual endpoint values. Keep
    the distinct post length/T Jacobians.

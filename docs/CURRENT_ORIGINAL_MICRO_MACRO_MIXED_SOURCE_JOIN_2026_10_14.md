@@ -155,13 +155,13 @@ history, the common core/datum/frequency, and actual source bytes.
 4. [x] DONE — macro1 -> first_switch0 at radius 100 now matches all 246 own
    mixed row pairs. Actual coordinate maps and distinct width nodes consume
    the shared K1 source theorem. Signed m15 pressure memory is retained.
-5. [ ] Close the actual first_switch -> second_switch seam. Complete
-   second_switch high sources are already delivered in the ten-chart
-   checkpoint; reuse them and preserve original flat-control endpoints and
-   all incoming signed correction densities.
-6. [ ] Close second_switch -> post_power. Complete post_power high sources
-   are already delivered; retain actual power exponents, radius derivatives
-   and mean ODE. Do not reuse O3 coefficients based on a similar chart name.
+5. [x] DONE — first_switch -> second_switch is closed with 246 actual own
+   mixed rows, original flat controls and nonzero histories. See
+   [CURRENT_ORIGINAL_SWITCH_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_SWITCH_MIXED_SOURCE_JOINS_2026_10_14.md).
+6. [x] DONE — second_switch -> post_power is closed with 246 actual own
+   mixed rows and the actual -2/5 power slope, retaining the separate
+   post-length Jacobian. The shared five-group receipt and independent
+   four-endpoint archive recovery are recorded in the same checkpoint.
 7. [ ] Close post_power -> long_reshape. Complete long_reshape high sources
    are already delivered; retain genuine controls and separate Jacobians.
 8. [ ] Close long_reshape -> reference with pressure and all five histories
