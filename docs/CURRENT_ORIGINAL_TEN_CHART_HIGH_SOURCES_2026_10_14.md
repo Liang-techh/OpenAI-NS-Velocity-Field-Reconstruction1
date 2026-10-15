@@ -279,8 +279,16 @@ rebuild the ten high-source packets to address an interface-only task.
     finite-width physical comparisons, 144 native overlaps, 48 divergence
     sector enclosures, 80 core/Rin seams and 112 precision/log comparisons
     pass. The terminal primitive remains shared after the velocities vanish.
-    **Next:** numerically evaluate actual modified leading charts starting
-    at r_minus, retaining original common-N/control/source definitions. Complete
+    [Original-N first-micro physical velocity enclosures](CURRENT_ORIGINAL_FIRST_MICRO_NUMERIC_2026_10_15.md)
+    now consume actual leading/background and selected-N correction bounds
+    through native s=1, with own mean Z2, Qpsi_Z1 and unchanged n1 primitive.
+    The signed periodic source is retained; its numerical proxy has a proved
+    correction error, not a freely chosen phase. Ninety-nine independent
+    prefix/exponential checks and eight r_minus coefficient seams pass.
+    Current third-derivative caps remain unresolved logarithms; physical
+    gradients beyond r_minus and exact signed correction integrals stay open.
+    **Next:** actual second_micro native1..2 background/controls and selected-N
+    histories, then total radial/fast-phase rows and tighter Z3 bounds. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.

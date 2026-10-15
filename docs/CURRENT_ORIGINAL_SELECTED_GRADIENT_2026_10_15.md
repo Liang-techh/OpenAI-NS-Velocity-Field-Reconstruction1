@@ -1,5 +1,10 @@
 # Actual selected cut/own physical velocity, first gradient and vorticity — 2026-10-15
 
+Subsequent progress: [actual first-micro modified velocity enclosures](CURRENT_ORIGINAL_FIRST_MICRO_NUMERIC_2026_10_15.md)
+continue physical value coverage through native s=1 with the original selected N
+and correction errors. This document's physical gradient/vorticity scope still
+ends at r_minus; it is not extended by that numerical value adapter.
+
 ## Interface and exact selected domain
 
 `OriginalSelectedGradient` assembles the original leading plus unrepaired n=1
