@@ -1,5 +1,10 @@
 # Actual first-micro modified velocity enclosures — 2026-10-15
 
+Subsequent progress: [actual second-micro velocity and local Z3](CURRENT_ORIGINAL_SECOND_MICRO_NUMERIC_2026_10_15.md)
+continues the same original N and first-window histories through native s=2.
+Only second-window local Phi/Psi gain numerical Z3; the inherited mean_Z3
+and Qpsi_ZZ limitations remain. The first-chart result below retains its scope.
+
 ## What is now computed
 
 `OriginalFirstMicroNumeric` extends numerical leading+n=1 velocity coverage

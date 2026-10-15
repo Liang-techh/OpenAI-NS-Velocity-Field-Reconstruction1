@@ -287,8 +287,16 @@ rebuild the ten high-source packets to address an interface-only task.
     prefix/exponential checks and eight r_minus coefficient seams pass.
     Current third-derivative caps remain unresolved logarithms; physical
     gradients beyond r_minus and exact signed correction integrals stay open.
-    **Next:** actual second_micro native1..2 background/controls and selected-N
-    histories, then total radial/fast-phase rows and tighter Z3 bounds. Complete
+    [Actual second-micro velocity and local Z3](CURRENT_ORIGINAL_SECOND_MICRO_NUMERIC_2026_10_15.md)
+    now continues original selected-N physical value enclosures through s=2,
+    retaining both coupled controls, first-window correction memories and
+    the n1 terminal primitive. Phi/Psi have Z0..3; own mean stays Z0..2 and
+    Qpsi Z0..1 because the incoming mean_Z3 cap remains unresolved.
+    Thirty-seven independent source/third-derivative/memory comparisons,
+    57 first/second coefficient seams and 63 history checks pass.
+    **Next:** actual R0 macro inlet, original frozen-comparison controls and
+    length log(100/Ra)-2hb with retained endpoint fields/histories. Derive
+    total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
     Axial Z2 and width powers are not temporal n>=2 recursion.
