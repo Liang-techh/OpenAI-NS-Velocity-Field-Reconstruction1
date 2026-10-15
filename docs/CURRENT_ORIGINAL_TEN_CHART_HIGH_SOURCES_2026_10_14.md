@@ -246,12 +246,19 @@ rebuild the ten high-source packets to address an interface-only task.
     finite sectors. Thirty-three independent core-source/leading radial
     seam checks and 105 precision comparisons pass. Complete Cartesian
     C2 gluing and pressure rho2 remain open.
-    **Next:** extend full n1 numerical axial jets to W_ZZ with honest
-    source/kernel/all-word errors, then recover q_Z and physical mixed
-    derivatives. Do not zero-pad the missing axial data. Finish physical
-    joins, remaining collar admission/transport, own cutoff and reserved
-    moment repair. Complete global physical/chart assembly and explicit
-    tagged-log readers. Width powers are not temporal n>=2 recursion.
+    [Full original core axial Z2 and recovered q_Z](CURRENT_ORIGINAL_N1_CORE_AXIAL2_2026_10_15.md)
+    are now computed with genuine leading Z4 sources, differentiated model
+    tails, finite Kchi kernel Z2 bounds and the accepted all-word Cauchy
+    remainder. All six state rows and own mean have three Taylor entries;
+    q has two. Twelve core points per level pass 276 full-error comparisons
+    and 42 accepted Z1 comparisons. No missing nominal feedback derivative
+    is padded with zero; the full feedback is enclosed from principal origin.
+    **Next:** transport the new Z2 inlet through the actual admitted first
+    collar with its additional source/regular-operator derivative bounds.
+    Recover collar q_Z and physical mixed derivatives; q_ZZ requires Z3.
+    Finish physical joins, remaining collars, own cutoff/moment repair,
+    global physical/chart assembly and explicit tagged-log readers.
+    Axial Z2 and width powers are not temporal n>=2 recursion.
     Global relative-F0 accuracy, outer phase/chart inverses and an ordinary
     full physical vector remain open. The core inverse is implemented.
     A source DAG or interval midpoint is not an exact original point oracle;

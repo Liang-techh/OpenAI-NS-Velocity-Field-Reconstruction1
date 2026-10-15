@@ -1,5 +1,9 @@
 > Subsequent progress: [physical leading+n1 core velocity](CURRENT_ORIGINAL_CORE_VELOCITY_2026_10_15.md) now consumes these full-error coefficients in u,v,w and one streamfunction, with guarded physical x,y,z,t inversion. The normalized n1 evaluator and all limits below retain their original scope; global matched layers and the infinite temporal sum remain open.
 
+Subsequent progress: [full n1 core Z2 and q_Z numerical data](CURRENT_ORIGINAL_N1_CORE_AXIAL2_2026_10_15.md)
+are now available through a separate core-only API. Transporting them
+through the actual collar and complete physical mixed derivatives remain open.
+
 # Original full n1 core numerical values and errors — 2026-10-15
 
 ## Delivered
