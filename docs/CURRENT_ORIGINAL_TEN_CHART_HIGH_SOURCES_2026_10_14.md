@@ -200,8 +200,11 @@ rebuild the ten high-source packets to address an interface-only task.
     computes Phi/Psi/mean_Psi/Uz/Q and compatible normalized axis pressure,
     with exact source j, production recurrence and directed actual-source
     error bounds. Both precision/truncation levels and independent Bessel
-    comparisons pass. F0, full physical field, original regular n1, lifted
-    phase inverse and nonzero histories still require numerical recovery.
+    comparisons pass. [Original log amplitude and leading physical terms](CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md)
+    now add numerical G, resolved relative-amplitude values and coordinate/u,v,w
+    exponential-sum packets, including on-demand points. Absolute F0 is kept
+    tagged; global relative-amplitude control, a float physical vector, actual
+    regular n1, lifted phase inverse and nonzero histories remain open.
     A source DAG, point proxy or interval midpoint is not an exact source
     oracle. Keep actual nonzero S and all pressure atoms in error propagation.
 16. [ ] Establish original-scale numerical error budgets for truncation,

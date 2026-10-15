@@ -1,3 +1,11 @@
+# Current checkpoint — original logarithmic amplitude and leading velocity terms, 2026-10-15
+
+Read [CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md](CURRENT_ORIGINAL_CORE_LOG_AMPLITUDE_2026_10_15.md) first. `OriginalCoreLogAmplitude` now computes global G approximations with certified-pole errors, original local relative-amplitude values, and physical coordinate/u,v,w signed exponential-sum packets from the same numerical leading core. It preserves the original binary-singleton logCstar and keeps tiny root offsets separate. At xi=1, F0/F0(anchor) is approximately 0.105399224561864337. This is leading n0 only, not n0+n1 or a floating-point full velocity field.
+
+A 7.390 s run passes 45 cross-precision comparisons, two independent nominal real-integral diagnostics, 18 accepted local-source comparisons and 25 velocity/coordinate packets, including a new point computed on demand from the original recurrence. Nineteen nonaxis packets retain positive swirl coefficients. A fresh saved-report inspection exits 0 in 0.406 s without rebuilding owners. Absolute F0 exponentials remain unmaterialized; small G error does not imply usable global relative F0 error.
+
+Task 15 remains IN PROGRESS. Next feed these tagged scales into actual regular n1 numerical recovery and histories, then n0+n1 physical assembly, remaining higher interfaces and inverse chart selection. Global physical/stress/heat layers and genuine n>=2 temporal recursion remain open. Full goal ACTIVE / INCOMPLETE. Older checkpoints below are historical where superseded.
+
 # Current checkpoint — original normalized core numerical approximation, 2026-10-15
 
 Read [CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_CORE_NUMERIC_2026_10_15.md) first. `OriginalCoreNumeric` now computes nonzero numerical approximations of leading Phi/Psi/mean_Psi/Uz/Q and compatible P0/Pstar^2, with directed error bounds relative to the same original admitted core and current n1 source family. It recomputes j exactly as 1/5721363714816000000000 and calls the original coupled production recurrence. Numerical proxies and actual-source enclosures are kept separate; no source midpoint is selected.
