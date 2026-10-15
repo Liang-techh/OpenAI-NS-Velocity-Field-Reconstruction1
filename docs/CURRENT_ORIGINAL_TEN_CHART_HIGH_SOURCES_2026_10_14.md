@@ -221,9 +221,13 @@ rebuild the ten high-source packets to address an interface-only task.
     are now evaluated with original-width-factored nonzero increments and
     directed full finite-collar source errors, through s=1. The numerical
     inlet integral normalizations and exact raw-history ODE split pass.
-    **Next:** differentiate these normalized histories/fields in Z with
-    actual source errors, recover Q/pressure, then transport n1 through the
-    first/second/lower collars from the existing nonzero core histories.
+    [First-collar axial Z5 jets, own-mean Q4 and pressure5](CURRENT_ORIGINAL_FIRST_COLLAR_JETS_2026_10_15.md)
+    are now evaluated with actual finite-width errors, direct differentiated
+    Bessel/correction tails and original amplitude/source cancellation.
+    **Next:** construct actual radial source rows with hb^-1 sectors and
+    transport full n1 B0/B1/g on the admitted first-inner s<=1/2 domain.
+    Then extend/admit the remaining first/second/lower collars and establish
+    quantitative derivative joins from the existing nonzero core histories.
     Apply the source-owned cutoff and reserved moment repair, then extend
     the same physical assembly beyond the core. Preserve tiny contributions
     in factored sums; width expansion is not temporal n>=2 recursion.

@@ -1,3 +1,11 @@
+# Current checkpoint — actual first-collar Z5 jets, own Q4 and pressure5, 2026-10-15
+
+Read [CURRENT_ORIGINAL_FIRST_COLLAR_JETS_2026_10_15.md](CURRENT_ORIGINAL_FIRST_COLLAR_JETS_2026_10_15.md) first. `OriginalFirstCollarJets.evaluate(Z,s)` now evaluates original leading Phi/Psi and all six own histories through native axial Taylor order5, with actual finite-width errors. Q is recovered through order4 from the same own mean; pressure uses compatible P0 plus R*F0^2*C with the amplitude dressed once. Core radial derivatives 0..2 have differentiated model/correction tails. hb and small epsilon corrections remain factored.
+
+A 100.815 s run exits 0 with nine Z5/Q4/pressure5 packets, 108 independent Bessel mixed-tail checks, 1161 degree18/24 comparisons, 144 accepted scalar overlaps and 36 pressure-source/dress joins. Original source cancellation and comparison-width difference bounds avoid enormous F0-relative derivative roundoff. At Z=0.3,s=0.5, relative errors are below 1.134e-7 for the Qpsi increment value and 4.854e-8 for the Phi increment Z5 coefficient. Fresh saved-report inspection exits 0 in 1.300 s.
+
+Task 15 remains IN PROGRESS. Next construct actual radial source rows retaining hb^-1 sectors, and transport the full n1 B0/B1/g system from the existing core histories. Its currently admitted first-inner domain is s<=1/2; leading coverage to s=1 does not enlarge it. First/second derivative joins, remaining collars, cutoff/moment repair and physical/global assembly remain open, as do heat/stress and genuine temporal n>=2 recursion. Full goal ACTIVE / INCOMPLETE.
+
 # Current checkpoint — actual leading first-collar numerical fields, 2026-10-15
 
 Read [CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_FIRST_COLLAR_NUMERIC_2026_10_15.md) first. `OriginalFirstCollarNumeric.evaluate(Z,s)` now computes original leading Phi/Uz and six actual own cumulative histories through the full first micro-flat collar, s in [0,1]. It returns inlet and nonzero increments per original hb separately, with directed finite-width source errors; tiny axial corrections remain split in epsilon. The unchanged actual comparison-directed source retains hydro, pressure and nonzero swirl. No midpoint, cap-selected width or comparison-history replacement defines a field.

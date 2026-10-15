@@ -1,3 +1,5 @@
+Subsequent progress: [actual first-collar Z5 jets, own-mean Q4 and pressure5](CURRENT_ORIGINAL_FIRST_COLLAR_JETS_2026_10_15.md) now evaluate the differentiated data. This earlier value-only report retains its original scope.
+
 # Original leading first-collar numerical fields and own histories — 2026-10-15
 
 ## Delivered and usage
