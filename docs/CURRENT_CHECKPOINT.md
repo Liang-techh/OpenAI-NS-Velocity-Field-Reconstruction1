@@ -1,3 +1,21 @@
+# Current checkpoint - six Rm/outer high radial source charts accepted, 2026-10-14
+
+Read [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md) first. Rm_patch, Rh_reference, O2_slope, O2_axial, O2_buffer and O3_transition now provide complete original-domain U/mean y4 C5, leading Q y4 C4, N y2 C3 and signed pressure y3 C3 sources. Six focused groups pass in 82.25s with 108 actual derivative requests and 2229727 archived nodes. Repeated physical differentiation includes derivatives of the nonconstant Jacobians J=1/x and J=40 exp(40x). Original unique controls, signed pressure and all five nonzero correction histories are retained.
+
+`python scripts/run_original_Rm_outer_high_radial_sources.py --restore-source` independently restores 18 full-chart source queries with exit code 0. This is archive-only source recovery (`full_owner_restored=false`); no numerical oracle or new interface closure is claimed. Source-coverage tasks 9/11 in the [28-task queue](CURRENT_ORIGINAL_TEN_CHART_HIGH_SOURCES_2026_10_14.md) are done; interface tasks 10/12 and global n1 task 13 remain open.
+
+Next close these seven own interfaces, each targeting 246 mixed pairs (1722 total):
+
+1. postrestore1 -> Rm_patch1.
+2. Rm_patch exp(1) -> Rh_reference -5.
+3. Rh_reference0 -> O2_slope0.
+4. O2_slope1 -> O2_axial0.
+5. O2_axial1 -> O2_buffer0.
+6. O2_buffer11 -> O3_transition0.
+7. O3_transition1 -> existing O3_power0.
+
+Use the original Rm unique branch and Rh normalization, correct physical Jacobians and complete nonzero pressure/correction histories. Reuse accepted O3_power/Rc/compact/quiet/combined-outer joins. Do not repeat passed ancestor suites. Global n1, evaluated original fields/bounds/common N, axis/energy/preheat/exact heat, stress/flat remainder, genuine n>=2 temporal recursion, smooth summation, oscillatory cancellation and final corrected Cartesian NS remain open. Full goal **ACTIVE / INCOMPLETE**. Earlier directions below are historical where superseded.
+
 # Latest accepted checkpoint — four annular high mixed source interfaces, 2026-10-14
 
 Read [CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md](CURRENT_ORIGINAL_ANNULAR_MIXED_SOURCE_JOINS_2026_10_14.md) first. The actual post_power1 -> long_reshape0, long_reshape1 -> reference0, reference1 -> restoration0 and restoration1 -> postrestore0 interfaces now match **984 own mixed row pairs**. Six groups pass in 409.484s; the archive has 1522284 nodes. Original B/anchored G/F0 cancellation, exact finite T/reference length, axial E/4Z restoration, 44 actual sigma/prime flat rows through order5/4, nonzero histories and separate native Jacobians are preserved.

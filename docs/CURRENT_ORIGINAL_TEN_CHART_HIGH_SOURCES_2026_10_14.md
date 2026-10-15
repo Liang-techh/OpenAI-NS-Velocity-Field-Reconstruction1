@@ -151,14 +151,18 @@ rebuild the ten high-source packets to address an interface-only task.
    -7. These four interfaces have 984 actual own mixed row pairs; six groups
    pass in 409.484s. Source-only archive recovery exits 0 with eight endpoint
    queries. Numerical/global n1/temporal recursion gates remain open.
-9. [ ] Construct genuine high source packets for the original Rm angular
-   patch. Include actual patch derivatives, support, leading Q and signed
-   pressure; use the accepted current branch rather than an enclosure center.
+9. [x] DONE - actual Rm_patch U/mean y4 C5, Q y4 C4, N y2 C3 and pressure
+   y3 C3 sources are delivered in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
+   Six scoped groups pass in 82.25s across six complete original charts;
+   108 actual derivative requests and variable-J calculus are checked.
+   The original unique implicit branch and nonzero histories are retained.
 10. [ ] Close postrestore1 -> Rm_patch entry and the patch exit. Check both
     radius maps, all nonzero histories, own recovery and finite mixed rows.
-11. [ ] Extend remaining preRc outer chart high sources not in these ten
-    original loop charts. Reuse accepted O3/compact/pulse definitions where
-    applicable and identify each original domain/control separately.
+11. [x] DONE - Rh_reference, O2_slope, O2_axial, O2_buffer and O3_transition
+    high source packets are delivered in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
+    Existing O3_power/Rc and compact/quiet/combined-outer sources are reused.
+    Independent archive recovery exits 0 with 18 full-chart source queries.
+    This completes source coverage only; remaining interfaces are task 12.
 12. [ ] Close the remaining before-Rc source interfaces and bind the accepted
     Rc/2Rc/Rp/main-gap/gap-end/Rv joins into the common source family.
 13. [ ] Build one checked global n1 source dispatcher with complete interval

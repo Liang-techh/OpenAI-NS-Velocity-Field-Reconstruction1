@@ -171,12 +171,12 @@ history, the common core/datum/frequency, and actual source bytes.
 10. [x] DONE — restoration -> postrestore, with exact 4Z and nonzero
     histories. The four interfaces match 984 actual own pairs in a six-group
     receipt; archive-only recovery exits 0 with eight endpoint queries.
-11. [ ] Extend the original Rm patch to genuine y4/C3 state and y3/C3
-    pressure rows; prove both patch interfaces with its actual angular
-    correction, support and nonzero moment data.
-12. [ ] Complete remaining preRc outer chart high sources and source joins.
-    Reuse accepted O3/Rc/compact/pulse/outer receipts where they apply rather
-    than recalculate identical universal operators.
+11. [ ] Prove both original Rm-patch interfaces with actual angular
+    correction, support and nonzero moment data. Its genuine high radial
+    state and pressure source component is DONE in [CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md](CURRENT_ORIGINAL_RM_OUTER_HIGH_RADIAL_SOURCES_2026_10_14.md).
+12. [ ] Close remaining preRc outer source joins. The five remaining complete
+    outer high-source packets are DONE in the same checkpoint. Reuse these
+    and accepted O3/Rc/compact/pulse/outer receipts; interfaces stay open.
 13. [ ] Assemble a single checked global n1 source provider. Enumerate every
     original interval and interface, reject uncovered queries, and require
     actual row pairs for every derivative contract.

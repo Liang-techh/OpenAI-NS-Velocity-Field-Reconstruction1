@@ -1,0 +1,69 @@
+"""Inspect/restore six actual Rm and outer high-source chart packets."""
+import argparse
+import json
+from pathlib import Path
+import sys
+
+ROOT=Path(__file__).resolve().parents[1]
+sys.setrecursionlimit(max(10000,sys.getrecursionlimit()))
+sys.path.insert(0,str(ROOT/'experiments'/'root_st073'))
+import lei_ren_part1_paper_compliant_current_original_Rm_outer_high_radial_source_functions as current
+
+
+class RestoredRmOuterHighSourceArchive:
+    """Source query views only; no ancestor owners or numerical services."""
+    def __init__(self,raw):
+        self.g=g=current.source.FunctionTransportGraph();g.nodes=raw['exact_graph_nodes']
+        g.keys={json.dumps(row,sort_keys=True,separators=(',',':')):i for i,row in enumerate(g.nodes)}
+        assert len(g.keys)==len(g.nodes)
+        assert g.nodes[g.zero.node]==dict(operation='exact_rational',numerator=0,denominator=1)
+        assert g.nodes[g.one.node]==dict(operation='exact_rational',numerator=1,denominator=1)
+        ref=lambda node:current.source.FunctionRef(g,node)
+        jet=lambda ids:current.outer.FunctionJet(tuple(map(ref,ids)))
+        jets=lambda values:[jet(ids) for ids in values]
+        self.charts={}
+        for name,before in raw['Rm_outer_high_radial_source_bindings']['charts'].items():
+            self.charts[name]=dict(domain=list(map(ref,before['domain'])),
+                **{key:ref(before[key]) for key in ('coordinate','radius','jacobian','phase')},
+                physical={key:jets(value) for key,value in before['physical'].items()},
+                **{key:jets(before[key]) for key in ('N_y','pressure_y','m15_y')},
+                own={group:{field:jets(value) for field,value in fields.items()} for group,fields in before['own'].items()})
+        self.numerical_oracle_available=False
+    def at_fraction(self,name,fraction):
+        if name not in current.CHARTS:raise ValueError('Actual Rm/outer original chart required')
+        return current.fraction_packet(self.g,self.charts[name],name,fraction)
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--restore-source',action='store_true')
+    args=parser.parse_args()
+    raw=current.parent.linear.read(current.NAME);rec=current.parent.linear.read(current.RECEIPT)
+    assert rec['all_passed'] and len(rec['checks'])==6 and all(proof['passed'] for proof in rec['checks'].values())
+    assert all(rec[key] for key in current.GATES) and not any(rec[key] for key in current.OPEN)
+    assert rec['actual_full_original_charts']==list(current.CHARTS) and rec['actual_native_to_physical_derivative_requests']==108
+    for name,digest in rec['input_hashes'].items():assert current.sha(name)==digest,('Changed source',name)
+    pins=dict(rec['input_hashes']);pins.pop(current.NAME);pins.pop(Path(current.__file__).stem+'_check.py')
+    assert pins==raw['input_hashes'] and raw['source_family']==rec['source_family']
+    assert len(raw['exact_graph_nodes'])==rec['exact_graph_nodes']
+    queries=0
+    if args.restore_source:
+        archive=RestoredRmOuterHighSourceArchive(raw)
+        for name in current.CHARTS:
+            for fraction in ('0','1/2','1'):
+                packet=archive.at_fraction(name,fraction)
+                assert not packet['numerical_oracle_available']
+                assert len(packet['physical']['U'])==len(packet['physical']['Q'])==5
+                assert len(packet['N_y'])==3 and len(packet['own']['fields']['P1'])==4;queries+=1
+        for name,fraction in (('missing','0'),('Rm_patch','-1/10'),('O3_transition','11/10')):
+            try:archive.at_fraction(name,fraction)
+            except ValueError:pass
+            else:raise AssertionError('Unsupported source chart query')
+    print(json.dumps(dict(checked=True,source_only_restored=args.restore_source,full_owner_restored=False,
+        actual_complete_original_charts=list(current.CHARTS),actual_native_to_physical_derivative_requests=108,
+        actual_full_chart_fraction_queries=queries,exact_graph_nodes=rec['exact_graph_nodes'],
+        numerical_oracle_available=False,source_interfaces_closed=False,global_n1=False,
+        temporal_recursion=False,full_corrected_Navier_Stokes_solution=False),indent=2))
+
+
+if __name__=='__main__':main()
