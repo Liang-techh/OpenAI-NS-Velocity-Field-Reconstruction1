@@ -1,3 +1,23 @@
+# Current scheduled-agent queue - signed original core m15, 2026-10-16
+
+Read [CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md) first. `OriginalN1CoreM15Numeric` now computes signed raw-core m15 numerical approximations and full ordinary C0/C1 error bounds on0<=rho<=4. It analytically integrates the actual leading/n1 Volterra finite-source polynomials, preserves the full leading U0+epsilon*Psi, and separately integrates source/leading/all-word feedback errors. The finite -R*P1 endpoint and original epsilon^2 / epsilon^2*Pstar^2 units are retained.
+
+The39.362s focused run and saved-report inspection exited0:24 original packets,12 independent direct-density C0/C1 comparisons,48 source-degree enclosure comparisons and24 exact axis zeros. All9 tested refined nonzero pressure sectors have positive sign and C0 relative approximation error below7.69e-21. This accuracy applies only to the normalized core pressure component; it is not a global cancellation or NS residual result. Report pins1484 inputs/6 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next carry this signed core inlet through the selected first cutoff and lower collar with true width-factored sources, then signed active/compact finite-N pressure and independent Rp cancellation. The complete inner component in the preRp enclosure API is not yet replaced. All-five global joins/common N/energy/heat/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate signed inner-pressure continuation queue
+
+- [x] Evaluate signed original raw-core m15 ordinary C0/C1 approximations with complete Volterra/source/leading-tail errors, true finite pressure endpoint and original units (current milestone).
+- [ ] Consume the new core rho=4 inlet in the selected first cutoff. Original native s=q*(sc/4), rho=4*exp(hb*s); d-rho=hb*rho*(sc/4)*dq. Preserve nonzero core pressure and mass history.
+- [ ] Implement a signed first/lower pressure-derivative callback retaining actual leading N1p and cut-F coupling. Integrate the equivalent -integral rho*dp form to cancel constant pressure exactly, rather than subtracting rounded nearly equal endpoints. Keep original leading sigma(s) separate from the own velocity cutoff chi(q)=1-sigma(4q-2).
+- [ ] Retain formal hb^-1 derivative sectors and cancel their physical measure factors before bounding. Integrate actual finite-width axial and pressure sources with a directed error; cutoff control mass alone does not evaluate nonconstant weighted fields.
+- [ ] Continue through lower fraction[1,2], where cut velocities are zero but leading pressure forcing and accumulated weighted history persist. Do not reset incoming m15 or infer a zero pressure increment from velocity support.
+- [ ] Replace the complete inner/lower broad enclosures only after the signed first/lower continuation passes its own seam/source/error checks.
+- [ ] Directly evaluate signed active/compact finite-N S1 terms and finite RQ_y/RQ_yZ endpoints; preserve actual control functions and selected inverse/defect correlations.
+- [ ] Quantify independent Rp signed value/Z1 cancellation; then assemble all five histories/global mixed joins and original flatten/preheat/exact heat/energy/common N/stress/flat remainder.
+- [ ] Implement genuine temporal n>=2 recursion/smooth sum, oscillatory stress correction and independent corrected Cartesian NS residual validation.
+
 # Current scheduled-agent queue - original preRp weighted m15 enclosure transport, 2026-10-16
 
 Read [CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md) first. `OriginalPreRpM15Numeric` now transports source-bound ordinary C0/C1 weighted m15 enclosures over the compact repair and full quiet segment toRp, independently of the terminal-derived numerical pulse inlet. It retains inner/lower/active history, negative weighted own swirl with its actual selected coefficients, finite-N errors/endpoints, exact compact/quiet K^2 logarithms and original p=2 units. The accepted signed source identity separately connects this history to the negative complete pulse.

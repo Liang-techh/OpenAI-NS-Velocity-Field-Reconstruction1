@@ -1,5 +1,7 @@
 # Original repaired preRp weighted history transport - 2026-10-16
 
+Current continuation: [CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md) adds signed raw-core m15 C0/C1 approximations with complete errors on0<=rho<=4. The selected cutoff and lower collar remain open, so this does not yet replace the complete inner component consumed below.
+
 `OriginalPreRpM15Numeric.evaluate(Z,chart,coordinate)` now transports the original repaired weighted moment m15 across the compact repair and the complete quiet segment. Use `chart='compact'`, `coordinate=x=R/Rc` in[1,2], or `chart='quiet'`, `coordinate=q` in[0,1], where s=q*log(Rp/(2Rc)). Inputs are exact decimal strings, with -1<Z<1. The output contains source-bound ordinary C0/C1 enclosures as factored exponential terms. It consumes the original selected compact inlet/source family and never uses the terminal-derived numerical Rp inlet to drive this forward history.
 
 This is an implemented cumulative enclosure evaluator. It does **not** resolve the signed numerical centers of the inherited inner/lower/active components or the compact finite-N pressure correction. Their accepted directed source enclosures remain attached to their actual functions; their midpoints are not selected as values. The full objective remains **ACTIVE / INCOMPLETE**, tasks14/15 remain IN PROGRESS, and an independently resolved signed numerical Rp seam/global five-moment numerical admission remains open.

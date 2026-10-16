@@ -1,3 +1,11 @@
+# Cross-device handoff - signed original core m15, 2026-10-16
+
+Read [CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md) first. `OriginalN1CoreM15Numeric` now computes signed raw-core m15 numerical approximations and full ordinary C0/C1 error bounds on0<=rho<=4. It analytically integrates the actual leading/n1 Volterra finite-source polynomials, preserves the full leading U0+epsilon*Psi, and separately integrates source/leading/all-word feedback errors. The finite -R*P1 endpoint and original epsilon^2 / epsilon^2*Pstar^2 units are retained.
+
+The39.362s focused run and saved-report inspection exited0:24 original packets,12 independent direct-density C0/C1 comparisons,48 source-degree enclosure comparisons and24 exact axis zeros. All9 tested refined nonzero pressure sectors have positive sign and C0 relative approximation error below7.69e-21. This accuracy applies only to the normalized core pressure component; it is not a global cancellation or NS residual result. Report pins1484 inputs/6 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next carry this signed core inlet through the selected first cutoff and lower collar with true width-factored sources, then signed active/compact finite-N pressure and independent Rp cancellation. The complete inner component in the preRp enclosure API is not yet replaced. All-five global joins/common N/energy/heat/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - original preRp weighted m15 enclosure transport, 2026-10-16
 
 Read [CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md) first. `OriginalPreRpM15Numeric` now transports source-bound ordinary C0/C1 weighted m15 enclosures over the compact repair and full quiet segment toRp, independently of the terminal-derived numerical pulse inlet. It retains inner/lower/active history, negative weighted own swirl with its actual selected coefficients, finite-N errors/endpoints, exact compact/quiet K^2 logarithms and original p=2 units. The accepted signed source identity separately connects this history to the negative complete pulse.
