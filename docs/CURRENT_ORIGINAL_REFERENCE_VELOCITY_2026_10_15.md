@@ -139,14 +139,13 @@ alpha has reached zero; they are not substituted source coefficients.
 
 ## Remaining work
 
-An additional predecessor gap is now reproduced with the actual saved R110
-enclosures: the old long reader rejects finite y=10000 at its
-`Mpsi_inlet_memory_Z0` absolute error cap. An ordinary large-looking distance
-does not by itself make a huge normalized coefficient absolutely tiny. The
-new reference transport evaluates representable ordinary decay distances
-below1e30 directly, and exercises gap10000. Extend the earlier long reader
-with the same source-preserving treatment before claiming complete numerical
-coverage between R110 and Rm; do not weaken or remove its cap proof.
+The predecessor ordinary-distance gap is resolved by the preferred
+[OriginalLongFiniteDecayNumeric/Velocity extension](CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md).
+It evaluates complete incoming histories directly through y=1e30, including
+10000, and retains the unchanged combined-log proof for genuinely enormous
+distances. Original source/inlet/parameter definitions and older accepted
+implementation hashes remain unchanged. This closes that numerical guard
+follow-up; it does not close the active moment patch or global fields.
 
 Next connect the actual signed five-defect and implicit active patch at this
 unpatched Rm, preserving these sectors and histories. The current original

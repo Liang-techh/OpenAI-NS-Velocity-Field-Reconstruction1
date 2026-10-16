@@ -334,9 +334,12 @@ rebuild the ten high-source packets to address an interface-only task.
     geometry offsets. Separated j/epsilon histories retain M/K/A cross terms,
     all nonzero moments, selected-N corrections and n1 primitive. Physical
     baseline U reaches4Z at Rm, but moment closure/active patch is not claimed.
-    **Next:** extend the earlier long finite-gap y=10000 decay guard (actual
-    R110 enclosure replay rejects its absolute tiny-tail cap), then actual
-    signed five-defect/implicit active patch from this unpatched Rm. Derive
+    [Preferred finite-long decay extension](CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md)
+    now resolves the earlier y=10000 guard with full incoming decay through
+    y=1e30 and the unchanged combined-log proof for larger distances. Actual
+    sources, accepted old hashes and all histories remain unchanged.
+    **Next:** actual signed five-defect/implicit active patch from this
+    unpatched Rm with source-owned pressure units and finite-N errors. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

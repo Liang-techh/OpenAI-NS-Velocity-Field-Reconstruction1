@@ -1,3 +1,11 @@
+# Agent tasks - ordinary finite-long decay coverage, 2026-10-15
+
+Read [CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md](CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md) first. Preferred `OriginalLongFiniteDecayNumeric/Velocity` now evaluates full incoming homogeneous histories directly for representable ordinary log distances through1e30, including the previously rejected y=10000. Larger original distances retain the unchanged combined coefficient-log cap proof. Original T/N/G/cutoff/inlets, all six histories, five selected-N correction histories and nonzero n1 primitive remain; accepted older source/report hashes are unchanged.
+
+A172.606s focused run exits0:30 actual packets,60 independent scaled homogeneous-history invariants/nonzero centers,411 selected-N small-error proofs,129 inlet/large-window seams,39 history/integer/primitive checks and69 precision comparisons. The old actual-source failure is reproduced; saved-report inspection exits0. Report pins1756 inputs/42 implementations. Reference/restoration values already reach unpatched Rm with separated j/epsilon moments and atomic finite geometry offsets.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next connect the actual signed Rm five-defect frame and implicit active patch, with source-owned P0 and finite-N errors in their correct units. Current six rows through Z2 do not close higher-order adapters. Direct inverse, radial/fast-phase rows, incoming meanZ3, merged modified moments/pressure, global common N/C2/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation and corrected NS remain open.
+
 # Agent tasks — reference/restoration values to unpatched Rm, 2026-10-15
 
 Read [CURRENT_ORIGINAL_REFERENCE_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_REFERENCE_VELOCITY_2026_10_15.md) first. `OriginalReferenceNumeric` and `OriginalReferenceVelocity` now continue actual long-endpoint profiles through reference, axial restoration and postrestore to the UNPATCHED Rm. Physical cylindrical/Cartesian values, canonical selected-N local/five cumulative corrections and nonzero n1 terminal primitive remain. Reference uses the original L=10*(logCstar+logPstar)-T-8 and L*dq; unit restoration/postrestore measures and radius offsets -8/-7/-6 stay separate from huge logref.
