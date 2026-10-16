@@ -10,3 +10,5 @@ scripts/check_original_active_viscous_m15.py -text
 scripts/run_original_active_viscous_m15.py -text
 scripts/check_original_reference_viscous_m15.py -text
 scripts/run_original_reference_germ.py -text
+scripts/check_original_phase_lift.py -text
+scripts/run_original_reference_phase_lift.py -text

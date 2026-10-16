@@ -1,3 +1,11 @@
+# Current original source-bound smooth periodic phase lift - 2026-10-16
+
+Read [CURRENT_ORIGINAL_REFERENCE_PHASE_LIFT_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_PHASE_LIFT_2026_10_16.md) first. The new theorem binds the actual reference/restoration fractional phase, inverse, q/Poisson/K/Phi/T1 chain and A/B outputs to a smooth periodic extension. Eight exact root-function identities give the active domain;108 symbolic first/second difference rows and the Fourier/IFT proof admit mixed ordinary-Z/physical-y derivatives at arbitrary fast phase, including integer cuts. q=0 and the flat cutoff are covered.
+
+New production exits0 in63.865s; saved hash-only inspection and focused synthetic/quadrature/graph-mutation checks pass. Report pins1924 inputs/145 implementations. Raw213/reduced199, independent target and all inherited budgets remain unchanged. The earlier physical-germ packet is immutable. No ancestor constructor ran, no source phase value was selected, and no new trace alias or cap deletion is authorized.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next bind NativeDerivative's held-phase J*radial rules to the common physical two-jets and root recipe, then prove actual d_q B_ref/J_ref=d_t B_restore through ordinary Z1 and corrected V/m histories through the orders Qy_Z consumes. Native chart endpoints are not fast-phase endpoints; D_native(B)=0 is not justified. Numeric Rp/global all-five/common-N matching, exact heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory corrections and corrected Cartesian NS remain open.
+
 # Current original reference/restoration physical input germs - 2026-10-16
 
 Read [CURRENT_ORIGINAL_REFERENCE_GERM_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_GERM_2026_10_16.md) first. The new source-only input layer proves94 common endpoint function rows through ordinary Z2 where needed and six whole-chart E_y=E/10 laws. A489-node bounded function recipe implements physical log-radius y0/y1/y2 field jets and p2_y=(9/10)p2+(R/E)Iz_y with ordinary Z1 consuming true Z2 ports. The two native Jacobians remain distinct. This is physical radial differentiation, not temporal n recursion.
