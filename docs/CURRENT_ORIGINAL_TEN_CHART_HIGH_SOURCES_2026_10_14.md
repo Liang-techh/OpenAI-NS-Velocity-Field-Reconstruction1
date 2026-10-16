@@ -328,8 +328,15 @@ rebuild the ten high-source packets to address an interface-only task.
     actual n1 primitive has -y/2 radial decay and exact y-free mass factor,
     after analytic radius/history cancellation before boxing. Direct physical
     inversion and gradients remain open.
-    **Next:** reference and restoration from this actual endpoint, preserving
-    the same selected N and complete histories. Derive
+    [Actual reference/restoration values to unpatched Rm](CURRENT_ORIGINAL_REFERENCE_VELOCITY_2026_10_15.md)
+    now continue the actual long terminal profile through all three source
+    charts with original finite length, unit measures and atomic -8/-7/-6
+    geometry offsets. Separated j/epsilon histories retain M/K/A cross terms,
+    all nonzero moments, selected-N corrections and n1 primitive. Physical
+    baseline U reaches4Z at Rm, but moment closure/active patch is not claimed.
+    **Next:** extend the earlier long finite-gap y=10000 decay guard (actual
+    R110 enclosure replay rejects its absolute tiny-tail cap), then actual
+    signed five-defect/implicit active patch from this unpatched Rm. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

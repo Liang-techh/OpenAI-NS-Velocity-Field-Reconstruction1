@@ -1,5 +1,11 @@
 # Physical finite-long Cartesian velocity — 2026-10-15
 
+The reference/restoration successor is now [CURRENT_ORIGINAL_REFERENCE_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_REFERENCE_VELOCITY_2026_10_15.md).
+It continues this actual long endpoint to unpatched Rm, retaining all histories
+and separating j/epsilon restoration sectors. The predecessor long finite-gap
+y=10000 absolute tail guard still needs a source-preserving extension; complete
+coverage, active moment repair and global physical fields are not claimed.
+
 `OriginalLongVelocity` assembles the original finite-long leading+n1 field
 as physical cylindrical and Cartesian exponential sums. It consumes the
 accepted actual finite-long numerical reader, its six unmodified histories,
