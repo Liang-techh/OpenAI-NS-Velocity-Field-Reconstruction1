@@ -1,3 +1,11 @@
+# Next tasks - original compact background numerical enclosure, 2026-10-15
+
+Read [CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md) first. `OriginalCompactNumeric/OriginalCompactBackgroundVelocity` now supplies original Rc-to-2Rc background values and actual selected-N directed errors. Forward and terminal-correlated backward own-rate bounds use the true compact supports; the original relative five-history zero identity tightens the errors after the last support. Full leading histories/P0 and nonzero mu remain. Signed control/phase centers are unresolved.
+
+A70.422s run exits0 with43 original compact background physical packets,54 independent supported-kernel and9 finite-mu integral comparisons,250 Rc seam coefficients and230 source-identity/full-history conditions. Saved-report inspection exits0; pins1784 inputs/68 implementations. Terminal identity application is not an independent signed-control residual evaluation.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Compact physical output includes temporal order0 only. Next actual reserved n1 fields and original quiet background to Rp; no pre-Rc homogeneous n1 extrapolation. Full signed pressure/high-order joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Next tasks - original O3 numerical/physical values through Rc, 2026-10-15
 
 Read [CURRENT_ORIGINAL_OUTER_O3_2026_10_15.md](CURRENT_ORIGINAL_OUTER_O3_2026_10_15.md) first. `OriginalOuterO3Numeric/Velocity` now continues both original O3 charts through Rc. The original positive mu is retained in normalized expm1 integrals and separate signed E/h/e/p sectors. Actual selected-N five histories, independent P0, atomic geometry/time factors and source-admitted nonzero n1 primitive remain. Quiet local zero does not zero incoming history.

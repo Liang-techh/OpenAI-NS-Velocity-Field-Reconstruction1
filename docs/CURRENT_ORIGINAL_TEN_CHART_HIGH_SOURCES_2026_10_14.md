@@ -374,8 +374,13 @@ rebuild the ten high-source packets to address an interface-only task.
     now covers transition and power with the original positive mu in normalized
     expm1 integrals and separate signed sectors;58 physical packets pass.
     All six original outer numerical readers exist; global admission remains open.
-    **Next:** actual Rc-to-2Rc reserved compact repair, then quiet power to Rp;
-    retain actual signed controls, finite-N memories and the repaired n1 source;
+    [Original compact background numerical enclosure](CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md)
+    now covers Rc-to-2Rc with original finite-mu leading fields, same-branch
+    finite-N errors and supported forward/backward histories.43 physical
+    packets include temporal order0 only; signed control centers remain open.
+    Relative terminal zero uses the checked source identity, not fitted values.
+    **Next:** actual reserved n1 numerical fields and quiet background to Rp;
+    retain repaired primitives, nonzero full histories and unresolved signed controls;
     recover S0/S1 and total Q_y for reduced signed m13/m15 pressure.
     Retain all finite-N memories and unresolved global n1 joins. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete

@@ -1,5 +1,7 @@
 # Original O3 transition/power numerical and physical continuation - 2026-10-15
 
+Next background step implemented: [original compact background numerical enclosure](CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md) now consumes this accepted Rc endpoint through2Rc, with source-relative terminal-correlated errors. Physical output there includes temporal order0; compact n1 numerical fields remain open. Historical evidence below is unchanged.
+
 `OriginalOuterO3Numeric.evaluate(Z,chart,x)` and `OriginalOuterO3Velocity.evaluate(Z,chart,x,log_tau="-2",azimuth=".25")` now continue the actual original selected-N construction through O3_transition x in[0,1] and O3_power x in[0,2], ending at Rc. The same incoming five moment histories, independent P0 and nonzero n1 primitive remain. All six original outer charts now have numerical/physical readers, with the limits below. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.
 
 ## Original nonzero mu and normalized correction integrals
