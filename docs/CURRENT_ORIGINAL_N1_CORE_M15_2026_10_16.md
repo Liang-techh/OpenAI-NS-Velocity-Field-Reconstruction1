@@ -1,5 +1,7 @@
 # Signed original core m15 with integrated errors - 2026-10-16
 
+Current continuation: [CURRENT_ORIGINAL_N1_INNER_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_INNER_M15_2026_10_16.md) now transports this signed core inlet through the selected first cutoff and lower collar to rminus. The external preRp assembly still needs its inner/lower component substitution.
+
 `OriginalN1CoreM15Numeric.evaluate(Z,rho)` now returns signed numerical approximations of the original raw-core weighted m15, paired with complete source-owned ordinary C0/C1 absolute errors. Its domain is the original common inner core -1<Z<1, 0<=rho<=4, with R=epsilon*rho. This replaces a purely symmetric description for this core subcomponent with a directly computable signed approximation. It does not yet replace the complete inner component in `OriginalPreRpM15Numeric`: the selected first cutoff collar and lower collar still need signed continuation.
 
 The full goal is **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. Complete signed inner/preRp m15, numerical Rp cancellation, all-five global joins, heat/energy/common N/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.

@@ -1,3 +1,11 @@
+# Cross-device handoff - signed inner/lower m15, 2026-10-16
+
+Read [CURRENT_ORIGINAL_N1_INNER_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_INNER_M15_2026_10_16.md) first. `OriginalN1InnerM15Numeric` now carries the signed raw-core m15 through the selected cutoff and lower collar to rminus, with ordinary C0/C1 source errors and the original phase. It preserves the signed core inlet, continuing leading pressure after velocity support, exact inverse-hb cancellation, nonzero flat sigma log atoms, and separate regular/singular physical units. Leading sigma(t) and own chi(q) remain distinct.
+
+The114.667s focused run and saved-report inspection exited0:24 original packets,6 actual symbolic forcing/coupling comparisons,6 direct positive d-sigma comparisons,24 directed cell-refinement comparisons and12 velocity-stop/continuing-pressure-history conditions. Report pins1719 inputs/18 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next replace the external preRp assembly's broad inner/lower components with these actual signed cumulative boundaries, then evaluate signed active/compact finite-N S1 and independent Rp cancellation. The external API substitution and combined relative accuracy are not yet claimed. Global five-moment admission/mixed joins/common N/energy/heat/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - signed original core m15, 2026-10-16
 
 Read [CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md](CURRENT_ORIGINAL_N1_CORE_M15_2026_10_16.md) first. `OriginalN1CoreM15Numeric` now computes signed raw-core m15 numerical approximations and full ordinary C0/C1 error bounds on0<=rho<=4. It analytically integrates the actual leading/n1 Volterra finite-source polynomials, preserves the full leading U0+epsilon*Psi, and separately integrates source/leading/all-word feedback errors. The finite -R*P1 endpoint and original epsilon^2 / epsilon^2*Pstar^2 units are retained.
