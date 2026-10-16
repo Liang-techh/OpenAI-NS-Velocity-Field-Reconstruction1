@@ -1,3 +1,11 @@
+# Current original restoration/postrestore signed viscous trace - 2026-10-16
+
+Read [CURRENT_ORIGINAL_ACTIVE_VISCOUS_M15_2026_10_16.md](CURRENT_ORIGINAL_ACTIVE_VISCOUS_M15_2026_10_16.md) first. The actual restoration native1/postrestore native0 physical finite-N RQy source identity now has26 exact graph rows: common radius/global phase/Jacobian, modified U/Uy/m/my/Q/Qy/RQy C0/ordinary-Z1 and leading recovery rows. Both exterior traces remain. Raw213 and the independent negative complete-pulse m15 target stay verbatim; the separate correlated view has199 terms with198 other sectors unchanged.
+
+Retain BOTH full original139/155 positive aggregates in their union. Do not reinterpret the saved reference lower packet as a separately certified restoration inlet bound. The reference/restoration probe proves19 rows, including radius/phase/U, but leaves6 Uy/Qy/RQy C0/Z1 rows unproved: d_q B_ref/J_ref = d_t B_restore still needs a source theorem. Its native Jacobians differ. A failed fingerprint is not proof of discontinuity. Production exits0 in38.855s; hash-only inspection and independent finite-N/negative-control fixtures pass. Report pins1922 inputs/137 implementations. The remaining log cap is still about5.52208e+408906090034569676, a bound rather than a residual value.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next prove that physical native-derivative inlet identity from the original loop recipe (or repair differing sources), preserving inverse phase, root derivatives, positive Jacobian and incoming histories. No inlet alias or tighter external budget before that proof. Numeric Rp/global all-five/common-N closure, exact heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory correction and corrected Cartesian NS remain open. Do not replay accepted ancestors.
+
 # Current original first/second micro signed viscous trace - 2026-10-16
 
 Read [CURRENT_ORIGINAL_MICRO_VISCOUS_M15_2026_10_16.md](CURRENT_ORIGINAL_MICRO_VISCOUS_M15_2026_10_16.md) first. The actual first/second-micro corrected U/m/Q y0/y1 C0/ordinary-Z1 and physical RQy endpoints now have14 exact source identity rows at s=1, with the same radius, phase, Jacobian and N. Empty second-prefix integrals preserve the first incoming mean; opaque function arguments and bound variables remain explicit.
