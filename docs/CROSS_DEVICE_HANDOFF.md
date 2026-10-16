@@ -1,3 +1,11 @@
+# Current original reference/restoration physical input germs - 2026-10-16
+
+Read [CURRENT_ORIGINAL_REFERENCE_GERM_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_GERM_2026_10_16.md) first. The new source-only input layer proves94 common endpoint function rows through ordinary Z2 where needed and six whole-chart E_y=E/10 laws. A489-node bounded function recipe implements physical log-radius y0/y1/y2 field jets and p2_y=(9/10)p2+(R/E)Iz_y with ordinary Z1 consuming true Z2 ports. The two native Jacobians remain distinct. This is physical radial differentiation, not temporal n recursion.
+
+New production exits0 in14.219s; hash-only saved inspection and focused independent exact/finite-N/synthetic fixtures pass. Report pins1923 inputs/141 implementations. Raw213/reduced199, independent target and all inherited error budgets stay verbatim. No accepted ancestor producer ran. Full modified Uy/Qy/RQy fingerprint and reference/restoration native-derivative naturality remain unproved; no new trace alias or cap deletion is authorized.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next source-bind the Poisson periodic phase lift, including fractional-part cuts and mixed derivatives, then prove the actual physical B_y inlet identity with retained histories. Numeric Rp/global all-five/common-N closure, exact heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory correction and corrected Cartesian NS remain open.
+
 # Current original restoration/postrestore signed viscous trace - 2026-10-16
 
 Read [CURRENT_ORIGINAL_ACTIVE_VISCOUS_M15_2026_10_16.md](CURRENT_ORIGINAL_ACTIVE_VISCOUS_M15_2026_10_16.md) first. The actual restoration native1/postrestore native0 physical finite-N RQy source identity now has26 exact graph rows: common radius/global phase/Jacobian, modified U/Uy/m/my/Q/Qy/RQy C0/ordinary-Z1 and leading recovery rows. Both exterior traces remain. Raw213 and the independent negative complete-pulse m15 target stay verbatim; the separate correlated view has199 terms with198 other sectors unchanged.
