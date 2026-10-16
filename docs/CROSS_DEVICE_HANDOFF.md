@@ -1,3 +1,11 @@
+# Cross-device handoff - original O2-buffer numerical/physical values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_OUTER_BUFFER_2026_10_15.md](CURRENT_ORIGINAL_OUTER_BUFFER_2026_10_15.md) first. `OriginalOuterBufferNumeric/Velocity` now continues the actual selected-N field across the complete original buffer b in[0,11]. Exact forced/homogeneous histories, positive axial M/W, independent P0, tiny signed sectors and nonzero n1 J remain. The leading radial Q=-4*M*exp(-b) follows the shared-streamfunction identity.
+
+A50.368s run exits0 with33 actual physical packets,45 independent raw five-ODE values,48 Q identity conditions and250 numerical/40 physical axial seam conditions. A separate positive pressure increment survives at b=1e-140. Saved-report inspection exits0; pins1840 inputs/62 implementations. Accepted ancestor scientific inputs are unchanged.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next original O3_transition/O3_power through Rc with original tiny mu retained analytically, then reserved repair. Cancellation-sensitive pressure, S0/S1/total Q_y, full n1/global high-order joins/C2/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - original O2-axial numerical/physical values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md](CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md) first. `OriginalOuterAxialNumeric/Velocity` now covers the complete original axial turn-off with d=exp(40s)-1 and the physical Jacobian once. Positive M/W convolutions, exact resonance, actual finite-N memories, P0, atomic geometry/time factors and nonzero n1 J are retained. Leading local beta=0 at the endpoint does not zero its mean/square/radial history.

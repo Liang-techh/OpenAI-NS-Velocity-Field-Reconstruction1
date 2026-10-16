@@ -1,5 +1,7 @@
 # Original O2-axial numerical and physical continuation - 2026-10-15
 
+Continuation completed: [original O2-buffer numerical/physical values](CURRENT_ORIGINAL_OUTER_BUFFER_2026_10_15.md) now consumes this accepted axial endpoint across b in[0,11], retaining small signed sectors and selected-N/n1 histories. Continue from that document for O3 work. The historical evidence below is unchanged.
+
 `OriginalOuterAxialNumeric.evaluate(Z,s)` and `OriginalOuterAxialVelocity.evaluate(Z,s,log_tau="-2",azimuth=".25")` now continue the same actual original selected-N field across the complete O2_axial chart, s in[0,1]. The original axis velocity gradually turns off, with its own mass/square/mixed histories retained. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.
 
 ## Exponential radius and original leading histories
