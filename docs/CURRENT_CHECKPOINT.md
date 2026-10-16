@@ -1,3 +1,11 @@
+# Current checkpoint - original O2-slope numerical/physical values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md](CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md) first. `OriginalOuterSlopeNumeric/Velocity` now continues the actual selected-N construction across the complete original O2_slope chart. Four scalar ODEs preserve the leading own memories; a directed Taylor4/fifth-coefficient remainder bounds integration error. Actual finite-N five histories, local roots, P0, atomic radius/time factors and nonzero n1 J remain separate and retained.
+
+A50.790s run exits0 with28 actual physical packets,250 numerical/40 physical Rref seam checks,8 exact-forcing remainder checks and20 independent DOP853 scalar comparisons. Maximum scalar directed width7.02258532260907e-10; endpoint F(1)=exp(-1/5) follows exact sigma symmetry. Saved-report inspection exits0; pins1838 inputs/57 implementations. Accepted ancestor scientific inputs are unchanged.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next original O2_axial with d=exp(40s)-1 and physical Jacobian40exp(40s), preserving axial moment convolutions and resonant swirl-square memory. Reduced signed S0/S1/Q_y pressure, full n1/global high-order joins/C2/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original Rh-to-Rref numerical/physical values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md](CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md) first. `OriginalOuterReferenceNumeric/Velocity` now continues actual selected-N values and physical leading+n1 sums through the full Rh-to-Rref reference annulus, offsets[-5,0]. Same-source analytic fields, five nonzero incoming correction histories, P0, atomic radius geometry and J are retained. Local E/V values are not additive histories; the actual Rh local enclosures are reused at the shared endpoint.

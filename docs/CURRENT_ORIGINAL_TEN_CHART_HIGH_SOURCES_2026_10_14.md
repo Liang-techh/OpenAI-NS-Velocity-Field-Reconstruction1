@@ -359,8 +359,11 @@ rebuild the ten high-source packets to address an interface-only task.
     [Original Rh-to-Rref numerical/physical values](CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md)
     now covers the first complete outer annulus with actual selected N,
     all five incoming errors, P0 and J;23 physical packets pass.
-    **Next:** original O2_slope and later outer charts through Rc; recover
-    same-source S0/S1 and total Q_y for reduced signed m13/m15 pressure.
+    [Original O2-slope numerical/physical values](CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md)
+    now covers the full smooth slope change with directed scalar ODE errors,
+    actual finite-N memories and28 physical packets. F(1)=exp(-1/5) is exact.
+    **Next:** exponential-Jacobian O2_axial and later charts through Rc;
+    recover S0/S1 and total Q_y for reduced signed m13/m15 pressure.
     Retain all finite-N memories and unresolved global n1 joins. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,

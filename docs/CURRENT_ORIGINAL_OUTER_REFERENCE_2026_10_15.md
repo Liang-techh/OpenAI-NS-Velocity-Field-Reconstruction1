@@ -1,3 +1,5 @@
+Latest continuation: [Original O2-slope numerical/physical values](CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md) now carries this source through the next complete slope-transition chart with directed integration error. The accepted Rh/Rref scientific source and its limits below remain unchanged.
+
 # Original selected-N Rh-to-Rref numerical and physical continuation - 2026-10-15
 
 `OriginalOuterReferenceNumeric.evaluate(Z,offset)` and `OriginalOuterReferenceVelocity.evaluate(Z,offset,log_tau="-2",azimuth=".25")` now continue the same actual original selected-N construction across the complete reference annulus, offset in[-5,0]. Offset=-5 is Rh and offset=0 is Rref. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.
