@@ -1,3 +1,11 @@
+# Agent tasks - original O3 numerical/physical values through Rc, 2026-10-15
+
+Read [CURRENT_ORIGINAL_OUTER_O3_2026_10_15.md](CURRENT_ORIGINAL_OUTER_O3_2026_10_15.md) first. `OriginalOuterO3Numeric/Velocity` now continues both original O3 charts through Rc. The original positive mu is retained in normalized expm1 integrals and separate signed E/h/e/p sectors. Actual selected-N five histories, independent P0, atomic geometry/time factors and source-admitted nonzero n1 primitive remain. Quiet local zero does not zero incoming history.
+
+A64.820s run exits0 with58 actual physical packets,27 independent defining-integral values,16 independent DOP853 values,500 numerical/80 physical seam conditions and255 nonzero-mu/signed-sector conditions. Saved-report inspection exits0; pins1841 inputs/65 implementations. Accepted ancestor scientific inputs are unchanged. All six original outer charts now have numerical/physical readers; global field/derivative admission is still incomplete.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next actual Rc-to-2Rc reserved compact repair, then original quiet continuation to Rp. Cancellation-sensitive pressure, signed S0/S1/total Q_y, full n1/global high-order joins/C2/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open. Current homogeneous n1 support cannot simply be extended past Rc.
+
 # Agent tasks - original O2-buffer numerical/physical values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_OUTER_BUFFER_2026_10_15.md](CURRENT_ORIGINAL_OUTER_BUFFER_2026_10_15.md) first. `OriginalOuterBufferNumeric/Velocity` now continues the actual selected-N field across the complete original buffer b in[0,11]. Exact forced/homogeneous histories, positive axial M/W, independent P0, tiny signed sectors and nonzero n1 J remain. The leading radial Q=-4*M*exp(-b) follows the shared-streamfunction identity.

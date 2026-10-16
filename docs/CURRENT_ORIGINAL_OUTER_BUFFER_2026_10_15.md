@@ -1,5 +1,7 @@
 # Original O2-buffer numerical and physical continuation - 2026-10-15
 
+Continuation completed: [original O3 numerical/physical values through Rc](CURRENT_ORIGINAL_OUTER_O3_2026_10_15.md) now consumes this accepted buffer endpoint across transition/power, retaining the original nonzero mu in separate sectors. Continue from that document for compact repair. Historical evidence below is unchanged.
+
 `OriginalOuterBufferNumeric.evaluate(Z,b)` and `OriginalOuterBufferVelocity.evaluate(Z,b,log_tau="-2",azimuth=".25")` now continue the actual original selected-N construction across the complete O2_buffer chart, b in[0,11]. They consume the accepted O2_axial endpoint, preserve its nonzero five histories, independent P0 and n1 primitive J, and export physical cylindrical/Cartesian values. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.
 
 ## Exact leading buffer fields and small sectors
