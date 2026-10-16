@@ -1,3 +1,11 @@
+# Current original repaired Rp m15 and source correlations - 2026-10-16
+
+Read [CURRENT_ORIGINAL_REPAIRED_RP_M15_2026_10_16.md](CURRENT_ORIGINAL_REPAIRED_RP_M15_2026_10_16.md) first. The saved212-term background state is retained verbatim and the distinct reserved n1 own-swirl response is appended once (213 terms). The first six sectors jointly replace old inner+lower: core ends at rho=4, while the four collar sectors span q=0..2 across Rin at q=1. Saved q=1 evidence defines the legacy split without appending it again. Active6..206, compact207..210 and quiet211 stay once.
+
+The original angular third-row identity is contracted before coefficient boxing: full support gives exactly(0,0,1), ordinary Z1 and reference*A*Rv^2 units remain, and independent complete-pulse target data are kept separate from P1. Six source-proved leading internal endpoint pairs give a separate201-term reduction; every finite-N/width-error sector and the original213-term view remain. The same pulse graph handles cancel before interval arithmetic in the source-difference ledger. Partial response/input joint correlations remain unresolved.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Numerical Rp closure is NOT established: the first-micro finite-N viscous sector still has an enormous normalized log cap. Next bind actual signed RQy traces across the first/second-micro interface to common source IDs and exact physical radius before telescoping any endpoint budgets. Do not replay accepted ancestors or delete large caps on expected cancellation. Global all-five/common N/heat/energy/stress/flat remainder, genuine temporal n>=2, mean/oscillatory correction and corrected Cartesian NS remain open.
+
 # Current original compact/quiet pressure forward state at Rp - 2026-10-16
 
 Read [CURRENT_ORIGINAL_COMPACT_QUIET_M15_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_QUIET_M15_2026_10_16.md) first. Actual compact C3 pressure/Qy recovery carries207 Rc sectors to211 at2Rc. Exact full quiet U=0,Qy=-Q and relative-tail-zero source identities then append one signed integral, reaching212 sectors atRp. Absolute mean and all earlier cumulative pressure/error sectors remain. Compact profile y0/y1 caps already contain1/N; multiply Pstar only. Prefix bounds do not use final relative zero.
