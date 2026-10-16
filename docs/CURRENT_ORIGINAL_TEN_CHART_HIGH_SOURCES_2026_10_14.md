@@ -338,8 +338,14 @@ rebuild the ten high-source packets to address an interface-only task.
     now resolves the earlier y=10000 guard with full incoming decay through
     y=1e30 and the unchanged combined-log proof for larger distances. Actual
     sources, accepted old hashes and all histories remain unchanged.
-    **Next:** actual signed five-defect/implicit active patch from this
-    unpatched Rm with source-owned pressure units and finite-N errors. Derive
+    [Actual signed Rm defect/pressure inlet](CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md)
+    now supplies actual unmodified five-defect Z2 and finite-N own moment/error
+    enclosures, canonical/am_N diagnostics and normalized same-source P0 Z5.
+    Centered angular memories retain their true L+2 decay below the control
+    scale. Neither missing higher-Z rows nor finite-N signed centers are invented.
+    **Next:** original LEADING implicit controls/patch from these unmodified
+    defects, then separate finite-N dx/x history transport to Rh/reserved repair.
+    Do not re-solve the leading map on finite-N diagnostic defects. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

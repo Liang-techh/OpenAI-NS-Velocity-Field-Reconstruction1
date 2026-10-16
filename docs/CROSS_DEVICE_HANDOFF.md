@@ -1,3 +1,11 @@
+# Cross-device handoff - actual signed Rm defect/pressure inlet, 2026-10-15
+
+Read [CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md) first. `OriginalRmDefectNumeric.evaluate(Z)` now exports actual signed unmodified Rm five-defect TaylorZ2, all finite-N own moment/error rows in generic Pstar units, canonical/am_N diagnostic frames and same-source normalized analytic P0 TaylorZ5. Analytic centering and separate exponential increments preserve defects below order-one rounding error; no cap endpoint becomes a signed source value. Original N/histories and nonzero n1 primitive remain.
+
+A144.940s focused run exits0 with4 original packets,90 independent radial-primitive/five-identity checks,180 centered coefficients,9 source/history checks,17 pressure-unit/once-only checks and24 angular-error/control-unit checks. Saved-report inspection exits0; source/implementation pins total1758/45. Read-only Luna/max review found no material algebra/unit issue.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next evaluate the ORIGINAL LEADING implicit patch from signed unmodified defects and original bump weights, then carry finite-N corrections separately via dx/x to Rh and later reserved repair. Do not re-solve leading controls on finite-N diagnostic defects or invent Z3..5 rows. Patch fields, higher-Z defects, global common N/C2/pressure/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation and corrected NS remain open.
+
 # Cross-device handoff - ordinary finite-long decay coverage, 2026-10-15
 
 Read [CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md](CURRENT_ORIGINAL_LONG_FINITE_DECAY_2026_10_15.md) first. Preferred `OriginalLongFiniteDecayNumeric/Velocity` now evaluates full incoming homogeneous histories directly for representable ordinary log distances through1e30, including the previously rejected y=10000. Larger original distances retain the unchanged combined coefficient-log cap proof. Original T/N/G/cutoff/inlets, all six histories, five selected-N correction histories and nonzero n1 primitive remain; accepted older source/report hashes are unchanged.

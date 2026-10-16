@@ -1,5 +1,11 @@
 # Original finite-long ordinary-distance histories - 2026-10-15
 
+Successor: [actual signed Rm defect/pressure inlet](CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md)
+now supplies source-centered five-defect Z2, finite-N own moment/error
+rows and normalized same-source P0 Z5. The next step is the original LEADING
+implicit patch, with finite-N corrections transported separately afterward.
+
+
 `OriginalLongFiniteDecayNumeric` and `OriginalLongFiniteDecayVelocity` are the preferred finite-long value APIs. They extend the accepted logarithmic/physical assembly across ordinary finite log distances, including y=10000 previously rejected by the archived reader. The original T, selected N, anchored G, cutoff, R110 inlets, six histories, five cumulative correction bounds and nonzero n1 primitive are unchanged. The accepted older implementations and their reports remain hash-verifiable.
 
 ## Source and evaluation

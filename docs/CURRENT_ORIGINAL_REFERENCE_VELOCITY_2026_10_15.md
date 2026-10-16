@@ -1,5 +1,11 @@
 # Actual reference/restoration values to unpatched Rm — 2026-10-15
 
+Successor: [actual signed Rm defect/pressure inlet](CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md)
+now supplies source-centered five-defect Z2, finite-N own moment/error
+rows and normalized same-source P0 Z5. The next step is the original LEADING
+implicit patch, with finite-N corrections transported separately afterward.
+
+
 `OriginalReferenceNumeric` and `OriginalReferenceVelocity` continue the actual
 finite-long terminal profile through reference, axial restoration and the
 post-restoration interval to Rm. They retain all nonzero leading histories,
