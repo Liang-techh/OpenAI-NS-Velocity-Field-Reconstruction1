@@ -1,3 +1,20 @@
+# Cross-device handoff - original finite-long pressure and m15, 2026-10-16
+
+Read [CURRENT_ORIGINAL_LONG_M15_2026_10_16.md](CURRENT_ORIGINAL_LONG_M15_2026_10_16.md) first. `OriginalLongPressureRows/OriginalLongM15` now continue genuine five-jet pressure data and cumulative m15 through the complete original finite long_reshape T=400A interval. All88 R110 terms remain once;106 cumulative sectors retain correlated positive/negative exponential pairs, inherited mean atoms and a separate resonance log(y). Huge exp(T) and radius values are never materialized.
+
+The full run exited0 in109.413 seconds; saved-report inspection exited0:19 original packets,266 ordinary pressure rows,684 serialized errors,108 exact empty rows,190 pair-correlation conditions,60 coefficient-before-decay cap conditions and64 lower finite-N endpoint conditions. Report pins1764 inputs/62 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next continue reference/restoration/post_restore pressure towardRm from all106 long terms and genuine mean five-jets. Use checked native lengths/source derivative owners and full prefix. Restoration varies U and needs actual Uy/RQy endpoints plus source/mean convolution. Selected-N signs/useful relative cancellation, independent Rp/all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate pressure queue after the full long interval
+
+- [x] Genuine long pressure jets and cumulative m15 through exact original finiteT,106 terms,88-term inlet, native near-inlet offsets, complete reshape derivative errors and correlated formal exponential kernels (current milestone).
+- [ ] Continue reference pressure with original length logref-T-8, genuine long meanZ3/QZZ, correct generic derivative source and all106 inlet terms. Preserve the absolute long offset and actual finite measure.
+- [ ] Implement restoration U=4Z+E*(1-sigma), Uy=-E*sigma_prime with its changing-source mean convolution, both actual Uy/RQy endpoints and finite-N errors.
+- [ ] Continue post_restore pressure/history toRm, then active/compact pressure towardRp and the independent source-correlated value/Z1 seam.
+- [ ] Complete all-five global histories/mixed joins/common N, original flatten/preheat/exact heat/energy/stress/flat remainder.
+- [ ] Implement genuine temporal n>=2 coefficient recursion/smooth summation, oscillatory stress correction and independent corrected Cartesian NS validation.
+
 # Cross-device handoff - original cumulative pressure through R110, 2026-10-16
 
 Read [CURRENT_ORIGINAL_R110_M15_2026_10_16.md](CURRENT_ORIGINAL_R110_M15_2026_10_16.md) first. `OriginalR110PressureRows/OriginalR110M15` now continue genuine pressure jets and cumulative m15 across second_switch/post_power to exact R110. The first-switch51 terms remain once, followed by69 second-switch and88 post-power cumulative sectors. Constant U retains a nonzero decaying mean/Qy; only its unmodified-background Delta(RQy) cancels exactly. Both finite-N endpoints and uniform-prefix volume errors remain.
