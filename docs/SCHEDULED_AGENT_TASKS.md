@@ -1,3 +1,21 @@
+# Current scheduled-agent queue - cumulative macro pressure through R100, 2026-10-16
+
+Read [CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md](CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md) first. `OriginalMacroM15` now continues the unchanged seventeen-sector second-micro inlet through the actual macro chart to physical R=100. Signed half-S1 is integrated with three stable exponential kernels and separate epsilon0/1/2 sectors. Actual source/radius/length discrepancies retain original hb log factors. Both leading and selected-N nonflat pressure endpoints remain;28 total cumulative sectors are exported.
+
+The final focused run exited0 in160.262 seconds; saved-report inspection passed:19 original packets,19 exact inlet replays,418 serialized errors,66 exact empty rows,24 independent macro pressure-density comparisons,12 modal integrals and64 retained lower-endpoint budget conditions. The report pins1756 inputs/45 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next enter the original first-switch chart at R=100, preserving all28 macro terms once. Its controls, width and generic derivative chart differ from frozen_macro; use the actual switch source and both finite endpoints. Selected-N signs/useful total relative cancellation, remaining active/compact/Rp joins, all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate pressure continuation queue
+
+- [x] Complete original macro cumulative m15 to R=100, including full second-micro inlet, stable exponential/resonant mean modes, epsilon sectors, original-hb-factored source/geometry errors and both actual finite-N endpoints (current milestone).
+- [ ] Implement original first-switch pressure increment from the R100 twenty-eight-sector inlet. Read `original_first_switch_numeric.py` and the original prescribed R100/Rm source. Retain the actual width atom and changed angular/axial controls; do not extend frozen-macro Uy into the switch.
+- [ ] Recover genuine meanZ3/QZZ and Uy/Qy Z1 with original switch_first derivative logs, complete first/second/macro/switch correction history, original phase/selected N and both pressure endpoints.
+- [ ] Continue remaining actual switch/active/compact pressure with full source correlations and exact compact/quiet history.
+- [ ] Independently measure source-correlated Rp value/Z1 cancellation; an identity or interval overlap is insufficient.
+- [ ] Complete all five numerical histories/global mixed joins/common N, original flatten/preheat/exact heat/energy, admissible stress and flat remainder.
+- [ ] Implement genuine temporal n>=2 recursion/smooth sum, oscillatory stress correction and independent corrected Cartesian NS validation.
+
 # Current scheduled-agent queue - original macro pressure source rows, 2026-10-16
 
 Read [CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalMacroPressureRows` now exports the actual macro U/Q ordinary Z2, genuine meanZ3, Uy/Qy ordinary Z1 and finite RQ_y source rows through R=100, with separate selected-N log errors. The original nonzero second-micro mean relaxes on the large Y scale. Actual macro source modes and the bounded exp(ell) factor replace microscopic core-radial extrapolation. Background R*epsilon and finite-N R endpoint factors remain distinct.

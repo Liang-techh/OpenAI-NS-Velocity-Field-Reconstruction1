@@ -1,3 +1,11 @@
+# Cross-device handoff - cumulative macro pressure through R100, 2026-10-16
+
+Read [CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md](CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md) first. `OriginalMacroM15` now continues the unchanged seventeen-sector second-micro inlet through the actual macro chart to physical R=100. Signed half-S1 is integrated with three stable exponential kernels and separate epsilon0/1/2 sectors. Actual source/radius/length discrepancies retain original hb log factors. Both leading and selected-N nonflat pressure endpoints remain;28 total cumulative sectors are exported.
+
+The final focused run exited0 in160.262 seconds; saved-report inspection passed:19 original packets,19 exact inlet replays,418 serialized errors,66 exact empty rows,24 independent macro pressure-density comparisons,12 modal integrals and64 retained lower-endpoint budget conditions. The report pins1756 inputs/45 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next enter the original first-switch chart at R=100, preserving all28 macro terms once. Its controls, width and generic derivative chart differ from frozen_macro; use the actual switch source and both finite endpoints. Selected-N signs/useful total relative cancellation, remaining active/compact/Rp joins, all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - original macro pressure source rows, 2026-10-16
 
 Read [CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalMacroPressureRows` now exports the actual macro U/Q ordinary Z2, genuine meanZ3, Uy/Qy ordinary Z1 and finite RQ_y source rows through R=100, with separate selected-N log errors. The original nonzero second-micro mean relaxes on the large Y scale. Actual macro source modes and the bounded exp(ell) factor replace microscopic core-radial extrapolation. Background R*epsilon and finite-N R endpoint factors remain distinct.
