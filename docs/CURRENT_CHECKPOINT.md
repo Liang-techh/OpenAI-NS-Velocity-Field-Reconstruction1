@@ -1,3 +1,11 @@
+# Current checkpoint - original first-switch pressure source, 2026-10-16
+
+Read [CURRENT_ORIGINAL_FIRST_SWITCH_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_FIRST_SWITCH_PRESSURE_ROWS_2026_10_16.md) first. `OriginalFirstSwitchPressureRows` now exports genuine U/Q Z2, meanZ3, Uy/Qy Z1 and factored first-switch source rows from the actual R100 macro inlet through R1=100exp(hbS). Native hbS is a parameter, not a power; its graph node remains distinct from hbB under the checked common upstream width identity. The source uses angular weight1 and axial1-sigma, with the extra local angular error and switch_first finite-N derivative bounds.
+
+The focused run exited0 in83.88 seconds; saved-report inspection passed:19 original packets,266 ordinary rows,570 serialized errors,16 independent meanZ0..3 integrals, six original source identities,15 exact inlet/source conditions and38 finite-RQy unit conditions. Report pins1754 inputs/42 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. **First-switch cumulative m15 is still unintegrated.** Its inlet is the unchanged complete28-sector macro packet. Geometry length/theta/mass arrays are explicitly error covers; use the actual hbS log atom for integration. Source Uy=0 at s1 does not zero Qy or finite-N errors. Remaining pressure/Rp/all-five global joins/common N/heat/energy/stress/flat remainder, true temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - cumulative macro pressure through R100, 2026-10-16
 
 Read [CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md](CURRENT_ORIGINAL_MACRO_M15_2026_10_16.md) first. `OriginalMacroM15` now continues the unchanged seventeen-sector second-micro inlet through the actual macro chart to physical R=100. Signed half-S1 is integrated with three stable exponential kernels and separate epsilon0/1/2 sectors. Actual source/radius/length discrepancies retain original hb log factors. Both leading and selected-N nonflat pressure endpoints remain;28 total cumulative sectors are exported.
