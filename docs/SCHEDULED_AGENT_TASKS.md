@@ -1,3 +1,11 @@
+# Scheduled agent tasks - original changing-source pressure moment to Rm, 2026-10-16
+
+Read [CURRENT_ORIGINAL_RESTORE_M15_2026_10_16.md](CURRENT_ORIGINAL_RESTORE_M15_2026_10_16.md) first. `OriginalRestoreM15` continues all124 reference terms through the actual changing-source restoration and postrestore:140 then156 cumulative sectors toRm. The changing j baseline, epsilon degrees0..2, original mean convolution, exact F endpoints, positive scalar G integrals and both signed/finite-N RQy endpoints remain. Pure exponential kernels use exact primitives; other scalar kernels use rigorous monotone cells with complete endpoint and quadrature errors.
+
+The run exited0 in272.883 seconds; saved-report inspection exited0:26 actual packets/inlet replays,832 serialized coefficient errors,192 empty rows,80 lower finite-N endpoint conditions,18 independent changing-source physical integrals and ten refined scalar-kernel conditions. Report pins1768 inputs/73 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next extend Rm-patch numeric source/control derivatives: current defects/controls are only Z2 and Q only Z1, while pressure C1 requires meanZ3/QZZ. Use the pinned original true_Rm_patch_C6 source graph and same-Jacobian interval recurrence to produce genuine numerical containment; the C6 graph alone is not a numerical certificate. Extend finite-N history/error rows and actual By/ByZ sources, then integrate the patch from all156 terms. Selected-N signed centers/useful relative cancellation, independent Rp/all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Scheduled agent tasks - original reference m15 and pressure to Rm, 2026-10-16
 
 Read [CURRENT_ORIGINAL_REFERENCE_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_M15_2026_10_16.md) first. `OriginalReferenceM15` now retains all106 long endpoint terms once and appends18 signed/error sectors, producing124 cumulative reference terms. Genuine `OriginalReferencePressureRows` continue pressure/mean jets through reference, restoration and postrestore toRm. Restoration keeps the changing j baseline separate from epsilon and includes the original mean convolution, Uy and RQy sectors.
