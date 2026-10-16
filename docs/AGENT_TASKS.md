@@ -1,3 +1,11 @@
+# Current original signed reference/restore viscous endpoint chain - 2026-10-16
+
+Read [CURRENT_ORIGINAL_REFERENCE_ENDPOINT_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_ENDPOINT_M15_2026_10_16.md) first. Actual source seams contract finite-N sectors123/139/155 to D(reference0)-D(Rm), with D=R*(Qy_modified-Qy_leading), ordinary Z1 and physical R/Pstar once. Explicit endpoint scopes, actual graph fingerprints and a source-bound linear Qy envelope identify the independent saved reference0 inlet budget. The old longreshape1 lower packet is not reinterpreted. The entire original155 positive aggregate remains as the outlet bound; no separate postrestore upper cap or cap subtraction is claimed.
+
+New production exits0 in13.441s; saved inspection and independent finite-N/direct-Q differentiation checks pass. Report pins1926 inputs/154 implementations. Raw213 and the independent target remain verbatim; the correlated view has198 terms with197 other entries unchanged. Reserved own-swirl stays once. No accepted ancestor constructor/calculation ran and no original signed finite-N values were evaluated. Inherited pressure enclosures are not independently recertified here.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next prove longreshape1/reference0 and inspect postrestore1/Rm_patch0 actual physical RQy source interfaces before further contraction. Numeric Rp/global all-five/common-N matching, exact heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory correction and corrected Cartesian NS remain open. P1 is not m15; huge remaining bounds are not residual values.
+
 # Current original physical native derivative and reference inlet RQy seam - 2026-10-16
 
 Read [CURRENT_ORIGINAL_REFERENCE_NATIVE_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_NATIVE_M15_2026_10_16.md) first. Actual reference native1/restoration native0 slow_B_y C0/ordinary-Z1 now follows from a source-bound calculus theorem at arbitrary fast phase. The explicit G=(E/10)H+E*H_p*p2_y and G_Z keep true p2_yZ inputs. Exact native log-radius derivatives use Jref81519/Jrest1; total Vy retains G/N+B_phi. No native endpoint is assumed to be a fast phase endpoint.
