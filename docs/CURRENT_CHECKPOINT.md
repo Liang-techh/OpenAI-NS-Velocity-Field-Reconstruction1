@@ -1,3 +1,11 @@
+# Current original postrestore/Rm physical inlet and signed m15 chain - 2026-10-16
+
+Read [CURRENT_ORIGINAL_RM_INLET_M15_2026_10_16.md](CURRENT_ORIGINAL_RM_INLET_M15_2026_10_16.md) first. The actual postrestore1/Rm x1 source theorem consumes pinned physical inverse/loop germs and varying J=1/x calculus. A new exact leading mean proof retains unknown original Z jets,23 zero partial weights and21 empty bump integrals. It recovers17 modified physical trace rows and8 common leading Qy inputs using16 scoped U/Uy/mean ports. The raw modified-field fingerprint stays3 equal/24 unresolved; no cap is used as a function value.
+
+Production exits0 in39.919s; saved inspection and10 synthetic controls pass. Report pins1951 inputs/168 implementations. Raw213 and independent negative complete-pulse m15 target stay verbatim; the correlated view now has196 terms with195 other entries unchanged. Its signed chain is D(long0)-D(RmRh), D=R*(Qy_modified-Qy_leading). Own long0 bounds and the entire original167 positive aggregate remain; x1/node1 and Rh=exp1/node2948 are explicitly separate. Reserved stays once. No original signed endpoint values or accepted ancestor calculations were evaluated.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next bind Rm x=exp1 to Rh_reference offset=-5 (patch_reference), original raw viscous171 and its own numeric inlet/outer packet. Source germs do not by themselves bind a new numerical envelope. Numeric Rp/global all-five/common-N closure, heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory correction and corrected Cartesian NS remain open. Huge Rh_reference bounds are not residuals. P1 is not m15.
+
 # Current original long/reference physical trace and signed m15 chain - 2026-10-16
 
 Read [CURRENT_ORIGINAL_LONG_REFERENCE_M15_2026_10_16.md](CURRENT_ORIGINAL_LONG_REFERENCE_M15_2026_10_16.md) first. New long native1/reference native0 source calculus uses171 actual germ rows,18 exact root value/Z1 rows, distinct native J7/J81519 and the endpoint flat-sigma two-jets. It recovers17 modified trace rows at arbitrary actual phase, retaining true p2_yZ, slow_B/N+B_phi and R/Pstar once. The long radius R=110*exp(Tq) is proved directly as a product; E_y=E/10 is not claimed on the whole long chart.
