@@ -1,5 +1,10 @@
 # Original finite long reshape: logarithms and six histories — 2026-10-15
 
+The physical successor is now [CURRENT_ORIGINAL_LONG_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_LONG_VELOCITY_2026_10_15.md).
+It consumes this numerical reader and assembles physical Cartesian value terms,
+with original time/geometry factors and n1 primitive cancellation. Direct physical
+inversion, derivatives and later charts remain open.
+
 `OriginalLongNumeric` continues the actual unmodified R110 inlet through
 the original finite long reshape. It evaluates the selected-N logarithmic
 angular profile, normalized axial velocity, own mean and recovered Q,

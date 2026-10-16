@@ -321,9 +321,15 @@ rebuild the ten high-source packets to address an interface-only task.
     Selected-N local/cumulative corrections keep the original phase and T*dq
     once. Exact endpoint swirl cancels G/inlet data before interval boxing.
     logPhi/Psi have Z3, own mean/six ratios Z2 and Qpsi Z1; positive-order n1
-    primitive stays separately factored. Full physical vector remains open.
-    **Next:** assemble the long-chart fixed-time vector, then reference and
-    restoration from its actual endpoint; preserve the same selected N. Derive
+    primitive stays separately factored in the numerical reader.
+    [Physical finite-long Cartesian velocity](CURRENT_ORIGINAL_LONG_VELOCITY_2026_10_15.md)
+    now assembles its leading+n1 cylindrical/Cartesian value sums, physical
+    coordinates, shared streamfunction and original fixed-time weights. The
+    actual n1 primitive has -y/2 radial decay and exact y-free mass factor,
+    after analytic radius/history cancellation before boxing. Direct physical
+    inversion and gradients remain open.
+    **Next:** reference and restoration from this actual endpoint, preserving
+    the same selected N and complete histories. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

@@ -1,3 +1,13 @@
+# Current checkpoint — physical finite-long Cartesian values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_LONG_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_LONG_VELOCITY_2026_10_15.md) first. `OriginalLongVelocity.evaluate(Z,q,...)` and `.at_log_radius(Z,y,...)` now assemble physical cylindrical and Cartesian leading+n1 value sums over the full original finite long reshape. Fixed-time coordinate/time factors, canonical selected N, actual own mean/Q, current swirl log and all source errors remain. Native coordinates are required; neither huge radius/Phi/F0 exponentials nor a direct Cartesian inverse is introduced.
+
+The nonzero n1 terminal primitive is now physically assembled: ur1=Q_J*lambda^(-1+2delta)*Lambda^(-2)/sqrt(220)*exp(-y/2) and psi1=J*lambda^(1+delta)*Lambda^(-2). Radius/history factors cancel before enclosure. Local n1 axial/swirl are exact zero, while meridional history remains. The swirl source already includes F0*sqrt(2R)*Phi_N once. This preserves the actual shared-streamfunction recovery without claiming new gradients or a full C2 join.
+
+A169.944s focused run exits0 with11 actual physical packets,44 independent fixed-time streamfunction/Cartesian/scaled-time checks,81 geometry/cancellation checks,38 R110 physical term-log seams,25 history/integer/coordinate checks and102 precision comparisons. Five invalid physical time/angle requests are rejected. Saved-report inspection exits0; source/implementation pins total1755/40. Existing read-only GPT-5.6 Luna/max review confirms all Lambda/time/radius and primitive weights, with no material algebra issue.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next continue original reference/restoration from this actual long terminal profile and six history ratios. Direct physical inversion, incoming meanZ3, total radial/fast-phase rows, merged modified moments/own pressure, signed five-defect/selected repair, global common N/C2/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation and independently corrected NS remain open.
+
 # Current checkpoint — finite long logarithms and six histories, 2026-10-15
 
 Read [CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md) first. `OriginalLongNumeric.evaluate(Z,q)` and `.at_log_radius(Z,y)` now extend the actual unmodified R110 inlet through the entire original finite long reshape in logarithms and current-amplitude units. The exact source singleton T=400*A, true anchored G and analytic G jets, original B_log and exact endpoint cancellations remain. Neither exp(T*q), Phi nor F0 is materialized.
