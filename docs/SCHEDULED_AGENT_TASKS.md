@@ -1,19 +1,20 @@
-# Current scheduled-agent queue - actual first-micro pressure rows, 2026-10-16
+# Current scheduled-agent queue - first-micro pressure integral, 2026-10-16
 
-Read [CURRENT_ORIGINAL_FIRST_MICRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_FIRST_MICRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalFirstMicroPressureRows` now supplies first_micro [sc/2,1/4] physical U/m/Q axial rows and the previously missing U_y/Q_y ordinary Z1 rows, including finite RQ_y/RQ_yZ endpoint data. Signed background approximations retain directed source errors; actual selected-N correction errors are separately factored. Slow B_y/N and undivided fast B_phi/B_Z_phi contributions are retained with Pstar once.
+Read [CURRENT_ORIGINAL_FIRST_MICRO_M15_2026_10_16.md](CURRENT_ORIGINAL_FIRST_MICRO_M15_2026_10_16.md) first. `OriginalFirstMicroM15` now integrates the original cumulative m15 from rminus through first_micro s=1/4. It retains the six signed q=2 inlet sectors once, computes the regular leading pressure and nonzero upper-minus-lower d-sigma primitive, and includes the actual selected-N correction as complete factored S1 boundary/volume/finite-viscous-endpoint errors. Physical measures and quadratic cross errors are retained.
 
-The focused run exited 0 in 75.415 seconds; saved-report inspection passed: 15 packets, 210 ordinary/serialized-error rows, 30 independent mean-ODE Q_y comparisons and 30 finite endpoint rows. The report pins 1749 inputs and 30 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+The focused run exited 0 in 87.247 seconds; saved-report inspection passed: 15 packets, six independent physical S1 value/Z1 integral comparisons, 168 serialized error checks, nine retained lower sigma atoms, 32 signed product-error cases and six directed cell-refinement comparisons. The report pins 1750 inputs and 33 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
 
-Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. The signed inner/lower substitution through preRp from c37b02d8 remains accepted. Next integrate the missing first-micro S1 slice with these source rows, the physical measure and both finite endpoints. This milestone does not resolve finite-N signed centers, integrate m15 or certify relative cancellation. Remaining active/compact pressure, independent Rp seam, global five moments/mixed joins/common N/heat/energy/stress/flat remainder, temporal n>=2 and corrected NS stay open.
+Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. This completes the first-slice signed leading integral with full correction errors. Actual finite-N signed centers, useful relative cancellation and an independent Rp seam are not yet resolved. Next continue remaining first/second-micro and active-chart pressure, compact finite-N pressure and source-correlated Rp cancellation. Global five moments/mixed joins/common N/heat/energy/stress/flat remainder, temporal n>=2 and corrected NS remain open.
 
-## Immediate signed pressure integration queue
+## Immediate cumulative pressure queue
 
-- [x] Signed core/cutoff/lower m15 through rminus; consume its six physical sectors once through compact/quiet toRp (c7e53161 / 74f4b60d / c37b02d8).
-- [x] Supply actual selected-N first_micro U/Q/Q_Z/Q_ZZ and U_y/Q_y/Q_yZ with original signed background errors, cumulative mean error and slow/fast finite-N errors (current milestone).
-- [ ] Integrate the missing [sc/2,1/4] S1 slice and its ordinary Z1 row. Preserve native s, R^2*hb*ds, the finite RQ_y/RQ_yZ endpoint subtraction, selected integer and phase; retain width/flat sectors before cancellation.
-- [ ] Continue signed active and compact finite-N pressure; retain exact compact/quiet K-squared and own weighted swirl terms.
-- [ ] Preserve selected inverse/defect correlations and independently quantify Rp value/Z1 cancellation/error; identity or interval overlap alone is insufficient.
-- [ ] Complete all five histories/mixed joins, common global N, analytic preheat/exact heat/energy and admissible stress/flat remainder.
+- [x] Signed core/cutoff/lower m15 to rminus and its single substitution through preRp (c7e53161 / 74f4b60d / c37b02d8).
+- [x] First-micro physical U/Q axial rows and U_y/Q_y/Z1 finite endpoint rows with selected-N slow/fast errors (18fb20ec).
+- [x] First-micro [sc/2,1/4] signed leading pressure integral plus complete factored finite-N S1 endpoint/volume/viscous errors; preserve lower sigma, original inlet and all physical measures (current milestone).
+- [ ] Continue cumulative signed leading pressure through remaining first_micro and second_micro source partitions. Bound actual selected-N correction and retained histories over every complete prefix, not only the local terminal cell. Preserve nonzero singular/finite endpoint histories and native coordinates.
+- [ ] Continue other actual active charts and compact finite-N pressure; retain exact compact/quiet K-squared and own weighted swirl terms.
+- [ ] Resolve sufficient finite-N signed/source correlations to quantify independent Rp value/Z1 cancellation. Current symmetric correction errors can obstruct relative accuracy; identity or interval overlap is insufficient.
+- [ ] Complete all five numerical histories/mixed joins, common global N, analytic preheat/exact heat/energy and admissible stress/flat remainder.
 - [ ] Implement temporal n>=2 recursion/smooth sum, oscillatory correction and independent corrected Cartesian NS validation.
 
 # Current scheduled-agent queue - signed original core m15, 2026-10-16
