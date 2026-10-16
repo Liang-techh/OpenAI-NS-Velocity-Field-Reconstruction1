@@ -1,3 +1,11 @@
+# Current checkpoint - original Rh-to-Rref numerical/physical values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md](CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md) first. `OriginalOuterReferenceNumeric/Velocity` now continues actual selected-N values and physical leading+n1 sums through the full Rh-to-Rref reference annulus, offsets[-5,0]. Same-source analytic fields, five nonzero incoming correction histories, P0, atomic radius geometry and J are retained. Local E/V values are not additive histories; the actual Rh local enclosures are reused at the shared endpoint.
+
+A49.238s run exits0 with23 actual physical packets,250 numerical and40 physical Rh seam checks,30 independent own-ODE values,65 measure/pressure-memory and80 P0 checks. Saved-report inspection exits0; pins1838 inputs/54 implementations. Original accepted scientific inputs are unchanged.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next original O2_slope and remaining outer charts through Rc, plus a same-family S0/S1 and total Q_y pressure inlet. Generic P0+p is exported, while reduced m13/m15 integrals and full n1 pressure remain open. Native factored values do not supply global high-order joins/C2/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 or corrected NS.
+
 # Current checkpoint - physical original finite-N Rm-to-Rh values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md) first. `OriginalRmPatchVelocity` now assembles actual selected-N cylindrical/Cartesian leading+n1 values through Rh, with atomic y=log(R/110), the factor110 once, exact time powers, unchanged P0 and retained nonzero n1 primitive. Local homogeneous n1 support is source-admitted; unresolved global high-order joins remain explicit.

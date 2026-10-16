@@ -1,3 +1,5 @@
+Latest continuation: [Original selected-N Rh-to-Rref numerical/physical values](CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md) now carries this same source through the next complete reference annulus. The accepted Rm/Rh source and its limits below remain unchanged.
+
 # Physical original finite-N Rm-to-Rh velocity - 2026-10-15
 
 `OriginalRmPatchVelocity.evaluate(Z,x,log_tau="-2",azimuth=".25")` now assembles physical cylindrical and Cartesian leading+n1 velocity values across the actual original patch, 1<=x=R/Rm<=e. Use x="Rh" for the exact endpoint. It consumes the accepted selected-N local/five-history numerical enclosures without re-solving the leading controls or rebuilding ancestor computations. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.

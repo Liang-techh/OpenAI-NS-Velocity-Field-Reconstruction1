@@ -356,8 +356,12 @@ rebuild the ten high-source packets to address an interface-only task.
     now supplies cylindrical/Cartesian leading+n1 values, source-admitted local
     homogeneous J continuation, atomic log110 geometry and exact time powers.
     Twenty actual packets and independent fixed-physical streamfunction checks pass.
-    **Next:** same-source outer/Rh continuation and reserved repair, retaining
-    all finite-N memories and unresolved global high-order n1 joins. Derive
+    [Original Rh-to-Rref numerical/physical values](CURRENT_ORIGINAL_OUTER_REFERENCE_2026_10_15.md)
+    now covers the first complete outer annulus with actual selected N,
+    all five incoming errors, P0 and J;23 physical packets pass.
+    **Next:** original O2_slope and later outer charts through Rc; recover
+    same-source S0/S1 and total Q_y for reduced signed m13/m15 pressure.
+    Retain all finite-N memories and unresolved global n1 joins. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.
