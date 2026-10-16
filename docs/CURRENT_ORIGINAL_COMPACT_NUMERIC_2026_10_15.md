@@ -1,5 +1,7 @@
 # Original Rc-to-2Rc compact background numerical enclosure - 2026-10-15
 
+Reserved n1 velocity extension implemented: [original compact reserved n1 numerical velocity](CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md) now appends the actual-source C0/C1 velocity/mass layer. Full n1 pressure remains open. Historical background-only evidence below is unchanged.
+
 `OriginalCompactNumeric.evaluate(Z,x)` and `OriginalCompactBackgroundVelocity.evaluate(Z,x,log_tau="-2",azimuth=".25")` now evaluate the original compact background on x=R/Rc in[1,2]. The leading finite-mu field, unknown-signed selected-N compact correction, own five histories and independent P0 are kept separate. Physical output includes temporal order0 only; the independently repaired n1 field remains to be numerically attached. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS.
 
 ## Same original control branch and honest signed uncertainty

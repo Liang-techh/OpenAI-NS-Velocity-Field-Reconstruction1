@@ -1,3 +1,11 @@
+# Next tasks - original compact reserved n1 numerical velocity, 2026-10-15
+
+Read [CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md) first. `OriginalCompactN1Velocity` now adds actual-source reserved n1 velocity enclosures to the compact background. New C0/C1 coefficient sectors, partial beta primitives, physical mass M1/M1_Z and positive-order R*Q1 are retained. Rc cancels before mass integration; normalized cutoff J is converted once by Lambda^-2. Physical orders0/1 are included, without an extra reserved Lambda factor or a second swirl division.
+
+An86.979s run exits0 with33 physical leading+n1 packets,10 independent weighted-beta integrals, an independent original beta-unit identity,90 mass conditions and42 actual-support conditions. Source terminal mass zero closes the velocity suffix; full background remains. Saved-report inspection exits0; pins1825 inputs/72 implementations. Interval centers remain bounded proxies, not resolved coefficient functions.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next actual n1 pressure and stable long quiet background toRp. Q1_Z/physical gradients/global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open. Physical pressure currently includes temporal order0 only.
+
 # Next tasks - original compact background numerical enclosure, 2026-10-15
 
 Read [CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_COMPACT_NUMERIC_2026_10_15.md) first. `OriginalCompactNumeric/OriginalCompactBackgroundVelocity` now supplies original Rc-to-2Rc background values and actual selected-N directed errors. Forward and terminal-correlated backward own-rate bounds use the true compact supports; the original relative five-history zero identity tightens the errors after the last support. Full leading histories/P0 and nonzero mu remain. Signed control/phase centers are unresolved.

@@ -379,7 +379,11 @@ rebuild the ten high-source packets to address an interface-only task.
     finite-N errors and supported forward/backward histories.43 physical
     packets include temporal order0 only; signed control centers remain open.
     Relative terminal zero uses the checked source identity, not fitted values.
-    **Next:** actual reserved n1 numerical fields and quiet background to Rp;
+    [Original reserved n1 numerical velocity](CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md)
+    now adds C0/C1 source coefficients, radius-cancelled partial bump primitives,
+    actual mass and positive-order radial recovery;33 orders0/1 packets pass.
+    Full n1 pressure and Q1_Z remain open; no proxy is an exact source function.
+    **Next:** actual n1 pressure and stable long quiet background to Rp;
     retain repaired primitives, nonzero full histories and unresolved signed controls;
     recover S0/S1 and total Q_y for reduced signed m13/m15 pressure.
     Retain all finite-N memories and unresolved global n1 joins. Derive
