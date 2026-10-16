@@ -1,20 +1,19 @@
-# Current scheduled-agent queue - signed inner m15 consumed through Rp, 2026-10-16
+# Current scheduled-agent queue - actual first-micro pressure rows, 2026-10-16
 
-Read [CURRENT_ORIGINAL_PRERP_SIGNED_INNER_M15_2026_10_16.md](CURRENT_ORIGINAL_PRERP_SIGNED_INNER_M15_2026_10_16.md) first. `OriginalPreRpSignedInnerM15Numeric` now replaces both legacy inner/lower magnitude terms with the six direct signed cumulative q=2 terms, through compact and quiet to Rp. The original physical log sectors, ordinary C0/C1 source errors and active/compact/own/quiet terms are preserved once. This closes the pending external API substitution.
+Read [CURRENT_ORIGINAL_FIRST_MICRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_FIRST_MICRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalFirstMicroPressureRows` now supplies first_micro [sc/2,1/4] physical U/m/Q axial rows and the previously missing U_y/Q_y ordinary Z1 rows, including finite RQ_y/RQ_yZ endpoint data. Signed background approximations retain directed source errors; actual selected-N correction errors are separately factored. Slow B_y/N and undivided fast B_phi/B_Z_phi contributions are retained with Pstar once.
 
-The focused run exited 0 in 66.722 seconds; saved-report inspection passed. Evidence: 21 packets, 42 replacement conditions, 252 preserved-unit/coefficient conditions, 21 unchanged outer-source comparisons and seven malformed-partition rejections. The report pins 1840 inputs and 81 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+The focused run exited 0 in 75.415 seconds; saved-report inspection passed: 15 packets, 210 ordinary/serialized-error rows, 30 independent mean-ODE Q_y comparisons and 30 finite endpoint rows. The report pins 1749 inputs and 30 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
 
-Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next resolve signed active/compact finite-N S1 pressure and independent Rp cancellation. First-micro [sc/2,1/4] shares the leading background geometry but its actual finite-N correction is nonzero beyond the tiny flat collar; the current partial-mean pressure provider starts at 1/4. Implement that missing actual source slice before promoting a leading-only pressure integral. Global five-moment numerical joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. The signed inner/lower substitution through preRp from c37b02d8 remains accepted. Next integrate the missing first-micro S1 slice with these source rows, the physical measure and both finite endpoints. This milestone does not resolve finite-N signed centers, integrate m15 or certify relative cancellation. Remaining active/compact pressure, independent Rp seam, global five moments/mixed joins/common N/heat/energy/stress/flat remainder, temporal n>=2 and corrected NS stay open.
 
-## Immediate signed preRp integration queue
+## Immediate signed pressure integration queue
 
-- [x] Signed raw-core and selected cutoff/lower m15 through rminus (c7e53161 / 74f4b60d).
-- [x] Replace both broad inner/lower preRp terms by the direct signed q=2 cumulative inlet, preserving six physical source sectors once through compact and quiet (current milestone).
-- [ ] Supply actual signed first-micro pressure on [sc/2,1/4]; existing partial-mean provider begins at 1/4. The actual finite-N correction is not zero over this interval. Keep absolute R=4epsilon exp(hb*s), native hb ds and the true phase origin.
-- [ ] Integrate actual signed active S1 partial integrals and finite RQ_y/RQ_yZ endpoints, including selected-N corrections with ordinary Z derivatives and full source errors.
-- [ ] Integrate actual compact finite-N S1 with the selected control branch and physical measure; preserve exact compact/quiet K-squared terms and own weighted swirl.
-- [ ] Retain selected inverse/defect correlations and independently quantify Rp value/Z1 cancellation and numerical error. Identity/overlap is insufficient.
-- [ ] Complete all five histories/global mixed joins, flatten/preheat/exact heat/energy/common N and admissible stress/flat remainder.
+- [x] Signed core/cutoff/lower m15 through rminus; consume its six physical sectors once through compact/quiet toRp (c7e53161 / 74f4b60d / c37b02d8).
+- [x] Supply actual selected-N first_micro U/Q/Q_Z/Q_ZZ and U_y/Q_y/Q_yZ with original signed background errors, cumulative mean error and slow/fast finite-N errors (current milestone).
+- [ ] Integrate the missing [sc/2,1/4] S1 slice and its ordinary Z1 row. Preserve native s, R^2*hb*ds, the finite RQ_y/RQ_yZ endpoint subtraction, selected integer and phase; retain width/flat sectors before cancellation.
+- [ ] Continue signed active and compact finite-N pressure; retain exact compact/quiet K-squared and own weighted swirl terms.
+- [ ] Preserve selected inverse/defect correlations and independently quantify Rp value/Z1 cancellation/error; identity or interval overlap alone is insufficient.
+- [ ] Complete all five histories/mixed joins, common global N, analytic preheat/exact heat/energy and admissible stress/flat remainder.
 - [ ] Implement temporal n>=2 recursion/smooth sum, oscillatory correction and independent corrected Cartesian NS validation.
 
 # Current scheduled-agent queue - signed original core m15, 2026-10-16
