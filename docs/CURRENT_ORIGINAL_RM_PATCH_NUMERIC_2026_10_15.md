@@ -1,5 +1,12 @@
 # Original leading implicit Rm patch - 2026-10-15
 
+Successor: [actual selected-N Rm-to-Rh value transport](CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md)
+now carries local modifications and all five nonzero incoming correction
+histories through this fixed leading patch. Pressure and radial recovery
+retain the same datum/mass. Physical patch assembly is next; finite-N
+terminal moment closure remains a later reserved-repair task.
+
+
 `OriginalRmPatchNumeric.coefficients(Z)` solves the original leading five-bump map from the actual signed unmodified Rm defect. `evaluate(Z,x)` recovers its leading fields, pressure, own moments and radial velocity coefficient for1<=x=R/Rm<=e; use x="Rh" for the exact source endpoint. All source-owned finite-N incoming histories and the positive-order n1 primitive remain separately attached. They have not yet been transported through this numerical patch.
 
 ## Original control coordinates and existence
@@ -56,7 +63,7 @@ Read-only Luna/max review found no material algebra/proof/unit blocker. The new 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rm_patch_numeric.json`,2716678 bytes, SHA256 `2144b8a14406dadc435e856452ee2761ba0f244624ff835baf26edb979199900`. It pins1760 source inputs and47 implementations. Accepted ancestor source/report bytes remain unchanged.
 
 - [x] Actual original leading control Z2 and patch moment/pressure/radial-recovery reader, with focused source-current checks.
-- [ ] Original finite-N density/history transport through this leading patch.
+- [x] Original finite-N density/history value/error transport through this leading patch; see successor.
 - [ ] Fixed-time physical cylindrical/Cartesian patch assembly and outer continuation.
 
 ## Remaining work

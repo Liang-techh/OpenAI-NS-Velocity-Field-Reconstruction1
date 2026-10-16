@@ -347,9 +347,13 @@ rebuild the ten high-source packets to address an interface-only task.
     now recovers actual control Z2, partial moments/pressure/Q and leading
     terminal identities from a strict same-source contraction. Its maximum
     sampled self-map bound is7.3388740271418854543e-6. No higher-Z rows are padded.
-    **Next:** separate original finite-N dx/x density/history transport through
-    this fixed leading patch, followed by physical patch values and outer/Rh
-    matching. Do not re-solve leading controls on modified defects. Derive
+    [Actual original finite-N Rm-to-Rh value reader](CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md)
+    now transports local E/V and all five own histories through the fixed
+    leading patch with original N, nonzero inlet and dx/x. Source-current
+    pressure/radial recovery and canonical terminal error intervals remain;
+    finite-N signed centers and later reserved repair are not declared complete.
+    **Next:** fixed-time physical patch values, outer/Rh continuation and
+    reserved repair, retaining n1 primitive and atomic radius geometry. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

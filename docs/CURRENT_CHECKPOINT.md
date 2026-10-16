@@ -1,3 +1,11 @@
+# Current checkpoint - actual finite-N Rm-to-Rh values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md) first. `OriginalRmFiniteNNumeric` now transports actual selected-N local E/V and all five own moment/error rows through the fixed original leading patch, preserving the already-scaled nonzero inlet, dx/x, exact pressure memory and original N. Generic fields/pressure and similarity velocity are enclosed through Z2, radial Q through Z1. Leading point centers have complete unknown-signed finite-N errors; no phase/cap endpoint is chosen. Canonical terminal errors are retained for later reserved repair.
+
+A74.861s run exits0 with17 actual packets,48 independent signed-density/measure/memory checks,45 raw canonical-defect checks,2 exact close-boundary classifications,75 inlet coefficients,126 control/N/history checks,104 measure/pressure-memory checks,34 radial recoveries and51 P0 checks. Saved-report inspection exits0; pins total1762 inputs/49 implementations. Native traversal uses exact rational comparisons and merges overlapping Z covers into one physical cell.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next fixed-time physical cylindrical/Cartesian patch values with atomic geometry and retained n1 primitive, then outer/Rh continuation and reserved repair. No modified five-moment closure, resolved phase/total radial derivatives, full physical C2, global pressure/common N/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation or corrected NS is claimed.
+
 # Current checkpoint - original leading implicit Rm patch, 2026-10-15
 
 Read [CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md) first. `OriginalRmPatchNumeric` now computes original leading five-bump controls through TaylorZ2, using actual signed unmodified Rm defects, the positive original anisotropic coordinates and a strict interval self-map. The same Jacobian recovers Z2. Native x in[1,e] supplies leading axial/swirl, own five histories, unchanged-P0 pressure and Q=Ur/sqrt(R/2) through Z1. Exhausted original bump supports give the same leading terminal functional identities; finite-N histories remain separate nonzero inlet data.
