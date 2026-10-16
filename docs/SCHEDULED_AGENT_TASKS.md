@@ -1,21 +1,21 @@
-# Current scheduled-agent queue - complete first-micro pressure, 2026-10-16
+# Current scheduled-agent queue - complete second-micro pressure, 2026-10-16
 
-Read [CURRENT_ORIGINAL_FIRST_MICRO_FULL_M15_2026_10_16.md](CURRENT_ORIGINAL_FIRST_MICRO_FULL_M15_2026_10_16.md) first. `OriginalFirstMicroFullM15` now carries cumulative signed leading m15 through the complete first_micro chart to s=1, with complete factored selected-N errors. Every traversed original source cell and axial frame enters the uniform correction envelope; positive-kernel histories, original six-term inlet, singular upper-minus-lower memory and physical measures are retained. The exact sigma=1 endpoint is handled without an infinite log-odds expression.
+Read [CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md](CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md) first. `OriginalSecondMicroM15` now continues the complete thirteen-term first-micro inlet through second_micro s=1..2. It adds only the second pressure suffix, using constant chi=hb and full directed source errors. The actual selected-N correction retains both nonflat pressure endpoints, complete first/second histories and uniform source covers. Seventeen cumulative sectors are returned; no new d-sigma term is invented.
 
-The focused run exited 0 in 96.177 seconds; saved-report inspection passed: 19 packets, three exact accepted quarter replays, 56 prefix/axial-frame conditions, 168 error checks, six exact upper-endpoint conditions and six cell-refinement comparisons. The report pins 1751 inputs and 35 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+The focused run exited 0 in 82.528 seconds; saved-report inspection passed: 16 packets, 16 exact inlet replays, 128 error conditions, 24 exact empty-increment rows, 52 nonzero lower-endpoint budget conditions, eight constant-control identities and six independent physical S1 value/Z1 integrals. The report pins 1753 inputs and 39 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
 
-Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next continue second_micro s=1..2 with actual constant-hb leading controls and all first-chart incoming histories, then remaining active/compact pressure and independent Rp cancellation. Finite-N signed centers and useful total relative cancellation remain unresolved. Global five-moment numerical joins/common N/heat/energy/stress/flat remainder, temporal n>=2 and corrected NS stay open.
+Tasks 14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next enter the actual macro transition from R0 toR=100 with its large native log-radius geometry and macro source modes, retaining incoming mean and correction histories once. Resolved finite-N signs/relative cancellation, full active/compact/Rp numerical joins, global five moments/common N/heat/energy/stress/flat remainder, temporal n>=2 and corrected NS remain open. Second_micro is a spatial chart, not temporal n=2 recursion.
 
 ## Immediate cumulative pressure queue
 
-- [x] Signed core/cutoff/lower m15 and one preRp substitution (c7e53161 / 74f4b60d / c37b02d8).
-- [x] First_micro pressure derivatives/endpoints with selected-N slow/fast errors (18fb20ec), and signed leading first-quarter integral with full correction errors (bc7b295b).
-- [x] Complete first_micro m15 through s=1, with all traversed correction cells/axial frames, exact sigma=1, nonzero lower memory and unchanged accepted quarter histories (current milestone).
-- [ ] Continue second_micro s=1..2 from the checked full first-chart inlet. Use actual constant-hb leading controls, original R=4epsilon exp(hb*s), comparison fields and full first/second correction histories. Do not call the first-chart increment provider beyond its native domain or reset incoming moments. No new sigma-prime singular increment occurs in the constant-control segment; retain the previous singular history.
-- [ ] Continue the remaining actual active charts and compact finite-N pressure with their own native geometry, complete prefix source covers, finite pressure endpoints, exact compact/quiet K-squared terms and own weighted swirl.
-- [ ] Resolve sufficient signed selected-N/source correlations for independent Rp value/Z1 cancellation. Current error enclosures can obstruct relative accuracy; identity or overlap alone is insufficient.
+- [x] Signed core/cutoff/lower m15 and single preRp substitution (c7e53161 / 74f4b60d / c37b02d8).
+- [x] First pressure rows (18fb20ec), first-quarter integral (bc7b295b) and complete first_micro integral with full prefix errors (54b1e8a7).
+- [x] Complete second_micro pressure from s=1 to2 with unchanged thirteen-term inlet, constant-hb source, all incoming correction histories and both nonflat pressure endpoints (current milestone).
+- [ ] Integrate the original macro transition R0 to100 using its actual radius, source modes, native length and incoming mean/history. The radial change is not a microscopic hb perturbation; do not reuse rho approximately4 or extend the microscopic core comparison to100.
+- [ ] Continue remaining actual active charts and compact finite-N pressure with complete prefix/source correlations, original finite endpoints, exact compact/quiet K-squared terms and own weighted swirl.
+- [ ] Resolve sufficient signed selected-N/source correlations for independent Rp value/Z1 cancellation. Symmetric errors may block useful relative accuracy; identity or interval overlap is insufficient.
 - [ ] Complete all five numerical histories/mixed joins/common N, analytic preheat/exact heat/energy and admissible stress/flat remainder.
-- [ ] Implement temporal n>=2 recursion/smooth sum, oscillatory correction and independent corrected Cartesian NS validation.
+- [ ] Implement genuine temporal n>=2 recursion/smooth sum, oscillatory correction and independent corrected Cartesian NS validation.
 
 # Current scheduled-agent queue - signed original core m15, 2026-10-16
 
