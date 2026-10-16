@@ -1,3 +1,11 @@
+# Current checkpoint - genuine original Rm source/control Z3, 2026-10-16
+
+Read [CURRENT_ORIGINAL_RM_CONTROL_Z3_2026_10_16.md](CURRENT_ORIGINAL_RM_CONTROL_Z3_2026_10_16.md) first. `OriginalRmControlZ3` now retains genuine internal R110 six3 through the full original finite long/reference/restoration/postrestore path, computes all leading Rm defects3 and solves the third implicit control row with the same full Jacobian. The existing axial5 archive is an independent comparison enclosure; it supplies no midpoint/endpoint source value. Centered angular tails are proved before angular-unit normalization.
+
+The run exited0 in75.846 seconds; saved-report inspection exited0:180 serialized coefficient errors,80 axial5 defect plus80 control overlaps,72 genuine six-history rows,12 mean-pressure seam comparisons and60 independently known cubic-control coefficients. Report pins1771 inputs/75 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. The pressure inlet remains156 terms atRm; patch pressure/integration is still open. Next lift the actual partial-weight patch reconstruction from these physical controls and physical source defects to meanZ3/QZZ/UyQyZ1, extend genuine C3 finite-N histories/By/ByZ bounds, and integrate only Rm..Rh with dx/x and both endpoints. Note that `coefficients().defects_point/truth` are normalized; physical defects are under `source.point/truth.defects`. Independent Rp/global all-five/common N/heat/energy/stress/flat remainder, true temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original changing-source pressure moment to Rm, 2026-10-16
 
 Read [CURRENT_ORIGINAL_RESTORE_M15_2026_10_16.md](CURRENT_ORIGINAL_RESTORE_M15_2026_10_16.md) first. `OriginalRestoreM15` continues all124 reference terms through the actual changing-source restoration and postrestore:140 then156 cumulative sectors toRm. The changing j baseline, epsilon degrees0..2, original mean convolution, exact F endpoints, positive scalar G integrals and both signed/finite-N RQy endpoints remain. Pure exponential kernels use exact primitives; other scalar kernels use rigorous monotone cells with complete endpoint and quadrature errors.
