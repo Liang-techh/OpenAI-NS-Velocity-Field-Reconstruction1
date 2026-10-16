@@ -1,3 +1,11 @@
+# Current original pressure through buffer and O3 to Rc - 2026-10-16
+
+Read [CURRENT_ORIGINAL_POST_AXIAL_M15_2026_10_16.md](CURRENT_ORIGINAL_POST_AXIAL_M15_2026_10_16.md) first. OriginalPostAxialPressureRows/M15 continue O2_buffer, O3_transition and O3_power from195 to199/203/207 cumulative sectors, reachingRc. The exact original positive-mean primitive uses a common global axial radius/mean. Both leading RQy endpoints are nonzero and equal; finite-N endpoints/prefix/quadratic errors and actual mu/angular sources remain.
+
+Final production exited0 in82.265 seconds; saved-report inspection exited0:21 moment/21 pressure packets,420 C3 history rows,nine exact history seams,315 prefix conditions,144 saved source overlaps. Independent finite fixtures check216 original source rows,18 nonzero-mu cases and18 physical C0/C1 integrals. Report pins1796 inputs/112 implementations. Existing read-only GPT-5.6 Luna/max worker reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next continue the complete207-term Rc inlet through compact and quiet toRp, recovering Qy/Qy_Z physical error rows and using quiet Ldq once. Crosswalk all legacy preRp components before replacing them, so core/lower/active terms are not counted twice. Resolve source-correlated signed finite-N cancellation and the independent reserved m15 value/Z1 seam. Global all-five/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current original axial pressure and m15 - 2026-10-16
 
 Read [CURRENT_ORIGINAL_AXIAL_M15_2026_10_16.md](CURRENT_ORIGINAL_AXIAL_M15_2026_10_16.md) first. OriginalAxialPressureRows/RateMemory/M15 now continue the actual changing O2_axial source from176 to195 cumulative pressure sectors. Positive mean memory, both RQy endpoints, exact scalar reductions, ordinary/peak positive quadrature and complete C3 finite-N/prefix errors remain. Terminal beta0 does not imply mean0 or Qy0.
