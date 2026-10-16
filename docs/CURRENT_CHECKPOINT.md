@@ -1,3 +1,11 @@
+# Current checkpoint - original compact n1 pressure, 2026-10-16
+
+Read [CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md) first. `OriginalCompactN1PressureVelocity` now includes the original compact physical velocity and pressure through temporal orders0/1. P1 retains core/lower/active history, exact nonzero leading compact pressure, actual finite-N partial-prefix error bounds and the supported theta0*Utheta1 integral. Physical P1 has weight lambda^-2, with original units and no extra Lambda factor. Separate directed exponential terms retain all scales; signed centers and relative cancellation remain unresolved.
+
+A101.451s focused run and saved-report inspection exit0:33 physical packets,15 independent defining integrals, original m13-unit/nonzero-baseline algebra,80 partial finite-N bounds,120 history/source conditions and210 physical-pressure conditions. The report pins1825 scientific inputs/73 implementation files. Existing Luna/max read-only review covers source ownership and partial-bound validity; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next stable original nonzero-mu quiet background from2Rc toRp and continued P1 throughRv. Do not use the short compact polynomial moments over the long quiet interval. Full leading histories/P0 remain; zero n1 velocity after2Rc does not zero P1. Q1_Z/physical gradients/relative pressure cancellation/global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original compact reserved n1 numerical velocity, 2026-10-15
 
 Read [CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_COMPACT_N1_NUMERIC_2026_10_15.md) first. `OriginalCompactN1Velocity` now adds actual-source reserved n1 velocity enclosures to the compact background. New C0/C1 coefficient sectors, partial beta primitives, physical mass M1/M1_Z and positive-order R*Q1 are retained. Rc cancels before mass integration; normalized cutoff J is converted once by Lambda^-2. Physical orders0/1 are included, without an extra reserved Lambda factor or a second swirl division.

@@ -1,3 +1,23 @@
+# Current scheduled-agent queue - original compact n1 pressure, 2026-10-16
+
+Read [CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md) first. `OriginalCompactN1PressureVelocity` now includes the original compact physical velocity and pressure through temporal orders0/1. P1 retains core/lower/active history, exact nonzero leading compact pressure, actual finite-N partial-prefix error bounds and the supported theta0*Utheta1 integral. Physical P1 has weight lambda^-2, with original units and no extra Lambda factor. Separate directed exponential terms retain all scales; signed centers and relative cancellation remain unresolved.
+
+A101.451s focused run and saved-report inspection exit0:33 physical packets,15 independent defining integrals, original m13-unit/nonzero-baseline algebra,80 partial finite-N bounds,120 history/source conditions and210 physical-pressure conditions. The report pins1825 scientific inputs/73 implementation files. Existing Luna/max read-only review covers source ownership and partial-bound validity; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next stable original nonzero-mu quiet background from2Rc toRp and continued P1 throughRv. Do not use the short compact polynomial moments over the long quiet interval. Full leading histories/P0 remain; zero n1 velocity after2Rc does not zero P1. Q1_Z/physical gradients/relative pressure cancellation/global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate executable queue after the compact P1 milestone
+
+- [x] Add actual reserved n1 velocity and physical own mass C0/C1 through2Rc (ddda92c1; preceding milestone).
+- [x] Add actual compact P1 C0/C1 and physical lambda^-2 pressure, with incoming histories, fixed leading forcing and swirl integral (current milestone; see linked evidence).
+- [ ] Implement `OriginalQuietNumeric` from the saved actual2Rc inlet, not a diagnostic candidate or fresh inner solve. Read `current_original_C3_power_to_Rp.py` and `current_original_true_quiet_Rp_C5_pressure_C3_functions.py`. Native s=log(R/(2Rc)), 0<=s<=Tw-2-log2; mu is the original positive value.
+- [ ] Evaluate the original analytic own-rate E/m/h/k/e/p flows using stable exprel kernels. Preserve incoming h/e/p/P0 and nonzero meridional memories. Do not extend the100-term short-compact exponential polynomial to the long quiet length. Keep input interval errors and ordinary Z rows.
+- [ ] Extend physical orders0/1 from2Rc toRp. Use the same n1 zero-velocity/mass source theorem on this tail. Incoming P1 remains, plus the fixed quiet N1p integral; zero n1 velocity does not imply zero P1. Recover radius/time atoms and Cartesian rotation without physical hyper-exponentials.
+- [ ] Run only focused independent quiet-kernel comparisons, near0/long-length cases and2Rc/Rp seams. Include a positive-mu test that would fail at mu=0 and same-N/P0/pressure-history conditions. Save the resulting actual-source report and entry document.
+- [ ] Continue the original native pulse fromRp toRv with its selected U0, full incoming histories and pressure source. Do not replace it with free interpolation or a pressure-tail fit.
+- [ ] Improve P1 cancellation with a backward representation only after consuming the same actual full terminal pressure identity and all remaining compact/quiet/pulse forcing. Do not declare2Rc pressure zero.
+- [ ] Then resolve signed coefficient/fast-phase evaluations, high-order mixed joins/common N, exact heat/energy/stress/flat remainder, genuine n>=2 recursion and oscillatory corrected NS. These full-goal gates remain open.
+
 # Current scheduled-agent queue — actual own field joins after Rp C5 source connection, 2026-10-14
 
 Start at [CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md](CURRENT_ORIGINAL_RP_NATIVE_C5_PULSE_SOURCE_2026_10_14.md), inspect `python scripts/run_original_Rp_native_C5_pulse_source.py`, and complete its first available unchecked construction dependency. Prioritize actual own2Rc/Rp/Rv source joins, then Rin/rminus/Rc and global n1 assembly. Reuse the saved repaired/intermediate/inner source handles, full leading Rp C5 callback and accepted lower/active seam. Preserve physical measures, own1+delta/leading1-delta recovery, fixed leading N1p, incoming history and pressure gauge. Use checked source restoration with `--restore-source`; do not replay historical numerical suites or require ended session55770/cache26. Numerical callback/bounds, mixed/common-global-N, full n1/energy/heat/stress, genuine recursion and corrected NS remain open. Publish each scoped milestone and update only its corresponding task status. Full goal **ACTIVE / INCOMPLETE**.

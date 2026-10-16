@@ -1,3 +1,5 @@
+Superseding pressure milestone: [CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md). The velocity-only API below remains valid; the new wrapper adds the original complete compact P1 C0/C1 enclosure.
+
 # Original reserved n1 velocity and own mass numerical enclosure - 2026-10-15
 
 `OriginalCompactN1Velocity.evaluate(Z,x,log_tau="-2",azimuth=".25")` now adds the independently repaired temporal n=1 velocity to the original compact background on x=R/Rc in[1,2]. `OriginalReservedN1Numeric` supplies C0/C1 axial/swirl coefficient enclosures, supported primitives, cumulative physical mass M1 through Z1 and R*Q1 as a value. The original selected coefficients remain signed functions with directed uncertainty. The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. Full n1 pressure and genuine temporal n>=2 are still open.
