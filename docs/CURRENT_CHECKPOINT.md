@@ -1,3 +1,11 @@
+# Current checkpoint - cumulative original first-switch pressure, 2026-10-16
+
+Read [CURRENT_ORIGINAL_FIRST_SWITCH_M15_2026_10_16.md](CURRENT_ORIGINAL_FIRST_SWITCH_M15_2026_10_16.md) first. `OriginalFirstSwitchM15` now continues the unchanged28-sector R100 macro inlet across the actual first switch and returns51 cumulative C0/C1 sectors. Signed epsilon/mean modes retain exp(-nY); the native hbS width is factored before short kernels. Actual inlet/source errors keep hbS*hbB and hbS^2, and both leading/finite-N pressure endpoints survive.
+
+The final focused run exited0 in107.34 seconds; saved-report inspection exited0:19 original packets,19 exact inlet replays,874 serialized errors,138 exact empty rows,24 independent pressure integrals,24 viscous integrals,24 changing-source density comparisons and64 lower finite-N endpoint conditions. The report pins1760 inputs/52 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next continue actual second_switch/post_power pressure to R110 from all51 terms. Carry genuine meanZ3 separately from `first_m15.rows.inputs(Z,iv.mpf(1))`; do not use truncated public r110 histories. Uy=0 does not zero Qy. Generic derivative owners are switch_second (source domain1..2) and switch_power (0..1); physical post-power measure is Lp*dq, with no extra hbS. Selected-N signs/useful total relative cancellation, independent Rp/all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original first-switch pressure source, 2026-10-16
 
 Read [CURRENT_ORIGINAL_FIRST_SWITCH_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_FIRST_SWITCH_PRESSURE_ROWS_2026_10_16.md) first. `OriginalFirstSwitchPressureRows` now exports genuine U/Q Z2, meanZ3, Uy/Qy Z1 and factored first-switch source rows from the actual R100 macro inlet through R1=100exp(hbS). Native hbS is a parameter, not a power; its graph node remains distinct from hbB under the checked common upstream width identity. The source uses angular weight1 and axial1-sigma, with the extra local angular error and switch_first finite-N derivative bounds.
