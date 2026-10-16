@@ -1,5 +1,10 @@
 # Actual original-N second/post-power values and six histories to R110 — 2026-10-15
 
+The finite-long successor is now [CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md).
+It consumes this actual unmodified inlet and all six histories, preserving exact T,
+canonical N and complete correction memories in a logarithmic reader. The long-chart
+physical Cartesian vector is still a separate open task.
+
 `OriginalSecondSwitchNumeric` continues the accepted actual first-switch
 endpoint through second_switch and post_power to the exact R110 endpoint.
 One source owner supplies both charts; chart-sensitive numerical caches

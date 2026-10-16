@@ -314,9 +314,16 @@ rebuild the ten high-source packets to address an interface-only task.
     these are proxies with complete errors, separate from corrections.
     Twenty packets,54 independent control/six-ODE/geometry/measure checks,
     126 field coefficient seams and54 six-history seams pass.
-    **Next:** genuine finite long reshape from actual unmodified R110,
-    original T=400*A/B/anchored G, log/factored Phi and all six histories.
-    Keep the selected-N source/phase and T*dq measure. Derive
+    [Original finite long logarithms and six histories](CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md)
+    now uses exact T=400*A, actual anchored G with analytic Z3 jets, original
+    B_log and all six nonzero R110 histories. Finite positive backward kernels
+    retain the scalar B0 contribution through local perturbed rates before caps.
+    Selected-N local/cumulative corrections keep the original phase and T*dq
+    once. Exact endpoint swirl cancels G/inlet data before interval boxing.
+    logPhi/Psi have Z3, own mean/six ratios Z2 and Qpsi Z1; positive-order n1
+    primitive stays separately factored. Full physical vector remains open.
+    **Next:** assemble the long-chart fixed-time vector, then reference and
+    restoration from its actual endpoint; preserve the same selected N. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

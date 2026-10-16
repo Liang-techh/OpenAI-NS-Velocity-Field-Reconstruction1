@@ -1,3 +1,13 @@
+# Agent tasks — finite long logarithms and six histories, 2026-10-15
+
+Read [CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_LONG_NUMERIC_2026_10_15.md) first. `OriginalLongNumeric.evaluate(Z,q)` and `.at_log_radius(Z,y)` now extend the actual unmodified R110 inlet through the entire original finite long reshape in logarithms and current-amplitude units. The exact source singleton T=400*A, true anchored G and analytic G jets, original B_log and exact endpoint cancellations remain. Neither exp(T*q), Phi nor F0 is materialized.
+
+All six UNMODIFIED leading histories retain their actual nonzero R110 inlets and full finite backward kernels. Local positive rates k +/- 8*m*abs(B0)/T include the scalar source factor before error caps; numerical centers are proxies with complete directed errors. The same canonical selected N, local loop corrections, all five cumulative correction histories and T*dq measure once are retained. Positive-order n1 terminal history remains separately factored; the long-chart physical vector is not yet assembled.
+
+The 172.601 s focused run exits0 with11 original packets,81 independent finite-kernel/memory/cutoff/G checks,165 selected-N/flat-tail small-error proofs,93 R110 field/six-history seam coefficients,86 history/integer/primitive checks,12 exact terminal cancellations,145 finite-log/history checks,11 exact-T measure relations and44 precision comparisons. Five invalid requests are rejected. Saved-report inspection exits0; input/implementation pins total1754/38. Existing read-only GPT-5.6 Luna/max review confirms the full perturbed-rate enclosure, finite source measures and retained memories.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next assemble the fixed-time physical long-chart vector, then continue reference/restoration from this actual endpoint. Incoming meanZ3, radial/fast-phase rows, merged modified moments/own pressure, signed five-defect and selected repair, global common N/C2/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation and independently corrected NS remain open.
+
 # Agent tasks — R110 values and six own histories, 2026-10-15
 
 Read [CURRENT_ORIGINAL_R110_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_R110_NUMERIC_2026_10_15.md) first. `OriginalSecondSwitchNumeric.evaluate` and `.post_power` now continue actual selected-N leading+n1 physical value enclosures through the second switch and finite post-power to exact R110=110. The second angular source keeps its hbS^2*(1-sigma) shear and separate hbS*sigma power terms; unmodified U is constant while local selected-N B/N still evolves. Post-power retains length log(11/10)-2hbS, exponent-2/5 and the complete radius log. All actual mean/five correction/n1 histories persist.
