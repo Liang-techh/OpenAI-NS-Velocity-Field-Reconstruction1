@@ -352,8 +352,12 @@ rebuild the ten high-source packets to address an interface-only task.
     leading patch with original N, nonzero inlet and dx/x. Source-current
     pressure/radial recovery and canonical terminal error intervals remain;
     finite-N signed centers and later reserved repair are not declared complete.
-    **Next:** fixed-time physical patch values, outer/Rh continuation and
-    reserved repair, retaining n1 primitive and atomic radius geometry. Derive
+    [Physical original finite-N Rm/Rh velocity](CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md)
+    now supplies cylindrical/Cartesian leading+n1 values, source-admitted local
+    homogeneous J continuation, atomic log110 geometry and exact time powers.
+    Twenty actual packets and independent fixed-physical streamfunction checks pass.
+    **Next:** same-source outer/Rh continuation and reserved repair, retaining
+    all finite-N memories and unresolved global high-order n1 joins. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

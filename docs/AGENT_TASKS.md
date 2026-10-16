@@ -1,3 +1,11 @@
+# Agent tasks - physical original finite-N Rm-to-Rh values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md](CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md) first. `OriginalRmPatchVelocity` now assembles actual selected-N cylindrical/Cartesian leading+n1 values through Rh, with atomic y=log(R/110), the factor110 once, exact time powers, unchanged P0 and retained nonzero n1 primitive. Local homogeneous n1 support is source-admitted; unresolved global high-order joins remain explicit.
+
+A47.267s run exits0:20 actual physical packets,144 independent fixed-physical-coordinate streamfunction comparisons,24 signed physical inlet-sum seams,51 N/history/support checks,68 geometry/local-zero checks and21 scaled-time checks. Saved-report inspection exits0; pins1837 inputs/51 implementations. No accepted ancestor scientific input is changed.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next same-source Rh/outer continuation through Rc and reserved repair. Native coordinates and factored values remain necessary. Resolved finite-N phases, physical gradients/direct inverse/global C2, complete n1 pressure/joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2/smooth sum/oscillatory cancellation and corrected NS remain open.
+
 # Agent tasks - actual finite-N Rm-to-Rh values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_FINITE_N_NUMERIC_2026_10_15.md) first. `OriginalRmFiniteNNumeric` now transports actual selected-N local E/V and all five own moment/error rows through the fixed original leading patch, preserving the already-scaled nonzero inlet, dx/x, exact pressure memory and original N. Generic fields/pressure and similarity velocity are enclosed through Z2, radial Q through Z1. Leading point centers have complete unknown-signed finite-N errors; no phase/cap endpoint is chosen. Canonical terminal errors are retained for later reserved repair.

@@ -1,3 +1,5 @@
+Latest continuation: [Physical original finite-N Rm/Rh velocity](CURRENT_ORIGINAL_RM_PATCH_VELOCITY_2026_10_15.md) now assembles the same source into cylindrical/Cartesian leading+n1 value sums. The finite-N numerical source and its limits below are unchanged.
+
 # Actual original finite-N Rm-to-Rh patch values - 2026-10-15
 
 `OriginalRmFiniteNNumeric.evaluate(Z,x)` now continues the actual selected-N value enclosures through the original active patch1<=x=R/Rm<=e. Use x="Rh" for the exact source endpoint. It supplies generic modified E/V and all five own moments through TaylorZ2, unchanged-P0 pressure, and similarity axial/swirl/mass/radial values, with radial recovery through Z1. Original leading controls remain fixed; no finite-N leading-control re-solve is introduced.
