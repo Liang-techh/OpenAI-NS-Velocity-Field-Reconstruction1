@@ -1,3 +1,5 @@
+Latest continuation: [original selected pulse velocity throughRv](CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md). The quiet full P1 endpoint remains authoritative; the newer pulse API currently exports leading pressure only and retains incoming P1 separately.
+
 # Original quiet continuation from2Rc toRp - 2026-10-16
 
 `OriginalQuietVelocity.evaluate(Z,q,log_tau="-2",azimuth=".25")` now continues the original physical velocity and pressure through the whole quiet segment toRp. q is the exact decimal fraction of the original quiet log length. It consumes the actual repaired2Rc inlet and the original positive mu, preserves all nonzero leading histories and P0, and retains the complete incoming n1 pressure plus its fixed quiet increment. The n1 velocity and own mass vanish on this tail by the checked original source identity. The full project remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. This is a regional numerical value/derivative enclosure, not genuine temporal n>=2 recursion or a full corrected NS field.

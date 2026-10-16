@@ -1,3 +1,25 @@
+# Current scheduled-agent queue - original selected pulse velocity throughRv, 2026-10-16
+
+Read [CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md) first. `OriginalNativePulseNumeric/OriginalNativePulseVelocity` now consumes the actual quietRp inlet and original selected pulse source to evaluate entrance/main/gap/end velocity throughRv. All8 native callback functions retain genuine C5 rows, using the preserved original six-row P0 datum. Original nonzero moment/energy history, positive mu, selected N, leading pressure and atomic end amplitude are retained; private caches only reuse unchanged Z-independent scalar kernels.
+
+The final130.531s run and saved-report inspection exited0:39 actual physical packets,11 independent profile/convolution comparisons,111Rp coefficient seams,24 eight-function C5 conditions and72 source-admitted terminal linear zero conditions. The report pins1854 scientific inputs/78 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+**Pressure boundary:** this pulse API currently exports leading pressure only. The complete repaired incoming P1 atRp is retained separately; interiorP1 is explicitly unavailable. The preceding quiet API still provides full P1 atRp. Zero n1 velocity on this tail does not zero P1, and no constant incoming-P1 substitute is appended as pulse pressure.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next integrate actual fixed leading N1p over each partial pulse chart, then recover interiorP1 with the original incoming value and physical measure. Full signed pulse integrals cannot replace partial-prefix values. Backward pressure requires the actual full terminal pressure theorem and complete remaining forcing. Signed point values/relative cancellation, physical gradients/high mixed/global joins/common N, compatible heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate pulse-pressure construction queue
+
+- [x] Consume the actual quietRp eight-function frame and original selected source bindings; preserve original source family/N and all genuine C5 callback rows.
+- [x] Evaluate original entrance/main/gap/end velocity and leading pressure throughRv, with nonzero gap histories and original opposite-sign scaled end corrections.
+- [x] Save focused independent kernel comparisons, actualRp seams, source-admittedRv linear zeros and physical/atomic-scale evidence. Private kernel caches preserve source values and ownership.
+- [ ] Read the original fixed leading N1p and radial-free pressure source identities. Separate linear source integrals, quadratic partial errors and finite viscous endpoint terms before numerical integration.
+- [ ] Implement actual entrance/main partial N1p primitives from the full incoming repaired P1. Preserve true radial measures, q_Z, U_Z and q_ZZ for ordinary C1; verify the same-rate moment-convolution identity independently.
+- [ ] Extend the same primitives over inactive gap and original end bumps. Zero local velocity does not erase inherited moments or cumulative pressure. Use uniform partial bounds rather than signed full-pulse caps.
+- [ ] Restore physical P1 with its original lambda^-2 unit and unchanged gauge, and expose it only after partial integrals and actualRp seam checks pass.
+- [ ] Use backward pressure nearRv only after consuming the same full repaired terminal identity plus all remaining forcing; do not infer zero interior pressure from source-admitted zero velocity atRv.
+- [ ] Continue flatten/heat matching with all original histories and analytic pressure, then common-global-N/high mixed joins, finite energy/stress/flat remainder, true temporal n>=2/smooth sum and oscillatory corrected NS.
+
 # Current scheduled-agent queue - original quiet numerical continuation throughRp, 2026-10-16
 
 Read [CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md) first. `OriginalQuietNumeric/OriginalQuietVelocity` now continues the actual repaired2Rc inlet through the original full quiet length toRp. Stable positive own-rate kernels retain nonzero leading histories/P0 and explicit separate positive-mu sectors. The source-admitted n1 velocity/mass tail is zero; incoming P1 persists plus the exact fixed increment Rc*k^2/8*(1-exp(-s)). Physical velocity/pressure include temporal orders0/1, and the current eight-function native pulse frame is exported without an extra Pstar division.
@@ -9,10 +31,10 @@ Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next connect the i
 ## Immediate pulse implementation queue
 
 - [x] Original nonzero-mu2Rc→Rp numerical/physical continuation and current eight-function pulse-frame export (this milestone).
-- [ ] Read the accepted current `Rp_native_C5_pulse_source` inlet binding and the original selected pulse U0/constants. Use `OriginalQuietNumeric.evaluate(Z,"1")` as the actual numerical inlet. Compare all8 normalized frame fields with the selected native constants and source identities before admission.
-- [ ] Implement the original Rp→Rv native pulse evaluator using its implicit source profile, selected parameters and positive-mu logarithmic schedule. Carry m/h/k/e/p and P0 without reset; do not replace the pulse by a free profile.
+- [x] Consume actual quietRp frame and original native C5 source bindings (completed by the selected-pulse milestone above).
+- [x] Implement original Rp-to-Rv selected pulse velocity and leading pressure with the checked native histories/P0. Interior repaired P1 remains the separate unchecked dependency below.
 - [ ] Extend the same repaired P1 through the pulse with its fixed leading N1p and original incoming value. Only the actual source theorem beyondRv permits zero pressure; n1 velocity is already zero on this tail.
-- [ ] Save focused native-pulse value/implicit-function/own-history comparisons, the actualRp seam and the finiteRv endpoint. Report normalized/factored physical errors separately from unresolved relative pressure cancellation.
+- [x] Save focused original-source native-pulse kernel/history comparisons, actualRp coefficient seams and source-admittedRv linear zeros; signed point values and relative pressure cancellation remain open.
 - [ ] Then resolve signed functions/high mixed joins/common globalN, compatible analytic heat/energy/stress/flat remainder, independent temporal n>=2 and oscillatory corrected NS. Keep these full-goal gates open until their evidence exists.
 
 # Current scheduled-agent queue - original compact n1 pressure, 2026-10-16
