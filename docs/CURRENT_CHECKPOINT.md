@@ -1,3 +1,11 @@
+# Current original compact/quiet pressure forward state at Rp - 2026-10-16
+
+Read [CURRENT_ORIGINAL_COMPACT_QUIET_M15_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_QUIET_M15_2026_10_16.md) first. Actual compact C3 pressure/Qy recovery carries207 Rc sectors to211 at2Rc. Exact full quiet U=0,Qy=-Q and relative-tail-zero source identities then append one signed integral, reaching212 sectors atRp. Absolute mean and all earlier cumulative pressure/error sectors remain. Compact profile y0/y1 caps already contain1/N; multiply Pstar only. Prefix bounds do not use final relative zero.
+
+Original-source production exited0 in93.112 seconds; saved-report inspection exited0:19 moment/19 pressure packets,380 C3 histories,60 compact terminal zero rows,180 quiet exact error rows,285 prefix comparisons and144 saved source overlaps. Independent fixtures check120 supported C3 Duhamel rows and15 actual QZZ/QyZ errors. Report pins1856 inputs/126 implementations. Existing read-only GPT-5.6 Luna/max worker reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next crosswalk old inner/lower/active/compact/quiet components against the complete212-term forward state, then add the distinct reserved n1 own_swirl contribution once. Compare against independent negative complete pulse m15 C0/C1 via terminal-integral source IDs; P1 is a different datum. Resolve signed source correlations/cancellation rather than declaring an interval overlap to be closure. Global all-five/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current original pressure through buffer and O3 to Rc - 2026-10-16
 
 Read [CURRENT_ORIGINAL_POST_AXIAL_M15_2026_10_16.md](CURRENT_ORIGINAL_POST_AXIAL_M15_2026_10_16.md) first. OriginalPostAxialPressureRows/M15 continue O2_buffer, O3_transition and O3_power from195 to199/203/207 cumulative sectors, reachingRc. The exact original positive-mean primitive uses a common global axial radius/mean. Both leading RQy endpoints are nonzero and equal; finite-N endpoints/prefix/quadratic errors and actual mu/angular sources remain.
