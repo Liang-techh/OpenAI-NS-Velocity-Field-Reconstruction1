@@ -1,3 +1,11 @@
+# Next tasks - original O2-axial numerical/physical values, 2026-10-15
+
+Read [CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md](CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md) first. `OriginalOuterAxialNumeric/Velocity` now covers the complete original axial turn-off with d=exp(40s)-1 and the physical Jacobian once. Positive M/W convolutions, exact resonance, actual finite-N memories, P0, atomic geometry/time factors and nonzero n1 J are retained. Leading local beta=0 at the endpoint does not zero its mean/square/radial history.
+
+A98.538s run exits0:30 actual physical packets,250 numerical/40 physical slope seam checks,14 positive memory checks and8 independent tanh-sinh comparisons. Maximum tested memory relative interval width1.42220196617494e-10; both endpoint memories have strictly positive lower bounds. Saved-report inspection exits0; pins1839 inputs/60 implementations. Accepted ancestor scientific inputs are unchanged.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next exact O2_buffer histories, then original O3_transition/O3_power through Rc, retaining tiny mu terms and reserved repair. Cancellation-sensitive pressure, S0/S1/total Q_y, full n1/global high-order joins/C2/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Next tasks - original O2-slope numerical/physical values, 2026-10-15
 
 Read [CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md](CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md) first. `OriginalOuterSlopeNumeric/Velocity` now continues the actual selected-N construction across the complete original O2_slope chart. Four scalar ODEs preserve the leading own memories; a directed Taylor4/fifth-coefficient remainder bounds integration error. Actual finite-N five histories, local roots, P0, atomic radius/time factors and nonzero n1 J remain separate and retained.

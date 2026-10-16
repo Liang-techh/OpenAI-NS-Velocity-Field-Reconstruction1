@@ -1,3 +1,5 @@
+Latest continuation: [Original O2-axial numerical/physical values](CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md) now carries this endpoint through the full exponential-radius axial turn-off, retaining positive M/W memories. The accepted slope scientific source and its limits below remain unchanged.
+
 # Original O2-slope numerical and physical continuation - 2026-10-15
 
 `OriginalOuterSlopeNumeric.evaluate(Z,x)` and `OriginalOuterSlopeVelocity.evaluate(Z,x,log_tau="-2",azimuth=".25")` now continue the same actual original selected-N field across the complete O2_slope chart, x in[0,1], R=Rref*exp(x). The full reconstruction remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. Original parameters, source family, N, independent P0 and nonzero n1 primitive are retained.

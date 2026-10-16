@@ -362,7 +362,11 @@ rebuild the ten high-source packets to address an interface-only task.
     [Original O2-slope numerical/physical values](CURRENT_ORIGINAL_OUTER_SLOPE_2026_10_15.md)
     now covers the full smooth slope change with directed scalar ODE errors,
     actual finite-N memories and28 physical packets. F(1)=exp(-1/5) is exact.
-    **Next:** exponential-Jacobian O2_axial and later charts through Rc;
+    [Original O2-axial numerical/physical values](CURRENT_ORIGINAL_OUTER_AXIAL_2026_10_15.md)
+    now covers full axial turn-off with positive M/W convolution memories,
+    exact exponential measure and30 physical packets. Endpoint leading local
+    zero does not reset the mean or radial field.
+    **Next:** O2_buffer, O3_transition and original O3_power through Rc;
     recover S0/S1 and total Q_y for reduced signed m13/m15 pressure.
     Retain all finite-N memories and unresolved global n1 joins. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
