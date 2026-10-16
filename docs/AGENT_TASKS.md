@@ -1,3 +1,11 @@
+# Agent tasks - original Rm patch pressure and C3 errors, 2026-10-16
+
+Read [CURRENT_ORIGINAL_RM_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_RM_PRESSURE_ROWS_2026_10_16.md) first. `OriginalRmPressureRows` now evaluates actual partial-bump U/Q through Z2, mean through Z3 and Uy/Qy through Z1 from genuine physical controls/defects. All five finite-N histories retain four ordinary derivative rows, actual dx/x transport, one incoming/local1/N factor and separate slow By/N versus fast Bphi errors. Exact full-support identities do not reset finite-N histories.
+
+The run exited0 in127.338 seconds; saved-report inspection exited0:24 original packets,336 pressure/error rows,480 C3 history rows,42 inlet seams,90 saved lower-pressure overlaps and78 independent original-source coefficient comparisons. Report pins1773 inputs/77 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Cumulative m15 still has156 terms atRm. Next append only the actual Rm..Rh interval using [R²F]+integralR²G dy-[RQy], dy=dx/x, original half-S1 normalization and both signed/finite-N endpoints. `uniform_background` is leading-only: add history/local/slow-fast errors to total volume budgets. Selected-N signed centers/useful relative accuracy, independent Rp/global all-five/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Agent tasks - genuine original Rm source/control Z3, 2026-10-16
 
 Read [CURRENT_ORIGINAL_RM_CONTROL_Z3_2026_10_16.md](CURRENT_ORIGINAL_RM_CONTROL_Z3_2026_10_16.md) first. `OriginalRmControlZ3` now retains genuine internal R110 six3 through the full original finite long/reference/restoration/postrestore path, computes all leading Rm defects3 and solves the third implicit control row with the same full Jacobian. The existing axial5 archive is an independent comparison enclosure; it supplies no midpoint/endpoint source value. Centered angular tails are proved before angular-unit normalization.
