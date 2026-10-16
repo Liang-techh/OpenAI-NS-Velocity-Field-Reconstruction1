@@ -1,3 +1,11 @@
+# Current checkpoint - original pressure through outer reference and O2 slope, 2026-10-16
+
+Read [CURRENT_ORIGINAL_OUTER_M15_2026_10_16.md](CURRENT_ORIGINAL_OUTER_M15_2026_10_16.md) first. `OriginalOuterPressureRows/OriginalOuterM15` now continue original Rh_reference[-5,0] and O2_slope[0,1], retaining all four finite-N history rows and analytic U=M=4Z pressure derivatives. Complete cumulative m15 advances168->172->176 terms. Exact positive background integrals, both finite-N endpoints, complete prefix/quadratic errors and the new chart's own slow/fast bounds remain; shared-boundary budgets are unioned, not identified as signed values.
+
+The run exited0 in93.876 seconds; saved-report inspection exited0:24 moment/24 pressure packets,24 exact inlet replays,480 C3 history rows,360 prefix-error conditions,192 saved lower-pressure overlaps and18 independent physical C0/C1 integrals. Report pins1791 inputs/88 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next recover O2_axial pressure from U=4Z*beta(s), M=4Z*Mmemory(s) and the complete176-term inlet. Use genuine positive OriginalAxialMemory, analytic Z derivatives, physical width exp(40left)*expm1(40(end-left)) and actual O2_axial slow/fast sources; terminal beta0 does not reset the nonzero mean. Then integrate changing beta/M pressure modes with complete errors and carry buffer/o3/compact to an independent reserved Rp value/Z1 seam. Selected-N signed centers/useful relative accuracy, global all-five/common N/heat/energy/stress/flat remainder, true temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original active patch m15 to Rh, 2026-10-16
 
 Read [CURRENT_ORIGINAL_RM_M15_2026_10_16.md](CURRENT_ORIGINAL_RM_M15_2026_10_16.md) first. `OriginalRmM15` now continues the actual active Rm..Rh pressure integral from all156 inlet terms to168 cumulative sectors. Same-branch mass closure yields four beta/survival-tail shapes; original fixed t degrees0..2 stay separate. Exact F/RQy endpoints, positive native G kernels and full-prefix finite-N source/history/quadratic errors remain. The leading terminal RQy vanishes without resetting finite-N histories.
