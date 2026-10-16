@@ -1,3 +1,11 @@
+# Next tasks - original repaired pulse P1 throughRv, 2026-10-16
+
+Read [CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md) first. `OriginalNativePulsePressureVelocity` now adds actual repaired P1 value/ordinary Z1 enclosures to the original selected Rp-to-Rv velocity and leading pressure. Main uses full incoming P1 plus original radial-free partial integrals; gap/end use the checked actual repaired terminal value identity with nonzero gap history and finite end sources. All linear/quadratic/viscous units, positive mu, selected branch/N, P0 and physical lambda^-2 pressure weight are retained.
+
+The241.075s focused run and saved-report inspection exited0:12 independent defining-density/positive-kernel comparisons,48 actual pressure packets,516 source/C1 conditions,15 inlet/chart seams,36 source-certified zero conditions and873 physical pressure-unit conditions. The report pins1862 inputs/79 implementations;9 saved-report gap atom checks also pass. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent. The old base pulse API remains leading-pressure-only; use the new wrapper for full orders0/1 pressure.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next numerically continue the weighted pressure moment m15 with its own actual inlet and R*dR measure, then original flatten/heat and all-five-history assembly. Signed point centers/useful relative cancellation, physical gradients/high mixed/global joins/common N/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Next tasks - original selected pulse velocity throughRv, 2026-10-16
 
 Read [CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md) first. `OriginalNativePulseNumeric/OriginalNativePulseVelocity` now consumes the actual quietRp inlet and original selected pulse source to evaluate entrance/main/gap/end velocity throughRv. All8 native callback functions retain genuine C5 rows, using the preserved original six-row P0 datum. Original nonzero moment/energy history, positive mu, selected N, leading pressure and atomic end amplitude are retained; private caches only reuse unchanged Z-independent scalar kernels.

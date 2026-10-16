@@ -1,3 +1,25 @@
+# Current scheduled-agent queue - original repaired pulse P1 throughRv, 2026-10-16
+
+Read [CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md) first. `OriginalNativePulsePressureVelocity` now adds actual repaired P1 value/ordinary Z1 enclosures to the original selected Rp-to-Rv velocity and leading pressure. Main uses full incoming P1 plus original radial-free partial integrals; gap/end use the checked actual repaired terminal value identity with nonzero gap history and finite end sources. All linear/quadratic/viscous units, positive mu, selected branch/N, P0 and physical lambda^-2 pressure weight are retained.
+
+The241.075s focused run and saved-report inspection exited0:12 independent defining-density/positive-kernel comparisons,48 actual pressure packets,516 source/C1 conditions,15 inlet/chart seams,36 source-certified zero conditions and873 physical pressure-unit conditions. The report pins1862 inputs/79 implementations;9 saved-report gap atom checks also pass. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent. The old base pulse API remains leading-pressure-only; use the new wrapper for full orders0/1 pressure.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next numerically continue the weighted pressure moment m15 with its own actual inlet and R*dR measure, then original flatten/heat and all-five-history assembly. Signed point centers/useful relative cancellation, physical gradients/high mixed/global joins/common N/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate weighted-moment and exterior queue
+
+- [x] Original selected pulse velocity/leading pressure throughRv with current actual C5 inlet (88c15afc).
+- [x] Actual original main partial repaired P1, full incoming pressure, positive zero/first-time kernels and separate directed quadratic mu error.
+- [x] Actual gap/end repaired P1 using the same full repaired terminal certificate, finite positive future integrals, projected Q history and correct physical lambda^-2 unit (current milestone).
+- [ ] Locate and retain the actual repaired weighted m15 inlet atRp; do not reuse the m13/P1 inlet or its one-radius pressure unit.
+- [ ] Implement I1_Q/I1_QZ with a1=3/2-mu, using K_a1(mean)=M0*(exp(-a0*t)-exp(-a1*t))+ap*(K_a0(g)-K_a1(g)), a0=1/2-mu. Retain original finite-time histories and positive tails.
+- [ ] Implement all original I1 quadratic primitives with rate1-2mu and R*dR measure. Q^2 includes H_j*H_k off the local beta supports; the P1 beta-only quadratic helper cannot be reused as a complete I1_Q_squared integral.
+- [ ] Extend end weighted moments using both a0/a1 positive beta moments and actual finite R*Q_y endpoints. Backward m15=-S1_remaining/2-R*Q_y follows only after the same full repaired terminal identity.
+- [ ] Integrate the gap only toRb=Rv*exp(-4), adding its actual end m15. For Q=C(Z)/R, m15(R)=m15(Rb)-hZ*C_Z*(Rb-R)/(4L)+C^2*log(Rb/R)/4. Do not assume U=0 through the end bumps up toRv.
+- [ ] Preserve m15 linear Rv^2*F, quadratic Rv^2*F^2 and viscous Rv*F units. Verify defining weighted density, actual inlet/main-gap/end joins and terminal identities with focused checks.
+- [ ] Continue original flatten/heat with all five numerical histories and compatible analytic pressure, then finite energy/radial tail, required physical derivatives/high mixed joins/common N, admissible stress and flat remainder.
+- [ ] Implement genuine independent temporal n>=2 recursion/smooth sum, oscillatory stress cancellation and independent corrected Cartesian NS residual validation.
+
 # Current scheduled-agent queue - original selected pulse velocity throughRv, 2026-10-16
 
 Read [CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_NUMERIC_2026_10_16.md) first. `OriginalNativePulseNumeric/OriginalNativePulseVelocity` now consumes the actual quietRp inlet and original selected pulse source to evaluate entrance/main/gap/end velocity throughRv. All8 native callback functions retain genuine C5 rows, using the preserved original six-row P0 datum. Original nonzero moment/energy history, positive mu, selected N, leading pressure and atomic end amplitude are retained; private caches only reuse unchanged Z-independent scalar kernels.
@@ -13,11 +35,11 @@ Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next integrate
 - [x] Consume the actual quietRp eight-function frame and original selected source bindings; preserve original source family/N and all genuine C5 callback rows.
 - [x] Evaluate original entrance/main/gap/end velocity and leading pressure throughRv, with nonzero gap histories and original opposite-sign scaled end corrections.
 - [x] Save focused independent kernel comparisons, actualRp seams, source-admittedRv linear zeros and physical/atomic-scale evidence. Private kernel caches preserve source values and ownership.
-- [ ] Read the original fixed leading N1p and radial-free pressure source identities. Separate linear source integrals, quadratic partial errors and finite viscous endpoint terms before numerical integration.
-- [ ] Implement actual entrance/main partial N1p primitives from the full incoming repaired P1. Preserve true radial measures, q_Z, U_Z and q_ZZ for ordinary C1; verify the same-rate moment-convolution identity independently.
-- [ ] Extend the same primitives over inactive gap and original end bumps. Zero local velocity does not erase inherited moments or cumulative pressure. Use uniform partial bounds rather than signed full-pulse caps.
-- [ ] Restore physical P1 with its original lambda^-2 unit and unchanged gauge, and expose it only after partial integrals and actualRp seam checks pass.
-- [ ] Use backward pressure nearRv only after consuming the same full repaired terminal identity plus all remaining forcing; do not infer zero interior pressure from source-admitted zero velocity atRv.
+- [x] Consume original fixed N1p/radial-free identities and retain finite viscous endpoints (repaired pulse P1 milestone above).
+- [x] Implement actual entrance/main partial P1 from the full inlet with ordinary C1 and independent positive moment checks (current milestone).
+- [x] Extend actual P1 over gap/end with checked terminal-backed primitives, nonzero history and local partial bounds (current milestone).
+- [x] Restore original physical lambda^-2 P1 with unchanged gauge and passed actualRp/chart seams (current milestone).
+- [x] Consume the actual full repaired terminal value identity and remaining forcing for backward P1; leading pressure remains nonzero (current milestone).
 - [ ] Continue flatten/heat matching with all original histories and analytic pressure, then common-global-N/high mixed joins, finite energy/stress/flat remainder, true temporal n>=2/smooth sum and oscillatory corrected NS.
 
 # Current scheduled-agent queue - original quiet numerical continuation throughRp, 2026-10-16

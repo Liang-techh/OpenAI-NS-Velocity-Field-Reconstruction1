@@ -1,3 +1,5 @@
+Latest continuation: [original repaired pulse P1 throughRv](CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md). Use `OriginalNativePulsePressureVelocity` for pressure orders0/1. The base API documented below keeps its explicit leading-pressure-only scope.
+
 # Original selected Rp-to-Rv pulse numerical velocity - 2026-10-16
 
 `OriginalNativePulseVelocity.evaluate(Z,chart,coordinate,log_tau="-2",azimuth=".25")` now connects the actual quietRp numerical inlet to the original selected pulse and evaluates its entrance/main/gap/end velocity throughRv. It carries the original own moment/energy histories and leading pressure, with source-defined positive pulse selection and two narrow end corrections. The full goal remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. Interior repaired P1 is explicitly unavailable in this pulse API, while the complete incoming P1 atRp is retained separately. The preceding compact/quiet APIs still provide their full P1 enclosures. Genuine temporal n>=2, full stress/heat matching and corrected NS remain open.
