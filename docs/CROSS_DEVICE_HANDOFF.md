@@ -1,3 +1,11 @@
+# Cross-device handoff - original macro pressure source rows, 2026-10-16
+
+Read [CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalMacroPressureRows` now exports the actual macro U/Q ordinary Z2, genuine meanZ3, Uy/Qy ordinary Z1 and finite RQ_y source rows through R=100, with separate selected-N log errors. The original nonzero second-micro mean relaxes on the large Y scale. Actual macro source modes and the bounded exp(ell) factor replace microscopic core-radial extrapolation. Background R*epsilon and finite-N R endpoint factors remain distinct.
+
+The focused run exited0 in77.408 seconds; saved-report inspection passed:19 packets,266 ordinary physical rows,570 serialized errors,12 independent meanZ0..3 integrals, actual original macro source identities and six exact-R100 geometry conditions. Report pins1751 inputs/37 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. **Macro cumulative m15 is still unintegrated.** Its next inlet is the unchanged checked seventeen-term second-micro s=2 moment. Implement reducedS1/2 minus both RQ_y endpoints with actual R*dR and L=Y-2hb; no extra hb. Keep the genuine M_ZZZ/Q_ZZ uncertainty logarithmic when it is not numerically small. All-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - complete second-micro pressure, 2026-10-16
 
 Read [CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md](CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md) first. `OriginalSecondMicroM15` now continues the complete thirteen-term first-micro inlet through second_micro s=1..2. It adds only the second pressure suffix, using constant chi=hb and full directed source errors. The actual selected-N correction retains both nonflat pressure endpoints, complete first/second histories and uniform source covers. Seventeen cumulative sectors are returned; no new d-sigma term is invented.

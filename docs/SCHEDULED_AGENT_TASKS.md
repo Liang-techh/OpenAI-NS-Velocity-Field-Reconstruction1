@@ -1,3 +1,21 @@
+# Current scheduled-agent queue - original macro pressure source rows, 2026-10-16
+
+Read [CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_MACRO_PRESSURE_ROWS_2026_10_16.md) first. `OriginalMacroPressureRows` now exports the actual macro U/Q ordinary Z2, genuine meanZ3, Uy/Qy ordinary Z1 and finite RQ_y source rows through R=100, with separate selected-N log errors. The original nonzero second-micro mean relaxes on the large Y scale. Actual macro source modes and the bounded exp(ell) factor replace microscopic core-radial extrapolation. Background R*epsilon and finite-N R endpoint factors remain distinct.
+
+The focused run exited0 in77.408 seconds; saved-report inspection passed:19 packets,266 ordinary physical rows,570 serialized errors,12 independent meanZ0..3 integrals, actual original macro source identities and six exact-R100 geometry conditions. Report pins1751 inputs/37 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. **Macro cumulative m15 is still unintegrated.** Its next inlet is the unchanged checked seventeen-term second-micro s=2 moment. Implement reducedS1/2 minus both RQ_y endpoints with actual R*dR and L=Y-2hb; no extra hb. Keep the genuine M_ZZZ/Q_ZZ uncertainty logarithmic when it is not numerically small. All-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate macro pressure queue
+
+- [x] Export genuine background meanZ3/QZZ, original modal Uy/Qy source and selected-N derivative errors; preserve nonzero incoming mean, true R100 geometry and the two endpoint units (current milestone).
+- [ ] Integrate original macro m15 from R0 to100, retaining the existing seventeen-sector second-micro inlet once. Use the actual reducedS1 source, stable exponential-mean kernels, separate epsilon sectors and complete directed geometry/source errors.
+- [ ] Retain both nonflat finite-N macro pressure endpoints, all six weighted volume products, quadratic cross errors and ordinary Z1. Physical dy=L*dq, R*dR=R^2*L*dq; Y is an error cap only.
+- [ ] Continue switch/remaining active/compact pressure with the original selected source correlations and exact compact/quiet histories.
+- [ ] Measure independent source-correlated Rp value/Z1 cancellation; a terminal identity or interval overlap is insufficient.
+- [ ] Complete all five global histories/mixed joins/common N, original flatten/preheat/exact heat/finite-energy tail, admissible stress and flat remainder.
+- [ ] Implement genuine temporal n>=2 recursion/smooth sum, oscillatory stress correction and independent corrected Cartesian NS validation.
+
 # Current scheduled-agent queue - complete second-micro pressure, 2026-10-16
 
 Read [CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md](CURRENT_ORIGINAL_SECOND_MICRO_M15_2026_10_16.md) first. `OriginalSecondMicroM15` now continues the complete thirteen-term first-micro inlet through second_micro s=1..2. It adds only the second pressure suffix, using constant chi=hb and full directed source errors. The actual selected-N correction retains both nonflat pressure endpoints, complete first/second histories and uniform source covers. Seventeen cumulative sectors are returned; no new d-sigma term is invented.
