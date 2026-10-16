@@ -1,3 +1,21 @@
+# Agent tasks - original reference m15 and pressure to Rm, 2026-10-16
+
+Read [CURRENT_ORIGINAL_REFERENCE_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_M15_2026_10_16.md) first. `OriginalReferenceM15` now retains all106 long endpoint terms once and appends18 signed/error sectors, producing124 cumulative reference terms. Genuine `OriginalReferencePressureRows` continue pressure/mean jets through reference, restoration and postrestore toRm. Restoration keeps the changing j baseline separate from epsilon and includes the original mean convolution, Uy and RQy sectors.
+
+The run exited0 in137.512 seconds; saved-report inspection exited0:19 m15 packets,61 pressure packets,854 ordinary rows,684 serialized errors,126 source-seam conditions and64 lower finite-N endpoint conditions. Report pins1767 inputs/70 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. **Restoration/postrestore cumulative m15 is still unintegrated.** Next append those actual intervals to the complete124-term reference inlet, keeping j/epsilon sectors, original positive kernels, separate unit-radius offsets and all signed/finite-N endpoints. Pressure rows reachingRm do not establish moment closure there. Selected-N signed centers/useful relative cancellation, independent Rp/all-five global joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate cumulative-pressure queue toward Rm
+
+- [x] Reference cumulative m15:124 sectors,106 unchanged incoming terms, correlated internal endpoint telescope and full finite source/selected-N errors.
+- [x] Genuine pressure rows through reference/restoration/postrestore toRm, including changing j baseline, epsilon sector, exact source mean convolution, QZZ/meanZZZ and Uy/QyZ1.
+- [ ] Build restoration F/G epsilon-degree0..2 coefficients from genuine source jets; keep j*alpha and j*gamma in degree0. Preserve all124 incoming terms and original selected N.
+- [ ] Implement actual restoration integral as [R^2F]+integral R^2G minus[RQy]; retain both signed/finite-N endpoints. Use positive scalar source cells, exact native dt and complete quadrature/source errors.
+- [ ] Continue postrestore m15 from the full restoration endpoint with exact exponential/resonant kernels and inherited nonzero mean/Qy toRm.
+- [ ] Continue active/compact pressure toRp and independently measure the source-correlated value/Z1 seam; complete all-five histories/global joins/common N/heat/energy/stress/flat remainder.
+- [ ] Implement genuine temporal n>=2 recursion/smooth summation, realizable oscillatory stress cancellation and independent corrected Cartesian NS validation.
+
 # Agent tasks - original finite-long pressure and m15, 2026-10-16
 
 Read [CURRENT_ORIGINAL_LONG_M15_2026_10_16.md](CURRENT_ORIGINAL_LONG_M15_2026_10_16.md) first. `OriginalLongPressureRows/OriginalLongM15` now continue genuine five-jet pressure data and cumulative m15 through the complete original finite long_reshape T=400A interval. All88 R110 terms remain once;106 cumulative sectors retain correlated positive/negative exponential pairs, inherited mean atoms and a separate resonance log(y). Huge exp(T) and radius values are never materialized.
