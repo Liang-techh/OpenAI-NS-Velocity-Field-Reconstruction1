@@ -1,3 +1,11 @@
+# Current original physical native derivative and reference inlet RQy seam - 2026-10-16
+
+Read [CURRENT_ORIGINAL_REFERENCE_NATIVE_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_NATIVE_M15_2026_10_16.md) first. Actual reference native1/restoration native0 slow_B_y C0/ordinary-Z1 now follows from a source-bound calculus theorem at arbitrary fast phase. The explicit G=(E/10)H+E*H_p*p2_y and G_Z keep true p2_yZ inputs. Exact native log-radius derivatives use Jref81519/Jrest1; total Vy retains G/N+B_phi. No native endpoint is assumed to be a fast phase endpoint.
+
+The new source guards,18 actual root value/Z1 identities, five mixed yZ zero rows and138 corrected finite-N/history identities and four scope-restricted derivative function ports recover17 actual U/m/Uy/Qy/RQy endpoint rows with physical R/Pstar once. This is an analytic source-chain-rule deduction followed by authorized endpoint arithmetic; unconditional full raw-graph Uy normalization is still not claimed. Production exits0 in55.839s; saved hash-only inspection and focused synthetic/negative controls pass. Report pins1925 inputs/151 implementations. Raw213/reduced199, independent target and every old budget stay unchanged.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next bind numerical reference/restoration/postrestore viscous sectors and separate endpoint budgets to the proved actual RQy traces before contracting them. Keep nonzero external reference0/Rm traces and all other errors; P1 is not m15. Numeric Rp/global all-five/common-N matching, exact heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory corrections and corrected Cartesian NS remain open. Do not replay accepted ancestors.
+
 # Current original source-bound smooth periodic phase lift - 2026-10-16
 
 Read [CURRENT_ORIGINAL_REFERENCE_PHASE_LIFT_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_PHASE_LIFT_2026_10_16.md) first. The new theorem binds the actual reference/restoration fractional phase, inverse, q/Poisson/K/Phi/T1 chain and A/B outputs to a smooth periodic extension. Eight exact root-function identities give the active domain;108 symbolic first/second difference rows and the Fourier/IFT proof admit mixed ordinary-Z/physical-y derivatives at arbitrary fast phase, including integer cuts. q=0 and the flat cutoff are covered.
