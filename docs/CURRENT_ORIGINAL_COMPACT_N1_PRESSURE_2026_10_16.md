@@ -1,3 +1,5 @@
+Superseding outer continuation: [CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md). The compact pressure API below remains valid; the new quiet wrapper carries its full2Rc pressure toRp.
+
 # Original compact n1 pressure numerical assembly - 2026-10-16
 
 `OriginalCompactN1PressureVelocity.evaluate(Z,x,log_tau="-2",azimuth=".25")` now exports the original compact physical velocity and pressure with temporal orders0/1 on x=R/Rc in[1,2]. The new pressure reader consumes the same checked signed source functions and their ordinary C0/C1 enclosures. It adds the complete incoming core/lower/active pressure, fixed leading compact N1p prefix and actual local swirl-pressure integral. The project remains **ACTIVE / INCOMPLETE**. Tasks14/15 remain IN PROGRESS. Signed point centers, useful relative pressure cancellation, long quiet continuation and genuine temporal n>=2 remain open.

@@ -1,3 +1,20 @@
+# Current scheduled-agent queue - original quiet numerical continuation throughRp, 2026-10-16
+
+Read [CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md) first. `OriginalQuietNumeric/OriginalQuietVelocity` now continues the actual repaired2Rc inlet through the original full quiet length toRp. Stable positive own-rate kernels retain nonzero leading histories/P0 and explicit separate positive-mu sectors. The source-admitted n1 velocity/mass tail is zero; incoming P1 persists plus the exact fixed increment Rc*k^2/8*(1-exp(-s)). Physical velocity/pressure include temporal orders0/1, and the current eight-function native pulse frame is exported without an extra Pstar division.
+
+A74.501s focused run and saved-report inspection exit0:21 physical packets,128 independent positive short/long moments,56 nonzero-mu divided integrals,117 inlet seam conditions,372 source/history conditions,90 pressure conditions and45Rp pulse-frame unit conditions. The report pins1839 inputs/76 implementations. Existing read-only Luna/max review and independent integral checks resolve the positive B_n series; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next connect the independently selected original pulse atRp to this current numeric frame, then extend native velocity/pressure/history towardRv. Preserve selected U0, original N/scales, P0 and complete P1; do not fit a pressure tail. Signed centers/relative pressure cancellation, global mixed joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate pulse implementation queue
+
+- [x] Original nonzero-mu2Rc→Rp numerical/physical continuation and current eight-function pulse-frame export (this milestone).
+- [ ] Read the accepted current `Rp_native_C5_pulse_source` inlet binding and the original selected pulse U0/constants. Use `OriginalQuietNumeric.evaluate(Z,"1")` as the actual numerical inlet. Compare all8 normalized frame fields with the selected native constants and source identities before admission.
+- [ ] Implement the original Rp→Rv native pulse evaluator using its implicit source profile, selected parameters and positive-mu logarithmic schedule. Carry m/h/k/e/p and P0 without reset; do not replace the pulse by a free profile.
+- [ ] Extend the same repaired P1 through the pulse with its fixed leading N1p and original incoming value. Only the actual source theorem beyondRv permits zero pressure; n1 velocity is already zero on this tail.
+- [ ] Save focused native-pulse value/implicit-function/own-history comparisons, the actualRp seam and the finiteRv endpoint. Report normalized/factored physical errors separately from unresolved relative pressure cancellation.
+- [ ] Then resolve signed functions/high mixed joins/common globalN, compatible analytic heat/energy/stress/flat remainder, independent temporal n>=2 and oscillatory corrected NS. Keep these full-goal gates open until their evidence exists.
+
 # Current scheduled-agent queue - original compact n1 pressure, 2026-10-16
 
 Read [CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md) first. `OriginalCompactN1PressureVelocity` now includes the original compact physical velocity and pressure through temporal orders0/1. P1 retains core/lower/active history, exact nonzero leading compact pressure, actual finite-N partial-prefix error bounds and the supported theta0*Utheta1 integral. Physical P1 has weight lambda^-2, with original units and no extra Lambda factor. Separate directed exponential terms retain all scales; signed centers and relative cancellation remain unresolved.
@@ -10,10 +27,10 @@ Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next stable origin
 
 - [x] Add actual reserved n1 velocity and physical own mass C0/C1 through2Rc (ddda92c1; preceding milestone).
 - [x] Add actual compact P1 C0/C1 and physical lambda^-2 pressure, with incoming histories, fixed leading forcing and swirl integral (current milestone; see linked evidence).
-- [ ] Implement `OriginalQuietNumeric` from the saved actual2Rc inlet, not a diagnostic candidate or fresh inner solve. Read `current_original_C3_power_to_Rp.py` and `current_original_true_quiet_Rp_C5_pressure_C3_functions.py`. Native s=log(R/(2Rc)), 0<=s<=Tw-2-log2; mu is the original positive value.
-- [ ] Evaluate the original analytic own-rate E/m/h/k/e/p flows using stable exprel kernels. Preserve incoming h/e/p/P0 and nonzero meridional memories. Do not extend the100-term short-compact exponential polynomial to the long quiet length. Keep input interval errors and ordinary Z rows.
-- [ ] Extend physical orders0/1 from2Rc toRp. Use the same n1 zero-velocity/mass source theorem on this tail. Incoming P1 remains, plus the fixed quiet N1p integral; zero n1 velocity does not imply zero P1. Recover radius/time atoms and Cartesian rotation without physical hyper-exponentials.
-- [ ] Run only focused independent quiet-kernel comparisons, near0/long-length cases and2Rc/Rp seams. Include a positive-mu test that would fail at mu=0 and same-N/P0/pressure-history conditions. Save the resulting actual-source report and entry document.
+- [x] Implement `OriginalQuietNumeric` from the saved actual2Rc inlet, not a diagnostic candidate or fresh inner solve. Read `current_original_C3_power_to_Rp.py` and `current_original_true_quiet_Rp_C5_pressure_C3_functions.py`. Native s=log(R/(2Rc)), 0<=s<=Tw-2-log2; mu is the original positive value.
+- [x] Evaluate the original analytic own-rate E/m/h/k/e/p flows using stable exprel kernels. Preserve incoming h/e/p/P0 and nonzero meridional memories. Do not extend the100-term short-compact exponential polynomial to the long quiet length. Keep input interval errors and ordinary Z rows.
+- [x] Extend physical orders0/1 from2Rc toRp. Use the same n1 zero-velocity/mass source theorem on this tail. Incoming P1 remains, plus the fixed quiet N1p integral; zero n1 velocity does not imply zero P1. Recover radius/time atoms and Cartesian rotation without physical hyper-exponentials.
+- [x] Run only focused independent quiet-kernel comparisons, near0/long-length cases and2Rc/Rp seams. Include a positive-mu test that would fail at mu=0 and same-N/P0/pressure-history conditions. Save the resulting actual-source report and entry document.
 - [ ] Continue the original native pulse fromRp toRv with its selected U0, full incoming histories and pressure source. Do not replace it with free interpolation or a pressure-tail fit.
 - [ ] Improve P1 cancellation with a backward representation only after consuming the same actual full terminal pressure identity and all remaining compact/quiet/pulse forcing. Do not declare2Rc pressure zero.
 - [ ] Then resolve signed coefficient/fast-phase evaluations, high-order mixed joins/common N, exact heat/energy/stress/flat remainder, genuine n>=2 recursion and oscillatory corrected NS. These full-goal gates remain open.

@@ -1,3 +1,11 @@
+# Cross-device handoff - original quiet numerical continuation throughRp, 2026-10-16
+
+Read [CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_QUIET_NUMERIC_2026_10_16.md) first. `OriginalQuietNumeric/OriginalQuietVelocity` now continues the actual repaired2Rc inlet through the original full quiet length toRp. Stable positive own-rate kernels retain nonzero leading histories/P0 and explicit separate positive-mu sectors. The source-admitted n1 velocity/mass tail is zero; incoming P1 persists plus the exact fixed increment Rc*k^2/8*(1-exp(-s)). Physical velocity/pressure include temporal orders0/1, and the current eight-function native pulse frame is exported without an extra Pstar division.
+
+A74.501s focused run and saved-report inspection exit0:21 physical packets,128 independent positive short/long moments,56 nonzero-mu divided integrals,117 inlet seam conditions,372 source/history conditions,90 pressure conditions and45Rp pulse-frame unit conditions. The report pins1839 inputs/76 implementations. Existing read-only Luna/max review and independent integral checks resolve the positive B_n series; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next connect the independently selected original pulse atRp to this current numeric frame, then extend native velocity/pressure/history towardRv. Preserve selected U0, original N/scales, P0 and complete P1; do not fit a pressure tail. Signed centers/relative pressure cancellation, global mixed joins/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Cross-device handoff - original compact n1 pressure, 2026-10-16
 
 Read [CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_COMPACT_N1_PRESSURE_2026_10_16.md) first. `OriginalCompactN1PressureVelocity` now includes the original compact physical velocity and pressure through temporal orders0/1. P1 retains core/lower/active history, exact nonzero leading compact pressure, actual finite-N partial-prefix error bounds and the supported theta0*Utheta1 integral. Physical P1 has weight lambda^-2, with original units and no extra Lambda factor. Separate directed exponential terms retain all scales; signed centers and relative cancellation remain unresolved.
