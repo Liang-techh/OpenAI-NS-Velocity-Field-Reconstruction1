@@ -1,3 +1,11 @@
+# Current checkpoint - original active patch m15 to Rh, 2026-10-16
+
+Read [CURRENT_ORIGINAL_RM_M15_2026_10_16.md](CURRENT_ORIGINAL_RM_M15_2026_10_16.md) first. `OriginalRmM15` now continues the actual active Rm..Rh pressure integral from all156 inlet terms to168 cumulative sectors. Same-branch mass closure yields four beta/survival-tail shapes; original fixed t degrees0..2 stay separate. Exact F/RQy endpoints, positive native G kernels and full-prefix finite-N source/history/quadratic errors remain. The leading terminal RQy vanishes without resetting finite-N histories.
+
+The run exited0 in150.394 seconds; saved-report inspection exited0:18 packets/inlet replays,432 serialized increment errors,234 pressure-source seams,300 prefix-error conditions and12 independently integrated physical C0/C1 values. Thirty refined-kernel overlaps pass, with five strictly improved tail widths. Report pins1775 inputs/83 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**, reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next append original Rh_reference offset[-5,0] from the complete168-term inlet and genuine four-row Rh finite-N histories. Leading U=M=4Z gives an exact constant-background integral; preserve analytic Q derivatives and all actual slow/fast/prefix errors. Then outer_slope/outer_axial/buffer/o3/compact pressure toRp and an independent reserved-moment value/Z1 comparison. Selected-N signed centers/useful relative accuracy, global all-five/common N/heat/energy/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
 # Current checkpoint - original Rm patch pressure and C3 errors, 2026-10-16
 
 Read [CURRENT_ORIGINAL_RM_PRESSURE_ROWS_2026_10_16.md](CURRENT_ORIGINAL_RM_PRESSURE_ROWS_2026_10_16.md) first. `OriginalRmPressureRows` now evaluates actual partial-bump U/Q through Z2, mean through Z3 and Uy/Qy through Z1 from genuine physical controls/defects. All five finite-N histories retain four ordinary derivative rows, actual dx/x transport, one incoming/local1/N factor and separate slow By/N versus fast Bphi errors. Exact full-support identities do not reset finite-N histories.
