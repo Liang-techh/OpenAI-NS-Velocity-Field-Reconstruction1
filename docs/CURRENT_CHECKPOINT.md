@@ -1,3 +1,11 @@
+# Current original long/reference physical trace and signed m15 chain - 2026-10-16
+
+Read [CURRENT_ORIGINAL_LONG_REFERENCE_M15_2026_10_16.md](CURRENT_ORIGINAL_LONG_REFERENCE_M15_2026_10_16.md) first. New long native1/reference native0 source calculus uses171 actual germ rows,18 exact root value/Z1 rows, distinct native J7/J81519 and the endpoint flat-sigma two-jets. It recovers17 modified trace rows at arbitrary actual phase, retaining true p2_yZ, slow_B/N+B_phi and R/Pstar once. The long radius R=110*exp(Tq) is proved directly as a product; E_y=E/10 is not claimed on the whole long chart.
+
+New production exits0 in19.868s; saved inspection and11 focused finite-N controls pass. Report pins1927 inputs/160 implementations. Raw213 and the independent target stay verbatim; the correlated view has197 terms with196 other entries unchanged. The own long0 pressure envelope is explicitly source bound; post_power1 is not reinterpreted. Full original155 remains conservative. Reserved stays once; no original signed source values were evaluated and no accepted ancestor constructor/calculation ran.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next prove postrestore native1/Rm patch native x=1 physical source interface, including compact-beta flatness, unique-control Z jets and retained finite-N histories. Its opaque operations and geometry/empty-prefix evidence do not yet prove the modified derivative join. Rh_reference caps remain enormous. Numeric Rp/global all-five/common-N matching, heat/energy/stress/flat remainder, true temporal n>=2/summation, mean/oscillatory correction and corrected Cartesian NS remain open. P1 is not m15.
+
 # Current original signed reference/restore viscous endpoint chain - 2026-10-16
 
 Read [CURRENT_ORIGINAL_REFERENCE_ENDPOINT_M15_2026_10_16.md](CURRENT_ORIGINAL_REFERENCE_ENDPOINT_M15_2026_10_16.md) first. Actual source seams contract finite-N sectors123/139/155 to D(reference0)-D(Rm), with D=R*(Qy_modified-Qy_leading), ordinary Z1 and physical R/Pstar once. Explicit endpoint scopes, actual graph fingerprints and a source-bound linear Qy envelope identify the independent saved reference0 inlet budget. The old longreshape1 lower packet is not reinterpreted. The entire original155 positive aggregate remains as the outlet bound; no separate postrestore upper cap or cap subtraction is claimed.
