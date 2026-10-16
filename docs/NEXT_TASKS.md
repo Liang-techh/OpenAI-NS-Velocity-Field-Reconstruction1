@@ -1,3 +1,11 @@
+# Current original axial pressure and m15 - 2026-10-16
+
+Read [CURRENT_ORIGINAL_AXIAL_M15_2026_10_16.md](CURRENT_ORIGINAL_AXIAL_M15_2026_10_16.md) first. OriginalAxialPressureRows/RateMemory/M15 now continue the actual changing O2_axial source from176 to195 cumulative pressure sectors. Positive mean memory, both RQy endpoints, exact scalar reductions, ordinary/peak positive quadrature and complete C3 finite-N/prefix errors remain. Terminal beta0 does not imply mean0 or Qy0.
+
+Production exited0 in114.834 seconds; saved-report inspection exited0:18 moment/18 pressure packets,684 serialized increment rows,360 C3 histories,270 prefix conditions,72 saved source overlaps. Independent finite fixtures check60 F/G coefficients,12 physical C0/C1 integrals and20 exponential-width C3 Duhamel rows. Four additional ordinary/peak rate-two kernels pass independent direct integration in1.922 seconds. Report pins1793 inputs/94 implementations. Existing read-only Luna/max worker reused; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next implement O2_buffer from the complete195-term inlet and genuine terminal mean mstar. Its exact leading increment is -4Rlower^2*mstar^2*b on b in[0,11]; F/G already include half-S1, so do not halve again. Leading RQy is nonzero and equal at both endpoints; finite-N endpoint/prefix errors remain. Continue O3/compact/quiet to the independent reserved Rp value/Z1 seam. Signed finite-N cancellation/global all-five/common N/heat/energy/stress/flat remainder/temporal n>=2/corrected NS remain open.
+
 # Next tasks - original pressure through outer reference and O2 slope, 2026-10-16
 
 Read [CURRENT_ORIGINAL_OUTER_M15_2026_10_16.md](CURRENT_ORIGINAL_OUTER_M15_2026_10_16.md) first. `OriginalOuterPressureRows/OriginalOuterM15` now continue original Rh_reference[-5,0] and O2_slope[0,1], retaining all four finite-N history rows and analytic U=M=4Z pressure derivatives. Complete cumulative m15 advances168->172->176 terms. Exact positive background integrals, both finite-N endpoints, complete prefix/quadratic errors and the new chart's own slow/fast bounds remain; shared-boundary budgets are unioned, not identified as signed values.

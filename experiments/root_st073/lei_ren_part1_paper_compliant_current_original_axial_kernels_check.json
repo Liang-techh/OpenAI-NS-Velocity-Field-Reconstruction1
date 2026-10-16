@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "passed": true,
+    "independent_ordinary_and_peak_integrals": 4
+  },
+  "samples": [
+    {
+      "s": ".5",
+      "power": 1,
+      "normalized_direct_value": "0.500000000206115362456273495935514314824146208",
+      "saved_interval_relative_width": "8.49670850708e-18",
+      "independent_quadrature_inside_saved_enclosure": true
+    },
+    {
+      "s": ".5",
+      "power": 2,
+      "normalized_direct_value": "0.50000000041223072508248116260808284602348374",
+      "saved_interval_relative_width": "8.49670850358e-18",
+      "independent_quadrature_inside_saved_enclosure": true
+    },
+    {
+      "s": "1",
+      "power": 1,
+      "normalized_direct_value": "2.50662827463107858127388180494929071602057852",
+      "saved_interval_relative_width": "1.72909242036e-11",
+      "independent_quadrature_inside_saved_enclosure": true
+    },
+    {
+      "s": "1",
+      "power": 2,
+      "normalized_direct_value": "2.5066282746310624737278875693003395820639564",
+      "saved_interval_relative_width": "1.729092776e-11",
+      "independent_quadrature_inside_saved_enclosure": true
+    }
+  ],
+  "report_file": "lei_ren_part1_paper_compliant_current_original_axial_m15_numeric.json",
+  "report_sha256": "57f5495394ab864ace99905fac07aab5bd315ff420329704121de121312b8d4a",
+  "implementation_hashes": {
+    "scripts/verify_original_axial_kernels.py": "911e353a32cba05bbe80a5efdeb4d23b6abdff899fe0dc672b2434db5841fab6"
+  },
+  "execution_seconds": 1.922,
+  "limits": {
+    "saved_kernel_validation_only": true,
+    "ancestors_replayed": false,
+    "new_global_physical_claim": false
+  }
+}
