@@ -343,9 +343,13 @@ rebuild the ten high-source packets to address an interface-only task.
     enclosures, canonical/am_N diagnostics and normalized same-source P0 Z5.
     Centered angular memories retain their true L+2 decay below the control
     scale. Neither missing higher-Z rows nor finite-N signed centers are invented.
-    **Next:** original LEADING implicit controls/patch from these unmodified
-    defects, then separate finite-N dx/x history transport to Rh/reserved repair.
-    Do not re-solve the leading map on finite-N diagnostic defects. Derive
+    [Original leading implicit Rm patch numeric reader](CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md)
+    now recovers actual control Z2, partial moments/pressure/Q and leading
+    terminal identities from a strict same-source contraction. Its maximum
+    sampled self-map bound is7.3388740271418854543e-6. No higher-Z rows are padded.
+    **Next:** separate original finite-N dx/x density/history transport through
+    this fixed leading patch, followed by physical patch values and outer/Rh
+    matching. Do not re-solve leading controls on modified defects. Derive
     total radial/fast-phase rows and tighten the incoming mean_Z3 bound. Complete
     physical joins and the remaining signed five-defect/moment repair,
     global physical/chart assembly and explicit tagged-log readers.

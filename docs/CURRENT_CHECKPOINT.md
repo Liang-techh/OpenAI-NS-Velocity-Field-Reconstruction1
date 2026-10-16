@@ -1,3 +1,11 @@
+# Current checkpoint - original leading implicit Rm patch, 2026-10-15
+
+Read [CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md) first. `OriginalRmPatchNumeric` now computes original leading five-bump controls through TaylorZ2, using actual signed unmodified Rm defects, the positive original anisotropic coordinates and a strict interval self-map. The same Jacobian recovers Z2. Native x in[1,e] supplies leading axial/swirl, own five histories, unchanged-P0 pressure and Q=Ur/sqrt(R/2) through Z1. Exhausted original bump supports give the same leading terminal functional identities; finite-N histories remain separate nonzero inlet data.
+
+A176.607s run exits0 with14 actual packets across5 axial positions,17 known-coupled-family checks,34 independent raw moment/radial integral checks,90 terminal identity coefficients,75 Rm inlet coefficients,38 history distinctions and42 P0 checks. Maximum actual self-map contraction is7.3388740271418854543e-6. Saved-report inspection exits0; pins total1760 inputs/47 implementations. Read-only Luna/max review found no material issue.
+
+Tasks14/15 remain IN PROGRESS; full goal ACTIVE / INCOMPLETE. Next transport original finite-N local/density/five histories separately through this fixed leading patch with dx/x and retained memories; then assemble fixed-time physical patch values and continue outer/Rh matching. Do not re-solve leading controls on modified defects or invent higher-Z rows. Modified patch fields, new whole-axis numeric cover, global pressure/common N/C2/heat/energy/stress/flat remainder, genuine n>=2/smooth sum/oscillatory cancellation and corrected NS remain open.
+
 # Current checkpoint - actual signed Rm defect/pressure inlet, 2026-10-15
 
 Read [CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md](CURRENT_ORIGINAL_RM_DEFECT_NUMERIC_2026_10_15.md) first. `OriginalRmDefectNumeric.evaluate(Z)` now exports actual signed unmodified Rm five-defect TaylorZ2, all finite-N own moment/error rows in generic Pstar units, canonical/am_N diagnostic frames and same-source normalized analytic P0 TaylorZ5. Analytic centering and separate exponential increments preserve defects below order-one rounding error; no cap endpoint becomes a signed source value. Original N/histories and nonzero n1 primitive remain.

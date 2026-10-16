@@ -1,5 +1,12 @@
 # Actual signed Rm defect and pressure inlet - 2026-10-15
 
+Successor: [original leading implicit Rm patch reader](CURRENT_ORIGINAL_RM_PATCH_NUMERIC_2026_10_15.md)
+now uses these signed unmodified defects to certify control Z2 and recover
+leading patch fields, moments, pressure and radial coefficient. Finite-N
+transport and fixed-time physical patch assembly are next; their incoming
+histories remain separate and nonzero.
+
+
 `OriginalRmDefectNumeric.evaluate(Z)` now exports the actual unpatched Rm inlet for arbitrary interior decimal Z. It supplies all five signed UNMODIFIED defect enclosures through Taylor Z2, the five finite-N own moment enclosures in generic S=Pstar units, canonical-frame and current-amplitude finite-N diagnostic defects, and the same-source analytic pressure datum through Taylor Z5. It preserves the original selected N, incoming correction histories and nonzero positive-order n1 primitive.
 
 ## Center the source before interval arithmetic
