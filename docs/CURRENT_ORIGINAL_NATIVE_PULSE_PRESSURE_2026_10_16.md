@@ -1,3 +1,5 @@
+Latest weighted-history continuation: [repaired m15 throughRv](CURRENT_ORIGINAL_NATIVE_PULSE_M15_2026_10_16.md). `OriginalNativePulseM15Numeric` complements the velocity/P1 API below; independent preRp m15 numerical joining and global five-moment admission remain open.
+
 # Original repaired P1 through the selected pulse - 2026-10-16
 
 `OriginalNativePulsePressureVelocity.evaluate(Z,chart,coordinate,...)` adds the original repaired P1 value and ordinary Z1 enclosure to the selected pulse velocity/leading-pressure API. It keeps original positive mu, the same selected source/N, all incoming pressure sectors, the independent leading P0 and original physical units. Pressure now includes temporal orders0/1 throughout the entrance/main/gap/end charts throughRv. The full project remains **ACTIVE / INCOMPLETE**; tasks14/15 remain IN PROGRESS. Signed point centers, useful relative pressure cancellation, numerical weighted m15, global mixed joins/gradients/common N/heat/stress, genuine temporal n>=2 and corrected NS remain open.

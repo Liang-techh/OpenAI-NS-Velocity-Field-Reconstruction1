@@ -1,3 +1,25 @@
+# Current scheduled-agent queue - repaired weighted pulse m15 throughRv, 2026-10-16
+
+Read [CURRENT_ORIGINAL_NATIVE_PULSE_M15_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_M15_2026_10_16.md) first. `OriginalNativePulseM15Numeric` now provides the actual repaired weighted m15 value/ordinary Z1 enclosure throughout the original selected entrance/main/gap/end pulse toRv. Its actualRp boundary is the negative checked complete pulse integral under the separately proved repaired terminal m15=0. Main partial integrals are computed separately with the true I1 rates and R*dR measure. The source-derived inherited mean-log/cross terms, finite RQ_y endpoints and complete end beta/history products are retained with original units.
+
+The210.985s focused run and saved-report inspection exited0:10 independent weighted-density comparisons,5 actual symbolic unit identities,45 original-parameter packets,840 source/C1 conditions,12 inlet/chart seams and36 source-certified zero conditions. The report pins1862 inputs/80 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent. The velocity/P1 APIs remain available; this adds a separate weighted coefficient moment without inventing an extra physical pressure time factor.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next independently integrate repaired inner/preRp m15, including the compact reserved repair and quiet K^2 history, and join it to the actual terminal-derived inlet using the same source functions. Interval overlap alone cannot close that seam. Global five-moment numerical admission, resolved signed centers/relative cancellation, physical gradients/high mixed joins/common N/energy/heat/stress/flat remainder, genuine temporal n>=2 and corrected NS remain open.
+
+## Immediate independent preRp weighted-history queue
+
+- [x] Original selected pulse velocity and leading pressure throughRv (88c15afc).
+- [x] Original repaired pulse P1 value/ordinary Z1 and physical pressure orders0/1 (bb0b6a9e).
+- [x] Actual repaired m15 boundary from the complete pulse plus true terminal identity, separate I1 main prefixes, complete end beta/history matrix and true gap anchor (current milestone).
+- [x] Identify the inner/lower/preRp m15 source map and original fixed p=2 pressure-unit recipe (see the next-construction section of the entry document). The signed numerical evaluator remains unimplemented; preserve source signs/derivatives and directed error ownership, without reusing m13 rows or selecting interval endpoints as values.
+- [ ] Consume the accepted actual selected reserved compact coefficients and original physical response matrix row m15. Distinguish the original full-defect target from its actual repaired compact prefix/response; retain finite-N errors and both finite RQ_y endpoints.
+- [ ] Continue the compact repaired weighted history to2Rc. Its exact nonzero leading increment is -K^2*log2/4. Add actual reserved swirl weighted terms and retained incoming inner/lower/active histories in their own units.
+- [ ] Continue the quiet segment with the same unchanged K and exact increment -K^2*s/4, s=log(R/(2Rc)). Zero n1 velocity does not erase this leading fixed weighted forcing or the incoming m15.
+- [ ] Build the independently transported actual m15(Rp) ordinary C0/C1 enclosure and source binding. Join it to the current terminal-derived inlet by the checked complete signed repair identity, not unrelated interval overlap; retain meaningful absolute errors and unresolved cancellation separately.
+- [ ] Assemble all five numerical histories on the same original own-chart joins and repair family. Check required ordinary/mixed derivatives and boundary data before claiming global five-moment numerical admission.
+- [ ] Continue the original flatten/heat field and compatible analytic pressure, finite energy/radial tails, physical derivatives/high mixed joins/common global N, admissible stress and flat remainder.
+- [ ] Implement true temporal n>=2 recursion/smooth sum, oscillatory stress correction and independent full corrected Cartesian NS validation.
+
 # Current scheduled-agent queue - original repaired pulse P1 throughRv, 2026-10-16
 
 Read [CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_PRESSURE_2026_10_16.md) first. `OriginalNativePulsePressureVelocity` now adds actual repaired P1 value/ordinary Z1 enclosures to the original selected Rp-to-Rv velocity and leading pressure. Main uses full incoming P1 plus original radial-free partial integrals; gap/end use the checked actual repaired terminal value identity with nonzero gap history and finite end sources. All linear/quadratic/viscous units, positive mu, selected branch/N, P0 and physical lambda^-2 pressure weight are retained.
@@ -11,12 +33,12 @@ Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next numerical
 - [x] Original selected pulse velocity/leading pressure throughRv with current actual C5 inlet (88c15afc).
 - [x] Actual original main partial repaired P1, full incoming pressure, positive zero/first-time kernels and separate directed quadratic mu error.
 - [x] Actual gap/end repaired P1 using the same full repaired terminal certificate, finite positive future integrals, projected Q history and correct physical lambda^-2 unit (current milestone).
-- [ ] Locate and retain the actual repaired weighted m15 inlet atRp; do not reuse the m13/P1 inlet or its one-radius pressure unit.
-- [ ] Implement I1_Q/I1_QZ with a1=3/2-mu, using K_a1(mean)=M0*(exp(-a0*t)-exp(-a1*t))+ap*(K_a0(g)-K_a1(g)), a0=1/2-mu. Retain original finite-time histories and positive tails.
-- [ ] Implement all original I1 quadratic primitives with rate1-2mu and R*dR measure. Q^2 includes H_j*H_k off the local beta supports; the P1 beta-only quadratic helper cannot be reused as a complete I1_Q_squared integral.
-- [ ] Extend end weighted moments using both a0/a1 positive beta moments and actual finite R*Q_y endpoints. Backward m15=-S1_remaining/2-R*Q_y follows only after the same full repaired terminal identity.
-- [ ] Integrate the gap only toRb=Rv*exp(-4), adding its actual end m15. For Q=C(Z)/R, m15(R)=m15(Rb)-hZ*C_Z*(Rb-R)/(4L)+C^2*log(Rb/R)/4. Do not assume U=0 through the end bumps up toRv.
-- [ ] Preserve m15 linear Rv^2*F, quadratic Rv^2*F^2 and viscous Rv*F units. Verify defining weighted density, actual inlet/main-gap/end joins and terminal identities with focused checks.
+- [x] Recover actual repaired m15(Rp) from the checked complete pulse and repaired terminal identity (current milestone). Independent preRp numerical transport remains open in the queue above.
+- [x] Implement genuine main I1 linear partial kernels with a1=3/2-mu, original finite histories and nonzero tails (current milestone).
+- [x] Implement original I1 quadratic primitives with rate1-2mu and full end beta/history products, including off-support H_j*H_k (current milestone).
+- [x] Extend end weighted moments with both original rates, finite RQ_y and the full repaired terminal value identity (current milestone).
+- [x] Integrate the nonzero gap history to actualRb=Rv*exp(-4) and add the true end m15 (current milestone).
+- [x] Preserve original weighted units and pass defining-density, terminal-derived inlet/chart seams and terminal checks (current milestone). Independent preRp numerical seam is explicitly still open.
 - [ ] Continue original flatten/heat with all five numerical histories and compatible analytic pressure, then finite energy/radial tail, required physical derivatives/high mixed joins/common N, admissible stress and flat remainder.
 - [ ] Implement genuine independent temporal n>=2 recursion/smooth sum, oscillatory stress cancellation and independent corrected Cartesian NS residual validation.
 
