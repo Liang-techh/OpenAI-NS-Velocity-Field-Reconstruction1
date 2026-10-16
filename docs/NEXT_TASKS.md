@@ -1,3 +1,20 @@
+# Next tasks - original cumulative pressure through R110, 2026-10-16
+
+Read [CURRENT_ORIGINAL_R110_M15_2026_10_16.md](CURRENT_ORIGINAL_R110_M15_2026_10_16.md) first. `OriginalR110PressureRows/OriginalR110M15` now continue genuine pressure jets and cumulative m15 across second_switch/post_power to exact R110. The first-switch51 terms remain once, followed by69 second-switch and88 post-power cumulative sectors. Constant U retains a nonzero decaying mean/Qy; only its unmodified-background Delta(RQy) cancels exactly. Both finite-N endpoints and uniform-prefix volume errors remain.
+
+The full run exited0 in111.881 seconds; saved-report inspection exited0:38 actual packets,38 exact inlet replays,532 ordinary pressure rows,1406 serialized errors,222 exact empty rows,48 independent pressure integrals and128 lower finite-N endpoint conditions. Report pins1762 inputs/57 implementations. Existing read-only `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next continue the actual long reshape from all88 R110 terms and genuine `post.rows.inputs(Z,iv.mpf(1))` five-jets. Use its checked native T singleton/profile/phase; do not reuse constant-U cancellation on varying-U charts. Selected-N signs/useful relative cancellation, independent Rp/all-five global joins/common N/heat/energy/stress/flat remainder, true temporal n>=2 and corrected NS remain open.
+
+## Immediate pressure queue after R110
+
+- [x] Second-switch/post-power genuine pressure jets and cumulative m15 to exact R110, with complete51-term inlet,69/88 cumulative outputs, correct source derivative owners, native measures and both finite-N endpoints (current milestone).
+- [ ] Build long pressure source adapter from genuine R110 Psi/Mpsi five-jets and the checked original finite T/profile. Carry meanZ3/QZZ and Uy/QyZ1; avoid truncated public velocity inlets.
+- [ ] Integrate long m15 from all88 incoming terms with its actual native measure and source/amplitude sectors; restore both leading and finite-N RQy endpoint contributions where Uy varies.
+- [ ] Continue subsequent physical transitions/compact pressure toward Rm/Rp and independently measure the source-correlated Rp value/Z1 seam.
+- [ ] Complete all-five global histories/mixed joins/common N, original flatten/preheat/exact heat/energy/stress/flat remainder.
+- [ ] Implement true temporal n>=2 coefficient recursion/smooth summation, oscillatory stress cancellation and independent corrected Cartesian NS validation.
+
 # Next tasks - cumulative original first-switch pressure, 2026-10-16
 
 Read [CURRENT_ORIGINAL_FIRST_SWITCH_M15_2026_10_16.md](CURRENT_ORIGINAL_FIRST_SWITCH_M15_2026_10_16.md) first. `OriginalFirstSwitchM15` now continues the unchanged28-sector R100 macro inlet across the actual first switch and returns51 cumulative C0/C1 sectors. Signed epsilon/mean modes retain exp(-nY); the native hbS width is factored before short kernels. Actual inlet/source errors keep hbS*hbB and hbS^2, and both leading/finite-N pressure endpoints survive.
