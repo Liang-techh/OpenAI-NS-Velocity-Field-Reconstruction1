@@ -4,3 +4,5 @@ experiments/root_st073/lei_ren_part1_paper_*.json -text
 src/openai_ns_reconstruction/*.py -text
 scripts/check_original_reserved_m15_response.py -text
 scripts/run_original_repaired_Rp_m15.py -text
+scripts/check_original_micro_viscous_m15.py -text
+scripts/run_original_micro_viscous_m15.py -text

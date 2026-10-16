@@ -1,3 +1,11 @@
+# Current original first/second micro signed viscous trace - 2026-10-16
+
+Read [CURRENT_ORIGINAL_MICRO_VISCOUS_M15_2026_10_16.md](CURRENT_ORIGINAL_MICRO_VISCOUS_M15_2026_10_16.md) first. The actual first/second-micro corrected U/m/Q y0/y1 C0/ordinary-Z1 and physical RQy endpoints now have14 exact source identity rows at s=1, with the same radius, phase, Jacobian and N. Empty second-prefix integrals preserve the first incoming mean; opaque function arguments and bound variables remain explicit.
+
+Original213 terms remain verbatim. In a separate200-term correlated view, viscous sectors12/16 telescope to the remaining second-micro upper trace; its original positive combined budget is retained conservatively. No error-cap subtraction or cap-as-value selection is used. All199 other reduced sectors and the independent negative complete-pulse m15 target remain unchanged. Production exits0 in15.496s; saved inspection passes. Independent finite-N physical and adversarial graph fixtures pass. Report pins1921 inputs/134 implementations.
+
+Tasks14/15 remain IN PROGRESS; the full goal is **ACTIVE / INCOMPLETE**. Numeric Rp closure remains open. The dominant remaining individual log cap is restoration_finite_N_viscous_error (~5.52208e+408906090034569676), not an observed residual. Next prove actual modified restoration/postrestore RQy trace equality at the common -8+1=-7+0 radius before contracting its finite-N budgets. Keep other endpoint, volume, numerical and width errors. Exact heat/energy/stress/flat remainder, genuine n>=2/summation, mean/oscillatory corrections and corrected Cartesian NS remain open. Do not replay accepted ancestors.
+
 # Current original repaired Rp m15 and source correlations - 2026-10-16
 
 Read [CURRENT_ORIGINAL_REPAIRED_RP_M15_2026_10_16.md](CURRENT_ORIGINAL_REPAIRED_RP_M15_2026_10_16.md) first. The saved212-term background state is retained verbatim and the distinct reserved n1 own-swirl response is appended once (213 terms). The first six sectors jointly replace old inner+lower: core ends at rho=4, while the four collar sectors span q=0..2 across Rin at q=1. Saved q=1 evidence defines the legacy split without appending it again. Active6..206, compact207..210 and quiet211 stay once.
