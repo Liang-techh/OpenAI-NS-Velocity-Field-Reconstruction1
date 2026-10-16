@@ -1,3 +1,21 @@
+# Current scheduled-agent queue - original preRp weighted m15 enclosure transport, 2026-10-16
+
+Read [CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md](CURRENT_ORIGINAL_PRERP_M15_NUMERIC_2026_10_16.md) first. `OriginalPreRpM15Numeric` now transports source-bound ordinary C0/C1 weighted m15 enclosures over the compact repair and full quiet segment toRp, independently of the terminal-derived numerical pulse inlet. It retains inner/lower/active history, negative weighted own swirl with its actual selected coefficients, finite-N errors/endpoints, exact compact/quiet K^2 logarithms and original p=2 units. The accepted signed source identity separately connects this history to the negative complete pulse.
+
+The78.628s focused run and saved-report inspection exited0:39 actual packets,18 independent signed physical-swirl C0/C1 comparisons,27 weighted prefixes,6 original unit/baseline identities,104 finite-N conditions and138 K^2-history conditions. Report pins1839 inputs/77 implementations. Existing read-only worker `/root/n1_atlas_map`: **GPT-5.6 Luna / max**; no new agent.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. This adds cumulative enclosures, while inherited inner/lower/active and compact finite-N signed centers remain unresolved. Next directly evaluate those original signed S1 sources and preserve selected-inverse correlations to measure independent Rp numerical seam/cancellation error. An exact source identity or interval overlap cannot replace that evidence. Global five-moment numerical admission, mixed joins/common N/energy/heat/stress/flat remainder, true temporal n>=2 and corrected NS remain open.
+
+## Immediate signed-pressure construction queue
+
+- [x] Implement actual source-bound compact and quiet m15 partial-history enclosures with weighted own swirl, original units, nonzero K^2 history and exact empty-prefix/2Rc seams (current milestone).
+- [x] Bind the independent forward composition to the accepted actual signed repair/terminal partition theorem, without consuming the terminal-derived numerical Rp inlet (current milestone).
+- [ ] Directly evaluate signed inner/lower/active pressure sources with the original radial-free S1 formula and finite RQ_y endpoints; preserve incoming history, ordinary Z1 and physical p=2 units. Existing symmetric magnitude rows are enclosures, not signed values.
+- [ ] Evaluate the compact finite-N weighted S1 correction from actual signed U/Q/ordinary-Z rows, keeping both endpoints and the exact Q=-K/R baseline separate. Do not differentiate a majorant or select a zero/midpoint correction.
+- [ ] Preserve the selected reserved inverse's complete-defect correlations, then compare the independently transported Rp value/Z1 with the pulse boundary. Report residual and numerical error separately; keep the numerical seam open until this succeeds.
+- [ ] Assemble all five original histories and required mixed joins, then original flatten/preheat pressure/exact heat/finite-energy tail, common global N and admissible stress/flat remainder.
+- [ ] Implement genuine temporal n>=2 recursion/smooth sum, oscillatory stress correction and independent corrected Cartesian NS residual validation.
+
 # Current scheduled-agent queue - repaired weighted pulse m15 throughRv, 2026-10-16
 
 Read [CURRENT_ORIGINAL_NATIVE_PULSE_M15_2026_10_16.md](CURRENT_ORIGINAL_NATIVE_PULSE_M15_2026_10_16.md) first. `OriginalNativePulseM15Numeric` now provides the actual repaired weighted m15 value/ordinary Z1 enclosure throughout the original selected entrance/main/gap/end pulse toRv. Its actualRp boundary is the negative checked complete pulse integral under the separately proved repaired terminal m15=0. Main partial integrals are computed separately with the true I1 rates and R*dR measure. The source-derived inherited mean-log/cross terms, finite RQ_y endpoints and complete end beta/history products are retained with original units.
