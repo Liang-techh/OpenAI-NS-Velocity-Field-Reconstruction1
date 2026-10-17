@@ -1,3 +1,11 @@
+# Current direct correlated scaled source and Rc inlet identities - 2026-10-17
+
+Read [CURRENT_ORIGINAL_CORRELATED_SCALED_SOURCE_2026_10_17.md](CURRENT_ORIGINAL_CORRELATED_SCALED_SOURCE_2026_10_17.md) first. Direct deltaV/delta-m C5 ports now recover normalized delta-q and delta-q_y before boxing; Pstar-linear/quadratic pressure sectors stay separate. Rm radial slow/N+fast source is applied once. Original interior signed targets/integrals remain unevaluated.
+
+The new source rewriter proves39 Rc inlet identities (30 correction derivatives,8 S0/S1 derivatives,1 radius). The true forward/canonical P0 pressure function is now bound, including exact epsilon scaling and all-order axial q Taylor identity. The inherited P0-unproved label is superseded. Full DeltaF/Q_y boundary and core/collar producer joins remain open, all aggregate caps remain. The canonical signed A-A0 collar primitive now has99 actual local nodes using radial-order-one Psi_rho(4); six-source equality is still unproved.
+
+All quiet179 views, original archives, six signed terms and exact N are unchanged. Target and quiet are already consumed; never subtract again. Next complete the Rc pressure-boundary source pairing and obtain signed original target/history enclosures for the normalized evaluator. Global closure and later physical layers remain incomplete; goal ACTIVE / INCOMPLETE.
+
 # Current actual finite-N signed pressure sources - 2026-10-17
 
 Read [CURRENT_ORIGINAL_FINITE_N_SIGNED_SOURCE_2026_10_17.md](CURRENT_ORIGINAL_FINITE_N_SIGNED_SOURCE_2026_10_17.md) first. Actual compact and Rm-patch C5 ports now feed exact factored ordinary-C1 Delta v/DeltaF and pressure-increment expressions. Retain both endpoint terms R^2*DeltaF-R*DeltaQ_y, the physical R^2 dx/x measure and the nonzero incoming pressure. No numeric signed integral is installed, and all finite-N caps remain active.

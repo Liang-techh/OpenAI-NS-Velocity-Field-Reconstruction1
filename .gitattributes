@@ -56,3 +56,4 @@ scripts/run_original_first_switch_terminal_m15.py -text
 scripts/run_original_joint_reserved_m15.py -text
 scripts/run_original_quiet_scalar_m15.py -text
 scripts/run_original_finite_N_signed_source.py -text
+scripts/run_original_correlated_scaled_source.py -text
