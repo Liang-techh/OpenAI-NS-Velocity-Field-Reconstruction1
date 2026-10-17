@@ -1,3 +1,11 @@
+# Current original macro viscous endpoint source identity - 2026-10-16
+
+Read [CURRENT_ORIGINAL_MACRO_ENDPOINT_M15_2026_10_16.md](CURRENT_ORIGINAL_MACRO_ENDPOINT_M15_2026_10_16.md) first. Actual micro2/macro0 and macro1/first0 physical source/pressure identities now recover 30 traces, 54 root and 18 loop rows with separate independent leading inputs. Native J/global phase, nonzero histories, mean ODE and actual pressure/FTC sources are bound. Graph query48 is native value2; node2 is40. No accepted ancestor calculation ran.
+
+The exact finite-N viscous endpoint category is -Dmicro2+Dmacro0-Dmacro1+Dfirst0=0, D=R*(physical Qy_modified-Qy_leading). Raw213,target,six signed inner/lower contributions and reserved once remain verbatim. Correlated view186 ->183, all183 others unchanged. Only the three proved endpoint sectors become provenance; leading/source viscous23/24 and43..47 plus volume/width/numerical errors remain. Individual inlet values and absolute histories are not zeroed.
+
+Production exits0 in 21.026 s; serialized inspection and 18 synthetic controls pass. Report pins 1956 inputs / 204 implementations. Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next evaluate or jointly contract actual signed surviving source integrals with the independent m15 target, preserving their point-plus-remainder representation and correct scales. Total m15/globalfive,heat/energy/stress/flat,temporal n>=2/summation,mean/oscillatory correction and corrected CartesianNS remain open.
+
 # Current original first/second-switch m15 source seam - 2026-10-16
 
 Read [CURRENT_ORIGINAL_SWITCH_M15_2026_10_16.md](CURRENT_ORIGINAL_SWITCH_M15_2026_10_16.md) first. Actual first_switch1/second_switch0 source identity now recovers 15 physical traces from modified U3/Uy2/m4 and independent leading V3/m3/Vy2. The new 27-root/9-loop scoped certificate, actual NativeDerivative/J/Bphi wiring, ordinary pressure algebra, global N-phase and nonzero histories are bound to immutable archives. No accepted ancestor calculation ran.
