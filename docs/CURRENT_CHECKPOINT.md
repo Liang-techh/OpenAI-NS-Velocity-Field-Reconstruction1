@@ -1,3 +1,11 @@
+# Current canonical n1 solution norm and raw radial remainder - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_CANONICAL_NORM_TAIL_2026_10_17.md](CURRENT_ORIGINAL_N1_CANONICAL_NORM_TAIL_2026_10_17.md) first. Actual raw owner/equations/zero-axis data and the preconditioned six-kernel convention now bind to a normal-convergent canonical temporal-n1 solution. Accepted complex source bounds give ||v||<=2*Msrc and certified raw radial tails at R9/2,target4. No accepted source-bound production or old numerical recurrence is replayed.
+
+The prefix is source-bound with2(n+1) derivative factors and ordinary-Z factorials. Value degree16 is distinct from common ordinary Z0..3 degree14; the report certifies their separate tails and fresh half-tube Z Cauchy losses. Exact coefficient polynomial tails do not yet include numerical coefficient errors or physical F0/epsilon/Pstar rescaling. Full infinite forward response and q-dependent collar identities remain open.
+
+All inherited C5 graphs, Rc178 and errors, six signed core/lower terms and already-consumed target/quiet remain unchanged. NEXT bind the full forward response/physical scale jets and collar, and complete actual inlet p2/phase/prior-history evaluation. Read saved reports/ASTs only; no accepted owner/fixture/recurrence/quadrature replay. Goal ACTIVE / INCOMPLETE.
+
 # Current terminal flat primitive and directed phase evaluator - 2026-10-17
 
 Read [CURRENT_ORIGINAL_C5_TERMINAL_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_C5_TERMINAL_PRIMITIVE_2026_10_17.md) first. Actual O3 endpoint1 has Delta=2mu>=eta, so its outgoing C and fixed-phase slow-y C_y vanish for every issued phase through ordinary Z3. The new terminal signed history removes only that C_out, retaining original H0, C_in and I1/I2; it feeds the same quiet pressure functional with H_Z3 and physical scales preserved.
