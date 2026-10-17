@@ -1,3 +1,9 @@
+# Selected first raw n1 finite-word enclosures - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_SELECTED_WORDS_2026_10_17.md](CURRENT_ORIGINAL_N1_SELECTED_WORDS_2026_10_17.md) first. New directed1800-bit coefficient enclosures transport actual saved core W0/W1 to s=sc*q/4 at q=0,1/2,5/8,3/4,1, ordinary Z0/Z1 at saved Z~0.371. Signed homogeneous source-sector approximation, numeric local raw error radii and uniform omitted-word tail remain separate. No old s=1/2 field point is reused. Complete eta measure is J_total=4+hb*sc*C with C near5/8.
+
+NEXT evaluate signed local collar increments and extend axial coverage; recover paired own mean/pressure and signed C_inner with the full support error budget. Useful component relative accuracy, signed C_inner, independent terminal comparison and six-source/global closure remain open. All six signed core/lower terms and old errors remain active; target/quiet consumed once. Goal ACTIVE / INCOMPLETE.
+
 # Current raw n1 cutoff and C_inner source binding - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_CUTOFF_SOURCE_BINDING_2026_10_17.md](CURRENT_ORIGINAL_N1_CUTOFF_SOURCE_BINDING_2026_10_17.md) first. Actual all-word raw first n1 function, core entry, raw Akin tail provenance, cutoff own mean/pressure and C_inner m15 source handles are bound through ordinary Z0..3. N1p physical units and Pstar squared restoration are applied once; leading pressure persists after the velocity cutoff.
