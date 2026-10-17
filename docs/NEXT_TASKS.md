@@ -1,3 +1,9 @@
+# True micro-pair correlated six-I1 source - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_MICRO_CORRELATED_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_MICRO_CORRELATED_M15_2026_10_17.md) first. Actual first/second-micro Q4 pressure is reduced to six I1 integrands with ordinaryZ0/1, R^2*hb once, and no bulk Qy/Uy. Consume the accepted14-row free-Z seam fingerprint; do not replay it. The retained outer RQy keeps slowBy/N+fastBphi. All old signed terms/errors remain; wholemicro numerical enclosure is false.
+
+NEXT enclose the correlated true six-I1 source and signed finiteN defect, explicitly including QZZ/meanZZZ and coherent predecessor histories; then enclose the actual outer boundary. Exact commonN is unchanged. No cap-values, duplicated q2/seventh term, old preRp equality, accepted ancestor replay or full closure claim. Full Rp/allZ/later layers remain open. Goal ACTIVE.
+
 # Actual nonempty first-micro prefix and full source adapter - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_FIRST_MICRO_PREFIX_2026_10_17.md](CURRENT_ORIGINAL_N1_FIRST_MICRO_PREFIX_2026_10_17.md) first. Actual [sc/2,3sc/4] m15/Z1 increment is negative in hb*eps^2*Pstar^2*(sc/4) units; source-owned finite-N correction is exactly zero there, distinct shear sigma atoms retained. Direct cumulative join cancels the shared sc/2 endpoint/error before boxing. Full first_micro source adapter now binds true slow B_y/N+fast B_phi, common exact N, S1 and its own upper RQy; full-chart numerical containment remains unavailable.
