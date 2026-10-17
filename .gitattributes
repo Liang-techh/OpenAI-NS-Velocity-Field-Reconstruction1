@@ -48,3 +48,5 @@ scripts/check_original_weighted_remainder_kernel.py -text
 scripts/run_original_weighted_source_primitive.py -text
 scripts/check_original_weighted_leaf_kernel.py -text
 scripts/run_original_weighted_leaf_m15.py -text
+scripts/check_original_macro_weighted_kernel.py -text
+scripts/run_original_macro_weighted_m15.py -text

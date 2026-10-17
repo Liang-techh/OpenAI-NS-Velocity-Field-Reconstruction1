@@ -1,3 +1,11 @@
+# Current original signed macro weighted primitive - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MACRO_WEIGHTED_M15_2026_10_17.md](CURRENT_ORIGINAL_MACRO_WEIGHTED_M15_2026_10_17.md) first. The new positive radial kernels integrate the same six signed macro source modes through ordinary Z2 and produce C0/C1 at three Z queries. Saved uniform-prefix exp(ell) enclosures are retained; no accepted computation or quadrature is replayed.
+
+The native lower derivative and macro0 source are different ports. A source-bound Psi/Mpsi continuity and derivative-jump identity is still required before coupling raw23/raw24/raw44. The attempted182-slot contraction is not applied: accepted signed183 views, raw23/24/43/44/45, all other errors, original raw213/reduced183 archives, six inner/lower terms, reserved once, common N and independent negative m15 target remain exact.
+
+Next recover native2/macro0 value ports and the explicit defect D=Hnative-Hmacro0, then reuse the saved macro primitive for a justified leading-source contraction. Global terminal/five-moment closure and later physical layers remain incomplete; the long-term goal stays ACTIVE / INCOMPLETE.
+
 # Current original signed weighted m15 leaves - 2026-10-17
 
 Read [CURRENT_ORIGINAL_SIGNED_WEIGHTED_LEAVES_2026_10_17.md](CURRENT_ORIGINAL_SIGNED_WEIGHTED_LEAVES_2026_10_17.md) first. Nineteen same-source signed raw46/raw47 pairs now feed executable 183-slot views at three Z queries. Each view replaces reduced41/42 with complete signed approximation/enclosure leaves and retains181 original references exactly. Raw47 is the actual weighted remainder with R100*epsilon*hbS^3, not a value selected from the old positive bound.
