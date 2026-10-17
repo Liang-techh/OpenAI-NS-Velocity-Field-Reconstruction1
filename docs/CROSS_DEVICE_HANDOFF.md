@@ -1,3 +1,9 @@
+# Actual signed core and C_inner m15 at saved Z - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_SIGNED_C_INNER_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_SIGNED_C_INNER_M15_2026_10_17.md) first. Same-source core pressure FTC and actual signed axis-source model plus explicit inertial/raw/swirl errors now enclose M15_core(4,Z) at saved Z~.371, ordinary Z0/Z1. Adding the accepted COMPLETE first-collar increment once gives the actual C_inner m15 point enclosure. Both values/derivatives are negative. Scale is eps^2*Pstar^2, with no hb/phase factor. Relative widths below9.531e-29 /2.548e-29. All-feedback k>=1 uses beta0_cover=2*savedbeta1, not the k>=2 ratio unchanged.
+
+NEXT bind this point result to reserved own_swirl/independent negative complete-pulse m15 at the same Z and units, retain all finite-N errors, and extend axial functional coverage. No seventh ledger term or old cap deletion. Point values do not close all-Z terminal conditions. All old six signed terms remain active; goal ACTIVE / INCOMPLETE.
+
 # Complete actual first-collar m15 increment - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_COMPLETE_FIRST_COLLAR_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_COMPLETE_FIRST_COLLAR_M15_2026_10_17.md) first. Actual saved raw/leading inlet products now supply cut-velocity and2*Flead*F1 coupling integral approximations with separate variation/local/all-word/geometry errors. Combined with the accepted uncut leading-N1p contribution, the COMPLETE first-collar m15 increment and ordinary Z1 are negative at saved Z~.371, s=sc/4. Relative interval widths remain below7.788e-29 /2.093e-29. Nonconstant F0 derivatives are in saved coefficients; no second connection is added.
