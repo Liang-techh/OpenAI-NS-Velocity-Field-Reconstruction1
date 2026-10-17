@@ -1,3 +1,11 @@
+# Current terminal flat primitive and directed phase evaluator - 2026-10-17
+
+Read [CURRENT_ORIGINAL_C5_TERMINAL_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_C5_TERMINAL_PRIMITIVE_2026_10_17.md) first. Actual O3 endpoint1 has Delta=2mu>=eta, so its outgoing C and fixed-phase slow-y C_y vanish for every issued phase through ordinary Z3. The new terminal signed history removes only that C_out, retaining original H0, C_in and I1/I2; it feeds the same quiet pressure functional with H_Z3 and physical scales preserved.
+
+The new interval angle-coordinate kernel computes C and fixed-phase C_y mixed Z0..3/y0..1 from certified root jets, using a monotone inverse bracket and full-cell interval integration. Actual root/phase/prior-history/slow-integral values remain uninstalled. New controlled analytic examples are not actual source values. The complex source packet's exact passed/missing scope is recorded in the milestone; no full solved n1 field/radial remainder is claimed here.
+
+Rc178 and all inherited graphs/error packets remain unchanged; six signed core/lower terms remain, target/quiet are already consumed once, and P1/m13 is not m15. NEXT bind same-source mixed root/support/phase enclosures to the new evaluator and certify remaining signed histories; complete actual complex-source contracts before the Green solution norm and radial remainder. Read saved reports/ASTs only; do not replay accepted production, owners, fixtures, core recurrences or quadratures. Goal ACTIVE / INCOMPLETE.
+
 # Current same-source C5 phase seam and joined history - 2026-10-17
 
 Read [CURRENT_ORIGINAL_C5_SEAM_JOINED_HISTORY_2026_10_17.md](CURRENT_ORIGINAL_C5_SEAM_JOINED_HISTORY_2026_10_17.md) first. The actual O2 buffer native11/O3 transition native0 anchored phase primitive seam is now certified for independent phase and ordinary Z0..Z3. Their common internal C endpoint pair is contracted in the exact joined history; predecessor history, both outer endpoints and two signed slow integrals remain.
