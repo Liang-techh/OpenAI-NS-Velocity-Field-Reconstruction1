@@ -1,3 +1,9 @@
+# Actual reserved and independent complete-pulse m15 at saved Z - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_RESERVED_POINT_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_RESERVED_POINT_M15_2026_10_17.md) first. The actual signed C_inner point oracle now enters the existing reserved-(-pulse)=-(inner+lower+preRp) source once at common Z=371/1000. Complete pulse/target and reserved response are positive for ordinary Z0/Z1. Fixed-unit conversion preserves eps^2*Pstar^2 versus reference*A*Rv^2. Shared pulse cancels as a function before boxing; all lower/preRp errors remain. Absolute correlated differences are below3.351e-433 /3.300e-433 in that common unit.
+
+NEXT prove the same-source endpoint identities joining the preserved forward six inner/lower terms and preRp history to this partition, then evaluate the full forward discrepancy and extend all-Z/common-N coverage. This one-leaf point comparison is not forward Rp matching or global five-moment closure. No seventh ledger term or old cap deletion; goal ACTIVE / INCOMPLETE.
+
 # Actual signed core and C_inner m15 at saved Z - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_SIGNED_C_INNER_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_SIGNED_C_INNER_M15_2026_10_17.md) first. Same-source core pressure FTC and actual signed axis-source model plus explicit inertial/raw/swirl errors now enclose M15_core(4,Z) at saved Z~.371, ordinary Z0/Z1. Adding the accepted COMPLETE first-collar increment once gives the actual C_inner m15 point enclosure. Both values/derivatives are negative. Scale is eps^2*Pstar^2, with no hb/phase factor. Relative widths below9.531e-29 /2.548e-29. All-feedback k>=1 uses beta0_cover=2*savedbeta1, not the k>=2 ratio unchanged.
