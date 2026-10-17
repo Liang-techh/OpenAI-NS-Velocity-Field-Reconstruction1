@@ -79,3 +79,4 @@ scripts/run_original_n1_first_micro_seam.py -text
 scripts/run_original_n1_first_micro_prefix.py -text
 scripts/run_original_n1_micro_correlated_m15.py -text
 scripts/run_original_n1_micro_phase_mean.py -text
+scripts/run_original_core_signed_direction.py -text

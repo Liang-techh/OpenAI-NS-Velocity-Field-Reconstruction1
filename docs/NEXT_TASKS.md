@@ -1,3 +1,9 @@
+# Signed actual core direction - 2026-10-17
+
+Read [CURRENT_ORIGINAL_CORE_SIGNED_DIRECTION_2026_10_17.md](CURRENT_ORIGINAL_CORE_SIGNED_DIRECTION_2026_10_17.md) first. New actual model-plus-saved-error enclosures prove Phi_rho<0 and Dbar_core in [3.069,3.946] on rho [4,4.1], Z [.370,.372], with ordinary Dbar Z0..2. Actual delta recipe is used; 1e-200 is only the tube cap. Both micro core arguments stay within this radial tube. Every old signed term/error and mean-memory packet remains unchanged.
+
+NEXT prove current first-micro C6/C5 comparison-to-core direction cross-map, then bound second comparison deviation and complete actual mixed-root Z0..3/slowY0..1 provider. Core positivity is not second-comparison positivity. Cy3/mean/QZZ/outerRQy and terminal functional closure remain open. No accepted replay, cap-values, term duplication or old-C3 cap transfer. Goal ACTIVE.
+
 # Actual micro phase-primitive mean through Z3 - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_MICRO_PHASE_MEAN_2026_10_17.md](CURRENT_ORIGINAL_N1_MICRO_PHASE_MEAN_2026_10_17.md) first. Exact delta_m=Pstar/N^2*(C-JC-JCy) now retains Z0..3 and both-chart nonreset memories; new8-row free-Z/free-phase B/slowBy proof contracts internalC. Source QZZ and sixC1 integrands consume this mean. The Cy_Z3 quantitative enclosure remains unavailable; small prefactor is not a field bound. All old terms/errors remain.
