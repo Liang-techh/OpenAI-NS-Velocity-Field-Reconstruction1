@@ -1,3 +1,11 @@
+# Current original source jets and interior mass - 2026-10-16
+
+Read [CURRENT_ORIGINAL_SOURCE_JET_MASS_2026_10_16.md](CURRENT_ORIGINAL_SOURCE_JET_MASS_2026_10_16.md) first. New ordinary source arithmetic recovers three second-micro native2 lower-dy jets through Z2 and their signed local endpoint/mean C0/C1 operators. Saved Taylor rows are converted by k!, radial and axial Cauchy orders are separate, rho retains s=2, and no macro J factor is applied. Positive caps only widen enclosures.
+
+Seven original gp-ratio pulse masses now have independent adaptive quadrature approximations plus 128/256 monotone-rectangle directed boxes; M0=0 and M1=1/2 are exact source branches. Nineteen raw46 main-component C0 rows are evaluated with R100*epsilon*hbS^2. Raw47 and all inherited errors remain active; this is not the complete weighted primitive or C1.
+
+Production exits 0 in 20.794 s; serialized inspection and 61 new independent controls pass. Raw213/reduced183, six signed inner/lower, independent target and reserved once remain unchanged. Next recover the same-source first-switch factored B_ZZ and weighted primitive/remainder, then complete signed C1. Tasks14/15 and the full goal remain ACTIVE / INCOMPLETE; global five-moment closure, heat/energy/stress/flat, temporal recursion, corrections and Cartesian NS remain open.
+
 # Current original signed leading-viscous interfaces - 2026-10-16
 
 Read [CURRENT_ORIGINAL_LEADING_VISCOUS_SOURCE_2026_10_16.md](CURRENT_ORIGINAL_LEADING_VISCOUS_SOURCE_2026_10_16.md) first. Independent leading H=R*Pstar*qy(V,Vy,m) recipes and nine actual mean-ODE rows give the signed source FTC/mean partition. Modified Qy output nodes are not leading nodes. Hfirst1 and absolute histories remain nonzero/unassigned.
