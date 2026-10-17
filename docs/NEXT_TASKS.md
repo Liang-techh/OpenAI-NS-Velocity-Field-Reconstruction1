@@ -1,3 +1,11 @@
+# Current same-source Rc pressure join - 2026-10-17
+
+Read [CURRENT_ORIGINAL_RC_PRESSURE_JOIN_2026_10_17.md](CURRENT_ORIGINAL_RC_PRESSURE_JOIN_2026_10_17.md) first. Actual Rc full/background mean, velocity/radial and physical pressure ports now give the same Q/Q_y/F boundary through ordinary C1. Compact upper delta-F is source-proved zero. The finite-N O3 correction has an exact signed primitive retaining incoming means, Pstar-linear/quadratic terms and ordinary Z1.
+
+Active Rc178 views replace original reduced176+179 F endpoint aggregate caps by a newly rebuilt directed enclosure of the remaining negative O3 lower R0^2*deltaF. Original caps remain archived; no positive bounds are subtracted. All other177 terms, six signed core/lower terms, volume caps and the already contracted external viscous packet are unchanged. Raw213/reduced183 and quiet179 archives remain immutable. Target and quiet are already consumed; never subtract again.
+
+NEXT evaluate actual normalized O3 inlet history functions for the exact primitive and compact signed volume sectors. For the core response, prove the full forward/canonical n1 source-vector identity; the n0 common fixed point and P0 function identity already have accepted receipts. Read saved reports/ASTs only; no accepted ancestor replay. Global functional terminal closure and later physical layers remain incomplete. Goal ACTIVE / INCOMPLETE.
+
 # Current direct correlated scaled source and Rc inlet identities - 2026-10-17
 
 Read [CURRENT_ORIGINAL_CORRELATED_SCALED_SOURCE_2026_10_17.md](CURRENT_ORIGINAL_CORRELATED_SCALED_SOURCE_2026_10_17.md) first. Direct deltaV/delta-m C5 ports now recover normalized delta-q and delta-q_y before boxing; Pstar-linear/quadratic pressure sectors stay separate. Rm radial slow/N+fast source is applied once. Original interior signed targets/integrals remain unevaluated.
