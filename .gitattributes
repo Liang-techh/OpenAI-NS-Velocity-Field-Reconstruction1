@@ -34,3 +34,5 @@ scripts/check_original_leading_viscous_m15.py -text
 scripts/run_original_leading_viscous_m15.py -text
 scripts/check_original_source_jet_kernel.py -text
 scripts/run_original_source_jet_mass.py -text
+scripts/check_original_signed_C1_source.py -text
+scripts/run_original_signed_C1_source.py -text

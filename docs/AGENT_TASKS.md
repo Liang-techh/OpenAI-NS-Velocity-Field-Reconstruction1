@@ -1,3 +1,11 @@
+# Current original same-generator pressure C1 - 2026-10-16
+
+Read [CURRENT_ORIGINAL_SIGNED_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_SIGNED_SOURCE_C1_2026_10_16.md) first. The former local BZZ draft has a confirmed R100 switch versus macro R0 generator mismatch; its public adapter now rejects before source algebra and returns no BZZ rows. Original draft bytes are preserved in local scratch. Family hashes alone do not establish source equality.
+
+New original pressure-drive B Z0/Z1/Z2 approximations/enclosures feed nineteen pressure-component raw46 main-term C0/C1 rows. Saved p0 and native2 comparison-Phi data are bound to the macro generator; qpoint1 is a numerical proxy only, and macro nonlinear error remains in truth. Saved masses are hydrated unchanged. Full hydro/swirl BZZ, the weighted primitive/remainder and total source C1 remain incomplete; raw47 and every old error stay active.
+
+Production exits 0 in 2.597 s; 69 new independent controls and serialized inspection pass. Raw213/reduced183, target, six signed inner/lower and reserved once retain exact witnesses. Next implement remaining same-generator hydro/swirl jets, then the full signed primitive. Tasks14/15 and the long-term goal remain ACTIVE / INCOMPLETE; no global five-moment or corrected-NS closure is claimed.
+
 # Current original source jets and interior mass - 2026-10-16
 
 Read [CURRENT_ORIGINAL_SOURCE_JET_MASS_2026_10_16.md](CURRENT_ORIGINAL_SOURCE_JET_MASS_2026_10_16.md) first. New ordinary source arithmetic recovers three second-micro native2 lower-dy jets through Z2 and their signed local endpoint/mean C0/C1 operators. Saved Taylor rows are converted by k!, radial and axial Cauchy orders are separate, rho retains s=2, and no macro J factor is applied. Positive caps only widen enclosures.
