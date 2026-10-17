@@ -1,3 +1,9 @@
+# Actual signed A-minus-A0 and shared correlated q2 inlet - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_CORRELATED_Q2_INLET_2026_10_17.md](CURRENT_ORIGINAL_N1_CORRELATED_Q2_INLET_2026_10_17.md) first. The actual eps^2*integral(A-A0)d-sigma at sc/2 and ordinary Z1 are negative at saved Z~.371; normalized values about-28.3818236994 /-90.1102553333 in hb*eps^2*Pstar^2*sigma(sc/2) units. The original nonzero flat factor and complete complex variation radius are retained. New six-entry function/error leaves reduce BEFORE boxing to the accepted q2 aggregate, and ActualQ2Inlet serves both new downstream consumers without old-owner replay.
+
+NEXT bind the actual first_micro lower R*Q_y endpoint/zero-correction theorem at sc/2, consume this cumulative inlet once and evaluate the real increment. The provider is a new correlated format, not old six-row value equality. All old signed/error leaves remain; downstream increments, full forward Rp and all-Z terminal closure are open. Goal ACTIVE.
+
 # Actual signed lower m15 and shared q1 pressure seam - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_SIGNED_LOWER_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_SIGNED_LOWER_M15_2026_10_17.md) first. Actual lower q1..2 m15 and ordinary Z1 are negative at saved Z~.371; normalized values about-26.7557897723 and-537.9766234802 in hb*eps^2*Pstar^2*(sc/4) units. Native first-window q0..2 was already accepted. A direct pressure primitive0..sc/2 joins core+cut velocity+lower with the shared q1 endpoint canceled before boxing. Both nonzero flat atoms and all source errors remain. Updated one-leaf reserved-target bounds below1.523e-434/1.016e-434 in common units.

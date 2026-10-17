@@ -74,3 +74,4 @@ scripts/run_original_n1_velocity_m15.py -text
 scripts/run_original_n1_signed_C_inner.py -text
 scripts/run_original_n1_reserved_point_m15.py -text
 scripts/run_original_n1_signed_lower_m15.py -text
+scripts/run_original_n1_correlated_q2_inlet.py -text
