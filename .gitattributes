@@ -58,3 +58,4 @@ scripts/run_original_quiet_scalar_m15.py -text
 scripts/run_original_finite_N_signed_source.py -text
 scripts/run_original_correlated_scaled_source.py -text
 scripts/run_original_Rc_pressure_join.py -text
+scripts/run_original_inlet_source_vector.py -text

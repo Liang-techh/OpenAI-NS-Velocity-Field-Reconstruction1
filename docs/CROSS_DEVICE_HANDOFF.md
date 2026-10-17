@@ -1,3 +1,11 @@
+# Current actual inlet functional and n1 source vector - 2026-10-17
+
+Read [CURRENT_ORIGINAL_INLET_SOURCE_VECTOR_2026_10_17.md](CURRENT_ORIGINAL_INLET_SOURCE_VECTOR_2026_10_17.md) first. The known signed O3 background is Q0=-4*mstar*exp(-12), constant in Z. The new source-bound functional on actual unknown H=N*delta-m uses R0^2[(Pstar/N)A+(Pstar/N)^2B], retaining the cross term and ordinary Z1; coefficient tensors have directed whole-cell enclosures. H is not a cap value and has not been numerically evaluated.
+
+The universal forward/canonical n1 known-source vector identity now passes with the actual common-fixed-point inputs, exact gradient/F0 relation, scaled-S jet inclusion and true P0 scaling. It includes axial pressure feedback and all-order pressure-head coefficients. This supersedes the previous source-vector-unproved label. Full solved n1 field/radial remainder, six-term core/lower equality and global terminal closure remain unproved.
+
+Rc178 views and all error terms are unchanged. Target and quiet are already consumed; never subtract again. NEXT evaluate true signed O2-buffer/O3-transition inlet histories Z0..3, and independently prove the general radial coefficient conjugacy plus a genuine radial remainder for the core response. Read saved reports/ASTs; no accepted ancestor replay. Goal ACTIVE / INCOMPLETE.
+
 # Current same-source Rc pressure join - 2026-10-17
 
 Read [CURRENT_ORIGINAL_RC_PRESSURE_JOIN_2026_10_17.md](CURRENT_ORIGINAL_RC_PRESSURE_JOIN_2026_10_17.md) first. Actual Rc full/background mean, velocity/radial and physical pressure ports now give the same Q/Q_y/F boundary through ordinary C1. Compact upper delta-F is source-proved zero. The finite-N O3 correction has an exact signed primitive retaining incoming means, Pstar-linear/quadratic terms and ordinary Z1.
