@@ -1,3 +1,11 @@
+# Current same-source C5 phase seam and joined history - 2026-10-17
+
+Read [CURRENT_ORIGINAL_C5_SEAM_JOINED_HISTORY_2026_10_17.md](CURRENT_ORIGINAL_C5_SEAM_JOINED_HISTORY_2026_10_17.md) first. The actual O2 buffer native11/O3 transition native0 anchored phase primitive seam is now certified for independent phase and ordinary Z0..Z3. Their common internal C endpoint pair is contracted in the exact joined history; predecessor history, both outer endpoints and two signed slow integrals remain.
+
+The joined H=N*delta-m endpoint at transition native1 feeds the accepted O3 pressure functional with separate Pstar/N linear/quadratic sectors and ordinary Z1. These are source functions, not evaluated signed H values. The accepted197-node graph, Rc178 and all error terms remain unchanged; target/quiet are already consumed once and P1/m13 is not m15.
+
+The new exact weighted Green kernel verifies all16 operator parity/axis factors and the complex rho-simplex/total-Z-loss formula. It does not install actual complex sup norms or a radial remainder. NEXT evaluate the remaining signed phase/slow integrals, and independently bind the actual Xh complex embedding plus directed n1 source/operator norms before its radial remainder. Never relabel the real-rho word tail or the actual smooth collar as a complex analytic core bound. Full six-source equality and global closure remain open. Read saved reports/ASTs only; no accepted ancestor replay. Goal ACTIVE / INCOMPLETE.
+
 # Current all-order radial rules and actual C5 signed-history IBP - 2026-10-17
 
 Read [CURRENT_ORIGINAL_RADIAL_IBP_2026_10_17.md](CURRENT_ORIGINAL_RADIAL_IBP_2026_10_17.md) first. General radial coefficient rules for temporal n=1 now bind the actual forward recurrence to the canonical regular raw equations, using the accepted matrix/source receipts. This is a formal coefficient result; the radial Taylor remainder and full solved function equality remain open. No temporal n>=2 recursion is claimed.
