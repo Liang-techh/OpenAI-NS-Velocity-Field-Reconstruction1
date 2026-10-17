@@ -1,3 +1,9 @@
+# Actual first-micro sc/2 viscous seam - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_FIRST_MICRO_SEAM_2026_10_17.md](CURRENT_ORIGINAL_N1_FIRST_MICRO_SEAM_2026_10_17.md) first. The archived raw V_y endpoint had an extra Pstar; a30-node appended graph fixes lowerRQy/active/preRp and records the exact old-new defect. Corrected lower R*Q_y equals eps^2*rho^2*b_rho at sc/2, so the shared pressure endpoint/error cancels before boxing. H retains12signed/61error sectors for ordinary Z0/Z1 near.371, no sign claim. All old packets/errors preserved; archived preRp is not the corrected physical source.
+
+NEXT bind first_micro-only S1 integrals and actual upper R*Q_y, then evaluate M15(s)=H+S1/2-upperRQy. Do not reuse whole17-chart active S1 as first_micro, add q2 twice, or append a seventh inner term. The real increment, full forwardRp/allZ closure and later layers remain open. Goal ACTIVE.
+
 # Actual signed A-minus-A0 and shared correlated q2 inlet - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_CORRELATED_Q2_INLET_2026_10_17.md](CURRENT_ORIGINAL_N1_CORRELATED_Q2_INLET_2026_10_17.md) first. The actual eps^2*integral(A-A0)d-sigma at sc/2 and ordinary Z1 are negative at saved Z~.371; normalized values about-28.3818236994 /-90.1102553333 in hb*eps^2*Pstar^2*sigma(sc/2) units. The original nonzero flat factor and complete complex variation radius are retained. New six-entry function/error leaves reduce BEFORE boxing to the accepted q2 aggregate, and ActualQ2Inlet serves both new downstream consumers without old-owner replay.
