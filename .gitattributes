@@ -65,3 +65,4 @@ scripts/run_original_C5_terminal_primitive.py -text
 scripts/run_original_n1_canonical_norm_tail.py -text
 scripts/run_original_n1_forward_enclosure.py -text
 scripts/run_original_core_collar_pressure_identity.py -text
+scripts/run_original_native_collar_transport.py -text

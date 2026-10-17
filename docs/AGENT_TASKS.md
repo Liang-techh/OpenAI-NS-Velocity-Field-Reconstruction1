@@ -1,3 +1,9 @@
+# Current native first-collar source identity - 2026-10-17
+
+Read [CURRENT_ORIGINAL_NATIVE_COLLAR_TRANSPORT_2026_10_17.md](CURRENT_ORIGINAL_NATIVE_COLLAR_TRANSPORT_2026_10_17.md) first. Actual same-core radial directions and the native defining first-collar ODEs now identify the leading F/U/mean/pressure functions with the canonical collar through ordinary Z0..3. Exact sc places this entire subcollar in the first alpha=1 window; six own comparison moments and the actual pointwise quotient are bound to the same core. Prefix phi_a denotes the inlet, so exp(ell) is applied once.
+
+Old finite numerical rows remain enclosures. Raw n1 cutoff/all-word response and full C_inner m15 joining remain open; no six-term or error-ledger contraction is claimed. Rc178/quiet179, all errors and the six signed contributions remain active; target/quiet are already consumed once. NEXT source-bind the raw n1 cutoff and complete histories, then evaluate the signed A-A0 function and finish six-source joining. Goal ACTIVE / INCOMPLETE.
+
 # Current core/collar pressure source identity - 2026-10-17
 
 Read [CURRENT_ORIGINAL_CORE_COLLAR_PRESSURE_IDENTITY_2026_10_17.md](CURRENT_ORIGINAL_CORE_COLLAR_PRESSURE_IDENTITY_2026_10_17.md) first. Actual core n1 row4 now binds the physical m15 FTC/IBP primitive through ordinary Z1. The same-leading collar N1p regular/singular partition has exact physical scales; the accepted A-A0 signed primitive is consumed once and a local common q1 singular endpoint pair telescopes.
