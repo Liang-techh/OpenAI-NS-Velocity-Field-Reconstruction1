@@ -1,3 +1,11 @@
+# Current quiet common-integral source pairing - 2026-10-17
+
+Read [CURRENT_ORIGINAL_QUIET_SCALAR_M15_2026_10_17.md](CURRENT_ORIGINAL_QUIET_SCALAR_M15_2026_10_17.md) first. The new source change-of-variables theorem proves axial mstar_true=canonicalF, with Kforward=4Raxial*mstar=Kcan and Raxial=Rc*exp(-14). At2Rc the corresponding mean is transported by exp(-14)/2; do not pair2Rc with the untransported axial mean.
+
+Three179-entry discrepancy views consume the exact quiet source pair and retain178 other parent entries. Independent numerical mean/F interval differences remain diagnostics, never the equality proof. Joint slot182 now contains -(inner+lower+active+compact); the negative-pulse target is already consumed and must not be subtracted again. All six signed core/lower terms, N, original archives and finite-N caps remain unchanged.
+
+Next recover the signed core/collar source difference, then active/compact finite-N density and pressure-FTC differences with quadratic p0 history. Pressure remains throughRv. Global closure and later physical layers remain incomplete; goal ACTIVE / INCOMPLETE.
+
 # Current full-support joint reserved m15 consumer - 2026-10-17
 
 Read [CURRENT_ORIGINAL_JOINT_RESERVED_M15_2026_10_17.md](CURRENT_ORIGINAL_JOINT_RESERVED_M15_2026_10_17.md) first. The selected compact x=2 response is source-bound to exact(0,0,1), transported into the quiet q=1/Rp state. The new consumer contracts reserved-(-pulse)=-full+pulse=-(inner+lower+preRp) before boxing and computes a directed ordinary C1 enclosure from the saved canonical nonpulse components.
