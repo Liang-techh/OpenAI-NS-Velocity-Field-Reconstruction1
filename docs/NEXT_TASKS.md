@@ -1,3 +1,11 @@
+# Current full-support joint reserved m15 consumer - 2026-10-17
+
+Read [CURRENT_ORIGINAL_JOINT_RESERVED_M15_2026_10_17.md](CURRENT_ORIGINAL_JOINT_RESERVED_M15_2026_10_17.md) first. The selected compact x=2 response is source-bound to exact(0,0,1), transported into the quiet q=1/Rp state. The new consumer contracts reserved-(-pulse)=-full+pulse=-(inner+lower+preRp) before boxing and computes a directed ordinary C1 enclosure from the saved canonical nonpulse components.
+
+Three180-entry views now represent the discrepancy:179 unchanged parent entries plus one joint reserved-minus-target leaf. The independent target is already consumed; do not subtract it again. Original raw213/reduced183, the six signed inner/lower terms, four signed leading leaves, exact N and every finite-N cap remain unchanged. No forward/canonical source equality or global closure is claimed.
+
+Next recover the signed quiet scalar baseline difference -(Lq/4)*(K_num^2-K_can^2), with exact zero ordinaryZ1, from the saved terminal mean and canonical kappa source. Keep the retained prefix, pressure tail throughRv and all error sectors. Core/collar and active/compact source comparisons remain. Later physical layers remain incomplete; goal ACTIVE / INCOMPLETE.
+
 # Current first-switch terminal and joint m15 source - 2026-10-17
 
 Read [CURRENT_ORIGINAL_FIRST_SWITCH_TERMINAL_M15_2026_10_17.md](CURRENT_ORIGINAL_FIRST_SWITCH_TERMINAL_M15_2026_10_17.md) first. The actual unmodified first-switch truth source has its exact1-sigma(s) factor before ordinaryZ extraction, so raw43/raw45 retire at phase1. Three180-slot views retain176 original references and the four unchanged signed19/20/41/42 leaves. Hfirst1, own mean and finite-N corrections are retained; no cap or rounded zero is selected as a value.
