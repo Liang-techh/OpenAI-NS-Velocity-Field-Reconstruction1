@@ -1,3 +1,9 @@
+# Current core/collar pressure source identity - 2026-10-17
+
+Read [CURRENT_ORIGINAL_CORE_COLLAR_PRESSURE_IDENTITY_2026_10_17.md](CURRENT_ORIGINAL_CORE_COLLAR_PRESSURE_IDENTITY_2026_10_17.md) first. Actual core n1 row4 now binds the physical m15 FTC/IBP primitive through ordinary Z1. The same-leading collar N1p regular/singular partition has exact physical scales; the accepted A-A0 signed primitive is consumed once and a local common q1 singular endpoint pair telescopes.
+
+The old native finite-width leading bridge and first-chart raw cut response retain explicit missing contracts. Smooth radial collar continuation is not a complex-rho core extension. No term5 cap becomes a value; no saved six-term aggregate/error ledger is contracted. Rc178/quiet179, all six signed terms and all errors remain unchanged; target/quiet are consumed once. NEXT resolve those actual source bridges and signed inlet p2/phase/H0. Goal ACTIVE / INCOMPLETE.
+
 # Current infinite forward n1 response and raw enclosures - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_FORWARD_ENCLOSURE_2026_10_17.md](CURRENT_ORIGINAL_N1_FORWARD_ENCLOSURE_2026_10_17.md) first. The new infinite forward response is the explicit analytic diagonal image of the accepted canonical convergent function, with forward equations, regular axis data, uniqueness and archived prefix bound. The old numerical class remains a finite producer; no collar equality is claimed.
