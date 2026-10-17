@@ -1,3 +1,9 @@
+# Complete actual first-collar m15 increment - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_COMPLETE_FIRST_COLLAR_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_COMPLETE_FIRST_COLLAR_M15_2026_10_17.md) first. Actual saved raw/leading inlet products now supply cut-velocity and2*Flead*F1 coupling integral approximations with separate variation/local/all-word/geometry errors. Combined with the accepted uncut leading-N1p contribution, the COMPLETE first-collar m15 increment and ordinary Z1 are negative at saved Z~.371, s=sc/4. Relative interval widths remain below7.788e-29 /2.093e-29. Nonconstant F0 derivatives are in saved coefficients; no second connection is added.
+
+NEXT recover actual raw M15_core(4,Z) with its full source/error budget and add this collar increment once to form signed C_inner; then extend axial coverage. Core is not added in this packet. Full C_inner/all-Z/terminal/global closure remain open; all old caps and six signed terms stay active. Goal ACTIVE / INCOMPLETE.
+
 # Correlated actual leading-pressure increment - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_CORRELATED_PRESSURE_2026_10_17.md](CURRENT_ORIGINAL_N1_CORRELATED_PRESSURE_2026_10_17.md) first. New1800-bit same-source FTC/transport arithmetic encloses the actual leading N1p increment at s=sc/4, Z~0.371, ordinary Z0/Z1. P1_W0 is positive and the differently weighted m15 leading-N1p component is negative, with relative interval widths below7.788e-29 /2.093e-29. Shared mean/Psi-value constants cancel before boxing; one actual core Psi_rho inlet uncertainty and original nonzero sigma are retained. Independent bounded review accepted the factor2 cover and explicit sigma monotonicity gate.
