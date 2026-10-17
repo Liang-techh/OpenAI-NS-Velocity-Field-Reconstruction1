@@ -1,3 +1,11 @@
+# Current original same-generator hydro C1 - 2026-10-16
+
+Read [CURRENT_ORIGINAL_HYDRO_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_HYDRO_SOURCE_C1_2026_10_16.md) first. New hydro B Z0/Z1/Z2 approximations/enclosures use the native2 comparison core seed, positive IBP/Cauchy transport and exact normalized M/A history ODEs. Actual first-collar exit increments are not comparison seeds. Untruncated epsilon sectors retain delta=epsilon*exp(970), exact saved j, original R0 mode weights and a direct shared-source moment-difference mode.
+
+Three hydro jets and nineteen hydro plus pressure-hydro main-term C0/C1 queries pass. All 39 finite-width log proofs, 33 new algebra controls, 78 new transport controls and serialized inspection pass. Pressure packets, saved masses, raw213/reduced183, target, six signed inner/lower, reserved once and every previous error stay unchanged.
+
+Next recover the same-generator swirl sector with dressed relative F0^2 jets and its formal absolute scale, then the complete signed weighted primitive/remainder. Swirl/full source, global five-moment closure and later construction layers remain incomplete. Tasks14/15 and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Current original same-generator pressure C1 - 2026-10-16
 
 Read [CURRENT_ORIGINAL_SIGNED_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_SIGNED_SOURCE_C1_2026_10_16.md) first. The former local BZZ draft has a confirmed R100 switch versus macro R0 generator mismatch; its public adapter now rejects before source algebra and returns no BZZ rows. Original draft bytes are preserved in local scratch. Family hashes alone do not establish source equality.
