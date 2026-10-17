@@ -1,3 +1,11 @@
+# Current original upstream viscous m15 source chain - 2026-10-16
+
+Read [CURRENT_ORIGINAL_UPSTREAM_M15_2026_10_16.md](CURRENT_ORIGINAL_UPSTREAM_M15_2026_10_16.md) first. The actual second_switch1/post_power0 and post_power1/long0 source interfaces recover30 physical traces using modified U3/Uy2/m4 and separate original leading V3/m3/Vy2. Native J, global N-phase, nonzero histories, pressure formula and physical R/Pstar are source-bound. With accepted tail D2Rc=DRp=0, the signed viscous function is D(second_switch0). No inlet value is assigned from a cap.
+
+Production exits0 in33.239s; serialized inspection and16 synthetic controls pass. Report pins1954 inputs/191 implementations. Raw213,target,six signed inner/lower entries and reserved once stay verbatim. Correlated view189 ->187,186 other entries unchanged. Only own second0 C0/Z1 radius-weighted bounds remain in this external budget; raw68/87 and oldlong0 are provenance. No accepted ancestor calculation ran.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next bind first_switch1/second_switch0 and own first0 envelope before contracting raw50; macro/first source seam and raw27 remain. Leading viscous23/24 and43..47 are different data. Signed values, numericRp/globalfive, heat/energy/stress/flat, temporal n>=2/summation, mean/oscillatory correction and corrected CartesianNS remain open.
+
 # Current original compact/quiet viscous tail - 2026-10-16
 
 Read [CURRENT_ORIGINAL_TAIL_M15_2026_10_16.md](CURRENT_ORIGINAL_TAIL_M15_2026_10_16.md) first. Both actual O3Rc/compactRc and compact2Rc/quiet2Rc source interfaces now recover30 physical traces. Independent exact graph algebra checks the compact target normalization,M residual and terminal RHS through ordinaryZ3, alongside the actual unique system/shared IFT recurrence and full-bump endpoint theorem. Relative terminal mass is zero; original leading mean/history is retained. Thus D=R*(Qy_modified-Qy_leading) and D_Z are exactlyzero at2Rc and, by quiet mass transport, atRp. This is a partial viscous function identity, not global moment closure.

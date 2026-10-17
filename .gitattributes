@@ -24,3 +24,5 @@ scripts/check_original_outer_chain_m15.py -text
 scripts/run_original_outer_chain_m15.py -text
 scripts/check_original_tail_m15.py -text
 scripts/run_original_tail_m15.py -text
+scripts/check_original_upstream_m15.py -text
+scripts/run_original_upstream_m15.py -text
