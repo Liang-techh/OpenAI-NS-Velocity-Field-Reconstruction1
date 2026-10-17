@@ -1,3 +1,11 @@
+# Current actual finite-N signed pressure sources - 2026-10-17
+
+Read [CURRENT_ORIGINAL_FINITE_N_SIGNED_SOURCE_2026_10_17.md](CURRENT_ORIGINAL_FINITE_N_SIGNED_SOURCE_2026_10_17.md) first. Actual compact and Rm-patch C5 ports now feed exact factored ordinary-C1 Delta v/DeltaF and pressure-increment expressions. Retain both endpoint terms R^2*DeltaF-R*DeltaQ_y, the physical R^2 dx/x measure and the nonzero incoming pressure. No numeric signed integral is installed, and all finite-N caps remain active.
+
+The six core/collar source difference remains unproved. Same intended core equation/inlet is not a source-function identity; P0/M2 and the q-dependent collar history need a bridge. Term4 is epsilon^2*A0*sigma; term5 is the signed A-A0 remainder, whose norm cap is not a value.
+
+All three179 discrepancy views, six signed terms, original archives and exact N are unchanged. Target and quiet are already consumed; do not subtract them again. Next build the numerical bridge for actual signed C5 density/endpoints with correlated histories, then resolve the core/collar identities. Global closure and all later physical layers remain incomplete. Goal ACTIVE / INCOMPLETE.
+
 # Current quiet common-integral source pairing - 2026-10-17
 
 Read [CURRENT_ORIGINAL_QUIET_SCALAR_M15_2026_10_17.md](CURRENT_ORIGINAL_QUIET_SCALAR_M15_2026_10_17.md) first. The new source change-of-variables theorem proves axial mstar_true=canonicalF, with Kforward=4Raxial*mstar=Kcan and Raxial=Rc*exp(-14). At2Rc the corresponding mean is transported by exp(-14)/2; do not pair2Rc with the untransported axial mean.
