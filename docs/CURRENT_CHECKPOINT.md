@@ -1,3 +1,11 @@
+# Current original signed leading-viscous interfaces - 2026-10-16
+
+Read [CURRENT_ORIGINAL_LEADING_VISCOUS_SOURCE_2026_10_16.md](CURRENT_ORIGINAL_LEADING_VISCOUS_SOURCE_2026_10_16.md) first. Independent leading H=R*Pstar*qy(V,Vy,m) recipes and nine actual mean-ODE rows give the signed source FTC/mean partition. Modified Qy output nodes are not leading nodes. Hfirst1 and absolute histories remain nonzero/unassigned.
+
+New kernels evaluate 19 macro local C0/C1 source rows and 38 switch endpoint rows; 32 nonempty point comparisons pass at 1e-70 relative tolerance, six empty increments are separate. The exact mass(1)=1/2 source branch gives three new signed source-integral C0 comparisons. Source-integral C1, interior mass, weighted remainder and transported lower_dy remain incomplete. No source-error cap or interval overlap certifies a signed value.
+
+Production exits 0 in 5.452 s; serialized inspection and 34 independent controls pass. Raw213/reduced183, target, six signed inner/lower contributions, reserved once and all error budgets remain unchanged by parent hash. Tasks14/15 and the full goal remain ACTIVE / INCOMPLETE. Next recover numeric factored B_ZZ and actual lower_dy, then complete signed source-integral/remainder interfaces. Full m15/globalfive, heat/energy/stress/flat, temporal n>=2/summation, mean/oscillatory correction and corrected CartesianNS remain open.
+
 # Current original macro viscous endpoint source identity - 2026-10-16
 
 Read [CURRENT_ORIGINAL_MACRO_ENDPOINT_M15_2026_10_16.md](CURRENT_ORIGINAL_MACRO_ENDPOINT_M15_2026_10_16.md) first. Actual micro2/macro0 and macro1/first0 physical source/pressure identities now recover 30 traces, 54 root and 18 loop rows with separate independent leading inputs. Native J/global phase, nonzero histories, mean ODE and actual pressure/FTC sources are bound. Graph query48 is native value2; node2 is40. No accepted ancestor calculation ran.
