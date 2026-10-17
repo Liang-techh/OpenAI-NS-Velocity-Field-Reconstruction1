@@ -1,3 +1,9 @@
+# Actual micro phase-primitive mean through Z3 - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_MICRO_PHASE_MEAN_2026_10_17.md](CURRENT_ORIGINAL_N1_MICRO_PHASE_MEAN_2026_10_17.md) first. Exact delta_m=Pstar/N^2*(C-JC-JCy) now retains Z0..3 and both-chart nonreset memories; new8-row free-Z/free-phase B/slowBy proof contracts internalC. Source QZZ and sixC1 integrands consume this mean. The Cy_Z3 quantitative enclosure remains unavailable; small prefactor is not a field bound. All old terms/errors remain.
+
+NEXT provide actual C5 mixed root Z0..3/physicalslowY0..1 enclosures for E,a,t0,q,p2,dstar (or certifiedslowYtube), then enclose Cy_Z3/jointmean/QZZ and outerRQy. OldC3 caps have no admitted same-function transfer to C5; first legacy hb-weighted diagnostic remains positive. No accepted-owner/old14row replay, cap-values, duplicate terms or closure claim. Goal ACTIVE.
+
 # True micro-pair correlated six-I1 source - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_MICRO_CORRELATED_M15_2026_10_17.md](CURRENT_ORIGINAL_N1_MICRO_CORRELATED_M15_2026_10_17.md) first. Actual first/second-micro Q4 pressure is reduced to six I1 integrands with ordinaryZ0/1, R^2*hb once, and no bulk Qy/Uy. Consume the accepted14-row free-Z seam fingerprint; do not replay it. The retained outer RQy keeps slowBy/N+fastBphi. All old signed terms/errors remain; wholemicro numerical enclosure is false.
