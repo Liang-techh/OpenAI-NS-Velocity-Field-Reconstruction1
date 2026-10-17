@@ -1,3 +1,9 @@
+# Actual micro E/a mixed derivative bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_EA_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_EA_MIXED_BOUNDS_2026_10_17.md) first. The actual background provider now encloses ordinary Z0..3 and physical y0..1 E/a derivative ratios on both micro charts, for s in [0,2] and Z in [.370,.372]. It uses three fresh Xh rows and preserves all accepted rows and source ports. Norm caps remain caps; C0 caps are not differentiated.
+
+NEXT bind whole-Z log F0 lower bounds, pressure jets and actual b/t0/q/p2, then Cy_Z3, mean-Z3/QZZ and terminal/global closure. Finite-N modified E_N derivatives and whole-tube coverage for the saved narrow .371 pressure packet remain open. This milestone is partial progress; the goal remains ACTIVE / INCOMPLETE.
+
 # Actual two-micro direction and C0 radii - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_DIRECTION_C0_2026_10_17.md](CURRENT_ORIGINAL_MICRO_DIRECTION_C0_2026_10_17.md) first. The actual own-comparison direction is positive on both micro charts for Z in [.370,.372]: R*Dcmp in [1.563,21.314]. Actual E and a are positive. New phase-free finite-N C0 relative/physical errors and the joint nonreset mean-correction error are below 2^-1024. The second comparison is not replaced by the core; every old signed term and derivative cap remains unchanged.
