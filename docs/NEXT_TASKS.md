@@ -1,3 +1,11 @@
+# Current all-order radial rules and actual C5 signed-history IBP - 2026-10-17
+
+Read [CURRENT_ORIGINAL_RADIAL_IBP_2026_10_17.md](CURRENT_ORIGINAL_RADIAL_IBP_2026_10_17.md) first. General radial coefficient rules for temporal n=1 now bind the actual forward recurrence to the canonical regular raw equations, using the accepted matrix/source receipts. This is a formal coefficient result; the radial Taylor remainder and full solved function equality remain open. No temporal n>=2 recursion is claimed.
+
+Actual C5 O2-buffer/O3-transition B and fixed-phase slow_B_y ordinary Z0..Z3 now feed endpoint-retaining signed phase IBP for H=N*delta-m. The buffer endpoint is native11, transition endpoint native1, predecessor history and both endpoint terms remain. Source-bound H is not a cap value or a numerical value.
+
+Existing n1 Volterra bounds cover real rho<=4.1, not a complex-rho disk. NEXT prove a complex-radial regularized n1 majorant (raw last two W rows are odd in x=sqrt(rho)); for the inlet, certify the O2 native11/O3 native0 same-phase primitive seam before evaluating the remaining signed phase/slow integral. Rc178 and all errors, six signed core/lower terms and already-consumed target/quiet remain unchanged. Read saved reports/ASTs only; no accepted ancestor replay. Goal ACTIVE / INCOMPLETE.
+
 # Current actual inlet functional and n1 source vector - 2026-10-17
 
 Read [CURRENT_ORIGINAL_INLET_SOURCE_VECTOR_2026_10_17.md](CURRENT_ORIGINAL_INLET_SOURCE_VECTOR_2026_10_17.md) first. The known signed O3 background is Q0=-4*mstar*exp(-12), constant in Z. The new source-bound functional on actual unknown H=N*delta-m uses R0^2[(Pstar/N)A+(Pstar/N)^2B], retaining the cross term and ordinary Z1; coefficient tensors have directed whole-cell enclosures. H is not a cap value and has not been numerically evaluated.
