@@ -1,3 +1,11 @@
+# Current first-switch terminal and joint m15 source - 2026-10-17
+
+Read [CURRENT_ORIGINAL_FIRST_SWITCH_TERMINAL_M15_2026_10_17.md](CURRENT_ORIGINAL_FIRST_SWITCH_TERMINAL_M15_2026_10_17.md) first. The actual unmodified first-switch truth source has its exact1-sigma(s) factor before ordinaryZ extraction, so raw43/raw45 retire at phase1. Three180-slot views retain176 original references and the four unchanged signed19/20/41/42 leaves. Hfirst1, own mean and finite-N corrections are retained; no cap or rounded zero is selected as a value.
+
+A new common C1 source bundle binds full=inner+lower+preRp+pulse and the shared unit graph, allowing -full+pulse to correlate before boxing. This partial pressure input does not replace the total reserved response or bind every forward component. Original archives, six inner/lower terms, reserved once, N and independent negative m15 target are unchanged.
+
+Next implement the joint reserved pressure-column consumer and bind canonical component function pairs to the forward pressure partitions. Keep all remaining finite-N caps pending same-source signed evaluation. Global terminal/five-moment closure and later physical layers remain incomplete; goal ACTIVE / INCOMPLETE.
+
 # Current original native/macro signed coupling - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MACRO_COUPLED_M15_2026_10_17.md](CURRENT_ORIGINAL_MACRO_COUPLED_M15_2026_10_17.md) first. The normalized native2/macro0 Psi/Mpsi seam now passes through ordinary Z2, with common physical R and separate Uy ports. The derivative defect D=Hnative-Hmacro0=Enative-Emacro0 passes through Z1. The whole actual-minus-proxy macro category plus first-switch lower E contracts to Enative+I_macro; no positive cap is selected as a signed value.

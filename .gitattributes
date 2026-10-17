@@ -52,3 +52,4 @@ scripts/check_original_macro_weighted_kernel.py -text
 scripts/run_original_macro_weighted_m15.py -text
 scripts/check_original_macro_defect_kernel.py -text
 scripts/run_original_macro_coupled_m15.py -text
+scripts/run_original_first_switch_terminal_m15.py -text
