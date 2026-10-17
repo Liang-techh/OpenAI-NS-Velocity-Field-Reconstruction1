@@ -1,3 +1,9 @@
+# Actual two-micro direction and C0 radii - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_DIRECTION_C0_2026_10_17.md](CURRENT_ORIGINAL_MICRO_DIRECTION_C0_2026_10_17.md) first. The actual own-comparison direction is positive on both micro charts for Z in [.370,.372]: R*Dcmp in [1.563,21.314]. Actual E and a are positive. New phase-free finite-N C0 relative/physical errors and the joint nonreset mean-correction error are below 2^-1024. The second comparison is not replaced by the core; every old signed term and derivative cap remains unchanged.
+
+NEXT obtain actual root Z1..3/slowY0..1 bounds, then Cy3/joint mean-Z3/QZZ/outerRQy and terminal functional matching. C0 radii cannot be differentiated into derivative bounds. No accepted replay, cap-values, term duplication or old-C3 cap transfer. Goal ACTIVE.
+
 # Signed actual core direction - 2026-10-17
 
 Read [CURRENT_ORIGINAL_CORE_SIGNED_DIRECTION_2026_10_17.md](CURRENT_ORIGINAL_CORE_SIGNED_DIRECTION_2026_10_17.md) first. New actual model-plus-saved-error enclosures prove Phi_rho<0 and Dbar_core in [3.069,3.946] on rho [4,4.1], Z [.370,.372], with ordinary Dbar Z0..2. Actual delta recipe is used; 1e-200 is only the tube cap. Both micro core arguments stay within this radial tube. Every old signed term/error and mean-memory packet remains unchanged.
