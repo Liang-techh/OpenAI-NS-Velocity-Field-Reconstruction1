@@ -1,3 +1,9 @@
+# Actual nonempty first-micro prefix and full source adapter - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_FIRST_MICRO_PREFIX_2026_10_17.md](CURRENT_ORIGINAL_N1_FIRST_MICRO_PREFIX_2026_10_17.md) first. Actual [sc/2,3sc/4] m15/Z1 increment is negative in hb*eps^2*Pstar^2*(sc/4) units; source-owned finite-N correction is exactly zero there, distinct shear sigma atoms retained. Direct cumulative join cancels the shared sc/2 endpoint/error before boxing. Full first_micro source adapter now binds true slow B_y/N+fast B_phi, common exact N, S1 and its own upper RQy; full-chart numerical containment remains unavailable.
+
+NEXT continue the true finite-N modified pressure on the rest of first_micro and its seam with second_micro. Keep ordinary Z1, slow/fast terms and all old errors. Do not replace actual functions by caps, reuse whole17-chart I1/O3 upper as firstmicro, duplicate q2 or append a seventh inner term. Full forwardRp/allZ closure and later layers remain open. Goal ACTIVE.
+
 # Actual first-micro sc/2 viscous seam - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_FIRST_MICRO_SEAM_2026_10_17.md](CURRENT_ORIGINAL_N1_FIRST_MICRO_SEAM_2026_10_17.md) first. The archived raw V_y endpoint had an extra Pstar; a30-node appended graph fixes lowerRQy/active/preRp and records the exact old-new defect. Corrected lower R*Q_y equals eps^2*rho^2*b_rho at sc/2, so the shared pressure endpoint/error cancels before boxing. H retains12signed/61error sectors for ordinary Z0/Z1 near.371, no sign claim. All old packets/errors preserved; archived preRp is not the corrected physical source.
