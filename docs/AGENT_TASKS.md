@@ -1,3 +1,11 @@
+# Current original first/second-switch m15 source seam - 2026-10-16
+
+Read [CURRENT_ORIGINAL_SWITCH_M15_2026_10_16.md](CURRENT_ORIGINAL_SWITCH_M15_2026_10_16.md) first. Actual first_switch1/second_switch0 source identity now recovers 15 physical traces from modified U3/Uy2/m4 and independent leading V3/m3/Vy2. The new 27-root/9-loop scoped certificate, actual NativeDerivative/J/Bphi wiring, ordinary pressure algebra, global N-phase and nonzero histories are bound to immutable archives. No accepted ancestor calculation ran.
+
+Production exits0 in18.834s; serialized inspection and15 synthetic controls pass. Report pins1955 inputs/197 implementations. Raw 213,target,six signed inner/lower entries and reserved once remain verbatim. Correlated view 187 ->186,185 other sectors unchanged. Raw50 plus old second0 external contract to D(first_switch0), whose budget uses only two own first0 radius-weighted C0/Z1 atoms. Oldsecond0 is provenance; no inlet value is assigned from a cap.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next prove physical U/Uy/m, separate leading and Qy/RQy at micro2/macro0 and macro1/first0; only then combine -Dmicro2,raw27,Dfirst0. The246-row source receipts are premises, not physical pressure certificates. Keep leading/source viscous23/24 and 43..47. Signed values,numericRp/globalfive,heat/energy/stress/flat,temporal n>=2/summation,mean/oscillatory correction and corrected CartesianNS remain open.
+
 # Current original upstream viscous m15 source chain - 2026-10-16
 
 Read [CURRENT_ORIGINAL_UPSTREAM_M15_2026_10_16.md](CURRENT_ORIGINAL_UPSTREAM_M15_2026_10_16.md) first. The actual second_switch1/post_power0 and post_power1/long0 source interfaces recover30 physical traces using modified U3/Uy2/m4 and separate original leading V3/m3/Vy2. Native J, global N-phase, nonzero histories, pressure formula and physical R/Pstar are source-bound. With accepted tail D2Rc=DRp=0, the signed viscous function is D(second_switch0). No inlet value is assigned from a cap.

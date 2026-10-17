@@ -26,3 +26,5 @@ scripts/check_original_tail_m15.py -text
 scripts/run_original_tail_m15.py -text
 scripts/check_original_upstream_m15.py -text
 scripts/run_original_upstream_m15.py -text
+scripts/check_original_switch_m15.py -text
+scripts/run_original_switch_m15.py -text
