@@ -1,3 +1,9 @@
+# Correlated actual leading-pressure increment - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_CORRELATED_PRESSURE_2026_10_17.md](CURRENT_ORIGINAL_N1_CORRELATED_PRESSURE_2026_10_17.md) first. New1800-bit same-source FTC/transport arithmetic encloses the actual leading N1p increment at s=sc/4, Z~0.371, ordinary Z0/Z1. P1_W0 is positive and the differently weighted m15 leading-N1p component is negative, with relative interval widths below7.788e-29 /2.093e-29. Shared mean/Psi-value constants cancel before boxing; one actual core Psi_rho inlet uncertainty and original nonzero sigma are retained. Independent bounded review accepted the factor2 cover and explicit sigma monotonicity gate.
+
+NEXT evaluate raw cut-velocity and2*F_lead*F1 coupling with the same physical factors to form signed C_inner, then extend axial coverage. Full n1 pressure/C_inner, all-Z coverage, terminal matching and global closure remain open. This is an alternate existing-source evaluation, not an added six-term ledger item. All old caps and six signed terms remain active. Goal ACTIVE / INCOMPLETE.
+
 # Selected leading-pressure signed primitive - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_SELECTED_PRESSURE_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_N1_SELECTED_PRESSURE_PRIMITIVE_2026_10_17.md) first. New1800-bit arithmetic encloses the actual leading N1p integral at s=sc/4, Z~0.371, ordinary Z0/Z1. P1_W0 and the m15 leading-N1p component are distinct: signed viscous endpoint/axis terms and remaining inertial-volume radii are separate. Same-source Qaxis cancels and radial geometry is factored before boxing. No old s=1/2 point is reused.
