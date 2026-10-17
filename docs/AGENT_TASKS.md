@@ -1,3 +1,11 @@
+# Current original compact/quiet viscous tail - 2026-10-16
+
+Read [CURRENT_ORIGINAL_TAIL_M15_2026_10_16.md](CURRENT_ORIGINAL_TAIL_M15_2026_10_16.md) first. Both actual O3Rc/compactRc and compact2Rc/quiet2Rc source interfaces now recover30 physical traces. Independent exact graph algebra checks the compact target normalization,M residual and terminal RHS through ordinaryZ3, alongside the actual unique system/shared IFT recurrence and full-bump endpoint theorem. Relative terminal mass is zero; original leading mean/history is retained. Thus D=R*(Qy_modified-Qy_leading) and D_Z are exactlyzero at2Rc and, by quiet mass transport, atRp. This is a partial viscous function identity, not global moment closure.
+
+Production exits0 in12.02s; serialized inspection and12 synthetic controls pass. Report pins1953 inputs/183 implementations. Raw213,target,six signed inner/lower entries andreserved once remainverbatim. Correlated view190 ->189 with188 other sectors unchanged. The signed external function is now D(long0), bounded only by the two own-long0 C0/Z1 atoms; full202/210 remain raw/provenance. Quiet numeric q1 maps to source s=L, nots1. No accepted ancestor calculation ran.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next connect post_power1 -> long_reshape0 and batch provable active finite-N viscous interfaces27/50/68/87. Do notmix macro/first-switch leading viscous source terms with finite-N errors. Own-long0 bounds remain enormous; signed values,numericRp/globalfive,heat/energy/stress/flat remainder,temporaln>=2/summation,mean/oscillatory correction andcorrectedCartesianNS remainopen.
+
 # Current original six-interface outer viscous m15 chain - 2026-10-16
 
 Read [CURRENT_ORIGINAL_OUTER_CHAIN_M15_2026_10_16.md](CURRENT_ORIGINAL_OUTER_CHAIN_M15_2026_10_16.md) first. Six actual Rm/Rh/O2/O3 source seams now recover90 scoped physical trace rows and168 actual endpoint wrappers. Original leading V/m/Vy inputs are independently bound (96 field/24 radial rows), retaining nonzero mean/history. Whole O3 power flat-branch semantics and mass transport prove D=R*(Qy_modified-Qy_leading) constant, including ordinary Z1; mean and D are not zeroed.
