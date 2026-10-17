@@ -1,3 +1,11 @@
+# Current infinite forward n1 response and raw enclosures - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_FORWARD_ENCLOSURE_2026_10_17.md](CURRENT_ORIGINAL_N1_FORWARD_ENCLOSURE_2026_10_17.md) first. The new infinite forward response is the explicit analytic diagonal image of the accepted canonical convergent function, with forward equations, regular axis data, uniqueness and archived prefix bound. The old numerical class remains a finite producer; no collar equality is claimed.
+
+Actual F0/epsilon,epsilon,epsilon*Pstar^2 ordinary Z0..3 scale jets now combine the saved coefficient intervals with canonical raw radial tails. New full raw coefficient-field enclosures cover rho=[0,4], exit4 and axis0 at the three archived real Z centers; axis entries are exactly zero. F0 stays factored, with directed logarithmic dominance proving a sign-aware polynomial bound. Enclosures are not selected function values, arbitrary-Z or all-moment closure.
+
+Rc178/quiet179, six signed core/lower terms and all errors remain unchanged; target/quiet are already consumed once. The new dependency audit proves the lower collar consumes leading Phi/Psi, not the later raw n1 response. Geometry alone is no inlet identity. NEXT bind the forward leading collar source separately from the core n1 pressure identity, and complete actual inlet p2/phase/H0. No accepted owner, fixture, coefficient recurrence, norm production or quadrature replay. Goal ACTIVE / INCOMPLETE.
+
 # Current canonical n1 solution norm and raw radial remainder - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_CANONICAL_NORM_TAIL_2026_10_17.md](CURRENT_ORIGINAL_N1_CANONICAL_NORM_TAIL_2026_10_17.md) first. Actual raw owner/equations/zero-axis data and the preconditioned six-kernel convention now bind to a normal-convergent canonical temporal-n1 solution. Accepted complex source bounds give ||v||<=2*Msrc and certified raw radial tails at R9/2,target4. No accepted source-bound production or old numerical recurrence is replayed.
