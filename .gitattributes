@@ -20,3 +20,5 @@ scripts/check_original_long_reference_m15.py -text
 scripts/run_original_long_reference_m15.py -text
 scripts/check_original_Rm_inlet_m15.py -text
 scripts/run_original_Rm_inlet_m15.py -text
+scripts/check_original_outer_chain_m15.py -text
+scripts/run_original_outer_chain_m15.py -text

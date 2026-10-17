@@ -1,3 +1,11 @@
+# Current original six-interface outer viscous m15 chain - 2026-10-16
+
+Read [CURRENT_ORIGINAL_OUTER_CHAIN_M15_2026_10_16.md](CURRENT_ORIGINAL_OUTER_CHAIN_M15_2026_10_16.md) first. Six actual Rm/Rh/O2/O3 source seams now recover90 scoped physical trace rows and168 actual endpoint wrappers. Original leading V/m/Vy inputs are independently bound (96 field/24 radial rows), retaining nonzero mean/history. Whole O3 power flat-branch semantics and mass transport prove D=R*(Qy_modified-Qy_leading) constant, including ordinary Z1; mean and D are not zeroed.
+
+New production exits0 in18.873s; serialized inspection and12 synthetic controls pass. Report pins1952 inputs/176 implementations. Raw213, target, six signed inner/lower terms and reserved once remain verbatim. Correlated view196 ->190, with189 other terms unchanged. The signed chain is D(long0)-D(Rc). Retained exterior budget is own long0 C0/Z1 plus the entire original transition202 aggregate, admitted only by the explicit power transport certificate. All cumulative prefixes are checked as full dictionaries. Huge bounds remain; no original signed values or useful numerical terminal accuracy is claimed.
+
+Tasks14/15 remain IN PROGRESS; full goal **ACTIVE / INCOMPLETE**. Next prove actual cross-archive O3 Rc -> compact Rc and compact2Rc -> quiet2Rc Qy/RQy ordinary-Z germs, then bind compact raw210 without replaying accepted ancestors. Quiet211 is mean-square; P1 differs from m15. Numeric Rp/global all-five/common-N closure, heat/energy/stress/flat remainder, temporal recursion/summation, mean/oscillatory correction and corrected Cartesian NS remain open.
+
 # Current original postrestore/Rm physical inlet and signed m15 chain - 2026-10-16
 
 Read [CURRENT_ORIGINAL_RM_INLET_M15_2026_10_16.md](CURRENT_ORIGINAL_RM_INLET_M15_2026_10_16.md) first. The actual postrestore1/Rm x1 source theorem consumes pinned physical inverse/loop germs and varying J=1/x calculus. A new exact leading mean proof retains unknown original Z jets,23 zero partial weights and21 empty bump integrals. It recovers17 modified physical trace rows and8 common leading Qy inputs using16 scoped U/Uy/mean ports. The raw modified-field fingerprint stays3 equal/24 unresolved; no cap is used as a function value.
