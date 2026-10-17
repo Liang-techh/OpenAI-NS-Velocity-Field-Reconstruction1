@@ -1,3 +1,11 @@
+# Current original signed weighted source primitive - 2026-10-17
+
+Read [CURRENT_ORIGINAL_WEIGHTED_SOURCE_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_WEIGHTED_SOURCE_PRIMITIVE_2026_10_17.md) first. Fourteen new independent W1/W2 rows, three actual angular Laurent-mode queries and six axial modes now supply nineteen signed first-switch R-weighted remainder queries through ordinary Z2 and raw47 C0/C1. The actual angular exponent is hbS^2 with control1; the axial control is 1-sigma. Distinct hbB/hbS atoms and the positive frozen swirl amplitude remain source-bound and unmaterialized.
+
+Signed R0/R1, separate finite-width log proofs, independent finite-h integrals and serialized inspection pass. Raw46 main packets, raw213/reduced183, six signed inner/lower, target, reserved once and every prior error retain exact parent witnesses. The old raw47 positive budget is not replaced.
+
+Next connect the signed J/R identity to actual raw46/raw47 leaves and internal endpoints before removing any old bound; retain raw45. Query enclosures do not prove an axial function identity or global five-moment closure. Later physical layers remain incomplete; Tasks14/15 and the long-term goal stay ACTIVE / INCOMPLETE.
+
 # Current original swirl and all-sector source C1 - 2026-10-16
 
 Read [CURRENT_ORIGINAL_SWIRL_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_SWIRL_SOURCE_C1_2026_10_16.md) first. Three signed factored swirl B Z0/Z1/Z2 queries now use native2 comparison Phi/B/C, saved anchored G/logF0 and ordinary relative-amplitude Bell jets. All six radial-mode/delta pieces and the exact positive frozen F0base^2 atom remain; no amplitude value, Gbar or underflow zero is selected as the field.

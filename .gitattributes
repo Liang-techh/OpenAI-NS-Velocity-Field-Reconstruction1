@@ -42,3 +42,7 @@ scripts/check_original_hydro_source_kernel.py -text
 scripts/run_original_swirl_source_C1.py -text
 scripts/check_original_swirl_transport.py -text
 scripts/check_original_swirl_source_kernel.py -text
+scripts/check_original_weighted_pulse_moments.py -text
+scripts/check_original_weighted_angular_kernel.py -text
+scripts/check_original_weighted_remainder_kernel.py -text
+scripts/run_original_weighted_source_primitive.py -text
