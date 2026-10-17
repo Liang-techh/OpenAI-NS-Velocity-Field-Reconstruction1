@@ -1,3 +1,11 @@
+# Current original signed weighted m15 leaves - 2026-10-17
+
+Read [CURRENT_ORIGINAL_SIGNED_WEIGHTED_LEAVES_2026_10_17.md](CURRENT_ORIGINAL_SIGNED_WEIGHTED_LEAVES_2026_10_17.md) first. Nineteen same-source signed raw46/raw47 pairs now feed executable 183-slot views at three Z queries. Each view replaces reduced41/42 with complete signed approximation/enclosure leaves and retains181 original references exactly. Raw47 is the actual weighted remainder with R100*epsilon*hbS^3, not a value selected from the old positive bound.
+
+Seven source AST guards, the inherited actual leading FTC/macro1-first0 source seam, 46 independent new controls, 76 operator reconstructions and serialized inspection pass. Original raw213/reduced183 archives, six signed inner/lower, reserved once, independent target and common N stay unchanged. Raw23/24/43/44/45 and every other error remain active.
+
+Next recover the signed macro leading-viscous contribution behind raw23/raw24 and couple its actual R100 port with first-switch lower raw44 via the independent leading FTC. Continue from the new signed views; no accepted M0/W1/W2 or source/fixture replay. Global terminal/five-moment closure and later physical layers remain incomplete; the long-term goal stays ACTIVE / INCOMPLETE.
+
 # Current original signed weighted source primitive - 2026-10-17
 
 Read [CURRENT_ORIGINAL_WEIGHTED_SOURCE_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_WEIGHTED_SOURCE_PRIMITIVE_2026_10_17.md) first. Fourteen new independent W1/W2 rows, three actual angular Laurent-mode queries and six axial modes now supply nineteen signed first-switch R-weighted remainder queries through ordinary Z2 and raw47 C0/C1. The actual angular exponent is hbS^2 with control1; the axial control is 1-sigma. Distinct hbB/hbS atoms and the positive frozen swirl amplitude remain source-bound and unmaterialized.
