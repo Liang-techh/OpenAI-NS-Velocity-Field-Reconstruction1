@@ -1,3 +1,9 @@
+# Current raw n1 cutoff and C_inner source binding - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_CUTOFF_SOURCE_BINDING_2026_10_17.md](CURRENT_ORIGINAL_N1_CUTOFF_SOURCE_BINDING_2026_10_17.md) first. Actual all-word raw first n1 function, core entry, raw Akin tail provenance, cutoff own mean/pressure and C_inner m15 source handles are bound through ordinary Z0..3. N1p physical units and Pstar squared restoration are applied once; leading pressure persists after the velocity cutoff.
+
+This is a source-function identity. No natural-word point values, signed numerical C_inner, instantiated m15 error budget or saved six-term/error contraction is claimed. Tail Z gaps use the solution tube and exact endpoint tuples. NEXT hydrate actual finite words at selected sc/4 coordinates, propagate complete-support error, and evaluate the signed A-A0 remainder. Rc178/quiet179, all six signed terms and all errors remain active; target/quiet are already consumed once. Goal ACTIVE / INCOMPLETE.
+
 # Current native first-collar source identity - 2026-10-17
 
 Read [CURRENT_ORIGINAL_NATIVE_COLLAR_TRANSPORT_2026_10_17.md](CURRENT_ORIGINAL_NATIVE_COLLAR_TRANSPORT_2026_10_17.md) first. Actual same-core radial directions and the native defining first-collar ODEs now identify the leading F/U/mean/pressure functions with the canonical collar through ordinary Z0..3. Exact sc places this entire subcollar in the first alpha=1 window; six own comparison moments and the actual pointwise quotient are bound to the same core. Prefix phi_a denotes the inlet, so exp(ell) is applied once.
