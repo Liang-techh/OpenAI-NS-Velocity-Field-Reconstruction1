@@ -1,3 +1,11 @@
+# Current original native/macro signed coupling - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MACRO_COUPLED_M15_2026_10_17.md](CURRENT_ORIGINAL_MACRO_COUPLED_M15_2026_10_17.md) first. The normalized native2/macro0 Psi/Mpsi seam now passes through ordinary Z2, with common physical R and separate Uy ports. The derivative defect D=Hnative-Hmacro0=Enative-Emacro0 passes through Z1. The whole actual-minus-proxy macro category plus first-switch lower E contracts to Enative+I_macro; no positive cap is selected as a signed value.
+
+Three executable182-slot views replace reduced19/20 with signed macro integral/native endpoint and remove reduced39/raw44 by the source identity, retaining provenance. Prior signed41/42 are unchanged;178 original references, raw43/raw45 and all other errors remain. Original raw213/reduced183, six inner/lower, reserved once, common N and independent negative m15 target are exact. The saved macro primitive and accepted computations/fixtures are not replayed.
+
+Next source-bind the first-switch phase1 raw43/raw45 upper/radius pair using the exact1-sigma endpoint factor and truth source, then compare the full coupled leading source with the unchanged independent target. Global terminal/five-moment closure and later layers remain incomplete; goal ACTIVE / INCOMPLETE.
+
 # Current original signed macro weighted primitive - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MACRO_WEIGHTED_M15_2026_10_17.md](CURRENT_ORIGINAL_MACRO_WEIGHTED_M15_2026_10_17.md) first. The new positive radial kernels integrate the same six signed macro source modes through ordinary Z2 and produce C0/C1 at three Z queries. Saved uniform-prefix exp(ell) enclosures are retained; no accepted computation or quadrature is replayed.
