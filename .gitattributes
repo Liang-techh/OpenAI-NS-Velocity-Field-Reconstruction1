@@ -39,3 +39,6 @@ scripts/run_original_signed_C1_source.py -text
 scripts/run_original_hydro_source_C1.py -text
 scripts/check_original_hydro_transport.py -text
 scripts/check_original_hydro_source_kernel.py -text
+scripts/run_original_swirl_source_C1.py -text
+scripts/check_original_swirl_transport.py -text
+scripts/check_original_swirl_source_kernel.py -text

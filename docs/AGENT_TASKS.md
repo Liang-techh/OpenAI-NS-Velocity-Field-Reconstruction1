@@ -1,3 +1,11 @@
+# Current original swirl and all-sector source C1 - 2026-10-16
+
+Read [CURRENT_ORIGINAL_SWIRL_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_SWIRL_SOURCE_C1_2026_10_16.md) first. Three signed factored swirl B Z0/Z1/Z2 queries now use native2 comparison Phi/B/C, saved anchored G/logF0 and ordinary relative-amplitude Bell jets. All six radial-mode/delta pieces and the exact positive frozen F0base^2 atom remain; no amplitude value, Gbar or underflow zero is selected as the field.
+
+All pressure/hydro/swirl source sectors are enclosed at three Z points and nineteen raw46 main-component C0/C1 queries. Thirty new kernel controls, 139 new transport/amplitude controls, 36 width proofs, nine amplitude log-product proofs and serialized inspection pass. Pressure/hydro/mass data, raw213/reduced183, six signed inner/lower, target, reserved once and every prior error stay unchanged.
+
+Next implement signed weighted pulse/radial kernels and the actual angular multiplier for the first-switch weighted primitive. Raw45 and raw47 remain active. Full weighted source, m15/five-moment closure and later physical construction layers remain incomplete; Tasks14/15 and the long-term goal stay ACTIVE / INCOMPLETE.
+
 # Current original same-generator hydro C1 - 2026-10-16
 
 Read [CURRENT_ORIGINAL_HYDRO_SOURCE_C1_2026_10_16.md](CURRENT_ORIGINAL_HYDRO_SOURCE_C1_2026_10_16.md) first. New hydro B Z0/Z1/Z2 approximations/enclosures use the native2 comparison core seed, positive IBP/Cauchy transport and exact normalized M/A history ODEs. Actual first-collar exit increments are not comparison seeds. Untruncated epsilon sectors retain delta=epsilon*exp(970), exact saved j, original R0 mode weights and a direct shared-source moment-difference mode.
