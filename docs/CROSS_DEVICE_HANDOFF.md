@@ -1,3 +1,9 @@
+# Selected leading-pressure signed primitive - 2026-10-17
+
+Read [CURRENT_ORIGINAL_N1_SELECTED_PRESSURE_PRIMITIVE_2026_10_17.md](CURRENT_ORIGINAL_N1_SELECTED_PRESSURE_PRIMITIVE_2026_10_17.md) first. New1800-bit arithmetic encloses the actual leading N1p integral at s=sc/4, Z~0.371, ordinary Z0/Z1. P1_W0 and the m15 leading-N1p component are distinct: signed viscous endpoint/axis terms and remaining inertial-volume radii are separate. Same-source Qaxis cancels and radial geometry is factored before boxing. No old s=1/2 point is reused.
+
+NEXT correlate Delta Qpsi/Qpsi_rho from the shared core histories; endpoint coefficient errors are still retained independently. Full signed C_inner, all-Z coverage, terminal matching and global closure remain open. The new component is an alternate evaluation, not an added six-term ledger item. All old errors and six signed terms remain active. Goal ACTIVE / INCOMPLETE.
+
 # Selected first raw n1 finite-word enclosures - 2026-10-17
 
 Read [CURRENT_ORIGINAL_N1_SELECTED_WORDS_2026_10_17.md](CURRENT_ORIGINAL_N1_SELECTED_WORDS_2026_10_17.md) first. New directed1800-bit coefficient enclosures transport actual saved core W0/W1 to s=sc*q/4 at q=0,1/2,5/8,3/4,1, ordinary Z0/Z1 at saved Z~0.371. Signed homogeneous source-sector approximation, numeric local raw error radii and uniform omitted-word tail remain separate. No old s=1/2 field point is reused. Complete eta measure is J_total=4+hb*sc*C with C near5/8.
