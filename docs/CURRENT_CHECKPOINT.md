@@ -1,3 +1,12 @@
+# Actual history a source positivity passed - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_HISTORY_A_POSITIVITY_2026_10_18.md](CURRENT_ORIGINAL_RM_HISTORY_A_POSITIVITY_2026_10_18.md) first. Actual postrestore a=4/5 and patch
+a>=7/10 are source-bound on both whole native/Z domains. Two new source
+calls passed; no accepted ancestor replay. Finite-N history C2 still needs
+actual C2=N*C5 m density/provider and nonreset incoming endpoint mapping.
+Q_yZ1/fullRQ_y/physical join/globalfive remain false. All212/errors/one
+reserved retained. Goal ACTIVE / INCOMPLETE. Completed calls are frozen.
+
 # Leading-m ordinary-Z source jets passed - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_LEADING_M_Z_SOURCE_2026_10_18.md](CURRENT_ORIGINAL_RM_LEADING_M_Z_SOURCE_2026_10_18.md) first. Four genuine leading-m source
