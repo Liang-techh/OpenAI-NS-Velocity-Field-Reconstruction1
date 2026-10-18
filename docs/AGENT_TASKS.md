@@ -1,3 +1,9 @@
+# Actual micro physical U/Q increment bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_Q_INCREMENT_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_Q_INCREMENT_BOUNDS_2026_10_17.md) first. Physical delta_U Z0..3 and source-linear delta_Q Z0..2 now have error caps below 2^-1024, using complete mean Z3 with incoming history. Total-y Q_y and RQ_y C1 caps retain the undivided B_phi chain; their current majorants do not certify smallness. Actual signed values and all old 212 terms/errors remain unchanged; no accepted replay.
+
+NEXT actual background U/Q norms and six I1 C1 defects; retain external RQy until a source identity or correlated endpoint bound resolves it, then signed micro/terminal functional matching. Global closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro C/Cy and complete physical mean Z3 bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_MEAN_Z3_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MEAN_Z3_BOUNDS_2026_10_17.md) first. Source-owned C/Cy and joined histories now have ordinary Z0..3 norm caps. Complete physical delta_m and total-y delta_m are below 2^-1024 on Z[.370,.372] across both original micro charts; second incoming history and Pstar/N^2 retained. These are correction norm enclosures, not chosen signed values or full NS validation. Old 212 terms/errors unchanged; no accepted replay.
