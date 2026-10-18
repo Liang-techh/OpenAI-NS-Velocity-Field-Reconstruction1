@@ -1,3 +1,16 @@
+# Corrected reserved m15 source and point comparison - 2026-10-18
+
+Read [CURRENT_ORIGINAL_CORRECTED_RESERVED_M15_2026_10_18.md](CURRENT_ORIGINAL_CORRECTED_RESERVED_M15_2026_10_18.md) first. The new physical source adapter
+replaces the extra-Pstar preRp endpoint once, retains the identical pulse,
+and defines corrected reserved/target/discrepancy C1 roots in a53,500-node
+graph with the original positive common unit. A new Z=371/1000 discrepancy
+enclosure uses saved physical Y rows and an additive2^-4096 repair BOUND.
+It is not all-Z closure. The live velocity provider is not yet rebound.
+NEXT bind the existing own_swirl source slot, then prove the current
+Rm-to-Rp physical-germ join on a common Z domain. Old table domains and
+graph namespaces cannot be silently joined. Preserve212/six channels/all
+errors/own_swirl once. Goal ACTIVE / INCOMPLETE. No ancestor or fixture replay.
+
 # Outer signed pressure and intermediate absolute m15 - 2026-10-18
 
 Read [CURRENT_ORIGINAL_OUTER_PRESSURE_ABSOLUTE_M15_2026_10_18.md](CURRENT_ORIGINAL_OUTER_PRESSURE_ABSOLUTE_M15_2026_10_18.md) first. Outer micro/macro B/S1 now has a

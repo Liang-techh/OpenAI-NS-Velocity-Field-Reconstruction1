@@ -136,3 +136,6 @@ experiments/root_st073/original_outer_pressure_enclosure_fixture.json -text
 experiments/root_st073/original_outer_signed_macro_scale_fixture.json -text
 experiments/root_st073/original_H_m15_Rm_transport_fixture.json -text
 experiments/root_st073/original_outer_pressure_runner_execution_source.txt -text
+scripts/run_original_corrected_reserved_m15.py -text
+experiments/root_st073/original_corrected_reserved_m15_source_fixture.json -text
+experiments/root_st073/original_corrected_reserved_m15_numeric_fixture.json -text
