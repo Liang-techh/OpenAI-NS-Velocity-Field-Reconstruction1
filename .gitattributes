@@ -96,3 +96,4 @@ scripts/run_original_first_switch_finite_N_I1.py -text
 scripts/run_original_switch_post_finite_N_I1.py -text
 docs/continuation/*.json -text
 scripts/run_original_long_reference_background_I1.py -text
+scripts/run_original_long_reference_finite_N_I1.py -text

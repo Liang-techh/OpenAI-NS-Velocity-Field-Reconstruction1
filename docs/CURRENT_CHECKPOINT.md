@@ -1,3 +1,9 @@
+# Current-N long/reference pressure integrals - 2026-10-18
+
+Read [CURRENT_ORIGINAL_LONG_REFERENCE_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_FINITE_N_I1_2026_10_18.md) first. Actual native log controls and full current-N six-I1/B/D/S1 C1 enclosures now reach Rz in own Wlong/Wref units. Full P0/ABC and nonreset mean histories retained. Two modified RQy seams remain UNPROVED; all endpoint differences/caps and old 212/signed/errors remain. No accepted arithmetic replay; full pressure/global closure open.
+
+NEXT actual modified derivative seam proofs, restoration/post_restore toward Rm, surviving external pressure endpoints, independent reserved-pulse functional comparison. Goal ACTIVE / INCOMPLETE.
+
 # Long/reference native background pressure sector - 2026-10-18
 
 Read [CURRENT_ORIGINAL_LONG_REFERENCE_BACKGROUND_I1_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_BACKGROUND_I1_2026_10_18.md) first. Native constant-U six-I1/B/D/S1 C1 enclosures now reach Rz with logarithmic endpoint scales, retained mean memory and nonzero tail boxes. Exact current-N source extends through long/reference; new internal seam proof accepted: false. New finite-N numerical loop/pressure bounds remain open. Full parent graph, old 212/signed/errors and all standalone caps remain; no accepted arithmetic replay.
