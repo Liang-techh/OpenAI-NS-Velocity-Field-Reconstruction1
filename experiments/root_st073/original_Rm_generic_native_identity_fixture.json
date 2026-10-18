@@ -1,0 +1,3112 @@
+{
+  "case": "fresh_distinct_bounded_generic_native_toy_with_guarded_radius",
+  "expected": {
+    "generic_shift_source_orders": [
+      0,
+      1,
+      2
+    ],
+    "leading_only": true,
+    "ordinary_orders": [
+      0,
+      1
+    ],
+    "root_count": 18
+  },
+  "finite_bindings": {
+    "Rm_patch_finite_N_C5_bindings": {
+      "chart": {
+        "roots": {
+          "Delta": [
+            194,
+            214
+          ],
+          "E": [
+            7,
+            11
+          ],
+          "V": [
+            19,
+            23
+          ],
+          "a": [
+            186,
+            206
+          ],
+          "b": [
+            187,
+            207
+          ],
+          "kappa": [
+            192,
+            212
+          ],
+          "p1": [
+            197,
+            217
+          ],
+          "p2": [
+            201,
+            221
+          ],
+          "t0": [
+            189,
+            209
+          ]
+        }
+      }
+    }
+  },
+  "modified_bindings": {
+    "modified_Q4_pressure_C3_bindings": {
+      "charts": {
+        "postrestore": {
+          "roots": {
+            "Delta": [
+              154,
+              174
+            ],
+            "E": [
+              6,
+              10
+            ],
+            "V": [
+              18,
+              22
+            ],
+            "a": [
+              146,
+              166
+            ],
+            "b": [
+              147,
+              167
+            ],
+            "kappa": [
+              152,
+              172
+            ],
+            "p1": [
+              157,
+              177
+            ],
+            "p2": [
+              161,
+              181
+            ],
+            "t0": [
+              149,
+              169
+            ]
+          }
+        }
+      },
+      "radius_source": {
+        "sides": {
+          "patch": {
+            "body_node": 140,
+            "coordinate_node": 5,
+            "endpoint_node": 139,
+            "native_derivative_equals_value": true,
+            "passed": true,
+            "physical_measure_node": 141,
+            "proof_ref": "toy-radius-patch-Rm-x-J-layout"
+          },
+          "postrestore": {
+            "body_node": 138,
+            "coordinate_node": 4,
+            "endpoint_node": 222,
+            "native_derivative_equals_value": true,
+            "passed": true,
+            "proof_ref": "toy-radius-post-source-layout"
+          }
+        }
+      }
+    }
+  },
+  "nodes": [
+    {
+      "denominator": 1,
+      "numerator": 0,
+      "operation": "exact_rational"
+    },
+    {
+      "denominator": 1,
+      "numerator": 1,
+      "operation": "exact_rational"
+    },
+    {
+      "denominator": 1,
+      "numerator": 2,
+      "operation": "exact_rational"
+    },
+    {
+      "denominator": 1,
+      "numerator": 3,
+      "operation": "exact_rational"
+    },
+    {
+      "name": "toy_postrestore_native_y",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_patch_native_y",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_left_E_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 6,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 7,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_E_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 10,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 11,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_E_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 14,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 15,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 18,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 19,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 22,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 23,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 26,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 27,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_m_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_m_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 30,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 31,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_m_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_m_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 34,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 35,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_m_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_m_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 38,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 39,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-m-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_h_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_h_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 42,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 43,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_h_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_h_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 46,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 47,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_h_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_h_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 50,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 51,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-h-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_k_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_k_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 54,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 55,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_k_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_k_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 58,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 59,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_k_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_k_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 62,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 63,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-k-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_e_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_e_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 66,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 67,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_e_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_e_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 70,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 71,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_e_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_e_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 74,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 75,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-e-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_p_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_p_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 78,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 79,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_p_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_p_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 82,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 83,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_p_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_p_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 86,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 87,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-p-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_P0_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_P0_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 90,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 91,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_P0_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_P0_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 94,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 95,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_P0_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_P0_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 98,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 99,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-P0-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_pressure_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_pressure_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 102,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 103,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_pressure_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_pressure_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 106,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 107,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_pressure_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_pressure_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 110,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 111,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-pressure-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_E_y_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_y_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 114,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 115,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_E_y_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_y_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 118,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 119,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_E_y_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_E_y_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 122,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 123,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-E_y-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_y_0",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_y_0",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 126,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-0",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 127,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-0",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_y_1",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_y_1",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 130,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-1",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 131,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-1",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "name": "toy_left_V_y_2",
+      "operation": "bound_variable"
+    },
+    {
+      "name": "toy_right_V_y_2",
+      "operation": "bound_variable"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 134,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-2",
+      "value": 1,
+      "variable": 4
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 135,
+      "operation": "function_substitution",
+      "source_ref": "toy-seed-V_y-2",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "arguments": [
+        1,
+        1
+      ],
+      "operation": "product",
+      "source_layout": "toy_Rm_body"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 138,
+      "operation": "function_substitution",
+      "source_ref": "toy-radius-Rm-endpoint",
+      "value": 1,
+      "variable": 5
+    },
+    {
+      "arguments": [
+        139,
+        5
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 5,
+      "numerator": 1,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-x"
+    },
+    {
+      "arguments": [
+        2,
+        114
+      ],
+      "operation": "product"
+    },
+    {
+      "argument": 142,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        6,
+        143
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        2,
+        126
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 6,
+      "numerator": 144,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 6,
+      "numerator": 145,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 144,
+      "numerator": 145,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 148,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        147,
+        147
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 146,
+      "numerator": 150,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        146,
+        151
+      ],
+      "operation": "sum"
+    },
+    {
+      "argument": 2,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        152,
+        153
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        6,
+        18
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        138,
+        155
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 6,
+      "numerator": 156,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 18,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        6,
+        158
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        138,
+        159
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 6,
+      "numerator": 160,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        2,
+        118
+      ],
+      "operation": "product"
+    },
+    {
+      "argument": 162,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        10,
+        163
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        2,
+        130
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 10,
+      "numerator": 164,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 10,
+      "numerator": 165,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 164,
+      "numerator": 165,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 168,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        167,
+        167
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 166,
+      "numerator": 170,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        166,
+        171
+      ],
+      "operation": "sum"
+    },
+    {
+      "argument": 2,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        172,
+        173
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        10,
+        22
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        138,
+        175
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 10,
+      "numerator": 176,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 22,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        10,
+        178
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        138,
+        179
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 10,
+      "numerator": 180,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        2,
+        115
+      ],
+      "operation": "product"
+    },
+    {
+      "argument": 182,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        7,
+        183
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        2,
+        127
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 7,
+      "numerator": 184,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 7,
+      "numerator": 185,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 184,
+      "numerator": 185,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 188,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        187,
+        187
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 186,
+      "numerator": 190,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        186,
+        191
+      ],
+      "operation": "sum"
+    },
+    {
+      "argument": 2,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        192,
+        193
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        7,
+        19
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        140,
+        195
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 7,
+      "numerator": 196,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 19,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        7,
+        198
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        140,
+        199
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 7,
+      "numerator": 200,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        2,
+        119
+      ],
+      "operation": "product"
+    },
+    {
+      "argument": 202,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        11,
+        203
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        2,
+        131
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 11,
+      "numerator": 204,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 11,
+      "numerator": 205,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "denominator": 204,
+      "numerator": 205,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 208,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        207,
+        207
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 206,
+      "numerator": 210,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "arguments": [
+        206,
+        211
+      ],
+      "operation": "sum"
+    },
+    {
+      "argument": 2,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        212,
+        213
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        11,
+        23
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        140,
+        215
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 11,
+      "numerator": 216,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "argument": 23,
+      "operation": "negative"
+    },
+    {
+      "arguments": [
+        11,
+        218
+      ],
+      "operation": "sum"
+    },
+    {
+      "arguments": [
+        140,
+        219
+      ],
+      "operation": "product"
+    },
+    {
+      "denominator": 11,
+      "numerator": 220,
+      "operation": "positive_quotient",
+      "source_positive_certificate": "toy-positive-leading-E"
+    },
+    {
+      "Z_independent_substitution": true,
+      "expression": 138,
+      "operation": "function_substitution",
+      "source_ref": "toy-radius-post-endpoint",
+      "value": 1,
+      "variable": 4
+    }
+  ],
+  "raw_native_jet": {
+    "RQy_identity_proved": false,
+    "leading_raw_native_jet_only": true,
+    "passed": true,
+    "row_forms": [
+      {
+        "field": "E",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-E-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "E",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-E-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "E",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-E-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E_y[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-V-0"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-V-1"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-V-2"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "m",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-m-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "m",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-m-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "m",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-m-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:m[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "h",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[0]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-h-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[0]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "h",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[1]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-h-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[1]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "h",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[2]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-h-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[2]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:h[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-k-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-k-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-k-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-3/2",
+              "monomial": [
+                "FUNCTION:k[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[0]",
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-e-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[0]",
+                "FUNCTION:V[0]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[1]",
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-e-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[1]",
+                "FUNCTION:V[1]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[2]",
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-e-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1",
+              "monomial": [
+                "FUNCTION:V[2]",
+                "FUNCTION:V[2]"
+              ]
+            },
+            {
+              "coefficient": "-1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            },
+            {
+              "coefficient": "-1",
+              "monomial": [
+                "FUNCTION:e[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-p-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-p-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-p-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-P0-0"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-P0-1"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "left_form": {
+          "terms": []
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-P0-2"
+        ],
+        "right_form": {
+          "terms": []
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "pressure",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 0,
+        "proof_refs": [
+          "toy-raw-proof-pressure-0"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[0]",
+                "FUNCTION:E[0]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "pressure",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 1,
+        "proof_refs": [
+          "toy-raw-proof-pressure-1"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[1]",
+                "FUNCTION:E[1]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      },
+      {
+        "field": "pressure",
+        "left_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            }
+          ]
+        },
+        "left_node": 0,
+        "order": 2,
+        "proof_refs": [
+          "toy-raw-proof-pressure-2"
+        ],
+        "right_form": {
+          "terms": [
+            {
+              "coefficient": "1/2",
+              "monomial": [
+                "FUNCTION:E[2]",
+                "FUNCTION:E[2]"
+              ]
+            }
+          ]
+        },
+        "right_node": 0,
+        "status": "proved"
+      }
+    ],
+    "schema": "Rm_raw_native_jet_identity_v1",
+    "seed_aliases": [
+      {
+        "field": "E",
+        "left_node": 8,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-E-0",
+        "right_node": 9
+      },
+      {
+        "field": "E",
+        "left_node": 12,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-E-1",
+        "right_node": 13
+      },
+      {
+        "field": "E",
+        "left_node": 16,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-E-2",
+        "right_node": 17
+      },
+      {
+        "field": "V",
+        "left_node": 20,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-V-0",
+        "right_node": 21
+      },
+      {
+        "field": "V",
+        "left_node": 24,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-V-1",
+        "right_node": 25
+      },
+      {
+        "field": "V",
+        "left_node": 28,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-V-2",
+        "right_node": 29
+      },
+      {
+        "field": "m",
+        "left_node": 32,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-m-0",
+        "right_node": 33
+      },
+      {
+        "field": "m",
+        "left_node": 36,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-m-1",
+        "right_node": 37
+      },
+      {
+        "field": "m",
+        "left_node": 40,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-m-2",
+        "right_node": 41
+      },
+      {
+        "field": "h",
+        "left_node": 44,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-h-0",
+        "right_node": 45
+      },
+      {
+        "field": "h",
+        "left_node": 48,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-h-1",
+        "right_node": 49
+      },
+      {
+        "field": "h",
+        "left_node": 52,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-h-2",
+        "right_node": 53
+      },
+      {
+        "field": "k",
+        "left_node": 56,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-k-0",
+        "right_node": 57
+      },
+      {
+        "field": "k",
+        "left_node": 60,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-k-1",
+        "right_node": 61
+      },
+      {
+        "field": "k",
+        "left_node": 64,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-k-2",
+        "right_node": 65
+      },
+      {
+        "field": "e",
+        "left_node": 68,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-e-0",
+        "right_node": 69
+      },
+      {
+        "field": "e",
+        "left_node": 72,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-e-1",
+        "right_node": 73
+      },
+      {
+        "field": "e",
+        "left_node": 76,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-e-2",
+        "right_node": 77
+      },
+      {
+        "field": "p",
+        "left_node": 80,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-p-0",
+        "right_node": 81
+      },
+      {
+        "field": "p",
+        "left_node": 84,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-p-1",
+        "right_node": 85
+      },
+      {
+        "field": "p",
+        "left_node": 88,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-p-2",
+        "right_node": 89
+      },
+      {
+        "field": "P0",
+        "left_node": 92,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-P0-0",
+        "right_node": 93
+      },
+      {
+        "field": "P0",
+        "left_node": 96,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-P0-1",
+        "right_node": 97
+      },
+      {
+        "field": "P0",
+        "left_node": 100,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-P0-2",
+        "right_node": 101
+      },
+      {
+        "field": "pressure",
+        "left_node": 104,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-pressure-0",
+        "right_node": 105
+      },
+      {
+        "field": "pressure",
+        "left_node": 108,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-pressure-1",
+        "right_node": 109
+      },
+      {
+        "field": "pressure",
+        "left_node": 112,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-pressure-2",
+        "right_node": 113
+      },
+      {
+        "field": "E_y",
+        "left_node": 116,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-E_y-0",
+        "right_node": 117
+      },
+      {
+        "field": "E_y",
+        "left_node": 120,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-E_y-1",
+        "right_node": 121
+      },
+      {
+        "field": "E_y",
+        "left_node": 124,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-E_y-2",
+        "right_node": 125
+      },
+      {
+        "field": "V_y",
+        "left_node": 128,
+        "order": 0,
+        "proof_ref": "toy-seed-proof-V_y-0",
+        "right_node": 129
+      },
+      {
+        "field": "V_y",
+        "left_node": 132,
+        "order": 1,
+        "proof_ref": "toy-seed-proof-V_y-1",
+        "right_node": 133
+      },
+      {
+        "field": "V_y",
+        "left_node": 136,
+        "order": 2,
+        "proof_ref": "toy-seed-proof-V_y-2",
+        "right_node": 137
+      }
+    ],
+    "source_only": true
+  },
+  "schema": "original_Rm_generic_native_identity_fixture_v1",
+  "second_radial_proof": {
+    "final_rows": [
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-postrestore-E_y-0",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-postrestore-E_y-1",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-postrestore-E_y-2",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-postrestore-V_y-0",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-postrestore-V_y-1",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-postrestore-V_y-2",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-patch-E_y-0",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-patch-E_y-1",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-patch-E_y-2",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-patch-V_y-0",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-patch-V_y-1",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-patch-V_y-2",
+        "side": "patch",
+        "status": "proved"
+      }
+    ],
+    "ordinary_orders": [
+      0,
+      1,
+      2
+    ],
+    "passed": true,
+    "rows": [
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-postrestore-E_y-0",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-postrestore-E_y-1",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-postrestore-E_y-2",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-postrestore-V_y-0",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-postrestore-V_y-1",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-postrestore-V_y-2",
+        "side": "postrestore",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-patch-E_y-0",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-patch-E_y-1",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "identity": "endpoint(D_y E_y - E_y/10)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-patch-E_y-2",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 0,
+        "ordinary_Z_order": 0,
+        "proof_ref": "toy-second-patch-V_y-0",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 1,
+        "ordinary_Z_order": 1,
+        "proof_ref": "toy-second-patch-V_y-1",
+        "side": "patch",
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "identity": "endpoint(D_y V_y)=0",
+        "order": 2,
+        "ordinary_Z_order": 2,
+        "proof_ref": "toy-second-patch-V_y-2",
+        "side": "patch",
+        "status": "proved"
+      }
+    ],
+    "schema": "original_Rm_second_radial_identity_v1",
+    "second_radial_seam": [
+      {
+        "field": "E_y",
+        "order": 0,
+        "proof_ref": "toy-seam-E_y-0",
+        "status": "proved_by_accepted_source_pair"
+      },
+      {
+        "field": "E_y",
+        "order": 1,
+        "proof_ref": "toy-seam-E_y-1",
+        "status": "proved_by_accepted_source_pair"
+      },
+      {
+        "field": "E_y",
+        "order": 2,
+        "proof_ref": "toy-seam-E_y-2",
+        "status": "proved_by_accepted_source_pair"
+      },
+      {
+        "field": "V_y",
+        "order": 0,
+        "proof_ref": "toy-seam-V_y-0",
+        "status": "proved_by_accepted_source_pair"
+      },
+      {
+        "field": "V_y",
+        "order": 1,
+        "proof_ref": "toy-seam-V_y-1",
+        "status": "proved_by_accepted_source_pair"
+      },
+      {
+        "field": "V_y",
+        "order": 2,
+        "proof_ref": "toy-seam-V_y-2",
+        "status": "proved_by_accepted_source_pair"
+      }
+    ]
+  },
+  "seed_admission": {
+    "fields": [
+      {
+        "field": "E",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "E",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "E",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "V",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "m",
+        "order": 0,
+        "status": "external_premise"
+      },
+      {
+        "field": "m",
+        "order": 1,
+        "status": "external_premise"
+      },
+      {
+        "field": "m",
+        "order": 2,
+        "status": "external_premise"
+      },
+      {
+        "field": "h",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "h",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "h",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "k",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "e",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "p",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "P0",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "pressure",
+        "order": 0,
+        "status": "proved_by_new_pressure_composition"
+      },
+      {
+        "field": "pressure",
+        "order": 1,
+        "status": "proved_by_new_pressure_composition"
+      },
+      {
+        "field": "pressure",
+        "order": 2,
+        "status": "proved_by_new_pressure_composition"
+      },
+      {
+        "field": "E_y",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "E_y",
+        "order": 2,
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "order": 0,
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "order": 1,
+        "status": "proved"
+      },
+      {
+        "field": "V_y",
+        "order": 2,
+        "status": "proved"
+      }
+    ],
+    "ordinary_Z_orders": [
+      0,
+      1,
+      2
+    ],
+    "passed": true,
+    "schema": "actual_Rm_leading_seed_admission_v1"
+  },
+  "source_only": true,
+  "root_data_only_execution_audit": {
+    "original_fixture_sha256": "d870c8a391d783348f729c239635c44e5c436d08e0e8ec186eab623765268390",
+    "source_revisions_after_original_toy": true,
+    "no_current_source_positive_toy_attestation": true,
+    "worker_reported_additional_check": "closed substitution derivative zero; shared node atoms across sides",
+    "additional_check_raw_stdout_checkpoint_available": false,
+    "additional_check_execution_source_hash_captured": false,
+    "additional_check_used_as_actual_source_premise": false,
+    "root_source_preflight_is_AST_LF_EOF_only": true,
+    "new_current_actual_operator_will_be_checkpointed_once_by_root": true,
+    "original_fixture_inputs_preserved_without_reexecution": true,
+    "positive_fixture_execution_receipt_available": false,
+    "positive_fixture_execution_outcome": "unverified; preserved input draft, not a passing test witness",
+    "fixture_not_used_as_source_identity_premise": true
+  }
+}

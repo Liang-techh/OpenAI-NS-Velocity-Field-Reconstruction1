@@ -1,3 +1,22 @@
+# Actual Rm second radial, generic native and history sources - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_GENERIC_NATIVE_HISTORY_2026_10_18.md](CURRENT_ORIGINAL_RM_GENERIC_NATIVE_HISTORY_2026_10_18.md) first. Actual second-radial12 rows plus6
+consumed seams pass through Z2; source prefix now205160. Nine leading generic
+roots through Z1 pass18 value/native pairs. Actual five-history endpoint/FTC
+sources through Z1 add40 nodes, preserving incoming and rate-zero p;
+full prefix205200. Density seam/global phase/modified finite-N/physical RQy
+remain open. Signed pressure defect/212/six channels/all errors/one reserved
+are unchanged. One auxiliary radius helper had an unwanted duplicate;
+its unversioned probe is DIAGNOSTIC ONLY. Root used the exact analytic
+source-layout lemma. Generic positive fixture has no execution receipt;
+do not call it passing or replay it. The raw generic no_saved_graph_execution
+flag is stale template metadata; root actual_saved_graph_run=true is the
+current execution fact. NEXT prove common periodic loop phase/inverse,
+density/native germ and Z2 value dependency (new Z3 where needed), then
+physical Rm join. Rh-reference and quiet active seams remain open.
+Never replay accepted main operators, old fixtures or ancestor computations.
+Goal ACTIVE / INCOMPLETE; no five-moment/full-NS closure.
+
 # Actual leading Rm seed and raw native-y jet - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_LEADING_SEED_NATIVE_JET_2026_10_18.md](CURRENT_ORIGINAL_RM_LEADING_SEED_NATIVE_JET_2026_10_18.md) first. New source admission proves leading

@@ -1,0 +1,494 @@
+{
+  "schema": "original_Rm_second_radial_identity_fixture_v1",
+  "case": "fresh_exp_log_sqrt_compact_flat_endpoint_dual",
+  "source_only": true,
+  "toy_harness": {
+    "passed": true,
+    "distinct_from_saved_graph": true,
+    "description": "Fresh exact toy with nonzero Z-only beta/gamma, an inside-support compact perturbation, and an outside-support lazy branch whose active ancestry is intentionally unsupported.",
+    "analytic_unary_operations": [
+      "exp",
+      "log",
+      "sqrt"
+    ],
+    "derivative_coefficients": {
+      "E_y": "1/10",
+      "V_y": "0"
+    },
+    "normalization_beta_is_nonzero": true,
+    "compact_flat_perturbation_is_nonzero_off_endpoint": true,
+    "outside_flat_branch_short_circuits_active_ancestry": true,
+    "numeric_oracle_used": false
+  },
+  "accepted_seed_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+  "nodes": [
+    {
+      "operation": "exact_rational",
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "1",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "1",
+      "denominator": "10"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "beta_Z_only_nonzero"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "postrestore_native_x"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "patch_native_x"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "10",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "-1",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "2",
+      "denominator": "1"
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        4,
+        7
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        9,
+        9
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        8,
+        10
+      ]
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "sqrt",
+      "argument": 11
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "log",
+      "argument": 12
+    },
+    {
+      "operation": "negative",
+      "argument": 4
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "exp",
+      "argument": 14
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        10,
+        15
+      ]
+    },
+    {
+      "operation": "original_lazy_flat_branch",
+      "active_body": 16,
+      "flat_value": 0,
+      "outside_support": true,
+      "compact_Cinf_guard": true,
+      "flat_support_proof": "fresh-toy-exact-compact-Cinf-endpoint"
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        17
+      ]
+    },
+    {
+      "operation": "positive_quotient",
+      "numerator": 4,
+      "denominator": 6,
+      "source_positive_certificate": "10>0"
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "exp",
+      "argument": 19
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        20
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        21,
+        18
+      ]
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 22,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "gamma_Z_only_nonzero",
+      "Z_only": true
+    },
+    {
+      "operation": "compact_raw_beta",
+      "argument": 10,
+      "source_definition": "fresh unsupported active compact branch"
+    },
+    {
+      "operation": "original_lazy_flat_branch",
+      "active_body": 25,
+      "flat_value": 0,
+      "original_beta_exact_flat_derivative": true,
+      "active_body_not_evaluated_on_flat_branch": true,
+      "outside_support": true,
+      "compact_Cinf_guard": true,
+      "flat_support_proof": "fresh-toy-exact-compact-Cinf-endpoint"
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        24,
+        26
+      ]
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 27,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        5,
+        7
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        29,
+        29
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        8,
+        30
+      ]
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "sqrt",
+      "argument": 31
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "log",
+      "argument": 32
+    },
+    {
+      "operation": "negative",
+      "argument": 5
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "exp",
+      "argument": 34
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        30,
+        35
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        36,
+        33
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        37
+      ]
+    },
+    {
+      "operation": "positive_quotient",
+      "numerator": 5,
+      "denominator": 6,
+      "source_positive_certificate": "10>0"
+    },
+    {
+      "operation": "analytic_unary",
+      "name": "exp",
+      "argument": 39
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        40
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        41,
+        38
+      ]
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 42,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 42,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 42,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "compact_raw_beta",
+      "argument": 30,
+      "source_definition": "fresh unsupported patch active compact branch"
+    },
+    {
+      "operation": "original_lazy_flat_branch",
+      "active_body": 45,
+      "flat_value": 0,
+      "original_beta_exact_flat_derivative": true,
+      "active_body_not_evaluated_on_flat_branch": true,
+      "outside_support": true,
+      "compact_Cinf_guard": true,
+      "flat_support_proof": "fresh-toy-exact-compact-Cinf-endpoint"
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        24,
+        46
+      ]
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 47,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 47,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 47,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 22,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 22,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 27,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 27,
+      "variable": 4,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 42,
+      "variable": 5,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "frozen_Z_control",
+      "Z_only": true
+    }
+  ],
+  "ports": {
+    "postrestore": {
+      "native_variable": 4,
+      "endpoint_node1": 1,
+      "E_y": [
+        22,
+        22,
+        22
+      ],
+      "V_y": [
+        27,
+        27,
+        27
+      ]
+    },
+    "patch": {
+      "native_variable": 5,
+      "endpoint_node1": 1,
+      "E_y": [
+        42,
+        42,
+        42
+      ],
+      "V_y": [
+        47,
+        47,
+        47
+      ]
+    },
+    "frozen_native_constant_nodes": [
+      57
+    ],
+    "saved_flat_premise": {
+      "proof_ref": "fresh-compact-flat-proof",
+      "outside_support": "exact endpoint branch",
+      "normalization_beta_not_zeroed_inside_support": true
+    },
+    "accepted_Ey_Vy_source_pairs": [
+      {
+        "field": "E_y",
+        "order": 0,
+        "left_node": 23,
+        "right_node": 43,
+        "proof_ref": "pair-E0"
+      },
+      {
+        "field": "E_y",
+        "order": 1,
+        "left_node": 52,
+        "right_node": 44,
+        "proof_ref": "pair-E1"
+      },
+      {
+        "field": "E_y",
+        "order": 2,
+        "left_node": 53,
+        "right_node": 45,
+        "proof_ref": "pair-E2"
+      },
+      {
+        "field": "V_y",
+        "order": 0,
+        "left_node": 28,
+        "right_node": 49,
+        "proof_ref": "pair-V0"
+      },
+      {
+        "field": "V_y",
+        "order": 1,
+        "left_node": 54,
+        "right_node": 50,
+        "proof_ref": "pair-V1"
+      },
+      {
+        "field": "V_y",
+        "order": 2,
+        "left_node": 55,
+        "right_node": 51,
+        "proof_ref": "pair-V2"
+      }
+    ],
+    "ordinary_Z_orders": [
+      0,
+      1,
+      2
+    ],
+    "physical_native_endpoint_Jacobians_exact_one": true,
+    "physical_directions": {
+      "postrestore": "D_y p=1",
+      "patch": "D_y x=x; x=1"
+    },
+    "derivative_coefficients": {
+      "E_y": "1/10",
+      "V_y": "0"
+    }
+  },
+  "expected_nodes_digest": "f2de5193af9870663f5414c3954eadf95915d689a927bb8952bd48f7fe1fa678",
+  "accepted_seed_refs": [
+    "pair-E0",
+    "pair-E1",
+    "pair-E2",
+    "pair-V0",
+    "pair-V1",
+    "pair-V2",
+    "fresh-compact-flat-proof"
+  ],
+  "old_saved_graph_execution": false,
+  "history_archive_decoded": false
+}

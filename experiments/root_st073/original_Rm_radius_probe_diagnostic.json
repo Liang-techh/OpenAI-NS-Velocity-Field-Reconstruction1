@@ -1,0 +1,107 @@
+{
+  "aliases": {
+    "closed_endpoint_85743": {
+      "native_derivative": "0",
+      "value": "SOURCE:Rm_radius"
+    },
+    "closed_patch_endpoint_187963": {
+      "native_derivative": "0",
+      "value": "SOURCE:Rm_radius"
+    },
+    "postrestore_body_84533": {
+      "native_derivative": "SOURCE:Rm_radius",
+      "value": "SOURCE:Rm_radius"
+    }
+  },
+  "consumer_instruction": {
+    "module_may_validate_handles_layout_and_consume_saved_duals": true,
+    "module_must_not_reinvoke_actual_radius_helper": true,
+    "root_should_supply_this_as_verified_radius_witness": true
+  },
+  "verified": true,
+  "execution_boundary": {
+    "accepted_builder_checker_reducer_provider_quadrature_replayed": false,
+    "actual_generic_root_consumer_run": false,
+    "actual_graph_helper_invoked": true,
+    "authorization_boundary_error": "worker invoked actual internal radius helper before root-owned checkpoint handoff; no further actual helper/operator calls will be made",
+    "checkpoint_selected_call": 1,
+    "duplicate_call_after_frozen_patch": "unused_and_not_consumed",
+    "helper": "_radius_port",
+    "mode": "graph_derived_source_and_layout",
+    "source_module_sha256_capture_status": "not_exposed_in_returned_stdout",
+    "source_module_sha256_exposed_by_helper": null,
+    "successful_call_count_observed": 2
+  },
+  "inputs": {
+    "patch_body_node": 187214,
+    "patch_closed_endpoint_node": 187963,
+    "patch_native_variable": 185676,
+    "physical_measure_node": 187215,
+    "postrestore_body_node": 84533,
+    "postrestore_endpoint_node": 85743,
+    "postrestore_native_variable": 84528,
+    "source_graph_digest": "c7ab7da8cc5c51cd782a5794e3076a6cf021a45235aae1c75bd246b01491b639",
+    "source_graph_node_count": 205147
+  },
+  "proof": {
+    "method": "graph_derived_source_and_layout",
+    "native_derivative_equals_value": true,
+    "patch": {
+      "body_node": 187214,
+      "coordinate_node": 185676,
+      "endpoint_node": 187963,
+      "identity_srepr": "Integer(0)",
+      "identity_text": "0",
+      "open_body_native_derivative_text": "SOURCE:Rm_radius",
+      "open_body_value_text": "SOURCE:Rm_radius",
+      "physical_measure_node": 187215
+    },
+    "postrestore": {
+      "body_node": 84533,
+      "coordinate_node": 84528,
+      "endpoint_node": 85743,
+      "identity_srepr": "Integer(0)",
+      "identity_text": "0",
+      "open_body_native_derivative_text": "110*exp(104)*exp(10*SOURCE:current_original_source_parameter@node:35560)*exp(10*exp(40))",
+      "open_body_value_text": "110*exp(104)*exp(10*SOURCE:current_original_source_parameter@node:35560)*exp(10*exp(40))",
+      "source_opaque_nodes": [
+        {
+          "native_derivative": "zero",
+          "node": 35560,
+          "operation": "current_original_source_parameter",
+          "qualified": true
+        }
+      ]
+    },
+    "status": "proved"
+  },
+  "returned_result": {
+    "alias_handles": [
+      84533,
+      85743,
+      187963
+    ],
+    "issues": [],
+    "proof_refs": [
+      {
+        "identity": "D_y R - R = 0",
+        "kind": "graph_derived_radius_source",
+        "postrestore_body_node": 84533,
+        "postrestore_endpoint_node": 85743,
+        "postrestore_native_variable": 84528
+      },
+      {
+        "identity": "R_patch = Rm*x, J = 1/x",
+        "kind": "graph_derived_radius_patch_layout",
+        "patch_body_node": 187214,
+        "patch_closed_endpoint_node": 187963,
+        "patch_native_variable": 185676,
+        "physical_measure_node": 187215
+      }
+    ],
+    "status": "proved",
+    "used_nodes_capture": null,
+    "used_nodes_capture_status": "not emitted by helper stdout; do not infer or reconstruct"
+  },
+  "schema": "original_Rm_radius_source_witness_checkpoint_v1"
+}

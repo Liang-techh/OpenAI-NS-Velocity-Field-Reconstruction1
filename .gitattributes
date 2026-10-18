@@ -148,3 +148,10 @@ scripts/run_original_Rm_raw_native_jet_identity.py -text
 experiments/root_st073/original_Rm_leading_seed_normalization_fixture.json -text
 experiments/root_st073/original_Rm_seed_pressure_composition_fixture.json -text
 experiments/root_st073/original_Rm_raw_native_jet_identity_fixture.json -text
+scripts/run_original_Rm_second_radial_identity.py -text
+scripts/run_original_Rm_generic_native_identity.py -text
+scripts/run_original_Rm_history_native_source.py -text
+experiments/root_st073/original_Rm_second_radial_identity_fixture.json -text
+experiments/root_st073/original_Rm_generic_native_identity_fixture.json -text
+experiments/root_st073/original_Rm_history_native_source_fixture.json -text
+experiments/root_st073/original_Rm_radius_probe_diagnostic.json -text
