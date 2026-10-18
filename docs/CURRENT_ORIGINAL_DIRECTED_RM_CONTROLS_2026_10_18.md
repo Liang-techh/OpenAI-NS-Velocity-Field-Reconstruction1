@@ -100,8 +100,9 @@ diagnostic must not be relabelled small or removed; a passing diagnostic
 does not establish the terminal functional identity.
 
 The immediate bounded implementation is the fast derivative identity.
-Set f(t)=t/(1+t^2), C=a*(1+2q^2)/2 and e=E/E0. At fixed target phase,
-Bphi_Z/E0=-C*(e_Z*f(t_hat)+e*f'(t_hat)*(t_Z+t_psi*Psi_Z)), with
+Set f(t)=t/(1+t^2), C=a*(1+2q^2)/2, e=E/E0 and
+bphi=B_phi/(Pstar*E0). At fixed target phase,
+bphi_Z=-C*(e_Z*f(t_hat)+e*f'(t_hat)*(t_Z+t_psi*Psi_Z)), with
 Psi_Z=-Phi_Z/lambda and f'(t)=(1-t^2)/(1+t^2)^2. Keep these as signed
 same-source products before bounding. Do not differentiate the value-only
 5/4 cap, enlarge N to suppress a fast term, or drop the existing Z1 error.
