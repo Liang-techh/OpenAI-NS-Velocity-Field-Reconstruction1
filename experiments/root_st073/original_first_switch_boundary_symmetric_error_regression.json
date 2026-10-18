@@ -1,0 +1,1955 @@
+{
+  "cases": [
+    {
+      "case_id": "bg_point_zero",
+      "checks": {
+        "contains_negative_and_positive_error": true,
+        "full_Q_exactly_bg_plus_signed_error": true,
+        "full_U_exactly_bg_plus_signed_error": true,
+        "negative_background_with_nonzero_C1": false,
+        "signed_error_lower_and_upper_exact": true
+      },
+      "expected_full_Q": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ],
+      "expected_full_U": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ],
+      "inputs": {
+        "Q_bg": [
+          "0",
+          "0"
+        ],
+        "R_upper": 3,
+        "U_bg": [
+          "0",
+          "0"
+        ],
+        "delta": "1/10",
+        "delta_Q_logs": "[-2000,-2000] for Z0 and Z1",
+        "delta_U_logs": "[-2000,-2000] for Z0 and Z1",
+        "logRm": 1000,
+        "radius_bits": 64,
+        "z": "1/4"
+      },
+      "metadata": {
+        "G_full_jets": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              58260170685442110906907920744045193869442055936320101835925602202827074813923,
+              -319,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              58260170685442110906907920744045193869442055936320101835925602202827074813923,
+              -319,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              61191500028105864919888388308470282090194271190425831526323355874533275538685,
+              -319,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              61191500028105864919888388308470282090194271190425831526323355874533275538685,
+              -319,
+              256
+            ]
+          }
+        ],
+        "L_formula": "L=1-delta*Z^2",
+        "R_upper": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            3,
+            0,
+            2
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            3,
+            0,
+            2
+          ]
+        },
+        "claims": {
+          "complete_pressure_closure": false,
+          "first_switch_B_bound_only": true,
+          "first_switch_S1_bound": false,
+          "global_five_moment_closure": false
+        },
+        "finite_N_error_log_caps": {
+          "delta_Q_logs": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            }
+          ],
+          "delta_U_logs": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            }
+          ],
+          "raw_iv_log_caps_not_values": true,
+          "strict_checks": [
+            {
+              "field": "U",
+              "ordinary_Z_order": 0,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "U",
+              "ordinary_Z_order": 1,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "Q",
+              "ordinary_Z_order": 0,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "Q",
+              "ordinary_Z_order": 1,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            }
+          ]
+        },
+        "formula": "Bfirst=[R^2*G]_{s=0}^{s=1}; G=Q/L+Q^2/2-2*Z^2*U^2/L^2",
+        "full_fields": {
+          "Q": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -64,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -64,
+                1
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -64,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -64,
+                1
+              ]
+            }
+          ],
+          "U": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -64,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -64,
+                1
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -64,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -64,
+                1
+              ]
+            }
+          ],
+          "pointwise_jets_cover_both_endpoints": true,
+          "symmetric_error_enclosure": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              1,
+              -64,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ]
+          },
+          "symmetric_error_enclosure_signed": true,
+          "symmetric_error_radius_added_once": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ]
+          }
+        },
+        "logRm": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            125,
+            3,
+            7
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            125,
+            3,
+            7
+          ]
+        },
+        "normalization": "own_Rm^2",
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "per_order": [
+          {
+            "G_full_jet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                58260170685442110906907920744045193869442055936320101835925602202827074813923,
+                -319,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                58260170685442110906907920744045193869442055936320101835925602202827074813923,
+                -319,
+                256
+              ]
+            },
+            "bound_label": "symmetric_2^-radius_bits_enclosure",
+            "emitted_kind": "BOUND",
+            "emitted_not_value_or_zero": true,
+            "endpoint_pair_log_factor": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -256,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -254,
+                254
+              ]
+            },
+            "exact_zero_G": false,
+            "logRm": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ]
+            },
+            "log_R_upper": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                31802653041667484360024617427225806404601470301125784915901402331508724878691,
+                -254,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                63605306083334968720049234854451612809202940602251569831802804663017449757383,
+                -255,
+                256
+              ]
+            },
+            "log_absolute_B_over_Rm2": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                115422593637903784059350961173246589497929681536860507108868716379450897319493,
+                -245,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                28855648409475946014837740293311647374482420384215126777217179094862724329873,
+                -243,
+                254
+              ]
+            },
+            "log_absolute_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                40124808439952266329306478977010282085865788173670208640478884495677095206669,
+                -249,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80249616879904532658612957954020564171731576347340417280957768991354190413337,
+                -250,
+                256
+              ]
+            },
+            "maxabs_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                58260170685442110906907920744045193869442055936320101835925602202827074813923,
+                -319,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                58260170685442110906907920744045193869442055936320101835925602202827074813923,
+                -319,
+                256
+              ]
+            },
+            "ordinary_Z_order": 0,
+            "strict_upper_below_threshold": true,
+            "threshold": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -248,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -250,
+                256
+              ]
+            },
+            "upper_vs_threshold_lower": -1
+          },
+          {
+            "G_full_jet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                61191500028105864919888388308470282090194271190425831526323355874533275538685,
+                -319,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                61191500028105864919888388308470282090194271190425831526323355874533275538685,
+                -319,
+                256
+              ]
+            },
+            "bound_label": "symmetric_2^-radius_bits_enclosure",
+            "emitted_kind": "BOUND",
+            "emitted_not_value_or_zero": true,
+            "endpoint_pair_log_factor": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -256,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -254,
+                254
+              ]
+            },
+            "exact_zero_G": false,
+            "logRm": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ]
+            },
+            "log_R_upper": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                31802653041667484360024617427225806404601470301125784915901402331508724878691,
+                -254,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                63605306083334968720049234854451612809202940602251569831802804663017449757383,
+                -255,
+                256
+              ]
+            },
+            "log_absolute_B_over_Rm2": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                115419818155225805091772145734655653404356100227663111069023353894755426505791,
+                -245,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                57709909077612902545886072867327826702178050113831555534511676947377713252895,
+                -244,
+                255
+              ]
+            },
+            "log_absolute_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                10020100179276150712011357989888826147172121806627968000738271185137390546861,
+                -247,
+                253
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80160801434209205696090863919110609177376974453023744005906169481099124374887,
+                -250,
+                256
+              ]
+            },
+            "maxabs_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                61191500028105864919888388308470282090194271190425831526323355874533275538685,
+                -319,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                61191500028105864919888388308470282090194271190425831526323355874533275538685,
+                -319,
+                256
+              ]
+            },
+            "ordinary_Z_order": 1,
+            "strict_upper_below_threshold": true,
+            "threshold": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -248,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -250,
+                256
+              ]
+            },
+            "upper_vs_threshold_lower": -1
+          }
+        ],
+        "radius_bits": 64,
+        "rawIVresult_is_endpoint_pair_bound": true,
+        "schema": "original_first_switch_boundary_enclosure_v1",
+        "signed_background": {
+          "Q_bg": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "U_bg": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "retained_unchanged": true
+        },
+        "source_contract": {
+          "R_upper_used_only_as_saved_geometry_bound": true,
+          "accepted_producer_or_project_math_imported": false,
+          "endpoint_measure_has_no_J": true,
+          "error_caps_not_selected_values": true,
+          "finite_N_error_sources_preserved": true,
+          "incoming_M_already_inside_delta_Q": true,
+          "no_extra_incoming_U": true,
+          "no_huge_exponentiation": true,
+          "physical_R_squared_applied_once": true,
+          "same_source_cancellation": false,
+          "signed_background_preserved": true,
+          "valid_bound_not_function_value": true
+        },
+        "threshold": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            20065240046497827215558476051577517633497666902897486651530716876354989244043,
+            -248,
+            254
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            80260960185991308862233904206310070533990667611589946606122867505419956976171,
+            -250,
+            256
+          ]
+        }
+      },
+      "observed_full_Q": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ],
+      "observed_full_U": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ],
+      "provenance": "new rational signed regression input; not the original fixture case",
+      "rawIVresult": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "negative_bg_nonzero_C1",
+      "checks": {
+        "contains_negative_and_positive_error": true,
+        "full_Q_exactly_bg_plus_signed_error": true,
+        "full_U_exactly_bg_plus_signed_error": true,
+        "negative_background_with_nonzero_C1": true,
+        "signed_error_lower_and_upper_exact": true
+      },
+      "expected_full_Q": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            2305843009213693953,
+            -64,
+            62
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            2305843009213693951,
+            -64,
+            61
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            1152921504606846975,
+            -64,
+            60
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1152921504606846977,
+            -64,
+            61
+          ]
+        }
+      ],
+      "expected_full_U": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            4611686018427387905,
+            -64,
+            63
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            4611686018427387903,
+            -64,
+            62
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            2305843009213693951,
+            -64,
+            61
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            2305843009213693953,
+            -64,
+            62
+          ]
+        }
+      ],
+      "inputs": {
+        "Q_bg": [
+          "-1/8",
+          "1/16"
+        ],
+        "R_upper": 3,
+        "U_bg": [
+          "-1/4",
+          "1/8"
+        ],
+        "delta": "1/10",
+        "delta_Q_logs": "[-2000,-2000] for Z0 and Z1",
+        "delta_U_logs": "[-2000,-2000] for Z0 and Z1",
+        "logRm": 1000,
+        "radius_bits": 64,
+        "z": "1/4"
+      },
+      "metadata": {
+        "G_full_jets": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              58305829575105672337693472598112981095443298429061857030803269186914009058393,
+              -258,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              58305829575105672277705574319913643283509808439093287203789101324173009796089,
+              -258,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              13750396835799415527122464123550837256382453622870336818227442940515821236699,
+              -260,
+              253
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              1718799604474926894388761907656594401662877063334262586478129645042135371369,
+              -257,
+              250
+            ]
+          }
+        ],
+        "L_formula": "L=1-delta*Z^2",
+        "R_upper": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            3,
+            0,
+            2
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            3,
+            0,
+            2
+          ]
+        },
+        "claims": {
+          "complete_pressure_closure": false,
+          "first_switch_B_bound_only": true,
+          "first_switch_S1_bound": false,
+          "global_five_moment_closure": false
+        },
+        "finite_N_error_log_caps": {
+          "delta_Q_logs": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            }
+          ],
+          "delta_U_logs": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                125,
+                4,
+                7
+              ]
+            }
+          ],
+          "raw_iv_log_caps_not_values": true,
+          "strict_checks": [
+            {
+              "field": "U",
+              "ordinary_Z_order": 0,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "U",
+              "ordinary_Z_order": 1,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "Q",
+              "ordinary_Z_order": 0,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            },
+            {
+              "field": "Q",
+              "ordinary_Z_order": 1,
+              "raw_log_cap": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  125,
+                  4,
+                  7
+                ]
+              },
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -248,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -250,
+                  256
+                ]
+              },
+              "upper_vs_threshold_lower": -1
+            }
+          ]
+        },
+        "formula": "Bfirst=[R^2*G]_{s=0}^{s=1}; G=Q/L+Q^2/2-2*Z^2*U^2/L^2",
+        "full_fields": {
+          "Q": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                2305843009213693953,
+                -64,
+                62
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                2305843009213693951,
+                -64,
+                61
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                1152921504606846975,
+                -64,
+                60
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1152921504606846977,
+                -64,
+                61
+              ]
+            }
+          ],
+          "U": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                4611686018427387905,
+                -64,
+                63
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                4611686018427387903,
+                -64,
+                62
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                2305843009213693951,
+                -64,
+                61
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                2305843009213693953,
+                -64,
+                62
+              ]
+            }
+          ],
+          "pointwise_jets_cover_both_endpoints": true,
+          "symmetric_error_enclosure": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              1,
+              -64,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ]
+          },
+          "symmetric_error_enclosure_signed": true,
+          "symmetric_error_radius_added_once": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -64,
+              1
+            ]
+          }
+        },
+        "logRm": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            125,
+            3,
+            7
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            125,
+            3,
+            7
+          ]
+        },
+        "normalization": "own_Rm^2",
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "per_order": [
+          {
+            "G_full_jet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                58305829575105672337693472598112981095443298429061857030803269186914009058393,
+                -258,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                58305829575105672277705574319913643283509808439093287203789101324173009796089,
+                -258,
+                256
+              ]
+            },
+            "bound_label": "symmetric_2^-radius_bits_enclosure",
+            "emitted_kind": "BOUND",
+            "emitted_not_value_or_zero": true,
+            "endpoint_pair_log_factor": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -256,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -254,
+                254
+              ]
+            },
+            "exact_zero_G": false,
+            "logRm": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ]
+            },
+            "log_R_upper": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                31802653041667484360024617427225806404601470301125784915901402331508724878691,
+                -254,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                63605306083334968720049234854451612809202940602251569831802804663017449757383,
+                -255,
+                256
+              ]
+            },
+            "log_absolute_B_over_Rm2": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                113031964105263301424200242588645673278365976172009882740980843252927185305875,
+                -245,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                56515982052631650712100121294322836639182988086004941370490421626463592652937,
+                -244,
+                255
+              ]
+            },
+            "log_absolute_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                59991549366545413340639411948659922331088074753927000136733263081526495641107,
+                -254,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                29995774683272706670319705974329961165544037376963500068366631540763247820553,
+                -253,
+                255
+              ]
+            },
+            "maxabs_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                58305829575105672337693472598112981095443298429061857030803269186914009058393,
+                -258,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                58305829575105672337693472598112981095443298429061857030803269186914009058393,
+                -258,
+                256
+              ]
+            },
+            "ordinary_Z_order": 0,
+            "strict_upper_below_threshold": true,
+            "threshold": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -248,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -250,
+                256
+              ]
+            },
+            "upper_vs_threshold_lower": -1
+          },
+          {
+            "G_full_jet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                13750396835799415527122464123550837256382453622870336818227442940515821236699,
+                -260,
+                253
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                1718799604474926894388761907656594401662877063334262586478129645042135371369,
+                -257,
+                250
+              ]
+            },
+            "bound_label": "symmetric_2^-radius_bits_enclosure",
+            "emitted_kind": "BOUND",
+            "emitted_not_value_or_zero": true,
+            "endpoint_pair_log_factor": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -256,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -254,
+                254
+              ]
+            },
+            "exact_zero_G": false,
+            "logRm": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                125,
+                3,
+                7
+              ]
+            },
+            "log_R_upper": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                31802653041667484360024617427225806404601470301125784915901402331508724878691,
+                -254,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                63605306083334968720049234854451612809202940602251569831802804663017449757383,
+                -255,
+                256
+              ]
+            },
+            "log_absolute_B_over_Rm2": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                56596011143290094737427002116040777582949904760506588719516076568952677118313,
+                -244,
+                255
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                113192022286580189474854004232081555165899809521013177439032153137905354236625,
+                -245,
+                256
+              ]
+            },
+            "log_absolute_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                70970669100396047637682686693915724374205374721806942769501962095174494092727,
+                -253,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                35485334550198023818841343346957862187102687360903471384750981047587247046363,
+                -252,
+                255
+              ]
+            },
+            "maxabs_Gjet": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                13750396835799415527122464123550837256382453622870336818227442940515821236699,
+                -260,
+                253
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                13750396835799415527122464123550837256382453622870336818227442940515821236699,
+                -260,
+                253
+              ]
+            },
+            "ordinary_Z_order": 1,
+            "strict_upper_below_threshold": true,
+            "threshold": {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                -248,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                -250,
+                256
+              ]
+            },
+            "upper_vs_threshold_lower": -1
+          }
+        ],
+        "radius_bits": 64,
+        "rawIVresult_is_endpoint_pair_bound": true,
+        "schema": "original_first_switch_boundary_enclosure_v1",
+        "signed_background": {
+          "Q_bg": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -3,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                1,
+                -3,
+                1
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                1,
+                -4,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -4,
+                1
+              ]
+            }
+          ],
+          "U_bg": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -2,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                1,
+                -2,
+                1
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                1,
+                -3,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -3,
+                1
+              ]
+            }
+          ],
+          "retained_unchanged": true
+        },
+        "source_contract": {
+          "R_upper_used_only_as_saved_geometry_bound": true,
+          "accepted_producer_or_project_math_imported": false,
+          "endpoint_measure_has_no_J": true,
+          "error_caps_not_selected_values": true,
+          "finite_N_error_sources_preserved": true,
+          "incoming_M_already_inside_delta_Q": true,
+          "no_extra_incoming_U": true,
+          "no_huge_exponentiation": true,
+          "physical_R_squared_applied_once": true,
+          "same_source_cancellation": false,
+          "signed_background_preserved": true,
+          "valid_bound_not_function_value": true
+        },
+        "threshold": {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            20065240046497827215558476051577517633497666902897486651530716876354989244043,
+            -248,
+            254
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            80260960185991308862233904206310070533990667611589946606122867505419956976171,
+            -250,
+            256
+          ]
+        }
+      },
+      "observed_full_Q": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            2305843009213693953,
+            -64,
+            62
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            2305843009213693951,
+            -64,
+            61
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            1152921504606846975,
+            -64,
+            60
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1152921504606846977,
+            -64,
+            61
+          ]
+        }
+      ],
+      "observed_full_U": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            4611686018427387905,
+            -64,
+            63
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            4611686018427387903,
+            -64,
+            62
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            0,
+            2305843009213693951,
+            -64,
+            61
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            2305843009213693953,
+            -64,
+            62
+          ]
+        }
+      ],
+      "provenance": "new rational signed regression input; not the original fixture case",
+      "rawIVresult": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            1,
+            -64,
+            1
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            1,
+            -64,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "fixture_sha256": "e02e75cff33529375738383b13093e79eda35bcfd439311ed0b998f92108938d",
+  "module_sha256": "ca75fbc0b0c379ef1a684e8eefaf244dabd2799be92080e70c2da93a4a1bb94d",
+  "original_fixture": {
+    "bug": "The original fixture was generated before root review caught that bound_boundary added the positive radius point to U_bg and Q_bg instead of the signed interval [-2^-radius_bits,+2^-radius_bits].",
+    "bytes_preserved_before_and_after_regression_generation": true,
+    "field_sha256": "8afa243ce3d4c6ee20c46a13aca0446b28e76007ff56be64fa919ae91334bb7c",
+    "file_sha256": "9b91add827778ab6608e99214e67f2951e407e0a7fbc84f39fd7a97a275e4625",
+    "status": "preserved_unaccepted_due_positive_only_error_enclosure_bug"
+  },
+  "passed": true,
+  "preflight_before_new_math": {
+    "ast_function_names": [
+      "_add2",
+      "_coerce_scalar",
+      "_endpoint",
+      "_interval",
+      "_inv2",
+      "_is_zero",
+      "_maxabs",
+      "_module_source_preflight",
+      "_negate_interval",
+      "_negate_tuple",
+      "_prod2",
+      "_raw_bounds",
+      "_record",
+      "_record_rows",
+      "_require",
+      "_row_pair",
+      "_scale2",
+      "_strip_sign",
+      "_symbolic_proof",
+      "_symmetric",
+      "bound_boundary",
+      "fresh_fixture",
+      "iv"
+    ],
+    "checks": {
+      "ast_parse": true,
+      "lf_only": true,
+      "no_old_project_imports": true,
+      "single_final_lf": true,
+      "unique_bound_boundary": true,
+      "unique_fresh_fixture": true,
+      "utf8": true
+    },
+    "imports": [
+      "__future__",
+      "ast",
+      "collections.abc",
+      "fractions",
+      "hashlib",
+      "json",
+      "mpmath",
+      "mpmath.ctx_iv",
+      "mpmath.libmp",
+      "pathlib",
+      "sympy",
+      "typing"
+    ],
+    "module_sha256": "ca75fbc0b0c379ef1a684e8eefaf244dabd2799be92080e70c2da93a4a1bb94d",
+    "passed": true,
+    "path": "src\\openai_ns_reconstruction\\original_first_switch_boundary_enclosure.py"
+  },
+  "regression_contract": {
+    "R_upper": 3,
+    "accepted_producer_replayed": false,
+    "actual_saved_data_produced": false,
+    "both_negative_and_positive_errors_checked_by_exact_tuples": true,
+    "error_is_signed_interval": true,
+    "logRm": 1000,
+    "log_caps_strictly_below_minus_64_ln2": true,
+    "new_input_cases_only": true,
+    "radius_bits": 64,
+    "saved_actual_json_read": false
+  },
+  "schema": "original_first_switch_boundary_symmetric_error_regression_v1",
+  "symbolic_proof": {
+    "recomputed": false,
+    "reference": "original fixture exact_proof ordinary_C1_G_identity and L_inverse_derivative_identity",
+    "reused_as_immutable_premise": true
+  }
+}

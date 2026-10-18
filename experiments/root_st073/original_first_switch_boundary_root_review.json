@@ -1,0 +1,63 @@
+{
+  "schema": "original_first_switch_boundary_root_review_v1",
+  "passed": true,
+  "final_module_sha256": "ca75fbc0b0c379ef1a684e8eefaf244dabd2799be92080e70c2da93a4a1bb94d",
+  "initial_module_sha256": "850b942665363d8a239120c86fb56d8a92521ec10fdfed725315a7be56147dd2",
+  "initial_fixture_accepted": false,
+  "initial_failure": "Positive radius point used in place of symmetric error enclosure; corrected before actual data production.",
+  "original_artifacts_preserved": {
+    "original_first_switch_boundary_initial_unaccepted_fixture.json": {
+      "bytes": 22358,
+      "sha256": "9b91add827778ab6608e99214e67f2951e407e0a7fbc84f39fd7a97a275e4625"
+    },
+    "original_first_switch_boundary_symmetric_error_regression.json": {
+      "bytes": 52923,
+      "sha256": "b2cbee3e19ae08d96d6cfeb6f06221fa7deaf3a0ab5bd0eb0ccefadefeae22f4"
+    },
+    "original_first_switch_boundary_initial_unaccepted_source.txt": {
+      "bytes": 19291,
+      "sha256": "850b942665363d8a239120c86fb56d8a92521ec10fdfed725315a7be56147dd2"
+    }
+  },
+  "changed_function_names": [
+    "bound_boundary"
+  ],
+  "unchanged_function_AST_sha256": {
+    "_require": "fa63722851d5b4750e338f393933f885144d1b93ff387ac79725f5e0fc93d5ac",
+    "_endpoint": "f3b8dcdbc47b819aed7c370f2e838f798bcd286d6fe38d26a199bc76939e51ba",
+    "_raw_bounds": "869f298a2f85794d2787c4f264beb9dbb7207816bf49db672ce16efd01a20ddb",
+    "_interval": "45a949b870e34db7f5fbad92d910fd3707555ad524574e0c2ea2652635af37e2",
+    "_coerce_scalar": "dcb4b3c2b8ab78f46021944418223bc4f960bd43b092955aeeb0ff4098c19b2e",
+    "_row_pair": "e9290594fb48f06a8c93310f483b67aa6bcf2f84f7084e9eaeab950978bf90ed",
+    "_record": "fc042e7474d29d25998bef9c2dd9dd6bd8d1834454a4e36596cc59f2a14ff5fe",
+    "_record_rows": "754e3ece64af457f2c19483cd77affaa701b6ac038fdd23d2eb1bea5d9e6d037",
+    "_is_zero": "d63ba16d52bcaecfb71a901700a4cc370f573adf1b5fad030ea212acee050c14",
+    "_strip_sign": "2c2bdc41b6ae908a598724c269c9163b096d64a8681c4796c2997feb1d69d517",
+    "_negate_tuple": "d59765c3f2a6252eabf15b0eb8507aeb1b5552688b3e960a494e251a11723e49",
+    "_negate_interval": "6853c4639725a1e4083d5120dabf30c715b79890128bd315800380464c0453d6",
+    "_maxabs": "d94fb535287e20401a2a2485129726bd2c03855883720782b482f041b6df4c4b",
+    "_symmetric": "6648a9e0422b9785fea989eb6786244c04e701155abb9f701a2532eb1ec52def",
+    "_add2": "708adb509df02b359b345109165920c792e7c9cee7fa44973c2b190540096dda",
+    "_scale2": "dd02b432801069edc99ff9fc7af99a91d59ca1b45cb2bdfdeeac30ae14ce2e9d",
+    "_prod2": "0129cd64bdc215e96a38c1720bcab19ee03d760f9d1bc133b21d86b2f866a67d",
+    "_inv2": "0c1292c65ed2016717f8844f529d31afc4c18e1da3925410f20dc9a9e8589e39",
+    "_module_source_preflight": "a4feb51d906fd76232021514f89a4906f9f6b3d88bc78defbab6a5f5a6d96f9e",
+    "_symbolic_proof": "1baf4f3a5b3f3107cb0d0f784c9f203a2bca7ed8eb5dd877bcc347eae25bd323",
+    "fresh_fixture": "4791bc44c9fd47ea30f74fdf3f136d01e40c7b42be991142890139b5281e157b",
+    "iv": "c131c15697a59e7f3ada7fd10aeac33ff5cfb507c8317f0616e6e5ee429fa351"
+  },
+  "original_exact_proof_reused": {
+    "checks": {
+      "L_inverse_derivative_identity": true,
+      "ordinary_C1_G_identity": true
+    },
+    "formula": "G=Q/L+Q^2/2-2*Z^2*U^2/L^2; L=1-delta*Z^2",
+    "ordinary_derivative": "exact two-row product and inverse rules; no Taylor factors",
+    "passed": true,
+    "sympy_exact": true
+  },
+  "new_regression_file_sha256": "b2cbee3e19ae08d96d6cfeb6f06221fa7deaf3a0ab5bd0eb0ccefadefeae22f4",
+  "new_regression_passed": true,
+  "old_fixture_replayed": false,
+  "actual_saved_data_produced": false
+}

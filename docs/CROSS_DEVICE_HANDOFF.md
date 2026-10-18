@@ -1,3 +1,13 @@
+# Same-source pressure prefix contraction - 2026-10-18
+
+Read [CURRENT_ORIGINAL_PRESSURE_PREFIX_CONTRACTION_2026_10_18.md](CURRENT_ORIGINAL_PRESSURE_PREFIX_CONTRACTION_2026_10_18.md) first. The macro/first-switch RQy pair
+contracts by the saved source identity; first-switch B is newly enclosed
+in Rm^2 and joined once with D_first/S1_second/S1_post. Two pressure atoms
+remain opaque. First-switch previously had I1/D only; the old S1 flag was wrong.
+NEXT outer B plus accepted micro/macro D, then the H-anchored absolute m15
+consumer. Do not add the raw pressure increment to H. Preserve212/six/reservedonce/errors.
+Goal ACTIVE / INCOMPLETE. No ancestor or completed fixture replay.
+
 # Signed four-chart pressure window - 2026-10-18
 
 Read [CURRENT_ORIGINAL_PRESSURE_WINDOW_TRANSPORT_2026_10_18.md](CURRENT_ORIGINAL_PRESSURE_WINDOW_TRANSPORT_2026_10_18.md) first. Four saved full finite-N signed S1
