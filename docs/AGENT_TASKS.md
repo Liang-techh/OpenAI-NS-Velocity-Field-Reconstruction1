@@ -1,3 +1,14 @@
+# Uniform log-u C1 and pressure source adoption - 2026-10-18
+
+Read [CURRENT_ORIGINAL_LOGU_C1_PRESSURE_ADOPTION_2026_10_18.md](CURRENT_ORIGINAL_LOGU_C1_PRESSURE_ADOPTION_2026_10_18.md) first. New normalized Rm C1 endpoint target
+TRUE from a uniform same-source logarithmic-u derivative bound. Existing
+correlated restoration pressure source adopted: TRUE.
+Raw sources, old errors and external Rm coefficient -1 remain.
+
+NEXT adopted-source ordinary-C1 B/D/S1 and independent reserved/full-pulse
+m15 function comparison. Endpoint smallness is not terminal closure.
+Preserve212/six/reservedonce/errors. Goal ACTIVE / INCOMPLETE. No ancestor replay.
+
 # Signed native A/b/c and p2 source - 2026-10-18
 
 Read [CURRENT_ORIGINAL_SIGNED_NATIVE_SOURCES_2026_10_18.md](CURRENT_ORIGINAL_SIGNED_NATIVE_SOURCES_2026_10_18.md) first. New certified gamma2 and signed

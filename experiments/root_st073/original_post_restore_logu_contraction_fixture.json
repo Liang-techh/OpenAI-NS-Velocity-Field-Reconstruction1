@@ -1,0 +1,121 @@
+{
+  "module_sha256": "691b0179a603577596dc27a65480406d42063e5c3fb23b9692d714a64af9d2e3",
+  "module_path": "src/openai_ns_reconstruction/original_post_restore_logu_contraction.py",
+  "receipt_kind": "preserved_original_run_metadata",
+  "precondition_patch_original_module_sha256": "8bec0295c735f49a5492e572213149ce3c2b7ad46d475c816edaea18de79267b",
+  "original_completed_fixture_sha256": "d73e8fda91379c56bd9bfae119ee445d57a894451d33eaf5b2dcd85323397579",
+  "original_completed_fixture_bytes": 2952,
+  "original_full_fixture_bytes_not_preserved": true,
+  "original_receipt_recovered_from": {
+    "successful_fixture_output_line": 363,
+    "successful_proof_output_line": 329,
+    "successful_bound_output_line": 270,
+    "captured_current_worker_outputs": true
+  },
+  "scope": {
+    "source_executed": false,
+    "saved_packet_read": false,
+    "logcap_used_as_actual_value": false,
+    "signed_p2_selected": false,
+    "summary_reconstructed_from_captured_output": true
+  },
+  "checks": {
+    "original_completed_fixture_reported_passed": true,
+    "source_lf_eof_ast_preflight": true,
+    "coordinate_k_zero": true,
+    "coordinate_h_zero": true,
+    "coordinate_circle_zero": true,
+    "t_u_zero": true,
+    "t_psi_zero": true,
+    "I_u_zero": true,
+    "fixed_phase_W_zero": true,
+    "polynomial_P_zero": true,
+    "exact_bound_is_1061_over_2": true,
+    "safe_bound_is_600": true,
+    "math_function_AST_unchanged": true,
+    "boundary_near_minus_one_rejected_at_mp_prec53": true,
+    "boundary_exact_minus_one_accepted_at_mp_prec53": true
+  },
+  "proof": {
+    "coordinate_k_residual": "0",
+    "coordinate_h_residual": "0",
+    "coordinate_circle_residual": "0",
+    "t_u_residual": "0",
+    "t_psi_residual": "0",
+    "I_u_residual": "0",
+    "fixed_phase_W_residual": "0",
+    "polynomial_P_residual": "0",
+    "relations": {
+      "unit_circle": "c^2+spsi^2=1",
+      "scale": "s^2-u^2=1",
+      "m": "1/s^2",
+      "r": "u/s"
+    }
+  },
+  "bound": {
+    "domain": {
+      "q_lower": [
+        1,
+        2
+      ],
+      "q_upper": [
+        3,
+        2
+      ],
+      "abs_u_lower": [
+        1,
+        1
+      ],
+      "psi": "[0,2*pi]"
+    },
+    "first_term_bound": [
+      4,
+      1
+    ],
+    "omega_term_bound": [
+      12,
+      1
+    ],
+    "polynomial_term_bound": [
+      15,
+      2
+    ],
+    "phase_prefactor_bound": [
+      27,
+      1
+    ],
+    "phase_term_bound": [
+      1053,
+      2
+    ],
+    "proved_bound": [
+      1061,
+      2
+    ],
+    "safe_bound": [
+      600,
+      1
+    ],
+    "strict_safe_margin": [
+      139,
+      2
+    ],
+    "bound_is_uniform_in_psi": true,
+    "source_signed_value_selected": false
+  },
+  "post_patch": {
+    "changed_source_function": "_validate_domain",
+    "other_function_asts_unchanged": true,
+    "domain_predicate": "_upper(u_box) <= -mp.mpf(1)",
+    "boundary_regression": {
+      "mp_prec": 53,
+      "near_input": "-1 + 2^-200",
+      "near_input_rejected": true,
+      "exact_input": "-1",
+      "exact_input_accepted": true,
+      "completed_fixture_rerun": false
+    }
+  },
+  "passed": true,
+  "packaging_added_passed_from_recorded_checks": true
+}

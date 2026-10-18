@@ -1,0 +1,132 @@
+{
+  "checks": {
+    "changed_bound_contains_direct_rational_Z1": true,
+    "domain_abs_u_ge_one_certified": true,
+    "external_handles_retained": true,
+    "fresh_context_prec_320": true,
+    "full_log_Rm_once": true,
+    "mixed_signed_cap_rejected": true,
+    "native_Qy_Z1_retained": true,
+    "no_exp_materialized": true,
+    "old_fast_caps_retained": true,
+    "physical_Pstar_E0_once": true,
+    "serializes": true,
+    "source_preflight_before_fixture_math": true,
+    "uniform_W_rational_witness": true
+  },
+  "context_precision": 320,
+  "direct_rational_Z1": "-1086/1925",
+  "endpoint_schema": "original_post_restore_logu_endpoint_C1_v1",
+  "module_sha256": "e6252fcae41c982460d7db1a72fd17f437d26c799ab65a0aa88c47475113c465",
+  "new_bound_path": {
+    "e0_plus_ln600_plus_logabs_uZ_over_u": {
+      "directed": true,
+      "lower_display": "5.09764667108588551618176",
+      "lower_exact_mpf_tuple": [
+        0,
+        1361063400393104381243617140514230720079218968773942669463982141847470863002937609024899744644953,
+        -317,
+        320
+      ],
+      "upper_display": "5.09764667108588551618176",
+      "upper_exact_mpf_tuple": [
+        0,
+        340265850098276095310904285128557680019804742193485667365995535461867715750734402256224936161239,
+        -315,
+        318
+      ]
+    },
+    "e_Z_minus_ln2": {
+      "directed": true,
+      "lower_display": "-1.94591014905531330510535",
+      "lower_exact_mpf_tuple": [
+        1,
+        2078219425724537496633935157284525953014604557969576160676939607691809022034945866092623733200801,
+        -319,
+        320
+      ],
+      "upper_display": "-1.94591014905531330510535",
+      "upper_exact_mpf_tuple": [
+        1,
+        2078219425724537496633935157284525953014604557969576160676939607691809022034945866092623733200799,
+        -319,
+        320
+      ]
+    },
+    "inner_logsum": {
+      "directed": true,
+      "lower_display": "-1.25276296849536799568812",
+      "lower_exact_mpf_tuple": [
+        1,
+        1337942729893950772441131437423249327553264157596637673279136618387259980605376509622085864276309,
+        -319,
+        320
+      ],
+      "upper_display": "5.79079385164583082559899",
+      "upper_exact_mpf_tuple": [
+        0,
+        96633285896921941393238629404971867277784629304198580707089555573350507710020621758908388242255,
+        -313,
+        316
+      ]
+    },
+    "logsum_rule": "interval term+ln(count), then min/max rebox",
+    "outer_ln2": {
+      "directed": true,
+      "lower_display": "0.693147180559945309417232",
+      "lower_exact_mpf_tuple": [
+        0,
+        185069173957646681048200929965319156365335100093234621849450747326137260357392339117634467231123,
+        -317,
+        317
+      ],
+      "upper_display": "0.693147180559945309417232",
+      "upper_exact_mpf_tuple": [
+        0,
+        1480553391661173448385607439722553250922680800745876974795605978609098082859138712941075737848985,
+        -320,
+        320
+      ]
+    },
+    "result": {
+      "directed": true,
+      "lower_display": "-0.559615787935422686270889",
+      "lower_exact_mpf_tuple": [
+        1,
+        597666034063364048248327717561972702091923757223699185881333629082710939175807153151547995351817,
+        -319,
+        319
+      ],
+      "upper_display": "6.48394103220577613501623",
+      "upper_exact_mpf_tuple": [
+        0,
+        432800437077099435835004750111217258202472292240102978290720909124936345929430571815042169776801,
+        -315,
+        318
+      ]
+    },
+    "uniform_W_upper": {
+      "directed": true,
+      "lower_display": "6.39692965521614636884846",
+      "lower_exact_mpf_tuple": [
+        0,
+        1707969851654963222797862269816967157020135763083378810011937476029986530327135462383926533576953,
+        -317,
+        320
+      ],
+      "upper_display": "6.39692965521614636884846",
+      "upper_exact_mpf_tuple": [
+        0,
+        853984925827481611398931134908483578510067881541689405005968738014993265163567731191963266788477,
+        -316,
+        319
+      ]
+    }
+  },
+  "old_endpoint_retained": true,
+  "passed": true,
+  "rational_W": "27/125",
+  "schema": "original_post_restore_logu_endpoint_fixture_v1",
+  "source_formula": "W=u*f'(t)*(t_u-tpsi*Iu/(1+t^2)); |W|<=600",
+  "synthetic_t_u": "3/2"
+}
