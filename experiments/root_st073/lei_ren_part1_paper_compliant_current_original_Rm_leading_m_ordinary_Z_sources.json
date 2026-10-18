@@ -1,0 +1,403 @@
+{
+  "schema": "Rm_leading_m_ordinary_Z_source_stage_v1",
+  "stage": "actual_leading_m_source_derivatives_through_Z2",
+  "parent_report": "lei_ren_part1_paper_compliant_current_original_Rm_physical_Qy_Z_calculus.json",
+  "parent_report_sha256": "8903b59267bae01d5182bf2dcc84ed3c02c44eb8c7d3dd9d7b14af67ac092746",
+  "source_family": {
+    "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+  },
+  "actual_Rm_leading_m_ordinary_Z_source": {
+    "schema": "original_Rm_leading_m_ordinary_Z_source_v1",
+    "source_only": true,
+    "nodes_digest": "a2dcc782ba3033ff6ca5f54a66632ac6ef007bb0c5b9960f10567d44ef2059a3",
+    "Z_variable": 20,
+    "contexts": {
+      "postrestore": {
+        "coordinate": 84528,
+        "endpoint": 1
+      },
+      "patch": {
+        "coordinate": 185676,
+        "endpoint": 1
+      }
+    },
+    "rows": [
+      {
+        "side": "postrestore",
+        "field": "m",
+        "ordinary_order": 0,
+        "source_handle": 96436,
+        "derivative_handle": 96437,
+        "source_derivative_proved": true,
+        "regularity_proved": true,
+        "context": {
+          "coordinate": 84528,
+          "endpoint": 1
+        },
+        "proof_origin": "accepted C6 source producer plus exact saved ordinary jet constructor",
+        "source_receipt_ref": "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json",
+        "source_recipe_refs": [
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py",
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py"
+        ]
+      },
+      {
+        "side": "postrestore",
+        "field": "m",
+        "ordinary_order": 1,
+        "source_handle": 96437,
+        "derivative_handle": 96438,
+        "source_derivative_proved": true,
+        "regularity_proved": true,
+        "context": {
+          "coordinate": 84528,
+          "endpoint": 1
+        },
+        "proof_origin": "accepted C6 source producer plus exact saved ordinary jet constructor",
+        "source_receipt_ref": "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json",
+        "source_recipe_refs": [
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py",
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py"
+        ]
+      },
+      {
+        "side": "patch",
+        "field": "m",
+        "ordinary_order": 0,
+        "source_handle": 195000,
+        "derivative_handle": 195001,
+        "source_derivative_proved": true,
+        "regularity_proved": true,
+        "context": {
+          "coordinate": 185676,
+          "endpoint": 1
+        },
+        "proof_origin": "accepted C6 source producer plus exact saved ordinary jet constructor",
+        "source_receipt_ref": "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json",
+        "source_recipe_refs": [
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py"
+        ]
+      },
+      {
+        "side": "patch",
+        "field": "m",
+        "ordinary_order": 1,
+        "source_handle": 195001,
+        "derivative_handle": 195002,
+        "source_derivative_proved": true,
+        "regularity_proved": true,
+        "context": {
+          "coordinate": 185676,
+          "endpoint": 1
+        },
+        "proof_origin": "accepted C6 source producer plus exact saved ordinary jet constructor",
+        "source_receipt_ref": "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json",
+        "source_recipe_refs": [
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py"
+        ]
+      }
+    ],
+    "passed": true,
+    "witnesses": {
+      "producer_sources": {
+        "records": {
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": "8ab2c26092db06453ed5a6047d8905e37fdad17eaf9c4947048498551425c605",
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json": "494caf482bffe5475c011a35a1b7d95fd02725b32eb55653f9ca25984dd98ad6",
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions_check.json": "9a0969a8cd4a5989dbd6272d6dd223533400113824f9352b4e57a83196bff61e",
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": "a6f1cb5deaf17e9482aa964aef7867aadbc815e4d703a415e4945cf665f14002",
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json": "0190fcf738fb8add5be85cf0767464a39cc0d18240e6b36ad4ec7930dce38aa7",
+          "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source.py": "29738d46c6eb5897f0fbeefaec741d0eda4b97baed57b43ce9a7890a7dc03890",
+          "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source_check.json": "9d8b746ef78502956cbb2b53f96d452be636eecbf645d021aaca3f9c2e21885d"
+        },
+        "declarations": {
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": {
+            "BridgeAlgebra": {
+              "line": 32,
+              "end_line": 41
+            },
+            "histories": {
+              "line": 57,
+              "end_line": 68
+            },
+            "generic_fields": {
+              "line": 118,
+              "end_line": 127
+            }
+          },
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": {
+            "CurrentOriginalPrescribedR100RmC6Functions": {
+              "line": 89,
+              "end_line": 292
+            },
+            "add_chart": {
+              "line": 262,
+              "end_line": 267
+            },
+            "end": {
+              "line": 268,
+              "end_line": 274
+            }
+          },
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": {
+            "implicit_rows": {
+              "line": 147,
+              "end_line": 161
+            },
+            "patch_fields": {
+              "line": 200,
+              "end_line": 223
+            },
+            "CurrentOriginalTrueRmPatchC6Functions": {
+              "line": 226,
+              "end_line": 399
+            }
+          },
+          "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source.py": {
+            "FunctionJet": {
+              "line": 35,
+              "end_line": 40
+            },
+            "JetAlgebra": {
+              "line": 53,
+              "end_line": 87
+            }
+          }
+        },
+        "accepted_receipts": {
+          "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json": {
+            "sha256": "494caf482bffe5475c011a35a1b7d95fd02725b32eb55653f9ca25984dd98ad6",
+            "passed": true
+          },
+          "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json": {
+            "sha256": "0190fcf738fb8add5be85cf0767464a39cc0d18240e6b36ad4ec7930dce38aa7",
+            "passed": true
+          },
+          "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions_check.json": {
+            "sha256": "9a0969a8cd4a5989dbd6272d6dd223533400113824f9352b4e57a83196bff61e",
+            "passed": true
+          },
+          "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source_check.json": {
+            "sha256": "9d8b746ef78502956cbb2b53f96d452be636eecbf645d021aaca3f9c2e21885d",
+            "passed": true
+          }
+        },
+        "constructor_semantics": {
+          "bridge": "BridgeAlgebra.histories -> JetAlgebra.integral; generic_fields scales M by inverse Pstar",
+          "core": "JetAlgebra ordinary rows use Leibniz/quotient recurrences and Z-independent endpoint substitution",
+          "patch": "implicit_rows uses the same full Jacobian ordinary recurrence; patch_fields scales physical mass by inverse Pstar"
+        }
+      },
+      "saved_graph": {
+        "pstar_constant_closure": {
+          "root": 33572,
+          "argument_handle": 5,
+          "Z_independent": true,
+          "used_nodes": [
+            2,
+            3,
+            4,
+            5,
+            33572
+          ],
+          "source_rows_digest": "95dfe3ea7dabaf31cd08d859bb3985176209adaed24656c245b69a908e4cc026",
+          "inverse_rows": [
+            69245,
+            183811
+          ]
+        },
+        "postrestore": [
+          {
+            "primitive": 96366,
+            "history": 84756,
+            "moment": 96373,
+            "ordinary_order": 0
+          },
+          {
+            "primitive": 96367,
+            "history": 84757,
+            "moment": 96374,
+            "ordinary_order": 1
+          },
+          {
+            "primitive": 96368,
+            "history": 84758,
+            "moment": 96375,
+            "ordinary_order": 2
+          }
+        ],
+        "patch": {
+          "physical_mass": [
+            194847,
+            194848,
+            194842
+          ],
+          "scaled_m": [
+            195000,
+            195001,
+            195002
+          ]
+        }
+      },
+      "dependency_handles": {
+        "Pstar": 33572,
+        "postrestore_moment_rows": [
+          96373,
+          96374,
+          96375
+        ],
+        "patch_physical_mass_rows": [
+          194847,
+          194848,
+          194842
+        ]
+      }
+    },
+    "unresolved_gates": [],
+    "numeric_values_computed": false,
+    "operators_reexecuted": false,
+    "old_operators_replayed": false,
+    "cross_side_value_equality_used": false,
+    "full_goal_complete": false,
+    "full_Qy1_or_full_goal_claimed": false,
+    "source_record_hashes": {
+      "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": "8ab2c26092db06453ed5a6047d8905e37fdad17eaf9c4947048498551425c605",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json": "494caf482bffe5475c011a35a1b7d95fd02725b32eb55653f9ca25984dd98ad6",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions_check.json": "9a0969a8cd4a5989dbd6272d6dd223533400113824f9352b4e57a83196bff61e",
+      "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": "a6f1cb5deaf17e9482aa964aef7867aadbc815e4d703a415e4945cf665f14002",
+      "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json": "0190fcf738fb8add5be85cf0767464a39cc0d18240e6b36ad4ec7930dce38aa7",
+      "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source.py": "29738d46c6eb5897f0fbeefaec741d0eda4b97baed57b43ce9a7890a7dc03890",
+      "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source_check.json": "9d8b746ef78502956cbb2b53f96d452be636eecbf645d021aaca3f9c2e21885d"
+    },
+    "execution_seconds": 0.34383749999688007,
+    "source_checkpoint_sha256": "3a9eb7d5d62db9a825c7d2050cc1cae1a82ef101bad53e243dc09fd4820412f5",
+    "entry_checkpoint_sha256": "b1cc638c6e3355bb236ce766c5daf031307c06faad3391bf7b799847aba2ba02",
+    "runner_full_goal_complete": false
+  },
+  "actual_Rm_leading_m_Z_source_inputs": {
+    "schema": "Rm_leading_m_Z_source_access_inputs_v1",
+    "parent_sha256": "8903b59267bae01d5182bf2dcc84ed3c02c44eb8c7d3dd9d7b14af67ac092746",
+    "graph_digest": "a2dcc782ba3033ff6ca5f54a66632ac6ef007bb0c5b9960f10567d44ef2059a3",
+    "input_digest": "8deea251f100f331fe80b62051a58b2fd0551ee854d6de605de8fe47325be721",
+    "frozen_failure_hashes": {
+      "src/openai_ns_reconstruction/original_Rm_leading_m_ordinary_Z_source.py": "f64309b284b3e26d4c66f51b3593c087377c68770b55d387c7314517cec589eb",
+      "tmp/original_Rm_m_ordinary_Z_sources/new_leading_source.json": "746a4fbbf443026e0f81aa3edb07c156233b40d386788239d41b04da080d6799",
+      "tmp/original_Rm_m_ordinary_Z_sources/new_leading_entered.json": "39a794ad369f4763c9f0202d8914765a08d2028efd739550912034d79b75d03d",
+      "tmp/original_Rm_m_ordinary_Z_sources/new_leading_result.json": "d753f18d84f17f5ef83a4bf20fe654e3e7a8a6cd9a20e8d757f4c0473b6cdbd5"
+    },
+    "inherited_source_record_hashes": {
+      "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": "8ab2c26092db06453ed5a6047d8905e37fdad17eaf9c4947048498551425c605",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json": "494caf482bffe5475c011a35a1b7d95fd02725b32eb55653f9ca25984dd98ad6",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions_check.json": "9a0969a8cd4a5989dbd6272d6dd223533400113824f9352b4e57a83196bff61e",
+      "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": "a6f1cb5deaf17e9482aa964aef7867aadbc815e4d703a415e4945cf665f14002",
+      "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json": "0190fcf738fb8add5be85cf0767464a39cc0d18240e6b36ad4ec7930dce38aa7",
+      "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source.py": "29738d46c6eb5897f0fbeefaec741d0eda4b97baed57b43ce9a7890a7dc03890",
+      "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source_check.json": "9d8b746ef78502956cbb2b53f96d452be636eecbf645d021aaca3f9c2e21885d"
+    },
+    "implementation_hashes": {
+      "scripts/run_original_Rm_leading_m_Z_source_access.py": "b6fb5e45016942d49bc679620373d93119885c097c0de25edc9eef348b6d963f",
+      "src/openai_ns_reconstruction/original_Rm_leading_m_ordinary_Z_source_access.py": "afe78796fa3fed60918b62ec1d358eedeef7f9762b7dc60e06005b8a41539ed4",
+      "scripts/run_original_Rm_m_ordinary_Z_sources.py": "9fd9efc0f70ce149ae8126aaa7924e5e20e8d94f6f701bfe6954160f92fa40d1"
+    },
+    "accepted_mathematical_operators_replayed": false,
+    "full_goal_complete": false
+  },
+  "preserved_failed_leading_source_attempt": {
+    "passed": false,
+    "failed_attempt_preserved": true,
+    "error_type": "TypeError",
+    "error": "_definitions() missing 1 required positional argument: 'gates'",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\scripts\\run_original_Rm_m_ordinary_Z_sources.py\", line 133, in run_component\n    result = kernel.derive(nodes, **values)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_leading_m_ordinary_Z_source.py\", line 319, in derive\n    source_ok, source_witnesses = _source_witnesses(source_records, gates)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_leading_m_ordinary_Z_source.py\", line 151, in _source_witnesses\n    declarations = {\n                   ^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_leading_m_ordinary_Z_source.py\", line 152, in <dictcomp>\n    name: _definitions(texts[name], name, tuple(sorted(expected)))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: _definitions() missing 1 required positional argument: 'gates'\n",
+    "rejected_return": null,
+    "execution_seconds": 0.14581970000290312,
+    "source_checkpoint_sha256": "746a4fbbf443026e0f81aa3edb07c156233b40d386788239d41b04da080d6799",
+    "entry_checkpoint_sha256": "39a794ad369f4763c9f0202d8914765a08d2028efd739550912034d79b75d03d",
+    "runner_full_goal_complete": false
+  },
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_current_original_Rm_physical_Qy_Z_calculus.json": "8903b59267bae01d5182bf2dcc84ed3c02c44eb8c7d3dd9d7b14af67ac092746",
+    "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": "8ab2c26092db06453ed5a6047d8905e37fdad17eaf9c4947048498551425c605",
+    "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+    "lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions_check.json": "494caf482bffe5475c011a35a1b7d95fd02725b32eb55653f9ca25984dd98ad6",
+    "lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions_check.json": "9a0969a8cd4a5989dbd6272d6dd223533400113824f9352b4e57a83196bff61e",
+    "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": "a6f1cb5deaf17e9482aa964aef7867aadbc815e4d703a415e4945cf665f14002",
+    "lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.json": "0190fcf738fb8add5be85cf0767464a39cc0d18240e6b36ad4ec7930dce38aa7",
+    "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source.py": "29738d46c6eb5897f0fbeefaec741d0eda4b97baed57b43ce9a7890a7dc03890",
+    "lei_ren_part1_paper_compliant_current_original_core_inlet_axial6_generic_source_check.json": "9d8b746ef78502956cbb2b53f96d452be636eecbf645d021aaca3f9c2e21885d"
+  },
+  "implementation_hashes": {
+    "scripts/run_original_Rm_m_ordinary_Z_sources.py": "9fd9efc0f70ce149ae8126aaa7924e5e20e8d94f6f701bfe6954160f92fa40d1",
+    "scripts/run_original_Rm_leading_m_Z_source_access.py": "b6fb5e45016942d49bc679620373d93119885c097c0de25edc9eef348b6d963f",
+    "src/openai_ns_reconstruction/original_Rm_leading_m_ordinary_Z_source.py": "f64309b284b3e26d4c66f51b3593c087377c68770b55d387c7314517cec589eb",
+    "src/openai_ns_reconstruction/original_Rm_leading_m_ordinary_Z_source_access.py": "afe78796fa3fed60918b62ec1d358eedeef7f9762b7dc60e06005b8a41539ed4"
+  },
+  "inherited_parent_maps": {
+    "input_hashes": {
+      "count": 2089,
+      "canonical_sha256": "0e32ff4073cec667f75de2b9478399d41cf9534648c66b5634e76ce962d75016"
+    },
+    "implementation_hashes": {
+      "count": 517,
+      "canonical_sha256": "7b965c49b23f9ac5d330c97cce58b7f9397ae64e6de4151995c69f87755a0ada"
+    }
+  },
+  "retained_construction_data": {
+    "immutable_full_report": "lei_ren_part1_paper_compliant_current_original_Rm_physical_Qy_Z_calculus.json",
+    "sha256": "8903b59267bae01d5182bf2dcc84ed3c02c44eb8c7d3dd9d7b14af67ac092746",
+    "cumulative_terms": 212,
+    "raw_signed_terms": 213,
+    "reduced_terms": 183,
+    "six_channels_retained": true,
+    "all_old_error_data_retained": true,
+    "reserved_contribution_registered_once": true,
+    "new_values_or_bounds_assigned": false
+  },
+  "checkpoint_hashes": {
+    "tmp/original_Rm_m_ordinary_Z_sources/new_leading_source.json": "746a4fbbf443026e0f81aa3edb07c156233b40d386788239d41b04da080d6799",
+    "tmp/original_Rm_m_ordinary_Z_sources/new_leading_entered.json": "39a794ad369f4763c9f0202d8914765a08d2028efd739550912034d79b75d03d",
+    "tmp/original_Rm_m_ordinary_Z_sources/new_leading_result.json": "d753f18d84f17f5ef83a4bf20fe654e3e7a8a6cd9a20e8d757f4c0473b6cdbd5",
+    "tmp/original_Rm_leading_m_Z_source_access/new_source.json": "3a9eb7d5d62db9a825c7d2050cc1cae1a82ef101bad53e243dc09fd4820412f5",
+    "tmp/original_Rm_leading_m_Z_source_access/new_operator_entered.json": "b1cc638c6e3355bb236ce766c5daf031307c06faad3391bf7b799847aba2ba02",
+    "tmp/original_Rm_leading_m_Z_source_access/new_result.json": "6d286252aae3f97d9f72950b612af5610a865a7b90f5b72b1850ad6fc63e0a31"
+  },
+  "scope": {
+    "leading_m_ordinary_Z_source_edges_proved": 4,
+    "finite_N_history_C2_source_proved": false,
+    "physical_Q_y_Z0_value_seam_proved": true,
+    "physical_Q_y_Z1_value_seam_proved": false,
+    "current_Rm_RQy_germ_identity_proved": false,
+    "global_five_moment_closure": false,
+    "new_numeric_field_values_computed": false,
+    "full_goal_complete": false
+  },
+  "next_gate": {
+    "name": "actual finite-N history ordinary-Z regularity and source jets",
+    "postrestore_history": [
+      121602,
+      121603,
+      121604
+    ],
+    "patch_history": [
+      198466,
+      198467,
+      198468
+    ],
+    "source_rule": "m density is B_over_Pstar/N; retain incoming and exact Duhamel/log dt/t kernels",
+    "regularity": "Bind actual compact native/Z source domain, background regularity, active a>0, original flat extension, inverse positivity, and ordinary-Z-independent phase; then justify differentiation under the integral.",
+    "numeric_majorant_required_for_qualitative_source_proof": false,
+    "numerical_fixtures_are_not_actual_source_witnesses": true
+  },
+  "execution_audit": {
+    "preserved_failed_new_source_calls": 1,
+    "new_corrected_leading_source_calls": 1,
+    "accepted_mathematical_operator_calls": 0,
+    "history_operator_calls": 0,
+    "outer_calculus_replayed": false,
+    "numeric_field_quadrature_recurrence_or_norm_calls": 0,
+    "source_entry_before_call_and_result_before_inspection": true
+  }
+}

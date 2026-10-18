@@ -1,3 +1,12 @@
+# Leading-m ordinary-Z source jets passed - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_LEADING_M_Z_SOURCE_2026_10_18.md](CURRENT_ORIGINAL_RM_LEADING_M_Z_SOURCE_2026_10_18.md) first. Four genuine leading-m source
+derivative edges through ordinaryZ2 passed in0.3438s. Finite-N history C2
+source/regularity is the next gate; Q_yZ1/fullRQ_y/physical join/globalfive
+remain false. Keep prior conditional quotient calculus as data. No accepted
+operator replay; first helper-arity failure and exact code/checkpoints
+preserved. All212/errors/one reserved retained. Goal ACTIVE / INCOMPLETE.
+
 # Physical Q_y ordinary-Z source gate - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_QY_Z_DERIVATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_QY_Z_DERIVATIVE_PROVENANCE_2026_10_18.md) first. Actual per-side quotient derivative
