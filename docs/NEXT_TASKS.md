@@ -1,3 +1,9 @@
+# Correlated micro/macro source and signed micro I1 - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_MACRO_CORRELATED_M15_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MACRO_CORRELATED_M15_2026_10_17.md) first. The whole micro pair and one macro local six-I1 source share a safely relocated graph namespace. Ordinary C1 signed full finite-N micro I1 enclosures are computed in exact positive W=Ra^2*hb units; accepted joint error is added once as a radius. Micro2/macro0 endpoint contractions retain the first-lower anchor and macro outer RQy. Old 212 terms, six signed sources and all errors remain unchanged. New production replays no accepted ancestor; review mistakenly replayed one accepted exact_algebra check, whose result was discarded (see execution audit).
+
+NEXT signed macro I1 and finite-N control, carrying outer RQy forward; then reserved-pulse terminal functional matching. Global closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro-to-macro RQy endpoint identity - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_MACRO_RQY_SEAM_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MACRO_RQY_SEAM_2026_10_17.md) first. New exact source-bound second_micro upper s=2 / frozen_macro lower m=0 RQy identity retains physical y derivatives, distinct native Jacobians, one phase/N and nonreset histories. Opposite FTC traces cancel only in the joined adjacent expression; macro upper and standalone old caps remain. Old 212 terms, six signed sources and all errors unchanged; no accepted replay.
