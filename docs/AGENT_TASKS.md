@@ -1,3 +1,14 @@
+# Corrected native controls and root conditioning - 2026-10-18
+
+Read [CURRENT_ORIGINAL_NATIVE_DIRECTED_CONTROLS_V2_2026_10_18.md](CURRENT_ORIGINAL_NATIVE_DIRECTED_CONTROLS_V2_2026_10_18.md) first. The new four-chart native phi/U/M/A/B/C,
+full p2 and q/r/alpha/K controls plus D/lambda lower bounds are separately
+verified with safe directed arithmetic. Old packets/data/errors/212/six terms
+remain. Inherited loop/current-N and exterior Rm certification remain open.
+
+NEXT new directed loop/inverse-phase and finite-N propagation from this saved
+packet, then Rm pressure and reserved/full-pulse m15 matching. Goal ACTIVE /
+INCOMPLETE. No accepted construction replay.
+
 # Scoped native-control directed repair - 2026-10-18
 
 Read [CURRENT_ORIGINAL_NATIVE_CONTROL_DIRECTED_REPAIR_2026_10_18.md](CURRENT_ORIGINAL_NATIVE_CONTROL_DIRECTED_REPAIR_2026_10_18.md) first. New source-bound corrective arithmetic
