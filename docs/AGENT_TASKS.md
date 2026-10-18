@@ -1,3 +1,17 @@
+# Actual Rm slow native provenance partial - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_SLOW_NATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_SLOW_NATIVE_PROVENANCE_2026_10_18.md) first. New read-only DAG checker admits
+actual postrestore slow A/B Z0/Z1 targets4; consume these saved results,
+never replay the left traversal. Patch4 remain open at the unique leading
+implicit control lexical contract, before patch derivative traversal.
+Full205300 graph retained; derivative lookup pinned to original205147
+source prefix. First ambiguous-zero attempt is preserved in an84202-byte
+source/result artifact. NEXT authenticate Z-only control system inputs and
+extend patch-only provenance, then prove paired native congruence and bind
+modified V_y/Q_y. New Z3 draft remains untracked/unexecuted/unaccepted.
+All212/six channels/errors/one reserved unchanged. No global closure.
+Goal ACTIVE / INCOMPLETE.
+
 # Actual Rm history and modified moment germs - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_HISTORY_MOMENT_GERMS_2026_10_18.md](CURRENT_ORIGINAL_RM_HISTORY_MOMENT_GERMS_2026_10_18.md) first. New actual postrestore outlet/patch

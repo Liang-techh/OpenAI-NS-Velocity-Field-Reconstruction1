@@ -160,3 +160,5 @@ scripts/archive_original_Rm_loop_density_report.py -text
 scripts/extract_original_Rm_loop_ports.py -text
 scripts/run_original_Rm_history_moment_seam.py -text
 experiments/root_st073/original_Rm_loop_ports_admission.json -text
+scripts/run_original_Rm_slow_native_provenance.py -text
+experiments/root_st073/original_Rm_slow_native_provenance_attempt1.json -text
