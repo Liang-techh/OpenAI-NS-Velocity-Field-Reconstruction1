@@ -157,3 +157,6 @@ experiments/root_st073/original_Rm_history_native_source_fixture.json -text
 experiments/root_st073/original_Rm_radius_probe_diagnostic.json -text
 scripts/run_original_Rm_loop_density_identity.py -text
 scripts/archive_original_Rm_loop_density_report.py -text
+scripts/extract_original_Rm_loop_ports.py -text
+scripts/run_original_Rm_history_moment_seam.py -text
+experiments/root_st073/original_Rm_loop_ports_admission.json -text

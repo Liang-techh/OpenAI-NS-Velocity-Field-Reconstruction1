@@ -1,3 +1,16 @@
+# Actual Rm history and modified moment germs - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_HISTORY_MOMENT_GERMS_2026_10_18.md](CURRENT_ORIGINAL_RM_HISTORY_MOMENT_GERMS_2026_10_18.md) first. New actual postrestore outlet/patch
+inlet history native seam passes10 pairs Z0/Z1. New actual modified
+m/h/k/e/p VALUE+physical-Dy seam passes10 field/order pairs. Source prefix
+205200+40+60=205300. Leading m keeps its accepted saved-mean external
+premise; no old proof or numeric field is recomputed. Post outlet memory
+is exp(-rate), never reset to1. Bounded loop-source admission466569 bytes
+replaces repeated copying of239 MB verbose evidence. All212/six channels/
+old errors/one reserved are unchanged. NEXT actual slow native B/A then
+modified V_y and physical Q_y; Q_y Z1 retains new leadingZ3/loop valueZ2
+dependency. No full physical join/global five-moment closure. Goal ACTIVE.
+
 # Actual Rm common phase and signed loop-density seam - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_LOOP_DENSITY_2026_10_18.md](CURRENT_ORIGINAL_RM_LOOP_DENSITY_2026_10_18.md) first. The new actual common phase proof
