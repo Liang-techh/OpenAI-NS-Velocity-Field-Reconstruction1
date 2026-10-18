@@ -1,3 +1,14 @@
+# Physical Q_y Z0 endpoint identity passed - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_PHYSICAL_QY_Z0_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_PHYSICAL_QY_Z0_VALUES_2026_10_18.md) first. One corrected physical-only consumer
+proves actual Q_yZ0 targets183451/204500 in0.8837s; saved-only inspection
+passes. Traceback confirmed the old moment-row nested sides access at978;
+four internal accesses were corrected in a new frozen module. Accepted
+radial4/slow4 were consumed as data. Q_yZ1/fullRQ_y/physical join/globalfive
+remain open; next resolve actual ordinary-Z derivative provenance/regularity
+or missing Z2/Z3/cancellation inputs. All212/errors/one reserved retained.
+Goal ACTIVE / INCOMPLETE. Never rerun completed consumers or oldsession17273.
+
 # Actual Rm radial VALUE seam passed; Q_y access gate - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_MODIFIED_RADIAL_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_MODIFIED_RADIAL_VALUES_2026_10_18.md) first. Four total E_y/V_y ordinary-Z0/Z1

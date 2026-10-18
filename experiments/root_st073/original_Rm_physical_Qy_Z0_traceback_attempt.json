@@ -1,0 +1,498 @@
+{
+  "exception_captured": true,
+  "error_type": "KeyError",
+  "error": "'postrestore'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\scripts\\diagnose_original_Rm_physical_qy0_access.py\", line 154, in run\n    returned = module.derive(nodes, **inputs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py\", line 1085, in derive\n    aliases, alias_roles = _alias_forms(loop, moments, radial)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py\", line 978, in _alias_forms\n    token = canonical_digest({\"field\": \"m\", \"order\": order, \"body_pair\": [moment_row[side][\"actual_modified_body\"] for side in SIDES], \"status\": \"proved\"})\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py\", line 978, in <listcomp>\n    token = canonical_digest({\"field\": \"m\", \"order\": order, \"body_pair\": [moment_row[side][\"actual_modified_body\"] for side in SIDES], \"status\": \"proved\"})\n                                                                          ~~~~~~~~~~^^^^^^\nKeyError: 'postrestore'\n",
+  "frames": [
+    {
+      "file": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\scripts\\diagnose_original_Rm_physical_qy0_access.py",
+      "function": "run",
+      "line": 154,
+      "side": null,
+      "mapping_key_summaries": {
+        "inputs": {
+          "size": 5,
+          "keys": [
+            "'bounded_loop_ports_admission'",
+            "'modified_moment_germ'",
+            "'modified_radial_value_seam'",
+            "'actual_source_bindings'",
+            "'expected_nodes_digest'"
+          ]
+        },
+        "packet": {
+          "size": 11,
+          "keys": [
+            "'schema'",
+            "'parent_report'",
+            "'parent_sha256'",
+            "'graph_digest'",
+            "'graph_node_count'",
+            "'input_digest'",
+            "'implementation_hashes'",
+            "'accepted_radial_and_slow_consumed_as_data'",
+            "'accepted_operators_replayed'",
+            "'prior_unaccepted_physical_consumer_reentry_for_traceback'",
+            "'full_goal_complete'"
+          ]
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py",
+      "function": "derive",
+      "line": 1085,
+      "side": null,
+      "mapping_key_summaries": {
+        "bounded_loop_ports_admission": {
+          "size": 25,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'source_only'",
+            "'source_archive'",
+            "'source_archive_sha256'",
+            "'decoded_archive_sha256'",
+            "'ancestor_payload_report'",
+            "'ancestor_payload_sha256'",
+            "'actual_loop_result_digest'",
+            "'actual_loop_checkpoint_sha256'",
+            "'nodes_digest'",
+            "'graph_node_count'",
+            "'ordinary_orders'",
+            "'rows'",
+            "'common_phase_source'",
+            "'loop_input_packet'",
+            "'inherited_packet_digests'",
+            "'input_hashes'",
+            "'implementation_hashes'",
+            "'extraction_implementation_sha256'",
+            "'exact_saved_data_projection'",
+            "'mathematical_operator_executed'",
+            "'numerical_values_computed'",
+            "'native_loop_seam_proved'",
+            "'full_goal_complete'"
+          ]
+        },
+        "modified_moment_germ": {
+          "size": 25,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'source_only'",
+            "'actual_saved_graph_run'",
+            "'actual_source_graph_inspected'",
+            "'nodes_digest'",
+            "'module_sha256'",
+            "'source_admission_digests'",
+            "'ordinary_orders'",
+            "'fields'",
+            "'rows'",
+            "'paired_rows'",
+            "'graph_delta'",
+            "'moment_value_native_seam_proved'",
+            "'E_V_native_seam_proved'",
+            "'slow_native_loop_seam_proved'",
+            "'physical_RQy_seam_proved'",
+            "'numeric_values_computed'",
+            "'old_mathematical_operator_replayed'",
+            "'ledger_packet_not_received'",
+            "'ledger_unchanged_verification_required_by_runner'",
+            "'full_goal_complete'",
+            "'execution_seconds'",
+            "'source_checkpoint_sha256'",
+            "'entry_checkpoint_sha256'"
+          ]
+        },
+        "modified_radial_value_seam": {
+          "size": 33,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'status'",
+            "'source_only'",
+            "'source_executed'",
+            "'actual_saved_graph_run'",
+            "'numeric_values_evaluated'",
+            "'numeric_field_evaluated'",
+            "'new_native_derivative_generated'",
+            "'old_operators_replayed'",
+            "'nodes_input_unmutated'",
+            "'expected_nodes_digest'",
+            "'nodes_digest'",
+            "'graph_node_count'",
+            "'derivative_lookup_prefix'",
+            "'canonical_value_pairs'",
+            "'value_pairs'",
+            "'alias_roles'",
+            "'alias_count'",
+            "'alias_collision_count'",
+            "'packet_bindings'",
+            "'closures'",
+            "'unresolved_gates'",
+            "'input_data_digests'",
+            "'target_ports'",
+            "'source_formula'",
+            "'scope'",
+            "'execution_seconds'",
+            "'source_checkpoint_sha256'",
+            "'entry_checkpoint_sha256'",
+            "'actual_source_graph_inspected'",
+            "'accepted_math_operators_replayed'",
+            "'full_goal_complete'"
+          ]
+        },
+        "actual_source_bindings": {
+          "size": 2,
+          "keys": [
+            "'postrestore'",
+            "'patch'"
+          ]
+        },
+        "graph_digests": {
+          "size": 4,
+          "keys": [
+            "'finite_prefix'",
+            "'loop_prefix'",
+            "'moment_prefix'",
+            "'full_graph'"
+          ]
+        },
+        "loop_packet": {
+          "size": 25,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'source_only'",
+            "'source_archive'",
+            "'source_archive_sha256'",
+            "'decoded_archive_sha256'",
+            "'ancestor_payload_report'",
+            "'ancestor_payload_sha256'",
+            "'actual_loop_result_digest'",
+            "'actual_loop_checkpoint_sha256'",
+            "'nodes_digest'",
+            "'graph_node_count'",
+            "'ordinary_orders'",
+            "'rows'",
+            "'common_phase_source'",
+            "'loop_input_packet'",
+            "'inherited_packet_digests'",
+            "'input_hashes'",
+            "'implementation_hashes'",
+            "'extraction_implementation_sha256'",
+            "'exact_saved_data_projection'",
+            "'mathematical_operator_executed'",
+            "'numerical_values_computed'",
+            "'native_loop_seam_proved'",
+            "'full_goal_complete'"
+          ]
+        },
+        "moment_packet": {
+          "size": 25,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'source_only'",
+            "'actual_saved_graph_run'",
+            "'actual_source_graph_inspected'",
+            "'nodes_digest'",
+            "'module_sha256'",
+            "'source_admission_digests'",
+            "'ordinary_orders'",
+            "'fields'",
+            "'rows'",
+            "'paired_rows'",
+            "'graph_delta'",
+            "'moment_value_native_seam_proved'",
+            "'E_V_native_seam_proved'",
+            "'slow_native_loop_seam_proved'",
+            "'physical_RQy_seam_proved'",
+            "'numeric_values_computed'",
+            "'old_mathematical_operator_replayed'",
+            "'ledger_packet_not_received'",
+            "'ledger_unchanged_verification_required_by_runner'",
+            "'full_goal_complete'",
+            "'execution_seconds'",
+            "'source_checkpoint_sha256'",
+            "'entry_checkpoint_sha256'"
+          ]
+        },
+        "radial_packet": {
+          "size": 33,
+          "keys": [
+            "'schema'",
+            "'passed'",
+            "'status'",
+            "'source_only'",
+            "'source_executed'",
+            "'actual_saved_graph_run'",
+            "'numeric_values_evaluated'",
+            "'numeric_field_evaluated'",
+            "'new_native_derivative_generated'",
+            "'old_operators_replayed'",
+            "'nodes_input_unmutated'",
+            "'expected_nodes_digest'",
+            "'nodes_digest'",
+            "'graph_node_count'",
+            "'derivative_lookup_prefix'",
+            "'canonical_value_pairs'",
+            "'value_pairs'",
+            "'alias_roles'",
+            "'alias_count'",
+            "'alias_collision_count'",
+            "'packet_bindings'",
+            "'closures'",
+            "'unresolved_gates'",
+            "'input_data_digests'",
+            "'target_ports'",
+            "'source_formula'",
+            "'scope'",
+            "'execution_seconds'",
+            "'source_checkpoint_sha256'",
+            "'entry_checkpoint_sha256'",
+            "'actual_source_graph_inspected'",
+            "'accepted_math_operators_replayed'",
+            "'full_goal_complete'"
+          ]
+        },
+        "source": {
+          "size": 3,
+          "keys": [
+            "'supplied'",
+            "'ports'",
+            "'digest'"
+          ]
+        },
+        "loop": {
+          "size": 22,
+          "keys": [
+            "('A', 0)",
+            "('A', 1)",
+            "('B_over_Pstar', 0)",
+            "('B_over_Pstar', 1)",
+            "('A_phi', 0)",
+            "('A_phi', 1)",
+            "('B_over_Pstar_phi', 0)",
+            "('B_over_Pstar_phi', 1)",
+            "('E_N', 0)",
+            "('E_N', 1)",
+            "('V_N', 0)",
+            "('V_N', 1)",
+            "('m', 0)",
+            "('m', 1)",
+            "('h', 0)",
+            "('h', 1)",
+            "('k', 0)",
+            "('k', 1)",
+            "('e', 0)",
+            "('e', 1)",
+            "('p', 0)",
+            "('p', 1)"
+          ]
+        },
+        "moments": {
+          "size": 10,
+          "keys": [
+            "('m', 0)",
+            "('m', 1)",
+            "('h', 0)",
+            "('h', 1)",
+            "('k', 0)",
+            "('k', 1)",
+            "('e', 0)",
+            "('e', 1)",
+            "('p', 0)",
+            "('p', 1)"
+          ]
+        },
+        "radial": {
+          "size": 4,
+          "keys": [
+            "('E_y', 0)",
+            "('E_y', 1)",
+            "('V_y', 0)",
+            "('V_y', 1)"
+          ]
+        },
+        "formula": {
+          "size": 8,
+          "keys": [
+            "'source_formula'",
+            "'expanded_formula'",
+            "'mean_y_source'",
+            "'radial_mean_y_used'",
+            "'Pstar_applied_once'",
+            "'J_applied_once'",
+            "'radius_preserved_once'",
+            "'Z1_targets_open'"
+          ]
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py",
+      "function": "_alias_forms",
+      "line": 978,
+      "side": "patch",
+      "mapping_key_summaries": {
+        "loop": {
+          "size": 22,
+          "keys": [
+            "('A', 0)",
+            "('A', 1)",
+            "('B_over_Pstar', 0)",
+            "('B_over_Pstar', 1)",
+            "('A_phi', 0)",
+            "('A_phi', 1)",
+            "('B_over_Pstar_phi', 0)",
+            "('B_over_Pstar_phi', 1)",
+            "('E_N', 0)",
+            "('E_N', 1)",
+            "('V_N', 0)",
+            "('V_N', 1)",
+            "('m', 0)",
+            "('m', 1)",
+            "('h', 0)",
+            "('h', 1)",
+            "('k', 0)",
+            "('k', 1)",
+            "('e', 0)",
+            "('e', 1)",
+            "('p', 0)",
+            "('p', 1)"
+          ]
+        },
+        "moments": {
+          "size": 10,
+          "keys": [
+            "('m', 0)",
+            "('m', 1)",
+            "('h', 0)",
+            "('h', 1)",
+            "('k', 0)",
+            "('k', 1)",
+            "('e', 0)",
+            "('e', 1)",
+            "('p', 0)",
+            "('p', 1)"
+          ]
+        },
+        "radial": {
+          "size": 4,
+          "keys": [
+            "('E_y', 0)",
+            "('E_y', 1)",
+            "('V_y', 0)",
+            "('V_y', 1)"
+          ]
+        },
+        "aliases": {
+          "size": 2,
+          "keys": [
+            "121571",
+            "198423"
+          ]
+        },
+        "roles": {
+          "size": 3,
+          "keys": [
+            "'V_N'",
+            "'m'",
+            "'V_y'"
+          ]
+        },
+        "guard": {
+          "size": 7,
+          "keys": [
+            "'ordinary_Z_order'",
+            "'Z_handle'",
+            "'endpoint'",
+            "'postrestore_coordinate'",
+            "'patch_coordinate'",
+            "'changed_Z'",
+            "'changed_native_environment'"
+          ]
+        },
+        "loop_row": {
+          "size": 4,
+          "keys": [
+            "'field'",
+            "'order'",
+            "'postrestore'",
+            "'patch'"
+          ]
+        },
+        "form": {
+          "size": 3,
+          "keys": [
+            "'srepr'",
+            "'text'",
+            "'is_zero'"
+          ]
+        },
+        "moment_row": {
+          "size": 6,
+          "keys": [
+            "'field'",
+            "'order'",
+            "'sides'",
+            "'value_identity_proved'",
+            "'native_identity_proved'",
+            "'mean_premise'"
+          ]
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\src\\openai_ns_reconstruction\\original_Rm_physical_qy0_value_seam.py",
+      "function": "<listcomp>",
+      "line": 978,
+      "side": "postrestore",
+      "mapping_key_summaries": {
+        "moment_row": {
+          "size": 6,
+          "keys": [
+            "'field'",
+            "'order'",
+            "'sides'",
+            "'value_identity_proved'",
+            "'native_identity_proved'",
+            "'mean_premise'"
+          ]
+        }
+      }
+    }
+  ],
+  "schema": "Rm_unaccepted_physical_Qy_Z0_traceback_attempt_v1",
+  "execution_seconds": 0.606975800008513,
+  "source_checkpoint": {
+    "schema": "Rm_unaccepted_physical_Qy_Z0_traceback_inputs_v1",
+    "parent_report": "lei_ren_part1_paper_compliant_current_original_Rm_modified_physical_values.json",
+    "parent_sha256": "5c26b7bb3b70e874a5790a5f8424233678b5a964200b8ffd88dce102b22110f1",
+    "graph_digest": "a2dcc782ba3033ff6ca5f54a66632ac6ef007bb0c5b9960f10567d44ef2059a3",
+    "graph_node_count": 205300,
+    "input_digest": "081b95e2df85e4f9573d31277db95e009e181a08ab6d84f0a02703b407ea1195",
+    "implementation_hashes": {
+      "scripts/diagnose_original_Rm_physical_qy0_access.py": "765667cb242c4dbb21fb7ef5ed030b6d4d6889b48136cbff5cf8475fd8967fdb",
+      "src/openai_ns_reconstruction/original_Rm_physical_qy0_value_seam.py": "3a6cb37c906d660ddf96758ed0612933fdba3d35772f58a5b14e4749ff66095f"
+    },
+    "accepted_radial_and_slow_consumed_as_data": true,
+    "accepted_operators_replayed": false,
+    "prior_unaccepted_physical_consumer_reentry_for_traceback": true,
+    "full_goal_complete": false
+  },
+  "source_checkpoint_sha256": "180d71a0322a2c02880932528890382cdec14648c1232e9666cb09420e86ad71",
+  "entry_checkpoint": {
+    "source_sha256": "180d71a0322a2c02880932528890382cdec14648c1232e9666cb09420e86ad71",
+    "input_digest": "081b95e2df85e4f9573d31277db95e009e181a08ab6d84f0a02703b407ea1195",
+    "kernel_sha256": "3a6cb37c906d660ddf96758ed0612933fdba3d35772f58a5b14e4749ff66095f",
+    "entered_at_utc": "2026-10-18T19:04:17.469932+00:00"
+  },
+  "entry_checkpoint_sha256": "021695178cd69f2dc998d682dc6c7c75e5b3e4b96b3005a1482bb9bf97a44825",
+  "input_unchanged": true,
+  "graph_unchanged": true,
+  "accepted_operators_replayed": false,
+  "prior_unaccepted_physical_consumer_reentered_once_for_traceback": true,
+  "full_goal_complete": false
+}
