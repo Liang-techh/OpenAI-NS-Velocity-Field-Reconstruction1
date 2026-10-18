@@ -1,3 +1,9 @@
+# Current-N second switch and post-power through R110 - 2026-10-18
+
+Read [CURRENT_ORIGINAL_SWITCH_POST_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_SWITCH_POST_FINITE_N_I1_2026_10_18.md) first. Both new charts have full current-N six-I1/B/D/S1 ordinary-C1 enclosures, actual native memories, separate Wswitch/Wmacro measures and pointwise Q. B uses exact C2 cancellation before boxing; finite-N radii enter once. Full 184898-node source prefix and all old 212/signed/errors/endpoints remain. No accepted computation replay. Outer R110 RQy and complete joined pressure remain open.
+
+NEXT R110-to-Rsh long_reshape/reference/restoration, preserving R110 RQy until the next same-source seam is proved; then surviving external RQy and independent reserved-pulse m15 terminal comparison. No global five-moment closure. Goal ACTIVE / INCOMPLETE.
+
 # Current-N first-switch I1 and correlated pressure source - 2026-10-17
 
 Read [CURRENT_ORIGINAL_FIRST_SWITCH_FINITE_N_I1_2026_10_17.md](CURRENT_ORIGINAL_FIRST_SWITCH_FINITE_N_I1_2026_10_17.md) first. Full current-N first-switch six I1/D C1 enclosures use Wswitch=10000*hbS and the true R^2*hbS measure once; macro incoming mean is retained. Joined Wmacro volume is an interval enclosure, not a signed center. Full 184703-node prefix is preserved; first local S1 is consumed once and the accepted internal RQy identity is applied only in the joined source. B and external RQy remain open. All old 212/signed/errors/endpoints retained; no accepted computation replay.

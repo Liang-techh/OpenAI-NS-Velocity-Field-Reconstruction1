@@ -93,3 +93,5 @@ scripts/run_original_micro_macro_correlated_m15.py -text
 scripts/run_original_macro_background_I1.py -text
 scripts/run_original_macro_finite_N_I1.py -text
 scripts/run_original_first_switch_finite_N_I1.py -text
+scripts/run_original_switch_post_finite_N_I1.py -text
+docs/continuation/*.json -text
