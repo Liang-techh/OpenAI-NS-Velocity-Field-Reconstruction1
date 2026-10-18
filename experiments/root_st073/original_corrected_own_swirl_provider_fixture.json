@@ -1,0 +1,158 @@
+{
+  "schema": "corrected_own_swirl_provider_synthetic_fixture_v1",
+  "case": {
+    "nodes": [
+      {"operation": "atom", "value": 1, "metadata": {"source_index": 0}},
+      {"operation": "atom", "value": 2, "metadata": {"source_index": 1}},
+      {"operation": "atom", "value": 3, "metadata": {"source_index": 2}},
+      {"operation": "atom", "value": 4, "metadata": {"source_index": 3}},
+      {"operation": "atom", "value": 5, "metadata": {"source_index": 4}},
+      {"operation": "atom", "value": 6, "metadata": {"source_index": 5}},
+      {"operation": "atom", "value": 2, "metadata": {"source_index": 6}},
+      {"operation": "atom", "value": 3, "metadata": {"source_index": 7}},
+      {"operation": "sum", "arguments": [2, 3], "metadata": {"source_index": 8, "rhs": "old"}},
+      {"operation": "sum", "arguments": [4, 5], "metadata": {"source_index": 9, "rhs": "old"}},
+      {"operation": "sum", "arguments": [8, 6], "metadata": {"source_index": 10}, "literal_integer": 1010},
+      {"operation": "product", "arguments": [10, 7], "metadata": {"source_index": 11}, "literal_integer": 1011},
+      {"operation": "negative", "argument": 11, "metadata": {"source_index": 12}, "literal_integer": 1012},
+      {"operation": "analytic_unary", "argument": 12, "name": "identity", "metadata": {"source_index": 13}, "literal_integer": 1013},
+      {"operation": "sum", "arguments": [9, 13], "metadata": {"source_index": 14}, "literal_integer": 1014},
+      {"operation": "atom", "value": 11, "metadata": {"source_index": 15}},
+      {"operation": "atom", "value": 16, "metadata": {"source_index": 16}},
+      {"operation": "atom", "value": 17, "metadata": {"source_index": 17}},
+      {"operation": "sum", "arguments": [2, 2], "metadata": {"source_index": 18, "rhs": "corrected"}},
+      {"operation": "sum", "arguments": [4, 4], "metadata": {"source_index": 19, "rhs": "corrected"}}
+    ],
+    "replacements": {"8": 18, "9": 19},
+    "bindings": {
+      "coefficients": {
+        "alpha1": [2, 3],
+        "alpha2": [4, 5],
+        "beta1": [10, 14],
+        "beta2": [11, 14],
+        "beta3": [14, 12]
+      },
+      "response_matrix": [
+        [[0, 1], [1, 0], [2, 3], [3, 2], [4, 5]],
+        [[1, 0], [2, 3], [3, 2], [4, 5], [0, 1]],
+        [[2, 3], [3, 2], [4, 5], [0, 1], [1, 0]],
+        [[3, 2], [4, 5], [0, 1], [1, 0], [2, 3]],
+        [[4, 5], [0, 1], [1, 0], [2, 3], [3, 2]]
+      ],
+      "linear_response_residuals": [[14, 12], [10, 11], [8, 9], [2, 3], [4, 5]],
+      "repair_velocity": {
+        "Uz1": [2, 3],
+        "Utheta1": [11, 14],
+        "F1": [14, 12],
+        "physical_radius": 1,
+        "log_R_over_Rc": 2
+      },
+      "moments": {"m15": [14, 12]},
+      "segments": {"preRp": {"m15": [8, 9]}}
+    },
+    "expected_nodes_digest": "976e8bf2db3a9bfe0785997a872db36c945944f89c0cfbd7ad98197a3731f1dd",
+    "query": {"Z": "371/1000", "x": 2}
+  },
+  "expected": {
+    "delta_nodes": [
+      {"operation": "sum", "arguments": [18, 6], "metadata": {"source_index": 10}, "literal_integer": 1010},
+      {"operation": "product", "arguments": [20, 7], "metadata": {"source_index": 11}, "literal_integer": 1011},
+      {"operation": "negative", "argument": 21, "metadata": {"source_index": 12}, "literal_integer": 1012},
+      {"operation": "analytic_unary", "argument": 22, "name": "identity", "metadata": {"source_index": 13}, "literal_integer": 1013},
+      {"operation": "sum", "arguments": [19, 23], "metadata": {"source_index": 14}, "literal_integer": 1014}
+    ],
+    "delta_node_count": 5,
+    "mapping": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 18, "9": 19, "10": 20, "11": 21, "12": 22, "13": 23, "14": 24},
+    "updated_bindings": {
+      "coefficients": {
+        "alpha1": [2, 3],
+        "alpha2": [4, 5],
+        "beta1": [20, 24],
+        "beta2": [21, 24],
+        "beta3": [24, 22]
+      },
+      "response_matrix": [
+        [[0, 1], [1, 0], [2, 3], [3, 2], [4, 5]],
+        [[1, 0], [2, 3], [3, 2], [4, 5], [0, 1]],
+        [[2, 3], [3, 2], [4, 5], [0, 1], [1, 0]],
+        [[3, 2], [4, 5], [0, 1], [1, 0], [2, 3]],
+        [[4, 5], [0, 1], [1, 0], [2, 3], [3, 2]]
+      ],
+      "linear_response_residuals": [[24, 22], [20, 21], [18, 19], [2, 3], [4, 5]],
+      "repair_velocity": {
+        "Uz1": [2, 3],
+        "Utheta1": [21, 24],
+        "F1": [24, 22],
+        "physical_radius": 1,
+        "log_R_over_Rc": 2
+      },
+      "moments": {"m15": [24, 22]},
+      "segments": {"preRp": {"m15": [18, 19]}}
+    },
+    "new_graph_digest": "3e9533184b89f240b35044c68b6b42bacba136aadaf201d7203e9b935cc228e1",
+    "new_graph_node_count": 25,
+    "toy_graph_evaluation": {
+      "old_rhs_8": 7,
+      "old_rhs_9": 11,
+      "corrected_rhs_18": 6,
+      "corrected_rhs_19": 10,
+      "beta1_before": -7,
+      "beta1_after": -6,
+      "swirl_Utheta1_before": 11,
+      "swirl_Utheta1_after": 10,
+      "F1_before": -43,
+      "F1_after": -38,
+      "alpha1_unchanged": true,
+      "alpha2_unchanged": true,
+      "Uz1_unchanged": true,
+      "response_matrix_unchanged": true
+    }
+  },
+  "proof": {
+    "replacement_threshold": 8,
+    "replacement_ports_in_prefix": true,
+    "recursion_stops_at_replacements": true,
+    "recursion_stops_below_threshold": true,
+    "arithmetic_schemas": ["sum", "product", "negative", "positive_quotient", "analytic_unary"],
+    "metadata_indices_preserved": true,
+    "literal_integers_are_not_rewritten": true,
+    "optional_roots_are_caller_supplied": true,
+    "preRp_not_inferred_from_full_replacement": true
+  },
+  "checks": {
+    "fresh_moderate_dag": true,
+    "independent_arithmetic_before_after": true,
+    "canonical_digest_guard": true,
+    "forward_reference_guard": true,
+    "unsupported_operation_guard": true,
+    "cycle_guard": true,
+    "graph_input_unmutated": true,
+    "binding_input_unmutated": true,
+    "cache_query_guard_no_arithmetic": true,
+    "no_saved_inputs_or_ancestors_loaded": true,
+    "no_new_source_terms": true,
+    "no_old_numerics_transferred": true
+  },
+  "api": {
+    "rebind": "openai_ns_reconstruction.original_corrected_own_swirl_provider.rebind",
+    "provider": "openai_ns_reconstruction.original_corrected_own_swirl_provider.CorrectedOwnSwirlProvider",
+    "evaluate_point": "Z=Fraction(371, 1000), x=2"
+  },
+  "sourcechecks": {
+    "module_sha256": "dab9e9975a6e381b286b8b05b4850400d74540ae1c71815162162ce88dc92e6b",
+    "ast_parse": true,
+    "lf_only": true,
+    "single_final_lf": true,
+    "utf8": true
+  },
+  "scope": {
+    "actual_saved_data_produced": false,
+    "accepted_ancestor_replayed": false,
+    "numeric_Utheta1_evaluated": false,
+    "numeric_F1_evaluated": false,
+    "global_closure": false,
+    "provider_default_chain_reconfigured": false,
+    "cached_response_is_data_only": true,
+    "source_function_rebinding_only": true
+  }
+}

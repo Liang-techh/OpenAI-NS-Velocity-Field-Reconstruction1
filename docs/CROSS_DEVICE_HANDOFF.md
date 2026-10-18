@@ -1,3 +1,17 @@
+# Corrected own-swirl C1 source/provider - 2026-10-18
+
+Read [CURRENT_ORIGINAL_CORRECTED_OWN_SWIRL_PROVIDER_2026_10_18.md](CURRENT_ORIGINAL_CORRECTED_OWN_SWIRL_PROVIDER_2026_10_18.md) first. Corrected full m15 now propagates
+through all three beta coefficients to Utheta1/F1 in a new53,580-node C1
+source graph (80 new rows). Alpha1/2, Uz1 and response matrix remain the
+same roots. A data-only provider exposes the accepted corrected response
+at exact Z=371/1000,x=2 without recomputation. One existing reserved source
+slot is overridden;212 forward terms/six channels/all errors remain.
+The legacy default chain is not reconfigured; numeric Utheta1/F1 and the
+current Rm-to-Rp germ/numeric join remain open. NEXT prove that join on a
+common Z domain, then propagate the corrected provider through it. Do not
+add old table samples or repeat accepted production/fixtures. Goal ACTIVE /
+INCOMPLETE; no five-moment functional or full-NS closure claim.
+
 # Corrected reserved m15 source and point comparison - 2026-10-18
 
 Read [CURRENT_ORIGINAL_CORRECTED_RESERVED_M15_2026_10_18.md](CURRENT_ORIGINAL_CORRECTED_RESERVED_M15_2026_10_18.md) first. The new physical source adapter
