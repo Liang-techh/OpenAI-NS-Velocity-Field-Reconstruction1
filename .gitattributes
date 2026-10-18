@@ -107,3 +107,7 @@ scripts/run_original_native_directed_controls_v2.py -text
 scripts/run_original_directed_loop_controls.py -text
 scripts/run_original_directed_finite_N_controls.py -text
 experiments/root_st073/original_directed_finite_N_incoming_audit.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/run_original_directed_Rm_controls.py -text
+experiments/root_st073/original_directed_post_restore_mixed_native_fixture.json -text
+experiments/root_st073/original_directed_post_restore_mixed_loop_fixture.json -text
+experiments/root_st073/original_directed_Rm_endpoint_fixture.json -text

@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "B_phi_derivatives_from_full_mixed_product": true,
+    "cosine_free_angle_0_through_4_cap_one": true,
+    "cosine_other_mixed_rows_exact_zero": true,
+    "inverse_proof_passed": true,
+    "mixed_composition_y1Z3": true,
+    "mixed_inverse_y1Z3": true,
+    "mixed_phase_y1Z3_present": true,
+    "no_value_cap_differentiation_claim": true,
+    "nonunit_implicit_phase": true,
+    "normalized_inverse_y1Z3": true,
+    "ordinary_factorials_restored": true,
+    "phase_chain_free_angle_rows_retained": true,
+    "shared_y0_algebra_recalculated_for_new_grid": true,
+    "sharp_B_phi_value_contains_5_over_4": true,
+    "zero_b_post_restore": true
+  },
+  "composed_y1Z3": "-45/8",
+  "cosine_free_angle_cap": "ln(1)=0",
+  "cosine_free_angle_orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "derivative_rows_not_sharpened": true,
+  "inverse_y1Z3": "-3/8",
+  "module_sha256": "770c81fc856e60dfaafbba48c06c3dbd002c59c2d5e7da2d1246ac7ffc6b92c3",
+  "normalized_inverse_y1Z3": "-1/16",
+  "ordinary_Z_orders": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "passed": true,
+  "phase_chain_free_angle_rows_retained": true,
+  "phase_expression": "psi*(y*z**3 + y + z + 2) + y*z**3 + y + 2*z",
+  "phase_intermediate_row_count": 24,
+  "physical_y_orders": [
+    0,
+    1
+  ],
+  "saved_production_native_report": false,
+  "shared_y0_algebra_recalculated_for_new_grid": true,
+  "shared_y0_recalculation_scope": "new mixed y0/Z and total-order-four free-angle phase algebra only; saved Z-only/public y0 rows remain input receipts",
+  "sharp_B_phi_value": "5/4 times |a| times E/E0",
+  "source_packet_required_for_compute": true,
+  "target_expression": "psi**2*y + psi*(y + z + 1) + y*z**3 + y + 2*z + 3"
+}

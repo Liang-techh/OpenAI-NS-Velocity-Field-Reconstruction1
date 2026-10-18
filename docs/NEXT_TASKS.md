@@ -1,3 +1,14 @@
+# Directed mixed physical-y and Rm endpoint - 2026-10-18
+
+Read [CURRENT_ORIGINAL_DIRECTED_RM_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_RM_CONTROLS_2026_10_18.md) first. New post-restore y0/y1 times Z0..Z3
+and Rm endpoint data are saved. Combined endpoint C1 local target:
+FALSE. Signed native rows, all inherited errors and the external
+-Rm Qy coefficient -1 remain. No global terminal functional closure.
+
+NEXT same-source signed endpoint/derivative correlation and pressure joins,
+then independent reserved/full-pulse m15 matching. Preserve 212/six/errors.
+Goal ACTIVE / INCOMPLETE. No accepted mathematical construction replay.
+
 # Directed finite-N transport - 2026-10-18
 
 Read [CURRENT_ORIGINAL_DIRECTED_FINITE_N_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_FINITE_N_CONTROLS_2026_10_18.md) first. New four-chart ordinary-C1 six-I1/B

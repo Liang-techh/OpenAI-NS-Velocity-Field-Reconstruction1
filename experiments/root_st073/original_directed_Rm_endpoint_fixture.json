@@ -1,0 +1,73 @@
+{
+  "C1_numerator_Z0": "4683439/1501500",
+  "N": "13",
+  "Pstar_E0": "7",
+  "Z": "1/5",
+  "checks": {
+    "C1_numerator_cap_contains_direct": true,
+    "deltaMy_logcaps_contain_signed_difference": true,
+    "deltaQy_logcaps_contain_sympy_Z0_Z1": true,
+    "deltaUy_logcaps_contain_signed_source": true,
+    "fast_term_would_change_if_divided_by_N": true,
+    "fast_terms_match_rational_ln_without_N": true,
+    "fresh_context_prec_260": true,
+    "positive_L_lower": true,
+    "q1_cap_contains_split_terms": true,
+    "q1_denominator_correction_nonzero": true,
+    "q1_denominator_receipt": true,
+    "q1_split_formula_matches_direct_diff": true,
+    "signed_deltaMy_difference_retained": true,
+    "slow_terms_match_rational_ln": true,
+    "sympy_direct_diff_Z0_matches_rational": true,
+    "sympy_direct_diff_Z1_matches_rational": true
+  },
+  "context_precision": 260,
+  "delta": "1/11",
+  "deltaQy_Z1_naive_n1_over_L": "4683439/1496040",
+  "deltaQy_Z1_numerator_n1": "4683439/1501500",
+  "deltaQy_Z1_split_formula": "215134551/68319160",
+  "deltaQy_direct_sympy": [
+    "53893/106860",
+    "215134551/68319160"
+  ],
+  "deltaUy": [
+    "53/39",
+    "119/104",
+    "112/117",
+    "217/260"
+  ],
+  "fast_phi_y0": [
+    "1/7",
+    "1/8",
+    "1/9",
+    "1/10"
+  ],
+  "module_sha256": "6bf8bfa91a8c3a54a12bf43199fc5f52b37662f136ef83b73118110b6000dbb9",
+  "passed": true,
+  "q1_denominator_derivative_correction_included": true,
+  "schema": "directed_Rm_endpoint_rational_fixture_v2",
+  "signed_deltaM": [
+    "1/50",
+    "1/60",
+    "1/70",
+    "1/80"
+  ],
+  "signed_deltaMy": [
+    "1/20",
+    "1/30",
+    "2/105",
+    "1/80"
+  ],
+  "signed_deltaU": [
+    "7/100",
+    "1/20",
+    "1/30",
+    "1/40"
+  ],
+  "slow_y1": [
+    "2/3",
+    "1/2",
+    "1/3",
+    "1/4"
+  ]
+}
