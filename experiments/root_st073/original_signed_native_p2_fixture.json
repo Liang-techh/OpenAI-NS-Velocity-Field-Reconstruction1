@@ -1,0 +1,37 @@
+{
+  "accepted_owner_checker_fixture_recurrence_quadrature_called": false,
+  "accepted_report_read": false,
+  "checks": {
+    "Pstar_applied_once": true,
+    "R_constant": true,
+    "cap_values_not_promoted": true,
+    "directed_iv_contains_signed_rational": true,
+    "dominant_signed_centre_not_selected": true,
+    "exact_Z0_Z1_rows": true,
+    "exact_factorization": true,
+    "exact_normalization": true,
+    "nonzero_F0_Z": true,
+    "ordinary_Z_orders": true,
+    "preflight": true,
+    "scaled_coefficient_exact": true,
+    "scaled_hydro_uses_only_Z0_Z1": true,
+    "scaled_physical_P0_no_double_Pstar": true,
+    "signed_b_c_Z2": true,
+    "source_values_are_signed": true
+  },
+  "decomposition_preserved": true,
+  "materialized": true,
+  "module_sha256": "17b3fda3a8e4bcdf732557cc5ea391deff98ad3d456e5707abe2504c823b5a84",
+  "ordinary_Z_orders": [
+    0,
+    1
+  ],
+  "passed": true,
+  "preflight": {
+    "lf_only": true,
+    "passed": true,
+    "path": "C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/src/openai_ns_reconstruction/original_signed_native_p2_kernel.py",
+    "single_eof_newline": true
+  },
+  "source_phi_identity": "phi=Utheta/(F0*sqrt(2*R)); R*F0^2*phi^2=Utheta^2/2"
+}

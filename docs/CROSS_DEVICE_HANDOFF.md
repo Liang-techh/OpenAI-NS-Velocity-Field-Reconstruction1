@@ -1,3 +1,15 @@
+# Signed native A/b/c and p2 source - 2026-10-18
+
+Read [CURRENT_ORIGINAL_SIGNED_NATIVE_SOURCES_2026_10_18.md](CURRENT_ORIGINAL_SIGNED_NATIVE_SOURCES_2026_10_18.md) first. New certified gamma2 and signed
+post-restore A/b/c ordinaryZ0..2 are installed. Actual native p2 now has a
+signed scaled ordinary-C1 enclosure, negative on the strict Z/post domain.
+All inlet memories, independent p0 and physical scales remain.
+
+NEXT scaled/limiting same-source phase contraction with signed p2_Z/p2,
+then pressure joins and independent reserved/full-pulse m15 matching.
+Inherited Rm C1 endpoint diagnostic FALSE, not recomputed. Preserve212/six/errors.
+Goal ACTIVE / INCOMPLETE. No accepted ancestor math replay.
+
 # Correlated fast-phase C1 and closed phase - 2026-10-18
 
 Read [CURRENT_ORIGINAL_FAST_PHI_CORRELATED_C1_2026_10_18.md](CURRENT_ORIGINAL_FAST_PHI_CORRELATED_C1_2026_10_18.md) first. New signed derivative source and

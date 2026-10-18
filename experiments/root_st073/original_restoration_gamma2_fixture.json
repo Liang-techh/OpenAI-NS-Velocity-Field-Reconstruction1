@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "module_sha256": "c6663728251083fd41f47f45bffa486d91b3a0231e9993799d3f139c64d3af1c",
+  "actual_gamma2_evaluated": false,
+  "source_audit": {
+    "passed": true,
+    "existing_named_gamma2_modules": [],
+    "sigma_definition": "sigma(0)=0, sigma(1)=1, and for 0<s<1: r/(1+r), r=exp(1/(1-s)^2-1/s^2) on s<=1/2; sigma(s)=1-sigma(1-s) on s>=1/2",
+    "c6_sigma_wrapper": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py",
+      "byte_sha256": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+      "function_ast_sha256": "a9df99a3783719da28584631da2d5e8a167ef888ae2563c899372da72a7e5f3a"
+    },
+    "c6_bridge_sigma_wrapper": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py",
+      "byte_sha256": "8ab2c26092db06453ed5a6047d8905e37fdad17eaf9c4947048498551425c605",
+      "function_ast_sha256": "2af2f63ffb2bfb84827a55a00e0b62949de957aa035e65bc126271783ffd18a9"
+    },
+    "gamma_sigma": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_Gamma_future_functions.py",
+      "byte_sha256": "38d3a8e5abd964c42b135410485f6ad58dfe9f7656035b4b5c7b1ed48c2ebb01",
+      "function_ast_sha256": "bbd2218c3596eccaa669f9e0edf45271cf5a70b73f78a7c2caf39bf1d4842f9f"
+    },
+    "stable_sigma_provider": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_outer_initial.py",
+      "byte_sha256": "a8bc21feb4a2565f976b450f1e4f593180d6eff343e572c31e83117020779657",
+      "function_ast_sha256": "18bc4da4c4af6cfc4ae3268b803ef1e402d40150215901827523883397a4a35c"
+    },
+    "flat_sigma_left": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_flat_pulse_derivatives.py",
+      "byte_sha256": "32f51123a47c2bafbb6c2f7056302bab996a019883615333875207d72a9bb7d7",
+      "function_ast_sha256": "7938664874d3bbd227d0847d4018d019df44484692e88a1657b866bd66c46188"
+    },
+    "flat_sigma_jets": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_flat_pulse_derivatives.py",
+      "byte_sha256": "32f51123a47c2bafbb6c2f7056302bab996a019883615333875207d72a9bb7d7",
+      "function_ast_sha256": "9b16b8141a650fa5f8e57ababdd6a9dc6390b7867f4735fc9ae51ba8f0a1c4d9"
+    }
+  },
+  "sigma_source_validation": {
+    "passed": true,
+    "endpoint_values": {
+      "0": "0",
+      "1": "1"
+    },
+    "range": "0<=sigma<=1",
+    "symmetry": "sigma(s)+sigma(1-s)=1",
+    "sample_points": [
+      "0.125",
+      "0.25",
+      "0.5",
+      "0.75",
+      "0.875"
+    ]
+  },
+  "rational_poly_kernel": {
+    "passed": true,
+    "polynomial": "1+2*x+3*x^2+4*x^3+5*x^4",
+    "simpson_coefficients": [
+      "1/6",
+      "4/6",
+      "1/6"
+    ],
+    "simpson_value": "121/24",
+    "exact_integral": "5",
+    "fourth_derivative_interval": [
+      "120.0",
+      "120.0"
+    ],
+    "remainder_bound": "1/24",
+    "ordinary_derivative_factorial": {
+      "fourth_derivative": "120",
+      "coefficient_times_factorial": "5*4! = 120"
+    }
+  },
+  "integrator": {
+    "fresh_integrand": "exp(s-1)*(1-sigma(s))^2",
+    "jet_order": 4,
+    "remainder": "length^5/2880*sup_interval_abs(f^(4))",
+    "tail_bound": "0<=h<=1 on endpoint tails",
+    "tail_error_retained": true,
+    "directed_interval_records": true,
+    "error_sums_use_interval_arithmetic": true,
+    "final_width_compare": "directed width upper <= directed tolerance lower",
+    "default_tolerance": "1e-8",
+    "delta_rule": "min(2^-40,tolerance/4), with directed endpoint tail recomputation",
+    "actual_integral_not_run": true
+  }
+}
