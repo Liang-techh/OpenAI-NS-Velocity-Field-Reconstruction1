@@ -1,0 +1,116 @@
+{
+  "schema": "Rm_pressure_inlet_identity_synthetic_fixture_v1",
+  "case": {
+    "description": "Fresh bounded exact-source toy DAG for current Rm pressure component, finite patch Rm seam, and Rh increment.",
+    "node_count": 66,
+    "common_prefix_count": 27,
+    "ordinary_Z_orders": [0, 1],
+    "source_formula": "Phi15=1/2*S1-(RQy-RQy_initial)",
+    "patch_lower_integral": "S1_current + integral(lower=1, upper=patch_coordinate)",
+    "patch_Rh_increment": "1/2*patchLocalS1_Rh-patchRQy_Rh+patchRQy_Rm",
+    "boundary_atoms_are_distinct": true,
+    "metadata": {
+      "integral_metadata": {
+        "kept": true,
+        "toy_order": "0 or 1"
+      },
+      "preserved_without_rewrite": true
+    }
+  },
+  "expected": {
+    "current_m15_terms": {
+      "S1": "1/2",
+      "RQy": "-1",
+      "initialRQy": "1"
+    },
+    "patch_m15_Rm_terms": {
+      "S1": "1/2",
+      "patchRQy_Rm": "-1",
+      "initialRQy": "1"
+    },
+    "patch_lower_S1": "S1_current",
+    "functional_defect": "current_RQy-patch_RQy",
+    "rh_increment_terms": {
+      "patchLocalS1_Rh": "1/2",
+      "patchRQy_Rh": "-1",
+      "patchRQy_Rm": "1"
+    }
+  },
+  "toy_harness": {
+    "passed": true,
+    "command": "PowerShell inline Python: @' <fresh synthetic DAG harness> '@ | python -",
+    "command_entrypoint": "python -",
+    "saved_graphs_loaded": false,
+    "actual_prove_run_on_saved_graph": false,
+    "source_sha256": "ef554c0e4b6d3c6e20c90b1165984dfe0347004f51d64e7bfc31d54ceb8aeda8",
+    "tool_model_metadata": null,
+    "result": {
+      "passed": true,
+      "equal_bound_integral_ids": [29, 48],
+      "equal_bound_integral_reductions": [
+        {"node": 29, "reduced": {"constant": "0", "terms": {}}},
+        {"node": 48, "reduced": {"constant": "0", "terms": {}}}
+      ],
+      "functional_defect": [
+        {"RQy[0]": "1", "patchRQy[Rm,0]": "-1"},
+        {"RQy[1]": "1", "patchRQy[Rm,1]": "-1"}
+      ],
+      "patch_Rh_increment": [
+        {"patchLocalS1[Rh,0]": "1/2", "patchRQy[Rh,0]": "-1", "patchRQy[Rm,0]": "1"},
+        {"patchLocalS1[Rh,1]": "1/2", "patchRQy[Rh,1]": "-1", "patchRQy[Rm,1]": "1"}
+      ],
+      "sum_ftc_cancellation": true,
+      "distinct_boundary_defect_survives": true,
+      "equal_bound_integral_zero": true,
+      "metadata_preserved": true,
+      "badhandle_guard": true,
+      "unsupported_guard": true,
+      "partial_Rh_guard": true,
+      "input_unmutated": true,
+      "no_numeric_evaluation": true,
+      "pressure_component_only": true,
+      "full_m15_or_velocity_germ_join": false
+    }
+  },
+  "checks": {
+    "exact_fraction_linear_reduction": true,
+    "current_and_patch_m15_forms_checked_for_orders_0_1": true,
+    "equal_bound_integrals_discharge_before_integrand": true,
+    "distinct_boundary_handles_not_cancelled": true,
+    "rh_same_source_increment_exposed": true,
+    "backward_DAG_guard": true,
+    "prefix_cannot_depend_on_patch_coordinate": true,
+    "protected_source_atoms_and_metadata_preserved": true,
+    "badhandle_guard": true,
+    "unsupported_operation_guard": true,
+    "partial_Rh_guard": true,
+    "graph_input_unmutated": true,
+    "no_numeric_caps_or_values": true,
+    "old_212_and_other_n1_sectors_untouched": true,
+    "own_swirl_added": false
+  },
+  "certificate_labels": {
+    "RQy_identity_proved": false,
+    "full_germ_join": false,
+    "pressure_component_only": true,
+    "full_m15_or_velocity_germ_join": false,
+    "physical_sign": "current_RQy-patch_RQy",
+    "ordinary_Z1_factorial_applied": false,
+    "tool_model_metadata_present": false
+  },
+  "sourcechecks": {
+    "module_sha256": "ef554c0e4b6d3c6e20c90b1165984dfe0347004f51d64e7bfc31d54ceb8aeda8",
+    "ast_parse": true,
+    "lf_only": true,
+    "single_final_lf": true,
+    "utf8": true
+  },
+  "scope": {
+    "actual_saved_data_produced": false,
+    "accepted_ancestor_replayed": false,
+    "old_numerics_run": false,
+    "full_velocity_germ_identity_claimed": false,
+    "boundary_RQy_identity_claimed": false,
+    "source_function_reduction_only": true
+  }
+}

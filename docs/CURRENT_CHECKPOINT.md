@@ -1,3 +1,16 @@
+# Actual Rm pressure inlet identity - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_PRESSURE_INLET_IDENTITY_2026_10_18.md](CURRENT_ORIGINAL_RM_PRESSURE_INLET_IDENTITY_2026_10_18.md) first. New exact-source C1 reduction proves
+Phi15_patch(Rm)-Phi15_current(Rm)=RQy_current-RQy_patch, cancelling only the
+identical S1/initial functions. The two RQy atoms remain independent.
+New Rm->Rh pressure increment is half localS1-RQy_Rh+RQy_patch_Rm.
+These are pressure components, not complete m15 or a velocity-germ join.
+No new numeric evaluation;212/six channels/all errors/one reserved retained.
+NEXT prove actual Rm modified seed and native-jet aliases, then the loop/
+physical map. Rh-reference and quiet active seam gates also remain open.
+Do not repeat accepted producers, this reducer or completed fixtures.
+Goal ACTIVE / INCOMPLETE; no five-moment or full-NS closure claim.
+
 # Corrected own-swirl C1 source/provider - 2026-10-18
 
 Read [CURRENT_ORIGINAL_CORRECTED_OWN_SWIRL_PROVIDER_2026_10_18.md](CURRENT_ORIGINAL_CORRECTED_OWN_SWIRL_PROVIDER_2026_10_18.md) first. Corrected full m15 now propagates
