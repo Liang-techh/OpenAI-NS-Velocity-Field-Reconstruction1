@@ -1,0 +1,27 @@
+{
+  "schema": "unaccepted_Rm_canonical_expansion_supersession_v1",
+  "recorded_at_utc": "2026-10-18T18:51:58.906886+00:00",
+  "terminal_state_confirmed": true,
+  "termination_action": "Root explicitly Stop-Process on verified PID30068/command/creation time after accepted four-pair replacement; no timeout inference",
+  "old_exec_session_id": 17273,
+  "old_process_id": 30068,
+  "old_exec_terminal_exit_code": 1,
+  "old_result_present": false,
+  "original_mathematical_result_transferred": false,
+  "original_attempt_snapshot": "experiments/root_st073/original_Rm_slow_canonical_expansion_attempt.json",
+  "original_attempt_snapshot_sha256": "53327015c5779c388c6becc18d6727ac90441d3b4bca44840dbda8e502d3ed66",
+  "replacement_result_sha256": "a36b1e35cbf1697d974a9b06beadf55750c5b8270846c7831e79ce69497a930f",
+  "replacement_source_sha256": "1ad44c3426daad06d66ce46c909c2164945601372ba28efc31c7af90a9e7d96c",
+  "replacement_entry_sha256": "0cc3a63218aed6e897d5b6ff2ecda52a382249ac2dcd05f1b83bc3295a9182ee",
+  "replacement_passed_pairs": 4,
+  "pre_stop_observation": {
+    "process_id": 30068,
+    "command_line": "\"C:\\Users\\z5242\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" scripts/run_original_Rm_slow_native_value_seam.py --slow-seam",
+    "started_at_utc": "2026-10-18T17:08:06.5276160Z",
+    "observed_at_utc": "2026-10-18T18:51:19.0408015Z",
+    "original_result_present": false,
+    "action": "explicitly supersede unaccepted canonical expansion after four new constructor VALUE pairs passed and saved-only inspection passed",
+    "accepted_replacement_result_sha256": "a36b1e35cbf1697d974a9b06beadf55750c5b8270846c7831e79ce69497a930f"
+  },
+  "full_goal_complete": false
+}
