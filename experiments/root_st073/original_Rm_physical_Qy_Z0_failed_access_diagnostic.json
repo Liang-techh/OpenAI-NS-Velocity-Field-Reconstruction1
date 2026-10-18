@@ -1,0 +1,33 @@
+{
+  "schema": "Rm_physical_Qy_Z0_static_failure_diagnostic_v1",
+  "diagnosed_at_utc": "2026-10-18T18:59:27.880331+00:00",
+  "reviewer": "/root/rm_control_native_contract",
+  "math_calls": 0,
+  "source_kernel_sha256": "3a6cb37c906d660ddf96758ed0612933fdba3d35772f58a5b14e4749ff66095f",
+  "physical_input_digest": "081b95e2df85e4f9573d31277db95e009e181a08ab6d84f0a02703b407ea1195",
+  "failed_result_sha256": "1c81070ddeaaa9de48a14f4d09a803c332dd1cf9907fcb9469aada79787f95f3",
+  "error_type": "KeyError",
+  "error": "'postrestore'",
+  "exact_failing_statement_identified": false,
+  "traceback_saved": false,
+  "saved_shape_observations": {
+    "loop_rows": 22,
+    "moment_rows": 10,
+    "radial_rows": 4,
+    "all_rows_have_both_side_keys": true,
+    "source_bindings_have_both_sides": true,
+    "postrestore_has": [
+      "radial",
+      "physical"
+    ],
+    "patch_has": [
+      "chart",
+      "radial",
+      "physical"
+    ]
+  },
+  "conclusion": "No input packet-shape mismatch evidenced; do not rekey bindings or weaken checks.",
+  "next_action": "Create separately checkpointed physical-only diagnostic consumer that captures full traceback around first failed access, consuming already accepted radial data without replaying slow/radial operators.",
+  "candidate_only": "source[ports][side] at frozen kernel line763; other naked side accesses at960/977/995; no exact statement asserted.",
+  "full_goal_complete": false
+}

@@ -1,3 +1,13 @@
+# Actual Rm radial VALUE seam passed; Q_y access gate - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_MODIFIED_RADIAL_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_MODIFIED_RADIAL_VALUES_2026_10_18.md) first. Four total E_y/V_y ordinary-Z0/Z1
+function pairs passed in0.6034s. Physical Q_y Z0 entered once and stopped on
+KeyError('postrestore'); preserve that failed attempt and diagnose its
+first failed access with full traceback; saved input shapes are consistent. Never replay accepted slow/radial operators.
+Original session17273 is explicitly terminated/superseded, not live.
+Q_y Z0/Z1/full RQ_y and global five remain open. All212/errors/one reserved
+retained. Goal ACTIVE / INCOMPLETE.
+
 # Actual Rm structural VALUE attempt - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_LITERAL_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_LITERAL_VALUES_2026_10_18.md) first. One new constructor consumer

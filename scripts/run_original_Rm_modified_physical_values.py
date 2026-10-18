@@ -20,8 +20,8 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "experiments/root_st073"
 PREFIX = "lei_ren_part1_paper_compliant_current_original_"
-PARENT = PREFIX + "Rm_slow_native_value_seam.json"
-PARENT_HASH = None  # Filled only after the existing live result is admitted.
+PARENT = PREFIX + "Rm_slow_native_literal_values.json"
+PARENT_HASH = "24e1850a6f5793827a13c1b1496060a6a4b5167bd97b2bde21a43e41d3bab535"  # Published four-pair constructor proof, commit7e2ceb3c.
 FINITE = PREFIX + "true_Rm_patch_finite_N_C5_functions.json.gz"
 FINITE_HASH = "8f3bc343e9dbffbdda465ce94d6183735184645a70e291cb900d3cde726769ad"
 MODIFIED = PREFIX + "modified_Q4_pressure_C3_functions.json.gz"
