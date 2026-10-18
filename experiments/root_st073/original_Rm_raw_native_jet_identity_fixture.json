@@ -1,0 +1,1816 @@
+{
+  "schema": "Rm_raw_native_jet_identity_fixture_v1",
+  "case": "distinct_moderate_toy_dag_E_times_V_order_two_expression_alias_zero_union_v2",
+  "source_only": true,
+  "nodes": [
+    {
+      "operation": "exact_rational",
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "1",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "2",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "1",
+      "denominator": "2"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "-3",
+      "denominator": "2"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "2",
+      "denominator": "1"
+    },
+    {
+      "operation": "exact_rational",
+      "numerator": "-1",
+      "denominator": "2"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "postrestore_phase"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "finite_x"
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 9,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 11,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 13,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 15,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 17,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 19,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 21,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 23,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 25,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 27,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 29,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 31,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_m_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 33,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_m_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 35,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_m_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 37,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_m_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 39,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_m_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 41,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_m_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 43,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_h_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 45,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_h_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 47,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_h_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 49,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_h_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 51,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_h_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 53,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_h_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 55,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_k_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 57,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_k_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 59,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_k_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 61,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_k_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 63,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_k_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 65,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_k_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 67,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_e_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 69,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_e_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 71,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_e_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 73,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_e_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 75,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_e_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 77,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_e_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 79,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_p_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 81,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_p_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 83,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_p_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 85,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_p_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 87,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_p_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 89,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_p_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 91,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_P0_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 93,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_P0_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 95,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_P0_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 97,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_P0_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 99,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_P0_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 101,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_P0_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 103,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_pressure_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 105,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_pressure_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 107,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_pressure_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 109,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_pressure_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 111,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_pressure_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 113,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_pressure_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 115,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_y_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 117,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_y_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 119,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_y_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 121,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_y_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 123,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_E_y_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 125,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_E_y_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 127,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_y_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 129,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_y_0"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 131,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_y_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 133,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_y_1"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 135,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "left_source_V_y_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 137,
+      "variable": 7,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "bound_variable",
+      "name": "right_source_V_y_2"
+    },
+    {
+      "operation": "function_substitution",
+      "expression": 139,
+      "variable": 8,
+      "value": 1,
+      "Z_independent_substitution": true
+    },
+    {
+      "operation": "negative",
+      "argument": 34
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        22,
+        141
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        46
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        10,
+        143
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        10,
+        22
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        22,
+        22
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        10,
+        10
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        58
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        145,
+        148
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        147
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 70
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        146,
+        150,
+        151
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        147
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 38
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        26,
+        154
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        50
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        14,
+        156
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        10,
+        26
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        14,
+        22
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        158,
+        159
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        22,
+        26
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        10,
+        14
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        62
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        160,
+        163
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        162
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 74
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        161,
+        165,
+        166
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        162
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 42
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        30,
+        169
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        54
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        18,
+        171
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        10,
+        30
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        14,
+        26
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        18,
+        22
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        173,
+        174,
+        175
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        22,
+        30
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        26,
+        26
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        177,
+        178
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        10,
+        18
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        14,
+        14
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        180,
+        181
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        66
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        176,
+        183
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        182
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 78
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        179,
+        185,
+        186
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        182
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 36
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        24,
+        189
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        48
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        12,
+        191
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        12,
+        24
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        24,
+        24
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        12,
+        12
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        60
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        193,
+        196
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        195
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 72
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        194,
+        198,
+        199
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        195
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 40
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        28,
+        202
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        52
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        16,
+        204
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        12,
+        28
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        16,
+        24
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        206,
+        207
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        24,
+        28
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        12,
+        16
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        64
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        208,
+        211
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        210
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 76
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        209,
+        213,
+        214
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        210
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 44
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        32,
+        217
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        56
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        20,
+        219
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        12,
+        32
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        16,
+        28
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        20,
+        24
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        221,
+        222,
+        223
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        24,
+        32
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        28,
+        28
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        225,
+        226
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        5,
+        12,
+        20
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        16,
+        16
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        228,
+        229
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        4,
+        68
+      ]
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        224,
+        231
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        6,
+        230
+      ]
+    },
+    {
+      "operation": "negative",
+      "argument": 80
+    },
+    {
+      "operation": "sum",
+      "arguments": [
+        227,
+        233,
+        234
+      ]
+    },
+    {
+      "operation": "product",
+      "arguments": [
+        3,
+        230
+      ]
+    }
+  ],
+  "modified_bindings": {
+    "modified_Q4_pressure_C3_bindings": {
+      "charts": {
+        "postrestore": {
+          "coordinate": 7,
+          "phase": 7,
+          "radial_background": {
+            "E": [
+              118,
+              122,
+              126
+            ],
+            "V": [
+              130,
+              134,
+              138
+            ],
+            "m": [
+              142,
+              155,
+              170
+            ],
+            "h": [
+              144,
+              157,
+              172
+            ],
+            "k": [
+              149,
+              164,
+              184
+            ],
+            "e": [
+              152,
+              167,
+              187
+            ],
+            "p": [
+              153,
+              168,
+              188
+            ],
+            "P0": [
+              0,
+              0,
+              0
+            ],
+            "pressure": [
+              153,
+              168,
+              188
+            ]
+          }
+        }
+      }
+    }
+  },
+  "finite_bindings": {
+    "Rm_patch_finite_N_C5_bindings": {
+      "chart": {
+        "coordinate": 8
+      },
+      "radial_background": {
+        "E": [
+          120,
+          124,
+          128
+        ],
+        "V": [
+          132,
+          136,
+          140
+        ],
+        "m": [
+          190,
+          203,
+          218
+        ],
+        "h": [
+          192,
+          205,
+          220
+        ],
+        "k": [
+          197,
+          212,
+          232
+        ],
+        "e": [
+          200,
+          215,
+          235
+        ],
+        "p": [
+          201,
+          216,
+          236
+        ],
+        "P0": [
+          0,
+          0,
+          0
+        ],
+        "pressure": [
+          201,
+          216,
+          236
+        ]
+      }
+    }
+  },
+  "seed_aliases": [
+    {
+      "field": "E",
+      "order": 0,
+      "left_node": 10,
+      "right_node": 12,
+      "proof_ref": "toy_seed_certificate_v1:E:0"
+    },
+    {
+      "field": "E",
+      "order": 1,
+      "left_node": 14,
+      "right_node": 16,
+      "proof_ref": "toy_seed_certificate_v1:E:1"
+    },
+    {
+      "field": "E",
+      "order": 2,
+      "left_node": 18,
+      "right_node": 20,
+      "proof_ref": "toy_seed_certificate_v1:E:2"
+    },
+    {
+      "field": "V",
+      "order": 0,
+      "left_node": 22,
+      "right_node": 24,
+      "proof_ref": "toy_seed_certificate_v1:V:0"
+    },
+    {
+      "field": "V",
+      "order": 1,
+      "left_node": 26,
+      "right_node": 28,
+      "proof_ref": "toy_seed_certificate_v1:V:1"
+    },
+    {
+      "field": "V",
+      "order": 2,
+      "left_node": 30,
+      "right_node": 32,
+      "proof_ref": "toy_seed_certificate_v1:V:2"
+    },
+    {
+      "field": "m",
+      "order": 0,
+      "left_node": 34,
+      "right_node": 36,
+      "proof_ref": "toy_seed_certificate_v1:m:0"
+    },
+    {
+      "field": "m",
+      "order": 1,
+      "left_node": 38,
+      "right_node": 40,
+      "proof_ref": "toy_seed_certificate_v1:m:1"
+    },
+    {
+      "field": "m",
+      "order": 2,
+      "left_node": 42,
+      "right_node": 44,
+      "proof_ref": "toy_seed_certificate_v1:m:2"
+    },
+    {
+      "field": "h",
+      "order": 0,
+      "left_node": 46,
+      "right_node": 48,
+      "proof_ref": "toy_seed_certificate_v1:h:0"
+    },
+    {
+      "field": "h",
+      "order": 1,
+      "left_node": 50,
+      "right_node": 52,
+      "proof_ref": "toy_seed_certificate_v1:h:1"
+    },
+    {
+      "field": "h",
+      "order": 2,
+      "left_node": 54,
+      "right_node": 56,
+      "proof_ref": "toy_seed_certificate_v1:h:2"
+    },
+    {
+      "field": "k",
+      "order": 0,
+      "left_node": 58,
+      "right_node": 60,
+      "proof_ref": "toy_seed_certificate_v1:k:0"
+    },
+    {
+      "field": "k",
+      "order": 1,
+      "left_node": 62,
+      "right_node": 64,
+      "proof_ref": "toy_seed_certificate_v1:k:1"
+    },
+    {
+      "field": "k",
+      "order": 2,
+      "left_node": 66,
+      "right_node": 68,
+      "proof_ref": "toy_seed_certificate_v1:k:2"
+    },
+    {
+      "field": "e",
+      "order": 0,
+      "left_node": 70,
+      "right_node": 72,
+      "proof_ref": "toy_seed_certificate_v1:e:0"
+    },
+    {
+      "field": "e",
+      "order": 1,
+      "left_node": 74,
+      "right_node": 76,
+      "proof_ref": "toy_seed_certificate_v1:e:1"
+    },
+    {
+      "field": "e",
+      "order": 2,
+      "left_node": 78,
+      "right_node": 80,
+      "proof_ref": "toy_seed_certificate_v1:e:2"
+    },
+    {
+      "field": "p",
+      "order": 0,
+      "left_node": 82,
+      "right_node": 84,
+      "proof_ref": "toy_seed_certificate_v1:p:0"
+    },
+    {
+      "field": "p",
+      "order": 1,
+      "left_node": 86,
+      "right_node": 88,
+      "proof_ref": "toy_seed_certificate_v1:p:1"
+    },
+    {
+      "field": "p",
+      "order": 2,
+      "left_node": 90,
+      "right_node": 92,
+      "proof_ref": "toy_seed_certificate_v1:p:2"
+    },
+    {
+      "field": "P0",
+      "order": 0,
+      "left_node": 94,
+      "right_node": 96,
+      "proof_ref": "toy_seed_certificate_v1:P0:0"
+    },
+    {
+      "field": "P0",
+      "order": 1,
+      "left_node": 98,
+      "right_node": 100,
+      "proof_ref": "toy_seed_certificate_v1:P0:1"
+    },
+    {
+      "field": "P0",
+      "order": 2,
+      "left_node": 102,
+      "right_node": 104,
+      "proof_ref": "toy_seed_certificate_v1:P0:2"
+    },
+    {
+      "field": "pressure",
+      "order": 0,
+      "left_node": 106,
+      "right_node": 108,
+      "proof_ref": "toy_seed_certificate_v1:pressure:0"
+    },
+    {
+      "field": "pressure",
+      "order": 1,
+      "left_node": 110,
+      "right_node": 112,
+      "proof_ref": "toy_seed_certificate_v1:pressure:1"
+    },
+    {
+      "field": "pressure",
+      "order": 2,
+      "left_node": 114,
+      "right_node": 116,
+      "proof_ref": "toy_seed_certificate_v1:pressure:2"
+    },
+    {
+      "field": "E_y",
+      "order": 0,
+      "left_node": 118,
+      "right_node": 120,
+      "proof_ref": "toy_seed_certificate_v1:E_y:0"
+    },
+    {
+      "field": "E_y",
+      "order": 1,
+      "left_node": 122,
+      "right_node": 124,
+      "proof_ref": "toy_seed_certificate_v1:E_y:1"
+    },
+    {
+      "field": "E_y",
+      "order": 2,
+      "left_node": 126,
+      "right_node": 128,
+      "proof_ref": "toy_seed_certificate_v1:E_y:2"
+    },
+    {
+      "field": "V_y",
+      "order": 0,
+      "left_node": 130,
+      "right_node": 132,
+      "proof_ref": "toy_seed_certificate_v1:V_y:0"
+    },
+    {
+      "field": "V_y",
+      "order": 1,
+      "left_node": 134,
+      "right_node": 136,
+      "proof_ref": "toy_seed_certificate_v1:V_y:1"
+    },
+    {
+      "field": "V_y",
+      "order": 2,
+      "left_node": 138,
+      "right_node": 140,
+      "proof_ref": "toy_seed_certificate_v1:V_y:2"
+    }
+  ],
+  "expected_nodes_digest": "447939852b2e608b2f6b1452b3409f8c47940ed65eb4bee3fce0ec83b5f73de7",
+  "seed_proof_digest": "bcf0a6d44d76261ef07e43790c97b56fb3c44332044ab1cc27d8848909381bb1",
+  "expected": {
+    "passed": true,
+    "leading_raw_native_jet_only": true,
+    "modified_finite_N_germ": false,
+    "RQy_identity_proved": false,
+    "ordinary_orders": [
+      0,
+      1,
+      2
+    ],
+    "order_two_product_coefficient": 2
+  },
+  "harness_checkpoint": {
+    "case": "distinct_moderate_toy_dag_E_times_V_order_two_expression_alias_zero_union_v2",
+    "status": "passed_one_time_source_harness",
+    "source_sha256": "cd4b9d76ad3f7424e457e6986d373e87a94fd357e2037d42590073f4b1e867b5",
+    "command": "python -c dynamic_import_fixture_prove_once_v2",
+    "result": {
+      "passed": true,
+      "row_count": 27,
+      "unresolved_gate_count": 0,
+      "source_graph_only": true,
+      "nodes_input_unmutated": true,
+      "metadata_preserved": true
+    }
+  },
+  "prior_harness_checkpoint": {
+    "case": "distinct_moderate_toy_dag_E_times_V_order_two_v1",
+    "status": "passed_one_time_source_harness",
+    "source_sha256": "d22f9e9a581266f6941155f10f5921aa795bdf28a813ba545f9a79c57a3b619a",
+    "command": "python -c dynamic_import_fixture_prove_once",
+    "result": {
+      "passed": true,
+      "row_count": 27,
+      "unresolved_gate_count": 0,
+      "source_graph_only": true,
+      "nodes_input_unmutated": true,
+      "metadata_preserved": true
+    }
+  }
+}

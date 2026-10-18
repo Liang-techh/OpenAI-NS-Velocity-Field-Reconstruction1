@@ -1,3 +1,17 @@
+# Actual leading Rm seed and raw native-y jet - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_LEADING_SEED_NATIVE_JET_2026_10_18.md](CURRENT_ORIGINAL_RM_LEADING_SEED_NATIVE_JET_2026_10_18.md) first. New source admission proves leading
+E,V,m,h,k,e,p,P0,pressure,E_y,V_y through ordinary Z0..2. Original partial
+normalization result stays passed=false (27 proved/3 external/3 pressure
+open); a separate new pressure composition closes only those3 source rows.
+New raw first-native-y consumer proves27 rows. No modified finite-N germ,
+loop phase, physical Q_y/RQ_y equality or numerical velocity is claimed.
+Preserve212/six channels/all errors/one reserved; pressure defect remains.
+NEXT actual generic-root native jets and finite-N history derivatives, then
+loop/physical germ admission. Rh-reference and quiet active seams stay open.
+Do not replay accepted producers, these operators or completed fixtures.
+Goal ACTIVE / INCOMPLETE; no global five-moment/full-NS closure.
+
 # Actual Rm pressure inlet identity - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_PRESSURE_INLET_IDENTITY_2026_10_18.md](CURRENT_ORIGINAL_RM_PRESSURE_INLET_IDENTITY_2026_10_18.md) first. New exact-source C1 reduction proves

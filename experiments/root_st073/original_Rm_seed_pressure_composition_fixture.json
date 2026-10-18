@@ -1,0 +1,154 @@
+{
+  "schema": "Rm_seed_pressure_composition_synthetic_fixture_v1",
+  "consumer": "src/openai_ns_reconstruction/original_Rm_seed_pressure_composition.py",
+  "consumer_sha256": "13a42608cee955c1e4a16e253de2959e718c7c28e056c991496804d80ae89c2b",
+  "seed_report": {
+    "path": "tmp/original_Rm_leading_seed_normalization/new_normalization.json",
+    "sha256": "f0dcd69cc9c6e1ecf332787b49fc8d12fb26e3d934e94b646a43396f4111bd50",
+    "passed": false,
+    "p_and_P0_rows_consumable": true,
+    "pressure_rows_remain_unresolved": true,
+    "pressure_error_nodes": [65555, 65556, 65557]
+  },
+  "preflight": {
+    "ast_parse": true,
+    "utf8": true,
+    "lf_only": true,
+    "one_final_eof": true,
+    "py_compile": true
+  },
+  "toy_harness": {
+    "command": "python -B < scoped direct-body rational guarded-fsub toy>",
+    "passed": true,
+    "source_only": true,
+    "actual_saved_graph_run": false,
+    "actual_saved_graph_loaded": false,
+    "source_graph": {
+      "node_count": 73,
+      "nodes_digest": "61f0c008ec0b1d5a338707437cad55f49ef131df224ace317827400e9b35725"
+    },
+    "ordinary_orders": [0, 1, 2],
+    "fields": [
+      {
+        "field": "pressure",
+        "order": 0,
+        "status": "proved",
+        "patch_node": 23,
+        "inlet_node": 24,
+        "expected": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[0]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[0]", 1]]}
+          ]
+        },
+        "patch": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[0]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[0]", 1]]}
+          ]
+        },
+        "inlet": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[0]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[0]", 1]]}
+          ]
+        }
+      },
+      {
+        "field": "pressure",
+        "order": 1,
+        "status": "proved",
+        "patch_node": 47,
+        "inlet_node": 48,
+        "expected": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[1]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[1]", 1]]}
+          ]
+        },
+        "patch": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[1]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[1]", 1]]}
+          ]
+        },
+        "inlet": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[1]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[1]", 1]]}
+          ]
+        }
+      },
+      {
+        "field": "pressure",
+        "order": 2,
+        "status": "proved",
+        "patch_node": 71,
+        "inlet_node": 72,
+        "expected": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[2]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[2]", 1]]}
+          ]
+        },
+        "patch": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[2]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[2]", 1]]}
+          ]
+        },
+        "inlet": {
+          "terms": [
+            {"coefficient": "1", "monomial": [["atom", "source:P0[2]", 1]]},
+            {"coefficient": "1", "monomial": [["atom", "source:p[2]", 1]]}
+          ]
+        }
+      }
+    ],
+    "exact_reductions": {
+      "blocked_integrals": [],
+      "ancestor_integrands_evaluated": false,
+      "used_nodes": [4, 8, 12, 16, 21, 22, 23, 24, 28, 32, 36, 40, 45, 46, 47, 48, 52, 56, 60, 64, 69, 70, 71, 72],
+      "scoped_body_aliases": 12,
+      "wrapper_aliases_are_guarded": true
+    },
+    "unresolved_gates": [],
+    "seed_partial_packet": {
+      "partial_weights": {
+        "endpoint_zero": ["scoped_beta_0", "scoped_beta_1", "scoped_beta_2"],
+        "normalization_beta": {"status": "opaque"}
+      },
+      "mean_premise": {"status": "external_premise", "rows": [0, 1, 2]},
+      "flat_beta": {"status": "external_premise", "rows": [0, 1, 2]}
+    },
+    "seed_pressure_rows": [
+      {"field": "pressure", "order": 0, "status": "unresolved", "patch_node": 23, "inlet_node": 24, "gate": "ancestor_integral_not_evaluated"},
+      {"field": "pressure", "order": 1, "status": "unresolved", "patch_node": 47, "inlet_node": 48, "gate": "ancestor_integral_not_evaluated"},
+      {"field": "pressure", "order": 2, "status": "unresolved", "patch_node": 71, "inlet_node": 72, "gate": "ancestor_integral_not_evaluated"}
+    ],
+    "scope": {
+      "pressure_only": true,
+      "seed_p_and_P0_consumed": true,
+      "seed_pressure_left_unresolved_until_this_consumer": true,
+      "ancestor_integrals_not_evaluated": true,
+      "no_numeric_evaluation": true,
+      "no_caps_or_midpoints_as_values": true,
+      "nodes_input_unmutated": true
+    },
+    "input_nodes_unchanged": true
+  },
+  "checks": {
+    "fresh_toy_distinct_from_old_seed_toys": true,
+    "guarded_endpoint_substitution_required": true,
+    "body_alias_requires_scoped_variable_exact_one": true,
+    "unequal_bound_integrals_are_not_evaluated": true,
+    "p_and_P0_rows_must_be_proved_in_seed": true,
+    "old_pressure_rows_must_remain_unresolved": true,
+    "pressure_target_is_exact_P0_plus_p": true,
+    "partial_packet_preserved": true,
+    "source_graph_digest_checked": true,
+    "input_graph_immutability_checked": true,
+    "numeric_values_caps_and_midpoints_rejected": true,
+    "actual_saved_graph_not_run_by_consumer": true
+  }
+}

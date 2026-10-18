@@ -143,3 +143,8 @@ scripts/run_original_corrected_own_swirl_provider.py -text
 experiments/root_st073/original_corrected_own_swirl_provider_fixture.json -text
 scripts/run_original_Rm_pressure_inlet_identity.py -text
 experiments/root_st073/original_Rm_pressure_inlet_identity_fixture.json -text
+scripts/run_original_Rm_leading_seed_normalization.py -text
+scripts/run_original_Rm_raw_native_jet_identity.py -text
+experiments/root_st073/original_Rm_leading_seed_normalization_fixture.json -text
+experiments/root_st073/original_Rm_seed_pressure_composition_fixture.json -text
+experiments/root_st073/original_Rm_raw_native_jet_identity_fixture.json -text
