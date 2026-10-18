@@ -1,3 +1,14 @@
+# Physical Q_y ordinary-Z source gate - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_QY_Z_DERIVATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_QY_Z_DERIVATIVE_PROVENANCE_2026_10_18.md) first. Actual per-side quotient derivative
+calculus passed conditionally; only2/6 primitive source edges are admitted.
+Four modified-m/mean_y ordinary-Z source and regularity edges stay open.
+Q_yZ1/fullRQ_y/physical join/globalfive remain false; accepted Q_yZ0
+baseline is8f36f19e. Next implement genuine modified-m C2 source provenance
+through leading, incoming and history integration. Do not infer it from
+jet order tags. All212/errors/one reserved retained. No accepted operator
+replay. Goal ACTIVE / INCOMPLETE; frozen new checks must not be rerun.
+
 # Physical Q_y Z0 endpoint identity passed - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_PHYSICAL_QY_Z0_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_PHYSICAL_QY_Z0_VALUES_2026_10_18.md) first. One corrected physical-only consumer
