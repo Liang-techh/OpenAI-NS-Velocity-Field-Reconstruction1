@@ -1,3 +1,14 @@
+# Scoped native-control directed repair - 2026-10-18
+
+Read [CURRENT_ORIGINAL_NATIVE_CONTROL_DIRECTED_REPAIR_2026_10_18.md](CURRENT_ORIGINAL_NATIVE_CONTROL_DIRECTED_REPAIR_2026_10_18.md) first. New source-bound corrective arithmetic
+repairs named signed-input/inverse native-control blocks. Historical data,
+all errors and 212/six signed terms remain. Full native/loop/current-N
+certification is still unverified; new Rm drafts remain UNACCEPTED.
+
+NEXT compose fully corrected native/root/conditioning controls, then explicit
+loop/finite-N transport and exterior Rm pressure/m15 matching. Goal ACTIVE /
+INCOMPLETE. No accepted construction replay.
+
 # Arithmetic integrity correction: affected log caps require revalidation - 2026-10-18
 
 Read [CURRENT_ORIGINAL_ABS_LOG_INTEGRITY_2026_10_18.md](CURRENT_ORIGINAL_ABS_LOG_INTEGRITY_2026_10_18.md) first. A new exact-rational witness proves
