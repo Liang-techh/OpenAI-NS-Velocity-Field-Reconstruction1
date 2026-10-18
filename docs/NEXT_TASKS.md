@@ -1,3 +1,9 @@
+# Signed native macro background I1 and next RQy seam - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MACRO_BACKGROUND_I1_2026_10_17.md](CURRENT_ORIGINAL_MACRO_BACKGROUND_I1_2026_10_17.md) first. Current C6 pre-finite-N native macro six-I1 C1 signed enclosures use nonreset histories and the exact positive R^2*ell*dm measure in Wmacro=10000 units. These are background values; full finite-N macro I1 and complete pressure remain open. The new conditional full-Q4 macro-upper/first-switch-lower RQy source identity retains distinct native J and all standalone endpoints/caps. Old 212/six signed sources/micro results/errors remain unchanged. No accepted computation replay this turn; prior review exception preserved in inherited audit.
+
+NEXT current-N physical macro delta-U/delta-M through Z3 and delta-Q through Z2, six defect radii once, then first-switch volume and reserved-pulse terminal functional matching. Goal ACTIVE / INCOMPLETE.
+
 # Correlated micro/macro source and signed micro I1 - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_MACRO_CORRELATED_M15_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MACRO_CORRELATED_M15_2026_10_17.md) first. The whole micro pair and one macro local six-I1 source share a safely relocated graph namespace. Ordinary C1 signed full finite-N micro I1 enclosures are computed in exact positive W=Ra^2*hb units; accepted joint error is added once as a radius. Micro2/macro0 endpoint contractions retain the first-lower anchor and macro outer RQy. Old 212 terms, six signed sources and all errors remain unchanged. New production replays no accepted ancestor; review mistakenly replayed one accepted exact_algebra check, whose result was discarded (see execution audit).
