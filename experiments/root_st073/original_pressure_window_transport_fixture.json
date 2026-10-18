@@ -1,0 +1,1193 @@
+{
+  "case": {
+    "metadata": {
+      "Lref_input_retained": {
+        "directed": true,
+        "lower_exact_mpf_tuple": [
+          0,
+          125,
+          3,
+          7
+        ],
+        "upper_exact_mpf_tuple": [
+          0,
+          125,
+          3,
+          7
+        ]
+      },
+      "claims": {
+        "full_NS_validation": false,
+        "full_pressure_closure": false,
+        "global_five_moment_closure": false,
+        "terminal_moment_identity": false
+      },
+      "combined_rows": [
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            2922142355200474915816857846439909883762282771580426591386971030955899417773,
+            -251,
+            251
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            46754277683207598653069725543038558139856241978365886998728161887862622472911,
+            -255,
+            255
+          ]
+        },
+        {
+          "directed": true,
+          "lower_exact_mpf_tuple": [
+            1,
+            89055767015633521243942334367692491695288348879669249962780665126816203006933,
+            -257,
+            256
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            89055767015633521243942334367692491695288348879669249962780665126816203006931,
+            -257,
+            256
+          ]
+        }
+      ],
+      "geometry_Z_independent": true,
+      "long_log_bounds": [
+        {
+          "bound_label": "symmetric_2^-radius_bits_enclosure",
+          "emitted_enclosure": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              1,
+              -128,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -128,
+              1
+            ]
+          },
+          "emitted_kind": "BOUND",
+          "emitted_not_value_or_zero": true,
+          "exact_zero_input": false,
+          "input_signed_row": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          "log_absolute_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              113324534652597130898291476260208176240374154500648869598179265293301138495807,
+              -245,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              56662267326298565449145738130104088120187077250324434799089632646650569247903,
+              -244,
+              255
+            ]
+          },
+          "log_absolute_input_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              41300136937268450864689423495777602333219147385194601998136968822819840979855,
+              -256,
+              255
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              82600273874536901729378846991555204666438294770389203996273937645639681959709,
+              -257,
+              256
+            ]
+          },
+          "log_coefficient": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ]
+          },
+          "maxabs_exact_endpoint_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ]
+          },
+          "ordinary_Z_order": 0,
+          "strict_upper_below_threshold": true,
+          "threshold": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20065240046497827215558476051577517633497666902897486651530716876354989244043,
+              -247,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              80260960185991308862233904206310070533990667611589946606122867505419956976171,
+              -249,
+              256
+            ]
+          },
+          "upper_bound_vs_threshold_lower": -1
+        },
+        {
+          "emitted_kind": "EXACT_ZERO",
+          "exact_zero_input": true,
+          "input_signed_row": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "log_absolute_bound": null,
+          "ordinary_Z_order": 1
+        }
+      ],
+      "long_log_coefficient_retained": {
+        "directed": true,
+        "lower_exact_mpf_tuple": [
+          1,
+          501,
+          2,
+          9
+        ],
+        "upper_exact_mpf_tuple": [
+          1,
+          501,
+          2,
+          9
+        ]
+      },
+      "normalization": "own_Rm^2",
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "original_source_inputs": {
+        "long_reshape": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "post_restore": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              77194726158210796949047323339125271902179989777093709359638389338608753093291,
+              -257,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              38597363079105398474523661669562635951089994888546854679819194669304376546645,
+              -256,
+              255
+            ]
+          }
+        ],
+        "reference": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              77194726158210796949047323339125271902179989777093709359638389338608753093291,
+              -257,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              38597363079105398474523661669562635951089994888546854679819194669304376546645,
+              -256,
+              255
+            ]
+          }
+        ],
+        "restoration": [
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              77194726158210796949047323339125271902179989777093709359638389338608753093291,
+              -257,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              38597363079105398474523661669562635951089994888546854679819194669304376546645,
+              -256,
+              255
+            ]
+          }
+        ]
+      },
+      "per_chart_weighted_rows": {
+        "long_reshape": {
+          "input_signed_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                -254,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                -256,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "log_absolute_bounds": [
+            {
+              "bound_label": "symmetric_2^-radius_bits_enclosure",
+              "emitted_enclosure": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  1,
+                  -128,
+                  1
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  1,
+                  -128,
+                  1
+                ]
+              },
+              "emitted_kind": "BOUND",
+              "emitted_not_value_or_zero": true,
+              "exact_zero_input": false,
+              "input_signed_row": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                  -256,
+                  256
+                ]
+              },
+              "log_absolute_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  113324534652597130898291476260208176240374154500648869598179265293301138495807,
+                  -245,
+                  256
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  56662267326298565449145738130104088120187077250324434799089632646650569247903,
+                  -244,
+                  255
+                ]
+              },
+              "log_absolute_input_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  41300136937268450864689423495777602333219147385194601998136968822819840979855,
+                  -256,
+                  255
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  82600273874536901729378846991555204666438294770389203996273937645639681959709,
+                  -257,
+                  256
+                ]
+              },
+              "log_coefficient": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  501,
+                  2,
+                  9
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  501,
+                  2,
+                  9
+                ]
+              },
+              "maxabs_exact_endpoint_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  0,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ]
+              },
+              "ordinary_Z_order": 0,
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -247,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -249,
+                  256
+                ]
+              },
+              "upper_bound_vs_threshold_lower": -1
+            },
+            {
+              "emitted_kind": "EXACT_ZERO",
+              "exact_zero_input": true,
+              "input_signed_row": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "log_absolute_bound": null,
+              "ordinary_Z_order": 1
+            }
+          ],
+          "log_coefficient": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ]
+          },
+          "suppression_proof": [
+            {
+              "bound_label": "symmetric_2^-radius_bits_enclosure",
+              "emitted_enclosure": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  1,
+                  -128,
+                  1
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  1,
+                  -128,
+                  1
+                ]
+              },
+              "emitted_kind": "BOUND",
+              "emitted_not_value_or_zero": true,
+              "exact_zero_input": false,
+              "input_signed_row": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                  -256,
+                  256
+                ]
+              },
+              "log_absolute_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  113324534652597130898291476260208176240374154500648869598179265293301138495807,
+                  -245,
+                  256
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  56662267326298565449145738130104088120187077250324434799089632646650569247903,
+                  -244,
+                  255
+                ]
+              },
+              "log_absolute_input_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  41300136937268450864689423495777602333219147385194601998136968822819840979855,
+                  -256,
+                  255
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  82600273874536901729378846991555204666438294770389203996273937645639681959709,
+                  -257,
+                  256
+                ]
+              },
+              "log_coefficient": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  501,
+                  2,
+                  9
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  501,
+                  2,
+                  9
+                ]
+              },
+              "maxabs_exact_endpoint_bound": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  0,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                  -254,
+                  254
+                ]
+              },
+              "ordinary_Z_order": 0,
+              "strict_upper_below_threshold": true,
+              "threshold": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  1,
+                  20065240046497827215558476051577517633497666902897486651530716876354989244043,
+                  -247,
+                  254
+                ],
+                "upper_exact_mpf_tuple": [
+                  1,
+                  80260960185991308862233904206310070533990667611589946606122867505419956976171,
+                  -249,
+                  256
+                ]
+              },
+              "upper_bound_vs_threshold_lower": -1
+            },
+            {
+              "emitted_kind": "EXACT_ZERO",
+              "exact_zero_input": true,
+              "input_signed_row": {
+                "directed": true,
+                "lower_exact_mpf_tuple": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "upper_exact_mpf_tuple": [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "log_absolute_bound": null,
+              "ordinary_Z_order": 1
+            }
+          ],
+          "weight_formula": "exp(-2*(Lref+2))",
+          "weight_materialized": false,
+          "weighted_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                1,
+                -128,
+                1
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1,
+                -128,
+                1
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "weighted_rows_are_symmetric_bounds": true
+        },
+        "post_restore": {
+          "input_signed_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                -254,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                -256,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                77194726158210796949047323339125271902179989777093709359638389338608753093291,
+                -257,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                38597363079105398474523661669562635951089994888546854679819194669304376546645,
+                -256,
+                255
+              ]
+            }
+          ],
+          "weight": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "weight_formula": "1",
+          "weight_materialized": true,
+          "weighted_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                -254,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                -256,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                77194726158210796949047323339125271902179989777093709359638389338608753093291,
+                -257,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                38597363079105398474523661669562635951089994888546854679819194669304376546645,
+                -256,
+                255
+              ]
+            }
+          ]
+        },
+        "reference": {
+          "input_signed_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                -254,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                -256,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                77194726158210796949047323339125271902179989777093709359638389338608753093291,
+                -257,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                38597363079105398474523661669562635951089994888546854679819194669304376546645,
+                -256,
+                255
+              ]
+            }
+          ],
+          "weight": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              33932897482284272635818247985420050900540292926925437355940581530648672181069,
+              -260,
+              255
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              67865794964568545271636495970840101801080585853850874711881163061297344362139,
+              -261,
+              256
+            ]
+          },
+          "weight_formula": "exp(-4)",
+          "weight_materialized": true,
+          "weighted_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                23753028237598990845072773589794035630378205048847806149158407071454070526749,
+                -260,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                5938257059399747711268193397448508907594551262211951537289601767863517631687,
+                -258,
+                252
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                5655482913714045439303041330903341816756715487820906225990096921774778696845,
+                -259,
+                252
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                22621931654856181757212165323613367267026861951283624903960387687099114787379,
+                -261,
+                254
+              ]
+            }
+          ]
+        },
+        "restoration": {
+          "input_signed_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20263615616530334199124922376520383874322247316487098706905077201384797686989,
+                -254,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                81054462466121336796499689506081535497288989265948394827620308805539190747955,
+                -256,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                77194726158210796949047323339125271902179989777093709359638389338608753093291,
+                -257,
+                256
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                38597363079105398474523661669562635951089994888546854679819194669304376546645,
+                -256,
+                255
+              ]
+            }
+          ],
+          "weight": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              62683020773965277610415504175048306033515081383721884279868509346582531436581,
+              -258,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              31341510386982638805207752087524153016757540691860942139934254673291265718291,
+              -257,
+              255
+            ]
+          },
+          "weight_formula": "exp(-2)",
+          "weight_materialized": true,
+          "weighted_rows": [
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                5484764317721961790911356615316726777932569621075664874488494567825971500701,
+                -255,
+                252
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                87756229083551388654581705845067628446921113937210637991815913085215544011213,
+                -259,
+                256
+              ]
+            },
+            {
+              "directed": true,
+              "lower_exact_mpf_tuple": [
+                1,
+                20894340257988425870138501391682768677838360461240628093289503115527510478861,
+                -258,
+                254
+              ],
+              "upper_exact_mpf_tuple": [
+                1,
+                5223585064497106467534625347920692169459590115310157023322375778881877619715,
+                -256,
+                252
+              ]
+            }
+          ]
+        }
+      },
+      "radius": {
+        "directed": true,
+        "lower_exact_mpf_tuple": [
+          0,
+          1,
+          -128,
+          1
+        ],
+        "upper_exact_mpf_tuple": [
+          0,
+          1,
+          -128,
+          1
+        ]
+      },
+      "radius_bits": 128,
+      "schema": "original_pressure_window_transport_v1",
+      "source_contract": {
+        "accepted_producer_or_helper_math_imported": false,
+        "input_rows_are_Taylor_coefficients": false,
+        "input_rows_are_cap_mappings": false,
+        "long_coefficient_exponentiated": false,
+        "only_exp_minus4_and_exp_minus2_materialized": true,
+        "signed_ordinary_C1_inputs": true,
+        "source_half_S1_factor_applied": false,
+        "source_rows_recomputed": false
+      },
+      "suppression_proof": [
+        {
+          "bound_label": "symmetric_2^-radius_bits_enclosure",
+          "emitted_enclosure": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              1,
+              -128,
+              1
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              1,
+              -128,
+              1
+            ]
+          },
+          "emitted_kind": "BOUND",
+          "emitted_not_value_or_zero": true,
+          "exact_zero_input": false,
+          "input_signed_row": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              81054462466121336796499689506081535497288989265948394827620308805539190747955,
+              -256,
+              256
+            ]
+          },
+          "log_absolute_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              113324534652597130898291476260208176240374154500648869598179265293301138495807,
+              -245,
+              256
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              56662267326298565449145738130104088120187077250324434799089632646650569247903,
+              -244,
+              255
+            ]
+          },
+          "log_absolute_input_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              41300136937268450864689423495777602333219147385194601998136968822819840979855,
+              -256,
+              255
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              82600273874536901729378846991555204666438294770389203996273937645639681959709,
+              -257,
+              256
+            ]
+          },
+          "log_coefficient": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              501,
+              2,
+              9
+            ]
+          },
+          "maxabs_exact_endpoint_bound": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              20263615616530334199124922376520383874322247316487098706905077201384797686989,
+              -254,
+              254
+            ]
+          },
+          "ordinary_Z_order": 0,
+          "strict_upper_below_threshold": true,
+          "threshold": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              1,
+              20065240046497827215558476051577517633497666902897486651530716876354989244043,
+              -247,
+              254
+            ],
+            "upper_exact_mpf_tuple": [
+              1,
+              80260960185991308862233904206310070533990667611589946606122867505419956976171,
+              -249,
+              256
+            ]
+          },
+          "upper_bound_vs_threshold_lower": -1
+        },
+        {
+          "emitted_kind": "EXACT_ZERO",
+          "exact_zero_input": true,
+          "input_signed_row": {
+            "directed": true,
+            "lower_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "upper_exact_mpf_tuple": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "log_absolute_bound": null,
+          "ordinary_Z_order": 1
+        }
+      ],
+      "weights_relative_to_Rm2": {
+        "long_reshape": "exp(-2*(Lref+2))",
+        "post_restore": "1",
+        "reference": "exp(-4)",
+        "restoration": "exp(-2)"
+      }
+    },
+    "rawIVresult": [
+      {
+        "directed": true,
+        "lower_exact_mpf_tuple": [
+          1,
+          2922142355200474915816857846439909883762282771580426591386971030955899417773,
+          -251,
+          251
+        ],
+        "upper_exact_mpf_tuple": [
+          1,
+          46754277683207598653069725543038558139856241978365886998728161887862622472911,
+          -255,
+          255
+        ]
+      },
+      {
+        "directed": true,
+        "lower_exact_mpf_tuple": [
+          1,
+          89055767015633521243942334367692491695288348879669249962780665126816203006933,
+          -257,
+          256
+        ],
+        "upper_exact_mpf_tuple": [
+          1,
+          89055767015633521243942334367692491695288348879669249962780665126816203006931,
+          -257,
+          256
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "combined_rows_are_C1": true,
+    "fresh_symbolic_linear_operator": true,
+    "global_mp53_boundary_case": true,
+    "long_enclosure_is_labelled_bound": true,
+    "long_exact_zero_retained": true,
+    "long_rows_strictly_suppressed": true,
+    "negative_signed_inputs_accepted": true,
+    "no_full_pressure_claim": true,
+    "source_inputs_retained": true,
+    "source_lf_eof_ast_preflight": true
+  },
+  "exact_proof": {
+    "checks": {
+      "long_weight_Z_independent": true,
+      "ordinary_C1_linearity": true,
+      "post_weight_is_one": true,
+      "reference_weight_is_exp_minus4": true,
+      "restoration_weight_is_exp_minus2": true
+    },
+    "operator": "exp(-2*(Lref+2))*long + exp(-4)*reference + exp(-2)*restoration + post_restore",
+    "ordinary_derivative": "differentiate only supplied rows; all weights are Z-independent",
+    "passed": true,
+    "sympy_exact": true
+  },
+  "module_sha256": "a9efc7f6808455a6af7dad26c43a7fdf94062d90371b14cb3a8cbc18c98d077e",
+  "passed": true,
+  "schema": "pressure_window_transport_rational_fixture_v1",
+  "scope": {
+    "accepted_producer_replayed": false,
+    "full_pressure_closure_claimed": false,
+    "saved_json_read": false,
+    "source_executed": false,
+    "source_rows_recomputed": false
+  }
+}

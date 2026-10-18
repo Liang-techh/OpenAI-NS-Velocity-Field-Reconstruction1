@@ -123,3 +123,5 @@ scripts/run_original_post_restore_logu_C1.py -text
 scripts/run_original_restoration_pressure_adoption.py -text
 experiments/root_st073/original_post_restore_logu_contraction_fixture.json -text
 experiments/root_st073/original_post_restore_logu_endpoint_fixture.json -text
+scripts/run_original_pressure_window_transport.py -text
+experiments/root_st073/original_pressure_window_transport_fixture.json -text

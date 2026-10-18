@@ -1,3 +1,12 @@
+# Signed four-chart pressure window - 2026-10-18
+
+Read [CURRENT_ORIGINAL_PRESSURE_WINDOW_TRANSPORT_2026_10_18.md](CURRENT_ORIGINAL_PRESSURE_WINDOW_TRANSPORT_2026_10_18.md) first. Four saved full finite-N signed S1
+packets are now transported once into Rm^2, with the pressure factor 1/2
+and retained external Rm BOUND. Seven prefix atoms remain explicit.
+NEXT transport the remaining source subset without duplicate cumulative or
+own_swirl entries. Full pressure and independent terminal m15 remain open.
+Goal ACTIVE / INCOMPLETE. Preserve212/six/reservedonce/errors. No ancestor replay.
+
 # Uniform log-u C1 and pressure source adoption - 2026-10-18
 
 Read [CURRENT_ORIGINAL_LOGU_C1_PRESSURE_ADOPTION_2026_10_18.md](CURRENT_ORIGINAL_LOGU_C1_PRESSURE_ADOPTION_2026_10_18.md) first. New normalized Rm C1 endpoint target
