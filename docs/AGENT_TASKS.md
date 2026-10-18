@@ -1,3 +1,9 @@
+# Actual micro b/t0/p2 mixed bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_B_P2_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_B_P2_MIXED_BOUNDS_2026_10_17.md) first. Actual background b/t0/p2 ordinary Z0..3 and physical y0..1 now have logarithmic norm caps on both micro charts, with whole-tube normalized pressure jets Z0..5, positive amplitude log bounds and original native M/A/B/C. Full inlet integrals use global core bounds; no history reset or cap-as-value substitution. Two new Xh rows only; old source/direction rows and all signed/error packets remain unchanged.
+
+NEXT actual q mixed derivatives, loop/inverse-phase derivative bounds, finite-N derivative errors, Cy3, joint mean-Z3/QZZ, outer RQy and terminal functional matching. These are norm bounds, not signed corrections or global closure. No accepted replay. Goal ACTIVE / INCOMPLETE.
+
 # Actual micro E/a mixed derivative bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_EA_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_EA_MIXED_BOUNDS_2026_10_17.md) first. The actual background provider now encloses ordinary Z0..3 and physical y0..1 E/a derivative ratios on both micro charts, for s in [0,2] and Z in [.370,.372]. It uses three fresh Xh rows and preserves all accepted rows and source ports. Norm caps remain caps; C0 caps are not differentiated.
