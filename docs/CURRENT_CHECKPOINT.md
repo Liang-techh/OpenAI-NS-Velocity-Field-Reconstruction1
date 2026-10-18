@@ -1,3 +1,14 @@
+# Directed fixed-phase loop controls - 2026-10-18
+
+Read [CURRENT_ORIGINAL_DIRECTED_LOOP_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_LOOP_CONTROLS_2026_10_18.md) first. New four-chart loop/inverse and
+fast-phase controls through ordinary Z3 consume the saved corrected native
+data. Complete Z5, physical-y and current-N pressure certification remain
+open. Old 212/six signed data and errors remain in the pinned native parent.
+
+NEXT new finite-N propagation with an audited post-switch incoming memory,
+then physical-y/Rm and independent reserved/full-pulse m15 matching.
+Goal ACTIVE / INCOMPLETE. No accepted mathematical construction replay.
+
 # Corrected native controls and root conditioning - 2026-10-18
 
 Read [CURRENT_ORIGINAL_NATIVE_DIRECTED_CONTROLS_V2_2026_10_18.md](CURRENT_ORIGINAL_NATIVE_DIRECTED_CONTROLS_V2_2026_10_18.md) first. The new four-chart native phi/U/M/A/B/C,

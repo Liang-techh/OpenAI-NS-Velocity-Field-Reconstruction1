@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": {
+    "nonunit_phase_lambda": true,
+    "inverse_derivatives_through_Z3": true,
+    "normalized_inverse_through_Z3": true,
+    "composed_target_through_Z3": true,
+    "nonzero_b_term_retained": true,
+    "isolated_B_over_E_equals_b_over_2": true,
+    "isolated_Bnorm_phi_equals_b_over_2": true,
+    "isolated_B_over_E_derivatives_zero": true,
+    "isolated_Bnorm_phi_derivatives_zero": true,
+    "inverse_proof_passed": true
+  },
+  "phase_expression": "psi**3*z**2/20 + psi**2*z/10 + psi*(z**3/6 + z**2/2 + z + 2)",
+  "fixed_phase_point": "1/3",
+  "implicit_target_value": "2/3",
+  "inverse_series": "161*z**3/14400 + 41*z**2/5400 - 31*z/180 + 1/3",
+  "inverse_derivative_checks": {"1": true, "2": true, "3": true},
+  "normalized_inverse_checks": {"0": true, "1": true, "2": true, "3": true},
+  "composition_checks": {"0": true, "1": true, "2": true, "3": true},
+  "ordinary_Z_orders": [0, 1, 2, 3],
+  "phase_rows": 10,
+  "independent_sympy_derivatives": true,
+  "nonzero_b_fixture_scope": "arithmetic isolation with r=alpha=t0=0 exactly, a=1, K=1/(2*pi), E_relative=1; t0=-b/a is not asserted",
+  "nonzero_b_expected_log_half": {
+    "lower_exact_mpf_tuple": [1, 1284175362975860941795742467300961128543850681785439145697965880086719311618751, -260, 260],
+    "upper_exact_mpf_tuple": [1, 642087681487930470897871233650480564271925340892719572848982940043359655809375, -259, 259],
+    "lower_display": "-0.693147180559945309417232",
+    "upper_display": "-0.693147180559945309417232",
+    "directed": true
+  },
+  "nonzero_b_rows": {
+    "B_over_E": {
+      "lower_exact_mpf_tuple": [1, 1284175362975860941795742467300961128543850681785439145697965880086719311618751, -260, 260],
+      "upper_exact_mpf_tuple": [1, 642087681487930470897871233650480564271925340892719572848982940043359655809375, -259, 259],
+      "lower_display": "-0.693147180559945309417232",
+      "upper_display": "-0.693147180559945309417232",
+      "directed": true
+    },
+    "Bnorm_phi": {
+      "lower_exact_mpf_tuple": [1, 1284175362975860941795742467300961128543850681785439145697965880086719311618751, -260, 260],
+      "upper_exact_mpf_tuple": [1, 642087681487930470897871233650480564271925340892719572848982940043359655809375, -259, 259],
+      "lower_display": "-0.693147180559945309417232",
+      "upper_display": "-0.693147180559945309417232",
+      "directed": true
+    }
+  },
+  "stored_logs_exponentiated": false,
+  "old_loop_fixture_called": false
+}
