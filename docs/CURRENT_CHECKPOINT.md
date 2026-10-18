@@ -1,3 +1,13 @@
+# Actual patch native source provenance - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_PATCH_NATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_PATCH_NATIVE_PROVENANCE_2026_10_18.md) first. New actual patch A/B provenance
+passes 4 Z0/Z1 rows with 410 visited pairs, corrected normalized gamma
+seeds and 35 Z-only control support rows. Left 4/365 are consumed as data.
+Cross-side slow native VALUE equality is pending in the already running
+local session17273/PID30068; do not restart it. No physical RQy or global
+five-moment closure is claimed. All 212 terms, channels, errors and the one
+reserved contribution remain. Goal ACTIVE / INCOMPLETE.
+
 # Actual Rm slow native provenance partial - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_SLOW_NATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_SLOW_NATIVE_PROVENANCE_2026_10_18.md) first. New read-only DAG checker admits
