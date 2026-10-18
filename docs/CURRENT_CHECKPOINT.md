@@ -1,3 +1,9 @@
+# Current-N macro six-I1 C1 enclosure - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MACRO_FINITE_N_I1_2026_10_17.md](CURRENT_ORIGINAL_MACRO_FINITE_N_I1_2026_10_17.md) first. Current N graph18 macro physical deltaU/M Z0..3 and deltaQ Z0..2 give six I1 defect radii below 2^-1024, added once around signed native background I1; full D C1 uses ordinary Leibniz products. Native Z4 extension and macro fixed-phase inverse are source-related. Wmacro10000 physical measure once; nonreset mean; no incoming U duplication. Complete pressure and global closure remain open; all old 212/signed/errors/endpoints retained. No accepted computation replay this turn; inherited audit retained.
+
+NEXT first-switch pressure volume with the accepted RQy seam and current finite-N inputs, then independent reserved-pulse terminal functional comparison. Goal ACTIVE / INCOMPLETE.
+
 # Signed native macro background I1 and next RQy seam - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MACRO_BACKGROUND_I1_2026_10_17.md](CURRENT_ORIGINAL_MACRO_BACKGROUND_I1_2026_10_17.md) first. Current C6 pre-finite-N native macro six-I1 C1 signed enclosures use nonreset histories and the exact positive R^2*ell*dm measure in Wmacro=10000 units. These are background values; full finite-N macro I1 and complete pressure remain open. The new conditional full-Q4 macro-upper/first-switch-lower RQy source identity retains distinct native J and all standalone endpoints/caps. Old 212/six signed sources/micro results/errors remain unchanged. No accepted computation replay this turn; prior review exception preserved in inherited audit.
