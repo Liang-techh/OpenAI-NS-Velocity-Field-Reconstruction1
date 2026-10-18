@@ -1,3 +1,9 @@
+# Actual micro six-I1 C1 defect and pressure-error bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_I1_DEFECT_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_I1_DEFECT_BOUNDS_2026_10_17.md) first. Same-source six finite-N C1 defects, joined R^2*hb I1 errors, reduced volume D and half-S1 pressure excluding outer RQy are below 2^-1024 on Z[.370,.372]. Saved native U/M are already physical; no extra Pstar. Exact internal endpoint identity and source-flat lower zero are consumed. Outer RQy is retained; complete pressure error is not certified small. Old 212 signed sources/errors are unchanged; no accepted replay.
+
+NEXT correlated external RQy endpoint or adjacent-source identity; combine certified I1 error with actual signed background integrals, then terminal reserved-pulse functional matching. Global closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro physical U/Q increment bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_Q_INCREMENT_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_Q_INCREMENT_BOUNDS_2026_10_17.md) first. Physical delta_U Z0..3 and source-linear delta_Q Z0..2 now have error caps below 2^-1024, using complete mean Z3 with incoming history. Total-y Q_y and RQ_y C1 caps retain the undivided B_phi chain; their current majorants do not certify smallness. Actual signed values and all old 212 terms/errors remain unchanged; no accepted replay.
