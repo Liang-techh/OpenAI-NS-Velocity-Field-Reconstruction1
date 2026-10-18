@@ -99,3 +99,4 @@ scripts/run_original_long_reference_background_I1.py -text
 scripts/run_original_long_reference_finite_N_I1.py -text
 scripts/run_original_long_reference_seam_prerequisites.py -text
 scripts/run_original_long_reference_modified_seams.py -text
+scripts/run_original_restoration_background_I1.py -text

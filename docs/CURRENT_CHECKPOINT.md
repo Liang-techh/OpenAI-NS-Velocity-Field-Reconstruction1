@@ -1,3 +1,18 @@
+# Restoration background and actual modified seams through Rm - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RESTORATION_BACKGROUND_RM_2026_10_18.md](CURRENT_ORIGINAL_RESTORATION_BACKGROUND_RM_2026_10_18.md) first. Native six-I1/D/B/S1 C1 directed
+boxes now reach Rm with actual M_Rz memory and separate Wrestore/Wpost.
+Two new finite-N modified Qy/RQy ordinary-C1 source seams are proved;
+24 new DAG roots and 42 mixed-phase rows pass with separate native seed,
+history and local IFT premise discharge. Internal Rz/Rrestore targets
+cancel in a 186100-node joined graph; exterior Rm and all caps remain.
+All accepted prefix/212/six signed/errors are preserved; no ancestor replay.
+
+NEXT actual restoration control bounds and finite-N corrections, surviving
+Rm exterior pressure and independent reserved-own_swirl/full-pulse m15
+functional matching. Global five-moment closure remains open.
+Goal ACTIVE / INCOMPLETE.
+
 # Actual modified long/reference RQy seams - 2026-10-18
 
 Read [CURRENT_ORIGINAL_LONG_REFERENCE_MODIFIED_RQY_SEAMS_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_MODIFIED_RQY_SEAMS_2026_10_18.md) first. Both actual finite-N modified
