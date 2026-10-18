@@ -1,3 +1,17 @@
+# Long/reference source seam prerequisites - 2026-10-18
+
+Read [CURRENT_ORIGINAL_LONG_REFERENCE_SEAM_PREREQUISITES_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_SEAM_PREREQUISITES_2026_10_18.md) first. Actual native phi/U C2 endpoints,
+six native/five correction Duhamel and generic seed algebra, and formal loop
+periodicity are now saved. The issued derivative-graph checker is an unaccepted draft.
+Two full modified RQy seams remain UNPROVED; the entire 185690-node raw
+source, all endpoints/caps and all old 212/signed/errors remain unchanged.
+No accepted arithmetic replay; no new selected signed numerical values.
+
+NEXT compose actual native control first jets, discharge explicit seed and
+positive-loop hypotheses, then compare full modified Uy/Qy endpoint
+functions before any contraction. Restoration/external pressure and
+independent reserved-pulse functional matching remain. Goal ACTIVE / INCOMPLETE.
+
 # Current-N long/reference pressure integrals - 2026-10-18
 
 Read [CURRENT_ORIGINAL_LONG_REFERENCE_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_FINITE_N_I1_2026_10_18.md) first. Actual native log controls and full current-N six-I1/B/D/S1 C1 enclosures now reach Rz in own Wlong/Wref units. Full P0/ABC and nonreset mean histories retained. Two modified RQy seams remain UNPROVED; all endpoint differences/caps and old 212/signed/errors remain. No accepted arithmetic replay; full pressure/global closure open.
