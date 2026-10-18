@@ -1,3 +1,13 @@
+# Actual Rm structural VALUE attempt - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_STRUCTURAL_VALUES_2026_10_18.md](CURRENT_ORIGINAL_RM_STRUCTURAL_VALUES_2026_10_18.md) first. One new constructor consumer
+left the slow native VALUE seam unresolved; saved source/entry/result and independent static review are
+published. Read its exact rows/gates before advancing. Numerical field,
+physical join, Q_y Z1 and full RQ_y remain open. Original attempt bytes are
+preserved; its saved disposition controls whether its session remains live.
+Never restart --slow-seam. All212/channels/errors/one reserved retained.
+Goal ACTIVE / INCOMPLETE.
+
 # Physical VALUE consumers prepared; live slow result pending - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_PHYSICAL_VALUE_CONSUMERS_PREPARED_2026_10_18.md](CURRENT_ORIGINAL_RM_PHYSICAL_VALUE_CONSUMERS_PREPARED_2026_10_18.md) first. Three new files implement total
