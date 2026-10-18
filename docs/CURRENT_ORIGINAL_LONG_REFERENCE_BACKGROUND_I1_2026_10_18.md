@@ -94,7 +94,8 @@ macro/first/switch full-finite-N numerical packet.
 The full 185308-node parent prefix remains unchanged; the new source appends
 382 nodes. Each chart contributes its own LOCAL
 S1/2 + lower RQy - upper RQy exactly once. Cumulative S1 is not added.
-Native and correction memories, common N=18, global fast phase, physical
+Native and correction memories, the common N source at graph handle 18,
+global fast phase, physical
 Pstar and the distinct native Jacobians are retained.
 
 The new source extension retains the post/long and long/reference
