@@ -105,3 +105,5 @@ scripts/run_original_abs_log_integrity.py -text
 scripts/run_original_native_control_directed_repair.py -text
 scripts/run_original_native_directed_controls_v2.py -text
 scripts/run_original_directed_loop_controls.py -text
+scripts/run_original_directed_finite_N_controls.py -text
+experiments/root_st073/original_directed_finite_N_incoming_audit.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

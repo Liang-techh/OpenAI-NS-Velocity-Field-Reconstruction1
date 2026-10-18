@@ -1,0 +1,29 @@
+{
+  "schema": "original_directed_finite_N_kernel_fixture_v1",
+  "module": "src/openai_ns_reconstruction/original_directed_finite_N_kernel.py",
+  "module_sha256": "a7a89dd2b9ca28e7ef7e4f412a61a0e8496d777633bfb86ccebbe31b3f4818fc",
+  "fixture": {
+    "kind": "fresh_signed_rational_polynomial_sympy",
+    "pressure_Q_native": true,
+    "pressure_Q_correction": true,
+    "six_differences": {
+      "q": true,
+      "q_Z": true,
+      "q_squared": true,
+      "U_q_Z": true,
+      "U_squared": true,
+      "U_U_Z": true
+    },
+    "boundary_difference_endpoint_pair": true,
+    "D_difference": true,
+    "explicit_None_exact_zero": true
+  },
+  "contracts": {
+    "ordinary_product_coefficients": true,
+    "inverseL_rows_available": 5,
+    "boundary_returns_endpoint_deltaB_over_W_caps": true,
+    "D_exposes_signed_coefficient_rows": true,
+    "no_saved_native_packet_loaded": true,
+    "no_stored_log_exp": true
+  }
+}

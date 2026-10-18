@@ -1,3 +1,14 @@
+# Directed finite-N transport - 2026-10-18
+
+Read [CURRENT_ORIGINAL_DIRECTED_FINITE_N_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_FINITE_N_CONTROLS_2026_10_18.md) first. New four-chart ordinary-C1 six-I1/B
+error targets pass; full signed I1/B/D/S1 enclosures retain one-time radii
+and corrected post-jet centres. The exact source-bound post-switch memory
+cap remains an inherited premise; no blanket legacy re-certification.
+
+NEXT new directed mixed physical-y/Rm controls and signed endpoint joins,
+then independent reserved/full-pulse m15 matching. Preserve 212/six/error
+data. Goal ACTIVE / INCOMPLETE. No accepted mathematical construction replay.
+
 # Directed fixed-phase loop controls - 2026-10-18
 
 Read [CURRENT_ORIGINAL_DIRECTED_LOOP_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_LOOP_CONTROLS_2026_10_18.md) first. New four-chart loop/inverse and

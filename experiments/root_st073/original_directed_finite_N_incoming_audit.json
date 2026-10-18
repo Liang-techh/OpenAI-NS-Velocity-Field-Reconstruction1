@@ -1,0 +1,1177 @@
+{
+  "stage": "original_directed_finite_N_incoming_delta_M_source_audit",
+  "scope": {
+    "mode": "bounded read-only source/hash/AST/JSON inspection",
+    "producer_builder_owner_checker_selfcheck_recurrence_quadrature_executed": false,
+    "full_history_or_archive_loaded": false,
+    "latest_loop_report": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_directed_loop_controls.json",
+      "sha256": "adefdae708754a2572eae15a90662274bf17e88a0d72d5db9befbc9e2858b252",
+      "bytes": 1752702
+    },
+    "native_parent": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_directed_controls_v2.json",
+      "sha256": "10abe68b98fdf87709a7a7c9f27103523701e746c357ae62386038700052490a",
+      "bytes": 42177499
+    }
+  },
+  "result": {
+    "direct_frontier_status": "no known direct affected legacy abs_log helper call in the inspected post_switch/first_switch/macro/micro_mean_Z3/micro_phase_inverse/kernel/Q-increment/Q4/C5 source frontier",
+    "saved_cap_status": "incoming physical_complete_delta_m is a saved source-bound logarithmic cap with exact report and row digest; no numerical revalidation or blanket historical certification claimed",
+    "legacy_scalar_defect": "Python abs/mpf scalar endpoint conversion in original_native_log_jet4.abs_log at global scalar precision",
+    "interval_calls_are_not_scalar_defect": true,
+    "dynamic_or_transitive_old_helper_calls_outside_static_frontier": "not ruled out by the repository-wide integrity scan or by ancestors outside the bounded micro mean/inverse closure"
+  },
+  "saved_delta_M": {
+    "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_switch_post_finite_N_I1.json#actual_switch_post_finite_N_I1_numeric.charts.post_switch.physical_error_log_bounds.delta_M",
+    "report_sha256": "9d0d957bae129853030bad4cd5c484eb27e8b13b0623601e458fc4e95e93bc2b",
+    "report_bytes": 24654478,
+    "parent_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_finite_N_I1.json",
+    "parent_sha256": "2cc8b4ff9670858564297bc1c27d5322c9af7d2cb85381939dc3e37a3eea346a",
+    "ordinary_Z_orders": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "rows": [
+      {
+        "ordinary_Z_order": 0,
+        "lower_display": "-8.4099037047010221601768e+408906090034569677",
+        "upper_display": "-8.4099037047010221601768e+408906090034569677",
+        "directed": true,
+        "exact_endpoint_equal": true
+      },
+      {
+        "ordinary_Z_order": 1,
+        "lower_display": "-6.95785417478897554171686e+408906090034569677",
+        "upper_display": "-6.95785417478897554171686e+408906090034569677",
+        "directed": true,
+        "exact_endpoint_equal": true
+      },
+      {
+        "ordinary_Z_order": 2,
+        "lower_display": "-4.34416502094729162848895e+408906090034569677",
+        "upper_display": "-4.34416502094729162848895e+408906090034569677",
+        "directed": true,
+        "exact_endpoint_equal": true
+      },
+      {
+        "ordinary_Z_order": 3,
+        "lower_display": "-1.73047586710560771526105e+408906090034569677",
+        "upper_display": "-1.73047586710560771526105e+408906090034569677",
+        "directed": true,
+        "exact_endpoint_equal": true
+      }
+    ],
+    "rows_canonical_json_sha256": "67de8950d801a1c919797ad560fba038f3d4852e6cd47397a4476c54b97ae70b",
+    "rows_canonical_json_bytes": 3413,
+    "rows_digest_definition": "SHA256(json.dumps(rows, sort_keys=True, separators=(',', ':'))) including exact MPF tuples and directed fields",
+    "upstream_saved_row_digests": {
+      "macro_delta_M": {
+        "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_macro_finite_N_I1.json#actual_macro_finite_N_I1_numeric.physical_error_log_bounds.delta_M",
+        "report_sha256": "066c6eaf48b49f836379b1604725f1b7f33ee9372bb2e4521652ddeaff1d7c3c",
+        "rows_canonical_json_sha256": "a003376ead1d11a555259e369b9d40e5dfdd4ec7245060e9e9c38a05386eee6b",
+        "rows_canonical_json_bytes": 2659,
+        "row_count": 4
+      },
+      "first_switch_delta_M": {
+        "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_finite_N_I1.json#actual_first_switch_finite_N_I1_numeric.physical_error_log_bounds.delta_M",
+        "report_sha256": "2cc8b4ff9670858564297bc1c27d5322c9af7d2cb85381939dc3e37a3eea346a",
+        "rows_canonical_json_sha256": "a003376ead1d11a555259e369b9d40e5dfdd4ec7245060e9e9c38a05386eee6b",
+        "rows_canonical_json_bytes": 2659,
+        "row_count": 4
+      },
+      "micro_second_physical_delta_m": {
+        "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_macro_finite_N_I1.json#actual_micro_Q_increment_bounds.charts.second.log_caps.physical_delta_m",
+        "rows_canonical_json_sha256": "b6cf083ef01fb23bf3641c0f1886f88530f3e40f8e70808549db9038b2f972eb",
+        "report_sha256": "066c6eaf48b49f836379b1604725f1b7f33ee9372bb2e4521652ddeaff1d7c3c",
+        "rows_canonical_json_bytes": 2661
+      },
+      "micro_mean_Z3_second_physical_complete_delta_m": {
+        "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json#actual_micro_mean_Z3_bounds.charts.second.log_caps.physical_complete_delta_m",
+        "report_sha256": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+        "rows_canonical_json_sha256": "b6cf083ef01fb23bf3641c0f1886f88530f3e40f8e70808549db9038b2f972eb",
+        "rows_canonical_json_bytes": 2661,
+        "row_count": 4
+      }
+    },
+    "rows_exact_from_source": [
+      {
+        "ordinary_Z_order": 0,
+        "log_absolute_upper_bound": {
+          "lower_exact_mpf_tuple": [
+            1,
+            46016297081391364243455441773165680786263431368193322479292103622583565443454483570801830010599224789579014275465297729270463965456448752548310575163888689640015343421587288574778525740706979560219505207378257374746333513896461928300245126548479187998721227589607018851203071,
+            1358356628656377400,
+            913
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            46016297081391364243455441773165680786263431368193322479292103622583565443454483570801830010599224789579014275465297729270463965456448752548310575163888689640015343421587288574778525740706979560219505207378257374746333513896461928300245126548479187998721227589607018851203071,
+            1358356628656377400,
+            913
+          ],
+          "lower_display": "-8.4099037047010221601768e+408906090034569677",
+          "upper_display": "-8.4099037047010221601768e+408906090034569677",
+          "directed": true
+        }
+      },
+      {
+        "ordinary_Z_order": 1,
+        "log_absolute_upper_bound": {
+          "lower_exact_mpf_tuple": [
+            1,
+            38071147542047995875142674181949510728321898295291096907932777765415881875901571942348304599195361880220355715188108618220590133897284859271990547989183173997077974276344769681388790253746451278064101640315864680433249885862180627551459291926418006516389838960824180218503167,
+            1358356628656377400,
+            913
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            38071147542047995875142674181949510728321898295291096907932777765415881875901571942348304599195361880220355715188108618220590133897284859271990547989183173997077974276344769681388790253746451278064101640315864680433249885862180627551459291926418006516389838960824180218503167,
+            1358356628656377400,
+            913
+          ],
+          "lower_display": "-6.95785417478897554171686e+408906090034569677",
+          "upper_display": "-6.95785417478897554171686e+408906090034569677",
+          "directed": true
+        }
+      },
+      {
+        "ordinary_Z_order": 2,
+        "log_absolute_upper_bound": {
+          "lower_exact_mpf_tuple": [
+            1,
+            23769878371229932812179692517760404624027138764067090879485991222514051454306331011785025329936671681643091358307184396045504223906912522339649166030517988628110029447845905413478410586871932000230484573650444210576245542105256442082191141117742179887405799179729988042551295,
+            1358356628656377400,
+            912
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            23769878371229932812179692517760404624027138764067090879485991222514051454306331011785025329936671681643091358307184396045504223906912522339649166030517988628110029447845905413478410586871932000230484573650444210576245542105256442082191141117742179887405799179729988042551295,
+            1358356628656377400,
+            912
+          ],
+          "lower_display": "-4.34416502094729162848895e+408906090034569677",
+          "upper_display": "-4.34416502094729162848895e+408906090034569677",
+          "directed": true
+        }
+      },
+      {
+        "ordinary_Z_order": 3,
+        "log_absolute_upper_bound": {
+          "lower_exact_mpf_tuple": [
+            1,
+            9468609200411869749216710853571298519732379232843084851039204679612221032711090081221746060677981483065827001426260173870418313916540185407307784071852803259142084619347041145568030919997412722396867506985023740719241198348332256612922990309066353258421759398635795866574847,
+            1358356628656377400,
+            911
+          ],
+          "upper_exact_mpf_tuple": [
+            1,
+            9468609200411869749216710853571298519732379232843084851039204679612221032711090081221746060677981483065827001426260173870418313916540185407307784071852803259142084619347041145568030919997412722396867506985023740719241198348332256612922990309066353258421759398635795866574847,
+            1358356628656377400,
+            911
+          ],
+          "lower_display": "-1.73047586710560771526105e+408906090034569677",
+          "upper_display": "-1.73047586710560771526105e+408906090034569677",
+          "directed": true
+        }
+      }
+    ],
+    "row_digest_recomputation": {
+      "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_switch_post_finite_N_I1.json#actual_switch_post_finite_N_I1_numeric.charts.post_switch.physical_error_log_bounds.delta_M",
+      "report_sha256": "9d0d957bae129853030bad4cd5c484eb27e8b13b0623601e458fc4e95e93bc2b",
+      "rows_canonical_json_sha256": "67de8950d801a1c919797ad560fba038f3d4852e6cd47397a4476c54b97ae70b",
+      "rows_canonical_json_bytes": 3413,
+      "row_count": 4,
+      "exact_rows_reloaded_from_saved_json": true,
+      "digest_matches_saved_delta_M_rows_canonical_json_sha256": true
+    }
+  },
+  "dependency_frontier": [
+    {
+      "layer": "post_switch",
+      "adapter_source": "src/openai_ns_reconstruction/original_switch_post_finite_N_I1_numeric.py",
+      "adapter_sha256": "c5bf5ad0ad21757105c940d8b734219405b691aa46aa51a179865bb6a1aec7d9",
+      "incoming_path": "parent.actual_first_switch_finite_N_I1_numeric.physical_error_log_bounds.delta_M",
+      "source_contract": {
+        "common_N_handle": 18,
+        "phase_Z_independent": true,
+        "first_to_second_to_post_mean_memory_retained": true,
+        "delta_U_has_no_incoming": true,
+        "physical_Pstar_applied_once": true,
+        "separate_Wswitch_and_Wmacro": true
+      },
+      "ast_sha256": {
+        "build": "19e2bd66a2be4ed5cda85c8bd8c1e3589f689bbadee8912ba31e87a12e301d99",
+        "_chart": "9be86cb79b15763ae7df7d8f082e7f45def7eb67c92f56439cfb734a9fc3a860",
+        "_read_log_rows": "a72c494a26541c0643837063a4fe18de7948b997acb2c044b33daec40c6cecc7",
+        "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+        "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+        "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+        "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+      },
+      "helper_call_finding": "_upper_max and _absolute_log use c.fabs(...).b on MPIntervalContext intervals; no original_native_log_jet4 import or abs_log call"
+    },
+    {
+      "layer": "first_switch",
+      "adapter_source": "src/openai_ns_reconstruction/original_first_switch_finite_N_I1_numeric.py",
+      "adapter_sha256": "094dc8d966b77159953aab6552684c4c1ef498bdd319fd917c71df3a18b27baf",
+      "incoming_path": "parent.actual_macro_finite_N_I1_numeric.physical_error_log_bounds.delta_M",
+      "source_contract": {
+        "N_handle": 18,
+        "N_handle_is_not_numeric_N": true,
+        "phase_Z_independent": true,
+        "incoming_physical_delta_M_from_macro": true,
+        "incoming_delta_M_path": "parent.actual_macro_finite_N_I1_numeric.physical_error_log_bounds.delta_M",
+        "nonreset_mean_positive_kernel": true,
+        "physical_Pstar_applied_once": true,
+        "physical_R_not_a_mean_scale": true,
+        "physical_measure": "R^2*hbS ds, Wswitch=10000*hbS"
+      },
+      "ast_sha256": {
+        "build": "2689d9c441929f83e01a25649a2d0ab7427c4f4867575d48f624041ac35bac87",
+        "_read_log_rows": "a72c494a26541c0643837063a4fe18de7948b997acb2c044b33daec40c6cecc7",
+        "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+        "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+        "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+        "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+      },
+      "helper_call_finding": "_upper_max and _absolute_log use c.fabs(...).b on MPIntervalContext intervals; no original_native_log_jet4 import or abs_log call"
+    },
+    {
+      "layer": "macro",
+      "adapter_source": "src/openai_ns_reconstruction/original_macro_finite_N_I1_numeric.py",
+      "adapter_sha256": "deedb650c9260822cf556ec1dbf434ee4906803d29b711b39d15ee5e79f4a8ba",
+      "incoming_path": "parent.actual_micro_Q_increment_bounds.charts.second.log_caps.physical_delta_m",
+      "source_contract": {
+        "common_N_handle": 18,
+        "phase_definition": "fractional_part(N*offset)",
+        "phase_Z_independent": true,
+        "N_not_materialized": true,
+        "macro_incoming_nonreset": true,
+        "macro_delta_U_has_no_incoming": true,
+        "physical_Pstar_applied_once": true,
+        "physical_R_not_a_mean_scale": true,
+        "q_recovery_linear": true,
+        "delta_M_initial_source": "parent.actual_micro_Q_increment_bounds.charts.second.log_caps.physical_delta_m"
+      },
+      "ast_sha256": {
+        "build": "f133c2d659d0db6300199760a46f924a53221febe6f8281085b0aefbc515ad67",
+        "_read_log_rows": "2d361c93f474761667c1e212d07fc88ad13ef2dfcc23138f895dc541f1b067f7",
+        "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+        "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+        "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+        "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+      },
+      "helper_call_finding": "_upper_max and _absolute_log use c.fabs(...).b on MPIntervalContext intervals; no original_native_log_jet4 import or abs_log call"
+    },
+    {
+      "layer": "micro_Q_increment",
+      "source": "src/openai_ns_reconstruction/original_micro_Q_increment_bounds.py",
+      "source_sha256": "db80b104dd0dc6060e6f10cc9d65a5aa75b447eab11fae38177119affc1da0fb",
+      "source_contract": {
+        "physical_delta_m_source": "actual_micro_mean_Z3_bounds.charts.<chart>.log_caps.physical_complete_delta_m",
+        "same_N_phase_chain": true,
+        "positive_rate_memory_source": "RATES m=Fraction(1)",
+        "nonreset_transport": true,
+        "mean_replacement_identity": "delta_m_y=delta_U-delta_m",
+        "physical_Pstar_applied_once": true
+      },
+      "ast_sha256": {
+        "build": "a6ec8d64973363d25a3bff052c4fce88d53c22037899707f3ba8268120cf9e8a",
+        "saved": "45c5068725bb48520e7ab0597cb1afaad7ae83ff6e789233a992a5739307d458",
+        "linear": "53106dedeb9185b332dbb2ffe2302d8d343f8e29d09b29270233bb06d198ad87",
+        "recover": "edd982e67b2a13c01370995c142872f5d77d3575bdcf1c578351073f22c1b7b2",
+        "provenance": "b822084fcb6d108033930e80bc1717802127bf2f9577b56086ba044e82da3e02",
+        "new_controls": "d56a9649d41cfa5156009ef9473e864f9ebd4e574ecd47982f3a337c10c3ce05",
+        "radius_provenance": "a0be661122d2800472ee9eebaf20bc7b600d19f3d5e16339d6a5bf0215bd5454"
+      },
+      "helper_call_finding": "linear uses c.fabs(coefficient).b; saved incoming rows are read into interval context; no legacy abs_log call",
+      "producer_source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json#actual_micro_mean_Z3_bounds.charts.<chart>.log_caps.physical_complete_delta_m",
+      "producer_report_sha256": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+      "q_operator_Z2_static_review": {
+        "recover_source_ast_sha256": "edd982e67b2a13c01370995c142872f5d77d3575bdcf1c578351073f22c1b7b2",
+        "denominator": "L=1-delta*Z^2",
+        "ordinary_Q_rows_recovered": [
+          0,
+          1,
+          2
+        ],
+        "q2_recurrence_present_in_source": true,
+        "Q_error_recovered_before_absolute_norm": true,
+        "physical_pressure_adapter_source": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py#physical_pressure_fields",
+        "physical_pressure_adapter_ast_sha256": "06b5af9f5c843afaf2068b9af4d485fadff4351f4753d4838275db85e61857cc",
+        "source_or_checker_executed": false
+      }
+    },
+    {
+      "layer": "micro_phase_mean_and_Q",
+      "source": "src/openai_ns_reconstruction/original_n1_micro_phase_mean.py",
+      "source_sha256": "8e3167790f21f4f62c0888bc42d063c50f783574416d16c7df0e0da4fde9732d",
+      "ast_sha256": {
+        "build": "d9ea42d9cecc33fa1e0203d2e1077cf38eedc671b72e90822b18c8aa8b4a3327",
+        "recover_Q": "23b105944802d4f6b34e3f4b3297346a824368f783e48f0d0f2880bc1f0fc792",
+        "physical_prefactor": "0cd16cbe16206d45038cf39f9f0d6de31fe77efc63c7c2c66e2ce6ec7829e25c"
+      },
+      "helper_call_finding": "uses exact make_mpf tuples followed by interval-context construction; no Python abs/mpf negation and no legacy abs_log import"
+    },
+    {
+      "layer": "micro_mean_Z3_producer",
+      "source_path": "src/openai_ns_reconstruction/original_micro_mean_Z3_bounds.py",
+      "source_sha256": "f7892b4134fa81ecaf3b4348c41a58c43d70ef9605ab681dcf16b8d9fd42bf54",
+      "report_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json",
+      "report_sha256": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+      "parent_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_phase_inverse_bounds.json",
+      "parent_sha256": "0551d3b8acbcc4578cf97591a299e679f3e589efd4ce6d8e8e66b765e2cbabdc",
+      "incoming_physical_complete_delta_m_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json#actual_micro_mean_Z3_bounds.charts.second.log_caps.physical_complete_delta_m",
+      "incoming_physical_complete_delta_m_rows_canonical_json_sha256": "b6cf083ef01fb23bf3641c0f1886f88530f3e40f8e70808549db9038b2f972eb",
+      "incoming_physical_complete_delta_m_rows_canonical_json_bytes": 2661,
+      "ast_sha256": {
+        "rows": "a1e9801492ab55f801cdf40ef51b0fef2b7f1a4a55ffaa6db46bae2bcf373d5c",
+        "saved_B_rows": "aba7b9eb6be105abb0c120e784b0fa52dfe7e2484dfdc8c159732d7ce690b297",
+        "source_contract": "2ac39525437634b147235d84d65b7552d1f8b6db476c56e48a9bd9bb1e873c72",
+        "history_controls": "69b7df127a48a908dd9ea2cd6deb556a8d5f75228b3ed0b06b2cdeffbe6cf106",
+        "build": "7a758a3c43eadb00c0aa2e63e7b238da2bb588608f109e7d098d88754d50816c"
+      },
+      "source_contract": {
+        "mean_formula": "delta_m=Pstar/N^2*(C-JC_joint-JCy_joint)",
+        "physical_coefficient_factor": "Pstar/N^2",
+        "second_memory_formula": "exp(-hb*(s-1))",
+        "first_inlet_zero_only_at_source_owned_left_collar": true,
+        "second_history_not_reset": true,
+        "phase_Z_independent": true,
+        "ordinary_Z_orders": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "Z_window": [
+          "37/100",
+          "93/250"
+        ],
+        "positive_rate_memory": "C5 RATES m=Fraction(1)",
+        "physical_hb_applied_once": true,
+        "source_or_checker_executed": false
+      },
+      "static_helper_call_finding": {
+        "direct_original_native_log_jet4_imports": [],
+        "direct_abs_log_call_lines": [],
+        "builtin_abs_call_lines": [],
+        "only_log_helper_import": "original_log_mixed_jets._logsum",
+        "interval_endpoint_operations_are_not_scalar_legacy_abs_log": true
+      }
+    },
+    {
+      "layer": "micro_phase_inverse_and_loop",
+      "source_path": "src/openai_ns_reconstruction/original_micro_phase_inverse_bounds.py",
+      "source_sha256": "4123926c522cd212f25f3bd5f754b07975f6203da718dbe5ea79e021920ba4ed",
+      "report_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_phase_inverse_bounds.json",
+      "report_sha256": "0551d3b8acbcc4578cf97591a299e679f3e589efd4ce6d8e8e66b765e2cbabdc",
+      "parent_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_q_mixed_bounds.json",
+      "parent_sha256": "a28ae027174ceefa92c80c7f7437689ae964c83ca5c116c4c088a2ec156d2c39",
+      "supporting_source_hashes": {
+        "src/openai_ns_reconstruction/original_log_phase_jets.py": "703b2bbd1ba12fc2e82486fe5244a7cfee95749d2f486d35cfa6772f34958401",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions_check.json": "2c77e80df04fae615f8ea909fc7b606bfccfa27659cb67744ae8d84020b1a9e7",
+        "src/openai_ns_reconstruction/original_log_mixed_jets.py": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a"
+      },
+      "ast_sha256": {
+        "pack": "2d080984f0e2e7cd59a8219a76d6df65918893c7d8dfa7559b70288194f7ac47",
+        "phase_pack": "47e9d20a61e88fb0f3bd741119bdfbed7e64c242b6ced77cb67852bee22850c4",
+        "unpack": "9d58a42e0b06d65462485e943515d191ecf73135105432b127a7f21e77b73faa",
+        "roots": "86b7bb4174326d33e5c82c3d1a0a9178e2496811644d1cae3778b63736298e3c",
+        "roots.channel": "4d6b4ca502aabd813b981b678f575e8806bd15a4a89869a4d34bce1ddf686fa0",
+        "primitive": "f0df26ecaf5ad1b1c37f70e1fb952a7c530929aa5959374b6089cb5fd08f4fca",
+        "endpoint_controls": "e733b291164280192da10cbb7743f4345042daade81049c11c8009849b8053ce",
+        "chart_bounds": "e9b2d2e6b64ac301aa54f8abf4e2ab7e9c4c9fa00061e4c9c83d1e5ac6042372",
+        "build": "f687e8a3d353b6df7e798b8428cbb603d7e50c850da3fafa20662377d7887aea"
+      },
+      "source_contract": {
+        "derivative_scope": "physical slow y and ordinary Z at fixed target phase; not total y",
+        "total_y_chain_rule": "d_total_y=d_slow_y+N*d_phase",
+        "phase_Z_independent": true,
+        "B_scale_convention": "source B_over_Pstar=E*M/2; physical B=Pstar*B_over_Pstar",
+        "Z_window": [
+          "37/100",
+          "93/250"
+        ],
+        "inverse_loop_source_is_saved_C5": true,
+        "source_or_checker_executed": false
+      },
+      "static_helper_call_finding": {
+        "direct_original_native_log_jet4_imports": [],
+        "direct_abs_log_call_lines": [],
+        "builtin_abs_call_lines": [],
+        "interval_endpoint_operations_are_not_scalar_legacy_abs_log": true
+      }
+    },
+    {
+      "layer": "micro_phase_mean_kernel",
+      "source_path": "src/openai_ns_reconstruction/original_micro_phase_mean_kernel.py",
+      "source_sha256": "3c22ebb63788ab1b8dd50dd8fa5923a67f579ec464ef00d6a9ec81eea7de1181",
+      "ast_sha256": {
+        "_phase_rows": "a64f39ea7feef4bc2a6ecf4556b16740b23ef8538c5b824514528fb82957b2cf",
+        "_moving_rows": "35657dd4346bed01d47a5ce9e304d7e67e23fac045de37f2993176ad5215cac9",
+        "_scale_rows": "597ee1db1086e85d638b17e5e8a46dc2d269f749bb842257d72bfff7b691b1ad",
+        "_add_rows": "28cada0ccff182ef1681cfdb38e5c6d44935d3c1a49f294ac6ab60618140da16",
+        "_neg_rows": "be4060d31acb6cdb29d40f36148ccb8348a9c69c5b5688ead84ceb842733bb0a",
+        "_sub_rows": "4eb9b98a90501390160d30a3f0309f17842d5dee618b91f3dd1e1b1a11a3cb39",
+        "_substitute_rows": "53f92f1515a7628cb00d5c3f38ec8b4ce859b82123283dc7ded8e5fe6b2eafc1",
+        "build_micro_mean": "77df00af3e4853b6f8c2b6710441b727f577745bd9f892f9e08c14b19f56312e"
+      },
+      "static_contract": {
+        "coefficient_factor": "scale=g.div(Pstar,N_squared,\"same exact positive common N squared\")",
+        "second_memory_formula": "exp(-hb*(s-1))",
+        "physical_hb_weight_once": true,
+        "second_memory_not_reset": true,
+        "fixed_phase_Cy_not_total_y_derivative": true,
+        "factorial_normalization": false,
+        "numeric_mean_or_bounds_available_in_kernel": false,
+        "source_or_checker_executed": false
+      },
+      "static_helper_call_finding": {
+        "direct_original_native_log_jet4_imports": [],
+        "direct_abs_log_call_lines": [],
+        "builtin_abs_call_lines": []
+      }
+    }
+  ],
+  "shared_source_pins": {
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_macro_background_I1.json": "5a77d3d8b9b294516cc0be05ed83667e2710d64ff8427c7e917b8aed3379aede",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_functions.json": "5ea141f4ee1befaf33d6d2d2b9ad871477b72ee3dbbfc6b1e55b82766278a53d",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_functions.py": "a98753313fb1689f784c7a56cf09dc06df83e0b52cb738b5d4531c19f5402496",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+    "src/openai_ns_reconstruction/original_micro_phase_mean_kernel.py": "3c22ebb63788ab1b8dd50dd8fa5923a67f579ec464ef00d6a9ec81eea7de1181",
+    "src/openai_ns_reconstruction/original_log_mixed_jets.py": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_micro_correlated_m15.json": "7868f1899398a54aaeba1b799b8b1015465718445444966648295e66ae6c97aa",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_phase_inverse_bounds.json": "0551d3b8acbcc4578cf97591a299e679f3e589efd4ce6d8e8e66b765e2cbabdc",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_q_mixed_bounds.json": "a28ae027174ceefa92c80c7f7437689ae964c83ca5c116c4c088a2ec156d2c39",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_micro_phase_mean.json": "0005ff381670e7d4f453d43cedfcc1fcc42fd6f5ffee0b55f58c7af118b0d14c",
+    "src/openai_ns_reconstruction/original_micro_mean_Z3_bounds.py": "f7892b4134fa81ecaf3b4348c41a58c43d70ef9605ab681dcf16b8d9fd42bf54",
+    "src/openai_ns_reconstruction/original_micro_phase_inverse_bounds.py": "4123926c522cd212f25f3bd5f754b07975f6203da718dbe5ea79e021920ba4ed",
+    "src/openai_ns_reconstruction/original_log_phase_jets.py": "703b2bbd1ba12fc2e82486fe5244a7cfee95749d2f486d35cfa6772f34958401",
+    "src/openai_ns_reconstruction/original_micro_Q_increment_bounds.py": "db80b104dd0dc6060e6f10cc9d65a5aa75b447eab11fae38177119affc1da0fb",
+    "src/openai_ns_reconstruction/original_n1_micro_phase_mean.py": "8e3167790f21f4f62c0888bc42d063c50f783574416d16c7df0e0da4fde9732d",
+    "src/openai_ns_reconstruction/original_micro_direction_C0.py": "eb9aaf5462d00c2c24c7fd0731fbc42a9fccc1e9a4f980229b96edbabf85e779"
+  },
+  "legacy_abs_log_integrity_evidence": {
+    "report_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_abs_log_integrity.json",
+    "report_sha256": "dd4cb5741cd7e04c112d2968bf9a81aaceecfac3351a7ca93475c5c9aae646dd",
+    "source_module": "src/openai_ns_reconstruction/original_abs_log_integrity.py",
+    "source_sha256": "485551576307cbe7be545fda443521d0d1df532576dcf780b4a38ad991387fd5",
+    "legacy_helper": {
+      "path": "src/openai_ns_reconstruction/original_native_log_jet4.py",
+      "sha256": "ba11bb60af654e58271a735560aeae2f1f9320ef3bfb8cee0966e9b7e50e0df4",
+      "abs_log_ast_sha256": "1efce3c28e2e5624647695b2983c41aa4ec69b2a516d9715c7199bab2325a60f"
+    },
+    "directed_replacement": {
+      "path": "src/openai_ns_reconstruction/original_directed_abs_log.py",
+      "sha256": "96126cf50406cfc87c8d9af854a42ac9b4ed9a0222b55587d5c913bfcd9ec767",
+      "abs_upper_ast_sha256": "c7fcba738f4d129a7ff1629f11a3162b4de350d1ae01a8e17bf2a8816959fc6b",
+      "abs_log_upper_ast_sha256": "c99bb2ee3b54909a9b3c04fe15c4eeb14b171fcaf71fa1ae250fe57ed4040762"
+    },
+    "static_scan": {
+      "scope": "parent.implementation_hashes entries whose path ends with .py",
+      "pinned_python_path_count": 431,
+      "direct_old_abs_log_call_count": 23,
+      "affected_direct_modules": [
+        {
+          "path": "src/openai_ns_reconstruction/original_long_reference_native_controls.py",
+          "sha256": "b15f020def2316b4e91a38dea0faa6b6a04cc35fa50f1cf6f0b78fa4d2235094",
+          "direct_call_count": 17,
+          "call_lines": [
+            57,
+            258,
+            259,
+            260,
+            378,
+            380,
+            381,
+            382,
+            382,
+            383,
+            384,
+            390,
+            391,
+            393,
+            395,
+            396,
+            397
+          ]
+        },
+        {
+          "path": "src/openai_ns_reconstruction/original_restoration_native_controls.py",
+          "sha256": "9682dd93ae1637467cdc068542d4accdd03aab3e413cdc75f6fd14019b8ad69d",
+          "direct_call_count": 6,
+          "call_lines": [
+            132,
+            230,
+            262,
+            356,
+            357,
+            358
+          ]
+        }
+      ],
+      "dynamic_aliases_not_scanned": true,
+      "transitive_calls_not_scanned": true,
+      "source_executed": false
+    },
+    "revalidation_required_for_historical_caps": true,
+    "old_caps_preserved": true
+  },
+  "frontier_conclusion": {
+    "same_N": "All inspected macro/first/post contracts bind common graph handle N=18 and keep N unmaterialized; micro source binds the same N handle through its source graph.",
+    "same_Z_window": "The three finite-N adapters use z = [37/100, 93/250] in source; the micro parent packet is consumed on the same inherited Z window.",
+    "positive_rate_memory": "Macro incoming memory is nonreset; first and post use positive-kernel max(incoming deltaM, local deltaU); micro provenance pins RATES m=Fraction(1) and predecessor_memory_never_reset=True.",
+    "affected_helper_calls": "None in this inspected incoming-cap frontier. The c.fabs(...).b calls receive interval-context values; interval .a/.b and -interval operations are not scalar legacy abs_log calls.",
+    "action": "Carry the saved post-switch delta_M by its exact source path and digest, with micro_Q_increment now traced to actual_micro_mean_Z3_bounds physical_complete_delta_m through the same-N, same-Z-window, positive-rate nonreset micro source chain. Long/reference/restoration consumers still need their own directed revalidation because those are the known direct legacy-helper modules.",
+    "unresolved_frontier": {
+      "status": "bounded_frontier_complete_through_micro_mean_Z3_and_micro_Q_increment_for_this_incoming_four_row_packet",
+      "outside_scope": [
+        "accepted ancestors feeding micro_phase_inverse and q_mixed were not replayed or numerically revalidated",
+        "long/reference/restoration/postrestore consumers were not certified",
+        "dynamic aliases and transitive calls outside the static source frontier remain unresolved"
+      ],
+      "no_global_historical_certification": true
+    }
+  },
+  "new_kernel_adapter_read_only_review": {
+    "scope": "independent source, hash, AST, and saved JSON review only; no producer, builder, owner, checker, recurrence, quadrature, or norm execution",
+    "kernel": {
+      "path": "src/openai_ns_reconstruction/original_micro_phase_mean_kernel.py",
+      "sha256": "3c22ebb63788ab1b8dd50dd8fa5923a67f579ec464ef00d6a9ec81eea7de1181",
+      "ast_sha256": {
+        "build_micro_mean": "77df00af3e4853b6f8c2b6710441b727f577745bd9f892f9e08c14b19f56312e",
+        "_phase_rows": "a64f39ea7feef4bc2a6ecf4556b16740b23ef8538c5b824514528fb82957b2cf",
+        "_moving_rows": "35657dd4346bed01d47a5ce9e304d7e67e23fac045de37f2993176ad5215cac9",
+        "_scale_rows": "597ee1db1086e85d638b17e5e8a46dc2d269f749bb842257d72bfff7b691b1ad",
+        "_add_rows": "28cada0ccff182ef1681cfdb38e5c6d44935d3c1a49f294ac6ab60618140da16",
+        "_neg_rows": "be4060d31acb6cdb29d40f36148ccb8348a9c69c5b5688ead84ceb842733bb0a",
+        "_sub_rows": "4eb9b98a90501390160d30a3f0309f17842d5dee618b91f3dd1e1b1a11a3cb39",
+        "_substitute_rows": "53f92f1515a7628cb00d5c3f38ec8b4ce859b82123283dc7ded8e5fe6b2eafc1"
+      }
+    },
+    "physical_Q_adapter": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py",
+      "sha256": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+      "ast_sha256": {
+        "generic_functions": "cfc50a5e623c1d71b1c2551b6d8ed72c83565ff3c74329c58fa0e92a4c7be52f",
+        "total_radial_functions": "8c71d236f7e0d17ba836ce2d87070dd8616ecea154dec27cd4926ae39202bed5",
+        "physical_pressure_fields": "06b5af9f5c843afaf2068b9af4d485fadff4351f4753d4838275db85e61857cc"
+      },
+      "saved_support_hashes": {
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": "b96316728406fddb9d94e866042529b7d84b7146167cba221ed5a88b427f147a",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions_check.json": "189ef4dacc60bc2feda16046a193a75e89f658f635fd6e3e381200c09637bf6f"
+      }
+    },
+    "inverse_loop_adapter": {
+      "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+      "sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+      "ast_sha256": {
+        "loop_functions": "fffc175d358e7cce71d3046ec10303e22d46b5ebb3145f9a44c0d1fe88796f8c",
+        "generic_roots": "24570272611c6745b9e785163e80c67374e6ca1044a90ebebed9ff7dfdd2c708",
+        "finite_N_functions": "6221e9b2fb9ba6173f0693f0a51dcc868a1ff76a5a45f489fde115e9f74f270d",
+        "transport": "2b7815e4252db2157c9f6142bb0e3d80c125a2865f68cbefc5b051f4ac8e0141",
+        "CurrentOriginalPrescribedLoopC5Functions.__init__": "246f52f2b77e2e04ce83c7de96866b94be3b6524f84f171497b5e2b48aaa58f8"
+      },
+      "saved_support_hashes": {
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa",
+        "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions_check.json": "2c77e80df04fae615f8ea909fc7b606bfccfa27659cb67744ae8d84020b1a9e7"
+      }
+    },
+    "findings": {
+      "coefficient_factor": {
+        "status": "source_match",
+        "evidence": "micro phase mean kernel uses Pstar/N_squared exactly once; micro mean producer records delta_m=Pstar/N^2*(C-JC_joint-JCy_joint)",
+        "line_refs": {
+          "kernel_build_micro_mean": [
+            424,
+            425
+          ],
+          "micro_mean_source_contract": [
+            106
+          ]
+        }
+      },
+      "Q_operator_Z2": {
+        "status": "source_match",
+        "evidence": "micro_Q_increment.recover retains the nonunit L=1-delta*Z^2 denominator and ordinary Q rows through Z2; Q4 physical_pressure_fields forms U=Pstar*V, m=Pstar*m, my=U-m, then Q and Q_y with the same L",
+        "line_refs": {
+          "micro_Q_recover": [
+            46,
+            57
+          ],
+          "Q4_physical_pressure_fields": [
+            193,
+            195,
+            196,
+            197,
+            199,
+            201
+          ]
+        }
+      },
+      "nonreset_memory": {
+        "status": "source_match",
+        "evidence": "kernel joins first history with second memory exp(-hb*(s-1)); C5 transport carries predecessor memory and the micro mean producer marks second_history_not_reset=true",
+        "line_refs": {
+          "kernel_second_memory": [
+            526,
+            531,
+            536,
+            541,
+            672
+          ],
+          "C5_transport": [
+            240,
+            249,
+            251
+          ],
+          "C5_chart_memory": [
+            281,
+            291,
+            299
+          ]
+        }
+      },
+      "physical_scales": {
+        "status": "source_match",
+        "evidence": "Pstar/N^2 mean factor, B_over_Pstar source convention, Q4 Pstar scaling, and one physical Jacobian are explicit; no extra Pstar or N is introduced in the inspected adapter",
+        "line_refs": {
+          "kernel_factor": [
+            424,
+            425
+          ],
+          "Q4_total_radial": [
+            183,
+            187
+          ],
+          "Q4_physical_fields": [
+            195,
+            196
+          ],
+          "C5_finite_N": [
+            227,
+            231,
+            236
+          ],
+          "C5_transport": [
+            246,
+            248
+          ]
+        }
+      },
+      "legacy_abs_log": {
+        "status": "no_direct_call_in_inspected_frontier",
+        "evidence": "kernel, micro mean, inverse, Q increment, Q4, and C5 sources have no original_native_log_jet4 import and no direct abs_log call"
+      }
+    },
+    "review_executed": false
+  },
+  "bounded_helper_call_classification": {
+    "log_mixed_jets": {
+      "path": "src/openai_ns_reconstruction/original_log_mixed_jets.py",
+      "sha256": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a",
+      "ast_sha256": {
+        "_point_log": "b91039abf1baccad83a760b1be69eaf90443cd81c870033889cce431d9da59c6",
+        "_poly_jet": "27e5b6e91115185cc370be7b1173cf7ed576a2e50df98f26a2e57adba372f146",
+        "_contains": "28bbb0c8a821a5a86bc259b1c0f8977207803eed110e23dfd54e918c6d87f38d",
+        "_raw_bounds": "2eed527f31220f99acf1bd29b2e356d5473a6d2bd62d5e307d785faa36e1332c",
+        "_interval": "4ac5c3ce84c715258f73efd5fc2eac9b8d11afb68347b9aed08b3157d6ef0c51",
+        "_coerce": "000f25cfd1b8c7e641060fc442f1885c8d3ec6661c8c12d95125e284ad8647b6",
+        "_logsum": "6d6e15e9bf20c9edcd7c9283fef66517397a9f9fbdbe97701e745ade91857c96"
+      },
+      "builtin_abs_call_lines": [
+        358,
+        364,
+        376
+      ],
+      "operand_types_from_source": {
+        "line_358": "Fraction(value)",
+        "line_364": "SymPy exact derivative value",
+        "line_376": "Fraction(value)"
+      },
+      "make_mpf_endpoint_abs_or_scalar_negation": false,
+      "legacy_native_abs_log_call": false
+    },
+    "log_phase_jets": {
+      "path": "src/openai_ns_reconstruction/original_log_phase_jets.py",
+      "sha256": "703b2bbd1ba12fc2e82486fe5244a7cfee95749d2f486d35cfa6772f34958401",
+      "ast_sha256": {
+        "_rational_log": "08d9b2be484e31143f08d5761ae336b31fe544cf9cd133dcaef409c1c536d58a",
+        "_exact_phase_mapping": "924f2d064e7aacdeb049437c7e49581dfad38fd60a174d8c9ace5aa2e70958b3",
+        "inverse_coefficients": "b071c3be2be33c602080cdd95c7c69c0e060c22e951ad8125380f12a2f20e14b",
+        "compose_inverse": "f4510840bb57e011a8727f9f5e716e188f6c419022e3133ba3326098b8338b2f"
+      },
+      "builtin_abs_call_lines": [
+        391
+      ],
+      "operand_types_from_source": {
+        "line_391": "int(value.p) numerator from exact Rational"
+      },
+      "make_mpf_endpoint_abs_or_scalar_negation": false,
+      "legacy_native_abs_log_call": false
+    },
+    "classification": "These exact-rational abs calls are distinct from the known Python abs/mpf endpoint defect in original_native_log_jet4.abs_log; interval .a/.b and unary minus on interval-derived values remain interval-context operations in this frontier."
+  },
+  "hash_ast_row_audit": {
+    "file_hash_method": "SHA256 of exact current file bytes",
+    "files": [
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_macro_background_I1.json",
+        "bytes": 19227724,
+        "sha256": "5a77d3d8b9b294516cc0be05ed83667e2710d64ff8427c7e917b8aed3379aede",
+        "prior_saved_sha256": "5a77d3d8b9b294516cc0be05ed83667e2710d64ff8427c7e917b8aed3379aede",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_functions.json",
+        "bytes": 10231619,
+        "sha256": "5ea141f4ee1befaf33d6d2d2b9ad871477b72ee3dbbfc6b1e55b82766278a53d",
+        "prior_saved_sha256": "5ea141f4ee1befaf33d6d2d2b9ad871477b72ee3dbbfc6b1e55b82766278a53d",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_functions.py",
+        "bytes": 17865,
+        "sha256": "a98753313fb1689f784c7a56cf09dc06df83e0b52cb738b5d4531c19f5402496",
+        "prior_saved_sha256": "a98753313fb1689f784c7a56cf09dc06df83e0b52cb738b5d4531c19f5402496",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py",
+        "bytes": 22126,
+        "sha256": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+        "prior_saved_sha256": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+        "bytes": 24398,
+        "sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+        "prior_saved_sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_phase_mean_kernel.py",
+        "bytes": 25881,
+        "sha256": "3c22ebb63788ab1b8dd50dd8fa5923a67f579ec464ef00d6a9ec81eea7de1181",
+        "prior_saved_sha256": "3c22ebb63788ab1b8dd50dd8fa5923a67f579ec464ef00d6a9ec81eea7de1181",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_log_mixed_jets.py",
+        "bytes": 17177,
+        "sha256": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a",
+        "prior_saved_sha256": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_mean_Z3_bounds.json",
+        "bytes": 17772325,
+        "sha256": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+        "prior_saved_sha256": "557195be5893c17e9398371017b3b4b7a52b6a0eae473b6befc19cafe84b8aef",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_micro_correlated_m15.json",
+        "bytes": 16101496,
+        "sha256": "7868f1899398a54aaeba1b799b8b1015465718445444966648295e66ae6c97aa",
+        "prior_saved_sha256": "7868f1899398a54aaeba1b799b8b1015465718445444966648295e66ae6c97aa",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_phase_inverse_bounds.json",
+        "bytes": 17617354,
+        "sha256": "0551d3b8acbcc4578cf97591a299e679f3e589efd4ce6d8e8e66b765e2cbabdc",
+        "prior_saved_sha256": "0551d3b8acbcc4578cf97591a299e679f3e589efd4ce6d8e8e66b765e2cbabdc",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_micro_q_mixed_bounds.json",
+        "bytes": 17020832,
+        "sha256": "a28ae027174ceefa92c80c7f7437689ae964c83ca5c116c4c088a2ec156d2c39",
+        "prior_saved_sha256": "a28ae027174ceefa92c80c7f7437689ae964c83ca5c116c4c088a2ec156d2c39",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_micro_phase_mean.json",
+        "bytes": 16248082,
+        "sha256": "0005ff381670e7d4f453d43cedfcc1fcc42fd6f5ffee0b55f58c7af118b0d14c",
+        "prior_saved_sha256": "0005ff381670e7d4f453d43cedfcc1fcc42fd6f5ffee0b55f58c7af118b0d14c",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_mean_Z3_bounds.py",
+        "bytes": 13211,
+        "sha256": "f7892b4134fa81ecaf3b4348c41a58c43d70ef9605ab681dcf16b8d9fd42bf54",
+        "prior_saved_sha256": "f7892b4134fa81ecaf3b4348c41a58c43d70ef9605ab681dcf16b8d9fd42bf54",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_phase_inverse_bounds.py",
+        "bytes": 13135,
+        "sha256": "4123926c522cd212f25f3bd5f754b07975f6203da718dbe5ea79e021920ba4ed",
+        "prior_saved_sha256": "4123926c522cd212f25f3bd5f754b07975f6203da718dbe5ea79e021920ba4ed",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_log_phase_jets.py",
+        "bytes": 17110,
+        "sha256": "703b2bbd1ba12fc2e82486fe5244a7cfee95749d2f486d35cfa6772f34958401",
+        "prior_saved_sha256": "703b2bbd1ba12fc2e82486fe5244a7cfee95749d2f486d35cfa6772f34958401",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_Q_increment_bounds.py",
+        "bytes": 16894,
+        "sha256": "db80b104dd0dc6060e6f10cc9d65a5aa75b447eab11fae38177119affc1da0fb",
+        "prior_saved_sha256": "db80b104dd0dc6060e6f10cc9d65a5aa75b447eab11fae38177119affc1da0fb",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_n1_micro_phase_mean.py",
+        "bytes": 22340,
+        "sha256": "8e3167790f21f4f62c0888bc42d063c50f783574416d16c7df0e0da4fde9732d",
+        "prior_saved_sha256": "8e3167790f21f4f62c0888bc42d063c50f783574416d16c7df0e0da4fde9732d",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_direction_C0.py",
+        "bytes": 22141,
+        "sha256": "eb9aaf5462d00c2c24c7fd0731fbc42a9fccc1e9a4f980229b96edbabf85e779",
+        "prior_saved_sha256": "eb9aaf5462d00c2c24c7fd0731fbc42a9fccc1e9a4f980229b96edbabf85e779",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_directed_loop_controls.json",
+        "bytes": 1752702,
+        "sha256": "adefdae708754a2572eae15a90662274bf17e88a0d72d5db9befbc9e2858b252",
+        "prior_saved_sha256": "adefdae708754a2572eae15a90662274bf17e88a0d72d5db9befbc9e2858b252",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_directed_controls_v2.json",
+        "bytes": 42177499,
+        "sha256": "10abe68b98fdf87709a7a7c9f27103523701e746c357ae62386038700052490a",
+        "prior_saved_sha256": "10abe68b98fdf87709a7a7c9f27103523701e746c357ae62386038700052490a",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_switch_post_finite_N_I1.json",
+        "bytes": 24654478,
+        "sha256": "9d0d957bae129853030bad4cd5c484eb27e8b13b0623601e458fc4e95e93bc2b",
+        "prior_saved_sha256": "9d0d957bae129853030bad4cd5c484eb27e8b13b0623601e458fc4e95e93bc2b",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_first_switch_finite_N_I1.json",
+        "bytes": 21648247,
+        "sha256": "2cc8b4ff9670858564297bc1c27d5322c9af7d2cb85381939dc3e37a3eea346a",
+        "prior_saved_sha256": "2cc8b4ff9670858564297bc1c27d5322c9af7d2cb85381939dc3e37a3eea346a",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_macro_finite_N_I1.json",
+        "bytes": 19955216,
+        "sha256": "066c6eaf48b49f836379b1604725f1b7f33ee9372bb2e4521652ddeaff1d7c3c",
+        "prior_saved_sha256": null,
+        "matches_prior_saved_sha256": null,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz",
+        "bytes": 1185520,
+        "sha256": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa",
+        "prior_saved_sha256": null,
+        "matches_prior_saved_sha256": null,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions_check.json",
+        "bytes": 251509,
+        "sha256": "2c77e80df04fae615f8ea909fc7b606bfccfa27659cb67744ae8d84020b1a9e7",
+        "prior_saved_sha256": null,
+        "matches_prior_saved_sha256": null,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz",
+        "bytes": 1567673,
+        "sha256": "b96316728406fddb9d94e866042529b7d84b7146167cba221ed5a88b427f147a",
+        "prior_saved_sha256": null,
+        "matches_prior_saved_sha256": null,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions_check.json",
+        "bytes": 252878,
+        "sha256": "189ef4dacc60bc2feda16046a193a75e89f658f635fd6e3e381200c09637bf6f",
+        "prior_saved_sha256": null,
+        "matches_prior_saved_sha256": null,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_native_log_jet4.py",
+        "bytes": 15032,
+        "sha256": "ba11bb60af654e58271a735560aeae2f1f9320ef3bfb8cee0966e9b7e50e0df4",
+        "prior_saved_sha256": "ba11bb60af654e58271a735560aeae2f1f9320ef3bfb8cee0966e9b7e50e0df4",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_directed_abs_log.py",
+        "bytes": 3631,
+        "sha256": "96126cf50406cfc87c8d9af854a42ac9b4ed9a0222b55587d5c913bfcd9ec767",
+        "prior_saved_sha256": "96126cf50406cfc87c8d9af854a42ac9b4ed9a0222b55587d5c913bfcd9ec767",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_abs_log_integrity.py",
+        "bytes": 20253,
+        "sha256": "485551576307cbe7be545fda443521d0d1df532576dcf780b4a38ad991387fd5",
+        "prior_saved_sha256": "485551576307cbe7be545fda443521d0d1df532576dcf780b4a38ad991387fd5",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_abs_log_integrity.json",
+        "bytes": 39036854,
+        "sha256": "dd4cb5741cd7e04c112d2968bf9a81aaceecfac3351a7ca93475c5c9aae646dd",
+        "prior_saved_sha256": "dd4cb5741cd7e04c112d2968bf9a81aaceecfac3351a7ca93475c5c9aae646dd",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_long_reference_native_controls.py",
+        "bytes": 27653,
+        "sha256": "b15f020def2316b4e91a38dea0faa6b6a04cc35fa50f1cf6f0b78fa4d2235094",
+        "prior_saved_sha256": "b15f020def2316b4e91a38dea0faa6b6a04cc35fa50f1cf6f0b78fa4d2235094",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_restoration_native_controls.py",
+        "bytes": 56444,
+        "sha256": "9682dd93ae1637467cdc068542d4accdd03aab3e413cdc75f6fd14019b8ad69d",
+        "prior_saved_sha256": "9682dd93ae1637467cdc068542d4accdd03aab3e413cdc75f6fd14019b8ad69d",
+        "matches_prior_saved_sha256": true,
+        "current_record_recomputed_from_file_bytes": true
+      }
+    ],
+    "current_file_hash_records_are_exact": true,
+    "prior_saved_hash_mismatches_corrected": [
+      {
+        "path": "src/openai_ns_reconstruction/original_log_mixed_jets.py",
+        "prior_saved_sha256": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361",
+        "actual_sha256": "ceeebf88a02207b02fedfdff727bc2ae1d09f4a52ebf27b8a84ff8876719361a",
+        "correction": "shared_source_pins now stores the complete 64-character SHA256"
+      }
+    ],
+    "prior_saved_hash_mismatch_count": 1,
+    "ast_hash_method": "SHA256(ast.dump(function_node, include_attributes=False, annotate_fields=True).encode())",
+    "ast_entries": [
+      {
+        "path": "src/openai_ns_reconstruction/original_switch_post_finite_N_I1_numeric.py",
+        "functions": {
+          "build": "19e2bd66a2be4ed5cda85c8bd8c1e3589f689bbadee8912ba31e87a12e301d99",
+          "_chart": "9be86cb79b15763ae7df7d8f082e7f45def7eb67c92f56439cfb734a9fc3a860",
+          "_read_log_rows": "a72c494a26541c0643837063a4fe18de7948b997acb2c044b33daec40c6cecc7",
+          "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+          "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+          "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+          "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_first_switch_finite_N_I1_numeric.py",
+        "functions": {
+          "build": "2689d9c441929f83e01a25649a2d0ab7427c4f4867575d48f624041ac35bac87",
+          "_read_log_rows": "a72c494a26541c0643837063a4fe18de7948b997acb2c044b33daec40c6cecc7",
+          "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+          "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+          "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+          "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_macro_finite_N_I1_numeric.py",
+        "functions": {
+          "build": "f133c2d659d0db6300199760a46f924a53221febe6f8281085b0aefbc515ad67",
+          "_read_log_rows": "2d361c93f474761667c1e212d07fc88ad13ef2dfcc23138f895dc541f1b067f7",
+          "_upper_max": "5583a0562c250fb552f475764aca874420d47d713c00903dd19b4bb5df97faee",
+          "_absolute_log": "664e1c58c446a3a6b3d97ff63db2f6a1aeb424d6471b943ebbbd652e8b54fc17",
+          "_log_abs_scalar": "d7bacadb844a01353b9b43390fd7e3c99be227386537bf3c501d924d8b063004",
+          "_recover_delta_Q_logs": "ee467893efbf15e300770e072730a40e3ac424e98df118817dc6d4a5fe37f809"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_Q_increment_bounds.py",
+        "functions": {
+          "build": "a6ec8d64973363d25a3bff052c4fce88d53c22037899707f3ba8268120cf9e8a",
+          "saved": "45c5068725bb48520e7ab0597cb1afaad7ae83ff6e789233a992a5739307d458",
+          "linear": "53106dedeb9185b332dbb2ffe2302d8d343f8e29d09b29270233bb06d198ad87",
+          "recover": "edd982e67b2a13c01370995c142872f5d77d3575bdcf1c578351073f22c1b7b2",
+          "provenance": "b822084fcb6d108033930e80bc1717802127bf2f9577b56086ba044e82da3e02",
+          "new_controls": "d56a9649d41cfa5156009ef9473e864f9ebd4e574ecd47982f3a337c10c3ce05",
+          "radius_provenance": "a0be661122d2800472ee9eebaf20bc7b600d19f3d5e16339d6a5bf0215bd5454"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_n1_micro_phase_mean.py",
+        "functions": {
+          "build": "d9ea42d9cecc33fa1e0203d2e1077cf38eedc671b72e90822b18c8aa8b4a3327",
+          "recover_Q": "23b105944802d4f6b34e3f4b3297346a824368f783e48f0d0f2880bc1f0fc792",
+          "physical_prefactor": "0cd16cbe16206d45038cf39f9f0d6de31fe77efc63c7c2c66e2ce6ec7829e25c"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_mean_Z3_bounds.py",
+        "functions": {
+          "rows": "a1e9801492ab55f801cdf40ef51b0fef2b7f1a4a55ffaa6db46bae2bcf373d5c",
+          "saved_B_rows": "aba7b9eb6be105abb0c120e784b0fa52dfe7e2484dfdc8c159732d7ce690b297",
+          "source_contract": "2ac39525437634b147235d84d65b7552d1f8b6db476c56e48a9bd9bb1e873c72",
+          "history_controls": "69b7df127a48a908dd9ea2cd6deb556a8d5f75228b3ed0b06b2cdeffbe6cf106",
+          "build": "7a758a3c43eadb00c0aa2e63e7b238da2bb588608f109e7d098d88754d50816c"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_phase_inverse_bounds.py",
+        "functions": {
+          "pack": "2d080984f0e2e7cd59a8219a76d6df65918893c7d8dfa7559b70288194f7ac47",
+          "phase_pack": "47e9d20a61e88fb0f3bd741119bdfbed7e64c242b6ced77cb67852bee22850c4",
+          "unpack": "9d58a42e0b06d65462485e943515d191ecf73135105432b127a7f21e77b73faa",
+          "roots": "86b7bb4174326d33e5c82c3d1a0a9178e2496811644d1cae3778b63736298e3c",
+          "roots.channel": "4d6b4ca502aabd813b981b678f575e8806bd15a4a89869a4d34bce1ddf686fa0",
+          "primitive": "f0df26ecaf5ad1b1c37f70e1fb952a7c530929aa5959374b6089cb5fd08f4fca",
+          "endpoint_controls": "e733b291164280192da10cbb7743f4345042daade81049c11c8009849b8053ce",
+          "chart_bounds": "e9b2d2e6b64ac301aa54f8abf4e2ab7e9c4c9fa00061e4c9c83d1e5ac6042372",
+          "build": "f687e8a3d353b6df7e798b8428cbb603d7e50c850da3fafa20662377d7887aea"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_micro_phase_mean_kernel.py",
+        "functions": {
+          "_phase_rows": "a64f39ea7feef4bc2a6ecf4556b16740b23ef8538c5b824514528fb82957b2cf",
+          "_moving_rows": "35657dd4346bed01d47a5ce9e304d7e67e23fac045de37f2993176ad5215cac9",
+          "_scale_rows": "597ee1db1086e85d638b17e5e8a46dc2d269f749bb842257d72bfff7b691b1ad",
+          "_add_rows": "28cada0ccff182ef1681cfdb38e5c6d44935d3c1a49f294ac6ab60618140da16",
+          "_neg_rows": "be4060d31acb6cdb29d40f36148ccb8348a9c69c5b5688ead84ceb842733bb0a",
+          "_sub_rows": "4eb9b98a90501390160d30a3f0309f17842d5dee618b91f3dd1e1b1a11a3cb39",
+          "_substitute_rows": "53f92f1515a7628cb00d5c3f38ec8b4ce859b82123283dc7ded8e5fe6b2eafc1",
+          "build_micro_mean": "77df00af3e4853b6f8c2b6710441b727f577745bd9f892f9e08c14b19f56312e"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_native_log_jet4.py",
+        "functions": {
+          "abs_log": "1efce3c28e2e5624647695b2983c41aa4ec69b2a516d9715c7199bab2325a60f"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_directed_abs_log.py",
+        "functions": {
+          "abs_upper": "c7fcba738f4d129a7ff1629f11a3162b4de350d1ae01a8e17bf2a8816959fc6b",
+          "abs_log_upper": "c99bb2ee3b54909a9b3c04fe15c4eeb14b171fcaf71fa1ae250fe57ed4040762"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py",
+        "functions": {
+          "generic_functions": "cfc50a5e623c1d71b1c2551b6d8ed72c83565ff3c74329c58fa0e92a4c7be52f",
+          "total_radial_functions": "8c71d236f7e0d17ba836ce2d87070dd8616ecea154dec27cd4926ae39202bed5",
+          "physical_pressure_fields": "06b5af9f5c843afaf2068b9af4d485fadff4351f4753d4838275db85e61857cc"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+        "functions": {
+          "loop_functions": "fffc175d358e7cce71d3046ec10303e22d46b5ebb3145f9a44c0d1fe88796f8c",
+          "generic_roots": "24570272611c6745b9e785163e80c67374e6ca1044a90ebebed9ff7dfdd2c708",
+          "finite_N_functions": "6221e9b2fb9ba6173f0693f0a51dcc868a1ff76a5a45f489fde115e9f74f270d",
+          "transport": "2b7815e4252db2157c9f6142bb0e3d80c125a2865f68cbefc5b051f4ac8e0141",
+          "CurrentOriginalPrescribedLoopC5Functions.__init__": "246f52f2b77e2e04ce83c7de96866b94be3b6524f84f171497b5e2b48aaa58f8"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_log_mixed_jets.py",
+        "functions": {
+          "_point_log": "b91039abf1baccad83a760b1be69eaf90443cd81c870033889cce431d9da59c6",
+          "_poly_jet": "27e5b6e91115185cc370be7b1173cf7ed576a2e50df98f26a2e57adba372f146",
+          "_contains": "28bbb0c8a821a5a86bc259b1c0f8977207803eed110e23dfd54e918c6d87f38d",
+          "_raw_bounds": "2eed527f31220f99acf1bd29b2e356d5473a6d2bd62d5e307d785faa36e1332c",
+          "_interval": "4ac5c3ce84c715258f73efd5fc2eac9b8d11afb68347b9aed08b3157d6ef0c51",
+          "_coerce": "000f25cfd1b8c7e641060fc442f1885c8d3ec6661c8c12d95125e284ad8647b6",
+          "_logsum": "6d6e15e9bf20c9edcd7c9283fef66517397a9f9fbdbe97701e745ade91857c96"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      },
+      {
+        "path": "src/openai_ns_reconstruction/original_log_phase_jets.py",
+        "functions": {
+          "_rational_log": "08d9b2be484e31143f08d5761ae336b31fe544cf9cd133dcaef409c1c536d58a",
+          "_exact_phase_mapping": "924f2d064e7aacdeb049437c7e49581dfad38fd60a174d8c9ace5aa2e70958b3",
+          "inverse_coefficients": "b071c3be2be33c602080cdd95c7c69c0e060c22e951ad8125380f12a2f20e14b",
+          "compose_inverse": "f4510840bb57e011a8727f9f5e716e188f6c419022e3133ba3326098b8338b2f"
+        },
+        "all_saved_entries_match_actual_nodes": true
+      }
+    ],
+    "ast_entries_checked": 73,
+    "ast_mismatch_count": 0,
+    "ast_mismatches": [],
+    "all_saved_ast_entries_match_actual_function_nodes": true,
+    "target_row_digest_recomputed": {
+      "source_path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_switch_post_finite_N_I1.json#actual_switch_post_finite_N_I1_numeric.charts.post_switch.physical_error_log_bounds.delta_M",
+      "report_sha256": "9d0d957bae129853030bad4cd5c484eb27e8b13b0623601e458fc4e95e93bc2b",
+      "rows_canonical_json_sha256": "67de8950d801a1c919797ad560fba038f3d4852e6cd47397a4476c54b97ae70b",
+      "rows_canonical_json_bytes": 3413,
+      "row_count": 4,
+      "exact_rows_reloaded_from_saved_json": true,
+      "digest_matches_saved_delta_M_rows_canonical_json_sha256": true
+    }
+  }
+}
