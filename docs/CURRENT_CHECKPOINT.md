@@ -1,3 +1,18 @@
+# Actual modified long/reference RQy seams - 2026-10-18
+
+Read [CURRENT_ORIGINAL_LONG_REFERENCE_MODIFIED_RQY_SEAMS_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_MODIFIED_RQY_SEAMS_2026_10_18.md) first. Both actual finite-N modified
+physical Qy/RQy seams now match through ordinary Z1 on the inherited
+Z window [37/100,93/250]. All 36 held-phase derivative roots passed;
+actual native seed/control, loop IFT and nonreset memory premises are
+composed separately. Four internal RQy targets cancel in the new joined
+graph before boxing; exterior reference RQy and all standalone caps remain.
+The full 185690-node prefix, old 212/six signed/errors are preserved.
+No accepted arithmetic replay; no new signed numerical values selected.
+
+NEXT restoration/post_restore to Rm, surviving exterior pressure and
+independent reserved-own_swirl/full-pulse m15 functional matching.
+Full pressure/global closure remain open. Goal ACTIVE / INCOMPLETE.
+
 # Long/reference source seam prerequisites - 2026-10-18
 
 Read [CURRENT_ORIGINAL_LONG_REFERENCE_SEAM_PREREQUISITES_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_SEAM_PREREQUISITES_2026_10_18.md) first. Actual native phi/U C2 endpoints,
