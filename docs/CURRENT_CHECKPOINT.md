@@ -1,3 +1,14 @@
+# Correlated fast-phase C1 and closed phase - 2026-10-18
+
+Read [CURRENT_ORIGINAL_FAST_PHI_CORRELATED_C1_2026_10_18.md](CURRENT_ORIGINAL_FAST_PHI_CORRELATED_C1_2026_10_18.md) first. New signed derivative source and
+finite-input closed phase are implemented; the new Rm C1 normalized target
+is FALSE. Old caps, native signed rows and external -Rm Qy remain.
+Actual signed native p2/phase values are still unavailable in saved caps.
+
+NEXT actual signed native history/root ports, then same-source pressure
+joins and independent reserved/full-pulse m15 functional matching.
+Preserve 212/six/errors. Goal ACTIVE / INCOMPLETE. No ancestor math replay.
+
 # Directed mixed physical-y and Rm endpoint - 2026-10-18
 
 Read [CURRENT_ORIGINAL_DIRECTED_RM_CONTROLS_2026_10_18.md](CURRENT_ORIGINAL_DIRECTED_RM_CONTROLS_2026_10_18.md) first. New post-restore y0/y1 times Z0..Z3

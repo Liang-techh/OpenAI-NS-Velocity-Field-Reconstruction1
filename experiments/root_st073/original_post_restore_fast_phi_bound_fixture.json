@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "schema": "original_post_restore_fast_phi_bound_fixture_v1",
+  "module_sha256": "9cd734153944d11c1725ad22154a1dce61aaddc022803795eb88a8a0a54d75f8",
+  "context_precision": 260,
+  "checks": {
+    "source_preflight_before_fixture": true,
+    "fresh_context_prec_260": true,
+    "source_lambda_identity": true,
+    "lambda_Z_cancellation": true,
+    "fprime_rational_identity": true,
+    "f_abs_polynomial_is_square": true,
+    "fprime_abs_polynomial_is_nonnegative": true,
+    "cap_contains_direct_sympy_Z1": true,
+    "outer_C_bound_is_two": true,
+    "ordinary_Z1_used_once": true,
+    "Pstar_factor_not_repeated": true,
+    "no_exp_materialized": true,
+    "no_value_cap_differentiation": true,
+    "synthetic_compute_serializes": true,
+    "synthetic_compute_preserves_raw_old_deltaUy_Z1": true,
+    "synthetic_endpoint_C1_serializes": true,
+    "endpoint_C1_none_fast_uses_saved_slow": true,
+    "endpoint_C1_none_fast_not_zero_filled": true,
+    "endpoint_C1_denominator_correction_runtime": true,
+    "endpoint_C1_full_log_Rm_subtracted_once": true
+  },
+  "C": "2",
+  "e0": "3/5",
+  "e_Z": "2/7",
+  "that_Z": "5/11",
+  "direct_sympy_Z1": "-1086/1925",
+  "source_formula": "-a*e*t/(4*pi*lambda), lambda=K*(1+t^2)",
+  "reduced_formula": "-C*e*t/(1+t^2)",
+  "lambda_Z_cancellation_identity": "0",
+  "fprime_formula": "-2*u**2/(u**2 + 1)**2 + 1/(u**2 + 1)",
+  "f_abs_polynomial": "(u - 1)**2*(u + 1)**2",
+  "fprime_abs_polynomial": "4*u**2",
+  "pure_bound_path": {
+    "e_Z_minus_ln2": {
+      "lower_exact_mpf_tuple": [
+        1,
+        1802568013017696778860512287355239880773560624442598960302918196806605031739859,
+        -259,
+        260
+      ],
+      "upper_exact_mpf_tuple": [
+        1,
+        1802568013017696778860512287355239880773560624442598960302918196806605031739857,
+        -259,
+        260
+      ],
+      "lower_display": "-1.94591014905531330510535",
+      "upper_display": "-1.94591014905531330510535",
+      "directed": true
+    },
+    "e0_plus_that_Z": {
+      "lower_exact_mpf_tuple": [
+        1,
+        601786764971750587270302739790223881222377956388684927098365006936853938361919,
+        -258,
+        259
+      ],
+      "upper_exact_mpf_tuple": [
+        1,
+        1203573529943501174540605479580447762444755912777369854196730013873707876723837,
+        -259,
+        260
+      ],
+      "lower_display": "-1.2992829841302608526667",
+      "upper_display": "-1.2992829841302608526667",
+      "directed": true
+    },
+    "inner_logsum": {
+      "lower_exact_mpf_tuple": [
+        1,
+        290120082882441576990660263426189829125408820887469846863483814190811343982621,
+        -257,
+        258
+      ],
+      "upper_exact_mpf_tuple": [
+        1,
+        1122971696911141407285468491859934396345661143769300562695494147660696441828923,
+        -260,
+        260
+      ],
+      "lower_display": "-1.25276296849536799568812",
+      "upper_display": "-0.606135803570315543249466",
+      "directed": true
+    },
+    "outer_ln2": {
+      "lower_exact_mpf_tuple": [
+        0,
+        642087681487930470897871233650480564271925340892719572848982940043359655809375,
+        -259,
+        259
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        1284175362975860941795742467300961128543850681785439145697965880086719311618751,
+        -260,
+        260
+      ],
+      "lower_display": "0.693147180559945309417232",
+      "upper_display": "0.693147180559945309417232",
+      "directed": true
+    },
+    "result": {
+      "lower_exact_mpf_tuple": [
+        1,
+        518392650041835837064769820054278752229709942657159814604952316719885720121109,
+        -259,
+        259
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        40300916516179883627568493860256683049547384504034645750617933106505717447457,
+        -258,
+        255
+      ],
+      "lower_display": "-0.559615787935422686270889",
+      "upper_display": "0.0870113769896297661677659",
+      "directed": true
+    },
+    "logsum_rule": "interval term+ln(count), then min/max rebox"
+  },
+  "synthetic_compute_schema": "original_post_restore_fast_phi_bound_v1",
+  "synthetic_compute_serialized_bytes": 21475,
+  "synthetic_endpoint_schema": "original_post_restore_fast_phi_endpoint_C1_v1",
+  "synthetic_endpoint_serialized_bytes": 12329,
+  "ordinary_Z_orders": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "Pstar_occurrences": 1
+}

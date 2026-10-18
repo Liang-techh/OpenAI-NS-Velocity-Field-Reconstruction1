@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "module_sha256": "25b9a21c20ad8d0c005ad5ff42c5500cc56e2463cd0535e26ae7f03349a4163f",
+  "source_binding": {
+    "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+    "sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+    "function": "loop_functions",
+    "function_ast_sha256": "fffc175d358e7cce71d3046ec10303e22d46b5ebb3145f9a44c0d1fe88796f8c",
+    "function_line_span": [
+      148,
+      210
+    ],
+    "output_ports": [
+      "B_over_Pstar_phi",
+      "direction_at_inverse",
+      "phase_lambda_at_inverse"
+    ],
+    "source_read_only": true,
+    "source_executed": false,
+    "dag_reconstructed": false,
+    "signed_source_actual_parameters_bound": false
+  },
+  "checks": {
+    "source_lf_eof_ast_preflight": true,
+    "symbolic_I_psi_residual_zero": true,
+    "symbolic_I_r_residual_zero": true,
+    "symbolic_t_u_residual_zero": true,
+    "symbolic_t_psi_residual_zero": true,
+    "symbolic_domain_and_r0_limit_present": true,
+    "global_mp_prec53_high_precision_mpf_exact_tuple": true,
+    "ordinary_upper_interval_not_collapsed": true,
+    "ordinary_upper_phi_contains_one": true,
+    "ordinary_upper_Iu_contains_zero": true,
+    "explicit_named_upper_normalized": true,
+    "zero_singleton_normalized": true,
+    "primitive_and_t_derivatives_contained": true,
+    "lambda_tu_minus_tpsi_Phiu_equals_K_times_C": true,
+    "fixedphase_contraction_contained": true,
+    "bphi_normalized_derivative_contained": true,
+    "non_singleton_r_crossing_zero_rejected": true
+  },
+  "cases": {
+    "u0_q1_psi_11_over_10": {
+      "Phi": [
+        "0.21796250378105450486684039515591758021561861930815357251964652295273348317506174339403789156298442284864604540310421303135053971417700689794",
+        "0.21796250378105450486684039515591758021561861930815357251964652295273348317506174339403789156298442284864604540310421303151996561045166457238"
+      ]
+    },
+    "u_3_over_4_q1_psi_11_over_10": {
+      "Phi": [
+        "0.31366588406162068034275413026601791726723906540298595665541843796332390600910862133085479991137977629926003481267368295188947040440555819394",
+        "0.31366588406162068034275413026601791726723906540298595665541843796332390600910862133085479991137977629926003481267368295256717398950418889169"
+      ],
+      "contractedC": [
+        "1.3155182209134809616761851176142228749469636510995789512423304523753502422523225989183273237796384388446886959155326680012498322536217812402",
+        "1.3155182209134809616761851176142228749469636510995789512423304523753502422523225989183273237796384388446886959155326680535298231040875779233"
+      ]
+    },
+    "u_3_over_4_q1_psi_2pi_ordinary_iv": {
+      "Phi": [
+        "0.99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999932229641490136930226",
+        "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009681479787123295682"
+      ],
+      "Phi_contains_one": true,
+      "Phi_is_not_singleton": true
+    },
+    "u_3_over_4_q1_psi_2pi_explicit_named": {
+      "Phi": [
+        "1.0",
+        "1.0"
+      ],
+      "I_u": [
+        "0.0",
+        "0.0"
+      ]
+    }
+  },
+  "proof": {
+    "domain": "r != 0; m=1-r^2>0; D>0; 1-r*c>0; c^2+s^2=1; omega_psi=r*(c-r)/D; omega_r=s/D",
+    "chain_rules": "c_psi=-s; s_psi=c; D_psi=2*r*s",
+    "I_psi_residual_mod_unit_circle": "0",
+    "I_r_residual": "0",
+    "t_u_residual_mod_unit_circle": "0",
+    "t_psi_residual": "0",
+    "r_u": "m^(3/2)",
+    "r0_limit": {
+      "t": "2*q*cos(psi)",
+      "t_u": "2*q*cos(2*psi)",
+      "t_psi": "-2*q*sin(psi)",
+      "I": "2*q^2*psi+q^2*sin(2*psi)",
+      "I_u": "4*q^2*(sin(psi)+sin(3*psi)/3)"
+    }
+  },
+  "scope": {
+    "source_executed": false,
+    "signed_source_actual_parameters_bound": false,
+    "logcap_used_as_actual_value": false
+  }
+}
