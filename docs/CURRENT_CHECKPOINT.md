@@ -1,3 +1,11 @@
+# Shared P0/core projection and native m transport - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_NATIVE_TRANSPORT_PRESSURE_SOURCES_2026_10_18.md](CURRENT_ORIGINAL_RM_NATIVE_TRANSPORT_PRESSURE_SOURCES_2026_10_18.md) first. Common normalized P0 and old-to-N1/C6
+unique analytic core projection are source-bound. Native C2/C5 definitions
+and conditional root recipe pass in separate corrected kernels; full micro/density/offset/history identity
+still open. Q_yZ1/fullRQ_y/globalfive false. All212/errors/one reserved
+retained. No accepted ancestor replay. Goal ACTIVE / INCOMPLETE.
+
 # Local m density C2 source interfaces - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_M_DENSITY_SOURCE_INTERFACES_2026_10_18.md](CURRENT_ORIGINAL_RM_M_DENSITY_SOURCE_INTERFACES_2026_10_18.md) first. Four actual local m-density
