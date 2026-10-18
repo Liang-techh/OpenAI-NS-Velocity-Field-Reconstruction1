@@ -1,3 +1,9 @@
+# Actual micro fixed-phase inverse and loop mixed bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_PHASE_INVERSE_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_PHASE_INVERSE_BOUNDS_2026_10_17.md) first. Same-source fixed-phase inverse and loop A/B caps now cover slow-y0..1, ordinary Z0..3 and free-angle jets through total order four, with positive D/lambda, normalized factorial recurrence, Fourier endpoint identities and flat-branch glue. This is a norm provider with no chosen phase or signed-value claim; old 212 terms/errors remain.
+
+NEXT bound C_y Z3, mean Z3/QZZ, finite-N dependent errors and outer RQy, then terminal matching. Full C5 containment, global five-moment closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro q mixed bounds and scaled Poisson conditioning - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_Q_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_Q_MIXED_BOUNDS_2026_10_17.md) first. Actual q/u/hinv/r/alpha/K now have y0..1/Z0..3 lognorm caps on the original micro charts for Z[.370,.372]. Natural shear-flat neighborhood [0,1/512] covers the first forced collar; one-sided at0. Exact near-unit Poisson recipe supplies positive free-angle D and lambda log floors, without materializing q/u/r or choosing a cap as a value. Old signed terms/errors unchanged; no accepted replay.

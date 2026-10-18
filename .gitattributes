@@ -84,3 +84,4 @@ scripts/run_original_micro_direction_C0.py -text
 scripts/run_original_micro_Ea_mixed_bounds.py -text
 scripts/run_original_micro_b_p2_mixed_bounds.py -text
 scripts/run_original_micro_q_mixed_bounds.py -text
+scripts/run_original_micro_phase_inverse_bounds.py -text
