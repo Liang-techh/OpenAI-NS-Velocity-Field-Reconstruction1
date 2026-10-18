@@ -1,3 +1,19 @@
+# Restoration current-N sector and native post Z3 repair - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RESTORATION_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_RESTORATION_FINITE_N_I1_2026_10_18.md) first. Actual native control and finite-N
+six-I1/B/D/S1 C1 enclosures reach Rm with separate Wrestore/Wpost and
+nonreset mean memory. A preceding native post adapter lost incoming
+M_Z3 by zero padding; a separate corrected view now restores its exact
+interval uncertainty in Q_Z2 and affected C1 integral/D/S1 rows.
+That native correction is separate from finite-N error radii.
+The saved 186100-node graph, seam proofs, 212/six signed/errors and all
+external caps remain. Accepted stage constructions were not replayed; the
+draft generic-helper self-check exception is recorded in the milestone.
+
+NEXT actual exterior Rm pressure and independent reserved/full-pulse m15
+functional matching. Full pressure/global five-moment closure remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Restoration background and actual modified seams through Rm - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RESTORATION_BACKGROUND_RM_2026_10_18.md](CURRENT_ORIGINAL_RESTORATION_BACKGROUND_RM_2026_10_18.md) first. Native six-I1/D/B/S1 C1 directed
