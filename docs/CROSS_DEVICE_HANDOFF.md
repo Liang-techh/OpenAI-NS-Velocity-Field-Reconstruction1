@@ -1,3 +1,9 @@
+# Actual micro-to-macro RQy endpoint identity - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_MACRO_RQY_SEAM_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MACRO_RQY_SEAM_2026_10_17.md) first. New exact source-bound second_micro upper s=2 / frozen_macro lower m=0 RQy identity retains physical y derivatives, distinct native Jacobians, one phase/N and nonreset histories. Opposite FTC traces cancel only in the joined adjacent expression; macro upper and standalone old caps remain. Old 212 terms, six signed sources and all errors unchanged; no accepted replay.
+
+NEXT actual signed background I1 and controlled adjacent macro pressure contribution, carrying its upper boundary forward; then terminal reserved-pulse functional matching. Global closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro six-I1 C1 defect and pressure-error bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_I1_DEFECT_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_I1_DEFECT_BOUNDS_2026_10_17.md) first. Same-source six finite-N C1 defects, joined R^2*hb I1 errors, reduced volume D and half-S1 pressure excluding outer RQy are below 2^-1024 on Z[.370,.372]. Saved native U/M are already physical; no extra Pstar. Exact internal endpoint identity and source-flat lower zero are consumed. Outer RQy is retained; complete pressure error is not certified small. Old 212 signed sources/errors are unchanged; no accepted replay.
