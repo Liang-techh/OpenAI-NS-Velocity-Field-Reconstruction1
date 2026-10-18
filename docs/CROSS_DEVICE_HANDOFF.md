@@ -1,3 +1,9 @@
+# Actual micro q mixed bounds and scaled Poisson conditioning - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_Q_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_Q_MIXED_BOUNDS_2026_10_17.md) first. Actual q/u/hinv/r/alpha/K now have y0..1/Z0..3 lognorm caps on the original micro charts for Z[.370,.372]. Natural shear-flat neighborhood [0,1/512] covers the first forced collar; one-sided at0. Exact near-unit Poisson recipe supplies positive free-angle D and lambda log floors, without materializing q/u/r or choosing a cap as a value. Old signed terms/errors unchanged; no accepted replay.
+
+NEXT actual t/Phi/lambda free-angle derivatives, implicit inverse and phase-composed A/B y1/Z3, then finite-N derivative errors, Cy3, joint mean-Z3/QZZ, outer RQy and terminal functional matching. Root/conditioning bounds are not loop derivative errors or global closure. Goal ACTIVE / INCOMPLETE.
+
 # Actual micro b/t0/p2 mixed bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_B_P2_MIXED_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_B_P2_MIXED_BOUNDS_2026_10_17.md) first. Actual background b/t0/p2 ordinary Z0..3 and physical y0..1 now have logarithmic norm caps on both micro charts, with whole-tube normalized pressure jets Z0..5, positive amplitude log bounds and original native M/A/B/C. Full inlet integrals use global core bounds; no history reset or cap-as-value substitution. Two new Xh rows only; old source/direction rows and all signed/error packets remain unchanged.
