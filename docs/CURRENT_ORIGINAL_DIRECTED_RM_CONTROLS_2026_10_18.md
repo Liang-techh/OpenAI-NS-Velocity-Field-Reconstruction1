@@ -62,6 +62,15 @@ comparison sets the combined endpoint target to false.
 The displayed Z0/Z1 log-cap upper endpoints are ['-1.43059066986408533838418e+408906090034569675', '7.83963687085518704816048e+408906090034569676']; they are
 conservative bounds, not signed error values.
 
+A saved-only exact-tuple comparison localizes the failing Z1 cap to the
+fast B_phi_Z branch of deltaUy. Its physical log-cap upper endpoint is
+7.9826959378415955819989e+408906090034569676; the slow-y/N upper endpoint
+is -7.58731406952917317772325e+408906090034569677. Native Qy/Rm Z0 and
+Z1 both pass. The retained denominator-derivative correction has physical
+log-cap upper endpoint -706155800511060018.751674. These observations
+identify a conservative derivative-estimation bottleneck, not a measured
+signed mismatch. The value row passes while the derivative row remains open.
+
 Fresh rational/SymPy fixtures check actual native/pressure majorants,
 large-log interval arithmetic, nonunit mixed inverse/composition and
 ordinary factorials, cosine angle derivatives, fast-phase scaling, and
@@ -89,6 +98,13 @@ the independent reserved/full-pulse m15 comparison as a function of Z,
 with ordinary Z1 and physical scales. A failed conservative endpoint
 diagnostic must not be relabelled small or removed; a passing diagnostic
 does not establish the terminal functional identity.
+
+The immediate bounded implementation is the fast derivative identity.
+Set f(t)=t/(1+t^2), C=a*(1+2q^2)/2 and e=E/E0. At fixed target phase,
+Bphi_Z/E0=-C*(e_Z*f(t_hat)+e*f'(t_hat)*(t_Z+t_psi*Psi_Z)), with
+Psi_Z=-Phi_Z/lambda and f'(t)=(1-t^2)/(1+t^2)^2. Keep these as signed
+same-source products before bounding. Do not differentiate the value-only
+5/4 cap, enlarge N to suppress a fast term, or drop the existing Z1 error.
 
 Global five-moment closure, exact heat exterior, stress/flat remainder,
 true n-dependent recursion, realizable corrections and independent
