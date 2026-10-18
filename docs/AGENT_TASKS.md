@@ -1,3 +1,17 @@
+# Arithmetic integrity correction: affected log caps require revalidation - 2026-10-18
+
+Read [CURRENT_ORIGINAL_ABS_LOG_INTEGRITY_2026_10_18.md](CURRENT_ORIGINAL_ABS_LOG_INTEGRITY_2026_10_18.md) first. A new exact-rational witness proves
+the legacy abs_log endpoint step can round downward through global
+53-bit scalar precision. A tuple-safe directed primitive is verified.
+Two direct pinned modules/23 static calls are identified; downstream
+strict log-cap/finite-N certificates require explicit revalidation.
+Historical passed flags and schema-only forged receipts are rejected.
+All source/signed data/errors/212 terms remain. New Rm drafts are UNACCEPTED.
+
+NEXT directed repair/transport of affected native and downstream caps,
+then Rm pressure and independent reserved/full-pulse m15 matching.
+Goal ACTIVE / INCOMPLETE. No accepted construction replay.
+
 # Restoration current-N sector and native post Z3 repair - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RESTORATION_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_RESTORATION_FINITE_N_I1_2026_10_18.md) first. Actual native control and finite-N
