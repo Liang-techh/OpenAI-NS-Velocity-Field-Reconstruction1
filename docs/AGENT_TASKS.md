@@ -1,3 +1,15 @@
+# Actual Rm common phase and signed loop-density seam - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_LOOP_DENSITY_2026_10_18.md](CURRENT_ORIGINAL_RM_LOOP_DENSITY_2026_10_18.md) first. The new actual common phase proof
+and loop/density ordinary Z0/Z1 congruence pass 22 rows.
+Source prefix205200 and all parent packets are unchanged. No native-loop
+or complete modified moment germ/RQy/physical join is claimed; no errors
+are deleted. NEXT bind postrestore Duhamel outlet and patch inlet native
+sources using the now-equal densities; admit slow native A/B, then modified
+fields. Q_y Z1 retains the loop valueZ2/new leadingZ3 dependency. Preserve
+212/six channels/all errors/one reserved. Never replay these new operators
+or accepted ancestors. Goal ACTIVE / INCOMPLETE.
+
 # Actual Rm second radial, generic native and history sources - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_GENERIC_NATIVE_HISTORY_2026_10_18.md](CURRENT_ORIGINAL_RM_GENERIC_NATIVE_HISTORY_2026_10_18.md) first. Actual second-radial12 rows plus6
