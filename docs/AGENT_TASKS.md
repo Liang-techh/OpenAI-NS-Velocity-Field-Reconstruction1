@@ -1,3 +1,9 @@
+# Current-N first-switch I1 and correlated pressure source - 2026-10-17
+
+Read [CURRENT_ORIGINAL_FIRST_SWITCH_FINITE_N_I1_2026_10_17.md](CURRENT_ORIGINAL_FIRST_SWITCH_FINITE_N_I1_2026_10_17.md) first. Full current-N first-switch six I1/D C1 enclosures use Wswitch=10000*hbS and the true R^2*hbS measure once; macro incoming mean is retained. Joined Wmacro volume is an interval enclosure, not a signed center. Full 184703-node prefix is preserved; first local S1 is consumed once and the accepted internal RQy identity is applied only in the joined source. B and external RQy remain open. All old 212/signed/errors/endpoints retained; no accepted computation replay.
+
+NEXT second switch/post-R110 source and finite-N volume, then independent reserved-pulse terminal functional comparison. Complete pressure/global closure remain open. Goal ACTIVE / INCOMPLETE.
+
 # Current-N macro six-I1 C1 enclosure - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MACRO_FINITE_N_I1_2026_10_17.md](CURRENT_ORIGINAL_MACRO_FINITE_N_I1_2026_10_17.md) first. Current N graph18 macro physical deltaU/M Z0..3 and deltaQ Z0..2 give six I1 defect radii below 2^-1024, added once around signed native background I1; full D C1 uses ordinary Leibniz products. Native Z4 extension and macro fixed-phase inverse are source-related. Wmacro10000 physical measure once; nonreset mean; no incoming U duplication. Complete pressure and global closure remain open; all old 212/signed/errors/endpoints retained. No accepted computation replay this turn; inherited audit retained.
