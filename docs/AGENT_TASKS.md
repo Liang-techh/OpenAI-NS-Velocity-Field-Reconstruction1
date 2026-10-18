@@ -1,3 +1,11 @@
+# Local m density C2 source interfaces - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_M_DENSITY_SOURCE_INTERFACES_2026_10_18.md](CURRENT_ORIGINAL_RM_M_DENSITY_SOURCE_INTERFACES_2026_10_18.md) first. Four actual local m-density
+ordinary-Z source edges passed. C2/C5 same-B identity and incoming history
+C2 remain open; negative density/transport packets preserve exact gates.
+Q_yZ1/fullRQ_y/physical join/globalfive false. All212/errors/one reserved
+retained. No accepted ancestor replay. Goal ACTIVE / INCOMPLETE.
+
 # Actual history a source positivity passed - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_HISTORY_A_POSITIVITY_2026_10_18.md](CURRENT_ORIGINAL_RM_HISTORY_A_POSITIVITY_2026_10_18.md) first. Actual postrestore a=4/5 and patch
