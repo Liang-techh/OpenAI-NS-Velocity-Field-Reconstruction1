@@ -1,3 +1,9 @@
+# Long/reference native background pressure sector - 2026-10-18
+
+Read [CURRENT_ORIGINAL_LONG_REFERENCE_BACKGROUND_I1_2026_10_18.md](CURRENT_ORIGINAL_LONG_REFERENCE_BACKGROUND_I1_2026_10_18.md) first. Native constant-U six-I1/B/D/S1 C1 enclosures now reach Rz with logarithmic endpoint scales, retained mean memory and nonzero tail boxes. Exact current-N source extends through long/reference; new internal seam proof accepted: false. New finite-N numerical loop/pressure bounds remain open. Full parent graph, old 212/signed/errors and all standalone caps remain; no accepted arithmetic replay.
+
+NEXT actual native B/phi/control bounds, finite-N loop and pressure, remaining derivative seam proof, restoration toward Rm and independent reserved-pulse functional comparison. Goal ACTIVE / INCOMPLETE.
+
 # Current-N second switch and post-power through R110 - 2026-10-18
 
 Read [CURRENT_ORIGINAL_SWITCH_POST_FINITE_N_I1_2026_10_18.md](CURRENT_ORIGINAL_SWITCH_POST_FINITE_N_I1_2026_10_18.md) first. Both new charts have full current-N six-I1/B/D/S1 ordinary-C1 enclosures, actual native memories, separate Wswitch/Wmacro measures and pointwise Q. B uses exact C2 cancellation before boxing; finite-N radii enter once. Full 184898-node source prefix and all old 212/signed/errors/endpoints remain. No accepted computation replay. Outer R110 RQy and complete joined pressure remain open.
