@@ -1,3 +1,16 @@
+# Outer signed pressure and intermediate absolute m15 - 2026-10-18
+
+Read [CURRENT_ORIGINAL_OUTER_PRESSURE_ABSOLUTE_M15_2026_10_18.md](CURRENT_ORIGINAL_OUTER_PRESSURE_ABSOLUTE_M15_2026_10_18.md) first. Outer micro/macro B/S1 now has a
+signed natural-scale enclosure and a proved Rm^2 transport. H is consumed
+once through its positive physical unit ratio; absolute M15(Rm)/Rm^2 is
+enclosed on the saved Z tube. Rm is intermediate; Rp matching remains open.
+The six structural channels contain five signed contributors and core-swirl
+error-only; preserve12/61 sectors and do not add collar decompositions again.
+Old reserved preRp31221/31220 has extra Pstar; corrected31250/31251 is a
+separate namespace. NEXT new Rm-to-Rp consumer and corrected independent
+reserved versus negative-complete-pulse comparison. Preserve212/own_swirlonce/errors.
+Goal ACTIVE / INCOMPLETE. No accepted ancestor or fixture replay.
+
 # Same-source pressure prefix contraction - 2026-10-18
 
 Read [CURRENT_ORIGINAL_PRESSURE_PREFIX_CONTRACTION_2026_10_18.md](CURRENT_ORIGINAL_PRESSURE_PREFIX_CONTRACTION_2026_10_18.md) first. The macro/first-switch RQy pair
