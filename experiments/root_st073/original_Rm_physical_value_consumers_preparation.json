@@ -1,0 +1,80 @@
+{
+  "schema": "Rm_physical_VALUE_consumers_source_preparation_v1",
+  "prepared_at_utc": "2026-10-18T18:07:31.387177+00:00",
+  "source_only": true,
+  "implementation_hashes": {
+    "scripts/run_original_Rm_modified_physical_values.py": "be9348f6267679707764183778b71f0d57b396470fcd229d03396b045de61730",
+    "src/openai_ns_reconstruction/original_Rm_modified_radial_value_seam.py": "9014bbeb7beef27f60e4df36a771d374a2d9fdea6b8f9e22b6b5f52fec297096",
+    "src/openai_ns_reconstruction/original_Rm_physical_qy0_value_seam.py": "3a6cb37c906d660ddf96758ed0612933fdba3d35772f58a5b14e4749ff66095f"
+  },
+  "AST_LF_single_EOF_preflight_passed": true,
+  "independent_static_reviews": {
+    "radial": {
+      "no_static_blocker": true,
+      "sha256": "9014bbeb7beef27f60e4df36a771d374a2d9fdea6b8f9e22b6b5f52fec297096",
+      "reviewer": "/root/rm_c1_recipe_design",
+      "scope": "externally authenticated actual packets and graph; 4 total radial VALUE pairs only",
+      "limits": [
+        "Wrapper scopes are accepted data, not reproved wrapper rows."
+      ]
+    },
+    "physical": {
+      "no_static_blocker": true,
+      "sha256": "3a6cb37c906d660ddf96758ed0612933fdba3d35772f58a5b14e4749ff66095f",
+      "reviewer": "/root/rm_control_native_contract",
+      "scope": "externally authenticated graph, actual source bindings and passed modified radial VALUE packet; Q_y Z0 only",
+      "limits": [
+        "Prefix bound follows pinned graph/layout, not an explicit child prefix guard.",
+        "Duplicate ordinary-order labels rely on immutable accepted input agreement.",
+        "Runtime SymPy arithmetic was not executed."
+      ]
+    },
+    "new_mathematical_calls": 0,
+    "runtime_worker_model_metadata": null
+  },
+  "actual_new_consumer_calls": 0,
+  "mathematical_equality_admitted": false,
+  "numerical_values_computed": false,
+  "accepted_math_baseline_commit": "5006365c793091deb577012e799b984011e3e969",
+  "accepted_math_report": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rm_patch_native_provenance.json",
+  "accepted_math_report_sha256": "e649b4f1556c3c04eadbf9469d79e14795d6be2da8a8db52669a9e5fdebc05ea",
+  "prerequisite": {
+    "slow_VALUE_seam": "pending live session17273/PID30068, entered once17:08:06UTC",
+    "runner_parent_hash": null,
+    "source_checkpoint": "tmp/original_Rm_slow_native_value_seam/new_source.json",
+    "source_checkpoint_sha256": "cb5f3b5c61d7c5175a11847ca66c1f20c57b4623dc91aac45ee429459e1c409a"
+  },
+  "planned_targets": {
+    "total_E_y": {
+      "postrestore": [
+        182725,
+        182728
+      ],
+      "patch": [
+        203774,
+        203777
+      ]
+    },
+    "total_V_y": {
+      "postrestore": [
+        182757,
+        182758
+      ],
+      "patch": [
+        203806,
+        203807
+      ]
+    },
+    "physical_Q_y_Z0": {
+      "postrestore": 183451,
+      "patch": 204500
+    }
+  },
+  "physical_Q_y_Z1_proved": false,
+  "full_RQy_germ_proved": false,
+  "full_goal_complete": false,
+  "old_212_terms_all_errors_and_single_reserved_unchanged": true,
+  "runtime_model_metadata": null,
+  "workers_fixed_role": "luna_max_worker",
+  "worker_fork_turns": "none"
+}

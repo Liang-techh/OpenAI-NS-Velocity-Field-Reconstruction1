@@ -1,3 +1,13 @@
+# Physical VALUE consumers prepared; live slow result pending - 2026-10-18
+
+Read [CURRENT_ORIGINAL_RM_PHYSICAL_VALUE_CONSUMERS_PREPARED_2026_10_18.md](CURRENT_ORIGINAL_RM_PHYSICAL_VALUE_CONSUMERS_PREPARED_2026_10_18.md) first. Three new files implement total
+E_y/V_y Z0/Z1 and physical Q_y Z0 consumers plus checkpoint runner. AST/LF
+preflight and independent static reviews passed; zero new consumers ran,
+and no new mathematical equality is accepted. PARENT_HASH=None gates entry.
+Accepted math baseline stays5006365c. FIRST check live session17273/PID30068
+or its result; never restart --slow-seam. Q_y Z1/full RQy/global five remain
+open; all212/channels/errors/one reserved unchanged. Goal ACTIVE/INCOMPLETE.
+
 # Actual patch native source provenance - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_PATCH_NATIVE_PROVENANCE_2026_10_18.md](CURRENT_ORIGINAL_RM_PATCH_NATIVE_PROVENANCE_2026_10_18.md) first. New actual patch A/B provenance

@@ -164,3 +164,6 @@ scripts/run_original_Rm_slow_native_provenance.py -text
 experiments/root_st073/original_Rm_slow_native_provenance_attempt1.json -text
 scripts/run_original_Rm_patch_native_provenance.py -text
 experiments/root_st073/original_Rm_patch_native_provenance_attempt1.json -text
+scripts/run_original_Rm_modified_physical_values.py -text
+src/openai_ns_reconstruction/original_Rm_modified_radial_value_seam.py -text
+src/openai_ns_reconstruction/original_Rm_physical_qy0_value_seam.py -text
