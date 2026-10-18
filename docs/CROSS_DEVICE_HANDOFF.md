@@ -1,3 +1,9 @@
+# Actual micro C/Cy and complete physical mean Z3 bounds - 2026-10-17
+
+Read [CURRENT_ORIGINAL_MICRO_MEAN_Z3_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_MEAN_Z3_BOUNDS_2026_10_17.md) first. Source-owned C/Cy and joined histories now have ordinary Z0..3 norm caps. Complete physical delta_m and total-y delta_m are below 2^-1024 on Z[.370,.372] across both original micro charts; second incoming history and Pstar/N^2 retained. These are correction norm enclosures, not chosen signed values or full NS validation. Old 212 terms/errors unchanged; no accepted replay.
+
+NEXT actual finite-N velocity derivative errors including N phase chain, then QZZ/outer RQy, signed micro integration and terminal functional matching. Global closure and the long-term goal remain ACTIVE / INCOMPLETE.
+
 # Actual micro fixed-phase inverse and loop mixed bounds - 2026-10-17
 
 Read [CURRENT_ORIGINAL_MICRO_PHASE_INVERSE_BOUNDS_2026_10_17.md](CURRENT_ORIGINAL_MICRO_PHASE_INVERSE_BOUNDS_2026_10_17.md) first. Same-source fixed-phase inverse and loop A/B caps now cover slow-y0..1, ordinary Z0..3 and free-angle jets through total order four, with positive D/lambda, normalized factorial recurrence, Fourier endpoint identities and flat-branch glue. This is a norm provider with no chosen phase or signed-value claim; old 212 terms/errors remain.
