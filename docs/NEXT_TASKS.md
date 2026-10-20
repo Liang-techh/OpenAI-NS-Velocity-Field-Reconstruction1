@@ -1,3 +1,18 @@
+# Current original R110 through Rm source projection - 2026-10-20
+
+Read [CURRENT_ORIGINAL_R110_RM_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_R110_RM_SOURCE_PROJECTION_2026_10_20.md) first. The saved
+R110/Rm source result has `passed=True`, background projection
+`True`, and own-history projection `True`. It retains exact
+function ports separately from normal C2 enclosure rows; `endpoint_rows_are_values`
+is false. Ordinary Z0/1/2 is not temporal n. Density, finite-N history,
+physical Q_y Z1, global five-moment closure and the full goal remain false.
+Result node count is `205300`, source-record count is
+`21`, AST-witness count is `31`, and elapsed time is
+`0.49870600004214793` seconds. The next task is to compose actual
+finite-N fields/density and carry incoming nonreset correction histories before
+physical Q_y ordinary-Z order 1; unresolved gates remain if the result is
+negative. Goal ACTIVE / INCOMPLETE.
+
 # Current original R100 / switch C2/C6 source projection - 2026-10-20
 
 Read [CURRENT_ORIGINAL_R100_SWITCH_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_R100_SWITCH_SOURCE_PROJECTION_2026_10_20.md) first. The first
