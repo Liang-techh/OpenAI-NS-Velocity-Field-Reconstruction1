@@ -1,3 +1,12 @@
+# Current native Rp physical m15 source comparison - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_RP_M15_SOURCE_COMPARISON_2026_10_20.md first.
+Saved result passed=True; local status={"native_Rp_C5_pulse_inlet_source_identity_proved": true, "native_complete_pulse_m15_source_identity_proved": true, "native_m15_signed_comparison_defined": true, "registered_reserved_m15_source_bound_once": true}.
+The unresolved physical C1 difference is native_preRp-corrected_preRp.
+Corrected reserved source overlay once; legacy numeric chain and all errors unchanged.
+Next: Compare the actual physical C1 native rminus-to-Rp pressure function with the registered corrected preRp function, in their distinct authenticated graph namespaces. Resolve the original endpoint datum, chart measures and first-micro correction source identity. The independent complete pulse is now source-congruent; do not change the reserved slot, reselect controls, or remove old errors before the remaining preRp difference is proved zero.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native Rc/2Rc physical pressure join lift - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_RC_2RC_PRESSURE_JOIN_LIFT_2026_10_20.md first.
