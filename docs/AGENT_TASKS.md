@@ -1,3 +1,12 @@
+# Current native Rc-to-Rp signed pressure source - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_RC_RP_SIGNED_PRESSURE_SOURCE_2026_10_20.md first.
+Saved source result passed=True; local status={"native_Rc_incoming_source_bound": true, "native_compact_quiet_source_continuation_proved": true, "same_source_internal_boundary_cancellation_proved": true, "signed_pressure_cocycle_proved": true}.
+Explicit natural physical join defects remain; global closure is false.
+All old signed terms/errors and once-only contributions remain frozen.
+Next: Discharge the explicit Rc and 2Rc natural physical boundary jump functions against their actual source traces, then bind the native Rp frame to the independent complete pulse and once-only reserved contribution. Unify remaining native seventeen-chart physical seams and connect old signed m15 packets only after the exact same-source identity; retain all signed errors and unproved aliases.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native Rm m ordinary-Z source lift - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_RM_M_Z_SOURCE_LIFT_2026_10_20.md first.
