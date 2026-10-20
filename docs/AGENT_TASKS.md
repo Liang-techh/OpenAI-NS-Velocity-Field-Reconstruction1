@@ -1,3 +1,14 @@
+# Current original Rm patch C2/C6 source projection - 2026-10-20
+
+Read CURRENT_ORIGINAL_RM_PATCH_C2_C6_SOURCE_PROJECTION_2026_10_20.md first.
+Saved source result passed=False; leading background=False;
+leading own histories=False. Ordinary Z0/1/2 only; numeric values uncomputed.
+First-ten source density/nonreset history remains accepted. Patch finite-N and
+six outer providers/global closure remain open. Preserve all entered consumers,
+212/raw213/reduced183/six signed channels/errors/one reserved contribution.
+Next: Build the explicit feedback-reference source adapter from its current six Rsh history functions, E=core+bridge+switch and analytic P0 to the saved native/C6 Rsh and Rm endpoint ports. Prove the five centered defect projection by the same linear transport for ordinary Z0/1/2. Reuse this leaf's authenticated C6 ports and local normalization premises; do not reenter it. Keep patch finite-N correction separate. Other gates: ["feedback_reference_Rm_source_alias_unproved"]
+Goal ACTIVE / INCOMPLETE.
+
 # Current original finite-N nonreset memory source repair - 2026-10-20
 
 Read CURRENT_ORIGINAL_FINITE_N_NONRESET_MEMORY_SOURCE_BINDING_2026_10_20.md first. Saved result passed=True.
