@@ -1,3 +1,15 @@
+# Current native-input C2 patch finite-N source - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_FINITE_N_SOURCE_2026_10_20.md first.
+Saved result passed=False; patch finite-N identity=False.
+Source flags: {"native_C2_C5_patch_density_identity_proved": false, "native_C2_C5_patch_history_identity_proved": false, "native_C2_C5_patch_provider_identity_proved": false, "native_C2_patch_correction_inlet_identity_proved": true, "native_C2_patch_finite_N_fields_defined": false}.
+New functions retain first-ten correction memory; leading moments are separate.
+Ordinary Z0/1/2 only, no numerical fields; legacy owner alias remains unproved.
+Six outer providers, global closure and the full physical goal remain open.
+Preserve every entered consumer, 212/raw213/reduced183, six signed channels and errors.
+Next: New bounded admission overlay reuses the frozen candidate DAG verbatim and supplies corrected saved prerequisites; never rerun or edit this entered attempt. Two metadata integration predicates failed: annotated phase-origin equality and incorrectly nested numerical-conditioning flag; no genuine C6 smoothness/domain failure evidenced. Gates: ["next_finite_N_interface_prerequisite_unproved", "accepted_C6_smoothness_common_domain_premise_unproved", "native_C6_to_C5_patch_provider_identity_unproved", "patch_finite_N_source_identity_unproved"]
+Goal ACTIVE / INCOMPLETE.
+
 # Current native-input C2 leading patch composition - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_COMPOSITION_2026_10_20.md first.
