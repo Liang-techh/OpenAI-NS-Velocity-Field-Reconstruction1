@@ -1,3 +1,15 @@
+# Current native-input C2 leading patch composition - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_COMPOSITION_2026_10_20.md first.
+Saved result passed=True; leading patch=True;
+C2/C6 source identity=True; own leading history=True.
+Same unique leading control map=True; legacy owner alias unproved.
+Ordinary Z0/1/2; source functions only, no evaluated numerical fields.
+Keep finite-N patch, outer providers, global closure and full goal open.
+Preserve entered consumers,212/raw213/reduced183,six signed channels,all errors.
+Next: Use saved next_finite_N_interface to bind finite-N roots, phase and density to the new native leading patch. Resolve the qualified Section 11 incoming correction bridge from saved first-ten history; the leading moment inlet cannot replace that correction memory. Reuse saved first-ten identities as data. Preserve the legacy owner alias as unproved; keep six outer providers and global density/history open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native-input C2 reference adapter - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_C2_REFERENCE_ADAPTER_2026_10_20.md first.
