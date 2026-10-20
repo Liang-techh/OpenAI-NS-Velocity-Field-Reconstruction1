@@ -1,3 +1,15 @@
+# Current original R100 / switch C2/C6 source projection - 2026-10-20
+
+Read [CURRENT_ORIGINAL_R100_SWITCH_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_R100_SWITCH_SOURCE_PROJECTION_2026_10_20.md) first. The first
+immutable attempt was normal-negative with `ast_witness_missing:second_sigma_prefix_and_phase_derivative_identity`; the second
+attempt passed using structural `_assign` equality with source equations and
+acceptance conditions unchanged. Both attempts, all six checkpoint hashes, and
+the actual second-attempt flags are preserved. Exact R100, first-switch,
+second-switch, and post-switch FunctionJet ports remain separate from enclosure
+rows. Ordinary Z0/1/2 is not temporal n. Density, finite-N history, physical
+Q_y Z1, global five-moment closure, and the full goal remain false. Goal ACTIVE /
+INCOMPLETE.
+
 # Current original macro C2/C6 evolution source projection - 2026-10-20
 
 Read [CURRENT_ORIGINAL_MACRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_MACRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md) first. The saved macro source result has `passed=True`; actual projection flags and exact unresolved gates are preserved. The C6 `actual_micro_end` / `actual_moment_end` function ports remain separate from C2 second-exit polynomial-plus-tail enclosure rows. Ordinary Z0/1/2 is not temporal n. Density, finite-N history, Q_y Z1, global five-moment closure and full goal remain false. Goal ACTIVE / INCOMPLETE.
