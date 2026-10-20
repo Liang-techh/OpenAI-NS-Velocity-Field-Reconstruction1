@@ -1,3 +1,12 @@
+# Current native Rm m ordinary-Z source lift - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_RM_M_Z_SOURCE_LIFT_2026_10_20.md first.
+Saved source result passed=True; local status={"Rm_physical_Qy_Z1_function_identity_proved": true, "native_history_m_ordinary_Z_source_proved": true, "native_modified_m_ordinary_Z_source_proved": true, "native_physical_mean_y_ordinary_Z_source_proved": true}.
+This is a local Rm physical Q_y ordinary-Z1 source seam, not global closure.
+All earlier computations, signed errors and once-only contributions stay frozen.
+Next: Reuse the native Rm history source lift and local physical Q_y ordinary-Z1 seam without replay. Unify the native seventeen-chart density/history/physical pressure owner, keep every other physical seam separate, then bind compact/quiet Rc-to-Rp continuation before global terminal matching. Retain all signed errors, once-only reserved data and all unproved legacy/adapter aliases.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native C2 outer-six source construction - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_C2_OUTER_SIX_SOURCE_2026_10_20.md first.
