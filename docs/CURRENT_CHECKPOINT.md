@@ -1,3 +1,7 @@
+# Original micro initial and affine source identity - 2026-10-20
+
+Read [CURRENT_ORIGINAL_MICRO_AFFINE_SOURCE_IDENTITY_2026_10_20.md](CURRENT_ORIGINAL_MICRO_AFFINE_SOURCE_IDENTITY_2026_10_20.md) first. The saved `s=0`, `rho=4` finite-plus-tail micro projection and six nonzero moments pass (`passed=True`, `execution_seconds=0.6020156999584287`). The corrected native affine offset result is saved (`passed=True`, `execution_seconds=1.5423346000025049`); the original negative affine result is preserved separately, and density/history/Qy1 remain false. The full C2/C6 micro evolution, finite-N, and global five-moment claims remain fail-closed. The worker audit records the read-only brief deviation separately; the top-level checkpointed source-component count is `3`. All `212` terms, raw `213`, reduced `183`, six channels, errors, and one reserved contribution remain. Goal ACTIVE / INCOMPLETE.
+
 # Shared P0/core projection and native m transport - 2026-10-18
 
 Read [CURRENT_ORIGINAL_RM_NATIVE_TRANSPORT_PRESSURE_SOURCES_2026_10_18.md](CURRENT_ORIGINAL_RM_NATIVE_TRANSPORT_PRESSURE_SOURCES_2026_10_18.md) first. Common normalized P0 and old-to-N1/C6
