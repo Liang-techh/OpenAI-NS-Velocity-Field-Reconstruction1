@@ -1,3 +1,15 @@
+# Current native finite-N patch admission overlay - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_FINITE_N_ADMISSION_2026_10_20.md first.
+Admission passed=True; patch identity=True.
+The frozen negative candidate stage remains unchanged. This overlay reuses
+its DAG without rebuilding fields or integrals and corrects two metadata paths.
+Native P0/Rm geometry is retained; prior adapter aliases remain unproved.
+Global closure and the full physical goal remain open. Preserve all signed
+data, errors, once-only contributions and every entered attempt.
+Next: Reuse the saved native patch admission and first-ten source/history proofs. Bind the remaining six outer providers and their retained predecessor chain using the same native geometry/P0 owner, then establish global seventeen-chart density/history and physical Q_y Z1 seams before endpoint cancellation. Prior adapter Rrestore/Rsh aliases stay unproved; never use interval overlap as source equality.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native-input C2 patch finite-N source - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_FINITE_N_SOURCE_2026_10_20.md first.
