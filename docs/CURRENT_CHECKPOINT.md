@@ -1,3 +1,7 @@
+# Current original macro C2/C6 evolution source projection - 2026-10-20
+
+Read [CURRENT_ORIGINAL_MACRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_MACRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md) first. The saved macro source result has `passed=True`; actual projection flags and exact unresolved gates are preserved. The C6 `actual_micro_end` / `actual_moment_end` function ports remain separate from C2 second-exit polynomial-plus-tail enclosure rows. Ordinary Z0/1/2 is not temporal n. Density, finite-N history, Q_y Z1, global five-moment closure and full goal remain false. Goal ACTIVE / INCOMPLETE.
+
 # Original micro C2/C6 evolution source projection - 2026-10-20
 
 Read [CURRENT_ORIGINAL_MICRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_MICRO_EVOLUTION_SOURCE_PROJECTION_2026_10_20.md) first. The saved original result is the normal CRLF-only negative; the access result has `passed=True`, with actual background projection `True` and own-history projection `True`. Density, finite-N history, Q_y Z1 and global five-moment closure remain false. Six checkpoints and captured preimages are retained. Goal ACTIVE / INCOMPLETE.
