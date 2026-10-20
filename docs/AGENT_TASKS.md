@@ -1,3 +1,14 @@
+# Current native-input C2 reference adapter - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_C2_REFERENCE_ADAPTER_2026_10_20.md first.
+Saved result passed=True; adapter defined=True; Rm identity=True.
+Legacy feedback alias remains unproved. New functions use exact native/C6
+Rsh inputs and original centered transport; ordinary Z0/1/2, no numeric values.
+Keep patch finite-N, outer providers, global closure and the full goal open.
+Preserve all entered consumers and 212/raw213/reduced183/six signed channels/errors.
+Next: Compose the new native-input C2 Rm adapter with the same unique leading patch control map, then bind finite-N roots, phase, density and nonreset Section 11 correction from the retained postrestore inlet. Preserve the legacy feedback owner alias as unproved; use the new explicit input path for current fields. Keep six outer providers and global density/history open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current original Rm patch C2/C6 source projection - 2026-10-20
 
 Read CURRENT_ORIGINAL_RM_PATCH_C2_C6_SOURCE_PROJECTION_2026_10_20.md first.
