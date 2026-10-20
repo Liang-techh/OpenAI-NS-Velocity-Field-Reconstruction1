@@ -1,3 +1,14 @@
+# Current native C2 outer-six source construction - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_C2_OUTER_SIX_SOURCE_2026_10_20.md first.
+Source result passed=True; native outer-six identity=True.
+Six independent C2 density/history definitions retain actual native C5
+ports, the patch Rh inlet, all predecessors and the physical O2 Jacobian.
+Terminal Rc is not Rp. Global closure and the full physical goal remain open.
+Preserve every entered attempt, signed channel, error and reserved contribution.
+Next: Reuse the first-ten, patch and outer-six source certificates without replay. Establish an explicit unified native seventeen-chart density/history owner and the physical Q_y ordinary-Z1 seams. The outer terminal is Rc, so connect compact/quiet continuation to the native owner before any Rp terminal cancellation. Retain prior adapter/legacy aliases as unproved and all existing signed errors.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native finite-N patch admission overlay - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_C2_PATCH_FINITE_N_ADMISSION_2026_10_20.md first.
