@@ -1,3 +1,17 @@
+# Current original finite-N field density composition - 2026-10-20
+
+Read CURRENT_ORIGINAL_FINITE_N_FIELD_DENSITY_COMPOSITION_2026_10_20.md first. The saved finite-N source result has
+passed=False and generic density identity True.
+First-ten field composition is False, first-ten C2=N*C5
+density identity is False, and patch composition is
+False. The provider, phase, N/Pstar normalization, incoming
+nonreset history, and once-only physical-Jacobian gates remain explicit; ordinary
+Z0/1/2 is not temporal n. Density, finite-N history, physical Q_y Z1, global
+five-moment closure, and the full goal remain false. Goal ACTIVE / INCOMPLETE.
+Source component calls are 1; accepted-ancestor, mathematical/history operator,
+numeric, quadrature, recurrence, and norm calls are all 0. Runtime model
+metadata is unavailable (null).
+
 # Current original R110 through Rm source projection - 2026-10-20
 
 Read [CURRENT_ORIGINAL_R110_RM_SOURCE_PROJECTION_2026_10_20.md](CURRENT_ORIGINAL_R110_RM_SOURCE_PROJECTION_2026_10_20.md) first. The saved
