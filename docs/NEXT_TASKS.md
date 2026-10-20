@@ -1,3 +1,12 @@
+# Current native Rc/2Rc physical pressure join lift - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_RC_2RC_PRESSURE_JOIN_LIFT_2026_10_20.md first.
+Saved result passed=True; local status={"native_2Rc_pressure_join_C3_proved": true, "native_Rc_Rp_natural_pressure_composition_proved": true, "native_Rc_pressure_join_C3_proved": true, "natural_physical_join_defects_zero_proved": true}.
+Rc/2Rc pressure jump scope only; global physical seams and terminal closure remain open.
+Old 212 terms/errors and once-only contributions stay frozen.
+Next: Bind the actual native Rp C5 frame and pressure to the independent complete pulse source and once-only reserved n1 own-swirl contribution. Use the new Rc/2Rc common physical flux functions in that terminal source comparison. Keep other physical seams and old212 adapter identities separate; retain every old signed error until an exact same-source packet identity is proved.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native Rc-to-Rp signed pressure source - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_RC_RP_SIGNED_PRESSURE_SOURCE_2026_10_20.md first.
