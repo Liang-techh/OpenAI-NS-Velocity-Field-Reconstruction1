@@ -1,3 +1,14 @@
+# Current native preRp exact quiet source reduction - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_PRERP_QUIET_SOURCE_REDUCTION_2026_10_20.md first.
+Saved result passed=True; local status={"corrected_preRp_piece_decomposition_proved": true, "native_preRp_quiet_defect_decomposition_proved": true, "native_quiet_increment_closed_form_proved": true, "ordinary_Z1_quiet_defect_zero_proved": true}.
+Both exact quiet primitives retained; their ordinary Z1 difference is zero.
+Remaining: native_2Rc-(corrected_active+old_compact)+quiet_Z0_defect; no closure.
+Previous pulse identity is formal frame substitution; physical Rp binding remains open.
+All old signed terms/errors, once-only reserved source and legacy chain unchanged.
+Next: Resolve actual native versus old physical Rc/Rp/Pstar sources, including the old Rp^2 retained by the rewritten pulse pressure versus current Rp in the coordinate table. Formal frame substitution alone does not bind the current physical complete pulse. Bind the actual native and old physical Rc/Pstar/K source ports before cancelling the explicit quiet Z0 defect. Bind the current compact increment to the original compact physical source, retaining both actual Rc incoming histories and original selected controls. Then compare native Rc cumulative pressure with corrected active pressure, including the first-micro physical lower endpoint and original RQ_y baseline. Do not set either remaining function difference to zero from samples or bounds, and do not change the reserved slot or delete any old212 error.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native Rp physical m15 source comparison - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_RP_M15_SOURCE_COMPARISON_2026_10_20.md first.
