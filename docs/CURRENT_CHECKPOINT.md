@@ -1,3 +1,12 @@
+# Current handoff: native J2 mean-loop source-width stage (2026-10-21)
+
+Read CURRENT_ORIGINAL_NATIVE_J2_MEAN_LOOP_INPUT_JOIN_2026_10_21.md first.
+The stage installs the interpreted hbB/hbS source-width binding hb=epsilon_b=cstar*K^-100 for graph nodes 8 and 9, with sigma(0)=0 and chi0=bridge hb. The six mean E_y, V_y, and p2 source joins remain open. Keep shared-loop composition, full U, Q, native B, and all fourteen B identities open. Goal ACTIVE / INCOMPLETE.
+
+One rejected worker-memory proof attempt is preserved in the report's unaccepted_worker_memory_draft field. It ran outside frozen entry, is separate from accepted source consumer 1 / ancestor operator 0, added no pins or checkpoints, and must not be replayed.
+
+Next task: certify the authenticated endpoint-projection/body-congruence guard recorded by work/native_J2_known_comparison_R100_congruence_static_2026_10_21.json (SHA-256 f97cad2e08f15f57c3dedd29448f4e5013408d31b874116dd2d7554cef0cf29d); derive memory Z2 from authenticated archives, keep hbB/hbS formal nodes distinct, and do not re-enter the rejected worker-memory fragment.
+
 # Current handoff: native J2 U endpoint transport V2 (2026-10-21)
 
 Read CURRENT_ORIGINAL_NATIVE_J2_U_ENDPOINT_TRANSPORT_V2_2026_10_21.md first.

@@ -1,0 +1,383 @@
+{
+  "schema": "original_native_J2_mean_loop_input_join_v1_execution_v1",
+  "metadata_only": true,
+  "component": "mean_loop_input_join",
+  "result_sha256": "6d056052d0c960c090a3b8fde9f9310993d513e79d1e1ca09f0186e5bbe27a1c",
+  "result_bytes": 13461,
+  "source_checkpoint_sha256": "7fd6882388f1f151a62a6b73e1b2b710caf28889274395603528ca870f7a8a75",
+  "entry_checkpoint_sha256": "1db53b7e49f6735f55798c48a0737a827e7c80d9f0d95fca315e5bfb24f8baa4",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_mean_loop_input_join_v1",
+    "component": "mean_loop_input_join",
+    "source_only": true,
+    "passed": true,
+    "actual_J2_mean_input_ports_bound": true,
+    "typed_source_width_binding_installed": true,
+    "interpreted_hbB_hbS_identity_proved": true,
+    "first_switch_lower_control_identity_proved": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "J2_mean_Ey_C1_endpoint_identity_proved": false,
+    "J2_mean_Vy_C1_endpoint_identity_proved": false,
+    "J2_mean_p2_C1_endpoint_identity_proved": false,
+    "J2_Bloop_C1_endpoint_identity_proved": false,
+    "actual_J2_U_C1_endpoint_identity_proved": false,
+    "J2_Q_identity_proved": false,
+    "J2_B_identity_proved": false,
+    "uninterpreted_graph_parameter_identity_proved": false,
+    "numeric_values_computed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "all_native_B_jumps_zero_proved": false,
+    "old_operators_replayed": false,
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "input_digest": "0f585c410d0c06949e64e70adcefc6ffbc1a99bc753c842273c58044f8c02a83",
+    "runtime_model_metadata": null,
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "stage_flags": {
+      "actual_J2_mean_input_ports_bound": true,
+      "typed_source_width_binding_installed": true,
+      "interpreted_hbB_hbS_identity_proved": true,
+      "first_switch_lower_control_identity_proved": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "J2_mean_Ey_C1_endpoint_identity_proved": false,
+      "J2_mean_Vy_C1_endpoint_identity_proved": false,
+      "J2_mean_p2_C1_endpoint_identity_proved": false,
+      "J2_Bloop_C1_endpoint_identity_proved": false,
+      "actual_J2_U_C1_endpoint_identity_proved": false,
+      "J2_Q_identity_proved": false,
+      "J2_B_identity_proved": false,
+      "uninterpreted_graph_parameter_identity_proved": false,
+      "numeric_values_computed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "all_native_B_jumps_zero_proved": false,
+      "old_operators_replayed": false
+    },
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "source_binding_scope": {
+      "new_source_contract": true,
+      "old_graph_nodes_rewritten": false,
+      "distinct_formal_nodes": [
+        8,
+        9
+      ],
+      "interpreted_parameter_identity_proved": true,
+      "uninterpreted_parameter_identity_proved": false,
+      "primitive": {
+        "source_record_sha256": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455",
+        "source_field": "exact_source_width",
+        "formula": "hb=epsilon_b=cstar*K^-100",
+        "source_family_digest": "e203d3666b7fe1162a46c3f6e3a6bf318201a83ed5191ecb8510b000c3b85de9",
+        "fixed_N0_digest": "42df26c8f2262256dbfc33da6ff555ebaf18f895d8014212f1304dabb680d6d9",
+        "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+      },
+      "bindings": [
+        {
+          "node_id": 8,
+          "name": "hbB",
+          "owner_path": [
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        },
+        {
+          "node_id": 9,
+          "name": "hbS",
+          "owner_path": [
+            "OriginalFirstSwitchFunctions.owner",
+            "OriginalR100Endpoint.owner",
+            "OriginalBridgeMacroMoments.owner",
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        }
+      ],
+      "numeric_witness_selected": false,
+      "enclosure_endpoint_comparison": false,
+      "positive_exact_width_source_recipe": true,
+      "finite_positive_value_not_materialized": true
+    },
+    "six_input_scope": {
+      "pairs": {
+        "Ey": [
+          [
+            72348,
+            87790
+          ],
+          [
+            72351,
+            87793
+          ]
+        ],
+        "Vy": [
+          [
+            72382,
+            87824
+          ],
+          [
+            72383,
+            87825
+          ]
+        ],
+        "p2": [
+          [
+            72981,
+            88423
+          ],
+          [
+            72982,
+            88424
+          ]
+        ]
+      },
+      "all_six_joined": false,
+      "finite_N_modified_total_fields_used": false,
+      "body_congruence_still_required": true
+    },
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_U_endpoint_transport_v2.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_actual_bridge_integrals.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_bridge_macro_moments.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_R100_endpoint.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_first_switch_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_whole_Z_all_N_control_connection.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_outer_initial.py": true,
+      "accepted_parent": true,
+      "inherited_source_pins": true,
+      "retained_ledger": true,
+      "inherited_U_scope_open": true,
+      "source_family": true,
+      "separate_literal_width_parameter:hbB": true,
+      "separate_literal_width_parameter:hbS": true,
+      "common_fixed_N0": true,
+      "exact_width_recipe": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:1": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:2": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:3": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:4": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py:5": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_moments.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_moments.py:1": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_bridge_macro_moments.py:2": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_R100_endpoint.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_R100_endpoint.py:1": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_R100_endpoint.py:2": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_first_switch_functions.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_first_switch_functions.py:1": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_first_switch_functions.py:2": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_prescribed_bridge_C6_functions.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py:0": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py:1": true,
+      "source_route_syntax:lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py:2": true,
+      "original_bridge_parameter_definition_declared": true,
+      "separate_switch_nodes_preserved": true,
+      "typed_registry_separate_nodes": true,
+      "interpreted_common_width_primitive": true,
+      "first_switch_control_row:0": true,
+      "first_switch_control_row:1": true,
+      "first_switch_control_row:73190": true,
+      "first_switch_control_row:74429": true,
+      "first_switch_control_row:74430": true,
+      "first_switch_control_row:87090": true,
+      "literal_sigma_definition": true,
+      "sigma_source_AST_binding": true,
+      "mean_Ey_ports": true,
+      "mean_Vy_ports": true,
+      "mean_p2_ports": true
+    },
+    "proof_graph": [
+      {
+        "rule": "authenticated_original_owner_route",
+        "conclusion": "Both actual owners use MacroFlow.h from the global width recipe, independent of label",
+        "enclosure_values_compared": false,
+        "old_graph_alias_inferred": false
+      },
+      {
+        "rule": "install_fixed_actual_source_interpretation",
+        "premise": "authenticated original owner routes and exact source recipe",
+        "conclusion": "interpret(hbB)=interpret(hbS)=cstar*K^-100",
+        "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b",
+        "distinct_formal_nodes": [
+          8,
+          9
+        ],
+        "new_source_contract": true,
+        "equality_of_uninterpreted_graph_parameters": false
+      },
+      {
+        "rule": "exact_sigma_lower_branch_then_typed_substitution",
+        "endpoint": {
+          "variable": 73190,
+          "value": 0,
+          "Z_independent": true
+        },
+        "sigma_node": 74428,
+        "sigma_value": 0,
+        "control_node": 87090,
+        "control_expression": "interpret(hbS)*(1-sigma(0))=interpret(hbB)",
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "width_Z1": 0,
+        "control_Z1": 0,
+        "no_drive_or_radial_input_identity_inferred": true
+      }
+    ],
+    "proof_graph_sha256": "b35f9a44e2411eb37d6a0d3284a96e783e24c7db59365bfd8e36750551df2562",
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "prove original comparison D_over_R and signed drive body congruence at J2",
+      "join original mean Ey,Vy,p2 C1; then same-loop composition and full U",
+      "physical Q and all fourteen native weighted B identities remain open",
+      "terminal functional five-moment closure and all dependent physical layers remain incomplete"
+    ],
+    "inherited_U_transport_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "field": "U",
+      "mean_V_identity_proved": true,
+      "mean_E_identity_proved": true,
+      "phase_identity_proved": true,
+      "U_difference_C1_reduction_proved": true,
+      "full_U_C1_identity_proved": false,
+      "full_U_endpoint_equality_proved": false,
+      "finite_N_delta_V_identity_proved": false,
+      "source_definition_contract_authenticated": true,
+      "top_level_C5_installed": false,
+      "numeric_containment_installed": false,
+      "Bloop_over_Pstar_distinct_from_native_weighted_B": true,
+      "source_difference_is_symbolic": true,
+      "difference_identity": "[Uleft-Uright]_(Z^j)=Pstar/N*(Bloop_over_Pstar_left_j-Bloop_over_Pstar_right_j), j=0,1",
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "common_source_nodes": [
+        33572,
+        69245,
+        99411
+      ],
+      "transport_nodes": [
+        70152,
+        70153,
+        71706,
+        71707,
+        72994,
+        72995,
+        87147,
+        87148
+      ],
+      "does_not_prove": [
+        "full_U",
+        "B",
+        "Q"
+      ],
+      "inherited_R_identity_jumps": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "unresolved_B_weighted_jump_nodes": [
+        522,
+        523,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535
+      ]
+    },
+    "inherited_R_identity_jumps": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "unresolved_B_identity_nodes": [
+      522,
+      523,
+      524,
+      525,
+      526,
+      527,
+      528,
+      529,
+      530,
+      531,
+      532,
+      533,
+      534,
+      535
+    ],
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false
+    },
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "raw_gzip_authenticated_before_decode": true,
+      "generic_DAG_walks": 0,
+      "numerical_evaluations": 0,
+      "quadratures": 0,
+      "recurrence_calls": 0,
+      "runtime_model_metadata": null
+    },
+    "execution_seconds": 0.6120785999810323,
+    "source_checkpoint_sha256": "7fd6882388f1f151a62a6b73e1b2b710caf28889274395603528ca870f7a8a75",
+    "entry_checkpoint_sha256": "1db53b7e49f6735f55798c48a0737a827e7c80d9f0d95fca315e5bfb24f8baa4",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}
