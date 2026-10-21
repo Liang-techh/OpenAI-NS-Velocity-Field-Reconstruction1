@@ -1,3 +1,12 @@
+# Current actual compact pressure polarization - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_COMPACT_PRESSURE_POLARIZATION_2026_10_21.md first.
+Saved result passed=True; exact C1 compact density/endpoint difference defined.
+F-T=(native_Rc-corrected_active)+D_compact. Neither term is proved zero.
+212/213/183, six signed channels, all errors and one reserved source preserved.
+Next: Use the explicit DeltaS and finite RQ_y differences to resolve native versus original compact U/m inlet and control source functions. First test the 2Rc endpoint against the already bound common physical K, then retain the Rc flux correlation with the active difference. Bind the native first-micro initial RQ_y to the corrected original lower endpoint before any active cancellation. Do not reset histories, change the reserved slot, identify source functions from bounds, or remove old212 errors. Global five moments, exact heat, stress, temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native physical scale source identity - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_SCALE_SOURCE_IDENTITY_2026_10_21.md first.
