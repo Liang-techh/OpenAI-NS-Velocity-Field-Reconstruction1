@@ -1,3 +1,8 @@
+# Current handoff: native J2 radius identity (2026-10-21)
+
+Read CURRENT_ORIGINAL_NATIVE_J2_RADIUS_IDENTITY_2026_10_21.md first.
+Only J2 weighted node 522 field R is proved at ordinary Z orders 0 and 1; J2 B/U/Q and all fourteen remaining B identities at nodes 522..535 remain open; inherited J0=520 and J1=521 stay accepted. Goal ACTIVE / INCOMPLETE.
+
 # Current native remaining B seam source comparisons - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_REMAINING_B_SEAM_SOURCES_2026_10_21.md first.

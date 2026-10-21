@@ -1,0 +1,667 @@
+{
+  "schema": "original_native_J2_radius_identity_v1_execution_v1",
+  "metadata_only": true,
+  "component": "J2_radius_identity",
+  "result_sha256": "5b7fb2939d3783d5f65ea26bb10e044cd7b2d6fb994ecdbfa67701045b9db520",
+  "result_bytes": 22216,
+  "source_checkpoint_sha256": "84925a7a20424774e98d0c56cc89e124070204c1daf9b567ab6e8e22397929fe",
+  "entry_checkpoint_sha256": "3443acd2989b6dbf88e4ece3c72274e3f32c8929761f5f93c8308bdb06ea419a",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_radius_identity_v1",
+    "component": "J2_radius_identity",
+    "passed": true,
+    "source_only": true,
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "input_digest": "a161a87ce7753d31164ee830cad67096ab8678c37c708db58ee2eb3496430a7b",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_remaining_B_seam_sources.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:tmp/original_native_remaining_B_seam_sources/native_J2_saved_radius_DAG_gap_2026_10_21.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_actual_bridge_integrals.json": true,
+      "accepted_parent": true,
+      "parent_inventory": true,
+      "finite_width_contract_pins": true,
+      "finite_width_creator_guard": true,
+      "exact_width_not_cap": true,
+      "finite_real_log_h:lower": true,
+      "finite_real_log_h:upper": true,
+      "all_B_still_open": true,
+      "inherited_J0_J1": true,
+      "retained_ledger": true,
+      "gap_exact_parent_bytes": true,
+      "gap_scope": true,
+      "loop_source_family": true,
+      "literal_node:0": true,
+      "literal_node:1": true,
+      "literal_node:2": true,
+      "literal_node:3": true,
+      "literal_node:4": true,
+      "literal_node:5": true,
+      "literal_node:13": true,
+      "literal_node:14": true,
+      "literal_node:48": true,
+      "literal_node:643": true,
+      "literal_node:31709": true,
+      "literal_node:35562": true,
+      "literal_node:35564": true,
+      "literal_node:35565": true,
+      "literal_node:65604": true,
+      "literal_node:66981": true,
+      "literal_node:66982": true,
+      "literal_node:66983": true,
+      "literal_node:66984": true,
+      "literal_node:66985": true,
+      "literal_node:66986": true,
+      "literal_node:66987": true,
+      "literal_node:70265": true,
+      "literal_node:70266": true,
+      "literal_node:71446": true,
+      "literal_node:71447": true,
+      "literal_node:71448": true,
+      "literal_node:73190": true,
+      "literal_node:85903": true,
+      "literal_node:85904": true,
+      "literal_node:85905": true,
+      "source_parameter:hbB": true,
+      "source_parameter:hbS": true,
+      "parameters_not_aliased": true,
+      "actual_J2_seam": true,
+      "endpoint_binding:left": true,
+      "endpoint_constant:left": true,
+      "endpoint_binding:right": true,
+      "endpoint_constant:right": true
+    },
+    "proof_graph": [
+      {
+        "id": "parameters",
+        "rule": "original MacroFlow finite-log guard and exact h=exp(log h) source contract",
+        "premises": [],
+        "conclusion": "hbB and hbS bind finite positive real original flow.h; their source IDs remain distinct",
+        "source_nodes": [
+          8,
+          9
+        ]
+      },
+      {
+        "id": "domain",
+        "rule": "finite real constants; real exp is finite and positive",
+        "premises": [],
+        "conclusion": "D=1000+4*(exp(40)+11) is real; A=4*exp(-D)>0; 100>0",
+        "source_nodes": [
+          35562,
+          65604,
+          31709
+        ]
+      },
+      {
+        "id": "logs",
+        "rule": "real log domain for positive arguments",
+        "premises": [
+          "domain"
+        ],
+        "conclusion": "log(A) and log(100) are defined; A is nonzero",
+        "source_nodes": [
+          66981,
+          66982
+        ]
+      },
+      {
+        "id": "left_endpoint",
+        "rule": "substitute native macro coordinate 70265=1",
+        "premises": [
+          "logs",
+          "parameters"
+        ],
+        "conclusion": "R_left_upper(Z)=A*exp(2*hbB+((log(100)-log(A))-2*hbB))",
+        "source_nodes": [
+          70265,
+          71448
+        ]
+      },
+      {
+        "id": "same_source_cancel",
+        "rule": "associativity and additive inverse of identical node 66985",
+        "premises": [
+          "left_endpoint"
+        ],
+        "conclusion": "R_left_upper(Z)=A*exp(log(100)-log(A))",
+        "source_nodes": [
+          66985,
+          66986,
+          71446
+        ]
+      },
+      {
+        "id": "exp_log",
+        "rule": "exp(a-b)=exp(a)/exp(b); exp(log(x))=x for x>0",
+        "premises": [
+          "logs",
+          "same_source_cancel"
+        ],
+        "conclusion": "R_left_upper(Z)=A*(100/A)",
+        "source_nodes": [
+          71447,
+          66981,
+          66982
+        ]
+      },
+      {
+        "id": "factor_cancel",
+        "rule": "field cancellation at A nonzero",
+        "premises": [
+          "exp_log",
+          "domain"
+        ],
+        "conclusion": "R_left_upper(Z)=100",
+        "source_nodes": [
+          65604,
+          71448
+        ]
+      },
+      {
+        "id": "right_endpoint",
+        "rule": "substitute native switch coordinate 73190=0; exp(0)=1",
+        "premises": [
+          "parameters"
+        ],
+        "conclusion": "R_right_lower(Z)=100*exp(hbS*0)=100",
+        "source_nodes": [
+          73190,
+          85903,
+          85904,
+          85905
+        ]
+      },
+      {
+        "id": "radius_equal",
+        "rule": "transitivity of exact real function equality",
+        "premises": [
+          "factor_cancel",
+          "right_endpoint"
+        ],
+        "conclusion": "R_left_upper(Z)=R_right_lower(Z)=100",
+        "source_nodes": [
+          71448,
+          85905
+        ]
+      },
+      {
+        "id": "ordinary_Z",
+        "rule": "differentiate constant function; endpoints and parameters Z independent",
+        "premises": [
+          "radius_equal"
+        ],
+        "conclusion": "d_Z R_left_upper=d_Z R_right_lower=0 on the inherited owned Z cell",
+        "source_nodes": [
+          8,
+          9,
+          0,
+          1,
+          71448,
+          85905
+        ]
+      }
+    ],
+    "proof_graph_digest": "2485d20b12ff90fbe78356343364270893decc67119071b12fa5abb79bb09b9d",
+    "radius_identity": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "field": "R",
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "exact_endpoint_rational": {
+        "numerator": 100,
+        "denominator": 1
+      },
+      "exact_ordinary_Z_derivative": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "source_function_identity_proved": true,
+      "numeric_value": null,
+      "left_source_node": 71448,
+      "right_source_node": 85905,
+      "left_coordinate_node": 70265,
+      "right_coordinate_node": 73190,
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "hbB_source_node": 8,
+      "hbS_source_node": 9,
+      "source_parameters_aliased": false,
+      "saved_parent_R_row": {
+        "field": "R",
+        "ordinary_Z_order": 0,
+        "comparison_kind": "bounded_endpoint_source_DAG_congruence",
+        "equal": null,
+        "source_identity_proved": false,
+        "status": "unproved",
+        "numeric_value": null,
+        "left": {
+          "field": "R",
+          "ordinary_Z_order": 0,
+          "source_record": "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz",
+          "source_node": 71448,
+          "source_nodes": [
+            71448
+          ],
+          "coordinate_nodes": [
+            70265
+          ],
+          "domain_nodes": [
+            0,
+            1
+          ],
+          "endpoint": "upper",
+          "chart": "frozen_macro",
+          "port_weighted_node": 61,
+          "port_metadata_digest": "6029fb3d9f251ae9bb9578ed4705c8b92a4fb422f81d474f158f517db5b481c9",
+          "canonical_digest": "a976e22023fc820041d5c510dfe4129075e414452bfad68548bed4a09c328361",
+          "canonical_supported": true,
+          "Z_independent_source": true,
+          "source_root_metadata_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "source_root_metadata_keys": []
+        },
+        "right": {
+          "field": "R",
+          "ordinary_Z_order": 0,
+          "source_record": "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz",
+          "source_node": 85905,
+          "source_nodes": [
+            85905
+          ],
+          "coordinate_nodes": [
+            73190
+          ],
+          "domain_nodes": [
+            0,
+            1
+          ],
+          "endpoint": "lower",
+          "chart": "first_switch",
+          "port_weighted_node": 77,
+          "port_metadata_digest": "6029fb3d9f251ae9bb9578ed4705c8b92a4fb422f81d474f158f517db5b481c9",
+          "canonical_digest": "ba311536bbc0a0fc87238de3ba964c7937076e5c046cf2ff3f9c1db0d07318e0",
+          "canonical_supported": true,
+          "Z_independent_source": true,
+          "source_root_metadata_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "source_root_metadata_keys": []
+        },
+        "rewrite_audit": [
+          "analytic_unary_preserved"
+        ],
+        "reasons": [
+          "differing_symbolic_DAG"
+        ],
+        "left_scope_digest": "b1498421f18ad78e00126198d542e93b1feb9020644fcb83b89a7ec6e11cde12",
+        "right_scope_digest": "4c3bf5b9d7c57f1919bfa91a060a8c35fa2e9eb42fbfbe60f0fd090fe55e42a8"
+      }
+    },
+    "finite_real_parameter_contract": {
+      "creator": "lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py",
+      "creator_sha256": "74511ee00a655184021b0516478cffb7c8fdca830b5dc01ab44dfde2e9ad648b",
+      "exact_width_record": "lei_ren_part1_paper_compliant_actual_bridge_integrals.json",
+      "exact_width_record_sha256": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455",
+      "exact_source_width": "hb=epsilon_b=cstar*K^-100",
+      "finite_log_h_witness": {
+        "lower": "-1.43059066986408533838418364971429389132030050358958490511367089511470790428882165027251901e+408906090034569676",
+        "upper": "-1.43059066986408533838418364971429389132030050358958490511367089511470790428882164878059482e+408906090034569676",
+        "width": "1.49192418895109310997818587978604372537042637369012385592389e+408906090034569595",
+        "lower_exact_mpf_tuple": [
+          1,
+          81372497646107511283724534971414190230852901297668203470947239666208797808653519902054866963947737189460762974345832408968896551714073361183487512016690400192629,
+          1358356628656377772,
+          535
+        ],
+        "upper_exact_mpf_tuple": [
+          1,
+          10171562205763438910465566871426773778856612662208525433868404958276099726081689977149212162622599055600743653679175842379648669461152700321061587798078893794481,
+          1358356628656377775,
+          532
+        ]
+      },
+      "finite_enclosure_used_only_for_domain_not_as_function_value": true,
+      "exact_source_parameter_values_selected": false,
+      "source_width_cap_used": false,
+      "parameter_values_aliased": false
+    },
+    "fixed_raw_source_rows": {
+      "0": {
+        "operation": "exact_rational",
+        "numerator": 0,
+        "denominator": 1
+      },
+      "1": {
+        "operation": "exact_rational",
+        "numerator": 1,
+        "denominator": 1
+      },
+      "2": {
+        "operation": "exact_rational",
+        "numerator": 40,
+        "denominator": 1
+      },
+      "3": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 2
+      },
+      "4": {
+        "operation": "exact_rational",
+        "numerator": 11,
+        "denominator": 1
+      },
+      "5": {
+        "operation": "sum",
+        "arguments": [
+          3,
+          4
+        ]
+      },
+      "13": {
+        "operation": "exact_rational",
+        "numerator": 4,
+        "denominator": 1
+      },
+      "14": {
+        "operation": "product",
+        "arguments": [
+          13,
+          5
+        ]
+      },
+      "48": {
+        "operation": "exact_rational",
+        "numerator": 2,
+        "denominator": 1
+      },
+      "643": {
+        "operation": "exact_rational",
+        "numerator": 1000,
+        "denominator": 1
+      },
+      "31709": {
+        "operation": "exact_rational",
+        "numerator": 100,
+        "denominator": 1
+      },
+      "35562": {
+        "operation": "sum",
+        "arguments": [
+          14,
+          643
+        ]
+      },
+      "35564": {
+        "operation": "negative",
+        "argument": 35562
+      },
+      "35565": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 35564
+      },
+      "65604": {
+        "operation": "product",
+        "arguments": [
+          13,
+          35565
+        ]
+      },
+      "66981": {
+        "operation": "analytic_unary",
+        "name": "log",
+        "argument": 31709
+      },
+      "66982": {
+        "operation": "analytic_unary",
+        "name": "log",
+        "argument": 65604
+      },
+      "66983": {
+        "operation": "negative",
+        "argument": 66982
+      },
+      "66984": {
+        "operation": "sum",
+        "arguments": [
+          66981,
+          66983
+        ]
+      },
+      "66985": {
+        "operation": "product",
+        "arguments": [
+          48,
+          8
+        ]
+      },
+      "66986": {
+        "operation": "negative",
+        "argument": 66985
+      },
+      "66987": {
+        "operation": "sum",
+        "arguments": [
+          66984,
+          66986
+        ]
+      },
+      "70265": {
+        "operation": "bound_variable",
+        "name": "original_prescribed_C6_macro_fraction"
+      },
+      "70266": {
+        "operation": "product",
+        "arguments": [
+          66987,
+          70265
+        ]
+      },
+      "71446": {
+        "operation": "sum",
+        "arguments": [
+          66985,
+          70266
+        ]
+      },
+      "71447": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 71446
+      },
+      "71448": {
+        "operation": "product",
+        "arguments": [
+          65604,
+          71447
+        ]
+      },
+      "73190": {
+        "operation": "bound_variable",
+        "name": "true_prescribed_first_switch_s"
+      },
+      "85903": {
+        "operation": "product",
+        "arguments": [
+          9,
+          73190
+        ]
+      },
+      "85904": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 85903
+      },
+      "85905": {
+        "operation": "product",
+        "arguments": [
+          31709,
+          85904
+        ]
+      },
+      "8": {
+        "operation": "current_original_source_parameter",
+        "name": "hbB",
+        "definition": "original bridge_owner.flow.h; positive source ledger",
+        "source_family": {
+          "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+          "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+          "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+        },
+        "fixed_leading_input_N0": 25142747753733503343656345257503344787292845937600570089202946667513979494339646436843399282783741060525781166993554731442350039852601206363165020852112167431916569603704240715654317174476611957619832139824389485337890974787551560164680498666615693943235470922001033617525941693464518711186278624123770974141738605514196036667764473363283356643847437567123704354896773843776943101612849735020960428769579379090874837864902600164827449424233824234549333221294726082543944306785763887203230367982220781110006457962964688503503833090508403267683511494764743296994827721930166896354068449443730723992263931313045281164601949395863792789865255622037100687770973233695937755530830602208021638539674124010539921052085574864312488040219292943191870380921514720956575830015871430594404169311845577235363681273754117906995950314055827457557626149952386706597833200145560314343384531329289502366937072267228132200773418593573186814162285865070516392496779344596971228067548845227658994566553558486897612838510911219095308189634156737538639337691075817190940115786466110573915769300851702048227124238457777520255354350008022264952214577377353965086955099862501814818470120390786347921477423517919011124755300352,
+        "quantity_is_exact_original_parameter_not_range_endpoint": true,
+        "Z_independent": true,
+        "current_source_receipt": "lei_ren_part1_paper_compliant_current_original_whole_Z_all_N_outer_Rc_functions_check.json",
+        "current_source_receipt_sha256": "f3c4d1b230b3835da6f4f270926fa85f74ca488f8331e05fbbb894a7c22a0158"
+      },
+      "9": {
+        "operation": "current_original_source_parameter",
+        "name": "hbS",
+        "definition": "original switch_owner.flow.h; not merged with hbB by name",
+        "source_family": {
+          "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+          "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+          "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+        },
+        "fixed_leading_input_N0": 25142747753733503343656345257503344787292845937600570089202946667513979494339646436843399282783741060525781166993554731442350039852601206363165020852112167431916569603704240715654317174476611957619832139824389485337890974787551560164680498666615693943235470922001033617525941693464518711186278624123770974141738605514196036667764473363283356643847437567123704354896773843776943101612849735020960428769579379090874837864902600164827449424233824234549333221294726082543944306785763887203230367982220781110006457962964688503503833090508403267683511494764743296994827721930166896354068449443730723992263931313045281164601949395863792789865255622037100687770973233695937755530830602208021638539674124010539921052085574864312488040219292943191870380921514720956575830015871430594404169311845577235363681273754117906995950314055827457557626149952386706597833200145560314343384531329289502366937072267228132200773418593573186814162285865070516392496779344596971228067548845227658994566553558486897612838510911219095308189634156737538639337691075817190940115786466110573915769300851702048227124238457777520255354350008022264952214577377353965086955099862501814818470120390786347921477423517919011124755300352,
+        "quantity_is_exact_original_parameter_not_range_endpoint": true,
+        "Z_independent": true,
+        "current_source_receipt": "lei_ren_part1_paper_compliant_current_original_whole_Z_all_N_outer_Rc_functions_check.json",
+        "current_source_receipt_sha256": "f3c4d1b230b3835da6f4f270926fa85f74ca488f8331e05fbbb894a7c22a0158"
+      }
+    },
+    "inherited_context": {
+      "parent_report": "lei_ren_part1_paper_compliant_current_original_native_remaining_B_seam_sources.json",
+      "parent_report_sha256": "f765b451fcb962cbf59824db2d0f7e994b3de72c30c3ee4bf46ab9f01c0cc1e6",
+      "inherited_R_identity_jump_indices": [
+        3,
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "accepted_R_identity_jump_indices": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "native_B_jump_zero_nodes": [
+        520,
+        521
+      ],
+      "unresolved_B_weighted_jump_nodes": [
+        522,
+        523,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535
+      ],
+      "native_IN_formula": "I_N=B_lastupper-B_firstlower-sum(J_2..J_15)+sum17(integral K_i dy)"
+    },
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false,
+      "P1_differs_from_m15": true,
+      "physical_Q_differs_from_loop_q": true,
+      "accepted_physical_baseline_commit": "8f36f19e3c524b424a9286c46cc8e0b855f75307"
+    },
+    "stage_flags": {
+      "literal_radius_sources_bound": true,
+      "positive_real_log_domain_proved": true,
+      "same_source_hbB_cancellation_proved": true,
+      "J2_radius_C1_identity_proved": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "numeric_values_computed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "J2_B_identity_proved": false,
+      "all_native_B_jumps_zero_proved": false,
+      "old_operators_replayed": false
+    },
+    "source_pins": {
+      "lei_ren_part1_paper_compliant_current_original_native_remaining_B_seam_sources.json": "f765b451fcb962cbf59824db2d0f7e994b3de72c30c3ee4bf46ab9f01c0cc1e6",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa",
+      "tmp/original_native_remaining_B_seam_sources/native_J2_saved_radius_DAG_gap_2026_10_21.json": "2dcd59604323857b8d0851c1ac2c301cc491ad3fd1657a048e49e2ecca2329d1",
+      "lei_ren_part1_paper_compliant_current_original_bridge_macro_functions.py": "74511ee00a655184021b0516478cffb7c8fdca830b5dc01ab44dfde2e9ad648b",
+      "lei_ren_part1_paper_compliant_actual_bridge_integrals.json": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455"
+    },
+    "source_pin_count": 5,
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "general_DAG_walker_calls": 0,
+      "numeric_exp_log_evaluations": 0,
+      "endpoint_canonicalizer_calls": 0
+    },
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "J2 actual U and physical Q endpoint C1 source identities",
+      "all fourteen remaining B source identities",
+      "native/old density identities and terminal functional closure",
+      "admissible stress, temporal recursion, corrections, independent Cartesian NS"
+    ],
+    "runtime_model_metadata": null,
+    "literal_radius_sources_bound": true,
+    "positive_real_log_domain_proved": true,
+    "same_source_hbB_cancellation_proved": true,
+    "J2_radius_C1_identity_proved": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "numeric_values_computed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "J2_B_identity_proved": false,
+    "all_native_B_jumps_zero_proved": false,
+    "old_operators_replayed": false,
+    "execution_seconds": 0.47408070001984015,
+    "source_checkpoint_sha256": "84925a7a20424774e98d0c56cc89e124070204c1daf9b567ab6e8e22397929fe",
+    "entry_checkpoint_sha256": "3443acd2989b6dbf88e4ece3c72274e3f32c8929761f5f93c8308bdb06ea419a",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}
