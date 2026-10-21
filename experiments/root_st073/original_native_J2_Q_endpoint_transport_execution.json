@@ -1,0 +1,498 @@
+{
+  "schema": "original_native_J2_Q_endpoint_transport_v1_execution_v1",
+  "metadata_only": true,
+  "component": "Q_endpoint_transport",
+  "result_sha256": "d5bdeb83c6fcdc2c3d2e30d434a2abdff55fd9a5280d06d4f19110de7c8c8c2f",
+  "result_bytes": 16478,
+  "source_checkpoint_sha256": "97a0bfca01e415c20c72d35e0bbc15a1b67ac7ca79fa18fb2012456b883b6939",
+  "entry_checkpoint_sha256": "68a068213ae30fecd1f0b75f1c1a25b2e1e32d45f87622cb2b1028ca4f37bb5f",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_Q_endpoint_transport_v1",
+    "component": "Q_endpoint_transport",
+    "passed": true,
+    "source_only": true,
+    "actual_J2_Q_ports_bound": true,
+    "original_m_Z2_premise_authenticated": true,
+    "finite_N_m_correction_Z2_endpoint_identity_proved": true,
+    "physical_m_Z2_endpoint_identity_proved": true,
+    "J2_Q_C1_endpoint_identity_proved": true,
+    "inherited_R_U_identities_retained": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "J2_B_identity_proved": false,
+    "all_native_B_jumps_zero_proved": false,
+    "J2_Qy_identity_proved": false,
+    "numeric_values_computed": false,
+    "source_C5_installation_claimed": false,
+    "numeric_containment_claimed": false,
+    "new_loop_domain_admission_claimed": false,
+    "admissible_cone_admission_claimed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "uninterpreted_graph_parameter_identity_proved": false,
+    "old_operators_replayed": false,
+    "stage_flags": {
+      "actual_J2_Q_ports_bound": true,
+      "original_m_Z2_premise_authenticated": true,
+      "finite_N_m_correction_Z2_endpoint_identity_proved": true,
+      "physical_m_Z2_endpoint_identity_proved": true,
+      "J2_Q_C1_endpoint_identity_proved": true,
+      "inherited_R_U_identities_retained": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "J2_B_identity_proved": false,
+      "all_native_B_jumps_zero_proved": false,
+      "J2_Qy_identity_proved": false,
+      "numeric_values_computed": false,
+      "source_C5_installation_claimed": false,
+      "numeric_containment_claimed": false,
+      "new_loop_domain_admission_claimed": false,
+      "admissible_cone_admission_claimed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "uninterpreted_graph_parameter_identity_proved": false,
+      "old_operators_replayed": false
+    },
+    "J2_Q_identity_proved": true,
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "m_ordinary_Z_orders": [
+      0,
+      1,
+      2
+    ],
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "input_digest": "ba86c72cdd38ac803d7876f32134bf5da475dae5818390e4af303fc79aaed07f",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "identity_domain_scope": "common domain of original source definitions; no new loop-domain, cone or numerical admission",
+    "source_function_identity_only": true,
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_mean_endpoint_composition_v2.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py": true,
+      "authenticated:experiments/root_st073/original_native_J2_mean_endpoint_v1_failure_evidence.json": true,
+      "accepted_parent_scope": true,
+      "inherited_input_pins": true,
+      "same_source_family": true,
+      "unadmitted_source_factory_flags_retained": true,
+      "original_m:parent_original_memory_Z2_endpoint_identity_proved": true,
+      "original_m:parent_source_prefix_certificate_recovered": true,
+      "original_m:parent_source_only": true,
+      "original_m:saved_prefix_check_inventory": true,
+      "original_m:saved_prefix_checks_all_true": true,
+      "original_m:embedded_source_schema": true,
+      "original_m:embedded_source_input_digest": true,
+      "original_m:embedded_source_implementation_hashes": true,
+      "original_m:embedded_record_hashes": true,
+      "original_m:entered_checkpoint_linkage": true,
+      "original_m:result_failure_linkage": true,
+      "original_m:result_traceback_linkage": true,
+      "original_m:frozen_memory_ast_scope": true,
+      "Q_transport:loop_graph_length": true,
+      "Q_transport:mod_graph_length": true,
+      "Q_transport:accepted_parent_R_U_and_open_Q_scope": true,
+      "Q_transport:shared_actual_source_family": true,
+      "Q_transport:accepted_original_m_Z2_certificate": true,
+      "Q_transport:authenticated_loop_creator_text": true,
+      "Q_transport:authenticated_modified_Q_creator_text": true,
+      "Q_transport:loop_transport_and_predecessor_ast": true,
+      "Q_transport:physical_Q_creator_ast": true,
+      "Q_transport:typed_loop_endpoint_bindings": true,
+      "Q_transport:typed_physical_Q_endpoint_bindings": true,
+      "Q_transport:loop_incoming_alias_decay_and_m_source_rows": true,
+      "Q_transport:first_switch_equal_bound_integrals_through_Z2": true,
+      "Q_transport:original_m_source_chart_rows_authenticated": true,
+      "Q_transport:physical_m_Pstar_applied_once": true,
+      "Q_transport:physical_Q_numerator_source_pair_rows": true,
+      "Q_transport:common_Z_delta_d_L_and_derivative_source_rows": true,
+      "Q_transport:common_positive_L_source_quotient": true,
+      "fresh_m_and_Q_source_identities": true,
+      "retained_ledger": true
+    },
+    "proof_graph": [
+      {
+        "id": "original_m_Z2",
+        "rule": "authenticate accepted saved-source ordinary-Z2 m binding"
+      },
+      {
+        "id": "finite_N_m_Z2",
+        "rule": "same predecessor incoming memory, decay one, equal-bound integrals zero through Z2",
+        "depends_on": [
+          "original_m_Z2"
+        ]
+      },
+      {
+        "id": "physical_m_Z2",
+        "rule": "original m plus transported finite-N correction; physical Pstar applied once",
+        "depends_on": [
+          "finite_N_m_Z2"
+        ]
+      },
+      {
+        "id": "physical_Q_C1",
+        "rule": "actual signed numerator and differentiated common-L quotient",
+        "depends_on": [
+          "physical_m_Z2"
+        ]
+      }
+    ],
+    "proof_graph_sha256": "3a371b9a543c0c46705cc85f01a4ed5ec9f684347d3ee2787b3c52b789ec90c4",
+    "component_proofs": {
+      "original_m": {
+        "source_only": true,
+        "memory_Z2_proved": true,
+        "ordinary_Z_orders": [
+          0,
+          1,
+          2
+        ],
+        "left_m_rows": [
+          72149,
+          72150,
+          72151
+        ],
+        "right_m_rows": [
+          87591,
+          87592,
+          87593
+        ],
+        "projection_rows": [
+          73099,
+          73100,
+          73101
+        ],
+        "common_Pstar_node": 33572,
+        "Pstar_inverse_node": 69245,
+        "typed_row_registry_requires_archive_authentication": true,
+        "recovered_runtime_objects": false,
+        "numeric_values_computed": false
+      },
+      "Q_transport": {
+        "schema": "native_J2_Q_numerator_transport_fragment_v1",
+        "status": "source_Q_C1_leaf_ready",
+        "source_only": true,
+        "numeric_values_computed": false,
+        "finite_N_m_Z2_proved": true,
+        "physical_m_Z2_proved": true,
+        "Q_C1_proved": true,
+        "J2_Q_identity_proved": true,
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "m_ordinary_Z_orders": [
+          0,
+          1,
+          2
+        ],
+        "Q_C1_conditional_on_original_m_Z2_and_accepted_R_U": true,
+        "endpoint_projections": {
+          "frozen_macro_upper": {
+            "coordinate_node": 70265,
+            "coordinate_value": 1,
+            "radius_node": 71448
+          },
+          "first_switch_lower": {
+            "coordinate_node": 73190,
+            "coordinate_value": 0,
+            "radius_node": 85905
+          }
+        },
+        "source_pairs": {
+          "physical_Q": [
+            [
+              140780,
+              148180
+            ],
+            [
+              140784,
+              148184
+            ]
+          ],
+          "physical_Q_numerators": [
+            [
+              140775,
+              148175
+            ],
+            [
+              140783,
+              148183
+            ]
+          ],
+          "physical_U": [
+            [
+              140685,
+              148085
+            ],
+            [
+              140686,
+              148086
+            ]
+          ],
+          "physical_m_through_Z2": [
+            [
+              140697,
+              148097
+            ],
+            [
+              140698,
+              148098
+            ],
+            [
+              140699,
+              148099
+            ]
+          ],
+          "loop_modified_m_through_Z2": [
+            [
+              104467,
+              107095
+            ],
+            [
+              104468,
+              107096
+            ],
+            [
+              104469,
+              107097
+            ]
+          ]
+        },
+        "common_source_factors": {
+          "Pstar": 33572,
+          "inverse_Pstar": 69245,
+          "L": 25272,
+          "L_recipe": {
+            "operation": "sum",
+            "arguments": [
+              1,
+              25271
+            ],
+            "source_positive_certificate": "same original L=1-delta*Z^2"
+          }
+        },
+        "derivation": [
+          "first_switch lower coordinate 73190=0 uses incoming m rows 104503..104505 from frozen-macro endpoint substitutions 104503..104505",
+          "transport rows 106958..106960 are exact definite integrals with lower 0 and upper 73190 for ordinary Z orders 0,1,2; equal-bound endpoint projection makes each correction zero",
+          "decay row 106940 is the source exp(-rate*Jacobian*(coordinate-lower)); its first-switch lower endpoint is one by the exact transport AST and lower projection",
+          "modified m rows 107095..107097 are baseline first-switch normalized m rows 87591..87593 plus the transported history",
+          "physical m rows 148097..148099 apply the common Pstar row 33572 once, matching the macro physical m rows 140697..140699",
+          "the actual physical Q creator uses the same Pstar-scaled V and m, signed numerator, and common positive L quotient; rows 140780/140784 and 148180/148184 consume the paired numerator rows through ordinary Z order 1"
+        ],
+        "source_ast_hashes": {
+          "loop_creator_sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+          "modified_Q_creator_sha256": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7"
+        },
+        "proof_guards": {
+          "loop_graph_length": true,
+          "mod_graph_length": true,
+          "accepted_parent_R_U_and_open_Q_scope": true,
+          "shared_actual_source_family": true,
+          "accepted_original_m_Z2_certificate": true,
+          "authenticated_loop_creator_text": true,
+          "authenticated_modified_Q_creator_text": true,
+          "loop_transport_and_predecessor_ast": true,
+          "physical_Q_creator_ast": true,
+          "typed_loop_endpoint_bindings": true,
+          "typed_physical_Q_endpoint_bindings": true,
+          "loop_incoming_alias_decay_and_m_source_rows": true,
+          "first_switch_equal_bound_integrals_through_Z2": true,
+          "original_m_source_chart_rows_authenticated": true,
+          "physical_m_Pstar_applied_once": true,
+          "physical_Q_numerator_source_pair_rows": true,
+          "common_Z_delta_d_L_and_derivative_source_rows": true,
+          "common_positive_L_source_quotient": true
+        },
+        "discharged_caller_premises": [
+          "the caller must pass the authenticated original m Z2 certificate with its typed source rows and common Pstar handles",
+          "the caller must pass the accepted source-only R and U endpoint identities; this leaf does not infer them from mean E/V",
+          "the first-switch lower endpoint projection is a source endpoint rule, not a numeric evaluation"
+        ],
+        "nonclaims": {
+          "Q_y_C1_identity_proved": false,
+          "J2_B_identity_proved": false,
+          "all_fourteen_B_identities_open": true,
+          "numeric_containment_claimed": false,
+          "new_loop_domain_admission_claimed": false
+        },
+        "source_producer_function_calls": 0,
+        "ancestor_replays": 0,
+        "runtime_model_metadata": null
+      }
+    },
+    "source_binding_scope": {
+      "new_source_contract": true,
+      "old_graph_nodes_rewritten": false,
+      "distinct_formal_nodes": [
+        8,
+        9
+      ],
+      "interpreted_parameter_identity_proved": true,
+      "uninterpreted_parameter_identity_proved": false,
+      "primitive": {
+        "source_record_sha256": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455",
+        "source_field": "exact_source_width",
+        "formula": "hb=epsilon_b=cstar*K^-100",
+        "source_family_digest": "e203d3666b7fe1162a46c3f6e3a6bf318201a83ed5191ecb8510b000c3b85de9",
+        "fixed_N0_digest": "42df26c8f2262256dbfc33da6ff555ebaf18f895d8014212f1304dabb680d6d9",
+        "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+      },
+      "bindings": [
+        {
+          "node_id": 8,
+          "name": "hbB",
+          "owner_path": [
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        },
+        {
+          "node_id": 9,
+          "name": "hbS",
+          "owner_path": [
+            "OriginalFirstSwitchFunctions.owner",
+            "OriginalR100Endpoint.owner",
+            "OriginalBridgeMacroMoments.owner",
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        }
+      ],
+      "numeric_witness_selected": false,
+      "enclosure_endpoint_comparison": false,
+      "positive_exact_width_source_recipe": true,
+      "finite_positive_value_not_materialized": true
+    },
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false
+    },
+    "quantity_distinctions": {
+      "P1_differs_from_m15": true,
+      "physical_Q_differs_from_loop_q": true,
+      "Bloop_over_Pstar_differs_from_native_weighted_B": true,
+      "ordinary_Z_jets_are_not_temporal_n_recursion": true,
+      "typed_source_denotation_is_not_a_computed_numeric_value": true
+    },
+    "inherited_R_identity_jumps": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "unresolved_B_identity_nodes": [
+      522,
+      523,
+      524,
+      525,
+      526,
+      527,
+      528,
+      529,
+      530,
+      531,
+      532,
+      533,
+      534,
+      535
+    ],
+    "Q_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "full_Q_C1_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        140780,
+        140784
+      ],
+      "right_source_nodes": [
+        148180,
+        148184
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "common_L_denominator_node": 25272,
+      "source_interpretation_required": true
+    },
+    "inherited_U_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "full_U_C1_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        140685,
+        140686
+      ],
+      "right_source_nodes": [
+        148085,
+        148086
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "source_interpretation_required": true
+    },
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "native weighted J2 B source identity and the other thirteen native B jumps",
+      "independent terminal functional moments and retained quantitative errors",
+      "heat exterior, stress/remainder, temporal n recursion, realizable corrections and Cartesian NS validation"
+    ],
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "old_proof_functions_called": 0,
+      "generic_DAG_walks": 0,
+      "numerical_evaluations": 0,
+      "quadratures": 0,
+      "recurrence_calls": 0,
+      "runtime_model_metadata": null
+    },
+    "runtime_model_metadata": null,
+    "execution_seconds": 0.5602965999860317,
+    "source_checkpoint_sha256": "97a0bfca01e415c20c72d35e0bbc15a1b67ac7ca79fa18fb2012456b883b6939",
+    "entry_checkpoint_sha256": "68a068213ae30fecd1f0b75f1c1a25b2e1e32d45f87622cb2b1028ca4f37bb5f",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}
