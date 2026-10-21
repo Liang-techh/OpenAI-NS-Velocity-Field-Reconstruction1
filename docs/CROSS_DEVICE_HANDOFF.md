@@ -1,3 +1,14 @@
+# Current lower physical flux C1 source identity - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_LOWER_PHYSICAL_FLUX_IDENTITY_2026_10_21.md first.
+Saved result passed=True; native initial RQ_y129567/129568 equals
+corrected lower RQ_y53450/53462, ordinary C1 on owned Z cell [0,1/2].
+Old quantitative Z=0.371 packet scope and errors are unchanged.
+Rc flux and active/compact density terms remain; global closure is false.
+212/213/183, six signed channels and one reserved source remain frozen.
+Next: Recover the corrected active upper Rc flux and its same-source relation to the original compact lower flux, preserving the accepted native Rc join. Use each actual pressure cocycle before combining the density differences and shifted lower inlet. Keep the compact/active field and history differences explicit until their actual source identities are proved. Do not promote old point enclosures to cell-wide bounds, replace functions with error caps, reset histories, duplicate the reserved slot, or delete old212 errors. Global five moments, exact heat, stress, genuine temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current compact 2Rc flux identity - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_COMPACT_2RC_FLUX_IDENTITY_2026_10_21.md first.
