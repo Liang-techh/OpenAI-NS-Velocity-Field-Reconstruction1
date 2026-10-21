@@ -1,3 +1,11 @@
+# Current handoff: native J3 endpoint transport V3 (2026-10-21)
+
+Read CURRENT_ORIGINAL_NATIVE_J3_ENDPOINT_TRANSPORT_V3_2026_10_21.md first. The saved source-only J3 V3 result accepts node 523 while preserving the 26 failed artifacts and all open downstream nodes.
+
+Next task: Authenticate actual source bindings for J4 at target node 524 with jump arguments [388, 378], binding second_switch.upper to post_power.lower. Extend only across seams sharing the same authenticated endpoint handoff law, while preserving all 12 remaining B identities. Keep this source-only selector; do not claim a theorem, invoke old source or proof consumers, reduce quantitative errors, open a new domain or cone, compute numerics, or close the global goal.
+
+Static unaccepted seam plan: B nodes 524-528 share the same-provider handoff; node 529 is the postrestore -> Rm_patch_finite_N cross-provider exception; node 530 is the Rm_patch_finite_N -> Rh_reference cross-provider exception; B nodes 531-535 share the outer C6/C5 handoff. First target is node 524. Plan native_J3_remaining_B_seam_handoff_plan_2026_10_21.json has raw SHA256 e9b3b8f79754cbda2bb83922e4900a0aedd5d592fdb8d09b59c873d9470eaa6c; it adds zero source pins and records no executed or accepted downstream identities.
+
 # Current handoff: native J3 endpoint transport V2 failure (2026-10-21)
 
 Read CURRENT_ORIGINAL_NATIVE_J3_ENDPOINT_TRANSPORT_V2_FAILURE_2026_10_21.md first. The saved V2 attempt failed once at new_R_U_C1; its six raw artifacts are preserved directly in the failure report and must not be re-entered.
