@@ -1,3 +1,13 @@
+# Current native active S1 weighted IBP - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_ACTIVE_S1_WEIGHTED_IBP_2026_10_21.md first.
+Saved local source result passed=True; J_i source-function jumps remain unproved.
+I_N=B_lastupper-B_firstlower-sum_16(J_i)+sum_17(integral(K_i dy)).
+Old active S1 ports 30687/30688 remain unchanged; native and old fields stay distinct.
+212/213/183, six signed channels, all old errors and one reserved contribution remain frozen.
+Next: First bind the existing n1_micro_correlated_m15 source seam certificate (report SHA7868f1899398a54aaeba1b799b8b1015465718445444966648295e66ae6c97aa) to the new first_micro/second_micro J slot; do not rerun its consumer or assume its old ports are already this new graph. Then resolve the remaining native seam functions and compare the actual native17 and original active six-integral source fields/measures, preserving finite-N histories and old active S1 ports 30687/30688. Retain every J_i=B_next_lower-B_prev_upper until each source-function jump is proved. Do not infer J_i from bounds, identify native and old fields before a source proof, rerun the accepted universal C1 numerator lemma, or invoke ancestor operators. Preserve old errors while this bridge is extended; numerical evaluators, global closure, temporal recursion, heat, stress and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current actual Rc flux pressure cocycle - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_RC_FLUX_PRESSURE_COCYCLE_2026_10_21.md first.
