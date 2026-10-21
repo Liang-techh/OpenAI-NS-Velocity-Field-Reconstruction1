@@ -1,3 +1,12 @@
+# Current native micro/macro endpoint semantics - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_MICRO_MACRO_ENDPOINT_SEMANTICS_2026_10_21.md first.
+Saved result passed=True; actual identity all true=True.
+J1 zero admissible=False; retain the explicit field
+statuses and unresolved gates. Retain old archived 16 J terms, 212/raw213/
+reduced183, six signed channels, all old errors and one reserved contribution.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native first-micro B jump source - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_FIRST_MICRO_B_JUMP_SOURCE_2026_10_21.md first.
