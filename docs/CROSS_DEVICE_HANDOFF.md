@@ -1,3 +1,25 @@
+# Current native remaining B seam source comparisons - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_REMAINING_B_SEAM_SOURCES_2026_10_21.md first.
+Inspect only weighted J2..J15 nodes 522..535; J0=520 and J1=521 are inherited
+and accepted, and no J0/J1 consumer is reexecuted.  Newly proved function
+identities=[]; unresolved nodes=
+[522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535].
+Preserve 212/raw213/reduced183, six signed channels, 17 K terms, 2 outer-B
+terms, one reserved contribution, all old packet errors, and the five failed v1
+artifact pointers.  Numeric and physical completion remain separate statuses.
+All fourteen B identities remain open; the saved audit recorded 188 budget
+sentinels (MOD=83, OUTER=105), and those budget differences contaminate later
+comparisons.  Saved J2 gap pointer=tmp/original_native_remaining_B_seam_sources/native_J2_saved_radius_DAG_gap_2026_10_21.json
+(SHA256=2dcd59604323857b8d0851c1ac2c301cc491ad3fd1657a048e49e2ecca2329d1).  Next theorem remains
+unproved: show the positive-domain exp/log inverse, same-source hbB
+cancellation, and factor cancellation from left 4*exp(-D)*exp(E) to right
+rational 100, with D=1000+4*(11+exp(40)), A=4*exp(-D), and E containing
+log100-logA-2hbB+2hbB, while preserving source nodes 71448/85905 and
+coordinate nodes 70265/73190.  Use a new source-linked leaf; do not rerun
+the broad comparison.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native micro/macro B jump source v2 - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_MICRO_MACRO_B_JUMP_SOURCE_V2_2026_10_21.md first.
