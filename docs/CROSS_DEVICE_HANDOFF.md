@@ -1,3 +1,14 @@
+# Current compact 2Rc flux identity - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_COMPACT_2RC_FLUX_IDENTITY_2026_10_21.md first.
+Saved result passed=True; common K makes the C1 2Rc flux difference zero.
+Only the upper endpoint flux is removed. Retain the Rc inner endpoint flux,
+Rc^2/2 * integral_1^2 x*DeltaS dx, and the active difference; compact/active
+complete matching is unproved.
+212/213/183, six signed channels, all errors and one reserved source preserved.
+Next: Bind the native first-micro initial physical RQ_y to the corrected original lower endpoint using their actual source expressions. Then combine the retained Rc flux difference with the active pressure difference before comparing the compact density integral. Resolve actual U/m inlet and control functions without resetting histories or changing the reserved slot. No old212 errors may be deleted without a same-source packet theorem. Global five moments, exact heat, stress, temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current actual compact pressure polarization - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_COMPACT_PRESSURE_POLARIZATION_2026_10_21.md first.
