@@ -1,0 +1,556 @@
+{
+  "schema": "original_native_J2_B_source_closure_v1_execution_v1",
+  "metadata_only": true,
+  "component": "B_source_closure",
+  "result_sha256": "38d1598deea41821f4cda5fcf1f99c56a46f625670e07b3559ac9c3678beb9a0",
+  "result_bytes": 17962,
+  "source_checkpoint_sha256": "e21237102b94edbef479a03cc3d1baaa7520828357c349618bbd2330f02109e0",
+  "entry_checkpoint_sha256": "c02fd53ee8c06afb72f84af25905cd054ea36a669ef6818e98949406a213224d",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_B_source_closure_v1",
+    "component": "B_source_closure",
+    "passed": true,
+    "source_only": true,
+    "accepted_R_U_Q_C1_premises_authenticated": true,
+    "actual_J2_weighted_B_ports_bound": true,
+    "J2_B_C1_endpoint_identity_proved": true,
+    "J2_native_weighted_jump_zero_proved": true,
+    "native_IN_J2_source_reduction_proved": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "all_native_B_jumps_zero_proved": false,
+    "J3_through_J15_B_identities_proved": false,
+    "quantitative_packet_error_reduction_proved": false,
+    "numeric_values_computed": false,
+    "J2_Qy_identity_proved": false,
+    "source_C5_installation_claimed": false,
+    "numeric_containment_claimed": false,
+    "new_loop_domain_admission_claimed": false,
+    "admissible_cone_admission_claimed": false,
+    "physical_layer_completed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "uninterpreted_graph_parameter_identity_proved": false,
+    "old_operators_replayed": false,
+    "stage_flags": {
+      "accepted_R_U_Q_C1_premises_authenticated": true,
+      "actual_J2_weighted_B_ports_bound": true,
+      "J2_B_C1_endpoint_identity_proved": true,
+      "J2_native_weighted_jump_zero_proved": true,
+      "native_IN_J2_source_reduction_proved": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "all_native_B_jumps_zero_proved": false,
+      "J3_through_J15_B_identities_proved": false,
+      "quantitative_packet_error_reduction_proved": false,
+      "numeric_values_computed": false,
+      "J2_Qy_identity_proved": false,
+      "source_C5_installation_claimed": false,
+      "numeric_containment_claimed": false,
+      "new_loop_domain_admission_claimed": false,
+      "admissible_cone_admission_claimed": false,
+      "physical_layer_completed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "uninterpreted_graph_parameter_identity_proved": false,
+      "old_operators_replayed": false
+    },
+    "J2_B_identity_proved": true,
+    "J2_Q_identity_proved": true,
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "input_digest": "b7f7663772243a0dc7e9162263d85e53b0e1fa09bf30d2178ff1569c3f965672",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "identity_domain_scope": "common domain of original source definitions; no new loop-domain, cone or numerical admission",
+    "source_function_identity_only": true,
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_Q_endpoint_transport.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_radius_identity.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_active_S1_weighted_ibp.json": true,
+      "authenticated:src/openai_ns_reconstruction/original_native_active_S1_weighted_ibp.py": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_micro_macro_B_jump_source_v2.json": true,
+      "accepted_parent_scope": true,
+      "inherited_input_pins": true,
+      "same_source_family": true,
+      "accepted_inherited_J0_J1_source_certificates": true,
+      "inherited_native_IN_identity": true,
+      "J2_B:weighted_graph_length": true,
+      "J2_B:mod_graph_length": true,
+      "J2_B:loop_graph_length": true,
+      "J2_B:accepted_weighted_C1_definition_scope": true,
+      "J2_B:weighted_actual_L_binding": true,
+      "J2_B:authenticated_parent_source_pins": true,
+      "J2_B:accepted_parent_R_U_Q_scope": true,
+      "J2_B:shared_actual_source_family": true,
+      "J2_B:accepted_radius_C1_scope": true,
+      "J2_B:accepted_U_C1_certificate": true,
+      "J2_B:accepted_Q_C1_certificate": true,
+      "J2_B:authenticated_active_S1_B_creator_AST": true,
+      "J2_B:authenticated_weighted_B_port_graph": true,
+      "J2_B:authenticated_weighted_B_endpoint_rows": true,
+      "J2_B:authenticated_weighted_J2_jump_row": true,
+      "J2_B:typed_macro_switch_B_endpoint_bindings": true,
+      "J2_B:authenticated_radius_coordinate_source_rows": true,
+      "J2_B:authenticated_physical_U_endpoint_rows": true,
+      "J2_B:authenticated_physical_Q_endpoint_rows": true,
+      "J2_B:authenticated_common_L_source_row": true,
+      "fresh_B_and_signed_jump": true,
+      "retained_ledger": true
+    },
+    "proof_graph": [
+      {
+        "id": "R_U_Q_premises",
+        "rule": "authenticate accepted exact endpoint C1 certificates"
+      },
+      {
+        "id": "source_binding",
+        "rule": "actual weighted B creator, endpoint ports and common L",
+        "depends_on": [
+          "R_U_Q_premises"
+        ]
+      },
+      {
+        "id": "common_C1_B",
+        "rule": "same rational C1 composition on the common declared domain",
+        "depends_on": [
+          "source_binding"
+        ]
+      },
+      {
+        "id": "signed_jump",
+        "rule": "right B minus identical left B, ordinary Z orders 0 and 1",
+        "depends_on": [
+          "common_C1_B"
+        ]
+      },
+      {
+        "id": "native_IN_reduction",
+        "rule": "substitute proved zero J2 into the accepted native source identity",
+        "depends_on": [
+          "signed_jump"
+        ]
+      }
+    ],
+    "proof_graph_sha256": "9429d9f56b1166c63afc644dfd42a624419e3bf2b6447c62c5e8a0f777e9a951",
+    "component_proofs": {
+      "J2_B": {
+        "schema": "native_J2_B_source_fragment_v1",
+        "status": "source_J2_B_C1_leaf_ready",
+        "source_only": true,
+        "numeric_values_computed": false,
+        "J2_B_C1_proved": true,
+        "J2_jump_zero_proved": true,
+        "J2_B_identity_proved": true,
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "ordinary_Z_not_temporal_n": true,
+        "owned_Z_cell": [
+          "0",
+          "1/2"
+        ],
+        "endpoint_projections": {
+          "frozen_macro_upper": {
+            "coordinate_node": 70265,
+            "coordinate_value": 1,
+            "radius_node": 71448,
+            "weighted_B_node": 356
+          },
+          "first_switch_lower": {
+            "coordinate_node": 73190,
+            "coordinate_value": 0,
+            "radius_node": 85905,
+            "weighted_B_node": 366
+          }
+        },
+        "source_pairs": {
+          "radius": [
+            [
+              71448,
+              85905
+            ]
+          ],
+          "physical_U": [
+            [
+              140685,
+              148085
+            ],
+            [
+              140686,
+              148086
+            ]
+          ],
+          "physical_Q": [
+            [
+              140780,
+              148180
+            ],
+            [
+              140784,
+              148184
+            ]
+          ],
+          "weighted_B": [
+            [
+              356,
+              366
+            ]
+          ],
+          "weighted_jump": [
+            366,
+            356
+          ]
+        },
+        "typed_binding_nodes": {
+          "left": {
+            "coordinate": 70265,
+            "domain": [
+              0,
+              1
+            ],
+            "radius": 71448,
+            "weighted_ports": {
+              "coordinate": 59,
+              "domain": 60,
+              "radius": 61,
+              "Jacobian": 63,
+              "physical_measure": 62,
+              "U": 64,
+              "Q": 68
+            },
+            "B": 356
+          },
+          "right": {
+            "coordinate": 73190,
+            "domain": [
+              0,
+              1
+            ],
+            "radius": 85905,
+            "weighted_ports": {
+              "coordinate": 75,
+              "domain": 76,
+              "radius": 77,
+              "Jacobian": 79,
+              "physical_measure": 78,
+              "U": 80,
+              "Q": 84
+            },
+            "B": 366
+          },
+          "common_L": 25272
+        },
+        "C1_derivative_rule": "B_Z=2*R*R_Z*H+R^2*(Q_Z/L-Q*L_Z/L^2+Q*Q_Z-4*Z*U^2/L^2-4*Z^2*U*U_Z/L^2+4*Z^2*U^2*L_Z/L^3), H=Q/L+Q^2/2-2*Z^2*U^2/L^2",
+        "archived_source_status_flags_rewritten": false,
+        "quantitative_packet_error_reduction_proved": false,
+        "derivation": [
+          "The accepted radius C1 certificate binds R nodes 71448 and 85905 at coordinates 70265=1 and 73190=0, for ordinary Z orders 0 and 1, with the source endpoint rational and derivative metadata retained symbolically.",
+          "The accepted U and Q C1 certificates bind the exact physical port pairs used by weighted B, while the weighted graph independently binds those ports to the two actual B endpoint rows.",
+          "The authenticated active-S1 creator supplies one literal R^2*(Q/L+Q^2/2-2*Z^2*U^2/L^2) endpoint recipe at each endpoint, with Z-independent limits and the retained physical endpoint port dictionary.",
+          "The decoded source rows bind both U pairs to Pstar products, both Q pairs to the same positive L quotient, and L to row 25272; no numeric value is evaluated.",
+          "Weighted jump 522 is the actual right-lower minus left-upper call [366,356]. Therefore the source-composed endpoint C1 identity discharges only J2 and leaves nodes 523 through 535 open."
+        ],
+        "proof_guards": {
+          "weighted_graph_length": true,
+          "mod_graph_length": true,
+          "loop_graph_length": true,
+          "accepted_weighted_C1_definition_scope": true,
+          "weighted_actual_L_binding": true,
+          "authenticated_parent_source_pins": true,
+          "accepted_parent_R_U_Q_scope": true,
+          "shared_actual_source_family": true,
+          "accepted_radius_C1_scope": true,
+          "accepted_U_C1_certificate": true,
+          "accepted_Q_C1_certificate": true,
+          "authenticated_active_S1_B_creator_AST": true,
+          "authenticated_weighted_B_port_graph": true,
+          "authenticated_weighted_B_endpoint_rows": true,
+          "authenticated_weighted_J2_jump_row": true,
+          "typed_macro_switch_B_endpoint_bindings": true,
+          "authenticated_radius_coordinate_source_rows": true,
+          "authenticated_physical_U_endpoint_rows": true,
+          "authenticated_physical_Q_endpoint_rows": true,
+          "authenticated_common_L_source_row": true
+        },
+        "source_ast_hashes": {
+          "active_S1_creator_sha256": "cdf33563c34e211a00128e3901f49875e50bdea3b4cd9224cc00f81e3288ed8d",
+          "lower_endpoint_call_sha256": "f0fb3ed9db5a246f7a89929ed7ac1c98c845e5cca8dee2670f17a396a2dd153e",
+          "upper_endpoint_call_sha256": "6f5637e8ba84bd88694fc71d33e01282fab264ff3535923997bf253d55416760",
+          "jump_call_sha256": "ff37a9d2c214a531d9329a67a79a407a150d159deccec573d037511dd9034a5f"
+        },
+        "source_archive_raw_sha256": {
+          "modified_Q4_pressure_C3_functions.json.gz": "b96316728406fddb9d94e866042529b7d84b7146167cba221ed5a88b427f147a",
+          "prescribed_loop_C5_functions.json.gz": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa"
+        },
+        "unresolved": {
+          "other_B_jump_nodes": [
+            523,
+            524,
+            525,
+            526,
+            527,
+            528,
+            529,
+            530,
+            531,
+            532,
+            533,
+            534,
+            535
+          ],
+          "remaining_B_identity_count": 13,
+          "all_fourteen_B_identities_open": false,
+          "quantitative_packet_error_transport": true,
+          "global_five_moment_closure": true,
+          "numeric_values_computed": false,
+          "Q_y_C1_identity": false,
+          "new_loop_domain_admission": false,
+          "admissible_cone_admission": false
+        },
+        "source_producer_function_calls": 0,
+        "ancestor_replays": 0,
+        "graph_walks": 0,
+        "normalization_calls": 0,
+        "numeric_evaluations": 0,
+        "runtime_model_metadata": null
+      }
+    },
+    "source_binding_scope": {
+      "new_source_contract": true,
+      "old_graph_nodes_rewritten": false,
+      "distinct_formal_nodes": [
+        8,
+        9
+      ],
+      "interpreted_parameter_identity_proved": true,
+      "uninterpreted_parameter_identity_proved": false,
+      "primitive": {
+        "source_record_sha256": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455",
+        "source_field": "exact_source_width",
+        "formula": "hb=epsilon_b=cstar*K^-100",
+        "source_family_digest": "e203d3666b7fe1162a46c3f6e3a6bf318201a83ed5191ecb8510b000c3b85de9",
+        "fixed_N0_digest": "42df26c8f2262256dbfc33da6ff555ebaf18f895d8014212f1304dabb680d6d9",
+        "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+      },
+      "bindings": [
+        {
+          "node_id": 8,
+          "name": "hbB",
+          "owner_path": [
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        },
+        {
+          "node_id": 9,
+          "name": "hbS",
+          "owner_path": [
+            "OriginalFirstSwitchFunctions.owner",
+            "OriginalR100Endpoint.owner",
+            "OriginalBridgeMacroMoments.owner",
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        }
+      ],
+      "numeric_witness_selected": false,
+      "enclosure_endpoint_comparison": false,
+      "positive_exact_width_source_recipe": true,
+      "finite_positive_value_not_materialized": true
+    },
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false
+    },
+    "quantity_distinctions": {
+      "P1_differs_from_m15": true,
+      "physical_Q_differs_from_loop_q": true,
+      "Bloop_over_Pstar_differs_from_native_weighted_B": true,
+      "ordinary_Z_jets_are_not_temporal_n_recursion": true,
+      "typed_source_denotation_is_not_a_computed_numeric_value": true
+    },
+    "inherited_R_identity_jumps": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "B_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "left_B_node": 356,
+      "right_B_node": 366,
+      "jump_arguments": [
+        366,
+        356
+      ],
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "common_L_node": 25272,
+      "newly_proved_B_identity_nodes": [
+        522
+      ],
+      "inherited_B_identity_nodes": [
+        520,
+        521
+      ],
+      "cumulative_B_identity_nodes": [
+        520,
+        521,
+        522
+      ],
+      "unresolved_B_identity_nodes": [
+        523,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535
+      ],
+      "remaining_B_identity_count": 13,
+      "all_fourteen_B_identities_open": false,
+      "all_native_B_jumps_zero_proved": false
+    },
+    "unresolved_B_identity_nodes": [
+      523,
+      524,
+      525,
+      526,
+      527,
+      528,
+      529,
+      530,
+      531,
+      532,
+      533,
+      534,
+      535
+    ],
+    "remaining_B_identity_count": 13,
+    "all_fourteen_B_identities_open": false,
+    "inherited_Q_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "full_Q_C1_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        140780,
+        140784
+      ],
+      "right_source_nodes": [
+        148180,
+        148184
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "common_L_denominator_node": 25272,
+      "source_interpretation_required": true
+    },
+    "inherited_U_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "full_U_C1_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        140685,
+        140686
+      ],
+      "right_source_nodes": [
+        148085,
+        148086
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "source_interpretation_required": true
+    },
+    "native_weighted_B_definition": {
+      "quantity_tag": "native_weighted_IBP_boundary_primitive",
+      "formula": "R^2*(Q/L+Q^2/2-2*Z^2*U^2/L^2)",
+      "not_loop_B_over_Pstar": true,
+      "not_cone_shear_2Vy": true
+    },
+    "source_jump_zero_does_not_delete_quantitative_errors": true,
+    "native_IN_inherited_identity": "I_N=B_lastupper-B_firstlower-sum(J_2..J_15)+sum17(integral K_i dy)",
+    "native_IN_reduced_source_identity": "I_N=B_lastupper-B_firstlower-sum(J_3..J_15)+sum17(integral K_i dy)",
+    "native_IN_reduction_is_source_only": true,
+    "archived_all_16_J_terms_retained": true,
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "the other thirteen native B jumps and same-source quantitative packet transport",
+      "independent terminal functional moments and retained quantitative errors",
+      "heat exterior, stress/remainder, temporal n recursion, realizable corrections and Cartesian NS validation"
+    ],
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "old_proof_functions_called": 0,
+      "generic_DAG_walks": 0,
+      "numerical_evaluations": 0,
+      "quadratures": 0,
+      "recurrence_calls": 0,
+      "runtime_model_metadata": null
+    },
+    "runtime_model_metadata": null,
+    "execution_seconds": 0.6759369999635965,
+    "source_checkpoint_sha256": "e21237102b94edbef479a03cc3d1baaa7520828357c349618bbd2330f02109e0",
+    "entry_checkpoint_sha256": "c02fd53ee8c06afb72f84af25905cd054ea36a669ef6818e98949406a213224d",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}
