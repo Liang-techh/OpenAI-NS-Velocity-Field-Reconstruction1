@@ -1,0 +1,9 @@
+# Current original native J3 endpoint transport V2 failure - 2026-10-21
+
+Goal ACTIVE / INCOMPLETE. This metadata-only publication records one frozen native J3 V2 source attempt. The runner saved the full failed result and three diagnostic events before validation raised AssertionError at new_R_U_C1. The result and all four raw checkpoints are embedded losslessly in the report; no runtime object or numeric value is recovered.
+
+The saved Boolean prefix and cutoff certificates remain metadata-only. J3 R, U, Q, B, the weighted jump, and native I_N reduction are unaccepted. The frozen failure has two independent false leaves: a stale V2 bridge constructor digest and a missing MOD.finite_N_memory_rows lookup. The static receipts diagnose those leaves without rerunning a proof or source consumer. Nodes 523 through 535 remain open.
+
+The 212 cumulative, 213 raw-signed, and 183 reduced ledger terms, six signed channels, 17 K terms, 2 outer-B terms, one reserved contribution, all archived 16 J terms, and the 26 failed-artifact union remain retained. Quantitative error reduction, new domain or cone admission, numerical containment, physical completion, temporal recursion, and global closure remain false. The four raw checkpoints are embedded directly in the report; result SHA256 is 35b0966181cbc5d0cc992b484bf4b0390ca48a9028b17121ab2cbca5686f0900, and diagnostic journal SHA256 is 1b8a9af92e65cc362e1894f4147d755630144f5746d8251051f6b471e6c1465d.
+
+Next task: Authenticate the six frozen V2 failure artifacts, code hashes, input packet, and diagnostic journal. Reuse only the saved positive Boolean-prefix, cutoff, and R/U map certificates; repair the two false R/U predicates in a fresh source-only V3 entry, then compose the new m/Q and B successor. Do not re-enter V2 or rerun old V2 R/U or m/Q functions, and do not claim any identity, theorem, numeric reduction, new domain or cone, physical completion, global closure, or acceptance of the remaining B nodes.

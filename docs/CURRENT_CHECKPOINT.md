@@ -1,3 +1,9 @@
+# Current handoff: native J3 endpoint transport V2 failure (2026-10-21)
+
+Read CURRENT_ORIGINAL_NATIVE_J3_ENDPOINT_TRANSPORT_V2_FAILURE_2026_10_21.md first. The saved V2 attempt failed once at new_R_U_C1; its six raw artifacts are preserved directly in the failure report and must not be re-entered.
+
+Next task: Authenticate the six frozen V2 failure artifacts, code hashes, input packet, and diagnostic journal. Reuse only the saved positive Boolean-prefix, cutoff, and R/U map certificates; repair the two false R/U predicates in a fresh source-only V3 entry, then compose the new m/Q and B successor. Do not re-enter V2 or rerun old V2 R/U or m/Q functions, and do not claim any identity, theorem, numeric reduction, new domain or cone, physical completion, global closure, or acceptance of the remaining B nodes.
+
 # Current handoff: native J3 endpoint transport frozen failure (2026-10-21)
 
 Read CURRENT_ORIGINAL_NATIVE_J3_ENDPOINT_TRANSPORT_FAILURE_2026_10_21.md first. The saved attempt failed once at new_R_U_C1; its five raw artifacts are preserved in the failure evidence and must not be re-entered.
