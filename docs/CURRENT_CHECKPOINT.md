@@ -1,3 +1,14 @@
+# Current native first-micro B jump source - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_FIRST_MICRO_B_JUMP_SOURCE_2026_10_21.md first.
+Saved local source result passed=True; J0 is bound and J521..J535 remain unproved.
+I_N=B_lastupper-B_firstlower-sum(J_1..J_15)+sum_17(integral(K_i dy))
+The existing n1 seam certificate is pinned at 7868f1899398a54aaeba1b799b8b1015465718445444966648295e66ae6c97aa; do not rerun
+its consumer, replay its fingerprint, or replay old algebra. B ports 334/344
+use actual MOD U/Q, ordinary Z0,1, +R and common L on owned Z[0,1/2].
+Old archived 16 J terms, 212/raw213/reduced183, six signed channels, all old
+errors and one reserved contribution remain frozen. Goal ACTIVE / INCOMPLETE.
+
 # Current native active S1 weighted IBP - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_ACTIVE_S1_WEIGHTED_IBP_2026_10_21.md first.
