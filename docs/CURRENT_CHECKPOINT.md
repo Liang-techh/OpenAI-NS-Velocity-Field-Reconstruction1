@@ -1,3 +1,13 @@
+# Current native physical pulse source - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_PULSE_SOURCE_2026_10_20.md first.
+Saved result passed=True; local status={"actual_native_physical_pulse_C3_functions_defined": true, "actual_native_pulse_geometry_source_bound": true, "independent_complete_physical_pulse_m15_target_defined": true, "ordinary_Z_derivatives_preserved_under_geometry_binding": true}.
+Actual current frame and physical Rp measures now feed one complete C3 target.
+Pulse geometry correction, preRp differences and all old errors remain explicit.
+Legacy chain and once-only reserved registration unchanged; terminal match open.
+Next: Use the new current-frame/current-geometry complete physical pulse target in the signed reserved comparison, retaining its explicit difference from the old frame-only pulse. Resolve native versus corrected preRp active, compact and quiet Z0 source functions. Do not change the reserved registration, reselect controls or remove old212 errors before a same-source function identity. Then establish original-scale bounds and global physical joins before exact heat, stress/remainder, temporal recursion and corrected NS.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native preRp exact quiet source reduction - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_PRERP_QUIET_SOURCE_REDUCTION_2026_10_20.md first.
