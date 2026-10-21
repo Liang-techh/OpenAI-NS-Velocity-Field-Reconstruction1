@@ -1,3 +1,11 @@
+# Current native micro/macro B jump source v2 - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_MICRO_MACRO_B_JUMP_SOURCE_V2_2026_10_21.md first.
+J0=520 inherited; J1=521 proved=True; retain J2..J15 as
+source-function jumps. Preserve old archived 16 J terms, 212/raw213/reduced183,
+six signed channels, all old errors and one reserved contribution.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native micro/macro endpoint semantics - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_MICRO_MACRO_ENDPOINT_SEMANTICS_2026_10_21.md first.
