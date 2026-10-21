@@ -1,3 +1,13 @@
+# Current native physical terminal comparison and log repair - 2026-10-20
+
+Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_TERMINAL_LOG_REPAIR_2026_10_20.md first.
+Saved result passed=True; local status={"absolute_radius_log_recipe_difference_proved": true, "actual_physical_pulse_target_integrated": true, "inherited_quiet_Z1_reduction_preserved": true, "native_old_quiet_length_identity_proved": true, "registered_reserved_m15_source_bound_once": true, "signed_physical_terminal_decomposition_proved": true}.
+Actual current-geometry negative pulse target now enters the signed comparison.
+Active, compact, quiet Z0 and pulse geometry differences remain explicit.
+One reserved registration and all 212 terms/errors preserved; terminal match open.
+Next: Bind native exact core.logC to old selected_logCstar at its original source, then bind old preRp Pstar factor projection to exp(logPstar). The new radius recipes reduce both log-radius differences to ten times that exact control difference, and quiet lengths are identical. Do not infer source equality from interval or bound coincidence. Then identify current compact and active pressure functions against the corrected original source, including both incoming histories and the first-micro original RQ_y baseline. Keep the current physical negative complete pulse target and one registered reserved source; do not remove old212 errors until an exact same-source packet identity. Original-scale bounds, global physical joins, exact heat, stress, true temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native physical pulse source - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_PULSE_SOURCE_2026_10_20.md first.
