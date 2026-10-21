@@ -1,0 +1,1251 @@
+{
+  "schema": "original_native_J2_U_endpoint_transport_v2_execution_v1",
+  "metadata_only": true,
+  "component": "J2_U_endpoint_transport_v2",
+  "result_sha256": "861279058f37e8d0e34b7ad834894d26d3316fe7d24a8238ae84c94d53eac11c",
+  "result_bytes": 34874,
+  "source_checkpoint_sha256": "f78302af225b05e4989965249f7be674f5378f1fe944a53873ddc2ddb50691cb",
+  "entry_checkpoint_sha256": "8e5dc7ac490da468fb519f77e6ecca82c0d760815618168e5d0f21c08cda32e2",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_U_endpoint_transport_v2",
+    "component": "J2_U_endpoint_transport_v2",
+    "passed": true,
+    "source_only": true,
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "input_digest": "bebaf43ef4e4e303cff79332852234de8655da1a2ac74e3e25200d685db67ba7",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_radius_identity.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": true,
+      "accepted_parent": true,
+      "inherited_actual_radius_identity": true,
+      "inherited_inventory": true,
+      "same_source_family": true,
+      "all_B_still_open": true,
+      "retained_ledger": true,
+      "literal_mean_row:70152": true,
+      "literal_mean_row:70153": true,
+      "literal_mean_row:70265": true,
+      "literal_mean_row:71699": true,
+      "literal_mean_row:71700": true,
+      "literal_mean_row:71706": true,
+      "literal_mean_row:71707": true,
+      "literal_mean_row:71713": true,
+      "literal_mean_row:71714": true,
+      "literal_mean_row:72994": true,
+      "literal_mean_row:72995": true,
+      "literal_mean_row:73190": true,
+      "literal_mean_row:87133": true,
+      "literal_mean_row:87134": true,
+      "literal_mean_row:87140": true,
+      "literal_mean_row:87141": true,
+      "literal_mean_row:87147": true,
+      "literal_mean_row:87148": true,
+      "literal_mean_row:87154": true,
+      "literal_mean_row:87155": true,
+      "literal_mean_row:72142": true,
+      "literal_mean_row:72143": true,
+      "literal_mean_row:87584": true,
+      "literal_mean_row:87585": true,
+      "literal_common_row:0": true,
+      "literal_common_row:1": true,
+      "literal_common_row:2": true,
+      "literal_common_row:3": true,
+      "literal_common_row:4": true,
+      "literal_common_row:5": true,
+      "literal_common_row:33572": true,
+      "literal_common_row:69245": true,
+      "literal_common_row:99411": true,
+      "literal_common_row:104304": true,
+      "literal_common_row:104305": true,
+      "literal_common_row:106932": true,
+      "literal_common_row:106933": true,
+      "literal_common_row:104063": true,
+      "literal_common_row:104064": true,
+      "literal_common_row:106691": true,
+      "literal_common_row:106692": true,
+      "exact_finite_positive_N": true,
+      "producer_serializes_unadmitted_flags_false": true,
+      "actual_source_definition:true_prescribed_background_source_not_legacy_recipe_derivative_padding": true,
+      "actual_source_definition:all_ten_signed_root_q_inverse_A_B_and_phase_primitive_rows_through_Z5": true,
+      "actual_source_definition:inverse_rows_from_exact_implicit_normalized_series_not_interval_endpoints": true,
+      "actual_source_definition:one_original_common_N_eta_dstar_and_global_log_R_rminus_phase": true,
+      "actual_source_definition:all_five_signed_finite_N_density_cross_terms_and_expm1_retained": true,
+      "actual_source_definition:new_functions_preserve_original_fixed_leading_source_family": true,
+      "actual_source_definition:numeric_C5_containment_and_mixed_y_bounds_not_certified": true,
+      "physical_U_row:140685": true,
+      "physical_U_row:140686": true,
+      "physical_U_row:148085": true,
+      "physical_U_row:148086": true,
+      "actual_chart_binding:frozen_macro": true,
+      "actual_chart_binding:first_switch": true,
+      "literal_phase_row:101905": true,
+      "literal_phase_row:104533": true,
+      "literal_phase_row:101906": true,
+      "literal_phase_row:104534": true,
+      "literal_phase_row:101907": true,
+      "literal_phase_row:104535": true,
+      "literal_phase_row:101908": true,
+      "literal_phase_row:104536": true,
+      "literal_phase_row:101909": true,
+      "literal_phase_row:104537": true,
+      "literal_phase_row:97298": true,
+      "phase_binding:frozen_macro": true,
+      "phase_binding:first_switch": true,
+      "literal_mean_E_row:48": true,
+      "literal_mean_E_row:72090": true,
+      "literal_mean_E_row:72091": true,
+      "literal_mean_E_row:87532": true,
+      "literal_mean_E_row:87533": true,
+      "literal_mean_E_row:72092": true,
+      "literal_mean_E_row:87534": true,
+      "literal_mean_E_row:72093": true,
+      "literal_mean_E_row:72094": true,
+      "literal_mean_E_row:87535": true,
+      "literal_mean_E_row:87536": true,
+      "literal_mean_E_row:72108": true,
+      "literal_mean_E_row:72109": true,
+      "literal_mean_E_row:72110": true,
+      "literal_mean_E_row:72111": true,
+      "literal_mean_E_row:87550": true,
+      "literal_mean_E_row:87551": true,
+      "literal_mean_E_row:87552": true,
+      "literal_mean_E_row:87553": true,
+      "literal_mean_E_row:72987": true,
+      "literal_mean_E_row:72988": true,
+      "literal_mean_E_row:86913": true,
+      "literal_mean_E_row:86914": true,
+      "literal_mean_E_row:86920": true,
+      "literal_mean_E_row:86921": true,
+      "literal_mean_E_row:86947": true,
+      "literal_mean_E_row:86948": true,
+      "literal_mean_E_row:86949": true,
+      "literal_mean_E_row:86950": true,
+      "literal_mean_E_row:35657": true,
+      "literal_mean_E_row:35658": true,
+      "mean_E_chart_roots": true,
+      "literal_retained_loop_row:102165": true,
+      "literal_retained_loop_row:102166": true,
+      "literal_retained_loop_row:104793": true,
+      "literal_retained_loop_row:104794": true,
+      "literal_retained_loop_row:103809": true,
+      "literal_retained_loop_row:103810": true,
+      "literal_retained_loop_row:106437": true,
+      "literal_retained_loop_row:106438": true,
+      "retained_loop_binding:frozen_macro": true,
+      "retained_loop_binding:first_switch": true,
+      "eta_is_source_parameter_not_literal_21": true
+    },
+    "proof_graph": [
+      {
+        "id": "source_domain",
+        "rule": "exact positive finite exp source and fixed finite integer N",
+        "premises": [],
+        "conclusion": "Pstar=exp(exp(40)+11)>0 and N=2^(2^J)>0 are Z independent; no value is evaluated",
+        "source_nodes": [
+          33572,
+          69245,
+          18,
+          99411
+        ]
+      },
+      {
+        "id": "inherited_radius",
+        "rule": "authenticate and reuse the accepted parent source theorem; no reexecution",
+        "premises": [],
+        "conclusion": "R_left_upper=R_right_lower=100, their ordinary Z derivatives vanish, and Ra>0",
+        "source_nodes": [
+          71448,
+          85905,
+          65604
+        ]
+      },
+      {
+        "id": "empty_switch_integrals",
+        "rule": "standard exact integral over identical bounds; native s=0",
+        "premises": [],
+        "conclusion": "I_87147(Z,0)=I_87148(Z,0)=0; source measure applied once; no nonempty integral evaluated",
+        "source_nodes": [
+          73190,
+          87147,
+          87148
+        ]
+      },
+      {
+        "id": "same_inlet",
+        "rule": "nested same-source endpoint substitution at macro x=1",
+        "premises": [
+          "empty_switch_integrals"
+        ],
+        "conclusion": "87154(Z,0)=72994(Z)=71713(Z,1); 87155(Z,0)=72995(Z)=71714(Z,1)",
+        "source_nodes": [
+          72994,
+          72995,
+          71713,
+          71714,
+          87154,
+          87155
+        ]
+      },
+      {
+        "id": "mean_V",
+        "rule": "multiplication by common inverse Pstar; explicit ordinary Z0 and Z1 rows",
+        "premises": [
+          "source_domain",
+          "same_inlet"
+        ],
+        "conclusion": "Vbase_left_upper=Vbase_right_lower through ordinary Z order1",
+        "source_nodes": [
+          72142,
+          72143,
+          87584,
+          87585
+        ]
+      },
+      {
+        "id": "same_phase",
+        "rule": "reuse accepted radius equality and positive Ra; congruence of log, sum, product and fractional_part",
+        "premises": [
+          "source_domain",
+          "inherited_radius"
+        ],
+        "conclusion": "Both endpoint phases are fractional_part(N*(log(100/Ra)+97298)); phase_Z=0. No phase value is selected.",
+        "source_nodes": [
+          101905,
+          104533,
+          101906,
+          104534,
+          101907,
+          104535,
+          101908,
+          104536,
+          101909,
+          104537,
+          97298
+        ]
+      },
+      {
+        "id": "empty_angular_integrals",
+        "rule": "exact equal-bound integrals at native first_switch s=0",
+        "premises": [],
+        "conclusion": "86913=86914=0, exp(86913)=1 and 86914*exp(86913)=0 at s=0",
+        "source_nodes": [
+          73190,
+          86913,
+          86914,
+          86920,
+          86921
+        ]
+      },
+      {
+        "id": "same_F_inlet",
+        "rule": "exact macro endpoint aliases; multiply and add the empty-integral factors",
+        "premises": [
+          "empty_angular_integrals"
+        ],
+        "conclusion": "86947(Z,0)=72987(Z)=71499(Z,1); 86950(Z,0)=72988(Z)=71502(Z,1)",
+        "source_nodes": [
+          72987,
+          72988,
+          86947,
+          86950
+        ]
+      },
+      {
+        "id": "mean_E",
+        "rule": "reuse inherited R=100 and ordinary Z derivative0; positive sqrt(2R) and common source factors",
+        "premises": [
+          "source_domain",
+          "inherited_radius",
+          "same_F_inlet"
+        ],
+        "conclusion": "Emean_left,j(1)=Emean_right,j(0), j=0,1; no nonempty macro angular integral evaluated",
+        "source_nodes": [
+          72090,
+          72091,
+          87532,
+          87533,
+          72108,
+          72111,
+          87550,
+          87553
+        ]
+      },
+      {
+        "id": "finite_N_terms_retained",
+        "rule": "literal finite-N source product; no unproved lazy predicate evaluated",
+        "premises": [],
+        "conclusion": "deltaV_left,j=Bloop_over_Pstar_left,j/N and deltaV_right,j=Bloop_over_Pstar_right,j/N, j=0,1; Bloop endpoint difference remains unproved",
+        "source_nodes": [
+          104063,
+          104064,
+          106691,
+          106692,
+          103809,
+          103810,
+          106437,
+          106438,
+          99411
+        ]
+      },
+      {
+        "id": "U_difference",
+        "rule": "subtract common mean V, then factor the same Pstar and inverse N",
+        "premises": [
+          "mean_V",
+          "finite_N_terms_retained"
+        ],
+        "conclusion": "For j=0,1: U_left,j(1)-U_right,j(0)=(Pstar/N)*(Bloop_over_Pstar_left,j(1)-Bloop_over_Pstar_right,j(0))",
+        "source_nodes": [
+          140685,
+          140686,
+          148085,
+          148086,
+          103809,
+          103810,
+          106437,
+          106438
+        ]
+      }
+    ],
+    "proof_graph_digest": "875695cf82b8d0d81579477f8b751d1db4c4a34be88ebb95564a26bbed4059e9",
+    "source_definition_contract": {
+      "producer": "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+      "producer_sha256": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+      "definition_metadata": {
+        "true_prescribed_background_source_not_legacy_recipe_derivative_padding": true,
+        "all_ten_signed_root_q_inverse_A_B_and_phase_primitive_rows_through_Z5": true,
+        "inverse_rows_from_exact_implicit_normalized_series_not_interval_endpoints": true,
+        "original_first_micro_start_sc_half_and_collar_three_sc_quarters": true,
+        "one_original_common_N_eta_dstar_and_global_log_R_rminus_phase": true,
+        "all_five_signed_finite_N_density_cross_terms_and_expm1_retained": true,
+        "complete_original_rminus_to_Rm_Duhamel_correction_histories_C5": true,
+        "correction_zero_inlet_only_at_rminus_background_nonzero_memories_unchanged": true,
+        "original_rate_zero_pressure_memory_retained": true,
+        "new_functions_preserve_original_fixed_leading_source_family": true,
+        "original_repair_only_N_not_global_high_derivative_frequency_admission": true,
+        "numeric_C5_containment_and_mixed_y_bounds_not_certified": true,
+        "remaining_actual_Rm_patch_and_six_outer_charts_not_installed": true,
+        "all17_compact_controls_global_n1_recursion_and_corrected_NS_open": true,
+        "shared_graph_unreferenced_suffix_allowed_after_exact_pinned_prefix": true
+      },
+      "top_level_C5_installed": false,
+      "numeric_containment_installed": false,
+      "serialized_false_flags_preserved": true,
+      "source_definitions_distinct_from_numeric_or_physical_admission": true
+    },
+    "U_difference_identity": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "field": "U",
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "exact_difference_reduction_proved": true,
+      "full_U_endpoint_equality_proved": false,
+      "source_difference_is_symbolic": true,
+      "left_source_nodes": [
+        140685,
+        140686
+      ],
+      "right_source_nodes": [
+        148085,
+        148086
+      ],
+      "left_coordinate_node": 70265,
+      "right_coordinate_node": 73190,
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "numeric_value": null,
+      "difference_formula": "U_left,j(1)-U_right,j(0)=(Pstar/N)*(Bloop_over_Pstar_left,j(1)-Bloop_over_Pstar_right,j(0))",
+      "common_Pstar_node": 33572,
+      "common_inverse_N_node": 99411,
+      "retained_Bloop_over_Pstar_left_nodes": [
+        103809,
+        103810
+      ],
+      "retained_Bloop_over_Pstar_right_nodes": [
+        106437,
+        106438
+      ],
+      "Bloop_over_Pstar_differs_from_native_weighted_primitive_B": true
+    },
+    "mean_E_certificate": {
+      "source_function_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        72108,
+        72111
+      ],
+      "right_source_nodes": [
+        87550,
+        87553
+      ],
+      "nonempty_macro_integral_preserved": true,
+      "fixed_raw_source_rows": {
+        "48": {
+          "operation": "exact_rational",
+          "numerator": 2,
+          "denominator": 1
+        },
+        "72090": {
+          "operation": "product",
+          "arguments": [
+            48,
+            71448
+          ]
+        },
+        "72091": {
+          "operation": "analytic_unary",
+          "name": "sqrt",
+          "argument": 72090
+        },
+        "87532": {
+          "operation": "product",
+          "arguments": [
+            48,
+            85905
+          ]
+        },
+        "87533": {
+          "operation": "analytic_unary",
+          "name": "sqrt",
+          "argument": 87532
+        },
+        "72092": {
+          "operation": "product",
+          "arguments": [
+            72091,
+            69245
+          ]
+        },
+        "87534": {
+          "operation": "product",
+          "arguments": [
+            87533,
+            69245
+          ]
+        },
+        "72093": {
+          "operation": "product",
+          "arguments": [
+            35657,
+            72092
+          ]
+        },
+        "72094": {
+          "operation": "product",
+          "arguments": [
+            35658,
+            72092
+          ]
+        },
+        "87535": {
+          "operation": "product",
+          "arguments": [
+            35657,
+            87534
+          ]
+        },
+        "87536": {
+          "operation": "product",
+          "arguments": [
+            35658,
+            87534
+          ]
+        },
+        "72108": {
+          "operation": "product",
+          "arguments": [
+            72093,
+            71499
+          ]
+        },
+        "72109": {
+          "operation": "product",
+          "arguments": [
+            72093,
+            71502
+          ]
+        },
+        "72110": {
+          "operation": "product",
+          "arguments": [
+            72094,
+            71499
+          ]
+        },
+        "72111": {
+          "operation": "sum",
+          "arguments": [
+            72109,
+            72110
+          ]
+        },
+        "87550": {
+          "operation": "product",
+          "arguments": [
+            87535,
+            86947
+          ]
+        },
+        "87551": {
+          "operation": "product",
+          "arguments": [
+            87535,
+            86950
+          ]
+        },
+        "87552": {
+          "operation": "product",
+          "arguments": [
+            87536,
+            86947
+          ]
+        },
+        "87553": {
+          "operation": "sum",
+          "arguments": [
+            87551,
+            87552
+          ]
+        },
+        "72987": {
+          "operation": "function_substitution",
+          "expression": 71499,
+          "variable": 70265,
+          "value": 1,
+          "Z_independent_substitution": true
+        },
+        "72988": {
+          "operation": "function_substitution",
+          "expression": 71502,
+          "variable": 70265,
+          "value": 1,
+          "Z_independent_substitution": true
+        },
+        "86913": {
+          "operation": "definite_integral",
+          "integrand": 86906,
+          "variable": "true_first_switch_angular_t",
+          "lower": 0,
+          "upper": 73190,
+          "exact_function_integral": true,
+          "numerical_value_not_installed": true,
+          "endpoint_independent_of_Z": true,
+          "ordinary_slow_Z_derivative_order": 0,
+          "true_core_inlet_complete_history": true,
+          "numerical_cap_not_defining_integrand": true,
+          "original_first_switch_full_current_radius_direction": true
+        },
+        "86914": {
+          "operation": "definite_integral",
+          "integrand": 86907,
+          "variable": "true_first_switch_angular_t",
+          "lower": 0,
+          "upper": 73190,
+          "exact_function_integral": true,
+          "numerical_value_not_installed": true,
+          "endpoint_independent_of_Z": true,
+          "ordinary_slow_Z_derivative_order": 1,
+          "true_core_inlet_complete_history": true,
+          "numerical_cap_not_defining_integrand": true,
+          "original_first_switch_full_current_radius_direction": true
+        },
+        "86920": {
+          "operation": "analytic_unary",
+          "name": "exp",
+          "argument": 86913
+        },
+        "86921": {
+          "operation": "product",
+          "arguments": [
+            86914,
+            86920
+          ]
+        },
+        "86947": {
+          "operation": "product",
+          "arguments": [
+            72987,
+            86920
+          ]
+        },
+        "86948": {
+          "operation": "product",
+          "arguments": [
+            72987,
+            86921
+          ]
+        },
+        "86949": {
+          "operation": "product",
+          "arguments": [
+            72988,
+            86920
+          ]
+        },
+        "86950": {
+          "operation": "sum",
+          "arguments": [
+            86948,
+            86949
+          ]
+        },
+        "35657": {
+          "operation": "analytic_unary",
+          "name": "exp",
+          "argument": 35656
+        },
+        "35658": {
+          "operation": "product",
+          "arguments": [
+            35657,
+            35653
+          ]
+        }
+      }
+    },
+    "oscillatory_certificate": {
+      "final_proof_node": "finite_N_terms_retained",
+      "endpoint_identity_proved": false,
+      "flat_predicate_truth": "unproved",
+      "common_loop_input_join": "unproved",
+      "numeric_values_selected": false,
+      "lazy_active_bodies_evaluated": false,
+      "source_parameters_approximated": false,
+      "eta_source_parameter_node": 21,
+      "eta_is_literal_21": false,
+      "retained_left_Bloop_over_Pstar_nodes": [
+        103809,
+        103810
+      ],
+      "retained_right_Bloop_over_Pstar_nodes": [
+        106437,
+        106438
+      ],
+      "next_required_inputs": [
+        "mean E_y C1",
+        "mean V_y C1",
+        "generic p2 C1"
+      ],
+      "source_Bloop_is_distinct_from_native_weighted_primitive_B": true,
+      "fixed_raw_source_rows": {
+        "102165": {
+          "operation": "sum",
+          "arguments": [
+            102159,
+            25304
+          ]
+        },
+        "102166": {
+          "operation": "exact_real_comparison",
+          "operator": ">=",
+          "left": 102165,
+          "right": 21
+        },
+        "104793": {
+          "operation": "sum",
+          "arguments": [
+            104787,
+            25304
+          ]
+        },
+        "104794": {
+          "operation": "exact_real_comparison",
+          "operator": ">=",
+          "left": 104793,
+          "right": 21
+        },
+        "103809": {
+          "operation": "original_lazy_flat_branch",
+          "active_body": 103803,
+          "Delta": 102165,
+          "eta": 21,
+          "flat_value": 0,
+          "flat_predicate": 102166,
+          "original_collar_coordinate": null,
+          "original_collar_upper": null,
+          "active_body_not_evaluated_on_flat_branch": true,
+          "ordinary_slow_Z_derivative_order": 0,
+          "same_original_flat_extension_through_order5": true
+        },
+        "103810": {
+          "operation": "original_lazy_flat_branch",
+          "active_body": 103804,
+          "Delta": 102165,
+          "eta": 21,
+          "flat_value": 0,
+          "flat_predicate": 102166,
+          "original_collar_coordinate": null,
+          "original_collar_upper": null,
+          "active_body_not_evaluated_on_flat_branch": true,
+          "ordinary_slow_Z_derivative_order": 1,
+          "same_original_flat_extension_through_order5": true
+        },
+        "106437": {
+          "operation": "original_lazy_flat_branch",
+          "active_body": 106431,
+          "Delta": 104793,
+          "eta": 21,
+          "flat_value": 0,
+          "flat_predicate": 104794,
+          "original_collar_coordinate": null,
+          "original_collar_upper": null,
+          "active_body_not_evaluated_on_flat_branch": true,
+          "ordinary_slow_Z_derivative_order": 0,
+          "same_original_flat_extension_through_order5": true
+        },
+        "106438": {
+          "operation": "original_lazy_flat_branch",
+          "active_body": 106432,
+          "Delta": 104793,
+          "eta": 21,
+          "flat_value": 0,
+          "flat_predicate": 104794,
+          "original_collar_coordinate": null,
+          "original_collar_upper": null,
+          "active_body_not_evaluated_on_flat_branch": true,
+          "ordinary_slow_Z_derivative_order": 1,
+          "same_original_flat_extension_through_order5": true
+        }
+      }
+    },
+    "fixed_raw_source_rows": {
+      "0": {
+        "operation": "exact_rational",
+        "numerator": 0,
+        "denominator": 1
+      },
+      "1": {
+        "operation": "exact_rational",
+        "numerator": 1,
+        "denominator": 1
+      },
+      "2": {
+        "operation": "exact_rational",
+        "numerator": 40,
+        "denominator": 1
+      },
+      "3": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 2
+      },
+      "4": {
+        "operation": "exact_rational",
+        "numerator": 11,
+        "denominator": 1
+      },
+      "5": {
+        "operation": "sum",
+        "arguments": [
+          3,
+          4
+        ]
+      },
+      "104064": {
+        "operation": "product",
+        "arguments": [
+          103810,
+          99411
+        ]
+      },
+      "70152": {
+        "operation": "function_substitution",
+        "expression": 68910,
+        "variable": 66988,
+        "value": 48,
+        "Z_independent_substitution": true
+      },
+      "70153": {
+        "operation": "function_substitution",
+        "expression": 68911,
+        "variable": 66988,
+        "value": 48,
+        "Z_independent_substitution": true
+      },
+      "101905": {
+        "operation": "positive_quotient",
+        "numerator": 71448,
+        "denominator": 65604,
+        "source_positive_certificate": "same positive actual R/Ra"
+      },
+      "101906": {
+        "operation": "analytic_unary",
+        "name": "log",
+        "argument": 101905
+      },
+      "71699": {
+        "operation": "definite_integral",
+        "integrand": 71692,
+        "variable": "macro_actual_U_t",
+        "lower": 0,
+        "upper": 70265,
+        "exact_function_integral": true,
+        "numerical_value_not_installed": true,
+        "endpoint_independent_of_Z": true,
+        "ordinary_slow_Z_derivative_order": 0,
+        "true_core_inlet_complete_history": true,
+        "numerical_cap_not_defining_integrand": true,
+        "actual_prescribed_axial_equation": true,
+        "all_hydro_pressure_swirl_sectors_retained": true,
+        "source_measure_applied_once": true,
+        "prescribed_bridge_chart": "macro"
+      },
+      "71700": {
+        "operation": "definite_integral",
+        "integrand": 71693,
+        "variable": "macro_actual_U_t",
+        "lower": 0,
+        "upper": 70265,
+        "exact_function_integral": true,
+        "numerical_value_not_installed": true,
+        "endpoint_independent_of_Z": true,
+        "ordinary_slow_Z_derivative_order": 1,
+        "true_core_inlet_complete_history": true,
+        "numerical_cap_not_defining_integrand": true,
+        "actual_prescribed_axial_equation": true,
+        "all_hydro_pressure_swirl_sectors_retained": true,
+        "source_measure_applied_once": true,
+        "prescribed_bridge_chart": "macro"
+      },
+      "101907": {
+        "operation": "sum",
+        "arguments": [
+          101906,
+          97298
+        ]
+      },
+      "101908": {
+        "operation": "product",
+        "arguments": [
+          18,
+          101907
+        ]
+      },
+      "101909": {
+        "operation": "analytic_unary",
+        "name": "fractional_part",
+        "argument": 101908
+      },
+      "97298": {
+        "operation": "negative",
+        "argument": 24954
+      },
+      "18": {
+        "operation": "exact_positive_integer_expression",
+        "type": "DoubleDyadicInteger",
+        "J": 1358356628656378313,
+        "definition": "N=2^(2^J)",
+        "exact_positive_integer": true,
+        "Z_independent": true,
+        "outer_integer_and_inner_power_not_materialized": true,
+        "one_common_N_for_all_charts_and_control_denominators": true
+      },
+      "71706": {
+        "operation": "negative",
+        "argument": 71699
+      },
+      "71707": {
+        "operation": "negative",
+        "argument": 71700
+      },
+      "87584": {
+        "operation": "product",
+        "arguments": [
+          87154,
+          69245
+        ]
+      },
+      "71713": {
+        "operation": "sum",
+        "arguments": [
+          70152,
+          71706
+        ]
+      },
+      "71714": {
+        "operation": "sum",
+        "arguments": [
+          70153,
+          71707
+        ]
+      },
+      "72994": {
+        "operation": "function_substitution",
+        "expression": 71713,
+        "variable": 70265,
+        "value": 1,
+        "Z_independent_substitution": true
+      },
+      "72995": {
+        "operation": "function_substitution",
+        "expression": 71714,
+        "variable": 70265,
+        "value": 1,
+        "Z_independent_substitution": true
+      },
+      "87585": {
+        "operation": "product",
+        "arguments": [
+          87155,
+          69245
+        ]
+      },
+      "33572": {
+        "operation": "analytic_unary",
+        "name": "exp",
+        "argument": 5
+      },
+      "106932": {
+        "operation": "sum",
+        "arguments": [
+          87584,
+          106691
+        ]
+      },
+      "106933": {
+        "operation": "sum",
+        "arguments": [
+          87585,
+          106692
+        ]
+      },
+      "106691": {
+        "operation": "product",
+        "arguments": [
+          106437,
+          99411
+        ]
+      },
+      "106692": {
+        "operation": "product",
+        "arguments": [
+          106438,
+          99411
+        ]
+      },
+      "72142": {
+        "operation": "product",
+        "arguments": [
+          71713,
+          69245
+        ]
+      },
+      "72143": {
+        "operation": "product",
+        "arguments": [
+          71714,
+          69245
+        ]
+      },
+      "99411": {
+        "operation": "positive_quotient",
+        "numerator": 1,
+        "denominator": 18,
+        "source_positive_certificate": "same exact positive integer N on every source chart"
+      },
+      "104533": {
+        "operation": "positive_quotient",
+        "numerator": 85905,
+        "denominator": 65604,
+        "source_positive_certificate": "same positive actual R/Ra"
+      },
+      "104534": {
+        "operation": "analytic_unary",
+        "name": "log",
+        "argument": 104533
+      },
+      "104535": {
+        "operation": "sum",
+        "arguments": [
+          104534,
+          97298
+        ]
+      },
+      "104536": {
+        "operation": "product",
+        "arguments": [
+          18,
+          104535
+        ]
+      },
+      "104537": {
+        "operation": "analytic_unary",
+        "name": "fractional_part",
+        "argument": 104536
+      },
+      "87133": {
+        "operation": "function_substitution",
+        "expression": 87126,
+        "variable": 73190,
+        "value": 74235,
+        "Z_independent_substitution": true
+      },
+      "87134": {
+        "operation": "function_substitution",
+        "expression": 87127,
+        "variable": 73190,
+        "value": 74235,
+        "Z_independent_substitution": true
+      },
+      "87140": {
+        "operation": "product",
+        "arguments": [
+          87133,
+          9
+        ]
+      },
+      "87141": {
+        "operation": "product",
+        "arguments": [
+          87134,
+          9
+        ]
+      },
+      "73190": {
+        "operation": "bound_variable",
+        "name": "true_prescribed_first_switch_s"
+      },
+      "87147": {
+        "operation": "definite_integral",
+        "integrand": 87140,
+        "variable": "true_first_switch_axial_t",
+        "lower": 0,
+        "upper": 73190,
+        "exact_function_integral": true,
+        "numerical_value_not_installed": true,
+        "endpoint_independent_of_Z": true,
+        "ordinary_slow_Z_derivative_order": 0,
+        "true_core_inlet_complete_history": true,
+        "numerical_cap_not_defining_integrand": true,
+        "original_first_switch_axial_control": true,
+        "source_measure_applied_once": true
+      },
+      "87148": {
+        "operation": "definite_integral",
+        "integrand": 87141,
+        "variable": "true_first_switch_axial_t",
+        "lower": 0,
+        "upper": 73190,
+        "exact_function_integral": true,
+        "numerical_value_not_installed": true,
+        "endpoint_independent_of_Z": true,
+        "ordinary_slow_Z_derivative_order": 1,
+        "true_core_inlet_complete_history": true,
+        "numerical_cap_not_defining_integrand": true,
+        "original_first_switch_axial_control": true,
+        "source_measure_applied_once": true
+      },
+      "104304": {
+        "operation": "sum",
+        "arguments": [
+          72142,
+          104063
+        ]
+      },
+      "104305": {
+        "operation": "sum",
+        "arguments": [
+          72143,
+          104064
+        ]
+      },
+      "87154": {
+        "operation": "sum",
+        "arguments": [
+          72994,
+          87147
+        ]
+      },
+      "87155": {
+        "operation": "sum",
+        "arguments": [
+          72995,
+          87148
+        ]
+      },
+      "70265": {
+        "operation": "bound_variable",
+        "name": "original_prescribed_C6_macro_fraction"
+      },
+      "69245": {
+        "operation": "positive_quotient",
+        "numerator": 1,
+        "denominator": 33572,
+        "source_positive_certificate": "same strictly positive Pstar"
+      },
+      "104063": {
+        "operation": "product",
+        "arguments": [
+          103809,
+          99411
+        ]
+      }
+    },
+    "fixed_physical_U_rows": {
+      "140685": {
+        "operation": "product",
+        "arguments": [
+          104304,
+          33572
+        ]
+      },
+      "140686": {
+        "operation": "product",
+        "arguments": [
+          104305,
+          33572
+        ]
+      },
+      "148085": {
+        "operation": "product",
+        "arguments": [
+          106932,
+          33572
+        ]
+      },
+      "148086": {
+        "operation": "product",
+        "arguments": [
+          106933,
+          33572
+        ]
+      }
+    },
+    "inherited_context": {
+      "parent_report": "lei_ren_part1_paper_compliant_current_original_native_J2_radius_identity.json",
+      "parent_report_sha256": "ccb7afca508bc5b31706356fd9058290c587a527ec534ec701824aaba8da431e",
+      "accepted_R_identity_jump_indices": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "native_B_jump_zero_nodes": [
+        520,
+        521
+      ],
+      "unresolved_B_weighted_jump_nodes": [
+        522,
+        523,
+        524,
+        525,
+        526,
+        527,
+        528,
+        529,
+        530,
+        531,
+        532,
+        533,
+        534,
+        535
+      ],
+      "native_IN_formula": "I_N=B_lastupper-B_firstlower-sum(J_2..J_15)+sum17(integral K_i dy)"
+    },
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false
+    },
+    "stage_flags": {
+      "actual_J2_U_ports_bound": true,
+      "J2_mean_V_C1_endpoint_identity_proved": true,
+      "J2_mean_E_C1_endpoint_identity_proved": true,
+      "J2_phase_endpoint_identity_proved": true,
+      "J2_U_difference_C1_reduction_proved": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "numeric_values_computed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "J2_B_identity_proved": false,
+      "J2_Q_identity_proved": false,
+      "all_native_B_jumps_zero_proved": false,
+      "old_operators_replayed": false,
+      "actual_J2_U_C1_endpoint_identity_proved": false,
+      "J2_finite_N_delta_V_C1_endpoint_identity_proved": false
+    },
+    "source_pins": {
+      "lei_ren_part1_paper_compliant_current_original_native_J2_radius_identity.json": "ccb7afca508bc5b31706356fd9058290c587a527ec534ec701824aaba8da431e",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": "8419fdc338dc746099c7cad119ea61a8e928652319d5caf5314f8a730c533caa",
+      "lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": "b96316728406fddb9d94e866042529b7d84b7146167cba221ed5a88b427f147a",
+      "lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d"
+    },
+    "source_pin_count": 4,
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "general_DAG_walker_calls": 0,
+      "numeric_exp_log_evaluations": 0,
+      "endpoint_canonicalizer_calls": 0
+    },
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "J2 mean radial E_y, V_y and p2 endpoint input identities",
+      "J2 finite-N oscillatory source join and full U endpoint equality",
+      "J2 physical Q endpoint source identity",
+      "all fourteen remaining B source identities",
+      "native/old density and terminal functional closure",
+      "stress, temporal recursion, corrections, independent Cartesian NS"
+    ],
+    "runtime_model_metadata": null,
+    "actual_J2_U_ports_bound": true,
+    "J2_mean_V_C1_endpoint_identity_proved": true,
+    "J2_mean_E_C1_endpoint_identity_proved": true,
+    "J2_phase_endpoint_identity_proved": true,
+    "J2_U_difference_C1_reduction_proved": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "numeric_values_computed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "J2_B_identity_proved": false,
+    "J2_Q_identity_proved": false,
+    "all_native_B_jumps_zero_proved": false,
+    "old_operators_replayed": false,
+    "actual_J2_U_C1_endpoint_identity_proved": false,
+    "J2_finite_N_delta_V_C1_endpoint_identity_proved": false,
+    "execution_seconds": 0.4213051999686286,
+    "source_checkpoint_sha256": "f78302af225b05e4989965249f7be674f5378f1fe944a53873ddc2ddb50691cb",
+    "entry_checkpoint_sha256": "8e5dc7ac490da468fb519f77e6ecca82c0d760815618168e5d0f21c08cda32e2",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}

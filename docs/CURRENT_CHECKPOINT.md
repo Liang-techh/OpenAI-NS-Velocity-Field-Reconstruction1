@@ -1,3 +1,8 @@
+# Current handoff: native J2 U endpoint transport V2 (2026-10-21)
+
+Read CURRENT_ORIGINAL_NATIVE_J2_U_ENDPOINT_TRANSPORT_V2_2026_10_21.md first.
+Mean V, mean E, and common phase are source-proved, and the symbolic J2 U difference C1 reduction retains the finite-N Bloop term. Full finite-N U remains open pending E_y, V_y, and p2 joins plus the finite-N oscillatory source join; J2 Q and all fourteen B identities remain open. Goal ACTIVE / INCOMPLETE.
+
 # Current handoff: native J2 radius identity (2026-10-21)
 
 Read CURRENT_ORIGINAL_NATIVE_J2_RADIUS_IDENTITY_2026_10_21.md first.
