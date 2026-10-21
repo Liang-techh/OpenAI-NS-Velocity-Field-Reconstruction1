@@ -1,0 +1,526 @@
+{
+  "schema": "original_native_J2_mean_endpoint_composition_v2_execution_v1",
+  "metadata_only": true,
+  "component": "mean_endpoint_composition_v2",
+  "result_sha256": "f28d64c35a0ccb8766e6fbe7efe3047d0c7982bc5cdfce67927ee24a895657d3",
+  "result_bytes": 17274,
+  "source_checkpoint_sha256": "f66d7de3a517898c00f7d8ca2d259ac4343182989c2ae5de19322332b3ecc8bc",
+  "entry_checkpoint_sha256": "55de01fb3aa8f5c8b4d38acd396bb96d060eab8adb36e8e975cc2ec5efd4765a",
+  "runtime_model_metadata": null,
+  "component_result": {
+    "schema": "original_native_J2_mean_endpoint_composition_v2",
+    "component": "mean_endpoint_composition_v2",
+    "passed": true,
+    "source_only": true,
+    "actual_J2_mean_ports_bound": true,
+    "comparison_endpoint_C1_identity_proved": true,
+    "original_memory_Z2_endpoint_identity_proved": true,
+    "J2_mean_Ey_C1_endpoint_identity_proved": true,
+    "J2_mean_Vy_C1_endpoint_identity_proved": true,
+    "J2_mean_p2_C1_endpoint_identity_proved": true,
+    "J2_Bloop_C1_endpoint_identity_proved": true,
+    "actual_J2_U_C1_endpoint_identity_proved": true,
+    "source_prefix_certificate_recovered": true,
+    "no_prior_proof_parts_reexecuted": true,
+    "all_old_terms_retained": true,
+    "accepted_ancestors_not_reexecuted": true,
+    "J2_Q_identity_proved": false,
+    "J2_B_identity_proved": false,
+    "all_native_B_jumps_zero_proved": false,
+    "numeric_values_computed": false,
+    "source_C5_installation_claimed": false,
+    "numeric_containment_claimed": false,
+    "old_error_terms_removed": false,
+    "global_five_moment_closure": false,
+    "time_order_recursion_claimed": false,
+    "full_goal_complete": false,
+    "uninterpreted_graph_parameter_identity_proved": false,
+    "old_operators_replayed": false,
+    "V1_stage_accepted": false,
+    "V1_runtime_intermediate_objects_recovered": false,
+    "stage_flags": {
+      "actual_J2_mean_ports_bound": true,
+      "comparison_endpoint_C1_identity_proved": true,
+      "original_memory_Z2_endpoint_identity_proved": true,
+      "J2_mean_Ey_C1_endpoint_identity_proved": true,
+      "J2_mean_Vy_C1_endpoint_identity_proved": true,
+      "J2_mean_p2_C1_endpoint_identity_proved": true,
+      "J2_Bloop_C1_endpoint_identity_proved": true,
+      "actual_J2_U_C1_endpoint_identity_proved": true,
+      "source_prefix_certificate_recovered": true,
+      "no_prior_proof_parts_reexecuted": true,
+      "all_old_terms_retained": true,
+      "accepted_ancestors_not_reexecuted": true
+    },
+    "nonclaims": {
+      "J2_Q_identity_proved": false,
+      "J2_B_identity_proved": false,
+      "all_native_B_jumps_zero_proved": false,
+      "numeric_values_computed": false,
+      "source_C5_installation_claimed": false,
+      "numeric_containment_claimed": false,
+      "old_error_terms_removed": false,
+      "global_five_moment_closure": false,
+      "time_order_recursion_claimed": false,
+      "full_goal_complete": false,
+      "uninterpreted_graph_parameter_identity_proved": false,
+      "old_operators_replayed": false,
+      "V1_stage_accepted": false,
+      "V1_runtime_intermediate_objects_recovered": false
+    },
+    "ordinary_Z_orders": [
+      0,
+      1
+    ],
+    "ordinary_Z_not_temporal_n": true,
+    "owned_Z_cell": [
+      "0",
+      "1/2"
+    ],
+    "input_digest": "de37d63e3b9343deaba0d6634fb0f50aeeb3c928686572545c522b2d7c36c1ab",
+    "source_family": {
+      "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+      "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+      "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010"
+    },
+    "identity_domain_scope": "common domain of original source definitions; no new loop-domain, cone or numerical admission",
+    "source_function_identity_only": true,
+    "source_checks": {
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_mean_loop_input_join.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_native_J2_U_endpoint_transport_v2.json": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.json.gz": true,
+      "authenticated:lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": true,
+      "authenticated:experiments/root_st073/original_native_J2_mean_endpoint_v1_failure_evidence.json": true,
+      "accepted_parent_source_scope": true,
+      "inherited_input_pins": true,
+      "same_source_family": true,
+      "saved_prefix:embedded_source_schema": true,
+      "saved_prefix:embedded_input_digest": true,
+      "saved_prefix:entered_source_link": true,
+      "saved_prefix:entered_input_link": true,
+      "saved_prefix:entered_kernel_link": true,
+      "saved_prefix:embedded_implementation_hashes": true,
+      "saved_prefix:entered_implementation_hashes": true,
+      "saved_prefix:result_source_link": true,
+      "saved_prefix:result_entry_link": true,
+      "saved_prefix:result_failure": true,
+      "saved_prefix:exact_failure_traceback": true,
+      "saved_prefix:embedded_parent_transport_hashes": true,
+      "saved_prefix:embedded_audit_pins": true,
+      "saved_prefix:derive_prefix_ast_dominance": true,
+      "saved_prefix:accepted_width_contract": true,
+      "saved_prefix:accepted_endpoint_projection": true,
+      "saved_prefix:reconstructed_mean_boolean_projection": true,
+      "accepted_U_difference_reduction": true,
+      "source_factory_unadmitted_numeric_flags_retained": true,
+      "new_scoped_source_body_fingerprints": true,
+      "new_loop:creator_v2_source_record": true,
+      "new_loop:loop_v2_graph_length": true,
+      "new_loop:mod_v2_graph_length": true,
+      "new_loop:accepted_v2_mean_C1": true,
+      "new_loop:common_v2_eta_dstar_Pstar_inverseN_rows": true,
+      "new_loop:accepted_v2_hbB_hbS_source_guard": true,
+      "new_loop:loop_v2.graph.21": true,
+      "new_loop:loop_v2.graph.22": true,
+      "new_loop:loop_v2.graph.28": true,
+      "new_loop:loop_v2.graph.25304": true,
+      "new_loop:loop_v2.graph.33572": true,
+      "new_loop:loop_v2.graph.99411": true,
+      "new_loop:loop_v2.graph.70265": true,
+      "new_loop:loop_v2.graph.73190": true,
+      "new_loop:loop_v2.graph.101907": true,
+      "new_loop:loop_v2.graph.101908": true,
+      "new_loop:loop_v2.graph.101909": true,
+      "new_loop:loop_v2.graph.102647": true,
+      "new_loop:loop_v2.graph.105275": true,
+      "new_loop:loop_v2.graph.101934": true,
+      "new_loop:loop_v2.graph.101969": true,
+      "new_loop:loop_v2.graph.102092": true,
+      "new_loop:loop_v2.graph.102159": true,
+      "new_loop:loop_v2.graph.102165": true,
+      "new_loop:loop_v2.graph.102166": true,
+      "new_loop:loop_v2.graph.102466": true,
+      "new_loop:loop_v2.graph.103389": true,
+      "new_loop:loop_v2.graph.103777": true,
+      "new_loop:loop_v2.graph.103778": true,
+      "new_loop:loop_v2.graph.103779": true,
+      "new_loop:loop_v2.graph.103780": true,
+      "new_loop:loop_v2.graph.103803": true,
+      "new_loop:loop_v2.graph.103804": true,
+      "new_loop:loop_v2.graph.103809": true,
+      "new_loop:loop_v2.graph.103810": true,
+      "new_loop:loop_v2.graph.104537": true,
+      "new_loop:loop_v2.graph.104535": true,
+      "new_loop:loop_v2.graph.104536": true,
+      "new_loop:loop_v2.graph.104562": true,
+      "new_loop:loop_v2.graph.104597": true,
+      "new_loop:loop_v2.graph.104720": true,
+      "new_loop:loop_v2.graph.104787": true,
+      "new_loop:loop_v2.graph.104793": true,
+      "new_loop:loop_v2.graph.104794": true,
+      "new_loop:loop_v2.graph.105094": true,
+      "new_loop:loop_v2.graph.106017": true,
+      "new_loop:loop_v2.graph.106405": true,
+      "new_loop:loop_v2.graph.106406": true,
+      "new_loop:loop_v2.graph.106407": true,
+      "new_loop:loop_v2.graph.106408": true,
+      "new_loop:loop_v2.graph.106431": true,
+      "new_loop:loop_v2.graph.106432": true,
+      "new_loop:loop_v2.graph.106437": true,
+      "new_loop:loop_v2.graph.106438": true,
+      "new_loop:loop_input_v2.graph.72108": true,
+      "new_loop:loop_input_v2.graph.72111": true,
+      "new_loop:loop_input_v2.graph.72142": true,
+      "new_loop:loop_input_v2.graph.72143": true,
+      "new_loop:loop_input_v2.graph.72981": true,
+      "new_loop:loop_input_v2.graph.72982": true,
+      "new_loop:loop_input_v2.graph.87550": true,
+      "new_loop:loop_input_v2.graph.87553": true,
+      "new_loop:loop_input_v2.graph.87584": true,
+      "new_loop:loop_input_v2.graph.87585": true,
+      "new_loop:loop_input_v2.graph.88423": true,
+      "new_loop:loop_input_v2.graph.88424": true,
+      "new_loop:mod_v2.graph.33572": true,
+      "new_loop:mod_v2.graph.99411": true,
+      "new_loop:mod_v2.graph.72142": true,
+      "new_loop:mod_v2.graph.72143": true,
+      "new_loop:mod_v2.graph.87584": true,
+      "new_loop:mod_v2.graph.87585": true,
+      "new_loop:mod_v2.graph.104063": true,
+      "new_loop:mod_v2.graph.104064": true,
+      "new_loop:mod_v2.graph.104304": true,
+      "new_loop:mod_v2.graph.104305": true,
+      "new_loop:mod_v2.graph.106691": true,
+      "new_loop:mod_v2.graph.106692": true,
+      "new_loop:mod_v2.graph.106932": true,
+      "new_loop:mod_v2.graph.106933": true,
+      "new_loop:mod_v2.graph.140685": true,
+      "new_loop:mod_v2.graph.140686": true,
+      "new_loop:mod_v2.graph.148085": true,
+      "new_loop:mod_v2.graph.148086": true,
+      "new_Bloop_and_U_source_identities": true,
+      "retained_ledger": true
+    },
+    "proof_graph": [
+      {
+        "id": "saved_V1_prefix",
+        "rule": "exact saved traceback and fail-fast AST dominance",
+        "recovered_runtime_objects": false,
+        "recovered_numeric_values": false
+      },
+      {
+        "id": "new_loop_source_guard",
+        "rule": "authenticated exact source including the original upper assignment",
+        "depends_on": [
+          "saved_V1_prefix"
+        ]
+      },
+      {
+        "id": "new_Bloop",
+        "rule": "same original mean/phase C1 factory; common eta/dstar checked here",
+        "depends_on": [
+          "saved_V1_prefix",
+          "new_loop_source_guard"
+        ]
+      },
+      {
+        "id": "new_U",
+        "rule": "new Bloop identity and authenticated prior U difference reduction",
+        "depends_on": [
+          "new_Bloop"
+        ]
+      }
+    ],
+    "proof_graph_sha256": "1a76b2a70832ed425cd1619811bcc1f5ed1dc0f8ef521efada125c807909ea43",
+    "component_proofs": {
+      "saved_prefix": {
+        "schema": "native_J2_saved_prefix_validator_v2",
+        "prefix_reconstructed": true,
+        "ordinary_Z_orders": [
+          0,
+          1
+        ],
+        "fields_C1": {
+          "E_C1": true,
+          "E_y_C1": true,
+          "V_y_C1": true,
+          "p2_C1": true,
+          "phase_C1": true,
+          "V_C1": true
+        },
+        "width_contract": {
+          "new_source_contract": true,
+          "distinct_formal_nodes": [
+            8,
+            9
+          ],
+          "interpreted_parameter_identity_proved": true,
+          "uninterpreted_parameter_identity_proved": false
+        },
+        "endpoint_projection": {
+          "70265": 1,
+          "73190": 0
+        },
+        "implementation_hashes": {
+          "scripts/run_original_native_J2_mean_endpoint_composition.py": "7581781d037b9d6b59a0cd86934d3521712e3588c17685d93bfbc2affb337400",
+          "src/openai_ns_reconstruction/original_native_J2_mean_endpoint_composition.py": "b10b2600f1f1a3b4d0f387e66e412da668b666dcd8996a71305caaa071e3f65f"
+        },
+        "assumptions": [
+          "common eta and d_star are intentionally not recovered; the loop-only V2 leaf must prove them independently",
+          "Bloop C1, full U C1, and post-loop U reduction are intentionally unproved by this prefix validator",
+          "no runtime mean object, graph rows, or numerical value is returned"
+        ],
+        "unproved_scope": [
+          "common_eta_dstar",
+          "Bloop_C1",
+          "full_U_C1",
+          "post_loop_U_reduction"
+        ]
+      },
+      "new_loop": {
+        "schema": "native_J2_loop_only_v2_unexecuted_source_congruence",
+        "status": "conditional_source_congruence",
+        "source_body_fingerprints_static_receipt_required": true,
+        "common_eta_dstar_proved": true,
+        "Bloop_C1_proved": true,
+        "Bloop_over_Pstar_pairs": [
+          [
+            103809,
+            106437
+          ],
+          [
+            103810,
+            106438
+          ]
+        ],
+        "full_U_C1_proved": true,
+        "U_pairs": [
+          [
+            140685,
+            148085
+          ],
+          [
+            140686,
+            148086
+          ]
+        ],
+        "derivation": "accepted original E,E_y,V_y,p2 and phase C1, common eta/d_star, the same source loop factory, alpha-renamed chart angle, and the fixed original U=Pstar*(V+B_over_Pstar/N) rows",
+        "not_claimed": [
+          "Q",
+          "native_B",
+          "p1",
+          "other_loop_fields",
+          "domain",
+          "cone",
+          "numeric_evaluation"
+        ]
+      }
+    },
+    "source_binding_scope": {
+      "new_source_contract": true,
+      "old_graph_nodes_rewritten": false,
+      "distinct_formal_nodes": [
+        8,
+        9
+      ],
+      "interpreted_parameter_identity_proved": true,
+      "uninterpreted_parameter_identity_proved": false,
+      "primitive": {
+        "source_record_sha256": "7e25fa846ef77e408dea54acf331df081e96b45a702ff3c9bc87136221144455",
+        "source_field": "exact_source_width",
+        "formula": "hb=epsilon_b=cstar*K^-100",
+        "source_family_digest": "e203d3666b7fe1162a46c3f6e3a6bf318201a83ed5191ecb8510b000c3b85de9",
+        "fixed_N0_digest": "42df26c8f2262256dbfc33da6ff555ebaf18f895d8014212f1304dabb680d6d9",
+        "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+      },
+      "bindings": [
+        {
+          "node_id": 8,
+          "name": "hbB",
+          "owner_path": [
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        },
+        {
+          "node_id": 9,
+          "name": "hbS",
+          "owner_path": [
+            "OriginalFirstSwitchFunctions.owner",
+            "OriginalR100Endpoint.owner",
+            "OriginalBridgeMacroMoments.owner",
+            "OriginalBridgeMacroFunctions.owner",
+            "MacroFlow",
+            "flow.h"
+          ],
+          "primitive_id": "23d8764b940b60859e8edecfdb5ffa80d567b8478de778fe51360e58565f637b"
+        }
+      ],
+      "numeric_witness_selected": false,
+      "enclosure_endpoint_comparison": false,
+      "positive_exact_width_source_recipe": true,
+      "finite_positive_value_not_materialized": true
+    },
+    "mean_C1_certificate": {
+      "proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "input_scope": "original_mean_and_phase_only",
+      "modified_total_radial_fields_used": false,
+      "hbB_hbS_identity_proved": true,
+      "V_identity_proved": true,
+      "phase": {
+        "proved": true,
+        "ordinary_Z_orders": [
+          0,
+          1
+        ]
+      },
+      "fields": {
+        "E": {
+          "proved": true,
+          "pairs": [
+            [
+              72108,
+              87550
+            ],
+            [
+              72111,
+              87553
+            ]
+          ]
+        },
+        "E_y": {
+          "proved": true,
+          "pairs": [
+            [
+              72348,
+              87790
+            ],
+            [
+              72351,
+              87793
+            ]
+          ]
+        },
+        "V_y": {
+          "proved": true,
+          "pairs": [
+            [
+              72382,
+              87824
+            ],
+            [
+              72383,
+              87825
+            ]
+          ]
+        },
+        "p2": {
+          "proved": true,
+          "pairs": [
+            [
+              72981,
+              88423
+            ],
+            [
+              72982,
+              88424
+            ]
+          ]
+        }
+      },
+      "certificate_origin": "new boolean projection certificate; no V1 runtime objects recovered"
+    },
+    "retained_construction_data": {
+      "cumulative_terms": 212,
+      "raw_signed_terms": 213,
+      "reduced_terms": 183,
+      "six_signed_channels_retained": true,
+      "all_old_error_data_retained": true,
+      "reserved_contribution_registered_once": true,
+      "inherited_errors_deleted": false
+    },
+    "quantity_distinctions": {
+      "P1_differs_from_m15": true,
+      "physical_Q_differs_from_loop_q": true,
+      "Bloop_over_Pstar_differs_from_native_weighted_B": true,
+      "ordinary_Z_jets_are_not_temporal_n_recursion": true,
+      "typed_source_denotation_is_not_a_computed_numeric_value": true
+    },
+    "inherited_R_identity_jumps": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "unresolved_B_identity_nodes": [
+      522,
+      523,
+      524,
+      525,
+      526,
+      527,
+      528,
+      529,
+      530,
+      531,
+      532,
+      533,
+      534,
+      535
+    ],
+    "U_identity_scope": {
+      "weighted_jump_node": 522,
+      "jump_index": 2,
+      "full_U_C1_identity_proved": true,
+      "ordinary_Z_orders": [
+        0,
+        1
+      ],
+      "left_source_nodes": [
+        140685,
+        140686
+      ],
+      "right_source_nodes": [
+        148085,
+        148086
+      ],
+      "endpoint_substitutions": {
+        "70265": 1,
+        "73190": 0
+      },
+      "source_interpretation_required": true
+    },
+    "unresolved_gates": [],
+    "remaining_construction_gates": [
+      "physical Q and all fourteen native weighted B jumps",
+      "independent terminal functional moments and retained quantitative errors",
+      "heat exterior, stress/remainder, temporal n recursion, realizable corrections and Cartesian NS validation"
+    ],
+    "source_inspection_audit": {
+      "new_source_consumer_calls": 1,
+      "accepted_ancestor_operator_calls": 0,
+      "V1_comparison_memory_radial_functions_called": 0,
+      "generic_DAG_walks": 0,
+      "numerical_evaluations": 0,
+      "quadratures": 0,
+      "recurrence_calls": 0,
+      "runtime_model_metadata": null
+    },
+    "runtime_model_metadata": null,
+    "execution_seconds": 0.5422840000246651,
+    "source_checkpoint_sha256": "f66d7de3a517898c00f7d8ca2d259ac4343182989c2ae5de19322332b3ecc8bc",
+    "entry_checkpoint_sha256": "55de01fb3aa8f5c8b4d38acd396bb96d060eab8adb36e8e975cc2ec5efd4765a",
+    "runner_caught_exception": false,
+    "runner_full_goal_complete": false
+  }
+}
