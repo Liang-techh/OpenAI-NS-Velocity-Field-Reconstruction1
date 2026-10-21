@@ -1,3 +1,13 @@
+# Current handoff: original native regular B batch source failure (2026-10-21)
+
+Read docs/CURRENT_ORIGINAL_NATIVE_REGULAR_B_BATCH_SOURCE_FAILURE_2026_10_21.md first. The entered regular-B attempt failed once; its exact result, 88-event journal, and six raw artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_regular_B_batch_source_failure.json.
+
+Accepted native B nodes remain [520, 521, 522, 523]. Remaining native B nodes are [524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535]. Do not re-enter the failed attempt.
+
+Next task: Start one fresh outer-B batch v2 using the two actual bindings recorded in the saved diagnostics: weighted_endpoint_rows and mod_pressure_source_ast. Fix those bindings from the authenticated event 86 selectors, preserve the 212 cumulative, 213 raw-signed, and 183 reduced error ledgers, and do not re-enter or replay this failed batch. Keep all 12 remaining native B identities open.
+
+Failure report SHA256: f9714c0feb746d3721dfaedaa89b084e8ffc6d0f97ea15f3a3daa43c554d3bbb
+
 # Current handoff: native J3 endpoint transport V3 (2026-10-21)
 
 Read CURRENT_ORIGINAL_NATIVE_J3_ENDPOINT_TRANSPORT_V3_2026_10_21.md first. The saved source-only J3 V3 result accepts node 523 while preserving the 26 failed artifacts and all open downstream nodes.
