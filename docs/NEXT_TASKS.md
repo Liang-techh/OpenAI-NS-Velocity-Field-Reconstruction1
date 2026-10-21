@@ -1,3 +1,14 @@
+# Current actual Rc flux pressure cocycle - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_RC_FLUX_PRESSURE_COCYCLE_2026_10_21.md first.
+Saved result passed=True; original Rc active-to-compact RQ_y
+source identity and actual native/corrected pressure cocycles are bound.
+On owned Z cell [0,1/2], F-T=1/2*(I_N_Rc-I_O_active+I_compact_difference).
+The actual density difference is not proved zero. All old errors remain.
+212/213/183, six signed channels and one reserved source remain frozen.
+Next: Bind the native and original active S1 functions to the same 17 physical chart source fields and measures, keeping their complete finite-N own histories, physical Q and ordinary Z1 rows. Compare those actual densities before evaluating any integral difference. Then bind native versus original compact incoming and control functions by the accepted unique repair branch. The terminal density difference is not proved zero. Keep old212 errors until a same-source packet theorem, and do not replace functions with caps, promote the old .371 packet to cell-wide bounds, reset memory or duplicate the reserved contribution. Global five moments, exact heat, stress/remainder, genuine temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current lower physical flux C1 source identity - 2026-10-21
 
 Read CURRENT_ORIGINAL_NATIVE_LOWER_PHYSICAL_FLUX_IDENTITY_2026_10_21.md first.
