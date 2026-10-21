@@ -1,3 +1,14 @@
+# Current native physical scale source identity - 2026-10-21
+
+Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_SCALE_SOURCE_IDENTITY_2026_10_21.md first.
+Saved result passed=True; component=scale; ordinary Z=[0, 1].
+Local source flags: {"current_physical_complete_pulse_C3_identity_proved": true, "native_logC_original_control_identity_proved": true, "native_original_absolute_Rc_Rp_identity_proved": true, "native_original_quiet_K_identity_proved": true, "old_preRp_Pstar_source_identity_proved": true, "physical_quiet_Z0_source_identity_proved": true, "terminal_difference_reduced_to_active_compact": true}.
+Exact aliases logC/Rc/Rp/Pstar/quietK and the three source identity labels are
+preserved. Global closure is false; 212/213/183 and all old errors remain frozen.
+Previous failed comparison is retained through the parent report hash.
+Next: Compare the actual native compact pressure increment with the original compact source under the now identified Rc and Pstar, retaining both actual incoming histories and the original selected controls. Then compare native Rc cumulative pressure with corrected active pressure, including the first-micro physical endpoint and original RQ_y baseline. The remaining C1 function is native_2Rc-corrected_active-old_compact; do not set it to zero from bounds or samples, reset a nonzero history, change the reserved slot, or remove old212 errors. Original-scale bounds, global physical joins, exact heat, stress/remainder, true temporal recursion, corrections and independent Cartesian NS remain open.
+Goal ACTIVE / INCOMPLETE.
+
 # Current native physical terminal comparison and log repair - 2026-10-20
 
 Read CURRENT_ORIGINAL_NATIVE_PHYSICAL_TERMINAL_LOG_REPAIR_2026_10_20.md first.
