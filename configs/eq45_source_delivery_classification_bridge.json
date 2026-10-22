@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-EQ45-SOURCE-DELIVERY-CLASSIFICATION-BRIDGE",
+  "scope": "Reconcile the legacy four-label vocabulary in configs/eq45_source_contract.json with the canonical four-class governance vocabulary and with the independently callable autonomous Eq45 supported delivery. This contract changes no velocity value, source formula, candidate identity, scientific threshold, or delivery state.",
+  "snapshot": {
+    "integration_branch": "codex/cr001-constraints",
+    "integration_head": "43d4c0309cdd22763eaba966de439cc1b4e1d9d9",
+    "source_contract": "configs/eq45_source_contract.json",
+    "delivery_contract": "configs/velocity_delivery_contract.json",
+    "project_status": "project_status.json"
+  },
+  "canonical_classification_vocabulary": {
+    "user_requirement": "A requirement explicitly imposed by the user/project delivery contract.",
+    "public_source_fact": "A fact directly supported by a public source with provenance retained.",
+    "autonomous_design": "A repository-side parameter, profile, transform, diagnostic, or engineering choice not claimed as public-source data.",
+    "pending_unknown": "A numerical datum, identity, or claim not established by available evidence."
+  },
+  "legacy_eq45_source_label_map": {
+    "user_required": "user_requirement",
+    "public_source": "public_source_fact",
+    "autonomous": "autonomous_design",
+    "pending": "pending_unknown"
+  },
+  "eq45_source_items": [
+    {
+      "item_prefix": "Eq. (4.1) similarity coordinates and Eq. (4.5) leading Cartesian velocity formula",
+      "legacy_classification": "public_source",
+      "canonical_classification": "public_source_fact"
+    },
+    {
+      "item_prefix": "callable velocity(x,y,z,t)->[u,v,w] as the immediate engineering deliverable",
+      "legacy_classification": "user_required",
+      "canonical_classification": "user_requirement"
+    },
+    {
+      "item_prefix": "finite numerical choices such as h, sigma, radial degree, eta nodes, fit weights and visualization tolerances",
+      "legacy_classification": "autonomous",
+      "canonical_classification": "autonomous_design"
+    },
+    {
+      "item_prefix": "final numerical profile data identifying the OpenAI field and full exterior/correction coefficients",
+      "legacy_classification": "pending",
+      "canonical_classification": "pending_unknown"
+    }
+  ],
+  "source_to_delivery_bridge": {
+    "public_source_formula_available": true,
+    "public_source_formula_is_leading_field_only": true,
+    "public_source_final_profiles_numerically_identified": false,
+    "public_source_full_constructed_field_recovered": false,
+    "canonical_candidate_family": "eq45_supported_velocity_candidate_v1",
+    "canonical_candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "canonical_velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "canonical_candidate_numeric_instantiation_class": "autonomous_design",
+    "canonical_velocity_export_ready": true,
+    "callable_delivery_requires_public_source_profile_identification": false,
+    "callable_delivery_requires_pde_validation": false,
+    "source_formula_alone_identifies_canonical_numeric_candidate": false,
+    "canonical_candidate_may_be_called_exact_openai_field": false,
+    "interpretation": "There is no contradiction between the source contract leaving the final public-source numerical profiles unresolved and the repository delivering a callable/saveable autonomous numerical field built on the sourced Eq. (4.5) backbone. The latter satisfies the engineering delivery requirement but does not resolve the former."
+  },
+  "independent_truth_states": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "Do not reinterpret the legacy label public_source as meaning that autonomous h/profile/taper/time choices are published OpenAI numerical data.",
+    "Do not reinterpret final_profiles_numerically_identified=false as meaning that no callable repository velocity field can be delivered.",
+    "Do not reinterpret canonical velocity_export_ready=true as source-level recovery of the hidden OpenAI profiles or the complete corrected theorem field.",
+    "Do not set unresolved public-source profile data to zero merely to create a source-only numerical field; the delivered numerical field must retain explicit autonomous provenance for its chosen profiles and parameters.",
+    "Do not promote visual resemblance, exportability, green CI, or Eq. (4.5) ancestry into visual_correspondence_verified, pde_validated, paper_exact, or openai_field_identified."
+  ],
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "source_formula_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "threshold_changed": false,
+    "canonical_velocity_api_changed": false
+  }
+}
