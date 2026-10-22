@@ -1,3 +1,13 @@
+# Current handoff: original native cross2-B v2 (2026-10-22)
+
+Read docs/CURRENT_ORIGINAL_NATIVE_CROSS2_B_V2_2026_10_22.md first. The generic v2 report preserves the full result, exact journal, and six raw implementation/checkpoint artifacts. The saved attempt accepted_identity_flag=True.
+
+Accepted native B nodes: [520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535]. Remaining nodes: [].
+
+Next task: Use the authenticated native cross2-B source identity as cached source metadata to derive the same-source quantitative error transport relation and terminal functional match. Retain all old errors until that relation is proved.
+
+Report SHA256: 342a685c1515329e6c04827f60e2e18d8cfef4d6bbf49087cf062e3fb3c78b67
+
 # Current handoff: original native cross2-B source failure (2026-10-22)
 
 Read docs/CURRENT_ORIGINAL_NATIVE_CROSS2_B_SOURCE_FAILURE_2026_10_22.md first. The entered cross2-B attempt failed once; its full saved result, 11-event journal, and six raw artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_cross2_B_source_failure.json.
