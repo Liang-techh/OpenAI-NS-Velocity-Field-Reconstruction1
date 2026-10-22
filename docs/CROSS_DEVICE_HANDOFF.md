@@ -1,3 +1,13 @@
+# Current handoff: original native cross2-B source failure (2026-10-22)
+
+Read docs/CURRENT_ORIGINAL_NATIVE_CROSS2_B_SOURCE_FAILURE_2026_10_22.md first. The entered cross2-B attempt failed once; its full saved result, 11-event journal, and six raw artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_cross2_B_source_failure.json.
+
+Accepted native B nodes remain [520, 521, 522, 523, 524, 525, 526, 527, 528, 531, 532, 533, 534, 535]. Remaining nodes are [529, 530]. Do not re-enter any copy of the failed attempt.
+
+Next task: Use the full saved component_result.component_proofs.fresh_cross false-predicate maps, including normalized-germ, history/finite-N, archive, and base source-contract factors, together with the event-10 selectors for nodes 529 and 530; reuse only the saved passed factors and axial m_Z/Q_Z1 certificate, then patch failed J9/J10 predicates. Preserve all 212 cumulative, 213 raw-signed, and 183 reduced ledgers, six signed channels, 17 K terms, two outer-B terms, one reserved contribution, all 16 J terms, and all old errors. Start one fresh unentered source binding attempt; do not replay or copy the V3 proof body or any failed attempt.
+
+Failure report SHA256: 19d09adbfac2b236bcb1ff01712f6e6f1db20fe94c041284cb847e5f5916e60e
+
 # Current handoff: original native inner-B v1 (2026-10-22)
 
 Read docs/CURRENT_ORIGINAL_NATIVE_INNER_B_V1_2026_10_22.md first. The exact source-only result and six lossless artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_inner_B_v1.json.
