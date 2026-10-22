@@ -1,3 +1,13 @@
+# Current handoff: original native outer-B v2 (2026-10-22)
+
+Read docs/CURRENT_ORIGINAL_NATIVE_OUTER_B_V2_2026_10_22.md first. The exact source-only result and four saved checkpoints are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_outer_B_v2.json.
+
+Accepted native B nodes are [520, 521, 522, 523, 531, 532, 533, 534, 535]. Remaining native B nodes are [524, 525, 526, 527, 528, 529, 530].
+
+Next task: Implement and independently review the inner 524 through 528 endpoint repairs and the cross-source 529 and 530 germ. Preserve the 212 cumulative, 213 raw-signed, and 183 reduced error ledgers; do not delete quantitative packets until same-source correlation is proved.
+
+Outer-B v2 report SHA256: 562c6c6f2d1a684784385998de1406f59f21d2f9995c01840aa95b1227269e46
+
 # Current handoff: original native regular B batch source failure (2026-10-21)
 
 Read docs/CURRENT_ORIGINAL_NATIVE_REGULAR_B_BATCH_SOURCE_FAILURE_2026_10_21.md first. The entered regular-B attempt failed once; its exact result, 88-event journal, and six raw artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_regular_B_batch_source_failure.json.
