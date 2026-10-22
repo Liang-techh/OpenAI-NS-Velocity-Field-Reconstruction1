@@ -1,0 +1,64 @@
+name: agent9-st006-vorticity-morphology
+on:
+  pull_request:
+    paths:
+      - 'research_baseline/vorticity_morphology.py'
+      - 'tests/test_research_baseline_vorticity_morphology.py'
+      - 'docs/external_methods/CR-A9-039-st006-vorticity-morphology.md'
+      - '.github/workflows/agent9-st006-vorticity-morphology.yml'
+permissions:
+  contents: read
+jobs:
+  focused-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Warning-clean compile
+        run: python -W error -m py_compile research_baseline/vorticity_morphology.py tests/test_research_baseline_vorticity_morphology.py
+      - name: Run focused regressions
+        run: python -m pytest -q -W error tests/test_research_baseline_vorticity_morphology.py
+      - name: Measure retained ST006
+        run: |
+          mkdir -p outputs
+          python -m research_baseline.vorticity_morphology --output outputs/ST006_vorticity_morphology.json > outputs/ST006_vorticity_morphology.stdout.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST006_vorticity_morphology.json').read_text())
+          assert r['candidate']=='ST006'
+          assert r['interpretation_boundary']['pde_validated'] is False
+          assert r['interpretation_boundary']['visual_correspondence_verified'] is False
+          finest=max(r['by_resolution'], key=lambda x:x['resolution'])
+          print(json.dumps({
+              'candidate_sha256': r['candidate_sha256'],
+              'report_sha256': r['report_sha256'],
+              'endpoint_trend': r['finest_resolution_endpoint_trend'],
+              'finest_resolution': finest['resolution'],
+              'per_time_summary': [{
+                  'time': x['time'],
+                  'velocity_rms': x['velocity_rms'],
+                  'vorticity_rms': x['vorticity_rms'],
+                  'vorticity_max': x['vorticity_max'],
+                  'principal_rms_extent': x['principal_rms_extent'],
+                  'transverse_rms_extent': x['transverse_rms_extent'],
+                  'aspect_ratio': x['principal_to_transverse_aspect_ratio'],
+                  'covariance_rms_volume_proxy': x['covariance_rms_volume_proxy'],
+                  'principal_axis': x['principal_axis_registered_coordinates'],
+              } for x in finest['per_time']],
+          }, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ST006-vorticity-morphology
+          path: outputs/ST006_vorticity_morphology.json
+          if-no-files-found: error
