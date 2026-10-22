@@ -1,3 +1,11 @@
+# Current handoff: original signed pullback difference (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_SIGNED_PULLBACK_DIFFERENCE_2026_10_22.md` first. The source-function/algebra-control report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_signed_pullback_difference.json` is SHA256 `4a44b291afb4a0de8f82c652b0e99b4cd6e02eece8c86f44e2e94c76c5e4b9f7` and embeds six raw lossless artifacts.
+
+This source-function-definition and exact algebra-control stage binds four authenticated serialized compact records and uses exact rational jets. Publication actions remain metadata-only. It does not evaluate original source functions, and native old-density identity remains false. All 16 native B nodes are inherited from the accepted parent report; quantitative and physical completion gates remain false.
+
+Next task: verify the new ∫ weighted Δv dx + [Δ(R²F − R Q_y)]_1² against the saved native/old S1 and m15 source expressions (reuse old S1 direct export 31135/36); bind the retained volume-error packet to these same inputs; then compute the signed response/certified error without deleting old caps prematurely.
+
 # Current handoff: original native cross2-B v2 (2026-10-22)
 
 Read docs/CURRENT_ORIGINAL_NATIVE_CROSS2_B_V2_2026_10_22.md first. The generic v2 report preserves the full result, exact journal, and six raw implementation/checkpoint artifacts. The saved attempt accepted_identity_flag=True.

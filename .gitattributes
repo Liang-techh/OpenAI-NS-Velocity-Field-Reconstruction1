@@ -2,6 +2,7 @@
 experiments/root_st073/lei_ren_part1_paper_*.py -text
 experiments/root_st073/lei_ren_part1_paper_*.json -text
 src/openai_ns_reconstruction/*.py -text
+src/openai_ns_reconstruction/original_signed_pullback_difference.py -text
 scripts/check_original_reserved_m15_response.py -text
 scripts/run_original_repaired_Rp_m15.py -text
 scripts/check_original_micro_viscous_m15.py -text
@@ -413,3 +414,6 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_cro
 scripts/run_original_native_cross2_B_source_v2.py -text
 src/openai_ns_reconstruction/original_native_cross2_B_source_v2.py -text
 experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_cross2_B_v2.json -text
+scripts/run_original_signed_pullback_difference.py -text
+experiments/root_st073/lei_ren_part1_paper_compliant_current_original_signed_pullback_difference.json -text
+docs/CURRENT_ORIGINAL_SIGNED_PULLBACK_DIFFERENCE_2026_10_22.md -text
