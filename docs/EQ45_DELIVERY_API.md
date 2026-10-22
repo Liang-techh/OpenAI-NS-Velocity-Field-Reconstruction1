@@ -93,3 +93,32 @@ or inherit default-candidate validation results for this changed field.
 
 Source interpretation: docs/VISUAL_TARGET.md (official announcement and paper
 Section2.1). No animation was generated; velocity functions remain the priority.
+
+## Energy-normalized source-aligned candidate (named direct API)
+
+The separately serialized source-aligned child with the recorded positive
+energy-normalization scale can now be evaluated without knowing its artifact
+path:
+
+```python
+from openai_ns_reconstruction.eq45_normalized_bipolar_delivery import velocity
+
+uvw = velocity(0.1, 0.0, 0.1, 0.5)
+```
+
+This wrapper reconstructs and identity-checks the already committed candidate
+with SHA-256
+`c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702`.
+It binds source bipolar SHA
+`8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970`
+and the previously measured common scale `1.8097870818686452`; no coefficient
+is fitted or changed by the delivery wrapper. `default_field().at_points(...)`,
+`grid(...)`, `save_candidate(...)`, and `load_candidate(...)` use the same
+Cartesian `[u,v,w]` contract as the support-connected API.
+
+This is an **experimental source-aligned, energy-normalized candidate**, not a
+canonical or visualization-selected field. Existing momentum/energy-balance
+obstructions remain in force, so `visualization_ready=false`,
+`visual_correspondence_verified=false`, and `pde_validated=false`. The
+serialized candidate's existing provenance vocabulary is preserved unchanged;
+its separate schema/provenance audit is outside this delivery increment.
