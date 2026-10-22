@@ -1,3 +1,13 @@
+# Current handoff: original native inner-B v1 (2026-10-22)
+
+Read docs/CURRENT_ORIGINAL_NATIVE_INNER_B_V1_2026_10_22.md first. The exact source-only result and six lossless artifacts are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_inner_B_v1.json.
+
+Accepted native B nodes are [520, 521, 522, 523, 524, 525, 526, 527, 528, 531, 532, 533, 534, 535]. Remaining native B nodes are [529, 530].
+
+Next task: Implement and independently review the cross-source 529 and 530 endpoint germs, then establish same-source quantitative error correlation. Preserve the 212 cumulative, 213 raw-signed, and 183 reduced error ledgers; do not remove quantitative error packets.
+
+Inner-B v1 report SHA256: fbc4aefecf54530183f9da696da38dc98b4201793c50f4d3f0be3afe8682647b
+
 # Current handoff: original native outer-B v2 (2026-10-22)
 
 Read docs/CURRENT_ORIGINAL_NATIVE_OUTER_B_V2_2026_10_22.md first. The exact source-only result and four saved checkpoints are embedded by experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_outer_B_v2.json.
