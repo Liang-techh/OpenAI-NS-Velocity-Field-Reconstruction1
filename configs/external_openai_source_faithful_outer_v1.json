@@ -1,0 +1,84 @@
+{
+  "schema": "a9_external_source_outer_crosswalk_v1",
+  "task_id": "CR-A9-099",
+  "screened_on": "2026-09-21",
+  "purpose": "Pin and classify the newer source-faithful 166-page manuscript transcription as a provenance-only mathematical reference for completing a callable global velocity field, with emphasis on the post-power-law outer-profile and heat-exterior bridge.",
+  "source_identity": {
+    "workbench_repository": "KokunoYumeto/yang-mills-interacting-workbench",
+    "workbench_commit": "9fd8c271372b5f53bb7f5613118794d6ecd0250f",
+    "source_record_path": "navier-stokes/SOURCE_READING_20260920.json",
+    "source_record_schema": "pinned-external-mathematical-source-v1",
+    "primary_paper_pages": 166,
+    "primary_paper_sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "source_faithful_reconstruction_repository": "KokunoYumeto/openai-navier-stokes-latex",
+    "source_faithful_reconstruction_commit": "5e162f34cd2d3581f890660e81fbf063509085d0",
+    "source_faithful_pdf_sha256": "67bca97d638868c2fcb34b0ef1acdc4918cfcbb1a210afe98f0019a3c93fe8d9",
+    "workbench_mirror_zip_sha256": "997e825e34fa825d189bd301edaa6251e5505710fe294bec99c83a9712558e4c",
+    "independent_reconstruction": true,
+    "official_source_release": false,
+    "independent_mathematical_proof_verification": false,
+    "distinct_from_208_page_analytical_reader": true
+  },
+  "license_and_migration": {
+    "license_status": "no_identified_license_for_paper_or_source_faithful_reconstruction",
+    "source_record_assigns_new_license": false,
+    "direct_source_code_or_text_copy_allowed_by_this_screen": false,
+    "classification": "reimplement_math_only",
+    "migration_scope": "equations_and_structural_schedule_only_no_direct_source_code_or_text_copy",
+    "differences": "Repository implementations remain autonomous numerical realizations. This screen does not assert that any current candidate is source-exact, nor does it import source prose, figures, hidden parameters, or executable code."
+  },
+  "directly_useful_crosswalk": [
+    {
+      "source_locator": "Section 4, Eq. 4.5",
+      "role": "cartesian_leading_velocity_map",
+      "migration_class": "suitable_to_reimplement_or_cross_check",
+      "direct_contribution": "Provides an explicit axis-regular Cartesian [u,v,w] map from profile variables, useful for checking the public velocity API and axis behavior without inferring hidden data."
+    },
+    {
+      "source_locator": "Section 4, Eq. 4.7",
+      "role": "incompressibility_and_radial_pressure_profile_identity",
+      "migration_class": "suitable_to_reimplement_or_cross_check",
+      "direct_contribution": "Supplies profile identities tying radial velocity and pressure derivative to the chosen axial/swirl profiles, reducing arbitrary glue in a global leading-field assembly."
+    },
+    {
+      "source_locator": "Section 4, Lemma 4.8",
+      "role": "heat_exterior_and_reserved_correction_patches",
+      "migration_class": "suitable_to_reimplement",
+      "direct_contribution": "Specifies a source-ordered heat exterior and reserved radial correction intervals, useful for replacing an ad-hoc outer splice while retaining an explicit callable velocity."
+    },
+    {
+      "source_locator": "Appendix A, Eq. A.5 and Eq. A.9-A.13",
+      "role": "post_power_law_outer_completion_schedule",
+      "migration_class": "priority_reimplementation",
+      "direct_contribution": "Gives an explicit stage order after the intermediate power-law region: axial pulse and moment closure, azimuthal-profile interpolation, exterior-slope transition, terminal tail, then heat matching. This is the highest-priority external route for extending the current partial outer field toward a global visualization candidate."
+    }
+  ],
+  "recommended_migration_order": [
+    "retain_current_callable_inner_and_power_law_velocity_identity",
+    "reimplement_source_axial_pulse_and_M_J_closure_as_a_separate_profile_stage",
+    "reimplement_azimuthal_profile_interpolation_and_angular_moment_correction",
+    "reimplement_exterior_slope_transition_and_terminal_tail",
+    "connect_to_heat_exterior_with_source_ordered_compensation",
+    "only_then_run_same_identity_save_load_morphology_and_full_PDE_validation"
+  ],
+  "constraint_governance": {
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_unchanged": true,
+    "forcing_family_changed": false,
+    "normalization_changed": false,
+    "validation_split_changed": false,
+    "residual_thresholds_changed": false,
+    "visual_observables_used_as_pde_evidence": false
+  },
+  "truth_boundary": {
+    "numerical_targets_inferred_from_public_images": false,
+    "hidden_parameters_recovered": false,
+    "source_correspondence_verified": false,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
