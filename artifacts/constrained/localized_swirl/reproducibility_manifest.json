@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "constrained_reconstruction_reproducibility_manifest",
+  "task_id": "CR011-MANIFEST-001",
+  "repository_commit": "7d3298ca6ffed19909cd118e0eb1f1c93ffec9f1",
+  "candidate_family": "localized_swirl_v1",
+  "validation_status": "failed_validation",
+  "truth_boundary": {
+    "paper_exact": false,
+    "full_blowup_proof": false,
+    "exact_original_field": false,
+    "manifest_consistency_is_pde_acceptance": false
+  },
+  "config_binding": {
+    "status": "exact",
+    "note": "Dedicated localized-swirl config; validation thresholds remain the preregistered constrained-project thresholds."
+  },
+  "seeds": {
+    "training": 20260916,
+    "validation": 914027
+  },
+  "files": {
+    "candidate": {
+      "path": "artifacts/constrained/localized_swirl/candidate.json",
+      "git_blob_sha1": "373ef3e11c40de039e00a8e9a059f7a221ede774"
+    },
+    "training": {
+      "path": "artifacts/constrained/localized_swirl/training.json",
+      "git_blob_sha1": "74d8d826e964355e9d43e53bb536a897076c7f86"
+    },
+    "validation": {
+      "path": "artifacts/constrained/localized_swirl/validation.json",
+      "git_blob_sha1": "416f46287e0b3983b2851888438845a9dbcb31e9"
+    },
+    "config": {
+      "path": "configs/constraints_localized_swirl.json",
+      "git_blob_sha1": "0c8fbdfaaf2706d50f2941768ace0797de6e906e"
+    }
+  },
+  "observed_finest_validation": {
+    "step": 0.005,
+    "pde_residual_sampled_max": 1.3562259466450954,
+    "divergence_sampled_max": 0.0005871614704779093
+  },
+  "constraint_snapshot": {
+    "sampled_structure": {
+      "status": "pass",
+      "evidence": "validation.structure.sampled_constraints_pass"
+    },
+    "core_profile_drift": {
+      "status": "pass",
+      "observed": 0.04949132013071976,
+      "threshold": 0.05
+    },
+    "energy_window": {
+      "status": "pass",
+      "observed": [0.7279332360936259, 0.999999999726177],
+      "allowed": [0.1, 10.0]
+    },
+    "core_signs": {
+      "status": "pass"
+    },
+    "pde_residual_max": {
+      "status": "fail",
+      "observed": 1.3562259466450954,
+      "threshold": 0.001
+    },
+    "divergence_max": {
+      "status": "fail",
+      "observed": 0.0005871614704779093,
+      "threshold": 0.00001
+    },
+    "cr009_generalization": {
+      "status": "pending"
+    },
+    "clean_environment_replay": {
+      "status": "pending"
+    }
+  },
+  "acceptance_ready": false,
+  "remaining_blockers": [
+    "PDE residual maximum is above the preregistered threshold.",
+    "Finest sampled divergence maximum is above the preregistered threshold for this candidate.",
+    "CR009 seed/parameter perturbation generalization is incomplete.",
+    "A clean-environment end-to-end generate/load/validate replay has not yet been recorded for this active artifact."
+  ]
+}
