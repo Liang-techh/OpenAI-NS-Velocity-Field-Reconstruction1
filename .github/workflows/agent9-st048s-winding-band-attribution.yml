@@ -1,0 +1,105 @@
+name: agent9-st048s-winding-band-attribution
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_winding_band_attribution.py'
+      - 'tests/test_constrained_st048s_winding_band_attribution.py'
+      - 'docs/external_methods/CR-A9-049-st048s-winding-band-attribution.md'
+      - '.github/workflows/agent9-st048s-winding-band-attribution.yml'
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+jobs:
+  frozen-receipt-attribution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: src
+      PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Warning-clean compile
+        run: python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_winding_band_attribution.py tests/test_constrained_st048s_winding_band_attribution.py
+      - name: Run focused regressions
+        run: python -m pytest -q -W error tests/test_constrained_st048s_winding_band_attribution.py
+      - name: Download immutable upstream receipts
+        run: |
+          mkdir -p inputs/st006 inputs/swirl
+          gh run download 35322722094 --repo "$GITHUB_REPOSITORY" --name ST006-material-paths --dir inputs/st006
+          gh run download 35366730180 --repo "$GITHUB_REPOSITORY" --name ST048-S-piola-temporal-kappa005-material-path --dir inputs/swirl
+          test -f inputs/st006/ST006_material_paths.json
+          test -f inputs/swirl/ST048-S-piola-temporal-kappa005-material-path.json
+      - name: Attribute frozen winding deficit by seed radius
+        run: |
+          mkdir -p outputs
+          python -m openai_ns_reconstruction.constrained_st048s_winding_band_attribution \
+            --st006-report inputs/st006/ST006_material_paths.json \
+            --swirl-report inputs/swirl/ST048-S-piola-temporal-kappa005-material-path.json \
+            --output outputs/CR-A9-049-winding-band-attribution.json \
+            > outputs/CR-A9-049.stdout.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          p = Path('outputs/CR-A9-049-winding-band-attribution.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR-A9-049'
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['production_radial_profile_selected'] is False
+          assert r['analysis_contract']['new_integration'] is False
+          route = r['routing']
+          assert route['largest_candidate_side_winding_deficit_radius'] == 0.6
+          assert route['outer_r12_is_winding_surplus_vs_st006'] is True
+          expected = {
+              '0.6': (0.031485880213265385, -27.815372917048155, 0.8974730038885905),
+              '0.9': (0.02307026629650603, -11.119492527950314, 0.2134992897458489),
+              '1.2': (0.005381022014838848, 38.65676062020111, -0.11097229363443929),
+          }
+          for key, (turns, pct, share) in expected.items():
+              row = r['per_radius'][key]
+              assert abs(row['st048s_temporal_piola_kappa_005']['mean_absolute_turns'] - turns) < 2e-14
+              assert abs(row['kappa_005_vs_st006']['mean_winding_percent_change'] - pct) < 2e-11
+              assert abs(row['kappa_005_vs_st006']['net_winding_deficit_contribution_fraction'] - share) < 2e-13
+          summary = {
+              'head': os.environ['PR_HEAD_SHA'],
+              'report_sha256': r['report_sha256'],
+              'largest_deficit_radius': route['largest_candidate_side_winding_deficit_radius'],
+              'r06_deficit_share': route['inner_r06_share_of_net_deficit'],
+              'r09_deficit_share': route['mid_r09_share_of_net_deficit'],
+              'r12_deficit_share': route['outer_r12_share_of_net_deficit'],
+              'r12_surplus': route['outer_r12_is_winding_surplus_vs_st006'],
+              'truth': r['truth_boundary'],
+          }
+          Path('outputs/CR-A9-049-summary.json').write_text(json.dumps(summary, indent=2, sort_keys=True)+'\n')
+          lines = [
+              '<!-- CR-A9-049-WINDING-BAND-ATTRIBUTION -->',
+              '### CR-A9-049 exact-head frozen winding-band receipt',
+              '',
+              f"`head={os.environ['PR_HEAD_SHA']}`",
+              '',
+              '```json', json.dumps(summary, indent=2, sort_keys=True), '```',
+              '',
+              'Candidate-side routing only. ST006 is a repository baseline, not OpenAI truth; no PDE or visual acceptance promotion is made.',
+          ]
+          Path('outputs/CR-A9-049-summary.md').write_text('\n'.join(lines)+'\n')
+          print(json.dumps(summary, sort_keys=True))
+          PY
+      - name: Publish exact-head receipt
+        run: gh pr comment "${{ github.event.pull_request.number }}" --repo "$GITHUB_REPOSITORY" --body-file outputs/CR-A9-049-summary.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CR-A9-049-winding-band-attribution
+          path: |
+            outputs/CR-A9-049-winding-band-attribution.json
+            outputs/CR-A9-049-summary.json
+          if-no-files-found: error
