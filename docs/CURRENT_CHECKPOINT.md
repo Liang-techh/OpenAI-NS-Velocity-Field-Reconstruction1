@@ -1,3 +1,10 @@
+# Current handoff: original compact C3 outer-amplitude identity (2026-10-23)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_C3_OUTER_AMPLITUDE_IDENTITY_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3_outer_amplitude_identity.json` is SHA-256 `987e1aba8d33a22b325e1f0386a00e522778d296b65f98ac7d826da228292975`.
+Acceptance: `True`; source-only: `True`. C3 source semantics, five ordinary-Z3 seams, scalar action parameters, and the native/C3 identity are scoped to the saved source packet; incoming/control/profile equality, cap transfer, and numerical completion remain false.
+
+Next task: Use the accepted closed leading-E gap without rerunning it.  Bind the remaining raw five N-scaled history gaps through the retained joint numerators, preserve all caps and old errors, and do not replay ancestor proof families.
+
 # Current handoff: original compact Rh seed flat endpoint (2026-10-23)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_RH_SEED_FLAT_ENDPOINT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_Rh_seed_flat_endpoint.json` is SHA-256 `d38140cac45da0e24aa4cfaddccff49f5664a7c55fe71c1465278b22069e8ea2`.
