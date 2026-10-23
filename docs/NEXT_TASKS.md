@@ -1,3 +1,10 @@
+# Current handoff: original compact prefix bound-table certificate (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_PREFIX_BOUND_TABLE_CERTIFICATE_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_prefix_bound_table_certificate.json` is SHA-256 `4d9db833de9ffb378c1dc187dd7c3edf3a15d181806c16f8660767471ca6912f`.
+Saved source-definition acceptance: `True`; source-only: `True`. Bound-table stage: definition=`True`, signed rows=`True`, failed parent preserved=`True`. Partial certificate: geometry/logC=`True`, fixed-mstar=`True` conditional on cached directed evidence only, and 6 channels at C0/C1 (12 coefficient checks) plus 2 volume checks=`True`. Inherited native/relative-mass identities: `True`/`True`. C3/C5 binding=`False`, compact cap=`False`, numeric mean transfer=`False`, global cap=`False`. Remaining bridge gaps: C3/C5 source binding; compact volume same-source bridge; numeric mean enclosure transferred; global compact volume cap.
+
+Next task: Use the bound-table constants and signed-error rows to discharge the remaining C3/C5 source-port and compact-volume cap bridge before any stronger source claim; preserve the failed bound-table evidence, all cached partial certificates, and every inherited cap.
+
 # Current handoff: original compact prefix pressure certificate (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_PREFIX_PRESSURE_CERTIFICATE_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_prefix_pressure_certificate.json` is SHA-256 `80d43e3a535dfb1ecff6788d9f11f356ccf3ca0cca1dc3af1bbf19090afd1d39`.
