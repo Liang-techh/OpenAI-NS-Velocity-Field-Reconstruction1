@@ -1,0 +1,121 @@
+{
+  "acceptance_ready": false,
+  "candidate": "artifacts/constrained/coupled_joint/candidate.json",
+  "dependency_gate_open": false,
+  "evidence": [
+    {
+      "detail": "maximum over finest-step rows h=0.005",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "pde_residual_max",
+      "observed": 1.0022183043210762,
+      "source": "independent held-out validation rows",
+      "status": "fail",
+      "threshold": 0.001
+    },
+    {
+      "detail": "maximum over finest-step rows h=0.005",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "pde_residual_L2",
+      "observed": 2.2215324099175593,
+      "source": "independent held-out validation rows",
+      "status": "fail",
+      "threshold": 0.001
+    },
+    {
+      "detail": "maximum over finest-step rows h=0.005",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "divergence_max",
+      "observed": 0.0036918882656411522,
+      "source": "independent held-out validation rows",
+      "status": "fail",
+      "threshold": 1e-05
+    },
+    {
+      "detail": "maximum over finest-step rows h=0.005",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "divergence_L2",
+      "observed": 0.0006086624401033801,
+      "source": "independent held-out validation rows",
+      "status": "fail",
+      "threshold": 1e-05
+    },
+    {
+      "detail": "sampled structural checks reported by the validation artifact",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "sampled_structure",
+      "observed": true,
+      "source": "candidate validation structure block",
+      "status": "pass",
+      "threshold": true
+    },
+    {
+      "detail": "scaled-core drift compared with preregistered tolerance",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "core_drift",
+      "observed": 0.04949132013071976,
+      "source": "candidate validation structure block",
+      "status": "pass",
+      "threshold": 0.05
+    },
+    {
+      "detail": "validation-time energy range compared with preregistered nontriviality bounds",
+      "evidence_class": "independent_numeric_evidence",
+      "id": "energy_range",
+      "observed": "[0.6850364514075967, 0.999999999726177]",
+      "source": "candidate validation structure block",
+      "status": "pass",
+      "threshold": "[0.1, 10.0]"
+    },
+    {
+      "detail": "at least three checked symbolic ansatz identities; limited to their stated assumptions",
+      "evidence_class": "strict_local_proof",
+      "id": "structure_identities",
+      "observed": 5,
+      "source": "artifacts/constrained/structure_identities.json",
+      "status": "pass",
+      "threshold": ">=3"
+    },
+    {
+      "detail": "candidate-specific independent shell/support result, not merely an operator calibration",
+      "evidence_class": "unresolved",
+      "id": "boundary_support_current_candidate",
+      "observed": null,
+      "source": "current-candidate boundary/support evidence",
+      "status": "pending",
+      "threshold": null
+    },
+    {
+      "detail": "seed/initialization/parameter perturbation generalization remains separately gated",
+      "evidence_class": "unresolved",
+      "id": "cr009_generalization",
+      "observed": null,
+      "source": "CR009 perturbation/generalization evidence",
+      "status": "pending",
+      "threshold": null
+    },
+    {
+      "detail": "generate/load -> independent validator -> diagnostics replay",
+      "evidence_class": "unresolved",
+      "id": "clean_environment_replay",
+      "observed": null,
+      "source": "CR011 clean-environment replay",
+      "status": "pending",
+      "threshold": null
+    }
+  ],
+  "finest_derivative_step": 0.005,
+  "schema_version": 1,
+  "task_states": {
+    "CR005": "IN_PROGRESS",
+    "CR009": "IN_PROGRESS",
+    "CR011": "TODO",
+    "CR012": "TODO"
+  },
+  "truth_boundary": {
+    "full_blowup_proof": false,
+    "paper_exact": false,
+    "small_residual_implies_singularity": false
+  },
+  "validation_points": 4096,
+  "validation_seed": 914027
+}
