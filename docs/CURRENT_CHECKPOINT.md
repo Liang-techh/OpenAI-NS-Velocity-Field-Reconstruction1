@@ -1,3 +1,21 @@
+# Current handoff: original compact joint target numerator transport (2026-10-23)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_JOINT_TARGET_NUMERATOR_TRANSPORT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_joint_target_numerator_transport.json` is SHA-256 `cff727e06c1af18eebeba0bbf027a488128c2021f9feb839bafdfc368b18f133`.
+No saved failure was recorded for this attempt.
+
+Acceptance: `True`; source-only: `True`. This formal stage has ten base source recipes, 20 direct numerator checks, 20 quotient transport checks, and 4 amplitude checks. Actual C3/C5 incoming/control/profile identities, target-gap evaluation, common C1 ball admission, and cap transfer remain false.
+
+Next task: Bind or bound the five raw N-scaled incoming history differences deltaT=T_N-T_C and the amplitude difference a=A_N-A_C on the common source domain using the retained joint numerators and ordinary-Z quotient transport. Then derive the signed response only from those source-bound inputs; preserve the failed predecessor evidence, all retained caps, and the independent reference offset without replaying any prior source family.
+
+# Current handoff: original compact joint target numerator transport (2026-10-23)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_JOINT_TARGET_NUMERATOR_TRANSPORT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_joint_target_numerator_transport.json` is SHA-256 `57886ec72393106056f932b43c3ad30ca05110105b48681f1dcbf3605a4c54ed`.
+No saved failure was recorded for this attempt.
+
+Acceptance: `True`; source-only: `True`. This formal stage has ten base source recipes, 20 direct numerator checks, 20 quotient transport checks, and 4 amplitude checks. Actual C3/C5 incoming/control/profile identities, target-gap evaluation, common C1 ball admission, and cap transfer remain false.
+
+Next task: Bind or bound the five raw N-scaled incoming history differences deltaT=T_N-T_C and the amplitude difference a=A_N-A_C on the common source domain using the retained joint numerators and ordinary-Z quotient transport. Then derive the signed response only from those source-bound inputs; preserve the failed predecessor evidence, all retained caps, and the independent reference offset without replaying any prior source family.
+
 # Current handoff: original compact C3/C5 source bridge (2026-10-23)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_C3_C5_SOURCE_BRIDGE_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3_C5_source_bridge.json` is SHA-256 `b44c587254dc22abde5cd81d42ff940bb7225d6d6fb8bee1b5cdd80ec967569e`.
