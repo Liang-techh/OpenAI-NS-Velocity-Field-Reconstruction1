@@ -1,0 +1,45 @@
+{
+  "task_id": "CR003-EQ45-ODD-ETA-PARITY-CAPACITY-014",
+  "claim_scope": "eq45_existing_odd_eta_parity_capacity_only",
+  "candidate_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "times": [0.25, 0.5, 0.75],
+  "radii": [0.35, 0.7],
+  "z_offsets": [0.25, 0.5],
+  "azimuth_count": 8,
+  "coefficient_steps": [0.04, 0.02],
+  "coefficient_limit": 4.0,
+  "parameter_labels": ["Phi(0,1)", "F(0,1)"],
+  "metric_labels": [
+    "midplane_radial_velocity",
+    "odd_z_axial_velocity",
+    "odd_z_swirl_velocity"
+  ],
+  "baseline_reference_speed_rms": 0.6140528066686848,
+  "baseline_normalized_parity_fingerprint": [
+    -3.363142343431621e-18,
+    0.0,
+    2.413054631412188e-18
+  ],
+  "finest_normalized_response_per_unit_coefficient": [
+    [-0.5517501805621153, 0.0],
+    [0.12431712573317337, 0.0],
+    [-4.266986848228869e-17, 0.1167982757668332]
+  ],
+  "singular_values": [0.565582009527252, 0.1167982757668332],
+  "numerical_rank": 2,
+  "condition_number": 4.842383209974221,
+  "step_refinement_relative_change": 2.113784878430632e-15,
+  "phi_to_odd_swirl_cross_talk_fraction": 7.544417566951038e-17,
+  "swirl_to_poloidal_cross_talk_fraction": 0.0,
+  "interpretation": "The frozen seed's parity-sensitive fingerprint is zero to roundoff. The already-registered dormant Phi(0,1) direction independently activates midplane radial flow and z-odd axial motion, while F(0,1) independently activates z-odd swirl. The two directions are rank-2, well separated (condition about 4.84), and unchanged across the 0.04 -> 0.02 centered-step refinement. Therefore a target requiring broken z-reflection parity does not justify broad basis growth: thaw Phi(0,1) first for poloidal asymmetry, and F(0,1) only if z-odd swirl is independently required.",
+  "truth_boundary": {
+    "velocity_changed": false,
+    "odd_eta_mode_activated_in_production": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
