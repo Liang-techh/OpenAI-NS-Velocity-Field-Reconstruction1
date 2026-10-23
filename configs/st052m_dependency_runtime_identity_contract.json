@@ -1,0 +1,84 @@
+{
+  "schema": "st052m-dependency-runtime-identity-governance/v1",
+  "task_id": "CR002",
+  "base_head": "b490b57ed5d1ccc56ee4e1e44025ec881721dc39",
+  "scope": "Separate authenticated historical source-code identity from the still-unbound external Python/numerical dependency environment used to execute the ST052-M whole-child velocity runtime.",
+  "source_classification": {
+    "user_requirement": [
+      "Provide an explicit callable and saveable/loadable 3D time-varying velocity(x,y,z,t)->[u,v,w].",
+      "Do not make PDE acceptance a prerequisite for honestly labelled callable velocity delivery."
+    ],
+    "public_source_fact": [
+      "The public OpenAI velocity-field visualization supplies qualitative observable structure, not hidden coefficients, frame-time mapping, camera parameters, or a repository-executable field identity."
+    ],
+    "autonomous_design": [
+      "The ST052-M parent replay, whole-child capsule, exact-source Git/runtime authentication, Python module-cache isolation, and dependency-environment policy are repository engineering choices."
+    ],
+    "pending_unknown": [
+      "Hidden OpenAI coefficients and unpublished exact field identity.",
+      "Exact OpenAI frame-time/camera/seed mapping.",
+      "A dependency/build-complete immutable execution-environment identity for the historical ST052 evaluator."
+    ]
+  },
+  "integrated_positive_facts": {
+    "whole_child_bundle_materialized": true,
+    "whole_child_save_load_ready_with_authenticated_exact_source_runtime": true,
+    "exact_source_git_head_tree_authenticated": true,
+    "historical_source_module_graph_cache_isolated": true,
+    "loaded_historical_module_origin_and_git_blob_verified": true,
+    "exact_ci_execution_context_receipt_valid": true
+  },
+  "execution_environment_scope": {
+    "workflow_python_selector": "3.11",
+    "workflow_numpy_requirement": "numpy>=1.24,<3",
+    "workflow_scipy_requirement": "scipy>=1.10,<2",
+    "workflow_sympy_requirement": "sympy>=1.12,<2",
+    "python_micro_version_bound_in_whole_candidate_identity": false,
+    "python_implementation_build_bound_in_whole_candidate_identity": false,
+    "numpy_resolved_version_bound_in_whole_candidate_identity": false,
+    "scipy_resolved_version_bound_in_whole_candidate_identity": false,
+    "sympy_resolved_version_bound_in_whole_candidate_identity": false,
+    "binary_wheel_or_blas_build_identity_bound": false,
+    "external_dependency_runtime_identity_bound": false,
+    "complete_executable_environment_identity_closed": false,
+    "exact_ci_receipt_portable_across_dependency_versions": false
+  },
+  "states": {
+    "standalone_package_parent_runtime_ready": false,
+    "standalone_reproducible_velocity_identity_ready": false,
+    "velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "promotion_requirements": [
+    "Record and bind the resolved Python interpreter identity and every numerical dependency version/build that can affect the historical evaluator, or port the deterministic parent evaluator into a package runtime with an equivalently immutable environment contract.",
+    "Include that execution-environment identity in the whole-candidate identity/load contract.",
+    "Reload the frozen whole-child capsule under the bound environment and replay finite pointwise velocity parity before reconsidering standalone reproducible velocity identity/readiness.",
+    "Keep visual correspondence and PDE validation as independent states even after callable velocity identity is closed."
+  ],
+  "cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_a_bounds": [0.0, 10.0],
+    "forcing_c_bounds": [0.0, 10.0],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  }
+}
