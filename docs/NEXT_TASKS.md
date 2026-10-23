@@ -1,3 +1,13 @@
+# Current handoff: original compact FTC transport (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_TRANSPORT_2026_10_22.md` first. The failure-aware metadata repair report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_transport.json` is SHA256 `c9857568a2e553c1963a94f670be4f6687a4b9c296dd2d10746b323aba64e033` and embeds six raw lossless artifacts plus the 44-artifact failed-attempt union.
+
+The saved source-port consumer failed at native row 262269 because the authenticated product is field-first V0*Pstar. The cached formal algebra pass (32 fresh symbolic normalizations, 9 negative controls, SymPy 1.14.0) is preserved and is not rerun. It records a native formal identity conditional on rho=0, plus the independent old half-S1 IBP coefficient identity; source FTC acceptance and terminal-zero claims remain false. Publication is metadata-only; original source functions and numerical physical values were not evaluated.
+
+The prior static literal-guard review was incomplete and inaccurate: runtime rejected the first physical U product at native row 262269 despite the review passing; this report does not claim that all literal guards passed.
+
+Next task: create a fresh unentered order-independent physical-product source consumer authenticating literal V/Pstar tags and accepting exactly one authenticated Pstar factor and one integer field child, retaining native field-first and old Pstar-first order. Do not copy or reenter the frozen checker, and reuse the saved formal pass without a proof call. Bind the retained volume-error packet only after FTC transport is accepted.
+
 # Current handoff: original signed pullback difference (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_SIGNED_PULLBACK_DIFFERENCE_2026_10_22.md` first. The source-function/algebra-control report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_signed_pullback_difference.json` is SHA256 `4a44b291afb4a0de8f82c652b0e99b4cd6e02eece8c86f44e2e94c76c5e4b9f7` and embeds six raw lossless artifacts.
