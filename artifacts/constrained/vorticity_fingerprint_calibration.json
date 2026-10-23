@@ -1,0 +1,54 @@
+{
+  "task_id": "CR008-VORTICITY-FINGERPRINT-003",
+  "status": "calibration_only",
+  "field": "smooth_axisymmetric_swirl",
+  "time": 0.5,
+  "box": [[-1.5, 1.5], [-1.5, 1.5], [-1.5, 1.5]],
+  "grid_sizes": [17, 25, 33],
+  "levels": [
+    {
+      "grid_size": 17,
+      "omega_peak": 2.0506254831909607,
+      "omega_rms": 0.2541539301203541,
+      "enstrophy_r50": 0.375,
+      "enstrophy_r90": 0.9560661587986472,
+      "enstrophy_absz50": 0.375,
+      "enstrophy_absz90": 0.75,
+      "half_peak_volume_fraction": 0.013637288825564827
+    },
+    {
+      "grid_size": 25,
+      "omega_peak": 2.1323131158479574,
+      "omega_rms": 0.2690090049685957,
+      "enstrophy_r50": 0.3535533905932738,
+      "enstrophy_r90": 0.9762812094883317,
+      "enstrophy_absz50": 0.375,
+      "enstrophy_absz90": 0.75,
+      "half_peak_volume_fraction": 0.015808
+    },
+    {
+      "grid_size": 33,
+      "omega_peak": 2.161666031707381,
+      "omega_rms": 0.27568925843783476,
+      "enstrophy_r50": 0.338020432074749,
+      "enstrophy_r90": 0.9652153257175313,
+      "enstrophy_absz50": 0.28125,
+      "enstrophy_absz90": 0.75,
+      "half_peak_volume_fraction": 0.016556752093942178
+    }
+  ],
+  "medium_to_finest_relative_changes": {
+    "omega_peak": 0.013578839390023363,
+    "omega_rms": 0.0242310981105758,
+    "enstrophy_r50": 0.04595272073698149,
+    "enstrophy_r90": 0.011464678891804952,
+    "enstrophy_absz50": 0.3333333333333333,
+    "enstrophy_absz90": 0.0,
+    "half_peak_volume_fraction": 0.04522336806722702
+  },
+  "local_verification": {
+    "command": "PYTHONPATH=/mnt/data/agent4_vort python -m pytest -q -W error /mnt/data/agent4_vort/tests/test_constrained_vorticity_fingerprint.py",
+    "result": "3 passed in 0.07s"
+  },
+  "truth_boundary": "Synthetic calibration only. These are finite-grid vorticity morphology diagnostics, not measurements of the current repository candidate, not PDE validation, not OpenAI-field identification, and not blow-up evidence."
+}
