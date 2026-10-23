@@ -1,3 +1,10 @@
+# Current handoff: original compact Rh seed flat endpoint (2026-10-23)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_RH_SEED_FLAT_ENDPOINT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_Rh_seed_flat_endpoint.json` is SHA-256 `d38140cac45da0e24aa4cfaddccff49f5664a7c55fe71c1465278b22069e8ea2`.
+Acceptance: `True`; source-only: `True`. Native Rh ordinary-Z3 seed and endpoint claims are scoped to the saved source packet; complete Rc native/C3 amplitude equality, C3 action/seams, cap transfer, and numerical completion remain false.
+
+Next task: Retain the accepted native Rh seed proof without rerunning it.  Bind the separate native and C3 action parameters and C3 frontend seams, then bind the raw N-scaled histories through the saved joint numerators.  Keep complete Rc native/C3 amplitude equality remains false, retain all caps and old errors, and do not replay ancestor proof families.
+
 # Current handoff: original compact outer-amplitude action transport (2026-10-23)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_OUTER_AMPLITUDE_ACTION_TRANSPORT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_outer_amplitude_action_transport.json` is SHA-256 `58dae4fdce3759a26d2cd623be92e06291860d2237c79db5b48e615e23d62bce`.
