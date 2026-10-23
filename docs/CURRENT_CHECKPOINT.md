@@ -1,3 +1,10 @@
+# Current handoff: original compact anchor defect transport (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_ANCHOR_DEFECT_TRANSPORT_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_anchor_defect_transport.json` is SHA-256 `894307338258f38bf488e77c5038e42dd21b3bdfd6052c5d489f595e0f605016`.
+Saved source-definition acceptance: `True`; source-only: `True`; cap and quantitative bridges remain open.
+
+Next task: Transport the remaining upstream/native-versus-exact-memory anchor defect and the native actual correction prefix to the same certified source. Evaluate the signed response only after the source and bound bridge are accepted, while retaining every prior cap and error artifact.
+
 # Current handoff: original compact cached C2 volume source (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_CACHED_C2_VOLUME_SOURCE_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_cached_C2_volume_source.json` is SHA256 `bc3d515069a1cfc95c68298c5cb26d5eeaf7af18ee968dcb0aa005257eabbb72`. Actual source-definition acceptance: `True`; cap bridge remains open. All signed numerical values, error reduction and global closure remain unresolved.
