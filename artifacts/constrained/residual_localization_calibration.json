@@ -1,0 +1,58 @@
+{
+  "domain": {
+    "axial_half_height": 1.0,
+    "radial_half_width": 1.0
+  },
+  "finest": {
+    "axial_tip_share_of_axial_component": 0.803826214016337,
+    "component_energy_fraction": {
+      "axial": 0.9591078849267576,
+      "azimuthal": 0.040892115073235556,
+      "radial": 4.2816722955435e-35
+    },
+    "region_energy_fraction": {
+      "axial_tips": 0.7811790887422005,
+      "core": 0.14593317750733187,
+      "mid": 0.0693809565488392,
+      "radial_collar": 0.003506777201628494
+    },
+    "total_max": 1.6864181549467443,
+    "total_rms": 0.24864441800426176
+  },
+  "fixture": "synthetic axial-tip-dominated momentum residual with small azimuthal background",
+  "grid_sizes": [
+    16,
+    24,
+    40
+  ],
+  "region_thresholds": {
+    "collar_start_fraction": 0.75,
+    "core_radius_fraction": 0.35,
+    "tip_start_fraction": 0.75
+  },
+  "resolution": {
+    "max_component_fraction_delta_to_finest": [
+      0.0004162967818462926,
+      0.00013764574630259485,
+      0.0
+    ],
+    "max_region_fraction_delta_to_finest": [
+      0.013389283445136124,
+      0.008534386456396953,
+      0.0
+    ],
+    "relative_total_rms_delta_to_finest": [
+      0.005308130056109708,
+      0.0017482419461237809,
+      0.0
+    ]
+  },
+  "task_id": "CR008-RESIDUAL-LOCALIZATION-007",
+  "time": 0.5,
+  "truth_boundary": {
+    "openai_correspondence_verified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "synthetic_calibration_only": true
+  }
+}
