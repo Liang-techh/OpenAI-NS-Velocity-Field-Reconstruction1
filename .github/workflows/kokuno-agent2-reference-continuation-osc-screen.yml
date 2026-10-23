@@ -1,0 +1,45 @@
+name: kokuno-agent2-reference-continuation-osc-screen
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_reference_continuation.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_reference_oscillatory_screen.py'
+      - 'tests/test_constrained_kokuno_reference_continuation.py'
+      - 'tests/test_constrained_kokuno_complete_curl.py'
+      - 'tests/test_constrained_kokuno_reference_oscillatory_screen.py'
+      - '.github/workflows/kokuno-agent2-reference-continuation-osc-screen.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reference-continuation-osc-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_reference_continuation.py
+          tests/test_constrained_kokuno_complete_curl.py
+          tests/test_constrained_kokuno_reference_oscillatory_screen.py
+      - name: Generate held-out transfer report
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_reference_oscillatory_screen
+          --count 8
+          --output artifacts/kokuno_agent2/reference_continuation_osc_screen_v5/report.json
+      - name: Show report
+        run: cat artifacts/kokuno_agent2/reference_continuation_osc_screen_v5/report.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-reference-continuation-osc-screen-v5
+          path: artifacts/kokuno_agent2/reference_continuation_osc_screen_v5

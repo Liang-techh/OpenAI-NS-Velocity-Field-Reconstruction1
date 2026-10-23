@@ -1,0 +1,36 @@
+name: kokuno-agent3-radial-stress-report
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_radial_stress.py'
+      - 'src/openai_ns_reconstruction/kokuno_mean_defect.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'tests/test_constrained_kokuno_radial_stress.py'
+      - 'docs/KOKUNO_RADIAL_STRESS_RECONSTRUCTION.md'
+      - '.github/workflows/kokuno-agent3-radial-stress-report.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Run focused radial-stress and upstream mean-defect tests
+        run: python -m pytest -q -W error tests/test_constrained_kokuno_radial_stress.py tests/test_constrained_kokuno_mean_defect.py tests/test_constrained_kokuno_complete_curl.py
+      - name: Generate real-candidate radial-stress report
+        run: python -m openai_ns_reconstruction.kokuno_radial_stress --radial-count 65 --angular-count 16
+      - name: Show report
+        run: cat artifacts/kokuno_agent3/radial_stress_report.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-radial-stress-report
+          path: artifacts/kokuno_agent3/radial_stress_report.json
