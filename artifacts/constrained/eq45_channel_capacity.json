@@ -1,0 +1,36 @@
+{
+  "task_id": "CR003-EQ45-CHANNEL-CAPACITY-004",
+  "status": "diagnostic_only",
+  "paper_exact": false,
+  "pde_validated": false,
+  "purpose": "Pointwise expression-capacity/conditioning audit of the Eq. (4.5) profile mixing, independent of any chosen v0/F/U basis.",
+  "representative_parameters": {
+    "h": 0.005,
+    "q_values": [0.25, 0.5, 0.75],
+    "r_values": [0.0, 0.01, 0.05, 0.25, 0.5]
+  },
+  "findings": {
+    "off_axis_rank": "3 at every sampled r>0 point",
+    "axis_rank": "1 because the v0 and F columns vanish at r=0",
+    "channel_orthogonality": "analytic; sampled normalized cross-dot is numerical zero",
+    "swirl_to_radial_column_norm_ratio": "2*q^(-h), independent of r",
+    "near_axis_conditioning": "raw pointwise condition grows like 1/r because radial/swirl profile values become unobservable on axis",
+    "minimal_handoff": "Do not add a fourth Cartesian velocity channel merely to cure the axis rank loss. Keep Eq. (4.5) mixing and spend basis growth on the 2D profiles v0(X,eta), F(X,eta), U(X,eta), with channel normalization/weights when fitting near-axis samples."
+  },
+  "representative_rows": [
+    {"q":0.25,"r":0.0,"rank":1,"condition":null,"channel_norms":[0.0,0.0,2.0139111001134378]},
+    {"q":0.25,"r":0.01,"rank":3,"condition":100.69555500567189,"channel_norms":[0.02,0.04027822200226875,2.0139111001134378]},
+    {"q":0.25,"r":0.5,"rank":3,"condition":2.0139111001134378,"channel_norms":[1.0,2.0139111001134373,2.0139111001134378]},
+    {"q":0.5,"r":0.0,"rank":1,"condition":null,"channel_norms":[0.0,0.0,1.4191233562003824]},
+    {"q":0.5,"r":0.01,"rank":3,"condition":141.91233562003825,"channel_norms":[0.01,0.020069434970190054,1.4191233562003824]},
+    {"q":0.5,"r":0.5,"rank":3,"condition":2.838246712400765,"channel_norms":[0.5,1.0034717485095026,1.4191233562003824]},
+    {"q":0.75,"r":0.0,"rank":1,"condition":null,"channel_norms":[0.0,0.0,1.1563626667236973]},
+    {"q":0.75,"r":0.01,"rank":3,"condition":173.4544000085546,"channel_norms":[0.006666666666666666,0.013352525938275201,1.1563626667236973]},
+    {"q":0.75,"r":0.5,"rank":3,"condition":3.4690880001710918,"channel_norms":[0.3333333333333333,0.6676262969137601,1.1563626667236973]}
+  ],
+  "local_checks": {
+    "focused_pytest": "3 passed in 0.07s",
+    "py_compile": "exit 0"
+  },
+  "truth_boundary": "This does not solve q(z,t,h), choose profile bases, fit a field, compare an image, or validate Navier-Stokes."
+}
