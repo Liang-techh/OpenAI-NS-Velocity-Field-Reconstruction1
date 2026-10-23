@@ -1,0 +1,73 @@
+{
+  "schema": "constrained_profile_separable_rank_calibration_v1",
+  "task_id": "CR003-PROFILE-SEPARABLE-RANK-010",
+  "inner_seed": {
+    "sigma": 0.5,
+    "maxdegree": 14,
+    "eta_nodes": 257
+  },
+  "sampling": {
+    "X_count": 25,
+    "X_range": [0.001, 0.409],
+    "eta_count": 65,
+    "eta_range": [-0.9, 0.9],
+    "ranks": [1, 2, 3, 4, 6, 8],
+    "rank_rtol": 0.001,
+    "diagnostic_tolerance": 0.001,
+    "classification": "autonomous compression diagnostic, not a PDE or visual acceptance threshold"
+  },
+  "channels": {
+    "phi": {
+      "numerical_rank_at_rtol_1e-3": 4,
+      "smallest_rank_below_1e-3": 6,
+      "levels": [
+        {"rank": 1, "worst_relative_error": 0.15364555315062509, "condition_number": 1.0},
+        {"rank": 2, "worst_relative_error": 0.07362554290548923, "condition_number": 7.042661089530794},
+        {"rank": 3, "worst_relative_error": 0.009909151289590183, "condition_number": 18.334812301127563},
+        {"rank": 4, "worst_relative_error": 0.0013780895726261835, "condition_number": 140.40490680540432},
+        {"rank": 6, "worst_relative_error": 9.916562583934843e-06, "condition_number": 13792.142280595253},
+        {"rank": 8, "worst_relative_error": 5.5185649560268506e-08, "condition_number": 1936042.319439514}
+      ]
+    },
+    "F": {
+      "numerical_rank_at_rtol_1e-3": 4,
+      "smallest_rank_below_1e-3": 4,
+      "levels": [
+        {"rank": 1, "worst_relative_error": 0.24003339532633214, "condition_number": 1.0},
+        {"rank": 2, "worst_relative_error": 0.062452751567604575, "condition_number": 4.178310585337711},
+        {"rank": 3, "worst_relative_error": 0.006309654091861342, "condition_number": 21.826388871879892},
+        {"rank": 4, "worst_relative_error": 0.0005582765567031219, "condition_number": 217.34058269638547},
+        {"rank": 6, "worst_relative_error": 3.1917692675126863e-06, "condition_number": 31669.824772512213},
+        {"rank": 8, "worst_relative_error": 1.7001964911064645e-08, "condition_number": 5780135.963575912}
+      ]
+    },
+    "U": {
+      "numerical_rank_at_rtol_1e-3": 4,
+      "smallest_rank_below_1e-3": 6,
+      "levels": [
+        {"rank": 1, "worst_relative_error": 0.5456879785905905, "condition_number": 1.0},
+        {"rank": 2, "worst_relative_error": 0.13323327907788748, "condition_number": 1.6939217630024646},
+        {"rank": 3, "worst_relative_error": 0.014057914772005149, "condition_number": 8.945948267161548},
+        {"rank": 4, "worst_relative_error": 0.00102717374792892, "condition_number": 86.24687219253319},
+        {"rank": 6, "worst_relative_error": 4.249319515373464e-06, "condition_number": 15469.644774215747},
+        {"rank": 8, "worst_relative_error": 1.4752135416867942e-08, "condition_number": 3399875.8397175004}
+      ]
+    }
+  },
+  "interpretation": {
+    "robust_knee": "All three stacked value/radial-derivative matrices have numerical rank 4 at relative singular-value cutoff 1e-3.",
+    "rank4": "F is already below the autonomous 1e-3 compression tolerance; phi and U sit just above it because derivative fidelity is harder than value fidelity.",
+    "rank6": "Two more data-adapted directions reduce worst relative errors to O(1e-5) or better, but rank-6 condition numbers rise to O(1e4)-O(3e4).",
+    "basis_growth_feedback": "Treat four inner angular directions as the stable knee. Add targeted derivative/poloidal correction directions only when actual morphology requires them; do not blanket-grow every inner channel before solving the exterior/support connection."
+  },
+  "truth_boundary": {
+    "selected_inner_seed_evaluated": true,
+    "velocity_changed": false,
+    "full_velocity_visualization_evaluated": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "note": "This is an expression-capacity/compression audit of the selected finite inner seed. SVD modes are diagnostic and are not claimed to be paper modes or hidden OpenAI parameters."
+  }
+}
