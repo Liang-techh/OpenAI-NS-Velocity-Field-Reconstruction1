@@ -1,0 +1,166 @@
+name: agent7-st052-stable-radial-rotation-variation
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_identity_bound_radial_rotation_variation.py'
+      - 'tests/test_st052_stable_identity_bound_radial_rotation_variation.py'
+      - '.github/workflows/agent7-st052-stable-radial-rotation-variation.yml'
+  push:
+    branches: ['agent7/st052m-stable-radial-rotation-variation-142']
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_identity_bound_radial_rotation_variation.py'
+      - 'tests/test_st052_stable_identity_bound_radial_rotation_variation.py'
+      - '.github/workflows/agent7-st052-stable-radial-rotation-variation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  stable-radial-rotation-variation:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout exact Agent-7 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact event-head checkout and three-file scope
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git diff --name-only c340901736c3508e4e8dc25ffa01ba90d9145882...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/agent7-st052-stable-radial-rotation-variation.yml
+          src/openai_ns_reconstruction/st052_stable_identity_bound_radial_rotation_variation.py
+          tests/test_st052_stable_identity_bound_radial_rotation_variation.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Checkout accepted constrained ST052 runtime lineage
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6a293b3c870d70b8d8aece1b12d68685c9b8b010
+          path: constrained-st052
+          persist-credentials: false
+
+      - name: Checkout exact ST052 source runtime
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused numerical/test runtime
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Run focused radial-rotation regressions
+        run: PYTHONPATH=src python -m pytest -q -W error tests/test_st052_stable_identity_bound_radial_rotation_variation.py
+
+      - name: Materialize exact parent while retaining expected momentum rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert report['pde_validated'] is False
+          assert report['all_numeric_gates_pass'] is False
+          assert report['gates']['momentum_max'] is False
+          assert report['gates']['momentum_L2'] is False
+          print('Exact ST052 parent retained expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated legacy whole-child bundle
+        run: |
+          PYTHONPATH=constrained-st052/src python constrained-st052/scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/capsule_receipt.json
+
+      - name: Execute stable-identity-bound radial rotation diagnostic
+        run: |
+          mkdir -p outputs/ST052-M-stable-radial-rotation-variation
+          PYTHONPATH=src python -m openai_ns_reconstruction.st052_stable_identity_bound_radial_rotation_variation \
+            --constrained-root constrained-st052 \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --report outputs/ST052-M-stable-radial-rotation-variation/receipt.json \
+            | tee outputs/ST052-M-stable-radial-rotation-variation/summary.txt
+
+      - name: Assert stable identity, measurement integrity, and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          p = Path('outputs/ST052-M-stable-radial-rotation-variation/receipt.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR003-ST052M-STABLE-RADIAL-ROTATION-VARIATION-142'
+          assert r['preregister_issue'] == 1202
+          assert r['base_main'] == 'c340901736c3508e4e8dc25ffa01ba90d9145882'
+          i = r['stable_candidate_identity']
+          assert i['candidate_id'] == 'ST052-M-linear-temporal-child-v1'
+          assert i['candidate_semantic_identity_sha256'] == '2b2e743e72e31f69ad4232340f52d48b5759ac8aad1dfb735708112276c0b9c4'
+          assert i['velocity_semantic_identity_sha256'] == '7738013a4fe4cacbfebfb4e8822bb4ee815b1d3bab744b90f9473ad9424f4f41'
+          m = r['measurement']['metrics']
+          assert math.isfinite(m['baseline_rms_speed']) and m['baseline_rms_speed'] > 0.0
+          assert math.isfinite(m['angular_rotation_radial_variation_t050']) and m['angular_rotation_radial_variation_t050'] >= 0.0
+          assert math.isfinite(m['omega_star_range']) and m['omega_star_range'] >= 0.0
+          assert len(m['samples']) == 16
+          assert m['nonzero_variation_floor'] == 1e-10
+          assert isinstance(m['nonzero_radius_dependent_rotation_proxy'], bool)
+          assert r['public_observable']['numerical_target'] is None
+          assert r['protocol']['source_numeric_targets_used'] is False
+          assert r['protocol']['renderer_or_camera_used'] is False
+          d = r['decision']
+          assert d['new_basis_authorized'] is False
+          assert d['coefficient_change_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert d['actual_velocity_changed'] is False
+          assert d['basis_dimension_change'] == 0
+          assert d['direct_visualization_fingerprint_improvement'] == 0.0
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['visual_correspondence_verified'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('candidate_semantic=', i['candidate_semantic_identity_sha256'])
+          print('velocity_semantic=', i['velocity_semantic_identity_sha256'])
+          print('angular_rotation_radial_variation_t050=', m['angular_rotation_radial_variation_t050'])
+          print('omega_star_range=', m['omega_star_range'])
+          print('nonzero_radius_dependent_rotation_proxy=', m['nonzero_radius_dependent_rotation_proxy'])
+          print('next_route=', d['next_route'])
+          PY
+
+      - name: Upload stable radial-rotation receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-stable-identity-bound-radial-rotation-variation
+          path: outputs/ST052-M-stable-radial-rotation-variation/
+          if-no-files-found: error
+
+# Protocol frozen in issue #1202 before numerical execution. No result-sign assertion is preregistered.
