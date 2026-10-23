@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-TEMPORAL-EVIDENCE-SCOPE-001",
+  "scope": "Separate equal-looking time coordinates by evidence role so visualization/export evidence cannot silently become PDE or public-correspondence evidence.",
+  "scopes": {
+    "pde_validation": {
+      "source": "configs/constraints.json",
+      "classification": "autonomous",
+      "time_interval": [0.25, 0.75],
+      "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+      "evidence_role": "pde_validation_only"
+    },
+    "velocity_delivery": {
+      "source": "configs/velocity_delivery_contract.json",
+      "classification": "autonomous",
+      "time_interval": [0.25, 0.75],
+      "blocking_on_pde_validation": false,
+      "evidence_role": "callable_export_domain"
+    },
+    "visualization_reference": {
+      "source": "src/openai_ns_reconstruction/velocity_components.py",
+      "classification": "autonomous",
+      "times": [0.25, 0.5, 0.75],
+      "evidence_role": "visualization_diagnostic_only"
+    },
+    "public_visual_time_mapping": {
+      "source": "docs/VISUAL_TARGET.md",
+      "classification": "pending",
+      "status": "pending",
+      "mapped_times": []
+    }
+  },
+  "evidence_transfer": {
+    "visualization_snapshot_to_pde_validation": false,
+    "pde_failure_blocks_velocity_delivery": false,
+    "snapshot_stability_implies_public_correspondence": false
+  },
+  "claim_status": {
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "truth_boundary": [
+    "The [0.25,0.75] PDE window is an autonomous preregistration choice, not a recovered OpenAI source parameter.",
+    "The callable velocity domain may numerically match the PDE window while remaining a separate delivery scope.",
+    "Reference visualization times are autonomous diagnostics and do not constitute PDE validation samples.",
+    "A stable animation or snapshot sequence does not verify correspondence to unknown public frame times.",
+    "PDE failure does not by itself prohibit saving or displaying a callable velocity field."
+  ]
+}
