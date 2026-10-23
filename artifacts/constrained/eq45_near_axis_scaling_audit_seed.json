@@ -1,0 +1,119 @@
+{
+  "candidate_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "claim_scope": "production_candidate_near_axis_visualization_stability_only",
+  "interpretation": [
+    "For the frozen Eq45 seed, transverse speed approaches O(r) and axial departure from the axis approaches O(r^2) over the tested near-axis radius ladder.",
+    "Azimuthal spreads are at floating-point roundoff, so the sampled core does not show a direction-dependent axis artifact.",
+    "This is a local finite-radius visualization-stability audit, not a PDE, support, paper-exact, hidden-field, singularity, or blow-up claim."
+  ],
+  "rows": [
+    {
+      "axial_departure_orders": [1.9962429483768023, 1.9990608496094366, 1.9997652194478999],
+      "axis_velocity": [0.0, 0.0, 1.1563626667236973],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 2.220446049250313e-16,
+      "time": 0.25,
+      "transverse_orders": [0.9939367826677836, 0.9984849267072453, 0.9996212773351388],
+      "z": 0.0
+    },
+    {
+      "axial_departure_orders": [1.9963519883097025, 1.9990881031479653, 1.9997720324309574],
+      "axis_velocity": [0.0, 0.0, 0.9731189158343841],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 4.440892098500626e-16,
+      "time": 0.25,
+      "transverse_orders": [0.9934617585852068, 0.9983662835455082, 0.9995916235918081],
+      "z": 0.15
+    },
+    {
+      "axial_departure_orders": [1.9963519883097025, 1.9990881031479653, 1.9997720324309574],
+      "axis_velocity": [-0.0, 0.0, 0.9731189158343841],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 4.440892098500626e-16,
+      "time": 0.25,
+      "transverse_orders": [0.993461758585207, 0.9983662835455082, 0.9995916235918081],
+      "z": -0.15
+    },
+    {
+      "axial_departure_orders": [1.994363973639842, 1.9985912462502642, 1.9996478274083183],
+      "axis_velocity": [0.0, 0.0, 1.4191233562003824],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 0.0,
+      "time": 0.5,
+      "transverse_orders": [0.9909022471330214, 0.9977272073853243, 0.9994319045894464],
+      "z": 0.0
+    },
+    {
+      "axial_departure_orders": [1.9946049365180814, 1.9986514657984038, 1.9996628809672965],
+      "axis_velocity": [0.0, 0.0, 1.0987458316351006],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 8.881784197001252e-16,
+      "time": 0.5,
+      "transverse_orders": [0.9901902782294918, 0.99754949699563, 0.9993874945781346],
+      "z": 0.15
+    },
+    {
+      "axial_departure_orders": [1.9946049365180814, 1.9986514657984038, 1.9996628809672965],
+      "axis_velocity": [-0.0, 0.0, 1.0987458316351006],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 8.881784197001252e-16,
+      "time": 0.5,
+      "transverse_orders": [0.9901902782294918, 0.99754949699563, 0.9993874945781346],
+      "z": -0.15
+    },
+    {
+      "axial_departure_orders": [1.9887252646848503, 1.9971823236844781, 1.9992956442510257],
+      "axis_velocity": [0.0, 0.0, 2.0139111001134378],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 8.881784197001252e-16,
+      "time": 0.75,
+      "transverse_orders": [0.9817869070046569, 0.9954533183117185, 0.998863740692984],
+      "z": 0.0
+    },
+    {
+      "axial_departure_orders": [1.9896444858673512, 1.9974119715903902, 1.999353046308492],
+      "axis_velocity": [0.0, 0.0, 1.2245556691779436],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 1.7763568394002505e-15,
+      "time": 0.75,
+      "transverse_orders": [0.9807966203267698, 0.9952067172776512, 0.9988021508524537],
+      "z": 0.15
+    },
+    {
+      "axial_departure_orders": [1.9896444858673512, 1.9974119715903902, 1.999353046308492],
+      "axis_velocity": [-0.0, 0.0, 1.2245556691779436],
+      "max_axial_azimuthal_spread": 0.0,
+      "max_transverse_over_r_azimuthal_spread": 8.881784197001252e-16,
+      "time": 0.75,
+      "transverse_orders": [0.9807966203267702, 0.9952067172776512, 0.9988021508524537],
+      "z": -0.15
+    }
+  ],
+  "sampling": {
+    "azimuth_count": 8,
+    "radii": [0.08, 0.04, 0.02, 0.01],
+    "times": [0.25, 0.5, 0.75],
+    "z_levels": [0.0, 0.15, -0.15]
+  },
+  "schema": "eq45_near_axis_scaling_audit_v1",
+  "summary": {
+    "max_axial_azimuthal_spread": 0.0,
+    "max_axis_transverse_speed": 0.0,
+    "max_finest_axial_departure_order": 1.9997720324309574,
+    "max_finest_transverse_order": 0.9996212773351388,
+    "max_transverse_over_r_azimuthal_spread": 1.7763568394002505e-15,
+    "min_finest_axial_departure_order": 1.9992956442510257,
+    "min_finest_transverse_order": 0.9988021508524537
+  },
+  "task_id": "CR007-EQ45-NEAR-AXIS-SCALING-014",
+  "truth_boundary": {
+    "blowup_proved": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "physical_support_validated": false,
+    "velocity_changed": false,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  }
+}
