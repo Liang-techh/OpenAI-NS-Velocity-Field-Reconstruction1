@@ -1,0 +1,85 @@
+{
+  "schema": "constrained_domain_energy_truncation_calibration_v1",
+  "scope": "synthetic_gaussian_finite_domain_calibration_only",
+  "field": "u=(exp(-(x^2+y^2+z^2)/2),0,0)",
+  "time": 0.5,
+  "analytic_energy_by_half_width": {
+    "1.0": 1.6661535435465524,
+    "2.0": 2.7452757320449934,
+    "3.0": 2.7839794917924037
+  },
+  "report": {
+    "claim_scope": "finite_domain_energy_truncation_observation_only",
+    "time": 0.5,
+    "half_widths": [1.0, 2.0, 3.0],
+    "quadrature_orders": [12, 24, 48],
+    "energy_definition": "0.5 * integral_[cube] |u|^2 dx",
+    "energy_rows": [
+      {
+        "quadrature_order": 12,
+        "energies": [1.6661535435465504, 2.745275722575824, 2.7839501606879744],
+        "captured_fractions_of_largest_cube": [0.5984854064825671, 0.9861080709495916, 1.0],
+        "domain_shell_fractions_of_largest_cube": [0.5984854064825671, 0.3876226644670245, 0.01389192905040841],
+        "outermost_added_shell_fraction": 0.01389192905040841,
+        "energy_monotone_with_domain": true
+      },
+      {
+        "quadrature_order": 24,
+        "energies": [1.6661535435465509, 2.7452757320449894, 2.7839794917923992],
+        "captured_fractions_of_largest_cube": [0.5984791010345545, 0.986097685036289, 1.0],
+        "domain_shell_fractions_of_largest_cube": [0.5984791010345545, 0.3876185840017346, 0.013902314963710924],
+        "outermost_added_shell_fraction": 0.013902314963710924,
+        "energy_monotone_with_domain": true
+      },
+      {
+        "quadrature_order": 48,
+        "energies": [1.666153543546542, 2.745275732044961, 2.7839794917923695],
+        "captured_fractions_of_largest_cube": [0.5984791010345577, 0.9860976850362894, 1.0],
+        "domain_shell_fractions_of_largest_cube": [0.5984791010345577, 0.3876185840017317, 0.013902314963710595],
+        "outermost_added_shell_fraction": 0.013902314963710595,
+        "energy_monotone_with_domain": true
+      }
+    ],
+    "finest_order": 48,
+    "finest_energies": [1.666153543546542, 2.745275732044961, 2.7839794917923695],
+    "finest_captured_fractions_of_largest_cube": [0.5984791010345577, 0.9860976850362894, 1.0],
+    "finest_domain_shell_fractions_of_largest_cube": [0.5984791010345577, 0.3876185840017317, 0.013902314963710595],
+    "finest_outermost_added_shell_fraction": 0.013902314963710595,
+    "quadrature_sensitivity": [
+      {
+        "half_width": 1.0,
+        "entries": [
+          {"quadrature_order": 12, "energy": 1.6661535435465504, "absolute_delta_to_finest": 8.43769498715119e-15, "relative_delta_to_finest": 5.064176119801586e-15},
+          {"quadrature_order": 24, "energy": 1.6661535435465509, "absolute_delta_to_finest": 8.881784197001252e-15, "relative_delta_to_finest": 5.330711705054301e-15},
+          {"quadrature_order": 48, "energy": 1.666153543546542, "absolute_delta_to_finest": 0.0, "relative_delta_to_finest": 0.0}
+        ]
+      },
+      {
+        "half_width": 2.0,
+        "entries": [
+          {"quadrature_order": 12, "energy": 2.745275722575824, "absolute_delta_to_finest": 9.469137030038155e-09, "relative_delta_to_finest": 3.4492480735203154e-09},
+          {"quadrature_order": 24, "energy": 2.7452757320449894, "absolute_delta_to_finest": 2.842170943040401e-14, "relative_delta_to_finest": 1.0352952564525321e-14},
+          {"quadrature_order": 48, "energy": 2.745275732044961, "absolute_delta_to_finest": 0.0, "relative_delta_to_finest": 0.0}
+        ]
+      },
+      {
+        "half_width": 3.0,
+        "entries": [
+          {"quadrature_order": 12, "energy": 2.7839501606879744, "absolute_delta_to_finest": 2.9331104395069474e-05, "relative_delta_to_finest": 1.0535675453623995e-05},
+          {"quadrature_order": 24, "energy": 2.7839794917923992, "absolute_delta_to_finest": 2.9753977059954195e-14, "relative_delta_to_finest": 1.0687570489536229e-14},
+          {"quadrature_order": 48, "energy": 2.7839794917923695, "absolute_delta_to_finest": 0.0, "relative_delta_to_finest": 0.0}
+        ]
+      }
+    ],
+    "tail_beyond_largest_cube_resolved": false,
+    "tail_boundary_statement": "The largest cube is a finite reference window only. Energy outside that cube is unresolved here and requires a larger-domain sweep or an independent analytic support/tail bound.",
+    "visualization_ready": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "blowup_proved": false
+  },
+  "interpretation": "Calibrates nested finite-domain energy and quadrature sensitivity. The largest cube is not an R^3 tail bound.",
+  "visualization_ready": false,
+  "pde_validated": false,
+  "paper_exact": false
+}
