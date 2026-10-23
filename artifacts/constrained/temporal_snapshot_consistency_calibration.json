@@ -1,0 +1,42 @@
+{
+  "calibration": "synthetic nonlinear-in-time field only",
+  "claim_scope": "visualization_time_sampling_only",
+  "direct_velocity_rms": 0.5737765829877689,
+  "levels": [
+    {
+      "max_time_spacing": 0.25,
+      "relative_rms": 0.028034378827721973,
+      "snapshot_count": 3,
+      "vector_error_max": 0.0609795180588973,
+      "vector_error_rms": 0.016085470089954968
+    },
+    {
+      "max_time_spacing": 0.125,
+      "relative_rms": 0.0070168237439893685,
+      "snapshot_count": 5,
+      "vector_error_max": 0.016041104578222273,
+      "vector_error_rms": 0.004026089151253663
+    },
+    {
+      "max_time_spacing": 0.0625,
+      "relative_rms": 0.0017444986847743825,
+      "snapshot_count": 9,
+      "vector_error_max": 0.0036582941436824287,
+      "vector_error_rms": 0.0010009524943765022
+    }
+  ],
+  "openai_field_identified": false,
+  "paper_exact": false,
+  "pde_validated": false,
+  "point_count": 64,
+  "probe_time_count": 23,
+  "probe_time_rule": "23 equally spaced interior times from 0.271 to 0.729",
+  "seed": 914083,
+  "task_id": "CR009-TEMPORAL-SNAPSHOT-CONSISTENCY-007",
+  "time_interval": [
+    0.25,
+    0.75
+  ],
+  "truth_boundary": "Temporal snapshot interpolation consistency is visualization-sampling evidence only, not PDE validation or visual correspondence.",
+  "visual_correspondence_verified": false
+}
