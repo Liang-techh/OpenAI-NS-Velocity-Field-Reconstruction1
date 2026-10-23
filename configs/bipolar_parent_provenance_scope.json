@@ -1,0 +1,91 @@
+{
+  "schema": "bipolar_parent_provenance_scope_v1",
+  "task_id": "CR002-BIPOLAR-PARENT-PROVENANCE-SCOPE-029",
+  "scope": "Govern the experimental bipolar artifact's legacy parent relation without changing candidate bytes or turning relation metadata into a fifth information-source class.",
+  "inputs": {
+    "candidate": "artifacts/delivery/eq45_bipolar/candidate.json",
+    "delivery_state_contract": "configs/delivery_state_contract.json",
+    "constraints": "configs/constraints.json",
+    "project_status": "project_status.json"
+  },
+  "candidate_binding": {
+    "project_status_key": "experimental_bipolar_candidate",
+    "candidate_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+    "parent_sha256": "7227b3f8fa41619e38feedd7519bb7cac6b597a0ffad309ffa5cb8e19cfab763",
+    "schema": "eq45_supported_velocity_candidate_v1",
+    "bipolar_phi_coefficients": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+  },
+  "canonical_source_vocabulary": [
+    "autonomous_design",
+    "pending_unknown",
+    "public_source_fact",
+    "user_requirement"
+  ],
+  "information_classification": {
+    "callable_velocity_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "bipolar_phi01_profile_choice": "autonomous_design",
+    "hidden_openai_numerical_profiles": "pending_unknown"
+  },
+  "legacy_parent_relation": {
+    "path": "classification.eq45_parent",
+    "token": "parent_provenance",
+    "semantic_kind": "artifact_parent_relation",
+    "is_source_classification": false,
+    "may_imply_public_source": false,
+    "may_imply_paper_exact": false,
+    "may_imply_openai_field_identity": false,
+    "may_imply_pde_validation": false
+  },
+  "required_artifact_classifications": {
+    "classification.openai_hidden_profiles": "pending_unknown",
+    "classification.physical_support_transform": "autonomous_design",
+    "classification.taper_parameters": "autonomous_design",
+    "classification.velocity_interface": "user_requirement",
+    "parent_candidate.classification.eq45_backbone": "public_source_fact",
+    "parent_candidate.classification.h": "autonomous_design",
+    "parent_candidate.classification.openai_hidden_profiles": "pending_unknown",
+    "parent_candidate.classification.profile_coefficients": "autonomous_design",
+    "parent_candidate.classification.profile_family": "autonomous_design",
+    "parent_candidate.classification.time_interval": "autonomous_design",
+    "parent_candidate.classification.velocity_interface": "user_requirement",
+    "parent_candidate.profile_basis.classification.basis_shape": "autonomous_design",
+    "parent_candidate.profile_basis.classification.coefficient_values": "autonomous_design",
+    "physical_taper.classification": "autonomous_design"
+  },
+  "cr001_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "delivery_truth_boundary": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "parent_provenance -> public_source_fact",
+    "parent_provenance -> paper_exact",
+    "parent_provenance -> openai_field_identified",
+    "parent_provenance -> pde_validated",
+    "velocity_export_ready -> pde_validated",
+    "fresh_or_training_residual_improvement -> pde_validated"
+  ],
+  "artifact_mutation": false
+}
