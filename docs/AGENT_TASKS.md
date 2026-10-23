@@ -1,3 +1,10 @@
+# Current handoff: original compact upstream mean identity (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_UPSTREAM_MEAN_IDENTITY_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_upstream_mean_identity.json` is SHA-256 `4ba31406f8084d17356aa47206e19c62c3a96bace42a3828b0fbd4fdaed6c8be`.
+The native leading-background mean and exact numeric baseline are identical through ordinary Z3; the recovered Q baseline identity follows through Z2. Relative mass is source-bound to Pstar*H_m. Prefix cap transfer, geometry joins, signed numerical response and global closure remain open. All old errors are retained.
+
+Next task: certify the same-source complete-prefix pressure/correction bounds and physical volume geometry, then compute signed Evol with the independent old reference offset retained.
+
 # Current handoff: original compact anchor defect transport (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_ANCHOR_DEFECT_TRANSPORT_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_anchor_defect_transport.json` is SHA-256 `894307338258f38bf488e77c5038e42dd21b3bdfd6052c5d489f595e0f605016`.
