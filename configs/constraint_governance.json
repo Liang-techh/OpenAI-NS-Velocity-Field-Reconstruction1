@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "baseline": "constraints.json",
+  "scope": "CR001/CR002 constrained-reconstruction acceptance contract; this file governs drift, not PDE acceptance",
+  "protected_paths": [
+    "schema_version",
+    "source_map",
+    "units",
+    "equation",
+    "nu",
+    "domain.physical",
+    "domain.evaluation_box",
+    "domain.support",
+    "domain.boundary",
+    "domain.time_interval",
+    "domain.initial_condition",
+    "domain.pressure_gauge",
+    "structure.h",
+    "structure.tau",
+    "structure.radial_scale",
+    "structure.axial_scale",
+    "structure.leading_swirl_axial_scale",
+    "structure.symmetry",
+    "structure.core_probe",
+    "structure.core_sign_requirements",
+    "forcing.mode",
+    "forcing.bump",
+    "forcing.spatial_factor",
+    "forcing.temporal_factor",
+    "forcing.potential",
+    "forcing.definition",
+    "forcing.parameters",
+    "forcing.restriction",
+    "nontriviality",
+    "optimization.seed",
+    "optimization.sampling",
+    "optimization.interior_points",
+    "optimization.maximum_function_evaluations",
+    "optimization.loss_weights",
+    "optimization.hard_constraints",
+    "validation.seed",
+    "validation.held_out_points",
+    "validation.times",
+    "validation.operator",
+    "validation.derivative_steps",
+    "validation.quadrature_orders_per_axis",
+    "validation.vary_one_at_a_time",
+    "validation.norms",
+    "validation.thresholds",
+    "validation.spectral_report",
+    "validation.acceptance",
+    "validation.failure_policy",
+    "validation.time_derivatives",
+    "validation.scaled_core_profile_metric",
+    "excluded_claims"
+  ],
+  "variant_allowed": [
+    "experiment_id",
+    "optimization.candidate_parameter_bounds",
+    "parent_experiment",
+    "change_reason",
+    "experiment-specific nested blocks"
+  ],
+  "seed_separation": {
+    "training_path": "optimization.seed",
+    "validation_path": "validation.seed",
+    "must_differ": true
+  },
+  "semantic_source_classification": "docs/CONSTRAINT_SOURCES.md",
+  "known_findings": [
+    {
+      "code": "duplicate_experiment_id",
+      "value": "tensor_correction_stage1",
+      "paths": [
+        "constraints_tensor.json",
+        "constraints_temporal_swirl.json",
+        "constraints_localized_swirl.json",
+        "constraints_axial_swirl.json",
+        "constraints_quintic_swirl.json",
+        "constraints_inner_swirl.json"
+      ],
+      "status": "pending_metadata_repair",
+      "acceptance_impact": "Numerical thresholds are unchanged, but embedded experiment_id is not a unique artifact identity for these files."
+    }
+  ],
+  "truth_boundary": {
+    "acceptance_contract_pass": "means protected preregistered fields did not drift and train/validation seeds remain separated",
+    "metadata_identity_pass": "requires unique embedded experiment_id values",
+    "pde_acceptance": "not evaluated by this governance audit"
+  }
+}
