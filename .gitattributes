@@ -421,3 +421,7 @@ scripts/run_original_compact_ftc_transport.py -text
 src/openai_ns_reconstruction/original_compact_ftc_transport.py -text
 experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_transport.json -text
 docs/CURRENT_ORIGINAL_COMPACT_FTC_TRANSPORT_2026_10_22.md -text
+scripts/run_original_compact_ftc_port_binding.py -text
+src/openai_ns_reconstruction/original_compact_ftc_port_binding.py -text
+experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_port_binding.json -text
+docs/CURRENT_ORIGINAL_COMPACT_FTC_PORT_BINDING_2026_10_22.md -text

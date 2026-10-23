@@ -1,3 +1,11 @@
+# Current handoff: original compact FTC port binding (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_PORT_BINDING_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_port_binding.json` is SHA256 `cc15d8dadfc3cd269f13a64f4ed48e5451be7ae4405af372ddcab95bb1ae2c70`. It preserves six lossless artifacts and the complete failed construction result.
+
+The four recipe gates passed individually, but aggregate FTC transport failed on the old Q (three residuals) and old Q_y (two residuals) groups. The semantic mismatch is the compact_functions producer order U 30709–12, M 30713–16, U_y 30717–20, M_y 30721–24 versus the consumer's swapped middle labels. All 630 literal product guards are authenticated and no old-source physical bug is claimed.
+
+Next task: Create a fresh unentered cached-witness semantic-port reconciliation. Authenticate compact_functions producer field order and source q/q_y paths, correct the U_y/M labels, and reuse the 54 passed plus 5 failed residual witnesses in a fresh five-difference proof only. Do not replay entered codec, proof, or normalizer code; do not evaluate source functions numerically or delete retained caps.
+
 # Current handoff: original compact FTC transport (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_TRANSPORT_2026_10_22.md` first. The failure-aware metadata repair report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_transport.json` is SHA256 `c9857568a2e553c1963a94f670be4f6687a4b9c296dd2d10746b323aba64e033` and embeds six raw lossless artifacts plus the 44-artifact failed-attempt union.
