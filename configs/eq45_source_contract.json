@@ -33,22 +33,22 @@
   "source_classification": [
     {
       "item": "Eq. (4.1) similarity coordinates and Eq. (4.5) leading Cartesian velocity formula",
-      "classification": "public_source",
+      "classification": "public_source_fact",
       "source": "docs/VELOCITY_FORMULAS.md"
     },
     {
       "item": "callable velocity(x,y,z,t)->[u,v,w] as the immediate engineering deliverable",
-      "classification": "user_required",
+      "classification": "user_requirement",
       "source": "docs/PROJECT_GOAL.md"
     },
     {
       "item": "finite numerical choices such as h, sigma, radial degree, eta nodes, fit weights and visualization tolerances",
-      "classification": "autonomous",
+      "classification": "autonomous_design",
       "source": "docs/VELOCITY_FORMULAS.md"
     },
     {
       "item": "final numerical profile data identifying the OpenAI field and full exterior/correction coefficients",
-      "classification": "pending",
+      "classification": "pending_unknown",
       "source": "docs/VELOCITY_FORMULAS.md"
     }
   ],
