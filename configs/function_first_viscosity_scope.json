@@ -1,0 +1,48 @@
+{
+  "schema": "function_first_viscosity_scope_v1",
+  "task_id": "CR002-VISCOSITY-SCOPE-009",
+  "scope": "Keep the active CR001 PDE viscosity separate from the viscosity normalization used by the selected function-first near-axis profile recurrence.",
+  "active_problem": {
+    "config_path": "configs/constraints.json",
+    "nu_key": "nu",
+    "expected_nu": 0.01,
+    "classification": "autonomous_design",
+    "provenance": "docs/CONSTRAINT_SOURCES.md"
+  },
+  "selected_function_first_profile": {
+    "artifact_path": "artifacts/function_first/core_series/smooth_parameters/selected/samples.json",
+    "metadata_key": "viscosity",
+    "expected_profile_equation_nu": 1.0,
+    "classification": "autonomous_design",
+    "implementation_path": "src/openai_ns_reconstruction/paper_core_series.py",
+    "scope": "finite near-axis profile recurrence for Eqs. (4.9)/(4.13), not the full physical PDE validator"
+  },
+  "compatibility": {
+    "same_viscosity_required_for_direct_pde_evidence_transfer": true,
+    "direct_pde_evidence_transfer_allowed": false,
+    "explicit_mapping_required_when_values_differ": true,
+    "mapping_status": "pending_unknown",
+    "allowed_resolution_paths": [
+      "derive_and_independently_verify an explicit nondimensional/rescaling map before transferring PDE evidence",
+      "register a new experiment version whose physical PDE viscosity matches the function-first profile normalization"
+    ],
+    "does_not_block": [
+      "calling or saving the near-axis development profile inside its declared domain",
+      "using the profile as a visualization/representation development seed with truthful labels"
+    ]
+  },
+  "claim_status": {
+    "function_first_profile_callable": true,
+    "function_first_profile_pde_contract_compatible": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false
+  },
+  "truth_boundary": [
+    "The active constrained PDE experiment uses nu=0.01 as an autonomous project choice.",
+    "The selected PaperCoreSeries artifact records viscosity=1.0 for its near-axis profile-equation recurrence.",
+    "Near-axis profile-equation residuals at viscosity=1.0 cannot be transferred directly as CR001 physical PDE evidence at nu=0.01 without an explicit verified mapping or a new preregistered experiment.",
+    "This scope mismatch does not make a callable development velocity illegal to save, inspect, or visualize.",
+    "Resolving viscosity scope does not by itself establish OpenAI visual correspondence, PDE validity, paper exactness, or blow-up."
+  ]
+}
