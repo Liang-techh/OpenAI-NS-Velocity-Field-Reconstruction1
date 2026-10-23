@@ -1,6 +1,6 @@
 {
   "family": "coupled_velocity_v1",
-  "candidate_sha256": "a8c9e4b4536409e91c3cd06937e625f2085c475ad7f8c717ccd23c83d804e381",
+  "candidate_sha256": "1ab8793073c69ebef59c4fdbd1888e181b1a6bf3aadd6a018eb7b21748dcb65f",
   "components": [
     "u",
     "v",
@@ -12,7 +12,7 @@
     0.25,
     0.75
   ],
-  "compact_support": "x\u00b2+y\u00b2<4 and |z|<2; exact zero exterior",
+  "compact_support": "x²+y²<4 and |z|<2; exact zero exterior",
   "visual_correspondence": "not verified",
   "pde_acceptance": "failed; see coupled_joint validation",
   "grid_layout": [
