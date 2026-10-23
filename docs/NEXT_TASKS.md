@@ -1,3 +1,10 @@
+# Current handoff: original compact prefix pressure certificate (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_PREFIX_PRESSURE_CERTIFICATE_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_prefix_pressure_certificate.json` is SHA-256 `80d43e3a535dfb1ecff6788d9f11f356ccf3ca0cca1dc3af1bbf19090afd1d39`.
+Saved source-definition acceptance: `False`; source-only: `True`. Partial certificate: geometry/logC=`False`, fixed-mstar=`False` conditional on cached directed evidence only, and 6 channels at C0/C1 (12 coefficient checks) plus 2 volume checks=`False`. Inherited native/relative-mass identities: `True`/`True`. C3/C5 binding=`False`, compact cap=`False`, numeric mean transfer=`False`, global cap=`False`. Remaining bridge gaps: geometry/logC binding; fixed-mstar enclosure (cached directed conditional); 6 channels at C0/C1 (12 coefficient checks); 2 volume dominance checks; C3/C5 source binding; compact volume same-source bridge; numeric mean enclosure transferred; global compact volume cap.
+
+Next task: Bind and verify C3 terminal_N_scaled_histories/N = native incoming 258646..49 and exact C3 controls/profile = C5 system / deltaV 260375 / 378 / 382 / 387 through Z3; only then apply the Duhamel triangle / pressure bound and evaluate signed Evol source errors. Do not require additional inventory or ancestor reruns; preserve all cached partial certificates and old caps.
+
 # Current handoff: original compact upstream mean identity (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_UPSTREAM_MEAN_IDENTITY_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_upstream_mean_identity.json` is SHA-256 `4ba31406f8084d17356aa47206e19c62c3a96bace42a3828b0fbd4fdaed6c8be`.
