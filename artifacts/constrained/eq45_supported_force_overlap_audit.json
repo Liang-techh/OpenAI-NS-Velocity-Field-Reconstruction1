@@ -1,0 +1,99 @@
+{
+  "schema": "eq45_supported_force_overlap_audit_v1",
+  "task_id": "CR004-EQ45-SUPPORT-FORCE-OVERLAP-018",
+  "base_commit": "34f8ec692eeeb5b22e89a82b9e4dd6dce9f8721a",
+  "classification": {
+    "physical_support_cylinder": "user_requirement_and_integrated_autonomous_connection",
+    "restricted_force_family": "preregistered_project_constraint",
+    "quadrature_and_overlap_diagnostic": "autonomous_validation_design"
+  },
+  "contract": {
+    "force_family": "RestrictedForce(a,c)",
+    "force_probe_time": 0.5,
+    "velocity_taper": "AxisymmetricPhysicalTaper",
+    "radial_support": 2.0,
+    "axial_half_height": 2.0,
+    "radial_plateau_q": 0.64,
+    "axial_plateau_q": 0.64,
+    "radial_plateau_radius": 1.6,
+    "axial_plateau_half_height": 1.6,
+    "support_relation": "force and supported velocity both vanish exactly at/outside r=2 or |z|=2",
+    "plateau_relation": "the force is not restricted to the unchanged velocity plateau"
+  },
+  "quadrature": {
+    "method": "axisymmetric tensor Gauss-Legendre in (r,z), evaluated through RestrictedForce.__call__ at theta=0 with analytic 2*pi*r measure",
+    "orders": [24, 32, 48],
+    "basis_channels": {
+      "a_poloidal": {
+        "coefficients": {"a": 1.0, "c": 0.0},
+        "order_24": {
+          "total_l2_sq": 19.005295758604483,
+          "plateau_l2_sq": 14.332867559218045,
+          "collar_l2_sq": 4.672428199386438,
+          "plateau_fraction": 0.754151250328686,
+          "collar_fraction": 0.24584874967131395
+        },
+        "order_32": {
+          "total_l2_sq": 19.005146874875038,
+          "plateau_l2_sq": 14.33286755922284,
+          "collar_l2_sq": 4.672279315652197,
+          "plateau_fraction": 0.754157158247012,
+          "collar_fraction": 0.24584284175298796
+        },
+        "order_48": {
+          "total_l2_sq": 19.005077084192404,
+          "plateau_l2_sq": 14.332867559222864,
+          "collar_l2_sq": 4.67220952496954,
+          "plateau_fraction": 0.7541599276723965,
+          "collar_fraction": 0.2458400723276035
+        }
+      },
+      "c_swirl": {
+        "coefficients": {"a": 0.0, "c": 1.0},
+        "order_24": {
+          "total_l2_sq": 8.302759041345743,
+          "plateau_l2_sq": 4.111119978693242,
+          "collar_l2_sq": 4.1916390626525,
+          "plateau_fraction": 0.49515106463054676,
+          "collar_fraction": 0.5048489353694532
+        },
+        "order_32": {
+          "total_l2_sq": 8.302855180412745,
+          "plateau_l2_sq": 4.111119978693242,
+          "collar_l2_sq": 4.191735201719503,
+          "plateau_fraction": 0.4951453312580689,
+          "collar_fraction": 0.5048546687419311
+        },
+        "order_48": {
+          "total_l2_sq": 8.302859836269672,
+          "plateau_l2_sq": 4.111119978693275,
+          "collar_l2_sq": 4.191739857576397,
+          "plateau_fraction": 0.4951450536036423,
+          "collar_fraction": 0.5048549463963578
+        }
+      }
+    },
+    "order_32_to_48_sensitivity": {
+      "a_poloidal_total_relative_change": 3.6722125527160693e-06,
+      "a_poloidal_collar_fraction_absolute_change": 2.769425384463453e-06,
+      "c_swirl_total_relative_change": 5.60753405269167e-07,
+      "c_swirl_collar_fraction_absolute_change": 2.776544266724912e-07
+    }
+  },
+  "conclusion": {
+    "outer_support_compatible": true,
+    "previous_force_coefficients_transferable_without_revalidation": false,
+    "reason": "Although the force and supported velocity share the same exact outer cylinder, about 24.584% of the a-channel force L2 energy and 50.485% of the c-channel force L2 energy lie in the collar where the velocity is changed by the support transform. Force coefficients fitted on the untapered parent therefore cannot be treated as validated coefficients for the supported child.",
+    "next_agent2_step": "Once an independent supported-child residual operator is available, re-project only the same preregistered a,c force family on the supported child; do not add a residual-defined forcing direction."
+  },
+  "truth_boundary": {
+    "velocity_changed": false,
+    "force_family_changed": false,
+    "force_refit_performed": false,
+    "pde_validated": false,
+    "visualization_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
