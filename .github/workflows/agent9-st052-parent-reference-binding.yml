@@ -1,0 +1,71 @@
+name: agent9-st052-parent-reference-binding
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_parent_reference_binding.py'
+      - 'tests/test_st052_parent_reference_binding.py'
+      - 'scripts/agent9_verify_st052_parent_reference_binding.py'
+      - '.github/workflows/agent9-st052-parent-reference-binding.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-parent-binding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout candidate branch
+        uses: actions/checkout@v4
+        with:
+          path: candidate
+
+      - name: Checkout exact ST052-M source head
+        uses: actions/checkout@v4
+        with:
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-exact
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install candidate package
+        working-directory: candidate
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused parent-binding tests
+        working-directory: candidate
+        run: python -m pytest -q -W error tests/test_st052_parent_reference_binding.py
+
+      - name: Replay exact-source parent binding
+        working-directory: candidate
+        run: |
+          mkdir -p artifacts/agent9/st052-parent-reference-binding
+          python scripts/agent9_verify_st052_parent_reference_binding.py \
+            --source-root ../source-exact \
+            --out artifacts/agent9/st052-parent-reference-binding/report.json
+          python - <<'PY'
+          import hashlib, json, pathlib
+          p = pathlib.Path('artifacts/agent9/st052-parent-reference-binding/report.json')
+          r = json.loads(p.read_text())
+          assert r['binding']['exact_source_parent_passed'] is True
+          assert r['binding']['perturbed_parent_rejected'] is True
+          assert r['runtime_parent_behavior_bound_on_frozen_reference'] is True
+          assert r['full_st052_parent_materialized_here'] is False
+          assert r['parent_artifact_sha256_assigned'] is False
+          assert r['complete_candidate_save_load_ready'] is False
+          assert r['visualization_ready'] is False
+          assert r['pde_validated'] is False
+          print('report_sha256=' + hashlib.sha256(p.read_bytes()).hexdigest())
+          PY
+
+      - name: Upload binding receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST052-M-parent-reference-binding
+          path: candidate/artifacts/agent9/st052-parent-reference-binding/report.json
+          if-no-files-found: error
