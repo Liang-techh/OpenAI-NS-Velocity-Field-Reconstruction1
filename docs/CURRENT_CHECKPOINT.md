@@ -1,3 +1,11 @@
+# Current handoff: original compact volume-error source packet (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_VOLUME_ERROR_SOURCE_PACKET_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_volume_error_source_packet.json` is SHA 256 `b554f056f73b1f038d9c12b162e95d24b50d1e7c90173364496e09fd2b74029f`.
+
+SOURCE GRAPH FAILED; ARCHIVED ROW/N PROVENANCE PASSED; CAP BRIDGE OPEN. Attempt status `failed`; source packet defined `False`; cap identity and quantitative error reduction remain false. The complete saved result and retained cap provenance are immutable, and no old source consumer was replayed.
+
+Next task: Create a fresh unentered C2 source-port consumer using the saved successful source_contract and retained_cap_provenance. Native U and background V archives export six or more ordinary-Z rows, while this entry required exactly three and failed before producing a graph. Authenticate the C2 prefix explicitly and implement a genuinely new bounded constructor, without copying or reentering the frozen builder or repeating the passed row/N joins. Keep the physical background Q lift Pstar once, separate Rc_N/Rc_O, ordinary Z1, all caps, and the unresolved numeric-baseline/prefix-error bridge.
+
 # Current handoff: original compact FTC semantic witness (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_SEMANTIC_WITNESS_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_semantic_witness.json` is SHA256 `e03410d1d4575377402ce3887b863a0610694b8917346090ffcc7d3b946166c9`. Fresh five-witness reconciliation accepted: `True`. Cached source proofs and ancestor code were not rerun. All terminal-zero, native/old equality, quantitative error reduction, physical completion and global five-moment gates remain false.
