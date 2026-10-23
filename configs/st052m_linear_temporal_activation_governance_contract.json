@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-LINEAR-TEMPORAL-GOVERNANCE-097",
+  "purpose": "Keep the fixed linear temporal activation from PR #587 as a distinct time-dependent velocity representation whose endpoint identities, target-free morphology, and path evidence cannot be laundered into static-child delivery or PDE evidence.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "97d1649da5913402003d3e62dacdf4c88208310d",
+    "temporal_pr": 587,
+    "temporal_head": "0b93819095f6c8576a7571bdc2d2fbef4154944d",
+    "temporal_base_head": "0ddf5f6b321ba78e27aa3ca3e073ef593e55869a",
+    "static_endpoint_pr": 559,
+    "static_endpoint_head": "39b106ad8cb8df2064cabead3a12682089575e74",
+    "dedicated_workflow_run": 35428790564,
+    "standard_tests_run": 35428790464,
+    "st052_replay_run": 35428790494,
+    "all_three_workflow_conclusions": "success"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_save_load_velocity_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "linear_activation_law_g_of_t": "autonomous_design",
+    "coupled_tau_beta_activation": "autonomous_design",
+    "path_seed_solver_and_morphology_protocol": "autonomous_design",
+    "cr001_validation_contract": "autonomous_design",
+    "openai_hidden_velocity_parameters": "pending_unknown",
+    "openai_hidden_time_parameterization": "pending_unknown"
+  },
+  "temporal_representation": {
+    "role": "target_free_expression_capacity_candidate",
+    "time_interval": [0.25, 0.75],
+    "activation_formula": "g(t)=2*(t-0.25)",
+    "activation_derivative": 2.0,
+    "redistribution_kappa": 0.05,
+    "taper_tau_formula": "tau(t)=0.05*g(t)",
+    "taper_tau_derivative": 0.1,
+    "shoulder_beta_formula": "beta(t)=0.08837490297155456*g(t)",
+    "shoulder_beta_derivative": 0.17674980594310912,
+    "post_transform_common_scale": 1.0,
+    "parameter_scan_performed": false,
+    "velocity_is_linear_interpolation_of_endpoint_velocities": false,
+    "time_law_is_part_of_candidate_identity": true,
+    "materialized_on_live_constrained_ancestry": false,
+    "versioned_candidate_id_assigned": false,
+    "versioned_candidate_sha_assigned": false,
+    "save_load_contract_registered": false,
+    "unified_velocity_api_registered": false,
+    "velocity_export_ready": false,
+    "production_candidate_selected": false
+  },
+  "endpoint_identities": {
+    "t025_activation": 0.0,
+    "t025_identity": "untapered_st052m_kappa005_redistributed_control",
+    "t075_activation": 1.0,
+    "t075_identity": "static_pr559_local_swirl_energy_child",
+    "endpoint_identity_implies_interior_identity": false,
+    "endpoint_identity_implies_material_path_identity": false,
+    "same_time_pointwise_evidence_may_transfer_only_when_protocol_and_functional_identity_are_explicit": true,
+    "whole_interval_evidence_requires_temporal_child_specific_replay": true
+  },
+  "time_derivative_semantics": {
+    "generic_identity": "d_t T(g(t),u(t)) = D_u T[g,u] d_t u + g_prime(t) partial_g T[g,u]",
+    "activation_has_nonzero_time_derivative": true,
+    "extra_transform_time_derivative_terms_present_in_general": true,
+    "static_child_time_derivative_receipt_transfers": false,
+    "parent_pressure_transfers": false,
+    "parent_restricted_forcing_fit_transfers": false,
+    "parent_or_static_momentum_residual_receipt_transfers": false,
+    "fresh_exact_child_time_derivative_required_for_pde_promotion": true,
+    "fresh_compatible_pressure_and_restricted_forcing_required_for_pde_promotion": true
+  },
+  "energy_semantics": {
+    "reference_time": 0.25,
+    "reference_energy_relative_error_reported": 0.0,
+    "reason_reference_energy_closes": "exact_identity_with_redistributed_control_at_t025",
+    "reference_time_identity_is_valid_nontriviality_evidence": true,
+    "reference_time_identity_implies_all_validation_time_energy_acceptance": false,
+    "order64_descriptive_energy_replaces_cr001_24_48_96_ladder": false,
+    "full_cr001_energy_checks_required_before_scientific_promotion": true
+  },
+  "pr587_evidence_scope": {
+    "clean_linear_temporal_activation_capacity": true,
+    "off_midplane_path_count": 48,
+    "path_solver": "DOP853",
+    "ramp_mean_turns_relative_percent": -0.8599,
+    "ramp_mean_pair_axial_separation_relative_percent": -4.8523,
+    "ramp_tip_pair_axial_separation_relative_percent": -19.8252,
+    "midtime_enstrophy_aspect_relative_percent": 0.9974,
+    "midtime_smooth_tip_radial_rms_relative_percent": -1.4031,
+    "late_field_matches_static_pr559_on_frozen_grid_abs_max": 0.0,
+    "sampled_cartesian_fd_divergence_max": 5.2072929301871795e-09,
+    "sampled_divergence_is_cr001_heldout_acceptance": false,
+    "public_openai_numeric_image_target_used": false,
+    "visual_acceptance_threshold_used": false,
+    "heldout_full_momentum_evaluated": false,
+    "may_support_temporal_expression_capacity": true,
+    "may_support_temporal_child_specific_path_tradeoff": true,
+    "may_support_target_free_morphology_direction": true,
+    "counts_as_visual_correspondence_verified": false,
+    "counts_as_pde_validated": false
+  },
+  "static_evidence_transfer": {
+    "static_pr559_full_interval_material_paths_transfer_to_temporal_child": false,
+    "static_pr583_three_time_render_receipt_transfers_wholesale": false,
+    "static_pr576_three_time_morphology_receipt_transfers_wholesale": false,
+    "t075_same_time_pointwise_static_identity_can_be_replayed_as_equivalence_evidence": true,
+    "t025_control_identity_can_be_replayed_as_equivalence_evidence": true,
+    "interior_time_t050_requires_temporal_child_specific_evidence": true,
+    "material_paths_require_temporal_history_specific_evidence": true
+  },
+  "delivery_identity_requirements": {
+    "automatic_promotion_from_pr587_allowed": false,
+    "required_for_materialization": [
+      "exact_functional_binding_to_pr587_time_law",
+      "versioned_candidate_id_and_sha",
+      "deterministic_save_load_replay",
+      "unified_velocity_xyzt_api_replay",
+      "finite_output_and_support_checks"
+    ],
+    "candidate_identity_must_include_activation_formula": true,
+    "candidate_identity_must_include_static_endpoint_parameters": true,
+    "same_endpoints_alone_are_sufficient_identity": false,
+    "same_static_pr559_parameters_alone_are_sufficient_identity": false,
+    "pde_failure_or_pending_blocks_callable_velocity_delivery": false
+  },
+  "forbidden_inferences": [
+    {
+      "from": "g(0.25)=0 and g(0.75)=1",
+      "to": "interior-time field is uniquely determined without the activation law",
+      "allowed": false
+    },
+    {
+      "from": "exact endpoint equality to static PR559 at t=0.75",
+      "to": "static PR559 material-path receipt transfers to the temporal child",
+      "allowed": false
+    },
+    {
+      "from": "reference-energy equality at t=0.25",
+      "to": "all-time CR001 energy acceptance",
+      "allowed": false
+    },
+    {
+      "from": "small sampled FD divergence in PR587",
+      "to": "formal CR001 divergence acceptance or PDE validation",
+      "allowed": false
+    },
+    {
+      "from": "green PR587 CI and target-free morphology improvement",
+      "to": "visual correspondence, paper exactness, OpenAI-field identity, or PDE validation",
+      "allowed": false
+    },
+    {
+      "from": "PDE evidence is absent or failed",
+      "to": "versioned callable/save-load velocity delivery is forbidden",
+      "allowed": false
+    }
+  ],
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "temporal_child_velocity_export_ready": false,
+    "production_candidate_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_velocity_api_changed": false,
+    "active_scientific_route_changed": false,
+    "delivery_route_changed": false
+  }
+}
