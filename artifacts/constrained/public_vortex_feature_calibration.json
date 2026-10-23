@@ -1,0 +1,70 @@
+{
+  "schema": "public_vortex_feature_calibration_v1",
+  "scope": "synthetic_calibration_only",
+  "source_url": "https://openai.com/index/navier-stokes-solution/",
+  "source_classification": "public_source_fact",
+  "public_observations": [
+    "spinning swirl",
+    "inward spiraling trajectories",
+    "axial stretching"
+  ],
+  "manufactured_field": "u_r=-0.6 r, u_theta=1.4 r, w=0.8 z",
+  "feature_report": {
+    "time": 0.5,
+    "radii": [
+      0.4,
+      0.8,
+      1.2
+    ],
+    "z_half_levels": [
+      0.3,
+      0.7
+    ],
+    "angular_samples": 48,
+    "active_fraction": 1.0,
+    "inward_radial_margin": 0.3613597096859233,
+    "circulation_fraction": 0.843172655933821,
+    "inward_spiral_score": 0.3620689655172414,
+    "axial_stretch_margin": 0.34619760790256,
+    "source_url": "https://openai.com/index/navier-stokes-solution/",
+    "source_classification": "public_source_fact",
+    "claim_scope": "visualization_basis_target_only",
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "public_observations": [
+      "spinning swirl",
+      "inward spiraling trajectories",
+      "axial stretching"
+    ]
+  },
+  "angular_resolution_levels": [
+    12,
+    24,
+    48
+  ],
+  "absolute_deltas_to_finest": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      5.551115123125783e-17,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "visualization_ready": false,
+  "pde_validated": false,
+  "paper_exact": false,
+  "openai_field_identified": false
+}
