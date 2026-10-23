@@ -1,3 +1,9 @@
+# Current handoff: original compact cached C2 volume source (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_CACHED_C2_VOLUME_SOURCE_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_cached_C2_volume_source.json` is SHA256 `bc3d515069a1cfc95c68298c5cb26d5eeaf7af18ee968dcb0aa005257eabbb72`. Actual source-definition acceptance: `True`; cap bridge remains open. All signed numerical values, error reduction and global closure remain unresolved.
+
+Next task: Bind the numerical baseline M_b=4*Z*mstar*exp(-14)/x and Q_b=-4*mstar*exp(-14)/x to native physical Pstar*BG.m_C3, retaining their signed mismatch until a same-source identity is established. Bind complete-prefix error definitions to those same ports, then compute certified signed Evol and the distinct reference offset. The numerical mstar summary is an enclosure, not an exact function value; retain all old caps.
+
 # Current handoff: original compact volume-error source packet (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_VOLUME_ERROR_SOURCE_PACKET_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_volume_error_source_packet.json` is SHA 256 `b554f056f73b1f038d9c12b162e95d24b50d1e7c90173364496e09fd2b74029f`.
