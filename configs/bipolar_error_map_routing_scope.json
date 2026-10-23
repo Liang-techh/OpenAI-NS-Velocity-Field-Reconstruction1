@@ -1,0 +1,103 @@
+{
+  "schema": "bipolar_error_map_routing_scope_v1",
+  "task_id": "CR002-BIPOLAR-ERROR-MAP-ROUTING-SCOPE-031",
+  "classification_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "scope": "Govern residual/error-map evidence used to route spatial-swirl representation work without laundering model-selection data into independent PDE validation.",
+  "base_integration": {
+    "branch": "codex/cr001-constraints",
+    "sha": "172f8890935ad569bb1388ed94ea711ec63aa800"
+  },
+  "source_candidate": {
+    "artifact": "artifacts/bipolar_joint_capped/candidate.json",
+    "candidate_sha256": "7875214ad65f5e1ba4f7c5e362217f05ef47bc3d893e8641e8e40a85fc4e7609",
+    "classification": "autonomous_design",
+    "velocity_export_ready": true,
+    "pde_validated": false
+  },
+  "upstream_routing_evidence": {
+    "pr": 220,
+    "head": "7d742148415a5333eb016496996f281c58186544",
+    "classification": "autonomous_design",
+    "evidence_role": "routing_diagnostic_only",
+    "time": 0.5,
+    "baseline_theta_error_rms": {
+      "interior": 0.7362262073,
+      "radial_support_flank": 0.0789660930,
+      "flank_over_interior": 0.107257922
+    },
+    "f20_vs_f10": {
+      "both_velocity_responses_swirl_pure": true,
+      "f20_over_f10_flank_selectivity": 2.74087783,
+      "global_error_enrichment_ratio_f20_over_f10": 0.843068186,
+      "response_error_cosine_f10": 0.643200558,
+      "response_error_cosine_f20": 0.497506209,
+      "top_quartile_error_response_energy_share_f10": 0.1216896,
+      "top_quartile_error_response_energy_share_f20": 0.0601040
+    },
+    "allowed_conclusion": "F20 is an independent outer-selective capacity direction but is not well aligned with the dominant measured interior theta-error map; use this only to route the next predeclared capacity screen.",
+    "forbidden_conclusions": [
+      "F20 coefficient selected",
+      "F20 finite perturbation reduces PDE residual",
+      "F20 improves registered PDE validation",
+      "interior-localized correction parameters have been identified",
+      "OpenAI hidden swirl profile recovered"
+    ]
+  },
+  "model_selection_boundary": {
+    "residual_map_may_route_predeclared_family": true,
+    "residual_map_may_fit_spatial_envelope": false,
+    "predeclared_interior_geometry_source": "existing plateau/support geometry only",
+    "forbid_residual_fitted_center": true,
+    "forbid_residual_fitted_width": true,
+    "forbid_residual_fitted_support": true,
+    "forbid_residual_fitted_basis_shape": true,
+    "if_samples_influence_mode_location_shape_or_coefficient": "consumed_for_model_selection",
+    "consumed_samples_may_count_as_independent_validation": false,
+    "required_after_candidate_freeze": "fresh_or_pristine_independent_validation"
+  },
+  "registered_contract": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "residual_defined_free_force_allowed": false,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "promotion_requirements_for_any_nonzero_spatial_correction": [
+    "explicit bounded coefficient(s)",
+    "serialized candidate identity",
+    "initial energy revalidation",
+    "nonzero center rotation and sign revalidation",
+    "bipolar radial/axial direction and parity revalidation",
+    "axis/support regularity revalidation",
+    "fresh_or_pristine full momentum and divergence validation",
+    "training/model-selection samples identified separately from acceptance samples"
+  ],
+  "states": {
+    "velocity_export_ready_for_source_candidate": true,
+    "f20_selected": false,
+    "interior_localized_mode_materialized": false,
+    "candidate_selection_resolved": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
