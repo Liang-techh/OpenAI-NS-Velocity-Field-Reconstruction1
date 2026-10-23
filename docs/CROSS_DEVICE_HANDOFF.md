@@ -1,3 +1,9 @@
+# Current handoff: original compact FTC semantic witness (2026-10-22)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_SEMANTIC_WITNESS_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_semantic_witness.json` is SHA256 `e03410d1d4575377402ce3887b863a0610694b8917346090ffcc7d3b946166c9`. Fresh five-witness reconciliation accepted: `True`. Cached source proofs and ancestor code were not rerun. All terminal-zero, native/old equality, quantitative error reduction, physical completion and global five-moment gates remain false.
+
+Next task: Bind the retained signed volume-error packet to these same authenticated FTC source inputs, retaining all 212 cumulative / 213 raw / 183 reduced terms, six signed channels, reserved once, 17 K, 2 outer B and 16 J; then derive a genuinely new same-source signed response and certified error transport. Do not reuse caps, midpoints or interval overlap as actual function values and do not replay entered source operators.
+
 # Current handoff: original compact FTC port binding (2026-10-22)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_FTC_PORT_BINDING_2026_10_22.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_ftc_port_binding.json` is SHA256 `cc15d8dadfc3cd269f13a64f4ed48e5451be7ae4405af372ddcab95bb1ae2c70`. It preserves six lossless artifacts and the complete failed construction result.
