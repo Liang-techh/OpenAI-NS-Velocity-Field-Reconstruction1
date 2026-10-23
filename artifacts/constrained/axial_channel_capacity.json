@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "capacity_obstruction_probe_not_candidate_validation",
+  "task_id": "CR003-AXIAL-CHANNEL-OBSTRUCTION-003",
+  "base_commit": "908ffa06e41172c5e67b79ab9db2d5cbdf51d9e1",
+  "candidate": "artifacts/constrained/inner_swirl_pressure/candidate.json",
+  "candidate_blob_sha": "f5d17d4165514aff501e6eeb32a4372d04620eae",
+  "validation": "artifacts/constrained/inner_swirl_pressure/validation.json",
+  "validation_blob_sha": "dba2a51b8dc0b33591da7d0d5096d6006860f26f",
+  "source_grid_diagnosis": "artifacts/constrained/inner_swirl/diagnosis.json",
+  "source_grid_diagnosis_blob_sha": "3d1d457f581fd9480113efbff1d54a0daa735cc9",
+  "observed_axial_peak_before_pressure_refit": {
+    "time": 0.748,
+    "location": [1.0153968253968253, 0.0, 0.6879365079365078],
+    "residual": [-0.12379431034978963, 0.06777528789550326, 1.1533781521129889],
+    "norm": 1.1619809304355522
+  },
+  "current_pressure_refit_validation": {
+    "status": "failed_validation",
+    "finest_step": 0.005,
+    "final_time_sampled_max": 1.244172620285257,
+    "threshold": 0.001
+  },
+  "structural_result": {
+    "pure_swirl_axial_sensitivity": "zero for an axisymmetric field when poloidal velocity, pressure and force are frozen",
+    "reason": "the cylindrical axial momentum equation contains u_r, u_z, p, f_z and their r/z derivatives but no u_theta term",
+    "consequence": "additional pure-swirl basis growth cannot directly repair an axial residual defect",
+    "minimal_next_probe": "a compact divergence-free poloidal curl direction localized near the observed axial peak"
+  },
+  "probe_scope": {
+    "pure_swirl": "compact axisymmetric mutation near the observed peak",
+    "poloidal": "curl((-y q, x q, 0)) with compact q localized near the observed peak",
+    "pressure": "frozen",
+    "forcing": "frozen preregistered restricted force",
+    "acceptance_thresholds": "unchanged"
+  },
+  "truth_boundary": {
+    "free_forcing_used": false,
+    "zero_field_collapse_used": false,
+    "candidate_validated": false,
+    "pde_threshold_passed": false,
+    "paper_exact": false,
+    "blowup_proved": false
+  },
+  "remaining_limitations": [
+    "The pure-swirl null direction is a channel obstruction, not a proof that one poloidal mode is sufficient.",
+    "The poloidal direction is diagnostic only and is not serialized into the production candidate family.",
+    "A bounded nonlinear fit plus held-out validation is still required before changing the selected candidate."
+  ]
+}
