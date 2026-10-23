@@ -1,0 +1,28 @@
+name: agent9-st006-netcdf-interchange
+
+on:
+  pull_request:
+    paths:
+      - 'research_baseline/netcdf.py'
+      - 'tests/test_research_baseline_netcdf.py'
+      - 'docs/external_methods/CR-A9-036-st006-netcdf-interchange.md'
+      - '.github/workflows/agent9-st006-netcdf-interchange.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-netcdf-interchange:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install project and test dependency
+        run: python -m pip install -e '.[dev]'
+      - name: Compile focused module and test
+        run: python -W error -m py_compile research_baseline/netcdf.py tests/test_research_baseline_netcdf.py
+      - name: Run focused NetCDF interchange regression
+        run: python -m pytest -q -W error tests/test_research_baseline_netcdf.py
