@@ -1,0 +1,28 @@
+{
+  "schema": "eq45_pde_auxiliary_scope_contract_v1",
+  "scope": "Separate callable Eq45 velocity delivery from pressure/forcing state required for independent PDE validation.",
+  "classification": {
+    "velocity_delivery_requirement": "user_requirement",
+    "cr001_forcing_family": "autonomous_design",
+    "eq45_pressure_binding": "pending_unknown",
+    "eq45_forcing_binding": "pending_unknown"
+  },
+  "current_auxiliary_state": {
+    "pressure_binding": "pending_unknown",
+    "forcing_binding": "pending_unknown"
+  },
+  "policy": {
+    "pending_auxiliary_blocks_velocity_export": false,
+    "pde_validation_requires_explicit_auxiliary_binding": true,
+    "residual_defined_forcing_allowed": false,
+    "pressure_or_forcing_solver_success_implies_pde_validation": false
+  },
+  "truth_boundary": {
+    "velocity_values_changed": false,
+    "visualization_readiness_promoted": false,
+    "visual_correspondence_promoted": false,
+    "pde_validation_promoted": false,
+    "paper_exact_promoted": false,
+    "openai_field_identity_promoted": false
+  }
+}
