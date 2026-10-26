@@ -1,3 +1,10 @@
+# Current handoff: original compact signed-history defect transport (2026-10-23)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_SIGNED_HISTORY_DEFECT_TRANSPORT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_signed_history_defect_transport.json` is SHA-256 `dc367908bd44991ef6f4a973d688b4bd27bb0cab43464e0e396b3abb1201c861`.
+Acceptance: `True`; source-only: `True`. Five signed history source cuts, one N-scaling normalization, five local defects over ordinary Z orders 0..3, and paired unequal-memory transport retaining incoming histories are scoped to the saved source packet; zero driver gap, incoming/control/profile equality, cap transfer, and numerical completion remain false.
+
+Next task: Bind and evaluate the signed driver gaps on the actual common chart domains, retain unequal memories and prior inlets, and preserve all old caps and errors. Do not assert a zero gap or replay an ancestor proof family.
+
 # Current handoff: original compact C3 outer-amplitude identity (2026-10-23)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_C3_OUTER_AMPLITUDE_IDENTITY_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3_outer_amplitude_identity.json` is SHA-256 `987e1aba8d33a22b325e1f0386a00e522778d296b65f98ac7d826da228292975`.
