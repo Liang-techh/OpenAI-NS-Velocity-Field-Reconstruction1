@@ -1,5 +1,13 @@
 
 
+## native_O3_radial_variation publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_radial_variation.json.
+Status: conditional first total-y E_N/V_N source variations.
+Next: source_native_O3_Cartesian_spatial_jet_and_volume_integrands. Prospective frozen task: source_native_O3_Cartesian_spatial_jet_and_volume_integrands.
+
+
+
 ## native_O3_exterior_differential_spacetime_pullback publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_exterior_differential_spacetime_pullback.json.
