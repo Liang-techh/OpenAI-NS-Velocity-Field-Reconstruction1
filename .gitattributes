@@ -516,3 +516,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_O3_cylindrical_pullback.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_cylindrical_pullback.json -text
 /docs/CURRENT_NATIVE_O3_CYLINDRICAL_PULLBACK_2026_10_27.md -text
+/src/openai_ns_reconstruction/native_parameter_Z_independence.py -text
+/scripts/run_native_parameter_Z_independence.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_parameter_Z_independence.json -text
+/docs/CURRENT_NATIVE_PARAMETER_Z_INDEPENDENCE_2026_10_27.md -text

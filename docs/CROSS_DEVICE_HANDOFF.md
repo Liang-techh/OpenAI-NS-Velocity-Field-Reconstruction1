@@ -1,5 +1,12 @@
 
 
+## native_parameter_Z_independence publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_parameter_Z_independence.json`.
+Status: `passed`; source-only definitional certificate; do not reenter.
+Next action: `source_native_O3_total_mixed_radial_Z_rows`; total mixed field rows and physical time mapping remain incomplete.
+
+
 ## native_O3_cylindrical_pullback publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_cylindrical_pullback.json`.
