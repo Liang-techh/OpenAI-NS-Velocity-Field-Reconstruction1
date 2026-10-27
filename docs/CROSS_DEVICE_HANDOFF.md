@@ -1,5 +1,13 @@
 
 
+## native_O3_anchor_parameter_axial_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_parameter_axial_jet.json.
+Status: conditional anchor parameter and axial derivative value packet.
+Next: source_native_O3_fixed_pressure_and_nonlinear_value_admission. Prospective frozen task: source_native_O3_fixed_pressure_and_nonlinear_value_admission.
+
+
+
 ## native_O3_explicit_cylindrical_spatial_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_explicit_cylindrical_spatial_jet.json.
