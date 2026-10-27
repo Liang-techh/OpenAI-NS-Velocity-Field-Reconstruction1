@@ -1,3 +1,10 @@
+# Current handoff: original compact quiet-power history pair (FAILED C3 selector, 2026-10-26)
+
+Read `docs/CURRENT_ORIGINAL_COMPACT_QUIET_POWER_HISTORY_PAIR_2026_10_26.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_quiet_power_history_pair.json` is SHA-256 `707957e270c4f253483dae0b238a9dc4b1f4a38f4ed9f538a827157c23e0af15`.
+This one-entry attempt is immutable and failed before native/algebra stages; no quiet density, common-kernel, or signed-transport acceptance is recorded. All four new flags are false. Cached C3 rows are data-only and may be used only by an explicit C3-only projection.
+
+Next task: Create a fresh C3_quiet_endpoint_projection from the cached 20 passed C3 rows using an explicit C3-only selector; do not rerun or reenter the failed quiet-power history-pair family.
+
 # Current handoff: original compact signed-history defect transport (2026-10-23)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_SIGNED_HISTORY_DEFECT_TRANSPORT_2026_10_23.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_signed_history_defect_transport.json` is SHA-256 `dc367908bd44991ef6f4a973d688b4bd27bb0cab43464e0e396b3abb1201c861`.
