@@ -1,0 +1,15 @@
+# Native O3 first-radial mixed source operator (2026-10-27)
+
+The new implementation compiles 60 conditional source expressions for ordinary-Z orders 0 through 4: background E, V, m, h, k, e, p, P0 and pressure; modified E, V and m. Each first physical-radius expression is the saved total-log-radius row divided by the same native radius (node 241787). The cached parameter-Z certificate is consumed as data; its declared fixed-native-parameter semantics and regular positive-radius premise remain explicit.
+
+Background bindings retain their declared source-equation status. Modified bindings use the actual saved total E_y, V_y and m_y outputs, whose source construction contains the slow held-phase term and the explicit A_phi/B_phi response. Slow_A_y/B_y alone are refused. The compiler does not differentiate fractional_part or insert another N factor. Ordinary-Z rows retain their source normalization, including P0 factorials already applied by the source.
+
+The six missing modified total-radial fields h, k, e, p, P0 and pressure return typed unavailable-source objects. Four additional API controls refuse held-phase substitution, second radial order, a wrong branch and unavailable Z order. The source quotient-expression interface is executable; the graph values have not been evaluated.
+
+Actual one-shot saved counts: `{'N_materialization_calls': 0, 'actual_negative_api_refusals': 4, 'new_algebra_family_calls': 1, 'new_compiled_operator_bindings': 60, 'new_mathematical_proofs': 0, 'numeric_evaluation_calls': 0, 'old_math_calls': 0, 'old_provider_calls': 0, 'source_value_identity_calls': 0, 'unavailable_source_rows': 6}`.
+
+This is accepted source-operator implementation, conditional on the supplied row semantics. No new native field derivative identity is proved. This does not complete all mixed rows, physical time/similarity maps, moment terminal closure, stress correction or independent NS validation. No old mathematical family, provider or numeric evaluator was called, no N was materialized, and every inherited numerical cap and source inventory remains retained. The last physical numerical baseline is unchanged.
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_mixed_radial_operator.json`. Four immutable checkpoints: `tmp/native_O3_mixed_radial_operator/`. The result was saved before independent saved-byte review. Runtime model metadata was unavailable and is recorded as null.
+
+Next executable task: `source_native_O3_modified_history_total_radial_identity_lift`. Bind the actual modified Duhamel histories and density functions to the accepted saved non-reset-memory transport identity, preserving nonzero incoming data and ordinary-Z1. The static dependency trace finds that saved identity only for ordinary-Z orders 0 through 2; orders 3 and 4 cannot inherit acceptance. Authenticate the O3 offset/Jacobian, source-keyed incoming and density ports, and ordinary-Z commutation before any lift. Do not reenter an ancestor transport or derivative family. Full goal remains ACTIVE / INCOMPLETE.

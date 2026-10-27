@@ -1,5 +1,13 @@
 
 
+## native_O3_mixed_radial_operator publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_mixed_radial_operator.json`.
+Status: passed; 60 conditional first-radial/ordinary-Z source expressions, six unavailable modified fields and four API refusals; derivative identity and physical closure remain unproved.
+Next: `source_native_O3_modified_history_total_radial_identity_lift`. Do not reenter this consumer or any ancestor.
+
+
+
 ## native_parameter_Z_independence publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_parameter_Z_independence.json`.
