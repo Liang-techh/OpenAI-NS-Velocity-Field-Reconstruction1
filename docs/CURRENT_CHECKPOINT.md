@@ -1,5 +1,12 @@
 
 
+## native_O3_history_radial_lift publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_history_radial_lift.json`.
+Status: passed; conditional native O3 Duhamel history/radial source identity only. Next: `source_native_O3_history_density_flux_source_identity`. Do not reenter.
+
+
+
 ## native_O3_mixed_radial_operator publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_mixed_radial_operator.json`.
