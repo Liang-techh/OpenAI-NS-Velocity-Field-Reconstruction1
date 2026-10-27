@@ -1,5 +1,14 @@
 
 
+## native_W_parameter_interface publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_W_parameter_interface.json` (SHA-256 `b817a0f0fca623bd40ec8ab074b1e7c851440f5c2b59a934c2ef5e2b3dce9c26`).
+Status: `passed`; do not reenter.
+Next phase: `source_native_history_provider_for_rebuilt_W`.
+Next action: Define accepted source-native history and radius interfaces for the uninstantiated rebuilt W template; keep native Pstar/delta and enclosure-origin records distinct.
+Static parameter-alias trace: `C:/Users/z5242/Documents/Codex/2026-10-16/https-github-com-liang-techh-openai/work/wsector_parameter_alias_trace_2026_10_27.json` SHA-256 `b483e1bd0657fc2ad223f4153044875191b5beae7e2028e99f7a08b9d05ba112`; no cross-side identity or zero/error-cap claim.
+
+
 ## compact_O3_transition_W_sector_correlation publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_W_sector_correlation.json` (SHA-256 `c6542479047de497772d31459ec3d7893fa34dfc469626dff4590cb782ffe98d`).
