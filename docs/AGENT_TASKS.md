@@ -1,5 +1,12 @@
 
 
+## compact_O3_transition_P2_source_binding publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_P2_source_binding.json` (SHA-256 `ac6768f0a842b8a0c3dba0fb8c24721bdce7c3c1435591c9bfdf6709db9dde3f`).
+Status: `passed`; actual source-port rows `8` / planned `8`; projection orders `[0, 1, 2, 3]` / planned `[0, 1, 2, 3]`.
+Do not reenter this attempt. After a pass, run a fresh independent P2 pressure-gap operator; after a failure, inspect only the cached binding prefix.
+
+
 ## compact_O3_transition_primitive_gap publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_primitive_gap.json` (SHA-256 `3261bb535e3987c7e74c02cef84871834f6fa2bdf894b0bc0c907f08095d1cd7`).
