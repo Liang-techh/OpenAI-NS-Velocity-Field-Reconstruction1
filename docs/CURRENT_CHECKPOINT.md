@@ -1,5 +1,13 @@
 
 
+## compact_O3_transition_primitive_gap publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_primitive_gap.json` (SHA-256 `3261bb535e3987c7e74c02cef84871834f6fa2bdf894b0bc0c907f08095d1cd7`).
+Status: `failed`; actual sigma checks `0` / planned `2`; actual primitive cocycle rows `0` / planned `4`; actual root-shape rows `0` / planned `4`; actual primitive gap functions `0` / planned `12`; planned counts are not results.
+Read `docs/CURRENT_ORIGINAL_COMPACT_O3_TRANSITION_PRIMITIVE_GAP_2026_10_27.md` for the failure and next P2 source-binding task; actual new mathematical counts are all zero.
+Do not reenter or retry the saved attempt; proceed only with the independent P2 pressure-coefficient source relation and preserve all inherited evidence and false flags.
+
+
 ## compact_O3_transition_driver_cocycle publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_driver_cocycle.json` (SHA-256 `16fab70f7599c01a70159a344aa2386055f41f6af26a3145a216e132ed6fa5d2`).
