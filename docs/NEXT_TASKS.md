@@ -1,5 +1,13 @@
 
 
+## native_O3_exterior_differential_spacetime_pullback publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_exterior_differential_spacetime_pullback.json.
+Status: conditional fresh exterior differential geometry and exterior-form closure.
+Next: source_native_O3_physical_spatial_jet_and_volume_norm_route.
+
+
+
 ## native_O3_total_radius_velocity_pressure_binding publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_total_radius_velocity_pressure_binding.json`.
