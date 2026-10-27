@@ -1,3 +1,10 @@
+
+
+## compact_C3_quiet_endpoint_projection publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3_quiet_endpoint_projection.json` (SHA-256 `633abe4e87fb0b7d1a3495a21fb5fdb5c4323921eede61724b421a24f22915b1`).
+Status: `passed`; terminal projection `20/20`; transport recipes `20/20`; memory reuse `6/6`; full goal remains incomplete.
+Do not reenter the saved attempt; preserve all inherited evidence and false flags.
 # Current handoff: original compact quiet-power history pair (FAILED C3 selector, 2026-10-26)
 
 Read `docs/CURRENT_ORIGINAL_COMPACT_QUIET_POWER_HISTORY_PAIR_2026_10_26.md` first. Report `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_quiet_power_history_pair.json` is SHA-256 `707957e270c4f253483dae0b238a9dc4b1f4a38f4ed9f538a827157c23e0af15`.
