@@ -1,5 +1,13 @@
 
 
+## native_O3_explicit_cylindrical_spatial_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_explicit_cylindrical_spatial_jet.json.
+Status: conditional explicit cylindrical spatial jet and volume integrands.
+Next: source_native_O3_source_value_and_axial_jet_admission. Prospective frozen task: source_native_O3_source_value_and_axial_jet_admission.
+
+
+
 ## native_O3_Cartesian_spatial_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_Cartesian_spatial_jet.json.
