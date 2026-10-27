@@ -1,5 +1,12 @@
 
 
+## native_O3_total_radius_velocity_pressure_binding publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_total_radius_velocity_pressure_binding.json`.
+Status: immutable failed source attempt; no mathematical acceptance. Next: `source_native_O3_exterior_differential_spacetime_pullback`.
+
+
+
 ## native_O3_finite_N_ast_flux_semantics publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_finite_N_ast_flux_semantics.json`.
