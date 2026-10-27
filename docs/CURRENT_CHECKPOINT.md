@@ -1,5 +1,11 @@
 
 
+## compact_O3_transition_P2_pressure_gap publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_P2_pressure_gap.json` (SHA-256 `2956baf8c82250ffd789714ceb1ee80170bd69e57f3c84d1d6b3b8889a1d1466`).
+Status: `passed`; actual counts `{'gap_function_rows': 4, 'new_algebra_family_calls': 1, 'new_mathematical_proofs': 1, 'numeric_calls': 0, 'old_math_calls': 0, 'pressure_identity_orders': 4, 'side_quotient_premise_rows': 8, 'source_provider_calls': 0}`; do not reenter.
+
+
 ## compact_O3_transition_P2_source_binding publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_P2_source_binding.json` (SHA-256 `ac6768f0a842b8a0c3dba0fb8c24721bdce7c3c1435591c9bfdf6709db9dde3f`).

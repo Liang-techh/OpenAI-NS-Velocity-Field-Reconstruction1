@@ -1,0 +1,17 @@
+# Current original O3 transition P2 pressure gap (2026-10-27)
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_P2_pressure_gap.json`; SHA-256 `2956baf8c82250ffd789714ceb1ee80170bd69e57f3c84d1d6b3b8889a1d1466`.
+
+Attempt status: `passed`; explicit result passed: `True`; actual counts: `{'gap_function_rows': 4, 'new_algebra_family_calls': 1, 'new_mathematical_proofs': 1, 'numeric_calls': 0, 'old_math_calls': 0, 'pressure_identity_orders': 4, 'side_quotient_premise_rows': 8, 'source_provider_calls': 0}`; new flags: `{'O3_transition_P2_pressure_quotient_correlation_ordinary_Z3_proved': True, 'O3_transition_P2_signed_jet_gap_functions_defined': True}`.
+
+This leaf consumes the accepted source-binding packet and records a formal P2 pressure-coefficient gap, not a restored physical-pressure (P0+p) gap, density-p2/P1 gap, or m15 result. The conditional source identities are En*G=dW-dE*Pc and G=Pn-Pc, with Pn=Wn/En and Pc=Wc/Ec, four ordinary-Z orders, eight side quotient premises, and En_0/Ec_0 nonzero domain assumptions. W is retained as an actual typed full-source producer and is not recovered from E times P2; same-Z pairing is formal only.
+
+Inherited 212 cumulative / 213 raw / 183 reduced terms, six signed channels, one reserved contribution, 17 K terms, two outer B terms, and 16 J terms remain retained metadata, together with the 2B/16J cap/error provenance. The ordinary-Z recurrence is G_j=(dW_j-sum C(j,k)dE_k Pc_(j-k)-sum(k=1..j)C(j,k)En_k G_(j-k))/En_0; each row checks both the product identity and the recurrence-versus-independent-witness induction. No P2 value, pressure closure, global closure, temporal recursion, phase equality, numeric containment, signed-gap zero, or physical completion is claimed.
+
+Next concrete task: an independent signed full-W sector correlation using the retained actual geometry, history, and pressure mismatches; do not retry the failed primitive path. The saved entered attempt is immutable and must not be reentered.
+
+The unique kernel entry completed all four product-identity rows and all four recurrence-induction residuals with zero coefficient polynomials. Eight side quotient rows are explicit premises, not additional evaluated source identities. Independent saved-data review passed: `bcfd020f5e5fd836e9d28f0a16e232045cba54f55b05be4e895cd75e3bedf468`.
+
+The original run receipt is retained unchanged as `b2861673d35026b9acd3fd50463b81c8cd53f974852fb0a1cc922c0e9110064f`. Its broad recurrence-substring scanner misclassified three descriptive Boolean key names about independent witnesses as forbidden work calls. The separate metadata-only acceptance adapter (`0d3cd28176398e7d950bbf07bb01a5b1c4c28968987c0b600804b95dfa170a76`) excludes only those exact Boolean description keys, keeps every actual call-count check, and embeds its bytes and the original receipt in the report. Frozen code2, source, entered marker, result, and journal are unchanged; mathematics was not rerun.
+
+The stage retains 2,234 source pins, 252 checkpoint artifacts, 176 inherited failed artifacts, 16 protected files, two legacy dirty files, and the exact 26-item inherited false-claim ledger. All four inherited construction/error/provenance maps equal the full parent report. No numerical P2 gap, terminal five-moment identity, error-cap reduction, or completed physical layer follows from this conditional source-function identity.
