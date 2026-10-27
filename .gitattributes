@@ -508,3 +508,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_W_parameter_interface.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_W_parameter_interface.json -text
 /docs/CURRENT_NATIVE_W_PARAMETER_INTERFACE_2026_10_27.md -text
+/src/openai_ns_reconstruction/native_history_radius_bundle.py -text
+/scripts/run_native_history_radius_bundle.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_history_radius_bundle.json -text
+/docs/CURRENT_NATIVE_HISTORY_RADIUS_BUNDLE_2026_10_27.md -text

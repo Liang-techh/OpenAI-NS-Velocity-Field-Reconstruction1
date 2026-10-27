@@ -1,5 +1,11 @@
 
 
+## native_history_radius_bundle publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_history_radius_bundle.json`.
+Status: source-only metadata; do not reenter. Definitions: 90 field + 1 radius; branches: 2; rejections: 3; callbacks: 98. Remaining task: source_native_radius_phase_pullback_for_branch_bundles; no numerical closure.
+
+
 ## native_W_parameter_interface publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_W_parameter_interface.json` (SHA-256 `b817a0f0fca623bd40ec8ab074b1e7c851440f5c2b59a934c2ef5e2b3dce9c26`).
