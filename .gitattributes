@@ -560,3 +560,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_O3_anchor_parameter_axial_jet.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_parameter_axial_jet.json -text
 /docs/CURRENT_NATIVE_O3_ANCHOR_PARAMETER_AXIAL_JET_2026_10_27.md -text
+/src/openai_ns_reconstruction/native_O3_pressure_source_value_jet.py -text
+/scripts/run_native_O3_pressure_source_value_jet.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_pressure_source_value_jet.json -text
+/docs/CURRENT_NATIVE_O3_PRESSURE_SOURCE_VALUE_JET_2026_10_27.md -text

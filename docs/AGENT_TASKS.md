@@ -1,5 +1,14 @@
 
 
+## native_O3_pressure_source_value_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_pressure_source_value_jet.json.
+Status: executed conditional pressure-source value packet; publication metadata follows.
+Next: source_native_O3_saved_nonlinear_core_value_jet. Prospective frozen task: source_native_O3_saved_nonlinear_core_value_jet.
+Metadata auxiliaries (lossless, excluded from source pins): native_O3_saved_core_value_route_addendum_2026_10_27.json SHA 642c266ae551671a8798f2c7fdb73966b9ef9e5b046423eeaa91cb8ea470f5df; native_O3_fixed_pressure_source_trace_2026_10_27.json SHA f13739636fac2dce0493e6c13f4145a8a6fdcf8202f546e6ca79ba5af684a141; pre-freeze runner and manifest repair receipts are embedded in the lossless artifact set.
+
+
+
 ## native_O3_anchor_parameter_axial_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_parameter_axial_jet.json.
