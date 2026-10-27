@@ -528,3 +528,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_O3_history_radial_lift.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_history_radial_lift.json -text
 /docs/CURRENT_NATIVE_O3_HISTORY_RADIAL_LIFT_2026_10_27.md -text
+/src/openai_ns_reconstruction/native_O3_density_flux_identity.py -text
+/scripts/run_native_O3_density_flux_identity.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_density_flux_identity.json -text
+/docs/CURRENT_NATIVE_O3_DENSITY_FLUX_IDENTITY_FAILED_2026_10_27.md -text

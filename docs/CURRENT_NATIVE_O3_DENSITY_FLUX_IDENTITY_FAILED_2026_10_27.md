@@ -1,0 +1,15 @@
+# Current native O3 density-flux identity — failed attempt (2026-10-27)
+
+This record is an immutable failed source-consumer attempt, not a mathematical acceptance. The kernel imported once and entered once, then stopped before scope binding because the frozen finite_N_functions witness lacked the required `expm1=FunctionJet` source AST shape. The exact nested failure is `source_ast_shape: finite_N_functions witness lacks expm1=FunctionJet` with `prefix_preserved = true`.
+
+The saved prefix contains one `family_entered` callback and three journal rows including the two manager rows. It contains no scope-binding, analytic-alias, density-flux, derivative-rewrite, saved-m_y, physical-binding, API-refusal, or completion rows. The prospective manifest contract remains recorded separately; no prospective row or flag is promoted to actual evidence.
+
+Actual failure counts from the saved result: `{"N_materialization_calls": 0, "actual_negative_api_refusals": 0, "analytic_alias_rows": 0, "cached_algebra_replay_calls": 0, "density_flux_rows": 0, "derivative_rewrite_rows": 0, "new_algebra_family_calls": 1, "new_mathematical_proofs": 0, "new_source_identity_family_calls": 1, "numeric_evaluation_calls": 0, "old_math_calls": 0, "old_provider_calls": 0, "physical_binding_rows": 0, "retained_physical_bindings": 0, "rewritten_physical_bindings": 0, "saved_m_y_alias_rows": 0, "scope_binding_rows": 0, "source_value_reducer_calls": 0}`.
+Actual failure flags from the saved result: `{"actual_incoming_x_independence_proved": false, "cap_deletion": false, "full_goal_complete": false, "global_across_phase_seams_proved": false, "native_O3_density_flux_source_identities_proved": false, "native_O3_exp_expm1_functional_alias_proved": false, "native_O3_flux_radial_interface_defined": false, "native_O3_saved_m_y_compatibility_proved": false, "native_field_derivative_identity_proved": false, "numeric_closure": false, "oracle_source_value_identity": false, "physical_layer_completed": false, "temporal_recursion": false, "unconditional_ordinary_Z4_source_admission": false}`.
+Review result SHA: `fc4858b91df081a9d6d78c7427878f5a11fb14a5cfa92ae76381e3dd07505f9e`.
+
+No exp/expm1 functional alias, five density-flux identities, ordinary-jet lift, Duhamel flux rewrite, saved m_y compatibility, radial interface, numerical construction, or physical field identity was installed by this attempt. The cached pointwise polynomial and ordinary-Z0..2 certificate remain DATA only, and the held incoming-coordinate, phase-seam, global, NS, numerical, cap, and temporal gaps remain open. The prior accepted conditional history/radial mathematical state is unchanged.
+
+This failure is preserved with all inherited source pins, caps, failed artifacts, protected files, dirty paths, construction data, and integral ledgers. Do not reenter or repair this attempt.
+
+Next independent executable task: `source_native_O3_finite_N_ast_flux_semantics`. Use actual Python AST def-use and typed-term semantics to implement a fresh finite-N alias/flux/radial binding, without copying, importing, or rerunning this failed consumer or any unreached ancestor.

@@ -1,5 +1,12 @@
 
 
+## native_O3_density_flux_identity failed publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_density_flux_identity.json`.
+Status: failed immutable attempt; no source identity accepted. Next: `source_native_O3_finite_N_ast_flux_semantics`. Do not reenter.
+
+
+
 ## native_O3_history_radial_lift publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_history_radial_lift.json`.
