@@ -1,5 +1,11 @@
 
 
+## native_O3_cylindrical_pullback publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_cylindrical_pullback.json`.
+Status: `passed`; conditional geometry only; do not reenter.
+
+
 ## native_history_radius_bundle publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_history_radius_bundle.json`.
