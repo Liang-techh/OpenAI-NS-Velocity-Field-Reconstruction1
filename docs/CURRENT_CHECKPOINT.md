@@ -1,5 +1,13 @@
 
 
+## native_O3_Cartesian_spatial_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_Cartesian_spatial_jet.json.
+Status: immutable failed source attempt; no mathematical acceptance.
+Next: source_native_O3_new_independent_method_after_failed_native_O3_Cartesian_spatial_jet. Prospective frozen task: source_native_O3_source_value_and_axial_jet_admission.
+
+
+
 ## native_O3_radial_variation publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_radial_variation.json.
