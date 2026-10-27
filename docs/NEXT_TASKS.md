@@ -1,5 +1,12 @@
 
 
+## native_O3_finite_N_ast_flux_semantics publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_finite_N_ast_flux_semantics.json`.
+Status: conditional source AST/ordinary-C4 semantics only. Next: `source_native_O3_total_radius_velocity_pressure_binding`.
+
+
+
 ## native_O3_density_flux_identity failed publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_density_flux_identity.json`.
