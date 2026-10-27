@@ -1,5 +1,15 @@
 
 
+## compact_O3_transition_W_sector_correlation publication
+
+Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_W_sector_correlation.json` (SHA-256 `c6542479047de497772d31459ec3d7893fa34dfc469626dff4590cb782ffe98d`).
+Status: `failed`; do not reenter.
+Next phase: `independent_source_native_parameter_interface`.
+Next action: Bind exact native parameter source handles and separate rebuilt enclosure-origin parameters; define an uninstantiated source-native rebuilt-template signature with histories deferred. Never reenter the failed W-sector family.
+Next action source: `static_parameter_alias_trace_and_accepted_native_source_handles`.
+Static parameter-alias trace (outside science pins): `C:/Users/z5242/Documents/Codex/2026-10-16/https-github-com-liang-techh-openai/work/wsector_parameter_alias_trace_2026_10_27.json` SHA-256 `b483e1bd0657fc2ad223f4153044875191b5beae7e2028e99f7a08b9d05ba112`; no cross-side identity, zero, or error-cap claim.
+
+
 ## compact_O3_transition_P2_pressure_gap publication
 
 Report: `experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_O3_transition_P2_pressure_gap.json` (SHA-256 `2956baf8c82250ffd789714ceb1ee80170bd69e57f3c84d1d6b3b8889a1d1466`).
