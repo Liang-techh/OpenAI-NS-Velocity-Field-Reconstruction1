@@ -1,5 +1,14 @@
 
 
+## native_O3_anchor_second_Z_eta_chart publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_second_Z_eta_chart.json.
+Status: executed conditional anchor second-Z/eta-chart local-source packet; publication metadata follows.
+Next: source_native_O3_eta_core_functional_native_m15_binding. Prospective frozen task: source_native_O3_eta_core_functional_native_m15_binding.
+The complete saved result and its raw callback/checkpoint bytes are retained in the lossless artifact set.
+
+
+
 ## native_O3_anchor_axial_Q_velocity publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_axial_Q_velocity.json.

@@ -588,3 +588,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_O3_anchor_axial_Q_velocity.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_axial_Q_velocity.json -text
 /docs/CURRENT_NATIVE_O3_ANCHOR_AXIAL_Q_VELOCITY_2026_10_28.md -text
+/src/openai_ns_reconstruction/native_O3_anchor_second_Z_eta_chart.py -text
+/scripts/run_native_O3_anchor_second_Z_eta_chart.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_second_Z_eta_chart.json -text
+/docs/CURRENT_NATIVE_O3_ANCHOR_SECOND_Z_ETA_CHART_2026_10_28.md -text
