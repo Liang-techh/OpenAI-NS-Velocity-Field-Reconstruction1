@@ -695,3 +695,5 @@ scripts/run_frame_axis_gamma_roles_once.py -text
 docs/CURRENT_FRAME_AXIS_X_HISTORY_PORT_2026_10_28.md -text
 scripts/run_frame_X_history_transport_once.py -text
 docs/CURRENT_FRAME_X_HISTORY_TRANSPORT_2026_10_28.md -text
+scripts/run_frame_quiet_X_quotient_jets_once.py -text
+docs/CURRENT_QUIET_X_QUOTIENT_JETS_2026_10_28.md -text
