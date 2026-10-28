@@ -1,3 +1,7 @@
+## Compact signed-history to joint binding: saved failure (2026-10-28)
+
+One new frozen consumer failed with `KeyError: 0` at its first M/Z0 formula row; no 20-port binding was accepted and the failed family must not be re-entered. Exact checkpoints and the static-review miss are preserved. Next use a distinct new family for the not-yet-entered history binding, retaining all old errors and the independent offset. See docs/CURRENT_COMPACT_JOINT_HISTORY_GAP_BINDING_FAILURE_2026_10_28.md.
+
 ## Scoped logRp source bridge and worker incident (2026-10-28)
 
 A frozen local source consumer passed 13 checks, deriving log(current Rp)=old logRp under the inherited positive-real scoped Rp identity; Gamma is a source-port witness only. Complete pulse m15 / measure / endpoint identity remains open. Two worker source-expression comparisons ran without the required checkpoint; their partial evidence is retained, not accepted, and those families must not be replayed. Details: docs/CURRENT_ORIGINAL_NATIVE_LOGRP_SOURCE_BRIDGE_2026_10_28.md.

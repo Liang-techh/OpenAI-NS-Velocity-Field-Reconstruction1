@@ -1,0 +1,11 @@
+# Compact joint history gap binding — saved failure, 2026-10-28
+
+Goal ACTIVE / INCOMPLETE. The frozen new source consumer was entered once, and its full exception was saved before review. It failed at the first `M` ordinary-Z0 joint formula row with `KeyError: 0`: `_formula_atom_rows` indexes a field-keyed history dictionary as `nodes[order]` instead of selecting the field before the order. The independent pre-entry static review missed this defect. No binding result was accepted.
+
+The entered leaf performed its preceding source checks and began the first formula row. It did not enter `_bind_history_rows`, `_bind_amplitude`, the 20-row output or the D joint binding. The frozen implementation, runner and exact source/capsule/entry/result bytes remain available; the four checkpoint bytes are embedded losslessly in the failure report. This entered family must not be re-entered or copied as a retry.
+
+Prior accepted reports retain the formal 20 signed history-gap definitions and the joint quotient-Leibniz numerator transport, but their actual cross-packet source binding is still open. The completed first attempt does not establish common physical points, matching units, Pstar lift, numerical gap values, cap transfer, independent reference-offset cancellation or zero terminal difference. The 212 cumulative / 213 raw / 183 reduced terms, six signed channels, one reserved contribution and every old error remain unchanged. Existing uncheckpointed pulse-comparison incident evidence and its do-not-replay rule also remain.
+
+Next: construct a genuinely different fresh source family that only addresses the not-yet-entered signed 20 history-gap / joint-atom binding, using the saved reports and explicit C3/C5 namespaces, source handles and ordinary Z orders. Preserve the shared N as unmaterialized node 18, distinguish the `D` channel's k/m joint numerator from the `M`-channel m binding, and retain all unit, common-domain and independent-offset gaps. Freeze source and inputs, save pending and entry before its single root invocation, and preserve any complete result before review. Do not rerun the failed checker or previously entered source helpers.
+
+Failure result SHA-256: `50257d1c62728ba554228f69e68d50d4c4be673ff0b0bf13e79b3c6b75b3be3c`.
