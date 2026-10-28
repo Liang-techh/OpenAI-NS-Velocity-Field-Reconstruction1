@@ -699,3 +699,5 @@ scripts/run_frame_quiet_X_quotient_jets_once.py -text
 docs/CURRENT_QUIET_X_QUOTIENT_JETS_2026_10_28.md -text
 scripts/run_compact_X_cleared_residual_once.py -text
 docs/CURRENT_COMPACT_X_CLEARED_RESIDUAL_2026_10_28.md -text
+scripts/run_outer_X_common_factor_once.py -text
+docs/CURRENT_OUTER_X_COMMON_FACTOR_2026_10_28.md -text

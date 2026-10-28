@@ -1,3 +1,7 @@
+## 2026-10-28: conditional six-chart leading X factorization
+
+A frozen leaf checked six saved source-scale forms and derived the common-factor Duhamel induction with 12 symbolic checks. The actual source/geometry/terminal function gates and X4/X5 remain open. See [the current handoff](CURRENT_OUTER_X_COMMON_FACTOR_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: compact X cleared derivative residuals
 
 A frozen leaf bound compact exit E/h ports to the quiet inlet and generated denominator-cleared P4/P5 compatibility tests. Thirteen symbolic checks passed; actual all-Z source jets, terminal identities and X4/X5 vanishing remain open. See [the current handoff](CURRENT_COMPACT_X_CLEARED_RESIDUAL_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
