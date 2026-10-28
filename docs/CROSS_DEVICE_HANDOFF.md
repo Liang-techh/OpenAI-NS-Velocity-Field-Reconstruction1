@@ -1,3 +1,7 @@
+## 2026-10-28: frame m15 remaining endpoint substitutions
+
+A new source-only operation bound the 44 previously deferred m15 endpoint occurrences as unevaluated references: 12 reuse prior audited DAG nodes and 32 use 168 new operator nodes. A separately frozen structural audit passed on the new nodes and 44 occurrences. This does not prove semantic identity, same-source seams, ordinary-Z1 commutation or numerical error reduction; see [the current handoff](CURRENT_FRAME_M15_ENDPOINT_SUBSTITUTION_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: frame m15 endpoint mismatch
 
 A frozen source-only leaf records all 64 Z0/Z1 occurrences of the four m15 endpoint fields at eight positions, with 16 saved-frame, four previously audited fresh-gap, and 44 deferred references. It provides exact conditional local-minus-global and ordinary-Z1 mismatch expressions without cancelling seams or errors. The physical source identity and numerical closure remain open. See [the current handoff](CURRENT_FRAME_M15_ENDPOINT_MISMATCH_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
