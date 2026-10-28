@@ -704,3 +704,6 @@ docs/CURRENT_OUTER_X_COMMON_FACTOR_2026_10_28.md -text
 scripts/run_outer_X_scalar_source_contract_once.py -text
 docs/CURRENT_OUTER_SCALAR_COMPACT_ENDPOINT_2026_10_28.md -text
 scripts/run_compact_terminal_algebra_once.py -text
+scripts/run_compact_profile_function_port_once.py -text
+scripts/run_compact_M_history_binding_once.py -text
+docs/CURRENT_COMPACT_FUNCTION_AND_M_PORT_2026_10_28.md -text

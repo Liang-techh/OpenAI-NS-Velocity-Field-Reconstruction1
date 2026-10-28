@@ -1,3 +1,7 @@
+## 2026-10-28: numerical compact profile and M source-role selection
+
+A callable fixed-radius compact delta_E/Z-jet numerical port passed 19 synthetic checks; four M saved role rows were selected without proving source equality. Actual physical inputs, same-source endpoint identities and m15 closure remain open. See [the current handoff](CURRENT_COMPACT_FUNCTION_AND_M_PORT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: conditional six-chart leading X factorization
 
 A frozen leaf checked six saved source-scale forms and derived the common-factor Duhamel induction with 12 symbolic checks. The actual source/geometry/terminal function gates and X4/X5 remain open. See [the current handoff](CURRENT_OUTER_X_COMMON_FACTOR_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
