@@ -640,3 +640,7 @@ docs/CURRENT_COMPACT_ISCP_GAP_SOURCE_BINDING_2026_10_28.md -text
 
 scripts/run_compact_M_z0_source_recipe_linkage.py -text
 docs/CURRENT_COMPACT_M_RECIPE_FAILURE_PULSE_GAP_2026_10_28.md -text
+
+scripts/check_pulse_signed_m15_correction_fixture.py -text
+scripts/run_pulse_signed_m15_fixture_once.py -text
+docs/CURRENT_PULSE_SIGNED_M15_KERNEL_2026_10_28.md -text

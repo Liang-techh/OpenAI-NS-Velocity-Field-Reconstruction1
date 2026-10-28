@@ -1,3 +1,7 @@
+## 2026-10-28: signed pulse m15 kernel, synthetic-only validation
+
+A new signed three-chart physical-minus-frame pulse integration kernel retains each finite endpoint and ordinary Z1; independent direct-N1p and finite-difference synthetic checks passed. This is not actual-source binding, pulse equality, a certified error or five-moment closure. The actual source mu underflows binary64, so this float kernel cannot yet evaluate it; next bind physical field jets, radii, endpoints and units using a suitable log-scale or arbitrary-precision method. Preserve both pulse sides and all old errors. See [current handoff](CURRENT_PULSE_SIGNED_M15_KERNEL_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: M Z0 recipe attempt failed; physical pulse correction retained
 
 The frozen `compact_M_z0_source_recipe_linkage_v1` leaf was entered once and failed with `KeyError: rebuilt_source_leaf_ports`; its complete evidence is preserved. Do not re-enter it or the earlier generic M/Z0 failure. The previously accepted D/I/S/Cp source-port results remain conditional. No new M function identity, physical value, error reduction, or five-moment closure is accepted. See [the current handoff](CURRENT_COMPACT_M_RECIPE_FAILURE_PULSE_GAP_2026_10_28.md) for the Z0 saved-recipe scope, explicit signed physical pulse correction and ordinary-Z1 requirements. Next bind the pulse fields, physical chart measures and endpoints to their source owners without replay. Goal remains ACTIVE / INCOMPLETE.
