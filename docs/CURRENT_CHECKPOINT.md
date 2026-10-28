@@ -1,3 +1,7 @@
+## 2026-10-28: saved frame X port and axis history roles
+
+Two frozen leaves identified the X inlet port, its saved order 0–3 mapping, and Xt/Xf history references for the two Z=0 substitutions. Original/current order-4/5 X references are structurally different; actual jet transport and function equality remain open. See [the current handoff](CURRENT_FRAME_AXIS_X_HISTORY_PORT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: saved frame Z-axis substitution descriptors
 
 A frozen leaf identified both saved Z binder arguments as exact zero and checked a generic C2 composition jet. Actual inlet derivative transport, capture freedom and frame seams remain open. See [the current handoff](CURRENT_FRAME_Z_AXIS_COMPOSITION_JET_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
