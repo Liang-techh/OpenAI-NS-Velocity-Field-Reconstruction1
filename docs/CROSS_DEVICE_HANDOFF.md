@@ -1,3 +1,7 @@
+## 2026-10-28: M Z0 recipe attempt failed; physical pulse correction retained
+
+The frozen `compact_M_z0_source_recipe_linkage_v1` leaf was entered once and failed with `KeyError: rebuilt_source_leaf_ports`; its complete evidence is preserved. Do not re-enter it or the earlier generic M/Z0 failure. The previously accepted D/I/S/Cp source-port results remain conditional. No new M function identity, physical value, error reduction, or five-moment closure is accepted. See [the current handoff](CURRENT_COMPACT_M_RECIPE_FAILURE_PULSE_GAP_2026_10_28.md) for the Z0 saved-recipe scope, explicit signed physical pulse correction and ordinary-Z1 requirements. Next bind the pulse fields, physical chart measures and endpoints to their source owners without replay. Goal remains ACTIVE / INCOMPLETE.
+
 ## Compact I/S/Cp signed-history source binding (2026-10-28)
 
 A fresh source-only leaf bound 12 h/e/p history rows to actual I/S/Cp atom occurrences at ordinary Z0–Z3, preserving the previously accepted D-only packet by raw-byte authentication. M-channel formula binding, common physical domain/units, independent offset and cap transfer remain open; the failed generic M/Z0 family was not re-entered. See docs/CURRENT_COMPACT_ISCP_GAP_SOURCE_BINDING_2026_10_28.md.

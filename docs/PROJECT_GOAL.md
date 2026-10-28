@@ -1,3 +1,7 @@
+## 2026-10-28: M Z0 recipe attempt failed; physical pulse correction retained
+
+The frozen `compact_M_z0_source_recipe_linkage_v1` leaf was entered once and failed with `KeyError: rebuilt_source_leaf_ports`; its complete evidence is preserved. Do not re-enter it or the earlier generic M/Z0 failure. The previously accepted D/I/S/Cp source-port results remain conditional. No new M function identity, physical value, error reduction, or five-moment closure is accepted. See [the current handoff](CURRENT_COMPACT_M_RECIPE_FAILURE_PULSE_GAP_2026_10_28.md) for the Z0 saved-recipe scope, explicit signed physical pulse correction and ordinary-Z1 requirements. Next bind the pulse fields, physical chart measures and endpoints to their source owners without replay. Goal remains ACTIVE / INCOMPLETE.
+
 # Active goal: paper-faithful staged blow-up reconstruction (2026-09-30)
 
 This user-updated objective supersedes the older stage order and background residual gates below. Construct a reproducible, nonzero, divergence-free three-dimensional time-dependent Navier–Stokes background and subsequent correction layers, based on the OpenAI analytic construction, Lei–Ren Part I profile reconstruction and relevant numerical research. Recover dependent fields from analytic constraints; do not independently fit velocity components or choose forcing as the measured residual.

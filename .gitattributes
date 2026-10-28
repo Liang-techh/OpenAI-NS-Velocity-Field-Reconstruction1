@@ -637,3 +637,6 @@ src/openai_ns_reconstruction/compact_ISCp_gap_source_binding.py -text
 scripts/run_compact_ISCp_gap_source_binding.py -text
 experiments/root_st073/lei_ren_part1_paper_compliant_current_compact_ISCp_gap_source_binding.json -text
 docs/CURRENT_COMPACT_ISCP_GAP_SOURCE_BINDING_2026_10_28.md -text
+
+scripts/run_compact_M_z0_source_recipe_linkage.py -text
+docs/CURRENT_COMPACT_M_RECIPE_FAILURE_PULSE_GAP_2026_10_28.md -text
