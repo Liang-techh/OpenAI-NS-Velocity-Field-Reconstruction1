@@ -1,3 +1,7 @@
+## 2026-10-28: normalized signed pulse pair quadrature
+
+A new mpmath interface integrates caller-supplied correlated signed jets with separate radius/difference scales and finite endpoint terms at ordinary Z0/Z1. Its first frozen synthetic fixture missed its strict relative tolerance; a separately frozen, difference-normalized v2 passed the recorded analytic fixture. Neither version binds the physical/frame sources or certifies errors; historical F radius/endpoints and the common source map remain open. See [the current handoff](CURRENT_PULSE_SCALED_PAIR_QUADRATURE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: physical/current gap signed source expression
 
 A frozen source-only program composes physical local gap m15 rows and current-radius G endpoint increments at ordinary Z0/Z1 as the conditional expression P_gap-(G_right-G_left). It selects no values and does not prove common coordinates, units, endpoint orientation, P-source authentication or P/G equality; historical G-F, the independent reference offset, corrections and all errors remain. The offset is outside this local expression. See [the current handoff](CURRENT_PULSE_GAP_PHYSICAL_CURRENT_DIFFERENCE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
