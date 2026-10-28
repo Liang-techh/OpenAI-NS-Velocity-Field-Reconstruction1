@@ -1,5 +1,13 @@
 
 
+## native_O3_eta_core_moment_functionals publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_core_moment_functionals.json.
+Status: accepted conditional local moment DATA and uninstantiated n1 affine operator.
+Next: source_native_O3_eta_n1_core_forcing_and_m15_binding.
+
+
+
 ## native_O3_anchor_second_Z_eta_chart publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_second_Z_eta_chart.json.

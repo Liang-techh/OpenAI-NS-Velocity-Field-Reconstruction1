@@ -592,3 +592,7 @@ experiments/root_st073/lei_ren_part1_paper_compliant_current_original_compact_C3
 /scripts/run_native_O3_anchor_second_Z_eta_chart.py -text
 /experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_second_Z_eta_chart.json -text
 /docs/CURRENT_NATIVE_O3_ANCHOR_SECOND_Z_ETA_CHART_2026_10_28.md -text
+/src/openai_ns_reconstruction/native_O3_eta_core_moment_functionals.py -text
+/scripts/run_native_O3_eta_core_moment_functionals.py -text
+/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_core_moment_functionals.json -text
+/docs/CURRENT_NATIVE_O3_ETA_CORE_MOMENT_FUNCTIONALS_2026_10_28.md -text
