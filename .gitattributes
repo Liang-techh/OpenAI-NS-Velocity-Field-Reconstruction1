@@ -655,3 +655,5 @@ docs/CURRENT_PULSE_GAP_ACTUAL_SOURCE_PROGRAM_2026_10_28.md -text
 
 scripts/run_pulse_gap_current_radius_source_once.py -text
 docs/CURRENT_PULSE_GAP_CURRENT_RADIUS_SOURCE_2026_10_28.md -text
+scripts/run_pulse_gap_physical_current_difference_once.py -text
+docs/CURRENT_PULSE_GAP_PHYSICAL_CURRENT_DIFFERENCE_2026_10_28.md -text

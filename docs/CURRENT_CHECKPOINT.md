@@ -1,3 +1,7 @@
+## 2026-10-28: physical/current gap signed source expression
+
+A frozen source-only program composes physical local gap m15 rows and current-radius G endpoint increments at ordinary Z0/Z1 as the conditional expression P_gap-(G_right-G_left). It selects no values and does not prove common coordinates, units, endpoint orientation, P-source authentication or P/G equality; historical G-F, the independent reference offset, corrections and all errors remain. The offset is outside this local expression. See [the current handoff](CURRENT_PULSE_GAP_PHYSICAL_CURRENT_DIFFERENCE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: pulse gap current-radius reconstruction
 
 The saved C3 source gives a current-radius gap reconstruction G whose six field row lists match the prior frame references at ordinary Z0–Z2, with separately saved finite endpoint and pressure-FTC roles. The scoped gap Q relations rely on the accepted source-checker premises; G is not proved equal to historical frame-only pressure F or physical source P. Preserve the formal (P-G)+(G-F) difference, all old errors and the independent reference offset. Numerical admission and complete five-moment closure remain open. See [current handoff](CURRENT_PULSE_GAP_CURRENT_RADIUS_SOURCE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
