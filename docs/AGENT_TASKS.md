@@ -1,3 +1,8 @@
+## Native O3 eta n1 actual-source matrix C0 bounds (2026-10-28)
+
+The saved conditional input enclosures yield 13 B0 and 6 B1 C0 interval entries over rho [0,4], eta [-1,1]. Six F-dependent entries retain a formal F0 anchor; no source point value is selected. No matrix Z1, full n1 response, m15 binding, old-error reduction or global closure is claimed.
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_actual_matrix_bounds.json; result SHA: `d8d5449d88e2e3855741e0fa377b09d7f7a2aab52c085585f5379cd4f3ef9c50`. Next: `source_native_O3_eta_n1_actual_matrix_Z1_and_same_source_response_binding`.
+
 ## Native O3 eta n1 operator-coordinate repair publication (2026-10-28)
 
 Synthetic-only saved result SHA: `3f96e6dc47839d1e51c238e37be5978bb5c5359a21e4a06382c6058c115c94dc`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_operator_coordinate_repair.json`.
