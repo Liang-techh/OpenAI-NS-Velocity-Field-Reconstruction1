@@ -664,3 +664,8 @@ scripts/fixture_pulse_scaled_pair_once.py -text
 scripts/run_pulse_scaled_pair_once.py -text
 scripts/run_historical_frame_gap_deferred_roles_once.py -text
 docs/CURRENT_HISTORICAL_FRAME_GAP_DEFERRED_ROLES_2026_10_28.md -text
+scripts/run_historical_frame_gap_saved_rewrite_lookup_once.py -text
+scripts/run_frame_gap_fresh_substitution_once.py -text
+scripts/run_frame_gap_fresh_substitution_audit_once.py -text
+docs/CURRENT_HISTORICAL_FRAME_GAP_LOCAL_SUBSTITUTION_2026_10_28.md -text
+docs/CURRENT_HISTORICAL_FRAME_GAP_SAVED_REWRITE_2026_10_28.md -text

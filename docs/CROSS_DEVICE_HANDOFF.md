@@ -1,3 +1,7 @@
+## 2026-10-28: frame gap local source substitution
+
+A saved-map lookup found the old field-radius reference unchanged and 20 missing local gap/endpoint rows. A new independently namespaced DAG constructs those 20 roots, and an independent frozen structural audit passed on 1,131 nodes and 20 roots. This is unevaluated source structure, not a proof of derivative commutation, physical identity, complete endpoint seams or numerical error reduction. See [the current handoff](CURRENT_HISTORICAL_FRAME_GAP_LOCAL_SUBSTITUTION_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: historical frame gap deferred source roles
 
 A frozen source-only leaf recovered the original gap field-radius template and selected endpoint/m15 rows, the saved inlet map, and direct agreement of adapter global m15 rows with the frame comparison record. The inlet substitution is not executed and the local F endpoint/piece decomposition is not proved; hard-coded annotations and partial endpoint scope are qualified in [the current handoff](CURRENT_HISTORICAL_FRAME_GAP_DEFERRED_ROLES_2026_10_28.md). No source values or error reduction were computed. Goal ACTIVE / INCOMPLETE.
