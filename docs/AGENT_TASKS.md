@@ -1,3 +1,16 @@
+## Native O3 eta n1 finite-admission restriction (2026-10-28)
+Saved result SHA: `78aca717ac8f29091dc99cd086899b2d454fb1c13ea56c323cb34380ab43fff3`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_core_source.json`.
+The structural run and conditional exact old-core eta view remain recorded, but the finite RHS packet is not admitted. The saved-result audit records nonfinite g5 C1 at eta=0 and uniform-eta g5 C0/C1; the audit is metadata-only and does not prove a numerical root cause. Retain g4/g6 enclosures and the formal positive F0 scale; do not claim a finite full 48-row RHS packet, regular n1 response, or m15 value.
+Next task: `source_native_O3_eta_n1_finite_gauge_jet_repair`; require a source-identical finite gauge-jet bound before actual n1 response or m15 work. The earlier response/m15 plan remains preserved future work. Audit: `C:/Users/z5242/Documents/Codex/2026-10-16/https-github-com-liang-techh-openai/work/native_O3_eta_n1_core_source_nonfinite_audit_2026_10_28.json`.
+
+
+---
+The earlier saved projection below is preserved history; the finite-admission restriction above is authoritative.
+
+## Native O3 eta n1 core source handoff (2026-10-28)
+Component: `native_O3_eta_n1_core_source`; publication status: `passed`; report SHA: `78aca717ac8f29091dc99cd086899b2d454fb1c13ea56c323cb34380ab43fff3`.
+The local canonical RHS has 48 retained rows, five new source families, conditional exact-view registration, no regular n1 binding, no tau field, and the seven execution rules remain authoritative.
+
 
 
 ## native_O3_eta_core_moment_functionals publication
