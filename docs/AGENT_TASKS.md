@@ -1,5 +1,14 @@
 
 
+## native_O3_anchor_first_picard_core publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_first_picard_core.json.
+Status: executed conditional first-Picard local-source packet; publication metadata follows.
+Next: source_native_O3_anchor_core_axial_jet_and_velocity_ports. Prospective frozen task: source_native_O3_anchor_core_axial_jet_and_velocity_ports.
+The complete saved result and its raw callback/checkpoint bytes are retained in the lossless artifact set.
+
+
+
 ## native_O3_anchor_peak_direct_interval_source_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_peak_direct_interval_source_jet.json.
