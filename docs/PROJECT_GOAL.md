@@ -1,3 +1,7 @@
+## 2026-10-28: conditional frame main/gap first-moment algebra
+
+A frozen source-and-symbolic leaf passed 29 exact conditional checks for the finite-mu first-row normalization and arbitrary-Z endpoint/Z1 algebra, while binding saved kernel, frame and endpoint roles. The second moment row, actual source-function interpretation, capture-free inlet substitution and derivative transport remain open; no physical seam or numerical closure is claimed. See [the current handoff](CURRENT_FRAME_MAIN_GAP_MOMENT_ALGEBRA_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: frame m15 source-bound signed seams
 
 A frozen v1 failed on a Z1 string-format guard and is preserved. A separately frozen v2 binds the 64 source-row occurrences into four Z0/Z1 signed seams; exact namespace/node/field/order/coefficient pairing found no direct pairs, so 32 Z0 and 48 Z1 terms remain. This does not prove the functions unequal, any physical identity, or numerical error reduction. See [the current handoff](CURRENT_FRAME_M15_SOURCE_BOUND_SEAMS_2026_10_28.md). Goal ACTIVE / INCOMPLETE.

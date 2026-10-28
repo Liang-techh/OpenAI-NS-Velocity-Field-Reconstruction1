@@ -677,3 +677,5 @@ docs/CURRENT_FRAME_M15_ENDPOINT_SUBSTITUTION_2026_10_28.md -text
 scripts/run_frame_m15_source_bound_seams_once.py -text
 scripts/run_frame_m15_source_bound_seams_v2_once.py -text
 docs/CURRENT_FRAME_M15_SOURCE_BOUND_SEAMS_2026_10_28.md -text
+scripts/run_frame_main_gap_source_proof_once.py -text
+docs/CURRENT_FRAME_MAIN_GAP_MOMENT_ALGEBRA_2026_10_28.md -text
