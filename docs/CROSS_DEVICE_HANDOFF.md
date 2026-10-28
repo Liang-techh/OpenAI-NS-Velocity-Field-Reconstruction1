@@ -1,3 +1,7 @@
+## Scoped logRp source bridge and worker incident (2026-10-28)
+
+A frozen local source consumer passed 13 checks, deriving log(current Rp)=old logRp under the inherited positive-real scoped Rp identity; Gamma is a source-port witness only. Complete pulse m15 / measure / endpoint identity remains open. Two worker source-expression comparisons ran without the required checkpoint; their partial evidence is retained, not accepted, and those families must not be replayed. Details: docs/CURRENT_ORIGINAL_NATIVE_LOGRP_SOURCE_BRIDGE_2026_10_28.md.
+
 ## Scoped native pulse geometry bridge (2026-10-28)
 
 A fresh source-only consumer passed 51 checks, deriving Rp-squared and three same-y radius congruences from the inherited scoped Rp identity. All physical pulse m15 corrections and old errors remain; chart measures/endpoints and complete pulse identity are open. All 16 weighted-B jumps were already accepted in cross2-B v2; no ancestor was rerun. See docs/CURRENT_ORIGINAL_NATIVE_PULSE_GEOMETRY_LITERAL_BRIDGE_2026_10_28.md.

@@ -1,0 +1,322 @@
+pulse DAG worker uncheckpointed evidence transcript
+Date: 2026-10-28
+
+PROVENANCE AND ACCEPTANCE STATUS
+This file was written from command/output text already present in the worker thread log.
+No command below was rerun for this file, and no new calculation was performed.
+These were temporary, un-frozen, uncheckpointed ad-hoc Python commands.
+They were read-only literal JSON/gzip row inspections and mapping comparisons; they are not an accepted source identity consumer result or proof.
+The first command stops after the integral rows at the first endpoint-shape ValueError.
+The second command prints the per-chart endpoint rows and then stops at global_endpoints with an AttributeError.
+The third command contains the observed global-endpoint, pressure, and pieces output.
+The fourth count command prints only 24 arrays and 96 rows, then fails with KeyError exact_graph_nodes; it is incomplete and does not establish the manually discussed 408-row claim.
+The fifth command is the separate observed measure/ordinary-Z metadata output.
+The outputs below are preserved as observed; failures and incompleteness are intentional evidence, not proof.
+===== RAW TEMPORARY COMMAND 1: exec-b13fd169-3e30-471c-9c6a-c922bebcdff5 / COMMAND =====
+"C:\\Users\\z5242\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "@'
+import gzip,json,pathlib
+root=pathlib.Path('.')
+def gz(rel):
+  with gzip.open(root/rel,'rt',encoding='utf-8') as f:return json.load(f,parse_int=str)
+phys=json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text())['component_result']['physical_pulse_bindings']
+h=gz('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz')['C5_pulse_C3_pressure_bindings']
+mp={int(k):int(v) for k,v in json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text())['component_result']['substitution_receipt']['changed_row_mapping'].items()}
+
+def arr_status(old,new):
+  oi=[int(x) for x in old]; ni=[int(x) for x in new]
+  exp=[mp.get(x,x) if x not in (0,1) else x for x in oi]
+  return ('EXACT' if ni==exp else 'MISMATCH'),exp
+for group in ('integrals','endpoints','global_endpoints','pressure','pieces'):
+  print('====',group,'====')
+  old=h[group]; new=phys[group]
+  if isinstance(old,dict):
+    for chart in old:
+      if isinstance(old[chart],dict):
+        print('--',chart,'--')
+        for name,ov in old[chart].items():
+          nv=new[chart][name]
+          st,exp=arr_status(ov,nv)
+          print(name, 'old=',ov, 'physical=',nv,'map=',st)
+      elif isinstance(old[chart],list):
+        print('--',chart,'list--')
+        for j,(ov,nv) in enumerate(zip(old[chart],new[chart])):
+          print(j, 'map=',arr_status(ov,nv)[0], 'old=',ov,'physical=',nv)
+  else:
+    for name,ov in old.items():
+      nv=new[name]; print(name,'old=',ov,'physical=',nv,'map=',arr_status(ov,nv)[0])
+'@ | python -"
+===== OBSERVED OUTPUT 1 =====
+==== integrals ====
+-- main --
+I0_q_Z old= ['34381', '34383', '57736', '58089'] physical= [285014, 285016, 285018, 285020] map= EXACT
+I0_U_q_Z old= ['34385', '34387', '57801', '58200'] physical= [285023, 285028, 285037, 285054] map= EXACT
+I0_U_squared old= ['34389', '34391', '57855', '58293'] physical= [285057, 285062, 285069, 285080] map= EXACT
+I0_U_U_Z old= ['34393', '34395', '57913', '58387'] physical= [285082, 285087, 285095, 285109] map= EXACT
+I1_q old= ['34398', '34400', '58468', '58738'] physical= [285112, 285114, 285116, 285118] map= EXACT
+I1_q_Z old= ['34401', '34403', '58514', '58799'] physical= [285119, 285121, 285123, 285125] map= EXACT
+I1_q_squared old= ['34405', '34407', '58561', '58875'] physical= [285128, 285133, 285140, 285151] map= EXACT
+I1_U_q_Z old= ['34409', '34411', '58595', '58922'] physical= [285153, 285155, 285157, 285159] map= EXACT
+I1_U_squared old= ['34413', '34415', '58634', '58983'] physical= [285161, 285163, 285165, 285167] map= EXACT
+I1_U_U_Z old= ['34417', '34419', '58672', '59047'] physical= [285169, 285171, 285173, 285175] map= EXACT
+-- gap --
+I0_q_Z old= ['34716', '34718', '57739', '58092'] physical= [285178, 285180, 285182, 285184] map= EXACT
+I0_U_q_Z old= ['34719', '34720', '0', '0'] physical= [34719, 34720, 0, 0] map= EXACT
+I0_U_squared old= ['34719', '34720', '0', '0'] physical= [34719, 34720, 0, 0] map= EXACT
+I0_U_U_Z old= ['34719', '34720', '0', '0'] physical= [34719, 34720, 0, 0] map= EXACT
+I1_q old= ['34723', '34725', '58471', '58741'] physical= [285187, 285189, 285191, 285193] map= EXACT
+I1_q_Z old= ['34726', '34728', '58517', '58802'] physical= [285194, 285196, 285198, 285200] map= EXACT
+I1_q_squared old= ['34730', '34732', '58569', '58887'] physical= [285203, 285208, 285215, 285226] map= EXACT
+I1_U_q_Z old= ['34733', '34734', '0', '0'] physical= [34733, 34734, 0, 0] map= EXACT
+I1_U_squared old= ['34733', '34734', '0', '0'] physical= [34733, 34734, 0, 0] map= EXACT
+I1_U_U_Z old= ['34733', '34734', '0', '0'] physical= [34733, 34734, 0, 0] map= EXACT
+-- end --
+I0_q_Z old= ['35025', '35027', '57743', '58096'] physical= [285228, 285230, 285232, 285234] map= EXACT
+I0_U_q_Z old= ['35029', '35031', '57811', '58218'] physical= [285237, 285242, 285251, 285268] map= EXACT
+I0_U_squared old= ['35033', '35035', '57863', '58305'] physical= [285271, 285276, 285283, 285294] map= EXACT
+I0_U_U_Z old= ['35037', '35039', '57922', '58402'] physical= [285296, 285301, 285309, 285323] map= EXACT
+I1_q old= ['35042', '35044', '58475', '58745'] physical= [285326, 285328, 285330, 285332] map= EXACT
+I1_q_Z old= ['35045', '35047', '58521', '58806'] physical= [285333, 285335, 285337, 285339] map= EXACT
+I1_q_squared old= ['35049', '35051', '58578', '58900'] physical= [285342, 285347, 285354, 285365] map= EXACT
+I1_U_q_Z old= ['35053', '35055', '58598', '58925'] physical= [285367, 285369, 285371, 285373] map= EXACT
+I1_U_squared old= ['35057', '35059', '58637', '58986'] physical= [285375, 285377, 285379, 285381] map= EXACT
+I1_U_U_Z old= ['35061', '35063', '58675', '59050'] physical= [285383, 285385, 285387, 285389] map= EXACT
+==== endpoints ====
+-- main list--
+Traceback (most recent call last):
+  File "<stdin>", line 27, in <module>
+  File "<stdin>", line 10, in arr_status
+  File "<stdin>", line 10, in <listcomp>
+ValueError: invalid literal for int() with base 10: 'R_q'
+
+
+===== RAW TEMPORARY COMMAND 2: exec-8463e0d8-0d5b-48d4-a880-82b62a20dc0d / COMMAND =====
+"C:\\Users\\z5242\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "@'
+import gzip,json,pathlib
+root=pathlib.Path('.')
+def gz(rel):
+  with gzip.open(root/rel,'rt',encoding='utf-8') as f:return json.load(f,parse_int=str)
+phys=json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text())['component_result']['physical_pulse_bindings']
+h=gz('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz')['C5_pulse_C3_pressure_bindings']
+mp={int(k):int(v) for k,v in json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text())['component_result']['substitution_receipt']['changed_row_mapping'].items()}
+def arr_status(old,new):
+  oi=[int(x) for x in old]; ni=[int(x) for x in new]
+  exp=[mp.get(x,x) if x not in (0,1) else x for x in oi]
+  return ('EXACT' if ni==exp else 'MISMATCH'),exp
+for group in ('endpoints','global_endpoints'):
+  print('====',group,'====')
+  for chart,oldlist in h[group].items():
+    print('--',chart,'--')
+    for j,oldobj in enumerate(oldlist):
+      newobj=phys[group][chart][j]
+      print('branch',j)
+      for name,ov in oldobj.items():
+        nv=newobj[name]; st,exp=arr_status(ov,nv)
+        print(name, 'old=',ov, 'physical=',nv,'map=',st)
+'@ | python -"
+===== OBSERVED OUTPUT 2 =====
+==== endpoints ====
+-- main --
+branch 0
+R_q old= ['34428', '34429', '59108', '59333'] physical= [285392, 285394, 285398, 285405] map= EXACT
+R_squared_q old= ['34431', '34432', '59743', '59988'] physical= [285407, 285408, 285413, 285422] map= EXACT
+R_q_squared old= ['34433', '34436', '59169', '59448'] physical= [285423, 285426, 285437, 285459] map= EXACT
+R_squared_q_squared old= ['34437', '34440', '59817', '60132'] physical= [285460, 285463, 285473, 285495] map= EXACT
+R_U_squared old= ['34443', '34446', '59238', '59581'] physical= [285498, 285503, 285518, 285547] map= EXACT
+R_squared_U_squared old= ['34449', '34452', '59885', '60268'] physical= [285549, 285553, 285566, 285595] map= EXACT
+q_plus_q_y old= ['34453', '34454', '59316', '59730'] physical= [285597, 285599, 285601, 285603] map= EXACT
+R_q_y old= ['34455', '34456', '59964', '60424'] physical= [285604, 285605, 285608, 285614] map= EXACT
+branch 1
+R_q old= ['34465', '34466', '59104', '59326'] physical= [285617, 285619, 285623, 285630] map= EXACT
+R_squared_q old= ['34468', '34469', '59738', '59978'] physical= [285632, 285633, 285638, 285647] map= EXACT
+R_q_squared old= ['34470', '34473', '59162', '59433'] physical= [285648, 285651, 285662, 285684] map= EXACT
+R_squared_q_squared old= ['34474', '34477', '59810', '60117'] physical= [285685, 285688, 285698, 285720] map= EXACT
+R_U_squared old= ['34480', '34483', '59227', '59559'] physical= [285723, 285728, 285743, 285772] map= EXACT
+R_squared_U_squared old= ['34486', '34489', '59875', '60246'] physical= [285774, 285778, 285791, 285820] map= EXACT
+q_plus_q_y old= ['34490', '34491', '59314', '59728'] physical= [285822, 285824, 285826, 285828] map= EXACT
+R_q_y old= ['34492', '34493', '59961', '60418'] physical= [285829, 285830, 285833, 285839] map= EXACT
+-- gap --
+branch 0
+R_q old= ['34741', '34742', '60436', '60621'] physical= [285842, 285844, 285848, 285855] map= EXACT
+R_squared_q old= ['34744', '34745', '60923', '61128'] physical= [285857, 285858, 285863, 285872] map= EXACT
+R_q_squared old= ['34746', '34749', '60497', '60736'] physical= [285873, 285876, 285887, 285909] map= EXACT
+R_squared_q_squared old= ['34750', '34753', '60997', '61272'] physical= [285910, 285913, 285923, 285945] map= EXACT
+R_U_squared old= ['34755', '34756', '60538', '60797'] physical= [285947, 285948, 285953, 285960] map= EXACT
+R_squared_U_squared old= ['34758', '34759', '61041', '61340'] physical= [285962, 285963, 285970, 285981] map= EXACT
+q_plus_q_y old= ['34760', '34761', '60604', '60912'] physical= [285983, 285985, 285987, 285989] map= EXACT
+R_q_y old= ['34762', '34763', '61108', '61462'] physical= [285990, 285991, 285994, 286000] map= EXACT
+branch 1
+R_q old= ['34770', '34771', '60432', '60614'] physical= [286003, 286005, 286009, 286016] map= EXACT
+R_squared_q old= ['34773', '34774', '60919', '61120'] physical= [286018, 286019, 286024, 286033] map= EXACT
+R_q_squared old= ['34775', '34778', '60490', '60721'] physical= [286034, 286037, 286048, 286070] map= EXACT
+R_squared_q_squared old= ['34779', '34782', '60990', '61257'] physical= [286071, 286074, 286084, 286106] map= EXACT
+R_U_squared old= ['34784', '34785', '60537', '60796'] physical= [286108, 286109, 286114, 286121] map= EXACT
+R_squared_U_squared old= ['34787', '34788', '61040', '61339'] physical= [286123, 286124, 286131, 286142] map= EXACT
+q_plus_q_y old= ['34789', '34790', '60602', '60910'] physical= [286144, 286146, 286148, 286150] map= EXACT
+R_q_y old= ['34791', '34792', '61105', '61456'] physical= [286151, 286152, 286155, 286161] map= EXACT
+-- end --
+branch 0
+R_q old= ['35072', '35073', '61474', '61699'] physical= [286164, 286166, 286170, 286177] map= EXACT
+R_squared_q old= ['35075', '35076', '62109', '62354'] physical= [286179, 286180, 286185, 286194] map= EXACT
+R_q_squared old= ['35077', '35080', '61535', '61814'] physical= [286195, 286198, 286209, 286231] map= EXACT
+R_squared_q_squared old= ['35081', '35084', '62183', '62498'] physical= [286232, 286235, 286245, 286267] map= EXACT
+R_U_squared old= ['35087', '35090', '61604', '61947'] physical= [286270, 286275, 286290, 286319] map= EXACT
+R_squared_U_squared old= ['35093', '35096', '62251', '62634'] physical= [286321, 286325, 286338, 286367] map= EXACT
+q_plus_q_y old= ['35097', '35098', '61682', '62096'] physical= [286369, 286371, 286373, 286375] map= EXACT
+R_q_y old= ['35099', '35100', '62330', '62790'] physical= [286376, 286377, 286380, 286386] map= EXACT
+branch 1
+R_q old= ['35109', '35110', '61470', '61692'] physical= [286389, 286391, 286395, 286402] map= EXACT
+R_squared_q old= ['35112', '35113', '62104', '62344'] physical= [286404, 286405, 286410, 286419] map= EXACT
+R_q_squared old= ['35114', '35117', '61528', '61799'] physical= [286420, 286423, 286434, 286456] map= EXACT
+R_squared_q_squared old= ['35118', '35121', '62176', '62483'] physical= [286457, 286460, 286470, 286492] map= EXACT
+R_U_squared old= ['35124', '35127', '61593', '61925'] physical= [286495, 286500, 286515, 286544] map= EXACT
+R_squared_U_squared old= ['35130', '35133', '62241', '62612'] physical= [286546, 286550, 286563, 286592] map= EXACT
+q_plus_q_y old= ['35134', '35135', '61680', '62094'] physical= [286594, 286596, 286598, 286600] map= EXACT
+R_q_y old= ['35136', '35137', '62327', '62784'] physical= [286601, 286602, 286605, 286611] map= EXACT
+==== global_endpoints ====
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+AttributeError: 'list' object has no attribute 'items'
+
+
+===== RAW TEMPORARY COMMAND 3: exec-d457bb53-aa8e-43b8-8b43-2fb883b312d1 / COMMAND =====
+"C:\\Users\\z5242\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "@'
+import gzip,json,pathlib
+root=pathlib.Path('.')
+def gz(rel):
+  with gzip.open(root/rel,'rt',encoding='utf-8') as f:return json.load(f,parse_int=str)
+o=json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text()); phys=o['component_result']['physical_pulse_bindings'];h=gz('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz')['C5_pulse_C3_pressure_bindings'];mp={int(k):int(v) for k,v in o['component_result']['substitution_receipt']['changed_row_mapping'].items()}
+def st(ov,nv):
+ oi=[int(x) for x in ov];ni=[int(x) for x in nv];exp=[mp.get(x,x) if x not in (0,1) else x for x in oi];return ('EXACT' if exp==ni else 'MISMATCH'),exp
+for j,(oo,nn) in enumerate(zip(h['global_endpoints'],phys['global_endpoints'])):
+ print('branch',j)
+ for k,ov in oo.items(): print(k,'old=',ov,'physical=',nn[k],'map=',st(ov,nn[k])[0])
+print('pressure:')
+for k,ov in h['pressure'].items(): print(k,'old=',ov,'physical=',phys['pressure'][k],'map=',st(ov,phys['pressure'][k])[0])
+print('pieces:')
+for chart,od in h['pieces'].items():
+ print(chart)
+ for k,ov in od.items(): print(k,'old=',ov,'physical=',phys['pieces'][chart][k],'map=',st(ov,phys['pieces'][chart][k])[0])
+'@ | python -"
+===== OBSERVED OUTPUT 3 =====
+branch 0
+R_q old= ['34347', '34348', '57705', '58043'] physical= [286623, 286641, 286697, 286793] map= EXACT
+R_squared_q old= ['34350', '34351', '58449', '58705'] physical= [286795, 286796, 286797, 286798] map= EXACT
+R_q_squared old= ['34352', '34355', '57772', '58150'] physical= [286799, 286802, 286810, 286826] map= EXACT
+R_squared_q_squared old= ['34356', '34359', '58550', '58860'] physical= [286827, 286830, 286838, 286854] map= EXACT
+R_U_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_squared_U_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+q_plus_q_y old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_q_y old= ['34362', '34363', '58701', '59097'] physical= [286856, 286858, 286860, 286862] map= EXACT
+branch 1
+R_q old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_squared_q old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_q_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_squared_q_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_U_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_squared_U_squared old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+q_plus_q_y old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+R_q_y old= ['0', '0', '0', '0'] physical= [0, 0, 0, 0] map= EXACT
+pressure:
+m13 old= ['35548', '35549', '57947', '58448'] physical= [286892, 286950, 287103, 287375] map= EXACT
+m15 old= ['35556', '35557', '58704', '59100'] physical= [287417, 287491, 287663, 287956] map= EXACT
+pieces:
+main
+m13 old= ['34698', '34699', '59319', '59733'] physical= [287989, 288056, 288211, 288505] map= EXACT
+m15 old= ['34708', '34709', '59968', '60428'] physical= [288544, 288621, 288794, 289120] map= EXACT
+gap
+m13 old= ['34997', '34998', '60607', '60915'] physical= [289145, 289186, 289265, 289400] map= EXACT
+m15 old= ['35007', '35008', '61112', '61466'] physical= [289431, 289482, 289579, 289746] map= EXACT
+end
+m13 old= ['35342', '35343', '61685', '62099'] physical= [289779, 289846, 290001, 290295] map= EXACT
+m15 old= ['35352', '35353', '62334', '62794'] physical= [290334, 290411, 290584, 290910] map= EXACT
+
+
+===== RAW TEMPORARY COMMAND 4: exec-3137c8f7-5e5c-4c5c-bc06-a1271d2fe304 / COMMAND =====
+"C:\\Users\\z5242\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "@'
+import gzip,json,pathlib
+root=pathlib.Path('.')
+def gz(rel):
+ with gzip.open(root/rel,'rt',encoding='utf-8') as f:return json.load(f,parse_int=str)
+pdoc=json.loads((root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_physical_pulse_source.json').read_text());p=pdoc['component_result']['physical_pulse_bindings'];m={int(k):int(v) for k,v in pdoc['component_result']['substitution_receipt']['changed_row_mapping'].items()};h=gz('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz')['C5_pulse_C3_pressure_bindings']
+
+def check_arr(old,new):
+ old=list(map(int,old));new=list(map(int,new));return new==[m.get(x,x) if x not in (0,1) else x for x in old]
+counts={}
+for chart in h['integrals']:
+ counts['integral_arrays_'+chart]=sum(check_arr(v,p['integrals'][chart][k]) for k,v in h['integrals'][chart].items())
+ counts['integral_rows_'+chart]=sum(len(v) for v in h['integrals'][chart].values())
+for chart in h['endpoints']:
+ counts['endpoint_arrays_'+chart]=sum(check_arr(ov,p['endpoints'][chart][j][k]) for j,ob in enumerate(h['endpoints'][chart]) for k,ov in ob.items())
+ counts['endpoint_rows_'+chart]=sum(len(v) for ob in h['endpoints'][chart] for v in ob.values())
+counts['global_endpoint_arrays']=sum(check_arr(ov,p['global_endpoints'][j][k]) for j,ob in enumerate(h['global_endpoints']) for k,ov in ob.items())
+counts['global_endpoint_rows']=sum(len(v) for ob in h['global_endpoints'] for v in ob.values())
+counts['pressure_arrays']=sum(check_arr(v,p['pressure'][k]) for k,v in h['pressure'].items());counts['pressure_rows']=sum(len(v) for v in h['pressure'].values())
+counts['pieces_arrays']=sum(check_arr(v,p['pieces'][chart][k]) for chart,ob in h['pieces'].items() for k,v in ob.items());counts['pieces_rows']=sum(len(v) for ob in h['pieces'].values() for v in ob.values())
+print(counts)
+print('array total',sum(v for k,v in counts.items() if k.endswith('_arrays')),'rows total',sum(v for k,v in counts.items() if k.endswith('_rows')))
+# metadata measure rows from old integral roots
+for chart,ob in h['integrals'].items():
+ measures={}
+ for name,arr in ob.items():
+  vals=[]
+  for x in arr:
+   row=h['exact_graph_nodes'][int(x)]; vals.append(row.get('measure'))
+  measures[name]=sorted(set(map(str,vals)))
+ print(chart,measures)
+'@ | python -"
+===== OBSERVED OUTPUT 4 =====
+{'integral_arrays_main': 10, 'integral_rows_main': 40, 'integral_arrays_gap': 10, 'integral_rows_gap': 40, 'integral_arrays_end': 10, 'integral_rows_end': 40, 'endpoint_arrays_main': 16, 'endpoint_rows_main': 64, 'endpoint_arrays_gap': 16, 'endpoint_rows_gap': 64, 'endpoint_arrays_end': 16, 'endpoint_rows_end': 64, 'global_endpoint_arrays': 16, 'global_endpoint_rows': 64, 'pressure_arrays': 2, 'pressure_rows': 8, 'pieces_arrays': 6, 'pieces_rows': 24}
+array total 24 rows total 96
+Traceback (most recent call last):
+  File "<stdin>", line 28, in <module>
+KeyError: 'exact_graph_nodes'
+
+
+===== RAW TEMPORARY COMMAND 5: exec-3458ebfc-d14b-4059-b2be-17e3cccb68be / COMMAND =====
+"C:\\Users\\z5242\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command "@'
+import gzip,json,pathlib,collections
+root=pathlib.Path('.')
+with gzip.open(root/'experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz','rt',encoding='utf-8') as f:o=json.load(f,parse_int=str)
+nodes=o['exact_graph_nodes'];h=o['C5_pulse_C3_pressure_bindings']
+for chart,ob in h['integrals'].items():
+ print('chart',chart)
+ for name,arr in ob.items():
+  rows=[nodes[int(x)] for x in arr]
+  print(name,'measures=',sorted(set(str(r.get('measure')) for r in rows)),'ordinary=',[(r.get('ordinary_Z_derivative_order'),r.get('ordinary_slow_Z_derivative_order')) for r in rows])
+'@ | python -"
+===== OBSERVED OUTPUT 5 =====
+chart main
+I0_q_Z measures= ['(R/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_q_Z measures= ['(R/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_squared measures= ['(R/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_U_Z measures= ['(R/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_Z measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_squared measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_q_Z measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_squared measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_U_Z measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+chart gap
+I0_q_Z measures= ['(R/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_q_Z measures= ['(R/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+I0_U_squared measures= ['(R/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+I0_U_U_Z measures= ['(R/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+I1_q measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_Z measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_squared measures= ['(R^2/mu)*dxi'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_q_Z measures= ['(R^2/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+I1_U_squared measures= ['(R^2/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+I1_U_U_Z measures= ['(R^2/mu)*dxi', 'None'] ordinary= [(None, '0'), (None, '1'), (None, None), (None, None)]
+chart end
+I0_q_Z measures= ['R*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_q_Z measures= ['R*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_squared measures= ['R*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I0_U_U_Z measures= ['R*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_Z measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_q_squared measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_q_Z measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_squared measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+I1_U_U_Z measures= ['R^2*ds'] ordinary= [(None, '0'), (None, '1'), ('1', '2'), ('2', '3')]
+
+

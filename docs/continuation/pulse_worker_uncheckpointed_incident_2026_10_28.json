@@ -1,0 +1,27 @@
+{
+  "accepted_as_proof": false,
+  "ancestor_error_packets_removed": false,
+  "complete_goal": false,
+  "full_results_saved_before_review": false,
+  "misleading_worker_source_consumer_disclaimer_superseded": true,
+  "observed_but_not_accepted": true,
+  "raw_evidence": {
+    "pulse_dag_worker_uncheckpointed_evidence_2026_10_28.txt": {
+      "path": "docs/continuation/pulse_dag_worker_uncheckpointed_evidence_2026_10_28.txt",
+      "sha256": "38490e4573532c0edee5b238cd82962733976e6bce8f5a0b65496afd810ac0ac"
+    },
+    "pulse_pair_worker_uncheckpointed_evidence_2026_10_28.txt": {
+      "path": "docs/continuation/pulse_pair_worker_uncheckpointed_evidence_2026_10_28.txt",
+      "sha256": "930e4a5fc7f56caf2baec90af77c2a69b8cf29bfc8fc896fd2001053edb27eda"
+    }
+  },
+  "same_families_must_not_be_reentered": true,
+  "schema": "uncheckpointed_worker_source_comparison_incident_v1",
+  "some_tool_output_truncated": true,
+  "source_expression_families": [
+    "physical_C3_to_physical_changed_row_mapping_comparison",
+    "four_root_pair_DAG_structural_comparison_and_alias_exploration",
+    "physical_root_integral_metadata_signature_traversal"
+  ],
+  "worker_source_expression_consumers_entered_without_freeze": true
+}

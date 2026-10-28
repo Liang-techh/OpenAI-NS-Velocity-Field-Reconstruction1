@@ -1,0 +1,175 @@
+UNFROZEN WORKER EVIDENCE — 2026-10-28
+
+This file is a historical record copied from the worker conversation/tool history.
+It is not a saved or accepted mathematical result. The commands below were inline
+Node.js static JSON/DAG inspections only: no repository source module, source
+consumer, mathematical evaluator, quadrature, integral evaluator, or Python
+program was imported or executed. No command below was rerun for this file.
+
+The source graphs were authenticated by raw gzip SHA-256 before the authorized
+static decoding. The worker did not decode history or Rm_loop_density_identity.
+The original outputs were not frozen or saved as complete result artifacts.
+Some original tool outputs were truncated by the tool; missing lines are not
+reconstructed here. The observations are not accepted as proof and must not be
+replayed or promoted to an equality claim.
+
+======================================================================
+1. Integral metadata statistics
+======================================================================
+
+Original command:
+
+$js=@'
+const fs=require('fs'),z=require('zlib');
+const m=JSON.parse(z.gunzipSync(fs.readFileSync('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz')));
+const q=JSON.parse(fs.readFileSync('tmp/original_native_physical_pulse_source/new_physical_pulse_result.json','utf8'));
+const g=q.definition_graph,b=g.base_node_count;
+function row(id){return id<b?m.exact_graph_nodes[id]:g.appended_nodes[id-b]}
+function walk(root){let seen=new Set(),todo=[root],out=[];while(todo.length){const id=todo.pop();if(seen.has(id))continue;seen.add(id);const r=row(id);if(!r)continue;if(r.operation==='definite_integral')out.push({id,row:r});for(const k of ['argument','expression','numerator','denominator','integrand','variable','lower','upper'])if(Number.isInteger(r[k]))todo.push(r[k]);if(Array.isArray(r.arguments))todo.push(...r.arguments.filter(Number.isInteger));}return out}
+const keys=['variable','lower','upper','measure','endpoint_independent_of_Z','ordinary_slow_Z_derivative_order','ordinary_Z_derivative_order','no_finite_history_or_chart_cutoff','no_finite_history_cutoff','signed_integrand_not_its_magnitude_cap','exact_function_integral','original_complete_pulse_chart','original_pulse_own_history_retained','auxiliary_pressure_q_equals_own_Q','physical_Pstar_not_reapplied','derivative_of_same_defining_integral','differentiation_under_integral','original_slow_Z_derivative_base_order'];
+function sig(r){let o={};for(const k of keys)if(k in r)o[k]=r[k];return JSON.stringify(o)}
+const roots=[287417,279426,287491,279542,287663,279770,287956,280139];
+const maps={};for(const root of roots){const mm=new Map;for(const x of walk(root)){const s=sig(x.row);mm.set(s,(mm.get(s)||0)+1)}maps[root]=mm;console.log('ROOT',root,'integral_nodes',walk(root).length,'signatures',mm.size);}
+for(let i=0;i<roots.length;i+=2){let a=roots[i],b2=roots[i+1],A=maps[a],B=maps[b2];console.log('PAIR',a,b2,'Aonly',Array.from(A.keys()).filter(k=>!B.has(k)).map(k=>[JSON.parse(k),A.get(k)]),'Bonly',Array.from(B.keys()).filter(k=>!A.has(k)).map(k=>[JSON.parse(k),B.get(k)]));}
+'@; node --input-type=commonjs -e $js
+
+Observed complete output:
+
+ROOT 287417 integral_nodes 709 signatures 202
+ROOT 279426 integral_nodes 709 signatures 202
+ROOT 287491 integral_nodes 924 signatures 253
+ROOT 279542 integral_nodes 924 signatures 253
+ROOT 287663 integral_nodes 1127 signatures 309
+ROOT 279770 integral_nodes 1127 signatures 309
+ROOT 287956 integral_nodes 1330 signatures 364
+ROOT 280139 integral_nodes 1330 signatures 364
+PAIR 287417 279426 Aonly [] Bonly []
+PAIR 287491 279542 Aonly [] Bonly []
+PAIR 287663 279770 Aonly [] Bonly []
+PAIR 287956 280139 Aonly [] Bonly []
+
+======================================================================
+2. Pair comparator without aliases
+======================================================================
+
+Original command:
+
+$js=@'
+const fs=require('fs'),z=require('zlib');
+const m=JSON.parse(z.gunzipSync(fs.readFileSync('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz')));
+const q=JSON.parse(fs.readFileSync('tmp/original_native_physical_pulse_source/new_physical_pulse_result.json','utf8'));
+const g=q.definition_graph,b=g.base_node_count;
+function row(id){return id<b?m.exact_graph_nodes[id]:g.appended_nodes[id-b]}
+const childKeys=new Set(['argument','expression','integrand','lower','upper','numerator','denominator']);
+function norm(r){if(!r)return null;let o={};for(const [k,v] of Object.entries(r)){if(k==='arguments'){o[k]=v.map(()=>'<child>');}else if(childKeys.has(k)&&Number.isInteger(v)){o[k]='<child>';}else{o[k]=v;}}return o}
+function childList(r){let c=[];if(!r)return c;for(const k of ['argument','expression','integrand','lower','upper','numerator','denominator'])if(Number.isInteger(r[k]) && !(r.operation==='exact_rational'&&(k==='numerator'||k==='denominator')))c.push([k,r[k]]);if(Array.isArray(r.arguments))for(let i=0;i<r.arguments.length;i++)if(Number.isInteger(r.arguments[i]))c.push(['arguments['+i+']',r.arguments[i]]);return c}
+function cmp(a,b2){let todo=[[a,b2,'root']],seen=new Set(),mis=[];while(todo.length){const [x,y,path]=todo.pop(),key=x+'|'+y;if(seen.has(key))continue;seen.add(key);const rx=row(x),ry=row(y);if(!rx||!ry){mis.push({path,x,y,kind:'missing',rx,ry});continue}if(rx.operation!==ry.operation){mis.push({path,x,y,kind:'operation',a:rx.operation,b:ry.operation});continue}const nx=norm(rx),ny=norm(ry);if(JSON.stringify(nx)!==JSON.stringify(ny))mis.push({path,x,y,kind:'fields',operation:rx.operation,a:nx,b:ny});const cx=childList(rx),cy=childList(ry);if(cx.length!==cy.length){mis.push({path,x,y,kind:'child_count',cx,cy});continue}for(let i=0;i<cx.length;i++){if(cx[i][0]!==cy[i][0])mis.push({path,x,y,kind:'child_label',cx,cy});else todo.push([cx[i][1],cy[i][1],path+'.'+cx[i][0]])}}return {seen:seen.size,mis}}
+for(const [a,b2] of [[287417,279426],[287491,279542],[287663,279770],[287956,280139]]){const z=cmp(a,b2);console.log('PAIR',a,b2,'visited',z.seen,'mismatches',z.mis.length);for(const x of z.mis.slice(0,40))console.log(JSON.stringify(x));}
+'@; node --input-type=commonjs -e $js
+
+Observed available output (the original detailed path output was tool-truncated):
+
+PAIR 287417 279426 visited 11545 mismatches 5
+PAIR 287491 279542 visited 15824 mismatches 5
+PAIR 287663 279770 visited 20893 mismatches 5
+PAIR 287956 280139 visited 27086 mismatches 5
+
+The five operation mismatches observed for every pair were:
+
+263349 function_substitution  vs  31162 analytic_unary
+280182 analytic_unary         vs  31161 sum
+280169 product               vs  34272 analytic_unary
+280141 product               vs  33805 analytic_unary
+280155 product               vs  33982 analytic_unary
+
+The original output included very long paths and was marked truncated by the
+tool. Those missing lines are not reconstructed here.
+
+======================================================================
+3. Pair comparator with temporary five-node alias map
+======================================================================
+
+Original command:
+
+$js=@'
+const fs=require('fs'),z=require('zlib');
+const m=JSON.parse(z.gunzipSync(fs.readFileSync('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz')));
+const q=JSON.parse(fs.readFileSync('tmp/original_native_physical_pulse_source/new_physical_pulse_result.json','utf8'));
+const g=q.definition_graph,b=g.base_node_count;
+function row(id){return id<b?m.exact_graph_nodes[id]:g.appended_nodes[id-b]}
+const childKeys=new Set(['argument','expression','integrand','lower','upper','numerator','denominator']);
+function norm(r){if(!r)return null;let o={};for(const [k,v] of Object.entries(r)){if(k==='arguments'){o[k]=v.map(()=>'<child>');}else if(childKeys.has(k)&&Number.isInteger(v)){o[k]='<child>';}else{o[k]=v;}}return o}
+function childList(r){let c=[];if(!r)return c;for(const k of ['argument','expression','integrand','lower','upper','numerator','denominator'])if(Number.isInteger(r[k]) && !(r.operation==='exact_rational'&&(k==='numerator'||k==='denominator')))c.push([k,r[k]]);if(Array.isArray(r.arguments))for(let i=0;i<r.arguments.length;i++)if(Number.isInteger(r.arguments[i]))c.push(['arguments['+i+']',r.arguments[i]]);return c}
+const aliases=new Map([[263349,31162],[280182,31161],[280141,33805],[280155,33982],[280169,34272]]);
+function cmp(a,b2){let todo=[[a,b2,'root']],seen=new Set(),mis=[],used=[];while(todo.length){let [x,y,path]=todo.pop();const alias=aliases.get(x);if(alias===y){used.push({path,x,y});continue}const key=x+'|'+y;if(seen.has(key))continue;seen.add(key);const rx=row(x),ry=row(y);if(!rx||!ry){mis.push({path,x,y,kind:'missing',rx,ry});continue}if(rx.operation!==ry.operation){mis.push({path,x,y,kind:'operation',a:rx.operation,b:ry.operation});continue}const nx=norm(rx),ny=norm(ry);if(JSON.stringify(nx)!==JSON.stringify(ny))mis.push({path,x,y,kind:'fields',operation:rx.operation,a:nx,b:ny});const cx=childList(rx),cy=childList(ry);if(cx.length!==cy.length){mis.push({path,x,y,kind:'child_count',cx,cy});continue}for(let i=0;i<cx.length;i++){if(cx[i][0]!==cy[i][0])mis.push({path,x,y,kind:'child_label',cx,cy});else todo.push([cx[i][1],cy[i][1],path+'.'+cx[i][0]])}}return {seen:seen.size,mis,used}}
+for(const [a,b2] of [[287417,279426],[287491,279542],[287663,279770],[287956,280139]]){const z=cmp(a,b2);console.log('PAIR',a,b2,'visited',z.seen,'alias_hits',z.used.length,'mismatches',z.mis.length);for(const x of z.mis.slice(0,20))console.log(JSON.stringify(x));console.log('aliases',z.used);}
+'@; node --input-type=commonjs -e $js
+
+Observed available summary output:
+
+PAIR 287417 279426 visited 11540 alias_hits 10 mismatches 0
+PAIR 287491 279542 visited 15819 alias_hits 10 mismatches 0
+PAIR 287663 279770 visited 20888 alias_hits 10 mismatches 0
+PAIR 287956 280139 visited 27081 alias_hits 10 mismatches 0
+
+The original alias-path arrays were not preserved as a separate artifact.
+
+======================================================================
+4. Pair comparator with log alias removed
+======================================================================
+
+Original command:
+
+$js=@'
+const fs=require('fs'),z=require('zlib');const m=JSON.parse(z.gunzipSync(fs.readFileSync('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz'))),q=JSON.parse(fs.readFileSync('tmp/original_native_physical_pulse_source/new_physical_pulse_result.json')),g=q.definition_graph,b=g.base_node_count;function row(id){return id<b?m.exact_graph_nodes[id]:g.appended_nodes[id-b]}
+const ck=new Set(['argument','expression','integrand','lower','upper','numerator','denominator']);function norm(r){let o={};for(const[k,v]of Object.entries(r)){if(k==='arguments')o[k]=v.map(()=>'<c>');else if(ck.has(k)&&Number.isInteger(v))o[k]='<c>';else o[k]=v}return o}function ch(r){let c=[];for(const k of ['argument','expression','integrand','lower','upper','numerator','denominator'])if(Number.isInteger(r?.[k])&&!(r.operation==='exact_rational'&&(k==='numerator'||k==='denominator')))c.push([k,r[k]]);if(Array.isArray(r?.arguments))r.arguments.forEach((v,i)=>Number.isInteger(v)&&c.push(['arguments['+i+']',v]));return c}
+const aliases=new Map([[263349,31162],[280141,33805],[280155,33982],[280169,34272]]);function cmp(a,b2){let todo=[[a,b2]],seen=new Set,mis=[];while(todo.length){let[x,y]=todo.pop(),key=x+'|'+y;if(seen.has(key))continue;seen.add(key);let rx=row(x),ry=row(y);if(!rx||!ry){mis.push(['missing',x,y]);continue}if(rx.operation!==ry.operation){mis.push(['op',x,y,rx.operation,ry.operation]);continue}if(JSON.stringify(norm(rx))!==JSON.stringify(norm(ry)))mis.push(['field',x,y,rx.operation]);let cx=ch(rx),cy=ch(ry);if(cx.length!==cy.length){mis.push(['nchild',x,y,cx.length,cy.length]);continue}for(let i=0;i<cx.length;i++){if(cx[i][0]!==cy[i][0])mis.push(['label',x,y,cx[i][0],cy[i][0]]);else if(aliases.get(cx[i][1])===cy[i][1]){}else todo.push([cx[i][1],cy[i][1]])}}return mis}
+for(const [a,b2] of [[287417,279426],[287491,279542],[287663,279770],[287956,280139]]){const mi=cmp(a,b2);console.log(a,b2,mi.length,mi.slice(0,10));}
+'@; node --input-type=commonjs -e $js
+
+Observed complete output:
+
+287417 279426 1 [ [ 'op', 280182, 31161, 'analytic_unary', 'sum' ] ]
+287491 279542 1 [ [ 'op', 280182, 31161, 'analytic_unary', 'sum' ] ]
+287663 279770 1 [ [ 'op', 280182, 31161, 'analytic_unary', 'sum' ] ]
+287956 280139 1 [ [ 'op', 280182, 31161, 'analytic_unary', 'sum' ] ]
+
+======================================================================
+5. Structural ancestor BFS
+======================================================================
+
+Original command:
+
+$js=@'
+const fs=require('fs'), z=require('zlib');
+const m=JSON.parse(z.gunzipSync(fs.readFileSync('experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz')));
+const q=JSON.parse(fs.readFileSync('tmp/original_native_physical_pulse_source/new_physical_pulse_result.json','utf8'));
+const g=q.definition_graph, b=g.base_node_count;
+function row(id){return id<b?m.exact_graph_nodes[id]:g.appended_nodes[id-b]}
+function anc(root,limit=18){let seen=new Set(),cur=[root],out=[];for(let d=0;d<limit&&cur.length;d++){let nx=[];for(const id of cur){if(seen.has(id))continue;seen.add(id);const r=row(id);out.push({d,id,r});if(!r)continue;for(const k of ['argument','expression','numerator','denominator','integrand','variable','lower','upper'])if(Number.isInteger(r[k]))nx.push(r[k]);if(Array.isArray(r.arguments))nx.push(...r.arguments.filter(Number.isInteger));}cur=nx}return out}
+for(const root of [287417,279426,287491,279542,287663,279770,287956,280139]){console.log('ROOT',root);for(const x of anc(root))console.log(x.d,x.id,JSON.stringify(x.r));}
+'@; node --input-type=commonjs -e $js
+
+Observed available output (tool-truncated; no complete output was saved):
+
+ROOT 287417
+0 287417 {"operation":"sum","arguments":[287414,287416]}
+1 287414 {"operation":"product","arguments":[28,287413]}
+1 287416 {"operation":"product","arguments":[220,287415]}
+2 28 {"operation":"exact_rational","numerator":1,"denominator":2}
+2 287413 {"operation":"sum","arguments":[287407,287412]}
+2 287412 {"operation":"product","arguments":[48,287411]}
+2 220 {"operation":"exact_rational","numerator":-1,"denominator":1}
+2 287415 {"operation":"product","arguments":[220,286856]}
+
+The tool reported approximately 2,602 output lines and truncation. The
+remaining lines are intentionally absent and are not reconstructed.
+
+======================================================================
+Status
+======================================================================
+
+No commands above were rerun while creating this file. No complete result was
+previously saved. This file itself is only an uncheckpointed historical record;
+it is not a proof, not an accepted source identity, and not a basis for setting
+any correction root to zero.
