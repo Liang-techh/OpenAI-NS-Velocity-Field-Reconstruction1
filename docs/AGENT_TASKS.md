@@ -1,3 +1,7 @@
+## 2026-10-28: bounded selected-pulse inlet scope audit
+
+A frozen leaf inspected nine saved selected-pulse roots and recorded inlet mapping states under lexical binders; forbidden geometry boundaries and unknown source-parameter semantics remain unresolved. It did not inspect replacement free variables, prove capture freedom or ordinary-Z transport, or establish a frame seam. See [the current handoff](CURRENT_FRAME_SELECTED_INLET_SCOPE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: source-defined two-moment pulse endpoint normal forms
 
 A frozen single-entry leaf bound original kernel and own-field source definitions and checked generic endpoint normalization; its two endpoint flags duplicate the same symbolic expression. The second-row application and equality remain conditional on source semantics and the actual selected-row functions; inlet capture freedom, ordinary-Z transport, actual frame seams and numerical closure remain open. See [the current handoff](CURRENT_FRAME_TWO_MOMENT_SOURCE_NORMAL_FORMS_2026_10_28.md). Goal ACTIVE / INCOMPLETE.

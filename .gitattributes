@@ -681,3 +681,5 @@ scripts/run_frame_main_gap_source_proof_once.py -text
 docs/CURRENT_FRAME_MAIN_GAP_MOMENT_ALGEBRA_2026_10_28.md -text
 scripts/run_frame_pulse_two_moment_endpoint_once.py -text
 docs/CURRENT_FRAME_TWO_MOMENT_SOURCE_NORMAL_FORMS_2026_10_28.md -text
+scripts/run_frame_inlet_lexical_audit_once.py -text
+docs/CURRENT_FRAME_SELECTED_INLET_SCOPE_2026_10_28.md -text

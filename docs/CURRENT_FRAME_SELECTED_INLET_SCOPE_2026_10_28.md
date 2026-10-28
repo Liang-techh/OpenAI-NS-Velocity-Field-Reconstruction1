@@ -1,0 +1,19 @@
+# Bounded selected-pulse inlet occurrence audit — 2026-10-28
+
+Goal ACTIVE / INCOMPLETE. A new leaf was frozen and entered once. It authenticated the raw Rp gzip before decoding, checked the saved C3 input hash, and inspected only the original `ap`, `C1` and `C2` value, ordinary-Z and ordinary-ZZ source roots and the saved inlet mapping. It did not call an ancestor, traverse replacement subtrees, evaluate functions or integrals, or inspect the previously forbidden geometry closures. A small synthetic fixture checked the new traversal's handling of an unbound hit, an integral binder and a function-substitution binder. The leaf returned `outer_contexts_unresolved`, not a pass.
+
+For each root the traversal records distinct `(node ID, lexical binder stack)` states, not paths or statistically independent occurrences; states shared by different roots are reported separately. It stops at a saved inlet mapping hit, an unsupported operation, a forbidden geometry boundary, an invalid edge or the fixed state limit. Integral bounds retain the outer scope, while the integrand receives a distinct integral binder; a `function_substitution` value retains the outer scope and its expression receives a distinct substitution binder. This is a conservative scope model, not a proof of all underlying source-node semantics. The traversal does not calculate free variables of replacement graphs, prove the safety of pre-existing inner substitutions, or test whether ordinary Z differentiation commutes with rewriting.
+
+| Roots | Mapping states per root | States beneath a binder | Unresolved states per root |
+| --- | ---: | ---: | ---: |
+| `ap[0]`, `C1[0]`, `C2[0]` | 16 | 12 | 143 |
+| `ap[1]`, `C1[1]`, `C2[1]` | 34 | 26 | 301 |
+| `ap[2]`, `C1[2]`, `C2[2]` | 64 | 52 | 590 |
+
+The unresolved states are repeated, scope-specific stops at the forbidden geometry boundary and at `current_original_source_parameter`, whose lexical meaning this leaf does not assume. As one concrete saved observation, `ap[0]` reaches inlet node `31655` mapped to `265772` under nested integral binders and a `function_substitution` binder named `Z`. This is a reason to inspect the replacement's semantics and intended evaluation environment; it is **not** evidence that capture actually occurred. Empty-binder hits exclude only capture by an enclosing binder at that specific recorded occurrence; they do not establish general capture freedom. No old numerical error was removed.
+
+The first three rows of the selected coefficients are only a subset of the production rewriter's full selected, leading-field and pressure roots. The main/gap endpoints, actual row identities and frame seams are not established. The existing independent reference, once-only reserved contribution, nonzero histories and earlier error terms remain unchanged; `P1` and `m15` remain different quantities. No numerical value, certified bound, global five-moment closure, later physical layer or independent NS validation is claimed. Runtime model metadata was unavailable (`null`).
+
+The larger unexecuted worker draft `src/openai_ns_reconstruction/frame_inlet_lexical_audit.py` was not accepted: static review found whole-graph scans and scope flaws. It remains an untracked local draft and was not used by this leaf. The prior uncheckpointed geometry-closure incident remains unaccepted and must not be replayed.
+
+Next: for the actual bound-context inlet hits, define a separate frozen, bounded free-variable/source-semantics audit of the saved replacement functions, treating unsupported source-parameter semantics as unknown and preserving the forbidden geometry boundaries. Resolve whether the `Z` binder represents intentional function composition before deciding whether any particular occurrence is unsafe. Then extend only to the required endpoint roots and prove ordinary-Z transport; do not infer either from this result.
