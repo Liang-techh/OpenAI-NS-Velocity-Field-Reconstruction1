@@ -1,5 +1,14 @@
 
 
+## native_O3_saved_nonlinear_core_value_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_saved_nonlinear_core_value_jet.json.
+Status: executed conditional saved-core value packet; publication metadata follows.
+Next: source_native_O3_core_physical_source_binding. Prospective frozen task: source_native_O3_core_physical_source_binding.
+The complete saved result and its raw callback/checkpoint bytes are retained in the lossless artifact set.
+
+
+
 ## native_O3_pressure_source_value_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_pressure_source_value_jet.json.
