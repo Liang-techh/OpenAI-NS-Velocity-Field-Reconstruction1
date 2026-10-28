@@ -649,3 +649,6 @@ scripts/check_pulse_correlated_density_delta_fixture.py -text
 scripts/check_pulse_source_chart_exact_fixture.py -text
 scripts/run_pulse_exact_source_leaves_once.py -text
 docs/CURRENT_PULSE_CORRELATED_DENSITY_CHART_ATTEMPT_2026_10_28.md -text
+
+scripts/run_pulse_gap_actual_source_program_once.py -text
+docs/CURRENT_PULSE_GAP_ACTUAL_SOURCE_PROGRAM_2026_10_28.md -text

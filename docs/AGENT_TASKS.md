@@ -1,3 +1,7 @@
+## 2026-10-28: actual physical/frame pulse gap source expressions
+
+A new source-only gap program retrieved the separate actual physical/frame Q and Q_y Z0–Z2 references and physical finite endpoint fields, and emitted a conditional signed gap moment/Z1 expression. The frame-only field radius and finite endpoint owners remain unresolved; the program is not admissible for numerical use and proves no source equality, pulse cancellation or old-error reduction. See [current handoff](CURRENT_PULSE_GAP_ACTUAL_SOURCE_PROGRAM_2026_10_28.md). Next bind the actual frame field radius/endpoints and common measures/units without re-entering graph-comparison families. Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: correlated pulse density; exact-chart fixture failed
 
 A new arithmetic-domain-preserving kernel directly evaluates correlated pulse density and ordinary Z1 from caller-supplied frame and signed difference jets; exact Fraction and high-precision synthetic tests passed. It does not bind actual sources or compute physical m15. A separately frozen exact-chart fixture failed on an inconsistent measure-label assertion; preserve and do not re-enter it. The actual tiny mu, source-owned coordinates/fields, nested scales, signed integration and old errors remain open. See [current handoff](CURRENT_PULSE_CORRELATED_DENSITY_CHART_ATTEMPT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
