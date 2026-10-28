@@ -1,0 +1,392 @@
+"""Unexecuted fixed-rho ordinary-Z ``Q_Z`` interval-consumer draft.
+
+This is a new, bounded consumer.  It does not import any prior mathematical
+provider, checker, reducer, or source-value runner.  The caller must freeze
+and authenticate the JSON inputs before invoking ``build_q_z_enclosures``.
+
+The saved core rows already represent physical ``DeltaU``.  Consequently
+this consumer applies no additional epsilon factor: the upstream source
+packet has already applied ``epsilon_core`` exactly once to norm-derived DU
+bounds.  Multiplying the direct rows here would be a second application.
+
+The returned ``candidate`` and ``actual`` channels are interval enclosures;
+they are never function point values.  This file is intentionally guarded as
+draft-only and was not executed, imported, or tested while being authored.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Any, Mapping, Sequence
+
+from mpmath import iv, mp
+
+
+STATUS = "AST-ready-unexecuted-draft"
+RUNTIME_MODEL_METADATA = None
+POINT_VALUE = False
+
+# Exact frozen inputs.  The result is in the retained R tree; the authenticated
+# source capsule is the saved work artifact used by the core-source leaf.
+CORE_RESULT_PATH = Path(
+    r"C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\tmp\native_O3_eta_n1_core_source\result.json"
+)
+CORE_SOURCE_WRAPPER_PATH = Path(
+    r"C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\tmp\native_O3_eta_n1_core_source\source.json"
+)
+CORE_CAPSULE_PATH = Path(
+    r"C:\Users\z5242\Documents\Codex\2026-10-16\https-github-com-liang-techh-openai\work\native_O3_eta_n1_core_source_source_capsule_2026_10_28.json"
+)
+CORE_SOURCE_MODULE_PATH = Path(
+    r"C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\src\openai_ns_reconstruction\native_O3_eta_n1_core_source.py"
+)
+
+CORE_RESULT_SHA256 = "78aca717ac8f29091dc99cd086899b2d454fb1c13ea56c323cb34380ab43fff3"
+CORE_SOURCE_WRAPPER_SHA256 = "1bc5fb7116c577ae0e1c4c74dff3bf5630532ad566bcbb60de112f1db570684d"
+CORE_CAPSULE_RAW_SHA256 = "f95b25404c4a5f4ffdc46c740353ecc5ec3130baa17da3b20fc28e7a36fcbeed"
+CORE_CAPSULE_CANONICAL_SHA256 = "b0df4a01383d69933d7ca2070c9358d9df13cd6e8b8dc79e65f1d0898c369ff6"
+CORE_SOURCE_MODULE_SHA256 = "108ae48ee9680481e688ac07f68c8f390cafbd50981ed63147c3c2a03a18605a"
+
+RHO_LOWER = "0"
+RHO_UPPER = "4"
+ETA_LOWER = "-1"
+ETA_UPPER = "1"
+
+# Exact JSON pointers consumed by this draft.
+SOURCE_JSON_POINTERS = {
+    "delta": "parameters.delta",
+    "a": "parameters.a",
+    "epsilon_core": "parameters.epsilon_core",
+    "uniform_eta_Ubase": "eta_rows.uniform_eta.Ubase",
+    "uniform_eta_shift": "eta_rows.uniform_eta.shift",
+    "du0": "result.payload.mixed_jet_table.DU.uniform_eta.uniform_rho.m0_k0",
+    "du1": "result.payload.mixed_jet_table.DU.uniform_eta.uniform_rho.m1_k0",
+    "du2_error": "result.payload.mixed_jet_table.DU.uniform_eta.uniform_rho.m2_k0.error",
+    "dm0_candidate": "mean_primitives.uniform_eta.JD_candidate[*].interval",
+    "dm0_actual": "mean_primitives.uniform_eta.JD_enclosed[*].interval",
+    "dm1_candidate": "mean_primitives.uniform_eta.JDZ_candidate[*].interval",
+    "dm1_actual": "mean_primitives.uniform_eta.JDZ_enclosed[*].interval",
+    "dm2_candidate": "anchor_polynomials.DUZZ[*].interval",
+}
+
+FORMULAS = {
+    "L": "1-delta*Z**2",
+    "d": "1-Z**2",
+    "N0": "2*Z*DU0-(1-delta)*Z*DM0-d*DM1",
+    "N1": "2*DU0+2*Z*DU1-(1-delta)*(DM0+Z*DM1)+2*Z*DM1-d*DM2",
+    "DeltaQ_Z": "N1/L-N0*(-2*delta*Z)/L**2",
+    "Q0_Z": "n0_Z/L-n0*(-2*delta*Z)/L**2",
+    "n0": "(1+delta)*Z*Ubase-4*d",
+    "n0_Z": "(1+delta)*(Ubase+4*Z)+8*Z",
+    "Q_Z": "Q0_Z+DeltaQ_Z",
+}
+
+CONDITIONS = {
+    "source_only": True,
+    "conditional_exact_view": True,
+    "rho": "[0,4] direct uniform-rho interval",
+    "eta": "[-1,1] direct uniform-eta row",
+    "ordinary_Z": True,
+    "fixed_rho": True,
+    "L_must_not_contain_zero": True,
+    "point_value": False,
+    "regular_n1_solution": False,
+    "global_closure": False,
+    "full_NS_claim": False,
+    "epsilon_accounting": (
+        "saved DU/JD/JDZ are physical DeltaU data; upstream norm-derived "
+        "DU bounds applied epsilon_core once; this consumer applies it zero times"
+    ),
+}
+
+
+class FrozenInputError(ValueError):
+    """Raised when the retained source contract is not the expected one."""
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _mpf_from_exact_tuple(value: Sequence[int]) -> mp.mpf:
+    """Rebuild a saved exact mpf endpoint without parsing display text."""
+
+    return mp.mpf(tuple(int(part) for part in value))
+
+
+def _interval_record(record: Mapping[str, Any], *, label: str) -> Any:
+    """Read a paired-endpoint saved interval; reject point-value claims."""
+
+    if record.get("point_value") is not False:
+        raise FrozenInputError(f"{label}: expected point_value=false")
+    lower = record.get("lower_exact_mpf_tuple")
+    upper = record.get("upper_exact_mpf_tuple")
+    if not isinstance(lower, Sequence) or not isinstance(upper, Sequence):
+        raise FrozenInputError(f"{label}: exact endpoint tuples are missing")
+    return iv.mpf([_mpf_from_exact_tuple(lower), _mpf_from_exact_tuple(upper)])
+
+
+def _channel_interval(jet_record: Mapping[str, Any], channel: str, *, label: str) -> Any:
+    if channel not in ("candidate", "actual"):
+        raise ValueError(f"unsupported source channel: {channel}")
+    value = jet_record.get(channel)
+    if not isinstance(value, Mapping):
+        raise FrozenInputError(f"{label}.{channel}: interval is missing")
+    return _interval_record(value, label=f"{label}.{channel}")
+
+
+def _reindex_saved_primitive(
+    terms: Sequence[Mapping[str, Any]], *, label: str
+) -> dict[int, Any]:
+    """Apply the saved JD/JDZ primitive reindexing (no rho division)."""
+
+    polynomial: dict[int, Any] = {}
+    for term in terms:
+        degree = int(term["degree"])
+        if degree < 1:
+            raise FrozenInputError(f"{label}: primitive degree must be >= 1")
+        coefficient = _interval_record(term["interval"], label=f"{label}[{degree}]")
+        # This is the core source consumer's _primitive_to_average rule:
+        # reindex degree -> degree - 1, with no division by rho.
+        polynomial[degree - 1] = coefficient
+    return polynomial
+
+
+def _average_anchor_polynomial(
+    terms: Sequence[Mapping[str, Any]], *, label: str
+) -> dict[int, Any]:
+    """Average the saved DUZZ anchor polynomial coefficientwise."""
+
+    polynomial: dict[int, Any] = {}
+    for term in terms:
+        degree = int(term["degree"])
+        coefficient = _interval_record(term["interval"], label=f"{label}[{degree}]")
+        polynomial[degree] = coefficient / (degree + 1)
+    return polynomial
+
+
+def _poly_eval(polynomial: Mapping[int, Any], rho: Any) -> Any:
+    value = iv.mpf("0")
+    for degree in sorted(polynomial):
+        value += polynomial[degree] * rho ** degree
+    return value
+
+
+def _widen_by_upper_radius(center: Any, radius: Any) -> Any:
+    """Return [center.a-radius.b, center.b+radius.b]."""
+
+    upper_radius = radius.b
+    return iv.mpf([center.a - upper_radius, center.b + upper_radius])
+
+
+def _assert_contract(result_document: Mapping[str, Any], capsule: Mapping[str, Any]) -> None:
+    root = result_document.get("result")
+    if not isinstance(root, Mapping):
+        raise FrozenInputError("core result: missing top-level result object")
+    payload = root.get("payload")
+    if not isinstance(payload, Mapping):
+        raise FrozenInputError("core result: missing result.payload")
+    if payload.get("conditional") is not True:
+        raise FrozenInputError("core result: conditional source view is not registered")
+    summary = payload.get("summary")
+    if not isinstance(summary, Mapping):
+        raise FrozenInputError("core result: missing payload.summary")
+    if summary.get("uniform_eta_direct_row") is not True:
+        raise FrozenInputError("core result: uniform eta is not a direct row")
+    if summary.get("uniform_rho") != "real [0,4] direct interval":
+        raise FrozenInputError("core result: rho domain is not the saved direct [0,4] interval")
+
+    flags = root.get("new_flags")
+    if not isinstance(flags, Mapping):
+        raise FrozenInputError("core result: missing new_flags")
+    if flags.get("DU_data_already_physical") is not True:
+        raise FrozenInputError("core result: DU physical-unit flag is absent")
+    if flags.get("epsilon_applied_to_DU_once") is not True:
+        raise FrozenInputError("core result: epsilon-once flag is absent")
+    if capsule.get("mean_primitives") is None:
+        raise FrozenInputError("source capsule: mean_primitives is missing")
+    if capsule.get("anchor_polynomials", {}).get("DUZZ") is None:
+        raise FrozenInputError("source capsule: anchor_polynomials.DUZZ is missing")
+
+
+def load_frozen_inputs() -> tuple[Mapping[str, Any], Mapping[str, Any]]:
+    """Load and authenticate only the two saved JSON inputs used here."""
+
+    expected = {
+        CORE_RESULT_PATH: CORE_RESULT_SHA256,
+        CORE_SOURCE_WRAPPER_PATH: CORE_SOURCE_WRAPPER_SHA256,
+        CORE_CAPSULE_PATH: CORE_CAPSULE_RAW_SHA256,
+        CORE_SOURCE_MODULE_PATH: CORE_SOURCE_MODULE_SHA256,
+    }
+    for path, digest in expected.items():
+        if not path.is_file():
+            raise FrozenInputError(f"missing frozen input: {path}")
+        if _sha256(path).lower() != digest:
+            raise FrozenInputError(f"SHA256 mismatch: {path}")
+
+    result_document = json.loads(CORE_RESULT_PATH.read_text(encoding="utf-8"))
+    capsule = json.loads(CORE_CAPSULE_PATH.read_text(encoding="utf-8"))
+    _assert_contract(result_document, capsule)
+    return result_document, capsule
+
+
+def _source_row(capsule: Mapping[str, Any], key: str) -> Mapping[str, Any]:
+    rows = capsule.get("eta_rows")
+    if not isinstance(rows, Mapping) or not isinstance(rows.get("uniform_eta"), Mapping):
+        raise FrozenInputError("source capsule: eta_rows.uniform_eta is missing")
+    row = rows["uniform_eta"]
+    value = row.get(key)
+    if not isinstance(value, Mapping):
+        raise FrozenInputError(f"source capsule: uniform_eta.{key} is missing")
+    return value
+
+
+def _source_parameter(capsule: Mapping[str, Any], key: str) -> Any:
+    parameters = capsule.get("parameters")
+    if not isinstance(parameters, Mapping) or not isinstance(parameters.get(key), Mapping):
+        raise FrozenInputError(f"source capsule: parameters.{key} is missing")
+    return _interval_record(parameters[key], label=f"parameters.{key}")
+
+
+def _build_channel(
+    *,
+    channel: str,
+    core_payload: Mapping[str, Any],
+    capsule: Mapping[str, Any],
+    rho: Any,
+    z: Any,
+    d: Any,
+    L: Any,
+    Lz: Any,
+    q0_z: Any,
+) -> dict[str, Any]:
+    mixed = core_payload["mixed_jet_table"]["DU"]["uniform_eta"]["uniform_rho"]
+    du0 = _channel_interval(mixed["m0_k0"], channel, label="DU.m0_k0")
+    du1 = _channel_interval(mixed["m1_k0"], channel, label="DU.m1_k0")
+
+    mean = capsule["mean_primitives"]["uniform_eta"]
+    if channel == "candidate":
+        dm0_terms = mean["JD_candidate"]
+        dm1_terms = mean["JDZ_candidate"]
+    else:
+        dm0_terms = mean["JD_enclosed"]
+        dm1_terms = mean["JDZ_enclosed"]
+    dm0 = _poly_eval(_reindex_saved_primitive(dm0_terms, label=f"{channel}.JD"), rho)
+    dm1 = _poly_eval(_reindex_saved_primitive(dm1_terms, label=f"{channel}.JDZ"), rho)
+
+    # The saved core construction obtains DM_ZZ by averaging the physical
+    # DUZZ anchor polynomial, then widening by the saved DU.m2_k0 error.
+    duzz_average = _average_anchor_polynomial(
+        capsule["anchor_polynomials"]["DUZZ"], label="anchor_polynomials.DUZZ"
+    )
+    dm2_candidate = _poly_eval(duzz_average, rho)
+    if channel == "candidate":
+        dm2 = dm2_candidate
+    else:
+        du2_error = _interval_record(
+            mixed["m2_k0"]["error"], label="DU.m2_k0.error"
+        )
+        dm2 = _widen_by_upper_radius(dm2_candidate, du2_error)
+
+    n0 = 2 * z * du0 - (1 - _source_parameter(capsule, "delta")) * z * dm0 - d * dm1
+    n1 = (
+        2 * du0
+        + 2 * z * du1
+        - (1 - _source_parameter(capsule, "delta")) * (dm0 + z * dm1)
+        + 2 * z * dm1
+        - d * dm2
+    )
+    delta_q_z = n1 / L - n0 * Lz / L**2
+    q_z = q0_z + delta_q_z
+    return {
+        "candidate_or_actual": channel,
+        "Q0_Z": q0_z,
+        "DeltaQ_Z": delta_q_z,
+        "Q_Z": q_z,
+        "inputs": {"DU0": du0, "DU1": du1, "DM0": dm0, "DM1": dm1, "DM2": dm2},
+        "point_value": POINT_VALUE,
+        "interval_claim": True,
+    }
+
+
+def build_q_z_enclosures(
+    result_document: Mapping[str, Any], capsule: Mapping[str, Any]
+) -> dict[str, Any]:
+    """Build candidate and actual fixed-rho ordinary-Z ``Q_Z`` intervals.
+
+    This function is deliberately not called by this file.  It consumes only
+    the authenticated paths recorded above; it does not call an old provider
+    or reconstruct any ancestor Q value.
+    """
+
+    _assert_contract(result_document, capsule)
+    root = result_document["result"]
+    payload = root["payload"]
+    rho = iv.mpf([RHO_LOWER, RHO_UPPER])
+    # Authenticate the saved epsilon input for provenance, but do not multiply
+    # by it: direct DU/JD/JDZ rows are already physical DeltaU data.
+    epsilon_core = _source_parameter(capsule, "epsilon_core")
+    delta = _source_parameter(capsule, "delta")
+    a = _source_parameter(capsule, "a")
+    ubase = _interval_record(_source_row(capsule, "Ubase"), label="eta_rows.uniform_eta.Ubase")
+    shift = _interval_record(_source_row(capsule, "shift"), label="eta_rows.uniform_eta.shift")
+    z = a + shift
+    d = 1 - z**2
+    L = 1 - delta * z**2
+    Lz = -2 * delta * z
+    if L.a <= 0 <= L.b:
+        raise FrozenInputError("Q_Z denominator L contains zero on the saved eta/rho box")
+
+    n0 = (1 + delta) * z * ubase - 4 * d
+    n0_z = (1 + delta) * (ubase + 4 * z) + 8 * z
+    q0_z = n0_z / L - n0 * Lz / L**2
+
+    channels = {
+        channel: _build_channel(
+            channel=channel,
+            core_payload=payload,
+            capsule=capsule,
+            rho=rho,
+            z=z,
+            d=d,
+            L=L,
+            Lz=Lz,
+            q0_z=q0_z,
+        )
+        for channel in ("candidate", "actual")
+    }
+    return {
+        "schema": "native_O3_eta_n1_qz_fixed_rho_consumer_draft_v1",
+        "status": STATUS,
+        "source_only": True,
+        "conditional": True,
+        "runtime_model_metadata": RUNTIME_MODEL_METADATA,
+        "domain": {"rho": "[0,4]", "eta": "[-1,1]", "ordinary_Z": True},
+        "source_paths": {
+            "core_result": str(CORE_RESULT_PATH),
+            "core_source_wrapper": str(CORE_SOURCE_WRAPPER_PATH),
+            "core_capsule": str(CORE_CAPSULE_PATH),
+            "core_source_module": str(CORE_SOURCE_MODULE_PATH),
+        },
+        "source_sha256": {
+            "core_result": CORE_RESULT_SHA256,
+            "core_source_wrapper": CORE_SOURCE_WRAPPER_SHA256,
+            "core_capsule_raw": CORE_CAPSULE_RAW_SHA256,
+            "core_capsule_canonical": CORE_CAPSULE_CANONICAL_SHA256,
+            "core_source_module": CORE_SOURCE_MODULE_SHA256,
+        },
+        "point_value": POINT_VALUE,
+        "epsilon_core_saved_interval": epsilon_core,
+        "epsilon_accounting": CONDITIONS["epsilon_accounting"],
+        "channels": channels,
+    }
+
+
+if __name__ == "__main__":
+    raise RuntimeError("Draft-only file: root must freeze and invoke this consumer explicitly")

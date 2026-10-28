@@ -1,3 +1,7 @@
+## Physical pulse certificate dependency and Q_Z draft audit (2026-10-28)
+
+The physical pulse source retains current-minus-frame geometry correction ports. A later certificate claims these vanish without recording the required geometry-correction identity; retain the correction in the full physical terminal comparison. The saved quiet cancellation remains qualified. A Q_Z draft was statically reviewed and remains unentered because endpoint rounding may shrink intervals and it repeats an entered Q0_Z formula. No new numerical or source-expression consumer ran; goal ACTIVE / INCOMPLETE. Details: docs/CURRENT_PHYSICAL_PULSE_SEAM_AND_QZ_AUDIT_2026_10_28.md.
+
 ## Native O3 eta n1 actual-source matrix C0 bounds (2026-10-28)
 
 The saved conditional input enclosures yield 13 B0 and 6 B1 C0 interval entries over rho [0,4], eta [-1,1]. Six F-dependent entries retain a formal F0 anchor; no source point value is selected. No matrix Z1, full n1 response, m15 binding, old-error reduction or global closure is claimed.
