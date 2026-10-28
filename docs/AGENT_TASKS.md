@@ -1,3 +1,9 @@
+## Native O3 eta n1 operator-coordinate repair publication (2026-10-28)
+
+Synthetic-only saved result SHA: `3f96e6dc47839d1e51c238e37be5978bb5c5359a21e4a06382c6058c115c94dc`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_operator_coordinate_repair.json`.
+The old Green leaf entered but has no saved comparison and is not rerun. Matrix, finite words and m15 remain disconnected from actual source. No complete n1/m15/NS claim is installed.
+Next task: `source_native_O3_eta_n1_same_source_F_U_Q_g_B0_B1_binding_and_source_level_tail`; the seven execution rules remain authoritative.
+
 ## Native O3 eta n1 finite gauge-jet repair publication (2026-10-28)
 Saved result SHA: `1017ec396b6dc1f95d3a655a013e38c7c15da776b529e18810c64bc9b00578a0`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_finite_gauge_jet_repair.json`.
 The positive sigma² denominator gap and locally finite angular C0/C1 RHS packet are recorded conditionally from the single saved repair run. No regular n1 response, m15 value, old 212 binding, global moment closure, or full Navier–Stokes claim is installed.
