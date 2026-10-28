@@ -1,3 +1,7 @@
+## 2026-10-28: saved frame Z-axis substitution descriptors
+
+A frozen leaf identified both saved Z binder arguments as exact zero and checked a generic C2 composition jet. Actual inlet derivative transport, capture freedom and frame seams remain open. See [the current handoff](CURRENT_FRAME_Z_AXIS_COMPOSITION_JET_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: bounded frame inlet replacement free-name evidence
 
 Four frozen single-entry leaves preserved two unresolved attempts, identified a protected binder by its saved row without traversing its geometry closure, and found a syntactic unbound Z witness in one actual replacement. Other names and actual composition, capture freedom, Z transport and frame seams remain unresolved. See [the current handoff](CURRENT_FRAME_REPLACEMENT_FREE_NAMES_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
