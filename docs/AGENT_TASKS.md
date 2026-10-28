@@ -1,3 +1,7 @@
+## 2026-10-28: frame m15 endpoint mismatch
+
+A frozen source-only leaf records all 64 Z0/Z1 occurrences of the four m15 endpoint fields at eight positions, with 16 saved-frame, four previously audited fresh-gap, and 44 deferred references. It provides exact conditional local-minus-global and ordinary-Z1 mismatch expressions without cancelling seams or errors. The physical source identity and numerical closure remain open. See [the current handoff](CURRENT_FRAME_M15_ENDPOINT_MISMATCH_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: frame gap local source substitution
 
 A saved-map lookup found the old field-radius reference unchanged and 20 missing local gap/endpoint rows. A new independently namespaced DAG constructs those 20 roots, and an independent frozen structural audit passed on 1,131 nodes and 20 roots. This is unevaluated source structure, not a proof of derivative commutation, physical identity, complete endpoint seams or numerical error reduction. See [the current handoff](CURRENT_HISTORICAL_FRAME_GAP_LOCAL_SUBSTITUTION_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
