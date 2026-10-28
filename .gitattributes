@@ -683,3 +683,8 @@ scripts/run_frame_pulse_two_moment_endpoint_once.py -text
 docs/CURRENT_FRAME_TWO_MOMENT_SOURCE_NORMAL_FORMS_2026_10_28.md -text
 scripts/run_frame_inlet_lexical_audit_once.py -text
 docs/CURRENT_FRAME_SELECTED_INLET_SCOPE_2026_10_28.md -text
+scripts/run_frame_replacement_free_names_once.py -text
+scripts/run_frame_replacement_free_names_v2_once.py -text
+scripts/run_frame_binder_descriptor_once.py -text
+scripts/run_frame_replacement_free_names_v3_once.py -text
+docs/CURRENT_FRAME_REPLACEMENT_FREE_NAMES_2026_10_28.md -text
