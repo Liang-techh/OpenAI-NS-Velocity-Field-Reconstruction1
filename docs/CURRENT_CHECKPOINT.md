@@ -1,3 +1,7 @@
+## Compact I/S/Cp signed-history source binding (2026-10-28)
+
+A fresh source-only leaf bound 12 h/e/p history rows to actual I/S/Cp atom occurrences at ordinary Z0–Z3, preserving the previously accepted D-only packet by raw-byte authentication. M-channel formula binding, common physical domain/units, independent offset and cap transfer remain open; the failed generic M/Z0 family was not re-entered. See docs/CURRENT_COMPACT_ISCP_GAP_SOURCE_BINDING_2026_10_28.md.
+
 ## Compact D-channel signed k/m source binding (2026-10-28)
 
 One fresh D-only source consumer bound 8 saved k/m history rows to the D numerator/denominator atom occurrences at ordinary Z0–Z3. This is conditional source-port correspondence only; common physical domain, units, numerical gaps, independent reference offset and cap transfer remain open. The failed generic M/Z0 family was not re-entered. See docs/CURRENT_COMPACT_D_KM_SOURCE_BINDING_2026_10_28.md.
