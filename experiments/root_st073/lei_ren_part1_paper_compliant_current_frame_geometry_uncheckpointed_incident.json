@@ -1,0 +1,29 @@
+{
+  "accepted_as_evidence": false,
+  "archives": [
+    "lei_ren_part1_paper_compliant_current_original_Rp_native_C5_pulse_source.json.gz",
+    "lei_ren_part1_paper_compliant_current_original_n1_pulse_kernel_functions.json.gz",
+    "lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_C3_functions.json.gz"
+  ],
+  "do_not_reenter": "uncheckpointed geometry root closure Z-search family",
+  "not_used_by_frozen_leaf": true,
+  "notes": "Worker initially described this as no source consumer, but DAG traversal is a source consumer under execution rules. No files or decoded archives were written, as reported by worker.",
+  "other_roots": "main/gap/end query, y and radius IDs were printed; whether all were closure roots is unknown",
+  "raw_gzip_authentication_before_decode": false,
+  "reported_Z_node": 20,
+  "reported_closure_roots": {
+    "Pstar": 33572,
+    "R": 263348,
+    "R2": 262918,
+    "Rp": 263349,
+    "Tw": 205147,
+    "delta": 25220,
+    "length": 263346,
+    "mu": 17,
+    "s": 263344
+  },
+  "reported_output_unaccepted": "Worker reported the listed closures did not contain Z; no retained complete stdout or exact command and no result file.",
+  "schema": "frame_geometry_uncheckpointed_incident_v1",
+  "worker_reported_actions": "One unfrozen inline Python execution gzip/JSON decoded three archives and traversed DAG node closures searching for Z, without a result artifact.",
+  "worker_task": "derive_review"
+}
