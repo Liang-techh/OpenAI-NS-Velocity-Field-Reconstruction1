@@ -629,3 +629,7 @@ src/openai_ns_reconstruction/compact_joint_history_gap_binding.py -text
 scripts/run_compact_joint_history_gap_binding.py -text
 experiments/root_st073/lei_ren_part1_paper_compliant_current_compact_joint_history_gap_binding_failure.json -text
 docs/CURRENT_COMPACT_JOINT_HISTORY_GAP_BINDING_FAILURE_2026_10_28.md -text
+src/openai_ns_reconstruction/compact_D_km_source_binding.py -text
+scripts/run_compact_D_km_source_binding.py -text
+experiments/root_st073/lei_ren_part1_paper_compliant_current_compact_D_km_source_binding.json -text
+docs/CURRENT_COMPACT_D_KM_SOURCE_BINDING_2026_10_28.md -text

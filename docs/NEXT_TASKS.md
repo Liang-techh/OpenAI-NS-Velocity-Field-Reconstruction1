@@ -1,3 +1,7 @@
+## Compact D-channel signed k/m source binding (2026-10-28)
+
+One fresh D-only source consumer bound 8 saved k/m history rows to the D numerator/denominator atom occurrences at ordinary Z0–Z3. This is conditional source-port correspondence only; common physical domain, units, numerical gaps, independent reference offset and cap transfer remain open. The failed generic M/Z0 family was not re-entered. See docs/CURRENT_COMPACT_D_KM_SOURCE_BINDING_2026_10_28.md.
+
 ## Compact signed-history to joint binding: saved failure (2026-10-28)
 
 One new frozen consumer failed with `KeyError: 0` at its first M/Z0 formula row; no 20-port binding was accepted and the failed family must not be re-entered. Exact checkpoints and the static-review miss are preserved. Next use a distinct new family for the not-yet-entered history binding, retaining all old errors and the independent offset. See docs/CURRENT_COMPACT_JOINT_HISTORY_GAP_BINDING_FAILURE_2026_10_28.md.
