@@ -1,5 +1,14 @@
 
 
+## native_O3_anchor_peak_axis_source_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_peak_axis_source_jet.json.
+Status: immutable failed anchor-peak axis source-jet attempt; no mathematical acceptance.
+Next: source_native_O3_new_independent_method_after_failed_native_O3_anchor_peak_axis_source_jet. Prospective frozen task: source_native_O3_anchor_nonlinear_core_function_value.
+The complete saved result and its raw callback/checkpoint bytes are retained in the lossless artifact set.
+
+
+
 ## native_O3_core_physical_source_binding publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_core_physical_source_binding.json.
