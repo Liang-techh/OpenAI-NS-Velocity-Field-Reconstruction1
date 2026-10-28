@@ -697,3 +697,5 @@ scripts/run_frame_X_history_transport_once.py -text
 docs/CURRENT_FRAME_X_HISTORY_TRANSPORT_2026_10_28.md -text
 scripts/run_frame_quiet_X_quotient_jets_once.py -text
 docs/CURRENT_QUIET_X_QUOTIENT_JETS_2026_10_28.md -text
+scripts/run_compact_X_cleared_residual_once.py -text
+docs/CURRENT_COMPACT_X_CLEARED_RESIDUAL_2026_10_28.md -text

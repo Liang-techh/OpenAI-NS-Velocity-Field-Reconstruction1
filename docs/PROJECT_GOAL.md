@@ -1,3 +1,7 @@
+## 2026-10-28: compact X cleared derivative residuals
+
+A frozen leaf bound compact exit E/h ports to the quiet inlet and generated denominator-cleared P4/P5 compatibility tests. Thirteen symbolic checks passed; actual all-Z source jets, terminal identities and X4/X5 vanishing remain open. See [the current handoff](CURRENT_COMPACT_X_CLEARED_RESIDUAL_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: conditional quiet X quotient jets
 
 A frozen leaf bound saved quiet E/h and X ports, derived callable ordinary-Z quotient jets through order five, and passed 15 conditional symbolic checks. Same-source input jets, geometry independence, inlet transport, X4/X5 and actual seams remain open. See [the current handoff](CURRENT_QUIET_X_QUOTIENT_JETS_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
