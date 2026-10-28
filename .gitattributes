@@ -693,3 +693,5 @@ docs/CURRENT_FRAME_Z_AXIS_COMPOSITION_JET_2026_10_28.md -text
 scripts/run_frame_axis_native_port_once.py -text
 scripts/run_frame_axis_gamma_roles_once.py -text
 docs/CURRENT_FRAME_AXIS_X_HISTORY_PORT_2026_10_28.md -text
+scripts/run_frame_X_history_transport_once.py -text
+docs/CURRENT_FRAME_X_HISTORY_TRANSPORT_2026_10_28.md -text

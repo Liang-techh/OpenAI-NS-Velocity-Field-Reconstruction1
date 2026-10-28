@@ -1,3 +1,7 @@
+## 2026-10-28: conditional source-bound X history transport
+
+A frozen leaf derived callable ordinary-Z2 formulas for the original Xf/Xt histories and formal finite-integral derivative kernels. Eleven symbolic checks passed; current X jet identity, actual inlet/axis transport, improper Gamma differentiation and X4/X5 compatibility remain open. See [the current handoff](CURRENT_FRAME_X_HISTORY_TRANSPORT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: saved frame X port and axis history roles
 
 Two frozen leaves identified the X inlet port, its saved order 0–3 mapping, and Xt/Xf history references for the two Z=0 substitutions. Original/current order-4/5 X references are structurally different; actual jet transport and function equality remain open. See [the current handoff](CURRENT_FRAME_AXIS_X_HISTORY_PORT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
