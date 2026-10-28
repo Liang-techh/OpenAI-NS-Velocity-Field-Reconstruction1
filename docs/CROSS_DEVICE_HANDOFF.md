@@ -1,3 +1,8 @@
+## Native O3 eta n1 finite gauge-jet repair publication (2026-10-28)
+Saved result SHA: `1017ec396b6dc1f95d3a655a013e38c7c15da776b529e18810c64bc9b00578a0`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_finite_gauge_jet_repair.json`.
+The positive sigma² denominator gap and locally finite angular C0/C1 RHS packet are recorded conditionally from the single saved repair run. No regular n1 response, m15 value, old 212 binding, global moment closure, or full Navier–Stokes claim is installed.
+Next task: `source_native_O3_eta_n1_core_response_and_m15_binding`; the seven execution rules remain authoritative.
+
 ## Native O3 eta n1 finite-admission restriction (2026-10-28)
 Saved result SHA: `78aca717ac8f29091dc99cd086899b2d454fb1c13ea56c323cb34380ab43fff3`; report path: `C:/Users/z5242/Documents/Codex/2026-09-13/before-doing-any-project-work-verify/work/st073-transition-next/experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_eta_n1_core_source.json`.
 The structural run and conditional exact old-core eta view remain recorded, but the finite RHS packet is not admitted. The saved-result audit records nonfinite g5 C1 at eta=0 and uniform-eta g5 C0/C1; the audit is metadata-only and does not prove a numerical root cause. Retain g4/g6 enclosures and the formal positive F0 scale; do not claim a finite full 48-row RHS packet, regular n1 response, or m15 value.
