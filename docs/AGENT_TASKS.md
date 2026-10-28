@@ -1,3 +1,7 @@
+## Scoped native pulse geometry bridge (2026-10-28)
+
+A fresh source-only consumer passed 51 checks, deriving Rp-squared and three same-y radius congruences from the inherited scoped Rp identity. All physical pulse m15 corrections and old errors remain; chart measures/endpoints and complete pulse identity are open. All 16 weighted-B jumps were already accepted in cross2-B v2; no ancestor was rerun. See docs/CURRENT_ORIGINAL_NATIVE_PULSE_GEOMETRY_LITERAL_BRIDGE_2026_10_28.md.
+
 ## Physical pulse certificate dependency and Q_Z draft audit (2026-10-28)
 
 The physical pulse source retains current-minus-frame geometry correction ports. A later certificate claims these vanish without recording the required geometry-correction identity; retain the correction in the full physical terminal comparison. The saved quiet cancellation remains qualified. A Q_Z draft was statically reviewed and remains unentered because endpoint rounding may shrink intervals and it repeats an entered Q0_Z formula. No new numerical or source-expression consumer ran; goal ACTIVE / INCOMPLETE. Details: docs/CURRENT_PHYSICAL_PULSE_SEAM_AND_QZ_AUDIT_2026_10_28.md.
