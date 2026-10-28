@@ -1,3 +1,7 @@
+## 2026-10-28: frame m15 source-bound signed seams
+
+A frozen v1 failed on a Z1 string-format guard and is preserved. A separately frozen v2 binds the 64 source-row occurrences into four Z0/Z1 signed seams; exact namespace/node/field/order/coefficient pairing found no direct pairs, so 32 Z0 and 48 Z1 terms remain. This does not prove the functions unequal, any physical identity, or numerical error reduction. See [the current handoff](CURRENT_FRAME_M15_SOURCE_BOUND_SEAMS_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: frame m15 remaining endpoint substitutions
 
 A new source-only operation bound the 44 previously deferred m15 endpoint occurrences as unevaluated references: 12 reuse prior audited DAG nodes and 32 use 168 new operator nodes. A separately frozen structural audit passed on the new nodes and 44 occurrences. This does not prove semantic identity, same-source seams, ordinary-Z1 commutation or numerical error reduction; see [the current handoff](CURRENT_FRAME_M15_ENDPOINT_SUBSTITUTION_2026_10_28.md). Goal ACTIVE / INCOMPLETE.

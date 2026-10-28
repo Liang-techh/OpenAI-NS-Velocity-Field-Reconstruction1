@@ -674,3 +674,6 @@ docs/CURRENT_FRAME_M15_ENDPOINT_MISMATCH_2026_10_28.md -text
 scripts/run_frame_m15_deferred_endpoint_substitution_once.py -text
 scripts/run_frame_m15_deferred_endpoint_substitution_audit_once.py -text
 docs/CURRENT_FRAME_M15_ENDPOINT_SUBSTITUTION_2026_10_28.md -text
+scripts/run_frame_m15_source_bound_seams_once.py -text
+scripts/run_frame_m15_source_bound_seams_v2_once.py -text
+docs/CURRENT_FRAME_M15_SOURCE_BOUND_SEAMS_2026_10_28.md -text
