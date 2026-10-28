@@ -1,3 +1,7 @@
+## 2026-10-28: correlated pulse density; exact-chart fixture failed
+
+A new arithmetic-domain-preserving kernel directly evaluates correlated pulse density and ordinary Z1 from caller-supplied frame and signed difference jets; exact Fraction and high-precision synthetic tests passed. It does not bind actual sources or compute physical m15. A separately frozen exact-chart fixture failed on an inconsistent measure-label assertion; preserve and do not re-enter it. The actual tiny mu, source-owned coordinates/fields, nested scales, signed integration and old errors remain open. See [current handoff](CURRENT_PULSE_CORRELATED_DENSITY_CHART_ATTEMPT_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: signed pulse m15 kernel, synthetic-only validation
 
 A new signed three-chart physical-minus-frame pulse integration kernel retains each finite endpoint and ordinary Z1; independent direct-N1p and finite-difference synthetic checks passed. This is not actual-source binding, pulse equality, a certified error or five-moment closure. The actual source mu underflows binary64, so this float kernel cannot yet evaluate it; next bind physical field jets, radii, endpoints and units using a suitable log-scale or arbitrary-precision method. Preserve both pulse sides and all old errors. See [current handoff](CURRENT_PULSE_SIGNED_M15_KERNEL_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
