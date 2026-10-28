@@ -1,3 +1,7 @@
+## 2026-10-28: pulse gap current-radius reconstruction
+
+The saved C3 source gives a current-radius gap reconstruction G whose six field row lists match the prior frame references at ordinary Z0–Z2, with separately saved finite endpoint and pressure-FTC roles. The scoped gap Q relations rely on the accepted source-checker premises; G is not proved equal to historical frame-only pressure F or physical source P. Preserve the formal (P-G)+(G-F) difference, all old errors and the independent reference offset. Numerical admission and complete five-moment closure remain open. See [current handoff](CURRENT_PULSE_GAP_CURRENT_RADIUS_SOURCE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: actual physical/frame pulse gap source expressions
 
 A new source-only gap program retrieved the separate actual physical/frame Q and Q_y Z0–Z2 references and physical finite endpoint fields, and emitted a conditional signed gap moment/Z1 expression. The frame-only field radius and finite endpoint owners remain unresolved; the program is not admissible for numerical use and proves no source equality, pulse cancellation or old-error reduction. See [current handoff](CURRENT_PULSE_GAP_ACTUAL_SOURCE_PROGRAM_2026_10_28.md). Next bind the actual frame field radius/endpoints and common measures/units without re-entering graph-comparison families. Goal ACTIVE / INCOMPLETE.
