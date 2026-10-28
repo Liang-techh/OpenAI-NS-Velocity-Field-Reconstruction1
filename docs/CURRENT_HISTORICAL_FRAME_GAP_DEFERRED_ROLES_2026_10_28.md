@@ -1,0 +1,23 @@
+# Historical frame gap deferred source roles — 2026-10-28
+
+Goal ACTIVE / INCOMPLETE. A new source-only consumer authenticated three existing compressed archives before decoding and read only direct saved fields. It compared the retained native, leading-field, endpoint, piece and pressure records in the current Rp adapter's input packet with the corresponding saved C3 pressure archive; these literal records agree. The three archives have matching saved source-family metadata, and their archived receipts passed with the expected raw dependency pins. It also compared the adapter's four global m15 rows with the saved native-complete-pulse comparison record. This is a saved-role and provenance check, not a new proof about numerical values, source graph equivalence or endpoint mapping.
+
+The original own-field archive directly records the gap query handle `33829`, log-radius handle `33981` and radius handle `33982`. Its archived domain describes `xi=mu*log(R/Rp)`, lower handle `4`, upper handle `33889` and `dR/dxi=R/mu`. These are opaque references, not numerical values. The source constructor forms the original radius as `exp(logRp + xi/mu)`. The original pressure constructor uses that field's radius for the chart measures and substitutes each field/domain endpoint when constructing the endpoint tensor. This identifies the old **template owner**, not a newly computed frame-only radius.
+
+The C3 source archive directly retains these original gap `R_q_y` rows, which the producer describes as ordinary Z0–Z3:
+
+```
+lower  [34762, 34763, 61108, 61462]
+upper  [34791, 34792, 61105, 61456]
+gap m15 [35007, 35008, 61112, 61466]
+```
+
+The original global m15 rows are `[35556,35557,58704,59100]`; the Rp adapter's global pressure rows `[279426,279542,279770,280139]` match the separately saved frame-only comparison role. The actual inlet replacement map is retained in the saved result. For each original radius, endpoint or local m15 role, the new packet records the operation `simultaneous_saved_inlet_substitution` as **deferred and unexecuted**. The old Rp adapter rewrote the global pressure and leading fields, but did not save separately rewritten gap endpoints or pieces. Therefore the deferred endpoint expressions are candidate inherited roles, not authenticated frame-only endpoint functions. No new substituted node is claimed, and the decomposition of the adapter's global m15 into these local roles remains to be proved.
+
+The result selects only `R_q_y` and `q_plus_q_y`, not the complete endpoint tensor. Independent read-only review found that the flags `ordinary_Z_rows_are_source_refs`, `adapter_rewrites_global_pressure_not_gap_endpoints`, `independent_reference_offset_preserved`, and the listed physical correction roots are not individually established by this leaf: they are fixed annotations or previously known context. The adapter behavior above is supported by separate static reading of its pinned source; the offset and correction roots were not re-read or independently checked by this consumer. They remain in the earlier records and are not a new finding here. The substitution map was not checked for coverage or semantic validity on these roles.
+
+The program did not traverse the source graph, replay an ancestor or incident comparison family, evaluate an opaque reference, run quadrature, or remove any old error. It retains the `(P-G)+(G-F)` differences, all four physical correction roots, independent reference offset, 212/213/183 inherited counts and the once-only reserved contribution. The latter counts are not re-audited by this leaf. `P1` remains distinct from `m15`. There is no claim that P, F or G coincide, that endpoint directions match, or that their mu, Pstar, measure, ordinary Z1 and units share a proved physical source. The result explicitly disallows numerical use; global five-moment closure and later physical construction layers remain open. Runtime model metadata was unavailable (`null`).
+
+Next: construct a new, separately frozen source-bound operation that applies the recorded frame-only inlet substitution to the original gap endpoint/radius and local pressure roles, preserving their common source graph and ordinary Z1, and prove how they contribute to the already-saved global frame m15. Avoid replaying the prohibited physical changed-row/pair-DAG incident or ancestor builders. Only then compare F with G/P and transport all actual source errors before any cancellation.
+
+The report `experiments/root_st073/lei_ren_part1_paper_compliant_current_historical_frame_gap_deferred_roles.json` contains exact code, entry, source checkpoint and result bytes. Result SHA-256: `3ba2e27cb66459ca75592de04bf6359fa3295733cf87aa1b02f4efcf62d30ec6`.

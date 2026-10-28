@@ -1,3 +1,7 @@
+## 2026-10-28: historical frame gap deferred source roles
+
+A frozen source-only leaf recovered the original gap field-radius template and selected endpoint/m15 rows, the saved inlet map, and direct agreement of adapter global m15 rows with the frame comparison record. The inlet substitution is not executed and the local F endpoint/piece decomposition is not proved; hard-coded annotations and partial endpoint scope are qualified in [the current handoff](CURRENT_HISTORICAL_FRAME_GAP_DEFERRED_ROLES_2026_10_28.md). No source values or error reduction were computed. Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: normalized signed pulse pair quadrature
 
 A new mpmath interface integrates caller-supplied correlated signed jets with separate radius/difference scales and finite endpoint terms at ordinary Z0/Z1. Its first frozen synthetic fixture missed its strict relative tolerance; a separately frozen, difference-normalized v2 passed the recorded analytic fixture. Neither version binds the physical/frame sources or certifies errors; historical F radius/endpoints and the common source map remain open. See [the current handoff](CURRENT_PULSE_SCALED_PAIR_QUADRATURE_2026_10_28.md). Goal ACTIVE / INCOMPLETE.

@@ -662,3 +662,5 @@ scripts/run_pulse_scaled_pair_v2_once.py -text
 docs/CURRENT_PULSE_SCALED_PAIR_QUADRATURE_2026_10_28.md -text
 scripts/fixture_pulse_scaled_pair_once.py -text
 scripts/run_pulse_scaled_pair_once.py -text
+scripts/run_historical_frame_gap_deferred_roles_once.py -text
+docs/CURRENT_HISTORICAL_FRAME_GAP_DEFERRED_ROLES_2026_10_28.md -text
