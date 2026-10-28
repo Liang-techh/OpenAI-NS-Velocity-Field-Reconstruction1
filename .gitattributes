@@ -701,3 +701,6 @@ scripts/run_compact_X_cleared_residual_once.py -text
 docs/CURRENT_COMPACT_X_CLEARED_RESIDUAL_2026_10_28.md -text
 scripts/run_outer_X_common_factor_once.py -text
 docs/CURRENT_OUTER_X_COMMON_FACTOR_2026_10_28.md -text
+scripts/run_outer_X_scalar_source_contract_once.py -text
+docs/CURRENT_OUTER_SCALAR_COMPACT_ENDPOINT_2026_10_28.md -text
+scripts/run_compact_terminal_algebra_once.py -text
