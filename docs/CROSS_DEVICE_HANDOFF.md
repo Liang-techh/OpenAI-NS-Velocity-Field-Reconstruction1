@@ -1,5 +1,14 @@
 
 
+## native_O3_anchor_peak_direct_interval_source_jet publication
+
+Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_peak_direct_interval_source_jet.json.
+Status: executed conditional anchor-peak direct-interval source-jet packet; publication metadata follows.
+Next: source_native_O3_anchor_nonlinear_core_function_value. Prospective frozen task: source_native_O3_anchor_nonlinear_core_function_value.
+The complete saved result and its raw callback/checkpoint bytes are retained in the lossless artifact set.
+
+
+
 ## native_O3_anchor_peak_axis_source_jet publication
 
 Report: experiments/root_st073/lei_ren_part1_paper_compliant_current_native_O3_anchor_peak_axis_source_jet.json.
