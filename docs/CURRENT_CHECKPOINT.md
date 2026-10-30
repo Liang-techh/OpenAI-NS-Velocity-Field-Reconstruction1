@@ -1,3 +1,7 @@
+## 2026-10-29: original gap scaled field
+
+A gap point interface retains nonzero mean, Q/Z jets and separate physical m15 field, endpoint and density scales; 38 synthetic checks passed. Source-owned F/P inputs, signed integration and certified errors remain open. See [the current handoff](CURRENT_ORIGINAL_GAP_SCALED_FIELD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: historical frame owner binding
 
 A single authenticated saved-source leaf bound preRp geometry and Gamma to the same historical frame node, retaining Gamma's imported node in its separate namespace. Ordinary Z independence and F endpoint/seam identities remain open. See [the current handoff](CURRENT_HISTORICAL_FRAME_OWNER_BINDING_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

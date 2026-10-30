@@ -728,3 +728,5 @@ docs/CURRENT_HISTORICAL_FRAME_OWNER_BINDING_2026_10_29.md -text
 docs/PROJECT_GOAL.md -text
 docs/AGENT_TASKS.md -text
 docs/CURRENT_CHECKPOINT.md -text
+scripts/run_original_gap_scaled_field_once.py -text
+docs/CURRENT_ORIGINAL_GAP_SCALED_FIELD_2026_10_29.md -text
