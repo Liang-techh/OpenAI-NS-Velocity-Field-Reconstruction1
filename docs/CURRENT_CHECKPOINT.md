@@ -1,3 +1,7 @@
+## 2026-10-29: radius-sensitive m15 endpoint Z1
+
+A caller-owned endpoint expression retains the radius ordinary-Z derivative and passed 12 synthetic controls. Actual F radius independence, endpoint source binding and m15 closure remain open. See [the current handoff](CURRENT_M15_RADIUS_SENSITIVE_ENDPOINT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: scaled density adapter propagation
 
 A wrapper path that could discard explicit source adapter identity was guarded; 12 and 25 scoped guard checks passed without rerunning density or graph calculations. Historical F radius/endpoint, physical source integration and m15 closure remain open. See [the current handoff](CURRENT_SCALED_DENSITY_ADAPTER_GUARD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

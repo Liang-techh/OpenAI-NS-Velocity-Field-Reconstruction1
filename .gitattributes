@@ -718,3 +718,5 @@ docs/CURRENT_FINITE_N_ADAPTER_IDENTITY_GUARD_2026_10_29.md -text
 scripts/run_finite_n_row_literal_once.py -text
 scripts/run_scaled_density_adapter_guard_once.py -text
 docs/CURRENT_SCALED_DENSITY_ADAPTER_GUARD_2026_10_29.md -text
+scripts/run_m15_radius_sensitive_endpoint_once.py -text
+docs/CURRENT_M15_RADIUS_SENSITIVE_ENDPOINT_2026_10_29.md -text
