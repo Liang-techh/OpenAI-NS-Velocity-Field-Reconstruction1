@@ -1,3 +1,7 @@
+## 2026-10-30: emitted F gap endpoint DAG synthetic evaluation
+
+The saved candidate DAG was evaluated against independent synthetic automatic derivatives, including moving endpoints; source ownership, transport, seam identities and certified errors remain open. See [the current handoff](CURRENT_F_GAP_EMITTED_DAG_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F gap endpoint source-role candidate
 
 An unevaluated F gap endpoint candidate retains saved U/Q/Q_y roles, moving endpoint and radius derivatives, eight fields and signed endpoint terms. Sixteen independent formula checks passed; the emitted DAG and F owner identities remain unproved. See [the current handoff](CURRENT_F_GAP_ENDPOINT_CANDIDATE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

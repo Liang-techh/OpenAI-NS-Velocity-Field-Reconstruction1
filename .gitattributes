@@ -751,3 +751,5 @@ docs/CURRENT_PF_SELECTOR_PRIMITIVE_2026_10_29.md -text
 scripts/run_f_gap_endpoint_candidate_once.py -text
 scripts/run_f_gap_endpoint_candidate_v2_once.py -text
 docs/CURRENT_F_GAP_ENDPOINT_CANDIDATE_2026_10_29.md -text
+scripts/run_f_gap_endpoint_dag_fixture_once.py -text
+docs/CURRENT_F_GAP_EMITTED_DAG_2026_10_30.md -text
