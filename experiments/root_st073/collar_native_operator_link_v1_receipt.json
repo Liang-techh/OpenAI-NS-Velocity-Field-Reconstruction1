@@ -1,0 +1,41 @@
+{
+  "component": "collar_native_operator_link_v1",
+  "entry_sha256": "bdfc00c56d0fe83b898ab4266dfb2bfa4b0627b2e2b33627a9ce699716226cb0",
+  "input_hashes": {
+    "experiments/root_st073/collar_pressure_regular_singular_v6_receipt.json": "c4c56da7f0a06a776f87498505950a5f2f077f710eb7fb2d270081ce845ec8fd",
+    "experiments/root_st073/collar_radial_q_operator_v1_receipt.json": "c8fc8ff7c58c54f3ce6438b3bb661b6bb75c8fe680d844ebd72b619cbada0fe0",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_lower_collar_functions.py": "d00dfe285735844eabc985f99d94190caa1cfd187f668eb14a2686055cf175fa",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_native_collar_transport.json": "7c05f7438a27d9caa4378cb89b9ab6d33b44138086e86292b73f2fd8e3f4bf96",
+    "scripts/run_collar_native_operator_link_once.py": "b5e1430682a85475fc79296317cce47361919ac549e9bc2aa41edf3877e4a923"
+  },
+  "proof": {
+    "actual_histories_not_equated_to_comparison_histories": true,
+    "canonical_lower_source_sha256": "d00dfe285735844eabc985f99d94190caa1cfd187f668eb14a2686055cf175fa",
+    "conditional_regular_singular_source_formula_reused": true,
+    "first_window_native_leading_equals_canonical_from_accepted_report": true,
+    "forward_six_source_equality_proved": false,
+    "global_terminal_closure_proved": false,
+    "native_actual_mean_and_pressure_histories_retained": true,
+    "native_source_report_sha256": "7c05f7438a27d9caa4378cb89b9ab6d33b44138086e86292b73f2fd8e3f4bf96",
+    "numeric_value_computed": false,
+    "old_errors_removed": false,
+    "old_finite_numeric_function_equality_proved": false,
+    "ordinary_Z_orders_from_native_theorem": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "radial_Q_operator_rows_equal": [
+      0,
+      1,
+      2
+    ],
+    "raw_n1_cut_response_identity_proved": false,
+    "scope": "same original leading function on first-window common collar; not old finite source identity",
+    "status": "saved_native_leading_and_operator_source_link"
+  },
+  "result_sha256": "dc491d62f583fe58447e84f99b3699f5642e01de50addc4f8cb030f56e36a658",
+  "source_checkpoint_sha256": "a7f2b335c66a9e154483eb711a21f29dd6c0e3bd79aa0c93fe39def8666f7f31",
+  "status": "returned"
+}

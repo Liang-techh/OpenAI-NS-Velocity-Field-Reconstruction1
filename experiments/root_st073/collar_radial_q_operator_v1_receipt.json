@@ -1,0 +1,88 @@
+{
+  "component": "collar_radial_q_operator_v1",
+  "entry_sha256": "e7540dac18e0ce61adf23f4a6c34e02d97a23e97f9c813597f175694da183c17",
+  "input_hashes": {
+    "experiments/root_st073/collar_pressure_regular_singular_v6_receipt.json": "c4c56da7f0a06a776f87498505950a5f2f077f710eb7fb2d270081ce845ec8fd",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_C2_phase_primitives.py": "84f5da3eb64096f82df88dd828b22b09bce18192a03925d91cfee0b193902d2c",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_core_fixed_point_functions.py": "d71ff19a68cfed8ace9a6857ffeca860ecee90d8d89b35b2292a7310e180fb59",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_lower_collar_functions.py": "d00dfe285735844eabc985f99d94190caa1cfd187f668eb14a2686055cf175fa",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_own_fields.py": "1400066d2da5373a95f6cd30edad19359256211d0358b454203a92fac53c5ced",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_pulse_pressure_functions.py": "8cc7442487dbbd3054e29211ea799a04d27c43fac3f060f74f5fadd929737594",
+    "scripts/run_collar_radial_q_operator_once.py": "6fd5f3debf456c5a0f7dbdfacaae3f991253bb164bd2c6474736f803a08daa36",
+    "src/openai_ns_reconstruction/collar_radial_q_operator_proof.py": "29a7366a37e93d78e07cdc4d372ff84c1b1e34118e56189d536fa0f2d6a0432c",
+    "src/openai_ns_reconstruction/original_first_collar_transport.py": "10e4552fa09c9392e4e42a1fc1a76930905121f8c6bc5ac9d96e4d9418bd4305",
+    "src/openai_ns_reconstruction/original_n1_inner_m15_numeric.py": "004341ab4eb1f4693995bc86a748eae4c20ff2b5406fb0d784c4416963f5988b"
+  },
+  "proof": {
+    "actual_alias_chain_checks": {
+      "core_pulse_import": true,
+      "lower_core_import": true,
+      "lower_own_alias": true,
+      "own_C2_import": true,
+      "pulse_own_import": true
+    },
+    "error_removed": false,
+    "forward_finite_rows_equal_canonical_function_proved": false,
+    "leading_field_and_history_same_owner_proved": false,
+    "numeric_value_computed": false,
+    "operator_proof": {
+      "L": {
+        "canonical_stronger_condition": "abs(z) < 1 and 0 < delta < 1/2 implies L > 0",
+        "expression": "-delta*z**2 + 1",
+        "required": "1 - delta*z**2 != 0",
+        "sufficient_real_condition": "abs(z) < 1 and 0 <= delta < 1"
+      },
+      "Taylor_to_ordinary_Z": {
+        "C3_rows": "(value, Z, ZZ, ZZZ) are ordinary derivatives",
+        "Laurent_dz_row": "[(k+1)*v[k+1] for k in range(v.order)]",
+        "coefficient_k_to_derivative": "f^(k) = k! * coefficient[k]"
+      },
+      "ast_validation": {
+        "C2Algebra_fixed_add_neg_scale_mul_div": true,
+        "C2Function_shape": "(value, Z, ZZ)",
+        "Laurent_dz": true,
+        "canonical_radial_Q": true,
+        "forward_Q": true,
+        "forward_d_and_L": true
+      },
+      "current_C2_rows": [
+        "-(delta*m0*z - m0*z + m1*z**2 - m1 + 2*u0*z)/(delta*z**2 - 1)",
+        "-(-delta**2*m0*z**2 + delta**2*m1*z**3 + delta*m0*z**2 - delta*m0 - delta*m1*z**3 + delta*m1*z + delta*m2*z**4 - delta*m2*z**2 - 2*delta*u0*z**2 + 2*delta*u1*z**3 + m0 - m1*z - m2*z**2 + m2 - 2*u0 - 2*u1*z)/(delta*z**2 - 1)**2",
+        "-(2*delta**3*m0*z**3 - 2*delta**3*m1*z**4 + delta**3*m2*z**5 - 2*delta**2*m0*z**3 + 6*delta**2*m0*z + 2*delta**2*m1*z**4 - 6*delta**2*m1*z**2 - delta**2*m2*z**5 + 2*delta**2*m2*z**3 + delta**2*m3*z**6 - delta**2*m3*z**4 + 4*delta**2*u0*z**3 - 4*delta**2*u1*z**4 + 2*delta**2*u2*z**5 - 6*delta*m0*z + 6*delta*m1*z**2 - 2*delta*m2*z**3 - 3*delta*m2*z - 2*delta*m3*z**4 + 2*delta*m3*z**2 + 12*delta*u0*z - 4*delta*u2*z**3 + 3*m2*z + m3*z**2 - m3 + 4*u1 + 2*u2*z)/(delta*z**2 - 1)**3"
+      ],
+      "difference_sympy": [
+        "0",
+        "0",
+        "0"
+      ],
+      "differences_by_order": [
+        "0",
+        "0",
+        "0"
+      ],
+      "forward_ordinary_Z_rows": [
+        "-(delta*m0*z - m0*z + m1*z**2 - m1 + 2*u0*z)/(delta*z**2 - 1)",
+        "-(-delta**2*m0*z**2 + delta**2*m1*z**3 + delta*m0*z**2 - delta*m0 - delta*m1*z**3 + delta*m1*z + delta*m2*z**4 - delta*m2*z**2 - 2*delta*u0*z**2 + 2*delta*u1*z**3 + m0 - m1*z - m2*z**2 + m2 - 2*u0 - 2*u1*z)/(delta*z**2 - 1)**2",
+        "-(2*delta**3*m0*z**3 - 2*delta**3*m1*z**4 + delta**3*m2*z**5 - 2*delta**2*m0*z**3 + 6*delta**2*m0*z + 2*delta**2*m1*z**4 - 6*delta**2*m1*z**2 - delta**2*m2*z**5 + 2*delta**2*m2*z**3 + delta**2*m3*z**6 - delta**2*m3*z**4 + 4*delta**2*u0*z**3 - 4*delta**2*u1*z**4 + 2*delta**2*u2*z**5 - 6*delta*m0*z + 6*delta*m1*z**2 - 2*delta*m2*z**3 - 3*delta*m2*z - 2*delta*m3*z**4 + 2*delta*m3*z**2 + 12*delta*u0*z - 4*delta*u2*z**3 + 3*m2*z + m3*z**2 - m3 + 4*u1 + 2*u2*z)/(delta*z**2 - 1)**3"
+      ],
+      "limitations": {
+        "cross_owner_identity_proved": false,
+        "finite_approximation_identified_as_function": false,
+        "numerical_values_evaluated": false,
+        "source_history_identity_proved": false
+      },
+      "owner": {
+        "placeholder_owner_used": false,
+        "source_function": "radial_Q",
+        "v6_placeholder_used": false
+      },
+      "passed": true
+    },
+    "prior_conditional_comparison_result_sha256": "8736b14d7e48fe24c113f18172b545259b4f0eacf59009abf21538407b120841",
+    "prior_other_assumptions_unchanged": true,
+    "terminal_matching_proved": false
+  },
+  "result_sha256": "29aa59fab3f527d3e44f4f585555e2bfbb3afddff54a9612a290bfe0887cc038",
+  "source_checkpoint_sha256": "2d3601a507209533ca553698ebbe7525ff43cf136eb2acc4f2879ea7ea57c5a4",
+  "status": "returned"
+}
