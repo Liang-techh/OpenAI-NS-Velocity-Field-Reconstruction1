@@ -1,3 +1,7 @@
+## 2026-10-30: bounded F radius spine source comparison
+
+Authenticated old and F archives have matching canonical hashes for three directly indexed radius-spine rows; same source family and rewrite metadata do not establish common graph namespace, F field ownership, capture-free substitution or ordinary-Z transport. See [the current handoff](CURRENT_F_RADIUS_SPINE_BINDING_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: emitted F gap endpoint DAG synthetic evaluation
 
 The saved candidate DAG was evaluated against independent synthetic automatic derivatives, including moving endpoints; source ownership, transport, seam identities and certified errors remain open. See [the current handoff](CURRENT_F_GAP_EMITTED_DAG_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
