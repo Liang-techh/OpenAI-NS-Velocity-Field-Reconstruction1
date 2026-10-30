@@ -41,6 +41,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+from numbers import Number
 from collections.abc import Mapping, Sequence
 from typing import Any, Callable, Optional
 
@@ -92,6 +93,8 @@ class _PythonOperations(ScalarOperations):
 
 
 PYTHON_OPERATIONS = _PythonOperations()
+# ``None`` on an OrdinaryJet means unbound; this singleton is an explicit
+# Python arithmetic adapter and is equivalent only by object identity.
 
 
 def _ops_or_default(operations: Optional[ScalarOperations]) -> ScalarOperations:
@@ -244,6 +247,18 @@ class OrdinaryJet:
         return out
 
 
+@dataclass(frozen=True)
+class _UnboundScalarLiteral(OrdinaryJet):
+    """Private marker for a bare scalar awaiting graph-constant conversion.
+
+    Ordinary jets constructed explicitly with ``ordinary_jet`` and no adapter
+    remain ordinary unbound rows.  Only ``coerce_ordinary_jet`` uses this
+    marker, so later adapter binding can distinguish a literal that needs
+    ``operations.constant`` from an opaque source value whose rows must be
+    preserved verbatim.
+    """
+
+
 def ordinary_jet(value: Any, dz: Any = 0, dzz: Any = None,
                  *, operations: Optional[ScalarOperations] = None) -> OrdinaryJet:
     """Construct an ordinary derivative jet explicitly.
@@ -278,6 +293,15 @@ def coerce_ordinary_jet(value: Any, *, operations: Optional[ScalarOperations] = 
     """
 
     if isinstance(value, OrdinaryJet):
+        if isinstance(value, _UnboundScalarLiteral):
+            if operations is None or value.operations is operations:
+                return value
+            return _normalize(value, operations)
+        if value.operations is not None and operations is not None and value.operations is not operations:
+            raise TypeError(
+                name + " uses a different scalar operation adapter; "
+                "an explicit adapter cannot be rebound"
+            )
         if operations is None or value.operations is operations:
             return value
         return OrdinaryJet(value.value, value.dz, value.dzz, operations)
@@ -294,6 +318,23 @@ def coerce_ordinary_jet(value: Any, *, operations: Optional[ScalarOperations] = 
         if len(value) == 3:
             return OrdinaryJet(value[0], value[1], value[2], operations)
         raise JetFormatError(name + " sequence must be (value, dz) or (value, dz, dzz)")
+    # A bare scalar with no requested adapter is unbound.  In particular, do
+    # not route through ``OrdinaryJet.constant`` in that case: that constructor
+    # stores the singleton ``PYTHON_OPERATIONS`` even when its argument is
+    # omitted, which would make an ordinary scalar look like an explicit graph
+    # adapter and block safe inheritance by a unique source adapter later on.
+    # For an explicit adapter, lift numeric literals and zero rows through
+    # its constant callback, while preserving opaque source scalars.
+    if operations is None:
+        # Only numeric literals may be converted with the adapter constant
+        # callback. An opaque source scalar retains its identity and rows.
+        if isinstance(value, Number):
+            return _UnboundScalarLiteral(value, 0, 0, None)
+        return OrdinaryJet(value, 0, 0, None)
+    if isinstance(value, Number):
+        return OrdinaryJet(operations.constant(value), operations.constant(0),
+                           operations.constant(0), operations)
+    # Preserve opaque source scalars; only their zero rows are constants.
     return OrdinaryJet.constant(value, operations)
 
 
@@ -411,17 +452,67 @@ def _check_provenance(guard: Any, baseline: Any, correction: Any, Z: Any, delta:
 
 def _common_operations(*jets: OrdinaryJet,
                        operations: Optional[ScalarOperations] = None) -> ScalarOperations:
+    """Resolve one adapter without silently merging graph namespaces.
+
+    ``None`` on a jet means that its scalar components are unbound and may
+    inherit the unique explicit adapter in this operation.  In contrast,
+    ``PYTHON_OPERATIONS`` is an explicit adapter identity, just like any
+    caller-supplied ``ScalarOperations`` object; it is compatible only with
+    itself (or with an unbound jet), never with a different graph adapter.
+    """
+
+    explicit = []
+    for jet in jets:
+        adapter = jet.operations
+        if adapter is None:
+            continue
+        if operations is not None and adapter is not operations:
+            raise TypeError(
+                "ordinary jets use an explicit scalar operation adapter "
+                "different from the requested adapter"
+            )
+        if not any(adapter is previous for previous in explicit):
+            explicit.append(adapter)
     if operations is not None:
         return operations
-    for jet in jets:
-        if jet.operations is not None:
-            return jet.operations
-    return PYTHON_OPERATIONS
+    if len(explicit) > 1:
+        raise TypeError(
+            "ordinary jets use multiple explicit scalar operation adapters"
+        )
+    return explicit[0] if explicit else PYTHON_OPERATIONS
 
 
-def _normalize(jet: OrdinaryJet, operations: ScalarOperations) -> OrdinaryJet:
+def _normalize(jet: OrdinaryJet, operations: Optional[ScalarOperations]) -> OrdinaryJet:
+    """Bind only an unbound jet, preserving explicit adapter identity.
+
+    Explicit adapters are never relabeled.  ``None`` is the unbound marker;
+    the singleton ``PYTHON_OPERATIONS`` remains a real explicit identity and
+    therefore cannot be replaced by a graph adapter.  The private literal
+    marker is the one exception to ordinary row-preserving inheritance: its
+    value and both zero derivative rows are converted through the target
+    adapter's ``constant`` callback.
+    """
+
     if jet.operations is operations:
         return jet
+    if isinstance(jet, _UnboundScalarLiteral) and jet.operations is None:
+        if operations is None:
+            return jet
+        return OrdinaryJet(
+            operations.constant(jet.value),
+            operations.constant(0),
+            operations.constant(0),
+            operations,
+        )
+    if jet.operations is not None:
+        if operations is None:
+            raise TypeError(
+                "cannot normalize an explicit scalar operation adapter to an unbound jet"
+            )
+        raise TypeError(
+            "ordinary jet uses a different scalar operation adapter; "
+            "explicit adapters cannot be relabeled"
+        )
     return OrdinaryJet(jet.value, jet.dz, jet.dzz, operations)
 
 

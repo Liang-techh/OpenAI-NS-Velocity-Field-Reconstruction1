@@ -1,3 +1,7 @@
+## 2026-10-29: finite-N source adapter identity guard
+
+A namespace-mixing path in the signed finite-N density kernel was guarded; a first 27/28 fixture and a separate 2/2 literal-lift repair are recorded. Actual F endpoints, source correlations and m15 closure remain open. See [the current handoff](CURRENT_FINITE_N_ADAPTER_IDENTITY_GUARD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: analytic compact bump normalizer
 
 Two exact special-function forms for the declared compact bump integral agree numerically in a frozen leaf; source-provider graph semantics and actual control data remain open. The m15 endpoint binding is still incomplete. See [the current handoff](CURRENT_COMPACT_BUMP_CLOSED_FORM_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
