@@ -1,3 +1,7 @@
+## 2026-10-30: old/current Rc recipe proof
+
+Pinned source ASTs yield identical conditional old/current log-Rc formulas with the microscopic origin retained; shared owner, parameters and physical identity remain open. See [the current handoff](CURRENT_RP_RC_RECIPE_PROOF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: old/current Tw recipe proof
 
 Pinned source ASTs yield the same real Tw recipe and zero ordinary Z1 for the recipe; three protected mu role refs match. Cross-graph source semantics, physical identity and error cancellation remain open. See [the current handoff](CURRENT_RP_TW_RECIPE_PROOF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

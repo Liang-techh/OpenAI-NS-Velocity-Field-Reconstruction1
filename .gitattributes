@@ -826,3 +826,6 @@ docs/CURRENT_RP_CROSS_OWNER_SIGNED_GAP_2026_10_30.md -text
 scripts/run_rp_tw_recipe_proof_once.py -text
 experiments/root_st073/rp_tw_recipe_proof_v1_receipt.json -text
 docs/CURRENT_RP_TW_RECIPE_PROOF_2026_10_30.md -text
+scripts/run_rp_rc_recipe_proof_once.py -text
+experiments/root_st073/rp_rc_recipe_proof_v1_receipt.json -text
+docs/CURRENT_RP_RC_RECIPE_PROOF_2026_10_30.md -text
