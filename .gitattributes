@@ -766,3 +766,5 @@ scripts/run_f_gap_qsquare_transport_once.py -text
 docs/CURRENT_F_GAP_QSQUARE_TRANSPORT_2026_10_30.md -text
 scripts/run_f_gap_qsquare_leibniz_once.py -text
 docs/CURRENT_F_QSQUARE_LEIBNIZ_COMPUTE_2026_10_30.md -text
+scripts/run_f_gap_q_source_rows_once.py -text
+docs/CURRENT_F_Q_SOURCE_ROWS_2026_10_30.md -text

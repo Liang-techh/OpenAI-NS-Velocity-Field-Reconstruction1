@@ -1,3 +1,7 @@
+## 2026-10-30: F gap Q source root rows
+
+One authenticated source-only read observed Q0 and Q1 as positive-quotient rows with distinct numerator references and a shared denominator reference; all operands remain opaque and no source values were evaluated. Derivative identity, source ownership and certified error transport remain open. See [the current handoff](CURRENT_F_Q_SOURCE_ROWS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: Q-squared Leibniz callback calculation
 
 A source-free callback calculator now retains the measure-derivative, Q-derivative-defect and two moving-endpoint contributions separately. One frozen synthetic polynomial run checked forward, reversed and coincident endpoints against hand-derived values. F source identity, certified errors and m15 closure remain open. See [the current handoff](CURRENT_F_QSQUARE_LEIBNIZ_COMPUTE_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
