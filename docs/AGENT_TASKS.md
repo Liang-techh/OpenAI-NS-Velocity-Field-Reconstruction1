@@ -1,3 +1,7 @@
+## 2026-10-29: pulse log-radius ordinary-Z transport
+
+A caller-owned point interface retains moving-endpoint and log-radius derivatives without materializing R; 23 synthetic controls passed. Actual F source identity, endpoint substitution and m15 closure remain open. See [the current handoff](CURRENT_PULSE_LOG_RADIUS_TRANSPORT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: radius-sensitive m15 endpoint Z1
 
 A caller-owned endpoint expression retains the radius ordinary-Z derivative and passed 12 synthetic controls. Actual F radius independence, endpoint source binding and m15 closure remain open. See [the current handoff](CURRENT_M15_RADIUS_SENSITIVE_ENDPOINT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

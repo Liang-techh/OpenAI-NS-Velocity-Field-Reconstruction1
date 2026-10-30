@@ -720,3 +720,5 @@ scripts/run_scaled_density_adapter_guard_once.py -text
 docs/CURRENT_SCALED_DENSITY_ADAPTER_GUARD_2026_10_29.md -text
 scripts/run_m15_radius_sensitive_endpoint_once.py -text
 docs/CURRENT_M15_RADIUS_SENSITIVE_ENDPOINT_2026_10_29.md -text
+scripts/run_pulse_log_radius_transport_once.py -text
+docs/CURRENT_PULSE_LOG_RADIUS_TRANSPORT_2026_10_29.md -text
