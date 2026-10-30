@@ -795,3 +795,6 @@ experiments/root_st073/pulse_signed_scaled_transport_z1_v1_receipt.json -text
 experiments/root_st073/f_gap_fixed_y_log_scaled_jets_v1_receipt.json -text
 experiments/root_st073/f_gap_first_row_reduction_v1_receipt.json -text
 docs/CURRENT_F_GAP_ROW_REDUCTION_AND_SIGNED_Z_TRANSPORT_2026_10_30.md -text
+scripts/run_f_gap_reduced_history_fixed_y_once.py -text
+experiments/root_st073/f_gap_reduced_history_fixed_y_v1_receipt.json -text
+docs/CURRENT_F_GAP_REDUCED_HISTORY_CLOSED_FORM_2026_10_30.md -text

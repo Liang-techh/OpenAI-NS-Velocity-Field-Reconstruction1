@@ -1,3 +1,7 @@
+## 2026-10-30: reduced-history own-gap closed form
+
+A new fixed-y mean/Q path retains incoming history and supplies a conditional log-scaled closed form for the own-gap m15 contribution. Synthetic nondegenerate-gap checks passed; F source ownership, moving-endpoint validation and certified errors remain open. See [the current handoff](CURRENT_F_GAP_REDUCED_HISTORY_CLOSED_FORM_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F gap row reduction and signed Z transport
 
 The native first-row equation yields a history-preserving reduction; new fixed-y log-scaled Q and signed density/endpoint Z1 formulas pass synthetic checks. F source ownership, radius and certified errors remain open. See [the current handoff](CURRENT_F_GAP_ROW_REDUCTION_AND_SIGNED_Z_TRANSPORT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
