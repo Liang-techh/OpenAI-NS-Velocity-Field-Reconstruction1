@@ -1,3 +1,7 @@
+## 2026-10-30: old/current Tw recipe proof
+
+Pinned source ASTs yield the same real Tw recipe and zero ordinary Z1 for the recipe; three protected mu role refs match. Cross-graph source semantics, physical identity and error cancellation remain open. See [the current handoff](CURRENT_RP_TW_RECIPE_PROOF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: source-linked cross-owner Rp signed gap
 
 A conditional correlated Rc/Tw mismatch and ordinary Z1 interface now retains both signed parts; current quiet/compact/outer source roles match as opaque refs. Cross-owner equality, source values and error certification remain open. See [the current handoff](CURRENT_RP_CROSS_OWNER_SIGNED_GAP_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
