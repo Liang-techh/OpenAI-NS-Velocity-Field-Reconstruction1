@@ -1,3 +1,7 @@
+## 2026-10-30: F gap row reduction and signed Z transport
+
+The native first-row equation yields a history-preserving reduction; new fixed-y log-scaled Q and signed density/endpoint Z1 formulas pass synthetic checks. F source ownership, radius and certified errors remain open. See [the current handoff](CURRENT_F_GAP_ROW_REDUCTION_AND_SIGNED_Z_TRANSPORT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F gap source handles and log-scaled mean
 
 A one-entry source read retains 13 opaque input candidates and three unresolved inputs; a separate exact synthetic log-scaled mean check passed. Actual F values, source ownership, endpoint identity and error certification remain open. See [the current handoff](CURRENT_F_GAP_SOURCE_BINDING_LOG_MEAN_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

@@ -788,3 +788,10 @@ experiments/root_st073/f_gap_native_log_scaled_mean_v1_receipt.json -text
 experiments/root_st073/f_gap_native_log_scaled_mean_v2_receipt.json -text
 experiments/root_st073/f_gap_native_log_scaled_mean_v3_receipt.json -text
 docs/CURRENT_F_GAP_SOURCE_BINDING_LOG_MEAN_2026_10_30.md -text
+scripts/run_pulse_signed_scaled_transport_z1_once.py -text
+scripts/run_f_gap_fixed_y_log_scaled_jets_once.py -text
+scripts/run_f_gap_first_row_reduction_once.py -text
+experiments/root_st073/pulse_signed_scaled_transport_z1_v1_receipt.json -text
+experiments/root_st073/f_gap_fixed_y_log_scaled_jets_v1_receipt.json -text
+experiments/root_st073/f_gap_first_row_reduction_v1_receipt.json -text
+docs/CURRENT_F_GAP_ROW_REDUCTION_AND_SIGNED_Z_TRANSPORT_2026_10_30.md -text
