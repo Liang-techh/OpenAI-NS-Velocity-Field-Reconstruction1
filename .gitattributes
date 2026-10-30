@@ -764,3 +764,5 @@ scripts/run_f_pressure_path_integral_roles_once.py -text
 docs/CURRENT_F_PRESSURE_INTEGRAL_ROLES_2026_10_30.md -text
 scripts/run_f_gap_qsquare_transport_once.py -text
 docs/CURRENT_F_GAP_QSQUARE_TRANSPORT_2026_10_30.md -text
+scripts/run_f_gap_qsquare_leibniz_once.py -text
+docs/CURRENT_F_QSQUARE_LEIBNIZ_COMPUTE_2026_10_30.md -text

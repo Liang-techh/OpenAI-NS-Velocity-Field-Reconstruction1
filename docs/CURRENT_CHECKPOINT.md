@@ -1,3 +1,7 @@
+## 2026-10-30: Q-squared Leibniz callback calculation
+
+A source-free callback calculator now retains the measure-derivative, Q-derivative-defect and two moving-endpoint contributions separately. One frozen synthetic polynomial run checked forward, reversed and coincident endpoints against hand-derived values. F source identity, certified errors and m15 closure remain open. See [the current handoff](CURRENT_F_QSQUARE_LEIBNIZ_COMPUTE_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F gap Q-squared transport structure
 
 The one-entry structural audit matched the saved F Q-squared Z0/Z1 operation trees and Q role references; the complete conditional transport discrepancy retains measure, Q-derivative, and moving-endpoint terms. Source identity, ordinary-Z semantics and error certification remain open. See [the current handoff](CURRENT_F_GAP_QSQUARE_TRANSPORT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
