@@ -1,0 +1,396 @@
+{
+  "component": "collar_pressure_regular_singular_v6",
+  "entry_sha256": "d49fcc1e4caf7d4557b56021f1ee06c79d716955129900fce1158f1ad332c633",
+  "failure_archive_sha256": "a46ad472c818d5e8fbb3ed7c6491d22697561c77d311249ce997b1294db6a9d0",
+  "input_hashes": {
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_lower_collar_functions.py": "d00dfe285735844eabc985f99d94190caa1cfd187f668eb14a2686055cf175fa",
+    "scripts/run_collar_pressure_regular_singular_v6_once.py": "75a26fdb57bca11443e39f475b009303664c03ab7a52929ce04c86089a9052d7",
+    "src/openai_ns_reconstruction/collar_pressure_regular_singular_proof_v6.py": "ab39bf1a94f06a368544e995facc752bdad7ab6fb1e17e8909c81b7cc7bc27f0",
+    "src/openai_ns_reconstruction/original_n1_inner_m15_numeric.py": "004341ab4eb1f4693995bc86a748eae4c20ff2b5406fb0d784c4416963f5988b"
+  },
+  "proof": {
+    "conditions": [
+      "shared real leading Phi, Psi, and mean fields on the common collar domain",
+      "canonical ratio/Psi/mean history is represented by the extracted AST bodies",
+      "canonical own.radial_Q uses the radial operator template extracted from forward Q; this is an explicit conditional operator contract, not a cross-owner proof",
+      "rho = 4 exp(hb s), d rho/ds = hb rho, chi_rho = (hb - 1) sigma_prime/(hb rho)",
+      "epsilon, hb, delta, Pstar2, sigma, sigma_prime, rho, and chi_rho are held constant under ordinary Z1"
+    ],
+    "domain": {
+      "lower": "sc_quarter",
+      "name": "shared_collar_only",
+      "upper": "sc_half"
+    },
+    "identities": {
+      "canonical_minus_forward_N1p_normalized": {
+        "difference": "2*Psi_core_rho*Z*ratio*sigma_prime*(hb - 1)/(Pstar2*hb*(-Z**2*delta + 1))",
+        "residual": "0"
+      },
+      "canonical_minus_forward_N1p_physical": {
+        "difference": "2*Psi_core_rho*Z*ratio*sigma_prime*(hb - 1)/(hb*(-Z**2*delta + 1))",
+        "residual": "0"
+      },
+      "canonical_minus_forward_Phi_rhorho": {
+        "difference": "Phi_core_rho*ratio*sigma_prime*(hb - 1)/(hb*rho)",
+        "residual": "0"
+      },
+      "canonical_minus_forward_Psi_rhorho": {
+        "difference": "Psi_core_rho*ratio*sigma_prime*(hb - 1)/(hb*rho)",
+        "residual": "0"
+      },
+      "canonical_minus_forward_Q_rhorho": {
+        "difference": "2*Psi_core_rho*Z*epsilon*ratio*sigma_prime*(hb - 1)/(hb*rho*(-Z**2*delta + 1))",
+        "residual": "0"
+      },
+      "canonical_minus_forward_m15_ds": {
+        "difference": "2*Psi_core_rho*Z*epsilon**2*ratio*rho**2*sigma_prime*(1 - hb)/(-Z**2*delta + 1)",
+        "residual": "0"
+      },
+      "canonical_minus_forward_mean_rhorho": {
+        "difference": "0",
+        "residual": "0"
+      }
+    },
+    "ordinary_Z1": {
+      "N1p_normalized": "4*Z**2*delta*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(Pstar2*hb*(-Z**2*delta + 1)**2) + 2*Z*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(Pstar2*hb*(-Z**2*delta + 1)) + 2*Z*sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(Pstar2*hb*(-Z**2*delta + 1)) + 2*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(Pstar2*hb*(-Z**2*delta + 1))",
+      "N1p_physical": "4*Z**2*delta*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(hb*(-Z**2*delta + 1)**2) + 2*Z*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(hb*(-Z**2*delta + 1)) + 2*Z*sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(hb*(-Z**2*delta + 1)) + 2*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(hb*(-Z**2*delta + 1))",
+      "Phi_rhorho": "sigma_prime*(hb - 1)*Phi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(hb*rho) + sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Phi_core_rho_of_Z(Z), Z)/(hb*rho)",
+      "Psi_rhorho": "sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(hb*rho) + sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(hb*rho)",
+      "Q_rhorho": "4*Z**2*delta*epsilon*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(hb*rho*(-Z**2*delta + 1)**2) + 2*Z*epsilon*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(hb*rho*(-Z**2*delta + 1)) + 2*Z*epsilon*sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(hb*rho*(-Z**2*delta + 1)) + 2*epsilon*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(hb*rho*(-Z**2*delta + 1))",
+      "all_residuals": "0",
+      "held_constant_in_Z": "epsilon, hb, delta, Pstar2, sigma, sigma_prime, rho, chi_rho",
+      "m15_expected_integrand": "4*Z**2*delta*epsilon**2*rho**2*sigma_prime*(1 - hb)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(-Z**2*delta + 1)**2 + 2*Z*epsilon**2*rho**2*sigma_prime*(1 - hb)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(-Z**2*delta + 1) + 2*Z*epsilon**2*rho**2*sigma_prime*(1 - hb)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(-Z**2*delta + 1) + 2*epsilon**2*rho**2*sigma_prime*(1 - hb)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(-Z**2*delta + 1)",
+      "m15_integrand": "-4*Z**2*delta*epsilon**2*rho**2*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(-Z**2*delta + 1)**2 - 2*Z*epsilon**2*rho**2*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*Derivative(ratio_of_Z(Z), Z)/(-Z**2*delta + 1) - 2*Z*epsilon**2*rho**2*sigma_prime*(hb - 1)*ratio_of_Z(Z)*Derivative(Psi_core_rho_of_Z(Z), Z)/(-Z**2*delta + 1) - 2*epsilon**2*rho**2*sigma_prime*(hb - 1)*Psi_core_rho_of_Z(Z)*ratio_of_Z(Z)/(-Z**2*delta + 1)"
+    },
+    "scope_exclusions": [
+      "no cross-owner same-source identity",
+      "no numerical value, graph evaluation, or saved-data read",
+      "no claim that forward six finite terms equal canonical inner plus lower",
+      "no error, tail, or cancellation proof",
+      "no assertion on the non-common q = 0..2 range"
+    ],
+    "source_hits": {
+      "canonical.Q": {
+        "assignment": "Q",
+        "ast": "ListComp(elt=Call(func=Attribute(value=Name(id='own', ctx=Load()), attr='radial_Q', ctx=Load()), args=[Name(id='g', ctx=Load()), Name(id='de', ctx=Load()), Name(id='u', ctx=Load()), Name(id='mm', ctx=Load())], keywords=[]), generators=[comprehension(target=Tuple(elts=[Name(id='u', ctx=Store()), Name(id='mm', ctx=Store())], ctx=Store()), iter=Call(func=Name(id='zip', ctx=Load()), args=[Name(id='U', ctx=Load()), Name(id='m', ctx=Load())], keywords=[]), ifs=[], is_async=0)])",
+        "formula": [
+          "(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)",
+          "Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(rho*(Z**2*delta - 1))",
+          "Z*epsilon*(-Phi_core*hb*(delta - 1)*(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual) - 2*ratio*rho*(Phi_core*Psi_core_rho*sigma_prime*(hb - 1) + Phi_core*Psi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho*Psi_core_rho*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1)))/(Phi_core*hb*rho**2*(Z**2*delta - 1))"
+        ],
+        "function": "collar_fields",
+        "line": 107
+      },
+      "canonical.R": {
+        "assignment": "R",
+        "ast": "Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='eps', ctx=Load()), Name(id='rs', ctx=Load())], keywords=[])",
+        "formula": "epsilon*rho",
+        "function": "collar_fields",
+        "line": 77
+      },
+      "canonical.U": {
+        "assignment": "U",
+        "ast": "List(elts=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Subscript(value=Name(id='core_functions', ctx=Load()), slice=Constant(value='U0'), ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Name(id='psi0', ctx=Load()), Name(id='eps', ctx=Load())], keywords=[])], keywords=[]), Starred(value=ListComp(elt=Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Name(id='q', ctx=Load()), Name(id='eps', ctx=Load())], keywords=[]), generators=[comprehension(target=Name(id='q', ctx=Store()), iter=Subscript(value=Name(id='psi', ctx=Load()), slice=Slice(lower=Constant(value=1)), ctx=Load()), ifs=[], is_async=0)]), ctx=Load())], ctx=Load())",
+        "formula": [
+          "Psi_actual*epsilon + 4*Z + axis_j",
+          "Psi_core_rho*epsilon*ratio*(sigma*(hb - 1) + 1)",
+          "epsilon*ratio*(Phi_core*Psi_core_rho*sigma_prime*(hb - 1) + Phi_core*Psi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho*Psi_core_rho*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1))/(Phi_core*hb*rho)"
+        ],
+        "function": "collar_fields",
+        "line": 105
+      },
+      "canonical.Xr": {
+        "assignment": "Xr",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='fixed', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='quotient', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='sub', ctx=Load()), args=[Name(id='hb', ctx=Load()), Attribute(value=Name(id='g', ctx=Load()), attr='one', ctx=Load())], keywords=[]), Call(func=Name(id='sigma_prime', ctx=Load()), args=[Name(id='s', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='hb', ctx=Load()), Name(id='rs', ctx=Load())], keywords=[]), Constant(value='positive exact hb and rho')], keywords=[])], keywords=[])",
+        "formula": "sigma_prime*(hb - 1)/(hb*rho)",
+        "function": "collar_fields",
+        "line": 88
+      },
+      "canonical.chi": {
+        "assignment": "chi",
+        "ast": "Lambda(args=arguments(posonlyargs=[], args=[arg(arg='x')], kwonlyargs=[], kw_defaults=[], defaults=[]), body=Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='add', ctx=Load()), args=[Attribute(value=Name(id='g', ctx=Load()), attr='one', ctx=Load()), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='sub', ctx=Load()), args=[Name(id='hb', ctx=Load()), Attribute(value=Name(id='g', ctx=Load()), attr='one', ctx=Load())], keywords=[]), Call(func=Name(id='sigma', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[])], keywords=[])], keywords=[]))",
+        "formula": "callable source expression",
+        "function": "collar_fields",
+        "line": 76
+      },
+      "canonical.jacobian": {
+        "assignment": "jacobian",
+        "ast": "Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='hb', ctx=Load()), Name(id='rs', ctx=Load())], keywords=[])",
+        "formula": "hb*rho",
+        "function": "collar_fields",
+        "line": 77
+      },
+      "canonical.m": {
+        "assignment": "m",
+        "ast": "List(elts=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Subscript(value=Name(id='core_functions', ctx=Load()), slice=Constant(value='U0'), ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Name(id='mean0', ctx=Load()), Name(id='eps', ctx=Load())], keywords=[])], keywords=[]), Starred(value=ListComp(elt=Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Name(id='q', ctx=Load()), Name(id='eps', ctx=Load())], keywords=[]), generators=[comprehension(target=Name(id='q', ctx=Store()), iter=Subscript(value=Name(id='mean', ctx=Load()), slice=Slice(lower=Constant(value=1)), ctx=Load()), ifs=[], is_async=0)]), ctx=Load())], ctx=Load())",
+        "formula": [
+          "4*Z + axis_j + epsilon*mean_actual",
+          "epsilon*(Psi_actual - mean_actual)/rho",
+          "epsilon*(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual)/rho**2"
+        ],
+        "function": "collar_fields",
+        "line": 106
+      },
+      "canonical.mean": {
+        "assignment": "mean",
+        "ast": "List(elts=[Name(id='mean0', ctx=Load()), Name(id='mean1', ctx=Load()), Name(id='mean2', ctx=Load())], ctx=Load())",
+        "formula": [
+          "mean_actual",
+          "(Psi_actual - mean_actual)/rho",
+          "(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual)/rho**2"
+        ],
+        "function": "collar_fields",
+        "line": 104
+      },
+      "canonical.mean0": {
+        "assignment": "mean0",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Name(id='at', ctx=Load()), args=[Name(id='g', ctx=Load()), Subscript(value=Subscript(value=Name(id='core_rows', ctx=Load()), slice=Constant(value='mean_Psi'), ctx=Load()), slice=Constant(value=0), ctx=Load()), Name(id='rho_variable', ctx=Load()), Call(func=Name(id='c', ctx=Load()), args=[Constant(value=4)], keywords=[])], keywords=[]), Constant(value=4)], keywords=[]), Call(func=Name(id='integral', ctx=Load()), args=[Name(id='g', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Name(id='at', ctx=Load()), args=[Name(id='g', ctx=Load()), Name(id='psi0', ctx=Load()), Name(id='s', ctx=Load()), Name(id='w', ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='hb', ctx=Load()), Call(func=Name(id='rho', ctx=Load()), args=[Name(id='w', ctx=Load())], keywords=[])], keywords=[])], keywords=[]), Name(id='w', ctx=Load()), Attribute(value=Name(id='g', ctx=Load()), attr='zero', ctx=Load()), Name(id='s', ctx=Load())], keywords=[keyword(arg='actual_own_mean_FTC', value=Constant(value=True)), keyword(arg='nonzero_rho4_incoming_mean_retained', value=Constant(value=True))])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='fixed', ctx=Load()), args=[Name(id='rs', ctx=Load())], keywords=[])], keywords=[])",
+        "formula": "mean_actual",
+        "function": "collar_fields",
+        "line": 99
+      },
+      "canonical.mean1": {
+        "assignment": "mean1",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Name(id='psi0', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='neg', ctx=Load()), args=[Name(id='mean0', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='fixed', ctx=Load()), args=[Name(id='rs', ctx=Load())], keywords=[])], keywords=[])",
+        "formula": "(Psi_actual - mean_actual)/rho",
+        "function": "collar_fields",
+        "line": 102
+      },
+      "canonical.mean2": {
+        "assignment": "mean2",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Subscript(value=Name(id='psi', ctx=Load()), slice=Constant(value=1), ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='neg', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Name(id='mean1', ctx=Load()), Constant(value=2)], keywords=[])], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='fixed', ctx=Load()), args=[Name(id='rs', ctx=Load())], keywords=[])], keywords=[])",
+        "formula": "(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual)/rho**2",
+        "function": "collar_fields",
+        "line": 103
+      },
+      "canonical.phi": {
+        "assignment": "phi",
+        "ast": "List(elts=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='ratio', ctx=Load()), Subscript(value=Name(id='fc', ctx=Load()), slice=Constant(value=0), ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='ratio', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Subscript(value=Name(id='fc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='ratio', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='Xr', ctx=Load()), Subscript(value=Name(id='fc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='Xm1', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='A', ctx=Load()), Subscript(value=Name(id='fc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[])], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Subscript(value=Name(id='fc', ctx=Load()), slice=Constant(value=2), ctx=Load())], keywords=[])], keywords=[])], keywords=[])], ctx=Load())",
+        "formula": [
+          "Phi_core*ratio",
+          "Phi_core_rho*ratio*(sigma*(hb - 1) + 1)",
+          "ratio*(Phi_core*Phi_core_rho*sigma_prime*(hb - 1) + Phi_core*Phi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho**2*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1))/(Phi_core*hb*rho)"
+        ],
+        "function": "collar_fields",
+        "line": 90
+      },
+      "canonical.pressure.N": {
+        "assignment": "N",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Constant(value='-1/2'), Name(id='S', ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='quotient', ctx=Load()), args=[Attribute(value=Name(id='g', ctx=Load()), attr='one', ctx=Load()), Subscript(value=Name(id='fields', ctx=Load()), slice=Constant(value='radius'), ctx=Load()), Constant(value='positive physical collar R')], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Name(id='Qyy', ctx=Load()), Name(id='Qy', ctx=Load())], keywords=[])], keywords=[])], keywords=[])",
+        "formula": "-(Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(2*(Z**2*delta - 1)))*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(2*(Z**2*delta - 1)) - (Psi_actual*epsilon + 4*Z + axis_j)*(-2*Z**2*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) - 2*Z*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1) + (1 - Z**2)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1)))/(2*(-Z**2*delta + 1)) - (Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + Z*(1 - delta)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1))/2 + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1))/(2*(-Z**2*delta + 1)) + (2*Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + Z*epsilon*(-Phi_core*hb*(delta - 1)*(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual) - 2*ratio*rho*(Phi_core*Psi_core_rho*sigma_prime*(hb - 1) + Phi_core*Psi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho*Psi_core_rho*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1)))/(Phi_core*hb*(Z**2*delta - 1)))/(epsilon*rho)",
+        "function": "direct_pressure_functions",
+        "line": 145
+      },
+      "canonical.pressure.S": {
+        "assignment": "S",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Name(id='Q', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Constant(value='1/2'), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='h', ctx=Load()), Name(id='z', ctx=Load()), Name(id='Qz', ctx=Load())], keywords=[])], keywords=[]), Name(id='Qy', ctx=Load())], keywords=[]), Name(id='L', ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='Q', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Constant(value='1/2'), Name(id='Q', ctx=Load())], keywords=[]), Name(id='Qy', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='U', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[UnaryOp(op=USub(), operand=Constant(value=2)), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='z', ctx=Load()), Name(id='Q', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='d', ctx=Load()), Name(id='Qz', ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[UnaryOp(op=USub(), operand=Constant(value=2)), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='z', ctx=Load()), Name(id='Qy', ctx=Load())], keywords=[])], keywords=[])], keywords=[])], keywords=[]), Name(id='L', ctx=Load())], keywords=[])], keywords=[])",
+        "formula": "(Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(2*(Z**2*delta - 1)))*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1) + (Psi_actual*epsilon + 4*Z + axis_j)*(-2*Z**2*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) - 2*Z*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1) + (1 - Z**2)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1)))/(-Z**2*delta + 1) + (Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + Z*(1 - delta)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1))/2 + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1))/(-Z**2*delta + 1)",
+        "function": "direct_pressure_functions",
+        "line": 142
+      },
+      "canonical.pressure.m15_body": {
+        "assignment": "m15_body",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Name(id='c', ctx=Load()), args=[Name(id='sign', ctx=Load())], keywords=[]), Name(id='measure', ctx=Load())], keywords=[]), Name(id='N', ctx=Load())], keywords=[])",
+        "formula": "-epsilon**2*hb*rho**2*(-(Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(2*(Z**2*delta - 1)))*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(2*(Z**2*delta - 1)) - (Psi_actual*epsilon + 4*Z + axis_j)*(-2*Z**2*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) - 2*Z*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1) + (1 - Z**2)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1)))/(2*(-Z**2*delta + 1)) - (Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + Z*(1 - delta)*(-2*Z*delta*(-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1)**2 + (-2*Psi_actual*epsilon - 4*Z*(delta - 1) - 24*Z - 2*axis_j - (delta - 1)*(4*Z + axis_j + epsilon*mean_actual))/(Z**2*delta - 1))/2 + (-4*Z**2 - Z*(delta - 1)*(4*Z + axis_j + epsilon*mean_actual) - 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) + 4)/(Z**2*delta - 1))/(2*(-Z**2*delta + 1)) + (2*Z*epsilon*(-2*Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) - (Psi_actual - mean_actual)*(delta - 1))/(Z**2*delta - 1) + Z*epsilon*(-Phi_core*hb*(delta - 1)*(-2*Psi_actual + Psi_core_rho*ratio*rho*(sigma*(hb - 1) + 1) + 2*mean_actual) - 2*ratio*rho*(Phi_core*Psi_core_rho*sigma_prime*(hb - 1) + Phi_core*Psi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho*Psi_core_rho*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1)))/(Phi_core*hb*(Z**2*delta - 1)))/(epsilon*rho))",
+        "function": "direct_pressure_functions",
+        "line": 148
+      },
+      "canonical.psi": {
+        "assignment": "psi",
+        "ast": "List(elts=[Name(id='psi0', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='ratio', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Subscript(value=Name(id='pc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='ratio', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='Xr', ctx=Load()), Subscript(value=Name(id='pc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='Xm1', ctx=Load()), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='A', ctx=Load()), Subscript(value=Name(id='pc', ctx=Load()), slice=Constant(value=1), ctx=Load())], keywords=[])], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='X', ctx=Load()), Subscript(value=Name(id='pc', ctx=Load()), slice=Constant(value=2), ctx=Load())], keywords=[])], keywords=[])], keywords=[])], ctx=Load())",
+        "formula": [
+          "Psi_actual",
+          "Psi_core_rho*ratio*(sigma*(hb - 1) + 1)",
+          "ratio*(Phi_core*Psi_core_rho*sigma_prime*(hb - 1) + Phi_core*Psi_core_rhorho*hb*rho*(sigma*(hb - 1) + 1) + Phi_core_rho*Psi_core_rho*hb*rho*sigma*(hb - 1)*(sigma*(hb - 1) + 1))/(Phi_core*hb*rho)"
+        ],
+        "function": "collar_fields",
+        "line": 96
+      },
+      "canonical.psi0": {
+        "assignment": "psi0",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='add', ctx=Load()), args=[Call(func=Name(id='at', ctx=Load()), args=[Name(id='g', ctx=Load()), Subscript(value=Subscript(value=Name(id='core_rows', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), slice=Constant(value=0), ctx=Load()), Name(id='rho_variable', ctx=Load()), Call(func=Name(id='c', ctx=Load()), args=[Constant(value=4)], keywords=[])], keywords=[]), Call(func=Name(id='integral', ctx=Load()), args=[Name(id='g', ctx=Load()), Name(id='psi_body', ctx=Load()), Name(id='t', ctx=Load()), Attribute(value=Name(id='g', ctx=Load()), attr='zero', ctx=Load()), Name(id='s', ctx=Load())], keywords=[keyword(arg='actual_Psi_radial_transport', value=Constant(value=True))])], keywords=[])",
+        "formula": "Psi_actual",
+        "function": "collar_fields",
+        "line": 94
+      },
+      "canonical.psi_body": {
+        "assignment": "psi_body",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Name(id='at', ctx=Load()), args=[Name(id='g', ctx=Load()), Name(id='ratio', ctx=Load()), Name(id='s', ctx=Load()), Name(id='t', ctx=Load())], keywords=[]), Call(func=Name(id='at_core', ctx=Load()), args=[Subscript(value=Subscript(value=Name(id='core_rows', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), slice=Constant(value=1), ctx=Load()), Name(id='t', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Name(id='chi', ctx=Load()), args=[Name(id='t', ctx=Load())], keywords=[]), Name(id='hb', ctx=Load()), Call(func=Name(id='rho', ctx=Load()), args=[Name(id='t', ctx=Load())], keywords=[])], keywords=[])], keywords=[])",
+        "formula": "4*Psi_core_rho*hb*ratio*(sigma*(hb - 1) + 1)*exp(hb*original_lower_collar_Psi_t)",
+        "function": "collar_fields",
+        "line": 93
+      },
+      "canonical.ratio": {
+        "assignment": "ratio",
+        "ast": "Call(func=Name(id='exp3', ctx=Load()), args=[Name(id='g', ctx=Load()), Name(id='logratio', ctx=Load())], keywords=[])",
+        "formula": "ratio",
+        "function": "collar_fields",
+        "line": 86
+      },
+      "canonical.ratio_body": {
+        "assignment": "ratio_body",
+        "ast": "Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='scale', ctx=Load()), args=[Call(func=Attribute(value=Name(id='a', ctx=Load()), attr='div', ctx=Load()), args=[Call(func=Name(id='at_core', ctx=Load()), args=[Subscript(value=Subscript(value=Name(id='core_rows', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=1), ctx=Load()), Name(id='v', ctx=Load())], keywords=[]), Call(func=Name(id='at_core', ctx=Load()), args=[Subscript(value=Subscript(value=Name(id='core_rows', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=0), ctx=Load()), Name(id='v', ctx=Load())], keywords=[])], keywords=[]), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='sub', ctx=Load()), args=[Call(func=Name(id='chi', ctx=Load()), args=[Name(id='v', ctx=Load())], keywords=[]), Attribute(value=Name(id='g', ctx=Load()), attr='one', ctx=Load())], keywords=[]), Name(id='hb', ctx=Load()), Call(func=Name(id='rho', ctx=Load()), args=[Name(id='v', ctx=Load())], keywords=[])], keywords=[])], keywords=[])",
+        "formula": "4*Phi_core_rho*hb*sigma*(hb - 1)*exp(hb*original_lower_collar_ratio_v)/Phi_core",
+        "function": "collar_fields",
+        "line": 82
+      },
+      "canonical.rho": {
+        "assignment": "rho",
+        "ast": "Lambda(args=arguments(posonlyargs=[], args=[arg(arg='x')], kwonlyargs=[], kw_defaults=[], defaults=[]), body=Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Call(func=Name(id='c', ctx=Load()), args=[Constant(value=4)], keywords=[]), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='unary', ctx=Load()), args=[Constant(value='exp'), Call(func=Attribute(value=Name(id='g', ctx=Load()), attr='mul', ctx=Load()), args=[Name(id='hb', ctx=Load()), Name(id='x', ctx=Load())], keywords=[])], keywords=[])], keywords=[]))",
+        "formula": "callable source expression",
+        "function": "collar_fields",
+        "line": 75
+      },
+      "canonical.rs": {
+        "assignment": "rs",
+        "ast": "Call(func=Name(id='rho', ctx=Load()), args=[Name(id='s', ctx=Load())], keywords=[])",
+        "formula": "rho",
+        "function": "collar_fields",
+        "line": 77
+      },
+      "forward.A": {
+        "assignment": "A",
+        "ast": "BinOp(left=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=1), ctx=Load()), op=Div(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=0), ctx=Load()))",
+        "formula": "Phi_core_rho/Phi_core",
+        "function": "leading_regular_frame",
+        "line": 26
+      },
+      "forward.Ar": {
+        "assignment": "Ar",
+        "ast": "BinOp(left=BinOp(left=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=2), ctx=Load()), op=Div(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=0), ctx=Load())), op=Sub(), right=BinOp(left=Name(id='A', ctx=Load()), op=Mult(), right=Name(id='A', ctx=Load())))",
+        "formula": "Phi_core_rhorho/Phi_core - Phi_core_rho**2/Phi_core**2",
+        "function": "leading_regular_frame",
+        "line": 27
+      },
+      "forward.L": {
+        "assignment": "L",
+        "ast": "Tuple(elts=[BinOp(left=Constant(value=1), op=Sub(), right=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=Name(id='z', ctx=Load()))), BinOp(left=Constant(value=1), op=Sub(), right=BinOp(left=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=Name(id='z', ctx=Load())), op=Mult(), right=Name(id='de', ctx=Load())))], ctx=Load())",
+        "formula": "-Z**2*delta + 1",
+        "function": "leading_regular_frame",
+        "line": 39
+      },
+      "forward.M": {
+        "assignment": "M",
+        "ast": "List(elts=[BinOp(left=BinOp(left=Subscript(value=Name(id='mean', ctx=Load()), slice=Constant(value=0), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load())), op=Add(), right=Name(id='U0', ctx=Load())), BinOp(left=Subscript(value=Name(id='mean', ctx=Load()), slice=Constant(value=1), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load())), BinOp(left=Subscript(value=Name(id='mean', ctx=Load()), slice=Constant(value=2), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load()))], ctx=Load())",
+        "formula": [
+          "4*Z + axis_j + epsilon*mean_actual",
+          "epsilon*(Psi_actual - mean_actual)/rho",
+          "epsilon*(Psi_core_rho*ratio*(hb*sigma - sigma + 1) - 2*(Psi_actual - mean_actual)/rho)/rho"
+        ],
+        "function": "leading_regular_frame",
+        "line": 38
+      },
+      "forward.Q": {
+        "assignment": "Q",
+        "ast": "ListComp(elt=BinOp(left=BinOp(left=BinOp(left=BinOp(left=Name(id='u', ctx=Load()), op=Mult(), right=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='z', ctx=Load()))), op=Sub(), right=BinOp(left=Name(id='m', ctx=Load()), op=Mult(), right=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=BinOp(left=Constant(value=1), op=Sub(), right=Name(id='de', ctx=Load()))))), op=Sub(), right=BinOp(left=Call(func=Attribute(value=Name(id='m', ctx=Load()), attr='dz', ctx=Load()), args=[], keywords=[]), op=Mult(), right=Name(id='d', ctx=Load()))), op=Div(), right=Name(id='L', ctx=Load())), generators=[comprehension(target=Tuple(elts=[Name(id='u', ctx=Store()), Name(id='m', ctx=Store())], ctx=Store()), iter=Call(func=Name(id='zip', ctx=Load()), args=[Name(id='U', ctx=Load()), Name(id='M', ctx=Load())], keywords=[]), ifs=[], is_async=0)])",
+        "formula": [
+          "(4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1)",
+          "(2*Psi_core_rho*Z*epsilon*ratio*(hb*sigma - sigma + 1) - Z*epsilon*(1 - delta)*(Psi_actual - mean_actual)/rho)/(-Z**2*delta + 1)",
+          "(2*Z*epsilon*ratio*(Psi_core_rhorho*(hb*sigma - sigma + 1) + Phi_core_rho*Psi_core_rho*(hb*sigma - sigma)*(hb*sigma - sigma + 1)/Phi_core) - Z*epsilon*(1 - delta)*(Psi_core_rho*ratio*(hb*sigma - sigma + 1) - 2*(Psi_actual - mean_actual)/rho)/rho)/(-Z**2*delta + 1)"
+        ],
+        "function": "leading_regular_frame",
+        "line": 40
+      },
+      "forward.Q_template": {
+        "assignment": "Q_template",
+        "ast": "BinOp(left=BinOp(left=BinOp(left=BinOp(left=Name(id='u', ctx=Load()), op=Mult(), right=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='z', ctx=Load()))), op=Sub(), right=BinOp(left=Name(id='m', ctx=Load()), op=Mult(), right=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=BinOp(left=Constant(value=1), op=Sub(), right=Name(id='de', ctx=Load()))))), op=Sub(), right=BinOp(left=Call(func=Attribute(value=Name(id='m', ctx=Load()), attr='dz', ctx=Load()), args=[], keywords=[]), op=Mult(), right=Name(id='d', ctx=Load()))), op=Div(), right=Name(id='L', ctx=Load()))",
+        "formula": "(-Q_template_m*Z*(1 - delta) - Q_template_mz*(1 - Z**2) + 2*Q_template_u*Z)/(-Z**2*delta + 1)",
+        "function": "leading_regular_frame",
+        "line": 40
+      },
+      "forward.U": {
+        "assignment": "U",
+        "ast": "List(elts=[BinOp(left=BinOp(left=Subscript(value=Name(id='psi', ctx=Load()), slice=Constant(value=0), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load())), op=Add(), right=Name(id='U0', ctx=Load())), BinOp(left=Subscript(value=Name(id='psi', ctx=Load()), slice=Constant(value=1), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load())), BinOp(left=Subscript(value=Name(id='psi', ctx=Load()), slice=Constant(value=2), ctx=Load()), op=Mult(), right=Name(id='eps', ctx=Load()))], ctx=Load())",
+        "formula": [
+          "Psi_actual*epsilon + 4*Z + axis_j",
+          "Psi_core_rho*epsilon*ratio*(hb*sigma - sigma + 1)",
+          "epsilon*ratio*(Psi_core_rhorho*(hb*sigma - sigma + 1) + Phi_core_rho*Psi_core_rho*(hb*sigma - sigma)*(hb*sigma - sigma + 1)/Phi_core)"
+        ],
+        "function": "leading_regular_frame",
+        "line": 37
+      },
+      "forward.chi": {
+        "assignment": "chi",
+        "ast": "BinOp(left=BinOp(left=Constant(value=1), op=Sub(), right=Name(id='sigma', ctx=Load())), op=Add(), right=BinOp(left=Name(id='sigma', ctx=Load()), op=Mult(), right=Name(id='hb', ctx=Load())))",
+        "formula": "hb*sigma - sigma + 1",
+        "function": "leading_regular_frame",
+        "line": 25
+      },
+      "forward.d": {
+        "assignment": "d",
+        "ast": "Tuple(elts=[BinOp(left=Constant(value=1), op=Sub(), right=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=Name(id='z', ctx=Load()))), BinOp(left=Constant(value=1), op=Sub(), right=BinOp(left=BinOp(left=Name(id='z', ctx=Load()), op=Mult(), right=Name(id='z', ctx=Load())), op=Mult(), right=Name(id='de', ctx=Load())))], ctx=Load())",
+        "formula": "1 - Z**2",
+        "function": "leading_regular_frame",
+        "line": 39
+      },
+      "forward.mean": {
+        "assignment": "mean",
+        "ast": "List(elts=[Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Mpsi'), ctx=Load())])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[Name(id='mr', ctx=Load())])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[BinOp(left=BinOp(left=Name(id='pr', ctx=Load()), op=Sub(), right=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='mr', ctx=Load()))), op=Div(), right=Name(id='rho', ctx=Load()))])], keywords=[])], ctx=Load())",
+        "formula": [
+          "mean_actual",
+          "(Psi_actual - mean_actual)/rho",
+          "(Psi_core_rho*ratio*(hb*sigma - sigma + 1) - 2*(Psi_actual - mean_actual)/rho)/rho"
+        ],
+        "function": "leading_regular_frame",
+        "line": 35
+      },
+      "forward.mr": {
+        "assignment": "mr",
+        "ast": "BinOp(left=BinOp(left=Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), op=Sub(), right=Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Mpsi'), ctx=Load())), op=Div(), right=Name(id='rho', ctx=Load()))",
+        "formula": "(Psi_actual - mean_actual)/rho",
+        "function": "leading_regular_frame",
+        "line": 34
+      },
+      "forward.normalized_pressure_source.return": {
+        "assignment": "return",
+        "ast": "BinOp(left=BinOp(left=UnaryOp(op=USub(), operand=Name(id='flow', ctx=Load())), op=Div(), right=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='P2', ctx=Load()))), op=Add(), right=BinOp(left=BinOp(left=BinOp(left=Name(id='qr', ctx=Load()), op=Mult(), right=Constant(value=2)), op=Add(), right=BinOp(left=Name(id='qrr', ctx=Load()), op=Mult(), right=Name(id='r', ctx=Load()))), op=Div(), right=BinOp(left=Name(id='e', ctx=Load()), op=Mult(), right=Name(id='P2', ctx=Load()))))",
+        "formula": "(-(rho*(2*Psi_core_rho*Z*epsilon*ratio*(hb*sigma - sigma + 1) - Z*epsilon*(1 - delta)*(Psi_actual - mean_actual)/rho)/(-Z**2*delta + 1) + (4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(2*(-Z**2*delta + 1)))*(4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1) - (Psi_actual*epsilon + 4*Z + axis_j)*(-2*Z*rho*(2*Psi_core_rho*Z*epsilon*ratio*(hb*sigma - sigma + 1) - Z*epsilon*(1 - delta)*(Psi_actual - mean_actual)/rho)/(-Z**2*delta + 1) - 2*Z*(4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1) + (1 - Z**2)*(2*Z*delta*(4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1)**2 + (2*Psi_actual*epsilon - 4*Z*(1 - delta) + 24*Z + 2*axis_j - (1 - delta)*(4*Z + axis_j + epsilon*mean_actual))/(-Z**2*delta + 1)))/(-Z**2*delta + 1) - (Z*(1/2 - delta/2)*(2*Z*delta*(4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1)**2 + (2*Psi_actual*epsilon - 4*Z*(1 - delta) + 24*Z + 2*axis_j - (1 - delta)*(4*Z + axis_j + epsilon*mean_actual))/(-Z**2*delta + 1)) + rho*(2*Psi_core_rho*Z*epsilon*ratio*(hb*sigma - sigma + 1) - Z*epsilon*(1 - delta)*(Psi_actual - mean_actual)/rho)/(-Z**2*delta + 1) + (4*Z**2 - Z*(1 - delta)*(4*Z + axis_j + epsilon*mean_actual) + 2*Z*(Psi_actual*epsilon + 4*Z + axis_j) - 4)/(-Z**2*delta + 1))/(-Z**2*delta + 1))/(2*Pstar2) + (rho*(2*Z*epsilon*ratio*(Psi_core_rhorho*(hb*sigma - sigma + 1) + Phi_core_rho*Psi_core_rho*(hb*sigma - sigma)*(hb*sigma - sigma + 1)/Phi_core) - Z*epsilon*(1 - delta)*(Psi_core_rho*ratio*(hb*sigma - sigma + 1) - 2*(Psi_actual - mean_actual)/rho)/rho)/(-Z**2*delta + 1) + 2*(2*Psi_core_rho*Z*epsilon*ratio*(hb*sigma - sigma + 1) - Z*epsilon*(1 - delta)*(Psi_actual - mean_actual)/rho)/(-Z**2*delta + 1))/(Pstar2*epsilon)",
+        "function": "normalized_pressure_source",
+        "line": 51
+      },
+      "forward.phi": {
+        "assignment": "phi",
+        "ast": "List(elts=[Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Phi'), ctx=Load())])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[BinOp(left=BinOp(left=Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), op=Mult(), right=Name(id='chi', ctx=Load())), op=Mult(), right=Name(id='A', ctx=Load()))])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[BinOp(left=Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), op=Mult(), right=BinOp(left=BinOp(left=BinOp(left=BinOp(left=Name(id='chi', ctx=Load()), op=Mult(), right=Name(id='chi', ctx=Load())), op=Mult(), right=Name(id='A', ctx=Load())), op=Mult(), right=Name(id='A', ctx=Load())), op=Add(), right=BinOp(left=Name(id='chi', ctx=Load()), op=Mult(), right=Name(id='Ar', ctx=Load()))))])], keywords=[])], ctx=Load())",
+        "formula": [
+          "Phi_core*ratio",
+          "Phi_core_rho*ratio*(hb*sigma - sigma + 1)",
+          "Phi_core*ratio*((Phi_core_rhorho/Phi_core - Phi_core_rho**2/Phi_core**2)*(hb*sigma - sigma + 1) + Phi_core_rho**2*(hb*sigma - sigma + 1)**2/Phi_core**2)"
+        ],
+        "function": "leading_regular_frame",
+        "line": 29
+      },
+      "forward.pr": {
+        "assignment": "pr",
+        "ast": "BinOp(left=BinOp(left=Name(id='ratio', ctx=Load()), op=Mult(), right=Name(id='chi', ctx=Load())), op=Mult(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), slice=Constant(value=1), ctx=Load()))",
+        "formula": "Psi_core_rho*ratio*(hb*sigma - sigma + 1)",
+        "function": "leading_regular_frame",
+        "line": 31
+      },
+      "forward.psi": {
+        "assignment": "psi",
+        "ast": "List(elts=[Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Psi'), ctx=Load())])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[Name(id='pr', ctx=Load())])], keywords=[]), Call(func=Name(id='Laurent', ctx=Load()), args=[Dict(keys=[Constant(value=0)], values=[BinOp(left=Name(id='ratio', ctx=Load()), op=Mult(), right=BinOp(left=BinOp(left=BinOp(left=BinOp(left=Name(id='chi', ctx=Load()), op=Mult(), right=BinOp(left=Name(id='chi', ctx=Load()), op=Sub(), right=Constant(value=1))), op=Mult(), right=Name(id='A', ctx=Load())), op=Mult(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), slice=Constant(value=1), ctx=Load())), op=Add(), right=BinOp(left=Name(id='chi', ctx=Load()), op=Mult(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Psi'), ctx=Load()), slice=Constant(value=2), ctx=Load()))))])], keywords=[])], ctx=Load())",
+        "formula": [
+          "Psi_actual",
+          "Psi_core_rho*ratio*(hb*sigma - sigma + 1)",
+          "ratio*(Psi_core_rhorho*(hb*sigma - sigma + 1) + Phi_core_rho*Psi_core_rho*(hb*sigma - sigma)*(hb*sigma - sigma + 1)/Phi_core)"
+        ],
+        "function": "leading_regular_frame",
+        "line": 32
+      },
+      "forward.ratio": {
+        "assignment": "ratio",
+        "ast": "BinOp(left=Subscript(value=Name(id='values', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), op=Div(), right=Subscript(value=Subscript(value=Name(id='comparison', ctx=Load()), slice=Constant(value='Phi'), ctx=Load()), slice=Constant(value=0), ctx=Load()))",
+        "formula": "ratio",
+        "function": "leading_regular_frame",
+        "line": 28
+      }
+    },
+    "source_paths": [
+      "src/openai_ns_reconstruction/original_n1_inner_m15_numeric.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_n1_lower_collar_functions.py"
+    ]
+  },
+  "result_sha256": "8736b14d7e48fe24c113f18172b545259b4f0eacf59009abf21538407b120841",
+  "source_checkpoint_sha256": "96b4112b71ae212a18e93e1381701b8af9bcdf81b639a120ad802f8c7e3a71f3",
+  "status": "returned"
+}
