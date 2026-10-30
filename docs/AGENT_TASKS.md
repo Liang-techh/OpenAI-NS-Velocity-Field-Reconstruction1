@@ -1,3 +1,7 @@
+## 2026-10-29: P/F selector saved-row bridge
+
+Canonical-to-C3-to-HIGH saved rows and 16 P/F rewrite entries match their recorded metadata; four receipt dependency pins matched. Function equality, capture-free transport and F radius remain unproved. See [the current handoff](CURRENT_PF_SELECTOR_BRIDGE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: non-common Gamma Z1 and selector admission
 
 The non-common Gamma integrand/Z1 and independent time-weight jets retain conditional correlated differences; 36 exact synthetic and seven negative admission checks passed. Canonical selector roles were admitted, but P/F rewrite identities and F radius remain open. See [the current handoff](CURRENT_GAMMA_NONCOMMON_ADMISSION_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
