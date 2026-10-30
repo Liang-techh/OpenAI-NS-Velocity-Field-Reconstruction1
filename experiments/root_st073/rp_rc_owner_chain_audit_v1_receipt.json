@@ -1,0 +1,121 @@
+{
+  "component": "rp_rc_owner_chain_audit_v1",
+  "entry_sha256": "bac3b629b12e18060d7480c8ba87901cb389062a5193e168fb5e05f52ccf0a47",
+  "input_hashes": {
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py": "7398b8cbba75453c566b7b7281d98827e128e89441124ea67b96d9493ca092a7",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py": "70dd6d6022f68d601ac4f0fbaf38614bbaf215baab272f134f1c5a159af65d32",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py": "69d6391120000488472b7961b4bff1901bff872def95d183c4ee056b0948e17d",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py": "a6f1cb5deaf17e9482aa964aef7867aadbc815e4d703a415e4945cf665f14002",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.py": "85f42a1476b0af3df91a8fd3f1077f1e0d7109cc9f25ad24fb9205ac891cb1cf",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_finite_N_C5_functions.py": "c4445ef8acfb33d29cf9022862f8b6396e6aa2f38bda7467409b5378a5deaf15",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_outer_C6_C5_functions.py": "4464a934d303a95a0da157e9e289f6ed8a04d5ff0adcb0d663857f0d9c57dcd3",
+    "scripts/run_rp_rc_owner_chain_audit_once.py": "7673b25403c41ae3c785323ea2ef0ff7c9b9abe0ac327c180213e2c6a840131b",
+    "src/openai_ns_reconstruction/rp_rc_owner_chain_audit.py": "cae7d5f148660372e68c70652a4b002440619af96cad03177bc7f0f1c9faec9b"
+  },
+  "proof": {
+    "archive_receipt_identity_proved": false,
+    "archive_receipts_read": false,
+    "checked_source_paths": [
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_finite_N_C5_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_outer_C6_C5_functions.py",
+      "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.py"
+    ],
+    "checks": {
+      "c6_checker_asserts_live_identity": {
+        "line": 37,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions_check.py"
+      },
+      "c6_preserves_modified_background": {
+        "line": 230,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py"
+      },
+      "c6_requires_modified_owner": {
+        "line": 228,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py"
+      },
+      "c6_uses_prescribed_Rm_endpoint_object": {
+        "line": 264,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_C6_functions.py"
+      },
+      "finite_preserves_C6_owner": {
+        "line": 85,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_finite_N_C5_functions.py"
+      },
+      "finite_requires_C6_owner": {
+        "line": 83,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_Rm_patch_finite_N_C5_functions.py"
+      },
+      "loop_preserves_background_object": {
+        "line": 259,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py"
+      },
+      "loop_requires_prescribed_background": {
+        "line": 257,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_loop_C5_functions.py"
+      },
+      "modified_preserves_prescribed_background": {
+        "line": 220,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py"
+      },
+      "modified_requires_loop": {
+        "line": 218,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_modified_Q4_pressure_C3_functions.py"
+      },
+      "outer_preserves_C6_owner": {
+        "line": 98,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_outer_C6_C5_functions.py"
+      },
+      "outer_requires_finite_owner": {
+        "line": 96,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_outer_C6_C5_functions.py"
+      },
+      "outer_uses_leading_inlet_radius": {
+        "line": 113,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_true_outer_C6_C5_functions.py"
+      },
+      "prescribed_constructs_Rm_endpoint": {
+        "line": 161,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py"
+      },
+      "prescribed_requires_checked_bridge": {
+        "line": 91,
+        "path": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_prescribed_R100_Rm_C6_functions.py",
+        "type": "previous.CurrentOriginalPrescribedBridgeC6Functions"
+      }
+    },
+    "common_units_proved": false,
+    "component": "rp_rc_owner_chain_audit",
+    "constructor_chain": [
+      "prescribed.endpoints['Rm']",
+      "loop.background",
+      "modified.background",
+      "true_Rm_patch_C6.background",
+      "true_Rm_patch_C6.inlet",
+      "finite_N.leading",
+      "true_outer.leading",
+      "true_outer.leading.inlet['radius']"
+    ],
+    "cross_graph_parameter_identity_proved": false,
+    "endpoint_cancellation_proved": false,
+    "limitations": [
+      "No JSON or gzip archive/receipt is read or authenticated.",
+      "No independently restored object or opaque reference is treated as a live owner identity.",
+      "No cross-graph source-parameter or unit identity is claimed.",
+      "No old phase_rc/current geometry equality or endpoint cancellation is claimed.",
+      "No graph, integral, derivative, numeric radius, or mathematical value is evaluated."
+    ],
+    "live_constructor_identity_proved": true,
+    "numeric_radius_computed": false,
+    "old_current_geometry_equality_proved": false,
+    "schema": "rp_rc_owner_chain_audit_v1",
+    "source_only": true,
+    "status": "live_constructor_source_chain_proved"
+  },
+  "result_sha256": "2324fce457658187b899cdf3ff897ae05b9a2684921e563a839a14e8a18997d3",
+  "source_checkpoint_sha256": "4ccf92bc31cf8d8296b42b974a028a065e0f72acb2a75848c36bd70751311f07",
+  "status": "returned"
+}
