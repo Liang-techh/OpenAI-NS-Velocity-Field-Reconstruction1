@@ -1,3 +1,7 @@
+## 2026-10-29: correlated Gamma scale difference
+
+A new exact source-shaped Gamma scale-difference kernel factors out DeltaS and retains ordinary Z1; 11 synthetic numerical diagnostics passed. Actual P/F scales and full future-energy difference remain open. See [the current handoff](CURRENT_GAMMA_CORRELATED_SCALE_DELTA_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: actual-source conditional pulse-gap difference
 
 A source-only factorized P-minus-F gap DAG records actual coefficient roles, nonzero mean, density and radius/endpoint terms; 20 exact synthetic algebra checks passed. Common-source semantics, numerical differences and errors remain open. See [the current handoff](CURRENT_PULSE_GAP_FACTORIZED_SOURCE_DELTA_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
