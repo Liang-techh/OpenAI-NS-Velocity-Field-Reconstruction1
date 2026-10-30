@@ -1,3 +1,7 @@
+## 2026-10-30: F pressure path integral roles
+
+The archived F pressure paths map uniquely to gap I1_q_squared rows Z0 and Z1, with declared R^2/mu measure and formal m15 coefficient -1/4. Source identity, moving-boundary transport and error certification remain open. See [the current handoff](CURRENT_F_PRESSURE_INTEGRAL_ROLES_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: archived F pressure radius paths
 
 Bounded archived F graph queries found operand paths from pressure.m15 Z0 and Z1 through integral bodies to the saved radius boundary. Protected branches and semantic identity, ordinary-Z transport and error certification remain open. See [the current handoff](CURRENT_F_PRESSURE_RADIUS_PATH_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
