@@ -1,0 +1,23 @@
+# Same-source gauge evidence and fixed core feedback exit — 2026-10-30
+
+## Result
+
+The frozen `n1_core_gauge_exit_v2` consumer returned once from the existing low-word, first Kchi correction, and physical-compensation receipts. Its [receipt](../experiments/root_st073/n1_core_gauge_exit_v2_receipt.json.gz) has SHA-256 `4c1e49a83dbc7c13e5d9f09f4601ce34b26b487405a2d14a2f066ee2dfe27921`; the frozen source manifest is `6e6d63839fae1135714eda1c98fc9f2ccb43f69fce42f4ddaee0fc428b80432f` and returned result is `76c7f9f8ba083fbfb5ec08fa569a3406a4ca8bc86b3b3ca51933e01c678d1883`. The receipt preserves the source manifest, entry, result and exact new code bytes. It authenticates input bytes before decoding and does not re-execute an ancestor. The previous 212-term m15 ledger and its six signed inner/lower contributions remain untouched.
+
+## Gauge and source evidence
+
+The archived original bridge check reports passed exact physical conjugation for all 72 matrix entries, three forcing rows and 16 relative-amplitude rows; it also reports a passed source-identity check. Its source family matches the three consumed receipts, and its six audited source-code hashes match the current bytes. This is historical evidence from the saved check, not a new execution of the original source-identity test or an independent proof of a currently live object graph. The 29-check synthetic exact-matrix gauge fixture also passed; it does not establish same-source identity itself.
+
+The connection uses `S0=diag(F0 Lambda,1,1,1,F0 Lambda,1)` followed by `T=diag(1,epsilon,epsilon,Pstar^2 epsilon,1,epsilon)`, with `T_Z=0`. Under `F=F0 Phi` and `U=Uaxis+epsilon Psi`, the 51 connection splits into `-2 chi` and residual gauge `-2 epsilon (1-Z^2) Psi G'/L`, where `chi=Haxis G'/L`. The full transformed RHS contains `Achi=-2 chi E51`. Moving that principal term to the left yields `P=+2 chi E51`; P alone does not restore the full operator, forcing, amplitude derivatives or source ownership. These identities have the assumptions and saved-source limits above.
+
+## Fixed exit and retained uncertainty
+
+With `Q=C0+B1 d_Z`, `W=G0 g` and `Delta=D g`, `D=(-2 chi) T K0`, this consumer forms the separate finite branches `E01=G0 Q Delta`, `E10=D Q W`, `E11=D Q Delta` at physical `x=2`, integrating all eight source cells with their proper fixed-endpoint masses. E01 exports all six fields. E10 and E11 structurally output only `F1` and `d_x_F1`; the four other zero sectors describe those branches, not the complete inlet. Ordinary Z1 includes the `B1 W_ZZ` term and the chi product rule. The 15-check synthetic exit fixture passed, including endpoint masses, nonconstant sources, provenance and Z derivatives. The baseline E00 is referenced, not recomputed; its existing last-cell value is an enclosure, not an exact endpoint function.
+
+The separate inner W0 kernel-tail, outer kernel-tail and potential-compensation kernel-tail packets contain 2,384, 1,312 and 368 error-only terms respectively. Every inspected term retains source identifiers and symmetric directed endpoints. They include `G0 Q Rg`, `D Q Rg`, `R Q W`, `R Q Delta`, `R Q Rg` and the five analogous P-tail branches. Each outer physical source-cell integration owns one width; the already integrated inner Rg bound is not assigned a second copy of its original measure. These are certified enclosure components, not signed function values or demonstrated cancellations. The previously saved finite P branches are kept distinct from raw-Q branches. Feedback-word tail is still absent, and these records do not constitute a complete six-component inlet, a complete m15, or a global terminal identity.
+
+The first frozen attempt failed in the synthetic exit fixture before reading actual receipt data, due to iterating a row map as a list. Its exact code, source, entry and failed result are preserved in [the v1 failure archive](../experiments/root_st073/n1_core_gauge_exit_v1_failure.json.gz), SHA-256 `127ce9804dbe7c26e0e848dfd912d61929da861d5cb808dd6246dd3233a2894c`. The independently versioned v2 repairs that fixture; v1 was not re-entered.
+
+## Next work
+
+Construct a same-source six-component fixed inlet that includes the remaining baseline endpoint and all finite Q/P branches with their correlated errors, without identifying an interval midpoint with a function. Establish a Kchi-aware no-reset collar propagator and an all-word remainder before any one-time ledger join. Then reconcile the reserved n1 own-swirl against the independent negative full pulse m15 as functions of Z, preserving ordinary Z1 and physical scale. Independent terminal five-moment closure, exact heat exterior, admissible stress and flat remainder, time-order recursion, corrections and Cartesian NS validation remain open.
