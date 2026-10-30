@@ -1,3 +1,7 @@
+## 2026-10-30: F gap Q-squared transport structure
+
+The one-entry structural audit matched the saved F Q-squared Z0/Z1 operation trees and Q role references; the complete conditional transport discrepancy retains measure, Q-derivative, and moving-endpoint terms. Source identity, ordinary-Z semantics and error certification remain open. See [the current handoff](CURRENT_F_GAP_QSQUARE_TRANSPORT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F pressure path integral roles
 
 The archived F pressure paths map uniquely to gap I1_q_squared rows Z0 and Z1, with declared R^2/mu measure and formal m15 coefficient -1/4. Source identity, moving-boundary transport and error certification remain open. See [the current handoff](CURRENT_F_PRESSURE_INTEGRAL_ROLES_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
