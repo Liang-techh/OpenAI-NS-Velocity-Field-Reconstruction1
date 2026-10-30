@@ -1,3 +1,7 @@
+## 2026-10-30: F chart and old own-source binding
+
+Saved query/y roles match across the old and F snapshots, and 36 old/pulse5 field rows have matching opaque refs; radius refs differ and semantic owner identity remains open. See [the current handoff](CURRENT_F_CHART_OWN_SOURCE_BINDING_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F internal endpoint rewrite coverage
 
 Sixteen saved pulse endpoint rows for the main/gap and gap/end seams are absent from the current F rewrite map. No endpoint identity, cancellation or numeric value follows. See [the current handoff](CURRENT_F_INTERNAL_ENDPOINT_REWRITE_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

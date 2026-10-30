@@ -817,3 +817,6 @@ docs/CURRENT_F_QUIET_RP_OWNER_LINK_2026_10_30.md -text
 scripts/run_f_internal_endpoint_saved_rewrite_once.py -text
 experiments/root_st073/f_internal_endpoint_saved_rewrite_v1_receipt.json -text
 docs/CURRENT_F_INTERNAL_ENDPOINT_REWRITE_2026_10_30.md -text
+scripts/run_f_chart_own_source_binding_once.py -text
+experiments/root_st073/f_chart_own_source_binding_v1_receipt.json -text
+docs/CURRENT_F_CHART_OWN_SOURCE_BINDING_2026_10_30.md -text
