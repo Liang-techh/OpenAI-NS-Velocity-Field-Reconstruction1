@@ -798,3 +798,10 @@ docs/CURRENT_F_GAP_ROW_REDUCTION_AND_SIGNED_Z_TRANSPORT_2026_10_30.md -text
 scripts/run_f_gap_reduced_history_fixed_y_once.py -text
 experiments/root_st073/f_gap_reduced_history_fixed_y_v1_receipt.json -text
 docs/CURRENT_F_GAP_REDUCED_HISTORY_CLOSED_FORM_2026_10_30.md -text
+scripts/run_gap_decay_directed_interval_once.py -text
+scripts/run_gap_fixed_radius_transport_once.py -text
+scripts/run_gap_fixed_radius_transport_v2_once.py -text
+experiments/root_st073/gap_decay_directed_interval_v1_receipt.json -text
+experiments/root_st073/gap_fixed_radius_transport_v1_receipt.json -text
+experiments/root_st073/gap_fixed_radius_transport_v2_receipt.json -text
+docs/CURRENT_NATIVE_GAP_DECAY_AND_FIXED_RADIUS_2026_10_30.md -text

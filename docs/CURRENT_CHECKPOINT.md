@@ -1,3 +1,7 @@
+## 2026-10-30: native gap decay enclosure and fixed-radius transport
+
+The canonical native mu recipe yields a rational enclosure for the gap decay factor; an independent fixed-R jet transformation passes synthetic checks. Historical F ownership and certified F error remain open. See [the current handoff](CURRENT_NATIVE_GAP_DECAY_AND_FIXED_RADIUS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: reduced-history own-gap closed form
 
 A new fixed-y mean/Q path retains incoming history and supplies a conditional log-scaled closed form for the own-gap m15 contribution. Synthetic nondegenerate-gap checks passed; F source ownership, moving-endpoint validation and certified errors remain open. See [the current handoff](CURRENT_F_GAP_REDUCED_HISTORY_CLOSED_FORM_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
