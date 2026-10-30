@@ -1,0 +1,19 @@
+# Same-source core first-word ordinary Z0/Z1, 2026-10-30
+
+The missing core-exit first-word `W1_Z0` and `W1_Z1` histories are now enclosed at `rho=4`, uniformly for real `Z in [-1,1]`, under the same admitted whole-core source assumptions as the saved Z2 history and the collar. These are directed interval sectors, not point values, the complete first collar, a summed n1 field, an m15 integral or terminal five-moment closure.
+
+## Construction
+
+The consumer reuses the eight saved `W0_ordinary_Z` outer-cell enclosures at orders 0, 1 and 2, without applying their Green weights again. The previous receipt retained only products for the Z2 feedback, not separable matrix factors, so the new first-order dual-interval matrix implementation reconstructs the required `C0/B1` orders 0 and 1 from the authenticated core source grids. It reads only `Phi` and `U` radial rows 0/1 through the needed Z orders, and mean row 0 through Z2; it does not invoke the old helper or recompute Z2 or its forcing. This necessarily evaluates the required matrix factors again because the earlier computation did not save them independently.
+
+The new Green assembly integrates `C0 W0+B1 W0_Z` and `C0_Z W0+C0 W0_Z+B1_Z W0_Z+B1 W0_ZZ` using the six signed kernels and the actual eight outer cells. Each unmerged term keeps its formal `F0` and `Lambda` powers, outer cell, matrix entry/order/index, W0 order/index and source-cell reference. The matrix cells themselves are saved with the result and reference the same authenticated whole-core source. The current-point relative `F0` connection is applied once. In the matrix module's explanatory docstring, `Phi/F0` should be read as the physical `F/F0` sector with `F=F0*Phi`; the code uses `Phi_Z+ell*Phi` as the normalized derivative of physical `F`, not the derivative of the ratio `Phi/F0`.
+
+In `(F1,Uz1,K1,P1,d_x_F1,d_x_Uz1)` order, the Z0 exit contains `88,120,120,8,88,120` unmerged terms; Z1 contains `176,240,240,16,176,240`. Every field in both orders contains all eight outer-cell labels. These are enclosure terms, not independent samples or physical functions. Formal exponentials are not materialized, and no old m15 term, error or all-word tail is removed or added.
+
+## Checks and remaining work
+
+The one-entry consumer checked core and transfer hashes/checks, exact `F0`/`Lambda` source logs, common source family and the collar receipt. An independent symbolic synthetic fixture passed 36 checks across the ten C0 and six B1 entries at ordinary orders 0 and 1, including formal powers. A separate synthetic Green fixture passed 83 checks of product convolution, signed kernels, individual directed-sector inclusion, all eight cells and provenance. Those checks do not certify a physical point value or establish terminal matching.
+
+The first attempt stopped in the Green fixture because its reference used an undefined local variable. The second stopped because the fixture omitted the Jacobian in its independent continuous integral and compared differently rounded interval sums. Neither reached actual core integration. Their frozen sources and results are preserved in `experiments/root_st073/n1_core_low_word_v1_failure.json.gz` and `n1_core_low_word_v2_failure.json.gz`. The successful v3 receipt is `experiments/root_st073/n1_core_low_word_v3_receipt.json.gz`, SHA-256 `5a5fe7c57a2efe10e58089ced608e22937c54fcf54c5f224a42abe54e450c6d6`; the one-entry result SHA-256 is `ce57af2d0eb46e53361395f15d9a00d60fc8b6710da36ed65b8ff222ae51f8f4`.
+
+Next, transport these two core histories through the first collar and combine each exactly once with the already saved same-source local `W1_Z0/Z1` contribution. Keep the prior Z2, Cauchy and all-word records separate. Afterwards construct the physical m15 radial integral and endpoint terms with ordinary Z1, and establish the independent corrected-reserved/current-pulse owner and measure bridge. `P1` is not m15; interval overlap does not establish cancellation.
