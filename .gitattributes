@@ -748,3 +748,6 @@ docs/CURRENT_PF_SELECTOR_ROOT_ENDPOINTS_2026_10_29.md -text
 scripts/run_pf_selector_primitive_once.py -text
 scripts/run_pf_selector_primitive_v2_once.py -text
 docs/CURRENT_PF_SELECTOR_PRIMITIVE_2026_10_29.md -text
+scripts/run_f_gap_endpoint_candidate_once.py -text
+scripts/run_f_gap_endpoint_candidate_v2_once.py -text
+docs/CURRENT_F_GAP_ENDPOINT_CANDIDATE_2026_10_29.md -text

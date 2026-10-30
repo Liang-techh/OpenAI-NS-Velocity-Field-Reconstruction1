@@ -1,3 +1,7 @@
+## 2026-10-30: F gap endpoint source-role candidate
+
+An unevaluated F gap endpoint candidate retains saved U/Q/Q_y roles, moving endpoint and radius derivatives, eight fields and signed endpoint terms. Sixteen independent formula checks passed; the emitted DAG and F owner identities remain unproved. See [the current handoff](CURRENT_F_GAP_ENDPOINT_CANDIDATE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: selector primitive signed differences
 
 The non-common selector primitive/Z1 algebra and direct source-role packet are available; 20 exact synthetic and five mapping checks passed after a separately recorded repair. Actual signed primitive values, P sparse-map identities and F endpoints remain open. See [the current handoff](CURRENT_PF_SELECTOR_PRIMITIVE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
