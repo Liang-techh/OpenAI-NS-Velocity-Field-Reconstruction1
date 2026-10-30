@@ -1,5 +1,7 @@
 # Core W0 physical m15 components — 2026-10-30
 
+**Scope correction:** the saved Green construction used for the F1 and d_x_F1 W0 sectors contains the bare kernel K0, whereas the original regular principal inverse uses the full Kchi series. Consequently the swirl sector here encloses only its K0 contribution, not the complete original W0 swirl contribution. The axial W0 and direct N1p pressure sectors use their respective non-swirl kernels, but the complete m15 still needs the omitted Kchi terms and the remaining words. Every use of "W0" below refers to the saved finite construction; it must not be read as a certified enclosure of the complete original W0 vector. No prior errors are removed by this correction. See the subsequent handoff for the source comparison.
+
 ## Result and scope
 
 The one-entry component `n1_core_w0_m15_v1` returned successfully. Its [receipt](../experiments/root_st073/n1_core_w0_m15_v1_receipt.json.gz) has SHA-256 `157f5677742b71a469c67e0efd21de0d94d230b4d3c2968d82acd2972413bda7`. It provides directed interval sectors at the core boundary rho=4, uniformly over real Z in [-1,1], for ordinary Z orders 0 and 1:
