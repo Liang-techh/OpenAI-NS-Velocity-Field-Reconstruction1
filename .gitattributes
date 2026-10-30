@@ -755,3 +755,6 @@ scripts/run_f_gap_endpoint_dag_fixture_once.py -text
 docs/CURRENT_F_GAP_EMITTED_DAG_2026_10_30.md -text
 scripts/run_f_gap_radius_spine_binding_once.py -text
 docs/CURRENT_F_RADIUS_SPINE_BINDING_2026_10_30.md -text
+scripts/run_f_gap_saved_radius_reachability_once.py -text
+scripts/run_f_gap_saved_radius_reachability_v2_once.py -text
+docs/CURRENT_F_GAP_RADIUS_REACHABILITY_2026_10_30.md -text

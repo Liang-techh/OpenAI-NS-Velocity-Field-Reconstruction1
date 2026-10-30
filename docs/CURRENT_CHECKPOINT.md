@@ -1,3 +1,7 @@
+## 2026-10-30: saved gap radius-boundary paths and frontier roles
+
+Twelve of twenty saved fresh gap roots have a structural path to the saved radius boundary; unresolved external boundaries remain and eight roots have no direct path in the inspected graph. Saved logRp and mu roles were correlated as opaque metadata, not function identity. See [the current handoff](CURRENT_F_GAP_RADIUS_REACHABILITY_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: bounded F radius spine source comparison
 
 Authenticated old and F archives have matching canonical hashes for three directly indexed radius-spine rows; same source family and rewrite metadata do not establish common graph namespace, F field ownership, capture-free substitution or ordinary-Z transport. See [the current handoff](CURRENT_F_RADIUS_SPINE_BINDING_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
