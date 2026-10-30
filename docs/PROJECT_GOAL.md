@@ -1,3 +1,7 @@
+## 2026-10-29: actual-source conditional pulse-gap difference
+
+A source-only factorized P-minus-F gap DAG records actual coefficient roles, nonzero mean, density and radius/endpoint terms; 20 exact synthetic algebra checks passed. Common-source semantics, numerical differences and errors remain open. See [the current handoff](CURRENT_PULSE_GAP_FACTORIZED_SOURCE_DELTA_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: original gap scaled field
 
 A gap point interface retains nonzero mean, Q/Z jets and separate physical m15 field, endpoint and density scales; 38 synthetic checks passed. Source-owned F/P inputs, signed integration and certified errors remain open. See [the current handoff](CURRENT_ORIGINAL_GAP_SCALED_FIELD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
