@@ -1,3 +1,7 @@
+## 2026-10-30: F fourth-row source mapping
+
+The authenticated saved snapshot directly matches the fourth m1 inlet substitution and selected ap rewrite rows. Ordinary-Z commutation, F radius/endpoint ownership and numerical values remain unproved. See [the current handoff](CURRENT_F_INDEX3_MAPPING_CAPTURE_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: signed gap closed-form difference
 
 A new direct P-F closed-form path retains four independent scales, both endpoints and ordinary Z1; correlated decay differences preserve caller interval arithmetic. Only synthetic inputs were evaluated; F ownership and certified errors remain open. See [the current handoff](CURRENT_SIGNED_GAP_CLOSED_FORM_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

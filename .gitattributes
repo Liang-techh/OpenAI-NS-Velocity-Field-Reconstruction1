@@ -808,3 +808,6 @@ docs/CURRENT_NATIVE_GAP_DECAY_AND_FIXED_RADIUS_2026_10_30.md -text
 scripts/run_gap_closed_form_signed_difference_once.py -text
 experiments/root_st073/gap_closed_form_signed_difference_v1_receipt.json -text
 docs/CURRENT_SIGNED_GAP_CLOSED_FORM_2026_10_30.md -text
+scripts/run_f_gap_z3_row_mapping_capture_once.py -text
+experiments/root_st073/f_gap_z3_row_mapping_capture_v1_receipt.json -text
+docs/CURRENT_F_INDEX3_MAPPING_CAPTURE_2026_10_30.md -text
