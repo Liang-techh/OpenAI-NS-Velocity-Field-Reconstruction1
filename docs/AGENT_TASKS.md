@@ -1,3 +1,7 @@
+## 2026-10-30: F gap source handles and log-scaled mean
+
+A one-entry source read retains 13 opaque input candidates and three unresolved inputs; a separate exact synthetic log-scaled mean check passed. Actual F values, source ownership, endpoint identity and error certification remain open. See [the current handoff](CURRENT_F_GAP_SOURCE_BINDING_LOG_MEAN_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F Q-jet and signed endpoint algebra
 
 New caller-owned interval-compatible adapters reconstruct seven fixed-xi Q jets and evaluate signed endpoint Z1 with explicit moving-coordinate terms. Frozen synthetic v1 validation failures and separate passing v2 results are preserved. Actual F source ownership, correlated P-F data, certified errors and closure remain open. See [the current handoff](CURRENT_F_Q_JETS_AND_SIGNED_ENDPOINT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

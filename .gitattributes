@@ -779,3 +779,12 @@ scripts/run_pulse_signed_endpoint_interval_v2_once.py -text
 scripts/run_f_gap_q_jets_from_source_once.py -text
 scripts/run_f_gap_q_jets_from_source_v2_once.py -text
 docs/CURRENT_F_Q_JETS_AND_SIGNED_ENDPOINT_2026_10_30.md -text
+scripts/run_f_gap_source_jet_bindings_once.py -text
+scripts/run_f_gap_native_log_scaled_mean_once.py -text
+scripts/run_f_gap_native_log_scaled_mean_v2_once.py -text
+scripts/run_f_gap_native_log_scaled_mean_v3_once.py -text
+experiments/root_st073/f_gap_source_jet_bindings_v1_receipt.json -text
+experiments/root_st073/f_gap_native_log_scaled_mean_v1_receipt.json -text
+experiments/root_st073/f_gap_native_log_scaled_mean_v2_receipt.json -text
+experiments/root_st073/f_gap_native_log_scaled_mean_v3_receipt.json -text
+docs/CURRENT_F_GAP_SOURCE_BINDING_LOG_MEAN_2026_10_30.md -text
