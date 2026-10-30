@@ -1,3 +1,7 @@
+## 2026-10-30: archived F pressure radius paths
+
+Bounded archived F graph queries found operand paths from pressure.m15 Z0 and Z1 through integral bodies to the saved radius boundary. Protected branches and semantic identity, ordinary-Z transport and error certification remain open. See [the current handoff](CURRENT_F_PRESSURE_RADIUS_PATH_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: saved gap radius-boundary paths and frontier roles
 
 Twelve of twenty saved fresh gap roots have a structural path to the saved radius boundary; unresolved external boundaries remain and eight roots have no direct path in the inspected graph. Saved logRp and mu roles were correlated as opaque metadata, not function identity. See [the current handoff](CURRENT_F_GAP_RADIUS_REACHABILITY_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

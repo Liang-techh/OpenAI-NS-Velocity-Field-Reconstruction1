@@ -758,3 +758,5 @@ docs/CURRENT_F_RADIUS_SPINE_BINDING_2026_10_30.md -text
 scripts/run_f_gap_saved_radius_reachability_once.py -text
 scripts/run_f_gap_saved_radius_reachability_v2_once.py -text
 docs/CURRENT_F_GAP_RADIUS_REACHABILITY_2026_10_30.md -text
+scripts/run_f_pressure_radius_path_once.py -text
+docs/CURRENT_F_PRESSURE_RADIUS_PATH_2026_10_30.md -text
