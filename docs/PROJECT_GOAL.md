@@ -1,3 +1,7 @@
+## 2026-10-29: non-common P/F moment jets
+
+Source-role packet retains separate weight, inlet and coefficient differences through ordinary Z3; 45 exact synthetic checks passed. F historical radius and endpoints, capture-free transport and correlated source values remain open. See [the current handoff](CURRENT_PF_NONCOMMON_MOMENT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: P/F selector saved-row bridge
 
 Canonical-to-C3-to-HIGH saved rows and 16 P/F rewrite entries match their recorded metadata; four receipt dependency pins matched. Function equality, capture-free transport and F radius remain unproved. See [the current handoff](CURRENT_PF_SELECTOR_BRIDGE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
