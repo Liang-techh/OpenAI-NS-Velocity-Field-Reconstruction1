@@ -1,3 +1,7 @@
+## 2026-10-29: scaled density adapter propagation
+
+A wrapper path that could discard explicit source adapter identity was guarded; 12 and 25 scoped guard checks passed without rerunning density or graph calculations. Historical F radius/endpoint, physical source integration and m15 closure remain open. See [the current handoff](CURRENT_SCALED_DENSITY_ADAPTER_GUARD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: finite-N source adapter identity guard
 
 A namespace-mixing path in the signed finite-N density kernel was guarded; a first 27/28 fixture and a separate 2/2 literal-lift repair are recorded. Actual F endpoints, source correlations and m15 closure remain open. See [the current handoff](CURRENT_FINITE_N_ADAPTER_IDENTITY_GUARD_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

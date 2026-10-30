@@ -152,6 +152,10 @@ class OrdinaryJet:
     def _other(self, other: Any) -> "OrdinaryJet":
         if isinstance(other, OrdinaryJet):
             return other
+        if isinstance(other, Number):
+            ops = self._ops()
+            return OrdinaryJet(ops.constant(other), ops.constant(0),
+                               ops.constant(0), ops)
         return OrdinaryJet.constant(other, self._ops())
 
     def _binary(self, other: Any, operation: str) -> "OrdinaryJet":
@@ -165,8 +169,9 @@ class OrdinaryJet:
             ops = self.operations
         else:
             ops = self.operations or b.operations or PYTHON_OPERATIONS
-        a = self if self.operations is ops else OrdinaryJet(self.value, self.dz, self.dzz, ops)
-        b = b if b.operations is ops else OrdinaryJet(b.value, b.dz, b.dzz, ops)
+        # Preserve deferred literal conversion and reject adapter relabeling.
+        a = _normalize(self, ops)
+        b = _normalize(b, ops)
         if operation == "add":
             value = ops.add(a.value, b.value)
             dz = ops.add(a.dz, b.dz)
@@ -247,6 +252,31 @@ class OrdinaryJet:
         return out
 
 
+def _numeric_constant_jet(value: Number,
+                          operations: Optional[ScalarOperations]) -> OrdinaryJet:
+    """Construct a numeric literal with adapter-owned value and zero rows."""
+
+    ops = _ops_or_default(operations)
+    return OrdinaryJet(ops.constant(value), ops.constant(0),
+                       ops.constant(0), ops)
+
+
+def _lift_numeric_component(value: Any,
+                            operations: Optional[ScalarOperations]) -> Any:
+    """Lift only a numeric literal; preserve opaque source handles verbatim."""
+
+    if operations is not None and isinstance(value, Number):
+        return operations.constant(value)
+    return value
+
+
+@dataclass(frozen=True)
+class _UnboundMixedRow(OrdinaryJet):
+    """Unbound mapping/sequence row with per-component literal provenance."""
+
+    numeric_components: tuple[bool, bool, bool] = (False, False, False)
+
+
 @dataclass(frozen=True)
 class _UnboundScalarLiteral(OrdinaryJet):
     """Private marker for a bare scalar awaiting graph-constant conversion.
@@ -293,7 +323,7 @@ def coerce_ordinary_jet(value: Any, *, operations: Optional[ScalarOperations] = 
     """
 
     if isinstance(value, OrdinaryJet):
-        if isinstance(value, _UnboundScalarLiteral):
+        if isinstance(value, (_UnboundScalarLiteral, _UnboundMixedRow)):
             if operations is None or value.operations is operations:
                 return value
             return _normalize(value, operations)
@@ -311,12 +341,42 @@ def coerce_ordinary_jet(value: Any, *, operations: Optional[ScalarOperations] = 
             raise JetFormatError(name + " mapping has no ordinary value component")
         dz = _mapping_component(value, ("dz", "z", "Z", "first", "d_dZ"), 0)
         dzz = _mapping_component(value, ("dzz", "zz", "ZZ", "second", "d2_dZ2"), None)
-        return OrdinaryJet(raw, dz, dzz, operations)
+        components = (raw, dz, dzz)
+        if operations is None:
+            return _UnboundMixedRow(
+                raw, dz, dzz, None,
+                tuple(item is not None and isinstance(item, Number)
+                      for item in components),
+            )
+        return OrdinaryJet(
+            *(_lift_numeric_component(item, operations) for item in components),
+            operations,
+        )
     if isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray)):
         if len(value) == 2:
-            return OrdinaryJet(value[0], value[1], None, operations)
+            components = (value[0], value[1], None)
+            if operations is None:
+                return _UnboundMixedRow(
+                    *components, None,
+                    tuple(item is not None and isinstance(item, Number)
+                          for item in components),
+                )
+            return OrdinaryJet(
+                *(_lift_numeric_component(item, operations) for item in components),
+                operations,
+            )
         if len(value) == 3:
-            return OrdinaryJet(value[0], value[1], value[2], operations)
+            components = (value[0], value[1], value[2])
+            if operations is None:
+                return _UnboundMixedRow(
+                    *components, None,
+                    tuple(item is not None and isinstance(item, Number)
+                          for item in components),
+                )
+            return OrdinaryJet(
+                *(_lift_numeric_component(item, operations) for item in components),
+                operations,
+            )
         raise JetFormatError(name + " sequence must be (value, dz) or (value, dz, dzz)")
     # A bare scalar with no requested adapter is unbound.  In particular, do
     # not route through ``OrdinaryJet.constant`` in that case: that constructor
@@ -341,6 +401,15 @@ def coerce_ordinary_jet(value: Any, *, operations: Optional[ScalarOperations] = 
 def _derivative_jet(jet: OrdinaryJet) -> OrdinaryJet:
     """Return the C1 jet for the ordinary derivative of ``jet``."""
 
+    if isinstance(jet, _UnboundScalarLiteral):
+        return _UnboundMixedRow(
+            jet.dz, jet.dzz, None, None, (True, True, False)
+        )
+    if isinstance(jet, _UnboundMixedRow):
+        return _UnboundMixedRow(
+            jet.dz, jet.dzz, None, None,
+            (jet.numeric_components[1], jet.numeric_components[2], False),
+        )
     return OrdinaryJet(jet.dz, jet.dzz, None, jet.operations)
 
 
@@ -488,9 +557,10 @@ def _normalize(jet: OrdinaryJet, operations: Optional[ScalarOperations]) -> Ordi
     Explicit adapters are never relabeled.  ``None`` is the unbound marker;
     the singleton ``PYTHON_OPERATIONS`` remains a real explicit identity and
     therefore cannot be replaced by a graph adapter.  The private literal
-    marker is the one exception to ordinary row-preserving inheritance: its
-    value and both zero derivative rows are converted through the target
-    adapter's ``constant`` callback.
+    markers are the exceptions to ordinary row-preserving inheritance: bare
+    numeric literals and numeric components of mapping/sequence rows are
+    converted through the target adapter's ``constant`` callback, while
+    opaque components remain unchanged.
     """
 
     if jet.operations is operations:
@@ -504,6 +574,15 @@ def _normalize(jet: OrdinaryJet, operations: Optional[ScalarOperations]) -> Ordi
             operations.constant(0),
             operations,
         )
+    if isinstance(jet, _UnboundMixedRow) and jet.operations is None:
+        if operations is None:
+            return jet
+        rows = (jet.value, jet.dz, jet.dzz)
+        bound = tuple(
+            operations.constant(item) if is_numeric and item is not None else item
+            for item, is_numeric in zip(rows, jet.numeric_components)
+        )
+        return OrdinaryJet(bound[0], bound[1], bound[2], operations)
     if jet.operations is not None:
         if operations is None:
             raise TypeError(
@@ -547,8 +626,8 @@ def volume_density(state: Any, Z: Any, delta: Any, *,
 
     fields = _coerce_state(state, operations=operations, label="state")
     terms = _volume_terms(fields, Z, delta, operations=operations)
-    out = OrdinaryJet.constant(0, _common_operations(fields.U, fields.Q,
-                                                      operations=operations))
+    ops = _common_operations(fields.U, fields.Q, operations=operations)
+    out = _numeric_constant_jet(0, ops)
     for term in terms.values():
         out = out + term
     return out
@@ -597,8 +676,8 @@ def endpoint_density(state: Any, Z: Any, delta: Any, *,
 
     fields = _coerce_state(state, operations=operations, label="state")
     terms = _endpoint_terms(fields, Z, delta, operations=operations)
-    out = OrdinaryJet.constant(0, _common_operations(fields.U, fields.Q,
-                                                      operations=operations))
+    ops = _common_operations(fields.U, fields.Q, operations=operations)
+    out = _numeric_constant_jet(0, ops)
     for term in terms.values():
         out = out + term
     return out
@@ -685,9 +764,9 @@ def factored_endpoint_density_difference(baseline: Any, correction: Any,
     base = _coerce_state(baseline, operations=operations, label="baseline")
     corr = _coerce_state(correction, operations=operations, label="correction")
     terms = _endpoint_difference_terms(base, corr, Z, delta, operations=operations)
-    out = OrdinaryJet.constant(0, _common_operations(base.U, base.Q,
-                                                      corr.U, corr.Q,
-                                                      operations=operations))
+    ops = _common_operations(base.U, base.Q, corr.U, corr.Q,
+                             operations=operations)
+    out = _numeric_constant_jet(0, ops)
     for term in terms.values():
         out = out + term
     return out
@@ -744,9 +823,9 @@ def factored_volume_density_difference(baseline: Any, correction: Any,
     base = _coerce_state(baseline, operations=operations, label="baseline")
     corr = _coerce_state(correction, operations=operations, label="correction")
     terms = _difference_terms(base, corr, Z, delta, operations=operations)
-    out = OrdinaryJet.constant(0, _common_operations(base.U, base.Q,
-                                                      corr.U, corr.Q,
-                                                      operations=operations))
+    ops = _common_operations(base.U, base.Q, corr.U, corr.Q,
+                             operations=operations)
+    out = _numeric_constant_jet(0, ops)
     for term in terms.values():
         out = out + term
     return out
@@ -893,9 +972,10 @@ def remaining_numerical_blocked_handles() -> dict[str, Any]:
 
 def _sum_jets(terms: dict[str, OrdinaryJet], operations: Optional[ScalarOperations] = None) -> OrdinaryJet:
     if not terms:
-        return OrdinaryJet.constant(0, operations)
+        return _numeric_constant_jet(0, operations)
     first = next(iter(terms.values()))
-    out = OrdinaryJet.constant(0, _common_operations(first, operations=operations))
+    ops = _common_operations(first, operations=operations)
+    out = _numeric_constant_jet(0, ops)
     for term in terms.values():
         out = out + term
     return out

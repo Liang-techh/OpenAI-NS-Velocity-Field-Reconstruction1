@@ -31,6 +31,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from fractions import Fraction
+from numbers import Number
 from typing import Any, Optional
 
 from .original_finite_N_density_kernel import (
@@ -54,6 +55,59 @@ def _is_sequence(value: Any) -> bool:
     return isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray))
 
 
+def _contains_nested_ordinary_jet(value: Any) -> bool:
+    """Return whether a row container contains an ``OrdinaryJet`` component.
+
+    A row is a container of scalar components.  An ``OrdinaryJet`` inside a
+    mapping or sequence is therefore a malformed nested row, not a source
+    adapter to borrow while selecting the outer row's adapter.
+    """
+
+    if isinstance(value, Mapping):
+        return any(_contains_nested_ordinary_jet(item) or isinstance(item, OrdinaryJet)
+                   for item in value.values())
+    if _is_sequence(value):
+        return any(_contains_nested_ordinary_jet(item) or isinstance(item, OrdinaryJet)
+                   for item in value)
+    return False
+
+
+def _reject_nested_ordinary_jet(value: Any, name: str) -> None:
+    if not isinstance(value, OrdinaryJet) and _contains_nested_ordinary_jet(value):
+        raise ScaledDensityJetError(
+            f"{name} contains a nested OrdinaryJet; supply one outer row jet"
+        )
+
+
+def _row_operations(value: Any, operations: Optional[ScalarOperations]) -> Optional[ScalarOperations]:
+    """Validate and preserve an outer row jet's explicit adapter identity."""
+
+    if isinstance(value, OrdinaryJet):
+        if value.operations is not None and operations is not None and value.operations is not operations:
+            raise TypeError(
+                "ordinary row uses a different scalar operation adapter; "
+                "explicit adapters cannot be relabeled"
+            )
+        return value.operations if value.operations is not None else operations
+    return operations
+
+
+def _literal_or_source(value: Any, operations: Optional[ScalarOperations]) -> Any:
+    """Lift numeric literals while preserving opaque source scalar identity."""
+
+    if operations is not None and isinstance(value, Number):
+        return operations.constant(value)
+    return value
+
+
+def _zero_scalar(operations: Optional[ScalarOperations]) -> Any:
+    return 0 if operations is None else operations.constant(0)
+
+
+def _one_scalar(operations: Optional[ScalarOperations]) -> Any:
+    return 1 if operations is None else operations.constant(1)
+
+
 def _row(value: Any, order: int, name: str, *, operations: Optional[ScalarOperations] = None) -> list[Any]:
     """Validate one explicit ordinary derivative row.
 
@@ -68,6 +122,8 @@ def _row(value: Any, order: int, name: str, *, operations: Optional[ScalarOperat
     required = order + 1
     if value is None:
         raise ScaledDensityJetError(f"{name} is required; missing ordinary derivatives")
+    _reject_nested_ordinary_jet(value, name)
+    _row_operations(value, operations)
     if isinstance(value, OrdinaryJet):
         if order > 2:
             raise ScaledDensityJetError(
@@ -94,7 +150,7 @@ def _row(value: Any, order: int, name: str, *, operations: Optional[ScalarOperat
             raise ScaledDensityJetError(f"{name} mapping is missing ordinary Z1")
         if order >= 2 and dzz is None:
             raise ScaledDensityJetError(f"{name} mapping is missing ordinary Z2")
-        entries = [raw, dz, dzz]
+        entries = [_literal_or_source(item, operations) for item in (raw, dz, dzz)]
         if any(item is None for item in entries[:required]):
             raise ScaledDensityJetError(f"{name} contains a missing ordinary derivative")
         return entries[:required]
@@ -106,7 +162,7 @@ def _row(value: Any, order: int, name: str, *, operations: Optional[ScalarOperat
         raise ScaledDensityJetError(
             f"{name} must contain exactly ordinary Z0..Z{order}; no zero padding or Taylor coefficients"
         )
-    result = list(value)
+    result = [_literal_or_source(item, operations) for item in value]
     if any(item is None for item in result):
         raise ScaledDensityJetError(f"{name} contains a missing ordinary derivative")
     return result
@@ -125,8 +181,9 @@ def explicit_shift_jet(
     call site; it is not a Taylor shift and does not multiply by factorials.
     """
 
-    checked = _row(rows, 3, name, operations=operations)
-    return ordinary_jet(checked[1], checked[2], checked[3], operations=operations)
+    row_operations = _row_operations(rows, operations)
+    checked = _row(rows, 3, name, operations=row_operations)
+    return ordinary_jet(checked[1], checked[2], checked[3], operations=row_operations)
 
 
 # The compact spelling is useful to callers mirroring the source notation.
@@ -140,12 +197,13 @@ def _as_jet(
     *,
     operations: Optional[ScalarOperations] = None,
 ) -> OrdinaryJet:
-    checked = _row(rows, order, name, operations=operations)
+    row_operations = _row_operations(rows, operations)
+    checked = _row(rows, order, name, operations=row_operations)
     if order == 0:
-        return ordinary_jet(checked[0], operations=operations)
+        return ordinary_jet(checked[0], operations=row_operations)
     if order == 1:
-        return ordinary_jet(checked[0], checked[1], operations=operations)
-    return ordinary_jet(checked[0], checked[1], checked[2], operations=operations)
+        return ordinary_jet(checked[0], checked[1], operations=row_operations)
+    return ordinary_jet(checked[0], checked[1], checked[2], operations=row_operations)
 
 
 def _coordinate_jet(
@@ -162,6 +220,7 @@ def _coordinate_jet(
     if isinstance(value, OrdinaryJet):
         if value.dzz is None:
             raise ScaledDensityJetError("Z_jet must provide ordinary Z0, Z1 and Z2")
+        _row_operations(value, operations)
         return value if operations is None else ordinary_jet(
             value.value, value.dz, value.dzz, operations=operations
         )
@@ -169,11 +228,21 @@ def _coordinate_jet(
         return _as_jet(value, 2, "Z_jet", operations=operations)
     # Z is the independent variable.  Its ordinary derivatives are therefore
     # fixed explicitly even when a caller supplies its scalar value only.
-    return ordinary_jet(value, 1, 0, operations=operations)
+    return ordinary_jet(
+        _literal_or_source(value, operations),
+        _one_scalar(operations),
+        _zero_scalar(operations),
+        operations=operations,
+    )
 
 
 def _constant_jet(value: Any, operations: Optional[ScalarOperations]) -> OrdinaryJet:
-    return ordinary_jet(value, 0, 0, operations=operations)
+    return ordinary_jet(
+        _literal_or_source(value, operations),
+        _zero_scalar(operations),
+        _zero_scalar(operations),
+        operations=operations,
+    )
 
 
 def _contains_interval(value: Any) -> bool:
@@ -223,8 +292,27 @@ def _interval_operations() -> ScalarOperations:
 def _select_operations(
     operations: Optional[ScalarOperations], *values: Any
 ) -> ScalarOperations:
+    explicit: list[ScalarOperations] = []
+    for value in values:
+        _reject_nested_ordinary_jet(value, "scaled density input")
+        if not isinstance(value, OrdinaryJet) or value.operations is None:
+            continue
+        adapter = value.operations
+        if operations is not None and adapter is not operations:
+            raise TypeError(
+                "ordinary jet uses an explicit scalar operation adapter "
+                "different from the requested adapter"
+            )
+        if not any(adapter is previous for previous in explicit):
+            explicit.append(adapter)
     if operations is not None:
         return operations
+    if len(explicit) > 1:
+        raise TypeError(
+            "ordinary jets use multiple explicit scalar operation adapters"
+        )
+    if explicit:
+        return explicit[0]
     if any(_contains_interval(value) for value in values):
         return _interval_operations()
     return PYTHON_OPERATIONS
@@ -279,7 +367,8 @@ def _scaled_recovery(
     dm_rows = _row(delta_m_rows, 3, "delta_m_rows", operations=ops)
     dVy = _as_jet(delta_V_y_rows, 1, "delta_V_y_rows", operations=ops)
     dM = ordinary_jet(dm_rows[0], dm_rows[1], dm_rows[2], operations=ops)
-    dM_Z = explicit_shift_jet(dm_rows, name="delta_m_rows", operations=ops)
+    # dm_rows was already validated and lifted; do not lift it a second time.
+    dM_Z = ordinary_jet(dm_rows[1], dm_rows[2], dm_rows[3], operations=ops)
     z = _coordinate_jet(Z_jet, operations=ops)
     de = _constant_jet(delta, ops)
     one = ordinary_jet(ops.constant(1), ops.constant(0), ops.constant(0), operations=ops)
@@ -353,8 +442,13 @@ def correlated_scaled_density(
     de = state["delta"]
 
     # These are the six exact factored source terms from the pinned kernel.
-    volume_terms = volume_difference_terms(base, corr, z, de, operations=operations)
-    endpoint_terms = endpoint_difference_terms(base, corr, z, de, operations=operations)
+    selected_operations = z.operations
+    volume_terms = volume_difference_terms(
+        base, corr, z, de, operations=selected_operations
+    )
+    endpoint_terms = endpoint_difference_terms(
+        base, corr, z, de, operations=selected_operations
+    )
     volume_terms_c1 = {name: _c1(value) for name, value in volume_terms.items()}
     endpoint_terms_c1 = {name: _c1(value) for name, value in endpoint_terms.items()}
 
