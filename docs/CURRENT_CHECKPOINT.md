@@ -1,3 +1,7 @@
+## 2026-10-29: selector primitive signed differences
+
+The non-common selector primitive/Z1 algebra and direct source-role packet are available; 20 exact synthetic and five mapping checks passed after a separately recorded repair. Actual signed primitive values, P sparse-map identities and F endpoints remain open. See [the current handoff](CURRENT_PF_SELECTOR_PRIMITIVE_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: non-common selector root and historical endpoint roles
 
 A signed non-common selector root/Z1 interface and direct source role packet were added. The saved F map has no entries for 48 newly inspected endpoint rows; P A2 mappings remain unresolved. See [the current handoff](CURRENT_PF_SELECTOR_ROOT_ENDPOINTS_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
