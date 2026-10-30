@@ -1,5 +1,7 @@
 # Core Kchi feedback and physical m15 sectors — 2026-10-30
 
+**Normalization correction:** these saved feedback branches use the raw physical C0/B1 packet. The original Kchi principal inverse is defined after a Z-dependent conjugation and extraction of `Achi=-2 chi E51`. Mapping the resulting differential operator back to physical variables requires a compensating `+2 chi E51` term in addition to the raw differential operator, subject to the remaining same-source gauge/conjugation identity. That potential-feedback contribution was not included here. Accordingly E01/E10/E11 below are **raw-Q subterms**, not the complete Kchi first feedback. The corresponding compensation and its kernel-error propagation are separate outstanding contributions; no old interval is deleted or canceled by this clarification.
+
 ## Result and scope
 
 The frozen one-entry `n1_core_kchi_feedback_v2` returned same-source directed intervals for the first Kchi correction and its first feedback word, with separate kernel-truncation uncertainty, through ordinary Z0/Z1. The [receipt](../experiments/root_st073/n1_core_kchi_feedback_v2_receipt.json.gz) SHA-256 is `0ff1992f08754f2e15c8ec8e65f3ed396b38dc3101821c35eb90635664a753aa`; its result SHA-256 is `30926458ca6ec25a05ae6cde00d846adb15f9fe50361e46ec5e80deb7c6abae1`. These are finite source-linked sectors and error bounds, not a complete W1, complete m15, or five-moment closure.
@@ -24,5 +26,7 @@ The synthetic inner-feedback, outer-feedback and physical-m15 fixtures passed 30
 ## Remaining work
 
 The previous 212-term ledger, six earlier signed inner/lower contributions and prior errors are untouched; no new term has yet been appended. A whole-Z feedback-word remainder remains separate, and W1 Z2 is not established because it would require further input and kernel derivatives. The collar transport and its possible Jacobian issue, no-duplication ledger correspondence, independent pulse matching and same-source terminal identity remain open. These finite terms do not establish the later heat, stress, recursion or final NS validation layers.
+
+Subsequent source inspection resolves the specific apparent missing-hb issue in the old initial-integral and weighted-propagator collar paths: their `collar=True` branches add the formal hb factor once via `algebra.width`. This does not settle every collar measure or validate the complete propagation. The subsequent handoff records the independently computed finite potential-compensation sectors and a separate same-source collar g4 measure enclosure.
 
 Next, bind the new branch sectors to the same-source collar transport and audit its radial measure, retaining all nonzero inlet histories and the separate kernel errors. Then prove exact correspondence to the existing ledger before adding the reserved correction once and compare the independent negative full pulse integral as a function of Z.

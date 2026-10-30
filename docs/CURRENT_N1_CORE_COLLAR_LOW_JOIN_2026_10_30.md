@@ -1,5 +1,7 @@
 # No-reset core/collar first-word Z0/Z1 join, 2026-10-30
 
+**Scope clarification:** the explicit homogeneous transport below and the saved first-word kernel are the K0/no-potential construction. The original regular principal inverse contains the `2*chi` potential in the F1 equation; this receipt alone does not establish transport of a complete Kchi inlet through the collar. A Kchi-aware potential propagator and its remainder must be supplied or an equivalent same-source identity proved. The local term's separate formal `hb` measure is not changed by this clarification.
+
 The saved same-source core-exit `W1_Z0/Z1` and the previously calculated local first-collar contributions now form a finite first-word six-component enclosure for real `Z in [-1,1]` and the full first-collar phase `0<=s<=sc/4`. The calculation retains the actual core history and adds each saved local sector exactly once. It is conditional on the authenticated parent source enclosures and is not a point value, full n1 solution, physical m15 integral or terminal five-moment closure.
 
 ## Transport and source preservation
