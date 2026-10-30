@@ -710,3 +710,5 @@ docs/CURRENT_COMPACT_FUNCTION_AND_M_PORT_2026_10_28.md -text
 scripts/run_compact_scaled_profiles_once.py -text
 scripts/run_compact_profile_input_guards_once.py -text
 docs/CURRENT_COMPACT_FORMAL_N_DENSITIES_2026_10_28.md -text
+scripts/run_compact_bump_normalizer_closed_form_once.py -text
+docs/CURRENT_COMPACT_BUMP_CLOSED_FORM_2026_10_29.md -text

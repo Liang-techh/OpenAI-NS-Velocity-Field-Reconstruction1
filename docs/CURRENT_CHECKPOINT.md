@@ -1,3 +1,7 @@
+## 2026-10-29: analytic compact bump normalizer
+
+Two exact special-function forms for the declared compact bump integral agree numerically in a frozen leaf; source-provider graph semantics and actual control data remain open. The m15 endpoint binding is still incomplete. See [the current handoff](CURRENT_COMPACT_BUMP_CLOSED_FORM_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-28: compact formal-N profiles and signed densities
 
 A numerical scaled profile port retains symbolic inverse-N terms and radial/ordinary-Z jets; 79 synthetic checks passed. A separate 7-check input-guard repair prevents pre-validation endpoint rounding. Actual source data, same-source m15 cancellation and physical construction remain open. See [the current handoff](CURRENT_COMPACT_FORMAL_N_DENSITIES_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
