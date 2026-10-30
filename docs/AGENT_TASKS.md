@@ -1,3 +1,7 @@
+## 2026-10-30: F Q quotient operand observations
+
+A frozen read observed both Q numerators and their shared denominator as sum rows, without indexing child references. One child reference targets protected node 1, but the leaf incorrectly labels that target as unprotected; this metadata defect is retained in the receipt and must be corrected in future consumers. Source derivative semantics, endpoint owners, errors and closure remain open. See [the current handoff](CURRENT_F_Q_QUOTIENT_OPERANDS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F gap Q source root rows
 
 One authenticated source-only read observed Q0 and Q1 as positive-quotient rows with distinct numerator references and a shared denominator reference; all operands remain opaque and no source values were evaluated. Derivative identity, source ownership and certified error transport remain open. See [the current handoff](CURRENT_F_Q_SOURCE_ROWS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

@@ -768,3 +768,5 @@ scripts/run_f_gap_qsquare_leibniz_once.py -text
 docs/CURRENT_F_QSQUARE_LEIBNIZ_COMPUTE_2026_10_30.md -text
 scripts/run_f_gap_q_source_rows_once.py -text
 docs/CURRENT_F_Q_SOURCE_ROWS_2026_10_30.md -text
+scripts/run_f_gap_q_quotient_operands_once.py -text
+docs/CURRENT_F_Q_QUOTIENT_OPERANDS_2026_10_30.md -text
