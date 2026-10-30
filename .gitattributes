@@ -722,3 +722,9 @@ scripts/run_m15_radius_sensitive_endpoint_once.py -text
 docs/CURRENT_M15_RADIUS_SENSITIVE_ENDPOINT_2026_10_29.md -text
 scripts/run_pulse_log_radius_transport_once.py -text
 docs/CURRENT_PULSE_LOG_RADIUS_TRANSPORT_2026_10_29.md -text
+scripts/run_historical_frame_owner_binding_once.py -text
+docs/CURRENT_HISTORICAL_FRAME_OWNER_BINDING_2026_10_29.md -text
+.gitattributes -text
+docs/PROJECT_GOAL.md -text
+docs/AGENT_TASKS.md -text
+docs/CURRENT_CHECKPOINT.md -text

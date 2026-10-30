@@ -1,3 +1,7 @@
+## 2026-10-29: historical frame owner binding
+
+A single authenticated saved-source leaf bound preRp geometry and Gamma to the same historical frame node, retaining Gamma's imported node in its separate namespace. Ordinary Z independence and F endpoint/seam identities remain open. See [the current handoff](CURRENT_HISTORICAL_FRAME_OWNER_BINDING_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: pulse log-radius ordinary-Z transport
 
 A caller-owned point interface retains moving-endpoint and log-radius derivatives without materializing R; 23 synthetic controls passed. Actual F source identity, endpoint substitution and m15 closure remain open. See [the current handoff](CURRENT_PULSE_LOG_RADIUS_TRANSPORT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
