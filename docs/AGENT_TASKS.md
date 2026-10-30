@@ -1,3 +1,7 @@
+## 2026-10-30: protected references and signed interval algebra
+
+A frozen correction relabeled the protected node 1 reference while preserving the prior result; no protected node was indexed. A new direct signed P-F density algebra retains caller arithmetic and delta_Z terms; a failed v1 fixture and repaired v2 synthetic result are both recorded. Real F source binding, certified error transport and closure remain open. See [the current handoff](CURRENT_SIGNED_INTERVAL_AND_PROTECTED_REF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F Q quotient operand observations
 
 A frozen read observed both Q numerators and their shared denominator as sum rows, without indexing child references. One child reference targets protected node 1, but the leaf incorrectly labels that target as unprotected; this metadata defect is retained in the receipt and must be corrected in future consumers. Source derivative semantics, endpoint owners, errors and closure remain open. See [the current handoff](CURRENT_F_Q_QUOTIENT_OPERANDS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.

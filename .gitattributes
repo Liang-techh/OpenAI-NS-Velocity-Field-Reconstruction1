@@ -770,3 +770,7 @@ scripts/run_f_gap_q_source_rows_once.py -text
 docs/CURRENT_F_Q_SOURCE_ROWS_2026_10_30.md -text
 scripts/run_f_gap_q_quotient_operands_once.py -text
 docs/CURRENT_F_Q_QUOTIENT_OPERANDS_2026_10_30.md -text
+scripts/run_f_gap_protected_ref_correction_once.py -text
+scripts/run_pulse_signed_interval_algebra_once.py -text
+scripts/run_pulse_signed_interval_algebra_v2_once.py -text
+docs/CURRENT_SIGNED_INTERVAL_AND_PROTECTED_REF_2026_10_30.md -text
