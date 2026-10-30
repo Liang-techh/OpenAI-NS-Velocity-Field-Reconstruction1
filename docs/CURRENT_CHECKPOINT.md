@@ -1,3 +1,7 @@
+## 2026-10-29: non-common selector root and historical endpoint roles
+
+A signed non-common selector root/Z1 interface and direct source role packet were added. The saved F map has no entries for 48 newly inspected endpoint rows; P A2 mappings remain unresolved. See [the current handoff](CURRENT_PF_SELECTOR_ROOT_ENDPOINTS_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: non-common P/F moment jets
 
 Source-role packet retains separate weight, inlet and coefficient differences through ordinary Z3; 45 exact synthetic checks passed. F historical radius and endpoints, capture-free transport and correlated source values remain open. See [the current handoff](CURRENT_PF_NONCOMMON_MOMENT_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

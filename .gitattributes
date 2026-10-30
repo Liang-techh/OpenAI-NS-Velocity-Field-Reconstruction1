@@ -743,3 +743,5 @@ scripts/run_pf_selector_bridge_once.py -text
 docs/CURRENT_PF_SELECTOR_BRIDGE_2026_10_29.md -text
 scripts/run_pf_noncommon_moment_once.py -text
 docs/CURRENT_PF_NONCOMMON_MOMENT_2026_10_29.md -text
+scripts/run_pf_selector_root_once.py -text
+docs/CURRENT_PF_SELECTOR_ROOT_ENDPOINTS_2026_10_29.md -text
