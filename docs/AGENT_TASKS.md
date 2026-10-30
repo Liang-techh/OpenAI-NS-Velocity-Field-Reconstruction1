@@ -1,3 +1,7 @@
+## 2026-10-30: quiet Rp saved owner link
+
+The accepted Rp snapshot assigns the same protected opaque reference to current geometry Rp, quiet Rp and quiet Rp endpoint radius. F chart endpoint ownership, ordinary-Z commutation and numeric values remain open. See [the current handoff](CURRENT_F_QUIET_RP_OWNER_LINK_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F fourth-row source mapping
 
 The authenticated saved snapshot directly matches the fourth m1 inlet substitution and selected ap rewrite rows. Ordinary-Z commutation, F radius/endpoint ownership and numerical values remain unproved. See [the current handoff](CURRENT_F_INDEX3_MAPPING_CAPTURE_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
