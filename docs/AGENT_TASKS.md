@@ -1,3 +1,7 @@
+## 2026-10-30: source-linked cross-owner Rp signed gap
+
+A conditional correlated Rc/Tw mismatch and ordinary Z1 interface now retains both signed parts; current quiet/compact/outer source roles match as opaque refs. Cross-owner equality, source values and error certification remain open. See [the current handoff](CURRENT_RP_CROSS_OWNER_SIGNED_GAP_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: F chart and old own-source binding
 
 Saved query/y roles match across the old and F snapshots, and 36 old/pulse5 field rows have matching opaque refs; radius refs differ and semantic owner identity remains open. See [the current handoff](CURRENT_F_CHART_OWN_SOURCE_BINDING_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
