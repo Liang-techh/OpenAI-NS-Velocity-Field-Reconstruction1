@@ -1,3 +1,7 @@
+## 2026-10-30: signed gap closed-form difference
+
+A new direct P-F closed-form path retains four independent scales, both endpoints and ordinary Z1; correlated decay differences preserve caller interval arithmetic. Only synthetic inputs were evaluated; F ownership and certified errors remain open. See [the current handoff](CURRENT_SIGNED_GAP_CLOSED_FORM_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: native gap decay enclosure and fixed-radius transport
 
 The canonical native mu recipe yields a rational enclosure for the gap decay factor; an independent fixed-R jet transformation passes synthetic checks. Historical F ownership and certified F error remain open. See [the current handoff](CURRENT_NATIVE_GAP_DECAY_AND_FIXED_RADIUS_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
