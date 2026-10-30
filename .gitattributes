@@ -814,3 +814,6 @@ docs/CURRENT_F_INDEX3_MAPPING_CAPTURE_2026_10_30.md -text
 scripts/run_f_quiet_rp_owner_link_once.py -text
 experiments/root_st073/f_quiet_rp_owner_link_v1_receipt.json -text
 docs/CURRENT_F_QUIET_RP_OWNER_LINK_2026_10_30.md -text
+scripts/run_f_internal_endpoint_saved_rewrite_once.py -text
+experiments/root_st073/f_internal_endpoint_saved_rewrite_v1_receipt.json -text
+docs/CURRENT_F_INTERNAL_ENDPOINT_REWRITE_2026_10_30.md -text
