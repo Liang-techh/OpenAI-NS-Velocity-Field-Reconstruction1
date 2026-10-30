@@ -1,3 +1,7 @@
+## 2026-10-29: Gamma weighted heat difference
+
+Source-shaped S-weighted Gamma heat difference and ordinary Z1 retain non-common prefactor terms; 18 exact synthetic checks passed. P/F ownership, non-common-branch Z1 and full future remain open. See [the current handoff](CURRENT_GAMMA_WEIGHTED_ENERGY_DELTA_2026_10_29.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-29: correlated Gamma scale difference
 
 A new exact source-shaped Gamma scale-difference kernel factors out DeltaS and retains ordinary Z1; 11 synthetic numerical diagnostics passed. Actual P/F scales and full future-energy difference remain open. See [the current handoff](CURRENT_GAMMA_CORRELATED_SCALE_DELTA_2026_10_29.md). Goal ACTIVE / INCOMPLETE.

@@ -735,3 +735,5 @@ docs/CURRENT_PULSE_GAP_FACTORIZED_SOURCE_DELTA_2026_10_29.md -text
 scripts/run_pulse_gap_source_factorized_delta_v2_once.py -text
 scripts/run_gamma_correlated_scale_delta_once.py -text
 docs/CURRENT_GAMMA_CORRELATED_SCALE_DELTA_2026_10_29.md -text
+scripts/run_gamma_weighted_energy_delta_once.py -text
+docs/CURRENT_GAMMA_WEIGHTED_ENERGY_DELTA_2026_10_29.md -text
