@@ -774,3 +774,8 @@ scripts/run_f_gap_protected_ref_correction_once.py -text
 scripts/run_pulse_signed_interval_algebra_once.py -text
 scripts/run_pulse_signed_interval_algebra_v2_once.py -text
 docs/CURRENT_SIGNED_INTERVAL_AND_PROTECTED_REF_2026_10_30.md -text
+scripts/run_pulse_signed_endpoint_interval_once.py -text
+scripts/run_pulse_signed_endpoint_interval_v2_once.py -text
+scripts/run_f_gap_q_jets_from_source_once.py -text
+scripts/run_f_gap_q_jets_from_source_v2_once.py -text
+docs/CURRENT_F_Q_JETS_AND_SIGNED_ENDPOINT_2026_10_30.md -text

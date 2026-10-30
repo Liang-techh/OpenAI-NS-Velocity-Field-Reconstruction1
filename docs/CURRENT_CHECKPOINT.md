@@ -1,3 +1,7 @@
+## 2026-10-30: F Q-jet and signed endpoint algebra
+
+New caller-owned interval-compatible adapters reconstruct seven fixed-xi Q jets and evaluate signed endpoint Z1 with explicit moving-coordinate terms. Frozen synthetic v1 validation failures and separate passing v2 results are preserved. Actual F source ownership, correlated P-F data, certified errors and closure remain open. See [the current handoff](CURRENT_F_Q_JETS_AND_SIGNED_ENDPOINT_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: protected references and signed interval algebra
 
 A frozen correction relabeled the protected node 1 reference while preserving the prior result; no protected node was indexed. A new direct signed P-F density algebra retains caller arithmetic and delta_Z terms; a failed v1 fixture and repaired v2 synthetic result are both recorded. Real F source binding, certified error transport and closure remain open. See [the current handoff](CURRENT_SIGNED_INTERVAL_AND_PROTECTED_REF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
