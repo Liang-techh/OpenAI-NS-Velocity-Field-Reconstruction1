@@ -1,0 +1,33 @@
+{
+  "event": "sc_source_trace_forbidden_raw_only_search_2026_10_31",
+  "accepted_as_proof": false,
+  "project_rule": "The large Rm_loop_density_identity.json is raw-SHA-only; do not search, read, decode, traverse, or replay it.",
+  "root_delegation_omission": "The root instructed static source and ordinary JSON reads but did not repeat the raw-SHA-only exception in the initial worker briefs.",
+  "observations": [
+    {
+      "agent": "sc_positive_evidence",
+      "reported_action": "Searched the large JSON with text tools and inspected several text fragments. Also computed raw SHA. Reported no full JSON parse, graph traversal, comparison, imports, execution, decompression, or file writes.",
+      "disposition": "Not accepted as source evidence. Do not repeat the search, fragment reads, or any associated source-expression consumer."
+    },
+    {
+      "agent": "corrected_lineage",
+      "reported_action": "Ran a broad recursive search over JSON files under experiments/root_st073 that may have scanned the large JSON. Reported no targeted opening or decoding of the file.",
+      "disposition": "Treat the possible scan as an incident, not as evidence; do not repeat it."
+    },
+    {
+      "agent": "sc_defining_source",
+      "reported_action": "Reported two broad rg searches that searched and output matching fragments from both raw-SHA-only files. Reported no direct fragment read, JSON parsing, decompression, helper execution, tests, or file writes; stated its findings did not rely on prohibited content.",
+      "disposition": "Treat all material from the prohibited files as unaccepted, and do not repeat the search or reads."
+    },
+    {
+      "agent": "sc_instance_adapter",
+      "reported_action": "Reported one broad rg search from the repository root prior to receiving the raw-SHA-only clarification; it may have touched either protected file. Reported no targeted reads or decoding.",
+      "disposition": "Treat the possible scan as an incident, not as evidence; do not repeat it."
+    }
+  ],
+  "affected_artifact": "experiments/root_st073/lei_ren_part1_paper_compliant_current_original_Rm_loop_density_identity.json",
+  "resume_first_switch": "sc_defining_source reported that a broad rg search touched this raw-SHA-only file; sc_instance_adapter reported a broad search that may also have touched it.",
+  "prior_computations_rerun": false,
+  "old_errors_removed": false,
+  "goal_active": true
+}
