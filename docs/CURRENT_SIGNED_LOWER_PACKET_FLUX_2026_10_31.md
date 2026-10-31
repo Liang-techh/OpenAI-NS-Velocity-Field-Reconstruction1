@@ -1,3 +1,5 @@
+> **Superseded: physical V_y scaling error.** The v1 evaluator and synthetic fixture below multiply the already physical raw background V_y by Pstar. That is incorrect; see the source normalization recorded in CURRENT_ORIGINAL_N1_FIRST_MICRO_SEAM_2026_10_17.md. The v1 numerical formulas and fixture results are not accepted as physical flux evidence. Preserve the frozen receipt as incident evidence. See the later correction handoff for the replacement.
+
 # Signed lower source-packet flux evaluator — 2026-10-31
 
 A new conditional evaluator accepts an already-held live first-micro lower source view and computes signed physical R Q_y and its ordinary Z1 enclosure, without replacing source quantities by magnitude caps or selected interval points. It is an implementation with synthetic validation only: no real source provider or original ancestor was executed in this entry, and no new numerical value or endpoint identity is claimed.
@@ -35,3 +37,4 @@ Next, build a new, frozen same-run bridge that obtains the native Q4 lower sourc
 | Evaluator | 84926c3a437e56966e4f34e8e3d7a97f478f752df24995c7bbe6aadccc79c03d |
 | Fixture | 5b5b31c95ec07c1bef5ff57847e25c9b2ca56a2ec21f65a5b499404ab6461b20 |
 | Runner | 8c120c5a5b69da1c17746cb2b699560723f2d61ce59a03ba21dca0411207e685 |
+
