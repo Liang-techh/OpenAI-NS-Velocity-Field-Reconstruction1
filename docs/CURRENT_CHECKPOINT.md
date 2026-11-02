@@ -1,3 +1,7 @@
+## 2026-11-02: conditional segmented inner m15 candidate
+
+A saved core W0 and nested K0 W1 were combined with the first-collar finite prefix, with source paths and errors retained. Full Kchi, same-owner seam and terminal closure remain open. See [the current handoff](CURRENT_N1_SEGMENTED_INNER_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: first-collar m15 finite-prefix groups
 
 Saved axial, swirl and pressure sectors were grouped with ordinary Z0/Z1 and provenance retained; core inlet, all-word tail and terminal closure remain open. See [the current handoff](CURRENT_FIRST_COLLAR_M15_GROUP_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
