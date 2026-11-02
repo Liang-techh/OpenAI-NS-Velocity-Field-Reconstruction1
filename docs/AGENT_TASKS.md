@@ -1,3 +1,7 @@
+## 2026-11-02: common-source bridge scope correction
+
+Earlier leading collar and canonical raw-source identities are already proved on their stated domains. The numerical prefix-to-all-word and Kchi gauge bridge remains open; see [the current handoff](CURRENT_N1_COMMON_SOURCE_BRIDGE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: finite P-sector interval signs
 
 All 864 saved finite P-sector coefficient enclosures contain zero; endpoint signs alone do not establish cancellation. The prior cell-sum attempt has no saved result and is not replayed. See [the current handoff](CURRENT_N1_P_SECTOR_SIGNS_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
