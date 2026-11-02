@@ -1,3 +1,7 @@
+## 2026-11-02: finite P-sector interval signs
+
+All 864 saved finite P-sector coefficient enclosures contain zero; endpoint signs alone do not establish cancellation. The prior cell-sum attempt has no saved result and is not replayed. See [the current handoff](CURRENT_N1_P_SECTOR_SIGNS_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: saved W0-chi physical m15 attachment
 
 A conditional inner candidate now references the first saved Kchi-K0 W0 swirl correction without replaying the prior sum; its kernel tail remains a separate error reference. See [the current handoff](CURRENT_N1_W0_CHI_UNGROUPED_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
