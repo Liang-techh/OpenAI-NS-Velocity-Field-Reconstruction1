@@ -1,3 +1,7 @@
+## 2026-11-02: saved W0-chi physical m15 attachment
+
+A conditional inner candidate now references the first saved Kchi-K0 W0 swirl correction without replaying the prior sum; its kernel tail remains a separate error reference. See [the current handoff](CURRENT_N1_W0_CHI_UNGROUPED_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: conditional segmented inner m15 candidate
 
 A saved core W0 and nested K0 W1 were combined with the first-collar finite prefix, with source paths and errors retained. Full Kchi, same-owner seam and terminal closure remain open. See [the current handoff](CURRENT_N1_SEGMENTED_INNER_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
