@@ -1,3 +1,7 @@
+## 2026-11-02: reserved partial variable-Z sensitivity
+
+Four saved compact x=1.27 cells now carry conditional ordinary-Z sensitivity intervals for unknown response and mu derivatives. Physical Rp, live source identity and five-moment closure remain open. See [the current handoff](CURRENT_RESERVED_VARIABLE_Z_SENSITIVITY_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-10-30: old/current Rc recipe proof
 
 Pinned source ASTs yield identical conditional old/current log-Rc formulas with the microscopic origin retained; shared owner, parameters and physical identity remain open. See [the current handoff](CURRENT_RP_RC_RECIPE_PROOF_2026_10_30.md). Goal ACTIVE / INCOMPLETE.
