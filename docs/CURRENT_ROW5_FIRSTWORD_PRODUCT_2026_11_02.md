@@ -1,0 +1,29 @@
+# Row-5 forcing with saved first-word sectors — 2026-11-02
+
+The long-term construction remains **active and incomplete**. A new consumer substitutes saved, finite K0/no-potential first-word state enclosures into the previously saved row-5 affine expression. The result is a conditional expression for `g5 + feedback(W_finite)`, not the complete `h5`, a physical field evaluation, m15 closure or an NS validation. The original 212-term ledger, its six signed inner/lower contributions and prior errors are untouched. P1 is not m15.
+
+## Inputs and product semantics
+
+The row-5 affine input preserves `g5`, the four C0 row-5 couplings, the three B1 row-5 couplings, and the separate `+2 chi W1` term, together with ordinary fixed-x Z1 product-rule terms. The finite state input uses the saved full-collar K0 first-word Z0/Z1 from `n1_core_collar_low_join_v2` and the saved finite Z2 from `n1_actual_collar_green_v3`. W1, W2 and W3 supply Z0/Z1/Z2; W5 supplies only Z0/Z1, which is sufficient for this row-5 expression. Both state sources preserve nonzero inlet history, but neither is a complete Kchi feedback solution.
+
+The runner authenticated the raw receipts, the prior Green/forcing and join/Green manifest pins, source family/logs, geometry records, and the saved full-collar domain. These checks do **not** prove a common live owner, common gauge, fixed-x versus fixed-phase derivative identity, or a jointly realized Z0/Z1/Z2 state. The substitution is conditional on those unresolved identities and on `rho=x²`; no physical `dx` factor or coordinate transformation is applied.
+
+Each source-expression occurrence is paired with each corresponding state sector. Directed coefficient intervals are multiplied without midpoint selection; the four formal exponents are added without materializing `hb`, `F0_anchor`, `Pstar_squared` or `Lambda`. For each product, `coefficient_enclosure` contains only the source/state coefficient product. Its integer `scalar` is kept **separately**: a later consumer must apply it exactly once to obtain `scalar * coefficient_enclosure * formal_monomial`. Original source and state provenance is preserved through separate node tables; no source occurrence, uncertainty or error is cancelled, grouped away or declared independent. Standalone g5 occurrences are retained once per input occurrence, not re-added as an independent m15 contribution.
+
+`R=W-W_finite` remains an explicit unknown residual outside the products. Therefore the full row-5 forcing requires the omitted feedback applied to R, along with the outstanding same-owner, gauge, coordinate and scale proof. The separate `+2 chi W1` remains uncancelled. No output interval is asserted to be a point value.
+
+## Run and retained failures
+
+The independently frozen `row5_firstword_product_v4` ran once and passed **31 synthetic checks**. It used 137 saved row-5 source nodes and 5,395 finite state nodes, producing 16,827 h5 and 37,718 ordinary h5_Z product records. Products carry directed exact-MPF endpoints and formal powers, with references back to the source and state nodes. Actual formal atoms were not evaluated; no physical h5 or row total was computed.
+
+The complete [v4 receipt](../experiments/root_st073/row5_firstword_product_v4_receipt.json.gz), with exact frozen sources, entry and full result, has raw SHA-256 `1db10d5abf6b619297d1dd0be282e7dad845b9b5fdf0ecdff000b15693fccfc1`; source manifest `2605a59af34f0ce59719948478f91e8e0e29f5e928f9406f29b293d7545aad84`; entry `9bee906e9697a8c967a27b99ce6e20eb6baa581a379b7ca19b221f22f8fcfb1b`; result `6c452ecac44ec6f9240c00f201ed56cb3888c71b8ff2ee96fff5c42f4b37b6e9`. Raw gzip hashes were verified before decoding and no ancestor function was called.
+
+Frozen runner bytes retain their trailing blank lines; the staged whitespace check disables only `blank-at-eof`. The staged v4 leaf, fixture and runner hashes match their frozen manifest.
+
+Three earlier attempts are retained and must not be re-entered. V1 stopped in its synthetic fixture on incompatible endpoint-comparison types ([failure](../experiments/root_st073/row5_firstword_product_v1_failure.json.gz), raw SHA-256 `331d752260480dcd8f9b80cddc697b3b8c8b85c9e0bdd625bf1cbd20966e0a97`). V2 stopped in its synthetic fixture because expected rational products did not match the fresh inputs ([failure](../experiments/root_st073/row5_firstword_product_v2_failure.json.gz), raw SHA-256 `b729f77899bdea1e4583feef6126d98f024048f1b291a06b6a71807aa1088c67`); that runner did not persist the fixture's individual check results. V3 stopped during metadata preflight due to the previous-preimage path guard, before creating an entry or executing any fixture ([failure](../experiments/root_st073/row5_firstword_product_v3_preflight_failure.json.gz), raw SHA-256 `45af50e1cf504c61fb065a53dcc170000f3399b2bc91f62a69efc28954a9c462`; [full traceback](../experiments/root_st073/row5_firstword_product_v3_preflight_trace.txt)). None consumed actual source data. V4 retains each failure archive by raw SHA and uses fresh synthetic data not previously executed.
+
+## Next executable work
+
+Establish the source/frame and ordinary-Z identity linking the saved finite K0 first-word packets to the row-5 source expression, and bind the missing feedback residual or a separately certified remainder before treating the result as complete forcing. Prove physical-x cell ownership, `rho=x²` and exactly one `dx` factor before integrating. Then connect the reserved own-swirl term and the independent negative full-pulse m15 as functions of Z, without dropping existing errors or relying on interval overlap. Exact heat exterior, admissible stress and flat remainder, time-order recursion, corrections and independent Cartesian validation remain open.
+
+Workers were requested using the fixed Luna/max role; runtime model metadata was not exposed for independent verification.

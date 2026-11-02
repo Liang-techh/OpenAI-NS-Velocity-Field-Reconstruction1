@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_row5_firstword_product_v3_once.py", line 778, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_row5_firstword_product_v3_once.py", line 722, in main
+    hashes, source_sha, brief_sha = preflight()
+                                    ^^^^^^^^^^^
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_row5_firstword_product_v3_once.py", line 182, in preflight
+    require(previous_preimage.resolve() == Path("C:/Users/z5242/Documents/Codex/row5_firstword_pre.json").resolve(), "unexpected previous preimage path")
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_row5_firstword_product_v3_once.py", line 83, in require
+    raise ValueError(message)
+ValueError: unexpected previous preimage path
