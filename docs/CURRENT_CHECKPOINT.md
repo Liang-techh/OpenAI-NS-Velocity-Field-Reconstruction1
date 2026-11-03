@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [N1 core P/Dg conditional source record](CURRENT_N1_CORE_P_DG_CONDITIONAL_2026_11_02.md). Synthetic 31/31 passed; actual receipt decode failed before the actual leaf call. No physical cancellation was certified.
+
+
 The saved raw six-row Green structure pairs each input with the same physical scale; a separate provenance reconciliation retains the conditional fixed-geometry commutator and the F0 Z-connection. Full Kchi ownership remains open. See [the current handoff](CURRENT_N1_GREEN_SCALE_SOURCE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
 
 ## 2026-11-02: raw/Kchi residual transport
