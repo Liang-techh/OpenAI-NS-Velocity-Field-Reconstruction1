@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [sigma source and binder paths](CURRENT_N1_SIGMA_SOURCE_AND_BINDERS_2026_11_02.md). Sigma point-source records matched; seven saved occurrence results remain unresolved.
+
+
 > Latest continuation: [scoped evaluator and sigma attempts](CURRENT_N1_SCOPED_AND_SIGMA_2026_11_02.md). Scoped synthetic 24/24 passed; real binder candidates remain uninstalled; sigma v1/v2 source binding failed.
 
 
