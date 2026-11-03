@@ -1,3 +1,7 @@
+## 2026-11-02: name-binding fixture failure retained
+
+> Latest continuation: [name-binding preflight and fixture failure](CURRENT_N1_BINDING_PREFLIGHT_AND_FAILURE_2026_11_02.md). One entered synthetic fixture failed; no actual binder or physical closure was established.
+
 ## 2026-11-02: source-bound Green scaling
 
 > Latest continuation: [sigma source and binder paths](CURRENT_N1_SIGMA_SOURCE_AND_BINDERS_2026_11_02.md). Sigma point-source records matched; seven saved occurrence results remain unresolved.
