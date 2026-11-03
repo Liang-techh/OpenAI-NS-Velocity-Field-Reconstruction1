@@ -1,3 +1,7 @@
+## 2026-11-02: rational flat-sigma interval leaf
+
+> Latest continuation: [rational sigma interval](CURRENT_N1_RATIONAL_SIGMA_INTERVAL_2026_11_02.md). Synthetic 35/35 passed; actual owner binding and core oracle remain open.
+
 ## 2026-11-02: name-binding fixture failure retained
 
 > Latest continuation: [name-binding preflight and fixture failure](CURRENT_N1_BINDING_PREFLIGHT_AND_FAILURE_2026_11_02.md). One entered synthetic fixture failed; no actual binder or physical closure was established.
