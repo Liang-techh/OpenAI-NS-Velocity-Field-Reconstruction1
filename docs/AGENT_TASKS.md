@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [saved raw g5 source nodes](CURRENT_N1_RAW_G5_GRAPH_2026_11_02.md). Actual core/first C3 source references extracted; same-axis owner and physical m15 remain open.
+
+
 > Latest continuation: [live axis-potential adapter](CURRENT_N1_LIVE_AXIS_POTENTIAL_2026_11_02.md). Synthetic 17/17 passed; actual raw/weighted ownership and full Kchi remain open.
 
 
