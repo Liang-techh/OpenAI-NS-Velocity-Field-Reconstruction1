@@ -1,3 +1,7 @@
+## 2026-11-02: raw lower-collar shear chi
+
+> Latest continuation: [raw shear chi interval](CURRENT_N1_RAW_SHEAR_CHI_INTERVAL_2026_11_02.md). Two real graph arithmetic nodes have conditional interval bounds; owner and complete g5 remain open.
+
 ## 2026-11-02: raw scoped sigma leaves
 
 > Latest continuation: [raw sigma scoped oracle](CURRENT_N1_RAW_SIGMA_SCOPED_ORACLE_2026_11_02.md). Two graph leaves returned conditional bounds; complete g5 and owner identity remain open.
