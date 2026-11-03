@@ -1,3 +1,7 @@
+## 2026-11-03: n=0 original core gauge whole-Z interval implementation
+
+> Latest continuation: [n=0 original core gauge whole-Z intervals](CURRENT_ORIGINAL_CORE_GAUGE_WHOLEZ_2026_11_03.md). A new function and ordinary first-derivative interval implementation covers four cells on Z ∈ [-1,1]; the synthetic fixture passed. The range is very wide. This does not prove a live owner, n1, m15, or five-moment closure.
+
 ## 2026-11-02: raw lower-collar shear chi
 
 > Latest continuation: [raw shear chi interval](CURRENT_N1_RAW_SHEAR_CHI_INTERVAL_2026_11_02.md). Two real graph arithmetic nodes have conditional interval bounds; owner and complete g5 remain open.
