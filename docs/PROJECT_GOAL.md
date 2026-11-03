@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [scoped evaluator and sigma attempts](CURRENT_N1_SCOPED_AND_SIGMA_2026_11_02.md). Scoped synthetic 24/24 passed; real binder candidates remain uninstalled; sigma v1/v2 source binding failed.
+
+
 > Latest continuation: [raw g5 DAG program](CURRENT_N1_RAW_G5_DAG_PROGRAM_2026_11_02.md). The real source graph compiled with 33 opaque boundaries; no real values or m15 closure were computed.
 
 
