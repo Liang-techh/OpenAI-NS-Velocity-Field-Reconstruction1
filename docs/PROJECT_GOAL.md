@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [live axis-potential adapter](CURRENT_N1_LIVE_AXIS_POTENTIAL_2026_11_02.md). Synthetic 17/17 passed; actual raw/weighted ownership and full Kchi remain open.
+
+
 > Latest continuation: [N1 core P/Dg conditional source record](CURRENT_N1_CORE_P_DG_CONDITIONAL_2026_11_02.md). Synthetic 31/31 passed; actual receipt decode failed before the actual leaf call. No physical cancellation was certified.
 
 
