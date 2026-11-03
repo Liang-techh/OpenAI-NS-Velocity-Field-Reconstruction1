@@ -1,3 +1,7 @@
+## 2026-11-02: selected-source lower-collar sigma
+
+> Latest continuation: [lower-collar sigma source domain](CURRENT_N1_COLLAR_SIGMA_SELECTED_SOURCE_2026_11_02.md). Selected binary sc yields rational sigma bounds; owner and m15 remain open.
+
 ## 2026-11-02: rational flat-sigma interval leaf
 
 > Latest continuation: [rational sigma interval](CURRENT_N1_RATIONAL_SIGMA_INTERVAL_2026_11_02.md). Synthetic 35/35 passed; actual owner binding and core oracle remain open.
