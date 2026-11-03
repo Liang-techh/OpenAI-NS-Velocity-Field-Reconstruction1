@@ -1,3 +1,7 @@
+## 2026-11-02: source-bound Green scaling
+
+The saved raw six-row Green structure pairs each input with the same physical scale; a separate provenance reconciliation retains the conditional fixed-geometry commutator and the F0 Z-connection. Full Kchi ownership remains open. See [the current handoff](CURRENT_N1_GREEN_SCALE_SOURCE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: raw/Kchi residual transport
 
 A conditional same-owner operator bridge now transports the signed raw residual and its ordinary Z derivative to the complete Kchi frame. The actual source-owner and full-resolvent premises remain open. See [the current handoff](CURRENT_N1_RAW_KCHI_RESIDUAL_BRIDGE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.

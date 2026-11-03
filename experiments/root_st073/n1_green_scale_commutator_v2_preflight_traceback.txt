@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_n1_green_scale_commutator_v2_once.py", line 731, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_n1_green_scale_commutator_v2_once.py", line 661, in main
+    source, hashes, source_sha, brief_sha, preimage_sha = _preflight()
+                                                          ^^^^^^^^^^^^
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_n1_green_scale_commutator_v2_once.py", line 377, in _preflight
+    hashes = _manifest_hashes(source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_n1_green_scale_commutator_v2_once.py", line 268, in _manifest_hashes
+    _require(marker is True, "v1 failure archive is not marked raw-only")
+  File "C:\Users\z5242\Documents\Codex\2026-09-13\before-doing-any-project-work-verify\work\st073-transition-next\scripts\run_n1_green_scale_commutator_v2_once.py", line 114, in _require
+    raise RunnerInputError(message)
+RunnerInputError: v1 failure archive is not marked raw-only
