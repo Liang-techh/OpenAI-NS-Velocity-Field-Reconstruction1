@@ -1,3 +1,7 @@
+## 2026-11-03: reserved actual m15 C1 bridge
+
+> Latest continuation: [reserved actual m15 C1](CURRENT_RESERVED_ACTUAL_M15_C1_2026_11_03.md). The saved graph's actual 3x3 C1 action has three beta and Z1 components matching the old graph up to associativity. The canonical saved 25+25 five-moment physical-basis proof, including m15, is reused while patch endpoint and cumulative endpoint remain distinct. Forward212 and canonical cross-owner identity remain unproved.
+
 ## 2026-11-03: reserved Rp source C1 geometry and inverse action
 
 > Latest continuation: [reserved Rp source C1](CURRENT_RESERVED_RP_SOURCE_C1_2026_11_03.md). Actual archive evidence establishes the normalized/physical Rc common scale and the physical Rp/Rc recipe; the reserved/quiet 24952-row prefix was compared only between those two archives, and geometry source-recipe full support closes. A general C1 inverse action with nonzero M_Z was added and synthetically validated. Live owner, C1-row source identity, and m15 closure remain unfinished.
