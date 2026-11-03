@@ -1,3 +1,7 @@
+## 2026-11-03: reserved Rp source C1 geometry and inverse action
+
+> Latest continuation: [reserved Rp source C1](CURRENT_RESERVED_RP_SOURCE_C1_2026_11_03.md). Actual archive evidence establishes the normalized/physical Rc common scale and the physical Rp/Rc recipe; the reserved/quiet 24952-row prefix was compared only between those two archives, and geometry source-recipe full support closes. A general C1 inverse action with nonzero M_Z was added and synthetically validated. Live owner, C1-row source identity, and m15 closure remain unfinished.
+
 ## 2026-11-03: reserved Rp gauge witness
 
 > Latest continuation: [reserved Rp gauge witness](CURRENT_RESERVED_RP_GAUGE_WITNESS_2026_11_03.md). The saved graph gauge construction chain and two negative examples, conditional Rp-support matrix bridge, and synthetic C1 have been checked. Live owner, whole-Z function identity, and physical m15 remain unproved.
