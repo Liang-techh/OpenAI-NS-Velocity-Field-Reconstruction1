@@ -1,3 +1,7 @@
+## 2026-11-03: reserved Rp gauge witness
+
+> Latest continuation: [reserved Rp gauge witness](CURRENT_RESERVED_RP_GAUGE_WITNESS_2026_11_03.md). The saved graph gauge construction chain and two negative examples, conditional Rp-support matrix bridge, and synthetic C1 have been checked. Live owner, whole-Z function identity, and physical m15 remain unproved.
+
 ## 2026-11-03: n=0 original core gauge whole-Z interval implementation
 
 > Latest continuation: [n=0 original core gauge whole-Z intervals](CURRENT_ORIGINAL_CORE_GAUGE_WHOLEZ_2026_11_03.md). A new function and ordinary first-derivative interval implementation covers four cells on Z ∈ [-1,1]; the synthetic fixture passed. The range is very wide. This does not prove a live owner, n1, m15, or five-moment closure.
