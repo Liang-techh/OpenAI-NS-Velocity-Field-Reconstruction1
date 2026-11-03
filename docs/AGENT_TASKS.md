@@ -1,5 +1,8 @@
 ## 2026-11-02: source-bound Green scaling
 
+> Latest continuation: [raw g5 DAG program](CURRENT_N1_RAW_G5_DAG_PROGRAM_2026_11_02.md). The real source graph compiled with 33 opaque boundaries; no real values or m15 closure were computed.
+
+
 > Latest continuation: [saved raw g5 source nodes](CURRENT_N1_RAW_G5_GRAPH_2026_11_02.md). Actual core/first C3 source references extracted; same-axis owner and physical m15 remain open.
 
 
