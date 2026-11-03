@@ -1,3 +1,7 @@
+## 2026-11-02: raw/Kchi residual transport
+
+A conditional same-owner operator bridge now transports the signed raw residual and its ordinary Z derivative to the complete Kchi frame. The actual source-owner and full-resolvent premises remain open. See [the current handoff](CURRENT_N1_RAW_KCHI_RESIDUAL_BRIDGE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
+
 ## 2026-11-02: common-source bridge scope correction
 
 Earlier leading collar and canonical raw-source identities are already proved on their stated domains. The numerical prefix-to-all-word and Kchi gauge bridge remains open; see [the current handoff](CURRENT_N1_COMMON_SOURCE_BRIDGE_2026_11_02.md). Goal ACTIVE / INCOMPLETE.
