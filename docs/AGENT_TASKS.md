@@ -1,3 +1,7 @@
+## 2026-11-02: raw scoped sigma leaves
+
+> Latest continuation: [raw sigma scoped oracle](CURRENT_N1_RAW_SIGMA_SCOPED_ORACLE_2026_11_02.md). Two graph leaves returned conditional bounds; complete g5 and owner identity remain open.
+
 ## 2026-11-02: selected-source lower-collar sigma
 
 > Latest continuation: [lower-collar sigma source domain](CURRENT_N1_COLLAR_SIGMA_SELECTED_SOURCE_2026_11_02.md). Selected binary sc yields rational sigma bounds; owner and m15 remain open.

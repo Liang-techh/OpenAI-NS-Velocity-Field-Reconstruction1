@@ -70,7 +70,7 @@ physical m15 weight.
 In the same archived source, `raw_system` defines
 
 ```text
-Nt = -axial_second(g, F, rho, delta, -2 + delta)
+Nt = -axial_second(g, F, rho, delta, -2 - delta)
 g5 = 2*epsilon*Nt
 ```
 
