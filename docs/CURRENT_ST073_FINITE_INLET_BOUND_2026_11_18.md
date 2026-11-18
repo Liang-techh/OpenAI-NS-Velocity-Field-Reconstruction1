@@ -39,7 +39,7 @@ The actual lower-collar graph is the exact prefix of the cutoff graph used here.
 2\epsilon h_b\,\rho(s)\,U_{\mathrm{lead}}(s,Z)\,\eta(s)\,U_z^{(1)}(s,Z),
 \qquad 0\le s\le 3s_c/16.
 \]
-The derivative uses both terms of the product rule. The archival comparison unit is \(\epsilon^2 h_b(s_c/4)\), using \(u_{\rm cut}=\epsilon\eta U_z^{(1)}\) and \(ds=(s_c/4)\,dq\).
+The derivative uses both terms of the product rule. The archival comparison unit is \(\epsilon^2 h_b(s_c/4)\), using \(u_{\rm cut}=\eta U_z^{(1)}/\epsilon\) and \(ds=(s_c/4)\,dq\). The archived scale description is corrected in the [whole-axis comparison](CURRENT_ST073_CUT_AXIAL_WHOLE_Z_2026_11_18.md).
 
 At the saved \(Z=371/1000\) query the previously integrated signed inlet model and all its error sectors were copied into the new, separate third-row receipt. An outward rescaling into the archival unit gives a value between 97.15 and 117.00 and an ordinary first derivative between 406.02 and 488.96. Both are strictly positive. The separate directed radii are retained, including the all-word tail. The width is primarily inherited from the signed coefficient enclosures. The new function definition is global in the real axial interval. The numeric bounds above are for the saved axial input only.
 

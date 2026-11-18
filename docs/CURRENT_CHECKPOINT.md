@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 whole-axis third m15 cutoff axial contribution
+
+> [Whole-axis cutoff axial contribution](CURRENT_ST073_CUT_AXIAL_WHOLE_Z_2026_11_18.md) encloses the actual raw third row and its ordinary derivative on 256 closed cells. The six same-unit comparisons fit the old directed archive bounds. An exact midpoint reflection reduces the finite nominal recipe to two radius-four factors and records the correct conversion u_cut=Uz1cut/epsilon. Independent terminal matching remains open.
+
 ## 2026-11-18: ST073 finite inlet bound and actual cutoff axial response
 
 > [Finite inlet bound and cutoff axial source](CURRENT_ST073_FINITE_INLET_BOUND_2026_11_18.md) separates the fourth-row pressure mass from a uniform nominal remainder and binds the distinct actual third-row cutoff integral. The saved point at Z=0.371 gives positive value and ordinary derivative for the third row. Binary archival rounding and independent terminal matching remain open.
