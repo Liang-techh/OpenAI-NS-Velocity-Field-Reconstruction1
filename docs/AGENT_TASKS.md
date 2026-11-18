@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 signed lower-collar m15 over the real axial domain
+
+> [Whole-axial collar enclosures](CURRENT_ST073_SIGNED_COLLAR_WHOLE_Z_2026_11_18.md) certify the canonical signed radial primitive and correction at ordinary orders 0 and 1 over 64 contiguous cells of `[-1,1]`, including the exact axial zero and signed slopes. Legacy forward source equivalence remains open.
+
 ## 2026-11-18: signed ST073 collar radial correction at Z = 371/1000
 
 > [Signed radial correction](CURRENT_ST073_SIGNED_COLLAR_AVERAGE_2026_11_18.md) encloses the correction to the same-source inlet model separately at ordinary orders 0 and 1. Both corrections are positive in `epsilon² hb Pstar² sigma(S) S` units. This is a selected input, with whole-axial coverage and the forward-212 comparison still open.
