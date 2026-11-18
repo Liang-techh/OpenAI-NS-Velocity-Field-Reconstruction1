@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 finite inlet bound and actual cutoff axial response
+
+> [Finite inlet bound and cutoff axial source](CURRENT_ST073_FINITE_INLET_BOUND_2026_11_18.md) separates the fourth-row pressure mass from a uniform nominal remainder and binds the distinct actual third-row cutoff integral. The saved point at Z=0.371 gives positive value and ordinary derivative for the third row. Binary archival rounding and independent terminal matching remain open.
+
 ## 2026-11-18: ST073 signed fourth-row finite-pressure difference
 
 > [Finite-pressure difference](CURRENT_ST073_FINITE_COLLAR_DEFECT_2026_11_18.md) reduces the old nominal regular row to its radius-four inlet source and factors its ordinary C1 difference from the actual collar. A measured signed pressure-mass term accounts for the leading discrepancy at all three archived inputs. The remaining finite-source comparison and terminal match remain open.
