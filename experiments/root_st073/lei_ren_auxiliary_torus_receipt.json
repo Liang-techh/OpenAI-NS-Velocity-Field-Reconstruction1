@@ -1,0 +1,46 @@
+{
+  "brief_sha256": "025dcb0359130d3a8ce1f68013c06370a5566809c5e3a153b230201fdd10bb36",
+  "component": "lei_ren_auxiliary_torus",
+  "fixture": {
+    "bands": [
+      64,
+      65
+    ],
+    "covering_levels": [
+      47,
+      48
+    ],
+    "delta": 0.00390625,
+    "exterior_value_and_physical_derivative_zero": true,
+    "independent_radial_derivative_abs_error": 2.498001805406602e-16,
+    "inverse": {
+      "radial": {
+        "cross_band_relative": 2.220446049250313e-16,
+        "source_recovery_abs": 1.2412670766236366e-16
+      },
+      "time": {
+        "cross_band_relative": 2.220446049250313e-16,
+        "source_recovery_abs": 2.482534153247273e-16
+      }
+    },
+    "pell_relative_error": 2.220446049250313e-16,
+    "physical_centered_radial_derivative_abs_error": 5.957182663829386e-11,
+    "pullback_phase_abs_error": 1.7763568394002505e-15,
+    "radial_derivative_cross_band_abs_error": 2.636779683484747e-16,
+    "rejected_nonzero_mean": true,
+    "scaled_independent_radial_quadrature_abs_error": 4.5102810375396984e-17,
+    "scaled_primitive_cross_band_abs_error": 2.0816681711721685e-17,
+    "source": "manufactured Fourier data at paper-admissible neighboring bands"
+  },
+  "frozen_files": {
+    "scripts/check_lei_ren_auxiliary_torus_fixture.py": "4d2acd0a14cfcb68ffd45c1a4ca6dfbd17880d420b8fee0d0b0eda12f8cf8c61",
+    "scripts/run_lei_ren_auxiliary_torus_once.py": "f135f478ce0b11d61ba4d36b5438064d0942c2894a03ab9bb91d4ea98235b30e",
+    "src/openai_ns_reconstruction/charts.py": "e140a51aae7bc9a883a312d8386fa31840980dca0e0c5d311f9d7bb5b1f3ee97",
+    "src/openai_ns_reconstruction/lei_ren_auxiliary_torus.py": "22666c702e2f1845eb68c43145f25d419dbfeb6a847e41312acfbdc6eea25ca0"
+  },
+  "historical_calculations_replayed": false,
+  "manifest_sha256": "855aea8898510ee89b22e798cdbcbeff58b4e9bdb4de3fd600b51498b8703887",
+  "paper_sha256": "979e65cc4fd0b236bab04cef0284fa5808000962fa8ffa83923f3345c3519e5a",
+  "passed": true,
+  "physical_ns_validation": false
+}

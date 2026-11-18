@@ -1,3 +1,7 @@
+## 2026-11-18: Lei–Ren Part II common-torus auxiliary correction
+
+> [Auxiliary correction operators](CURRENT_LEI_REN_AUXILIARY_TORUS_2026_11_18.md) implements the cross-band Fourier pullback and fast-direction inverse, plus the transported radial primitive and its physical derivative. The new check uses manufactured data on two adjacent bands. The [ST073 actual reserved m15 C1 handoff](CURRENT_RESERVED_ACTUAL_M15_C1_2026_11_03.md) remains the forward-chain basis.
+
 ## 2026-11-03: reserved actual m15 C1 bridge
 
 > Latest continuation: [reserved actual m15 C1](CURRENT_RESERVED_ACTUAL_M15_C1_2026_11_03.md). The saved graph's actual 3x3 C1 action has three beta and Z1 components matching the old graph up to associativity. The canonical saved 25+25 five-moment physical-basis proof, including m15, is reused while patch endpoint and cumulative endpoint remain distinct. Forward212 and canonical cross-owner identity remain unproved.
