@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 lower-collar/first-micro singular source comparison
+
+> [Forward singular endpoint comparison](CURRENT_ST073_SINGULAR_FORWARD_COMPARISON_2026_11_18.md) binds slots 4 and 8 to the same canonical endpoint in three intact 212-term terminal ledgers. The signed sixth-source comparisons lie inside the archived width bounds. The fifth-row ordinary Z1 containment diagnostic remains open at both off-axis samples.
+
 ## 2026-11-18: ST073 signed lower-collar m15 over the real axial domain
 
 > [Whole-axial collar enclosures](CURRENT_ST073_SIGNED_COLLAR_WHOLE_Z_2026_11_18.md) certify the canonical signed radial primitive and correction at ordinary orders 0 and 1 over 64 contiguous cells of `[-1,1]`, including the exact axial zero and signed slopes. Legacy forward source equivalence remains open.
