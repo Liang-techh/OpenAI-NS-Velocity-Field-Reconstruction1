@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 canonical regular collar pressure and cutoff swirl
+
+> [Regular collar pressure and cutoff swirl](CURRENT_ST073_REGULAR_COLLAR_PRESSURE_2026_11_18.md) constructs the fourth-row canonical C1 function from the actual pressure and all-word cutoff graphs. The selected value and derivative are strictly negative, and the old off-axis fifth-row Z1 intervals overlap the wider canonical intervals. Full forward equivalence remains open.
+
 ## 2026-11-18: ST073 lower-collar/first-micro singular source comparison
 
 > [Forward singular endpoint comparison](CURRENT_ST073_SINGULAR_FORWARD_COMPARISON_2026_11_18.md) binds slots 4 and 8 to the same canonical endpoint in three intact 212-term terminal ledgers. The signed sixth-source comparisons lie inside the archived width bounds. The fifth-row ordinary Z1 containment diagnostic remains open at both off-axis samples.
