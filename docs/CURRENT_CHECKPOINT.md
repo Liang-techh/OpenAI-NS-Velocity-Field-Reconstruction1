@@ -1,3 +1,7 @@
+## 2026-11-18: signed ST073 collar radial correction at Z = 371/1000
+
+> [Signed radial correction](CURRENT_ST073_SIGNED_COLLAR_AVERAGE_2026_11_18.md) encloses the correction to the same-source inlet model separately at ordinary orders 0 and 1. Both corrections are positive in `epsilon² hb Pstar² sigma(S) S` units. This is a selected input, with whole-axial coverage and the forward-212 comparison still open.
+
 ## 2026-11-18: ST073 signed lower-collar m15 radial FTC
 
 > [Signed lower-collar FTC](CURRENT_ST073_SIGNED_COLLAR_FTC_2026_11_18.md) binds a new ordinary Z0/Z1 expression to the checked canonical collar sources. The signed pressure factor retains `epsilon² hb sigma′`. The physical value and forward-212 source identity remain open.
