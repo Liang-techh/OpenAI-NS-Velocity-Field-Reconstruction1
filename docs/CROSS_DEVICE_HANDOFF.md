@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 signed fourth-row finite-pressure difference
+
+> [Finite-pressure difference](CURRENT_ST073_FINITE_COLLAR_DEFECT_2026_11_18.md) reduces the old nominal regular row to its radius-four inlet source and factors its ordinary C1 difference from the actual collar. A measured signed pressure-mass term accounts for the leading discrepancy at all three archived inputs. The remaining finite-source comparison and terminal match remain open.
+
 ## 2026-11-18: ST073 fourth forward m15 source over the whole real axis
 
 > [Whole-axis regular collar](CURRENT_ST073_REGULAR_COLLAR_WHOLE_Z_2026_11_18.md) encloses the actual fourth source and its ordinary axial derivative on 128 closed cells of [-1,1]. All six comparisons at the three archived inputs lie within the old directed coefficients in the same physical unit. Full forward source correspondence and independent terminal matching remain open.
