@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 fourth forward m15 source over the whole real axis
+
+> [Whole-axis regular collar](CURRENT_ST073_REGULAR_COLLAR_WHOLE_Z_2026_11_18.md) encloses the actual fourth source and its ordinary axial derivative on 128 closed cells of [-1,1]. All six comparisons at the three archived inputs lie within the old directed coefficients in the same physical unit. Full forward source correspondence and independent terminal matching remain open.
+
 ## 2026-11-18: ST073 canonical regular collar pressure and cutoff swirl
 
 > [Regular collar pressure and cutoff swirl](CURRENT_ST073_REGULAR_COLLAR_PRESSURE_2026_11_18.md) constructs the fourth-row canonical C1 function from the actual pressure and all-word cutoff graphs. The selected value and derivative are strictly negative, and the old off-axis fifth-row Z1 intervals overlap the wider canonical intervals. Full forward equivalence remains open.

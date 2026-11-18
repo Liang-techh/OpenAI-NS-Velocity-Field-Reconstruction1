@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 fourth forward m15 source over the whole real axis
+
+> [Whole-axis regular collar](CURRENT_ST073_REGULAR_COLLAR_WHOLE_Z_2026_11_18.md) encloses the actual fourth source and its ordinary axial derivative on 128 closed cells of [-1,1]. All six comparisons at the three archived inputs lie within the old directed coefficients in the same physical unit. Full forward source correspondence and independent terminal matching remain open.
+
 ## 2026-10-28: conditional frame main/gap first-moment algebra
 
 A frozen source-and-symbolic leaf passed 29 exact conditional checks for the finite-mu first-row normalization and arbitrary-Z endpoint/Z1 algebra, while binding saved kernel, frame and endpoint roles. The second moment row, actual source-function interpretation, capture-free inlet substitution and derivative transport remain open; no physical seam or numerical closure is claimed. See [the current handoff](CURRENT_FRAME_MAIN_GAP_MOMENT_ALGEBRA_2026_10_28.md). Goal ACTIVE / INCOMPLETE.
