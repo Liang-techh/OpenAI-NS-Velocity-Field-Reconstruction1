@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 whole-axis core m15 and signed six-source inlet
+
+> [Whole-axis core m15](CURRENT_ST073_CORE_M15_WHOLE_Z_2026_11_18.md) binds the first two core terms and the shared radius-four pressure endpoint. The actual six-source q=2 inlet covers 128 axial cells. All twelve first-two-row comparisons fit the saved directed bounds after pairing the common pressure mass. Independent terminal matching remains open.
+
 ## 2026-11-18: ST073 whole-axis third m15 cutoff axial contribution
 
 > [Whole-axis cutoff axial contribution](CURRENT_ST073_CUT_AXIAL_WHOLE_Z_2026_11_18.md) encloses the actual raw third row and its ordinary derivative on 256 closed cells. The six same-unit comparisons fit the old directed archive bounds. An exact midpoint reflection reduces the finite nominal recipe to two radius-four factors and records the correct conversion u_cut=Uz1cut/epsilon. Independent terminal matching remains open.
