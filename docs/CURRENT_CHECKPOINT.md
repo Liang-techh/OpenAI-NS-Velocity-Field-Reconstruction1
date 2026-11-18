@@ -1,3 +1,7 @@
+## 2026-11-18: ST073 signed lower-collar m15 radial FTC
+
+> [Signed lower-collar FTC](CURRENT_ST073_SIGNED_COLLAR_FTC_2026_11_18.md) binds a new ordinary Z0/Z1 expression to the checked canonical collar sources. The signed pressure factor retains `epsilon² hb sigma′`. The physical value and forward-212 source identity remain open.
+
 ## 2026-11-18: Lei–Ren Part II common-torus auxiliary correction
 
 > [Auxiliary correction operators](CURRENT_LEI_REN_AUXILIARY_TORUS_2026_11_18.md) implements the cross-band Fourier pullback and fast-direction inverse, plus the transported radial primitive and its physical derivative. The new check uses manufactured data on two adjacent bands. The [ST073 actual reserved m15 C1 handoff](CURRENT_RESERVED_ACTUAL_M15_C1_2026_11_03.md) remains the forward-chain basis.
